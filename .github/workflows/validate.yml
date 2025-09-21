@@ -1,0 +1,21 @@
+# DesignOS self-validation — runs the validators against this repo on every PR.
+# Consumers: copy this into your project and point the drift/a11y steps at your src.
+name: DesignOS validate
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Cross-references resolve
+        run: ./validators/check-refs.sh
+      - name: Showcase pages pass a11y basics
+        run: node validators/check-a11y-basics.js examples/ && node validators/check-a11y-basics.js website/
+      - name: Showcase token contrast (muted-on-raised, the classic dark-theme failure)
+        run: node validators/contrast.js "#9a9fa8" "#1b1e24" --min 4.5
