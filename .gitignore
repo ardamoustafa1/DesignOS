@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+*.log
+.claude/
+.claude
+*.pyc
+__pycache__/
+CLAUDE.md
