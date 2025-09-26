@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relay — Incidents dashboard</title>
+<meta name="description" content="Relay operations dashboard — DesignOS showcase artifact.">
+<style>
+/* ============================================================
+   RELAY DASHBOARD — DesignOS showcase artifact
+   Same token system as showcase-relay.html (memory/design.md
+   consistency demonstrated). Modules: components/dashboard.md,
+   tables.md, navigation.md, charts.md, states.md, badges-chips.md
+   ============================================================ */
+:root {
+  --bg-page: #0b0c0e; --bg-surface: #131519; --bg-surface-raised: #1b1e24;
+  --text-primary: #fafafa; --text-secondary: #c9ccd1; --text-muted: #9a9fa8;
+  --border-default: rgb(255 255 255 / 0.08); --border-strong: rgb(255 255 255 / 0.16);
+  --accent: #f5a623; --accent-hover: #ffb84d; --accent-subtle: rgb(245 166 35 / 0.12); --accent-deep: #d97706;
+  --text-on-accent: #1a1204;
+  --success: #4ade80; --success-subtle: rgb(74 222 128 / 0.10);
+  --danger: #f87171; --danger-subtle: rgb(248 113 113 / 0.10);
+  --info: #38bdf8;
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-full: 9999px;
+  --duration-fast: 150ms; --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--bg-page); color: var(--text-secondary);
+  font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+::selection { background: var(--accent); color: var(--text-on-accent); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- shell: sidebar + topbar (components/navigation.md) ---------- */
+.shell { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
+@media (max-width: 900px) { .shell { grid-template-columns: 1fr; } .shell .sidebar { display: none; } }
+.sidebar {
+  background: var(--bg-surface); border-right: 1px solid var(--border-default);
+  padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-1);
+  position: sticky; top: 0; height: 100vh;
+}
+.ws {
+  display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4); font-weight: 700; color: var(--text-primary); font-size: 0.9375rem;
+}
+.ws-mark { width: 22px; height: 22px; border-radius: var(--radius-sm); background: var(--accent); display: grid; place-items: center; color: var(--text-on-accent); font-size: 0.6875rem; font-weight: 800; }
+.nav-item {
+  display: flex; align-items: center; gap: var(--space-3); padding: 0 var(--space-3);
+  height: 38px; border-radius: var(--radius-sm); color: var(--text-secondary);
+  text-decoration: none; font-weight: 500;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+.nav-item:hover { background: rgb(255 255 255 / 0.04); color: var(--text-primary); }
+.nav-item[aria-current="page"] { background: var(--accent-subtle); color: var(--accent); font-weight: 600; }
+.nav-item svg { width: 18px; height: 18px; flex-shrink: 0; }
+.nav-item .count { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); }
+.nav-label { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 600; padding: var(--space-4) var(--space-3) var(--space-2); }
+.sidebar-spacer { flex: 1; }
+.user { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); border-top: 1px solid var(--border-default); }
+.avatar { width: 30px; height: 30px; border-radius: var(--radius-full); background: linear-gradient(135deg, var(--accent), var(--accent-deep)); display: grid; place-items: center; font-weight: 700; font-size: 0.6875rem; color: var(--text-on-accent); flex-shrink: 0; }
+.user b { color: var(--text-primary); font-size: 0.8125rem; display: block; }
+.user span { font-size: 0.75rem; color: var(--text-muted); }
+
+.main { display: flex; flex-direction: column; min-width: 0; }
+.topbar {
+  display: flex; align-items: center; gap: var(--space-4); height: 56px;
+  padding-inline: var(--space-6); border-bottom: 1px solid var(--border-default);
+  position: sticky; top: 0; background: color-mix(in srgb, var(--bg-page) 85%, transparent);
+  backdrop-filter: blur(12px); z-index: 10;
+}
+.search {
+  display: flex; align-items: center; gap: var(--space-2); flex: 1; max-width: 420px;
+  height: 34px; padding-inline: var(--space-3); background: var(--bg-surface);
+  border: 1px solid var(--border-default); border-radius: var(--radius-sm);
+  color: var(--text-muted); cursor: pointer; font: inherit; text-align: left;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+.search:hover { border-color: var(--border-strong); }
+.search kbd { margin-left: auto; font-family: var(--font-mono); font-size: 0.6875rem; border: 1px solid var(--border-default); border-radius: 4px; padding: 1px 4px; }
+.status-pill { display: inline-flex; align-items: center; gap: var(--space-2); font-size: 0.75rem; color: var(--success); font-weight: 600; margin-left: auto; }
+.status-pill::before { content: ""; width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--success); }
+
+/* ---------- content (components/dashboard.md) ---------- */
+.content { padding: var(--space-6); display: grid; gap: var(--space-6); max-width: 1360px; width: 100%; }
+.page-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+.page-head h1 { color: var(--text-primary); font-size: 1.25rem; letter-spacing: -0.02em; }
+.updated { font-size: 0.75rem; color: var(--text-muted); }
+.seg { display: inline-flex; margin-left: auto; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-sm); padding: 2px; }
+.seg button {
+  font: inherit; font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border: 0;
+  border-radius: 4px; background: transparent; color: var(--text-muted); cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+.seg button[aria-pressed="true"] { background: var(--bg-surface-raised); color: var(--text-primary); }
+
+/* KPI row */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--space-4); }
+.kpi { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-md); padding: var(--space-4) var(--space-4) var(--space-3); }
+.kpi-label { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 600; }
+.kpi-value { font-size: 1.75rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; margin-top: var(--space-1); }
+.delta { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 600; border-radius: var(--radius-full); padding: 2px 8px; margin-top: var(--space-2); }
+.delta.good { color: var(--success); background: var(--success-subtle); }
+.delta.bad  { color: var(--danger);  background: var(--danger-subtle); }
+.delta small { color: var(--text-muted); font-weight: 500; }
+
+/* chart + feed row */
+.row-2 { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-4); }
+@media (max-width: 1100px) { .row-2 { grid-template-columns: 1fr; } }
+.widget { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-md); overflow: hidden; }
+.widget-head { display: flex; align-items: center; height: 48px; padding-inline: var(--space-4); border-bottom: 1px solid var(--border-default); }
+.widget-head h2 { font-size: 0.875rem; color: var(--text-primary); font-weight: 600; }
+.widget-head .hint { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); }
+.chart-wrap { padding: var(--space-4); }
+.chart-wrap svg { width: 100%; height: auto; display: block; }
+.legend { display: flex; gap: var(--space-4); padding: 0 var(--space-4) var(--space-4); font-size: 0.75rem; color: var(--text-muted); }
+.legend i { display: inline-block; width: 10px; height: 3px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
+
+.feed { list-style: none; padding: var(--space-2) 0; margin: 0; }
+.feed li { display: flex; gap: var(--space-3); padding: var(--space-3) var(--space-4); align-items: baseline; }
+.feed li + li { border-top: 1px solid var(--border-default); }
+.feed .t { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted); flex-shrink: 0; }
+.feed b { color: var(--text-primary); font-weight: 600; }
+
+/* table (components/tables.md) */
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; min-width: 640px; }
+th {
+  text-align: left; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--text-muted); font-weight: 600; padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-default); white-space: nowrap;
+}
+th.r, td.r { text-align: right; }
+td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid rgb(255 255 255 / 0.05); vertical-align: middle; }
+tbody tr { transition: background-color 100ms var(--ease-out); }
+tbody tr:hover { background: rgb(255 255 255 / 0.03); }
+tbody tr:last-child td { border-bottom: 0; }
+.id { font-family: var(--font-mono); color: var(--text-muted); font-size: 0.75rem; }
+.svc { color: var(--text-primary); font-weight: 600; }
+.badge { /* drift-ok: badges-chips.md spec — 6px dot-gap, 10px padding-x */ display: inline-flex; align-items: center; gap: 6px; font-size: 0.6875rem; font-weight: 600; border-radius: var(--radius-full); padding: 2px 10px; white-space: nowrap; }
+.badge::before { content: ""; width: 6px; height: 6px; border-radius: var(--radius-full); background: currentColor; }
+.badge.sev2 { color: var(--accent); background: var(--accent-subtle); }
+.badge.resolved { color: var(--success); background: var(--success-subtle); }
+.badge.neutral { color: var(--text-muted); background: rgb(255 255 255 / 0.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav class="sidebar" aria-label="Primary">
+    <div class="ws"><span class="ws-mark" aria-hidden="true">R</span>Relay · Acme Corp</div>
+    <a class="nav-item" href="#" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 8h6V4h-6z"/></svg>
+      Overview
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      Incidents <span class="count num">3</span>
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      On-call
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 3h9l5 5v13H6zM14 3v6h6"/></svg>
+      Runbooks
+    </a>
+    <div class="nav-label">Configure</div>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>
+      Integrations
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.4 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.4-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2z"/></svg>
+      Settings
+    </a>
+    <div class="sidebar-spacer"></div>
+    <div class="user">
+      <span class="avatar" aria-hidden="true">MK</span>
+      <div><b>Maya Kaplan</b><span>On-call · gateway</span></div>
+    </div>
+  </nav>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="search" type="button" aria-label="Search incidents, services, runbooks">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search incidents, services, runbooks…
+        <kbd>⌘K</kbd>
+      </button>
+      <span class="status-pill">All systems operational</span>
+    </header>
+
+    <main class="content">
+      <div class="page-head">
+        <h1>Overview</h1>
+        <span class="updated">Updated 24s ago</span>
+        <div class="seg" role="group" aria-label="Timeframe">
+          <button type="button" aria-pressed="false">24h</button>
+          <button type="button" aria-pressed="true">7d</button>
+          <button type="button" aria-pressed="false">30d</button>
+        </div>
+      </div>
+
+      <!-- KPI row: top row answers "are we OK & getting better?" -->
+      <section class="kpis" aria-label="Key metrics">
+        <div class="kpi">
+          <div class="kpi-label">Open incidents</div>
+          <div class="kpi-value num">3</div>
+          <span class="delta good">▼ 2 <small>vs last week</small></span>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">MTTR</div>
+          <div class="kpi-value num">11m 42s</div>
+          <span class="delta good">▼ 18.5% <small>vs last week</small></span>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Alerts routed</div>
+          <div class="kpi-value num">1,284</div>
+          <span class="delta good">▲ 4.1% <small>vs last week</small></span>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Paged humans</div>
+          <div class="kpi-value num">19</div>
+          <span class="delta bad">▲ 5 <small>vs last week</small></span>
+        </div>
+      </section>
+
+      <div class="row-2">
+        <!-- Chart: title states the finding (components/charts.md) -->
+        <section class="widget" aria-label="Resolution time trend">
+          <div class="widget-head"><h2>MTTR is trending down — 7-day view</h2><span class="hint">minutes</span></div>
+          <div class="chart-wrap">
+            <svg viewBox="0 0 640 220" role="img" aria-label="Line chart: mean time to resolution fell from 19 to 11 minutes over the last 7 days; p90 fell from 34 to 22.">
+              <!-- y gridlines, 6% opacity -->
+              <g stroke="rgb(255 255 255 / 0.06)"><line x1="40" y1="30" x2="620" y2="30"/><line x1="40" y1="80" x2="620" y2="80"/><line x1="40" y1="130" x2="620" y2="130"/><line x1="40" y1="180" x2="620" y2="180"/></g>
+              <g fill="var(--text-muted)" font-size="11" font-family="ui-monospace, monospace">
+                <text x="8" y="34">40</text><text x="8" y="84">30</text><text x="8" y="134">20</text><text x="8" y="184">10</text>
+                <text x="52" y="205">Jul 4</text><text x="235" y="205">Jul 6</text><text x="420" y="205">Jul 8</text><text x="585" y="205">Jul 10</text>
+              </g>
+              <!-- p90 series: dashed = second channel beyond color -->
+              <polyline points="60,60 150,72 240,66 330,95 420,105 510,118 600,120" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="5 5"/>
+              <!-- mttr series -->
+              <polyline points="60,128 150,138 240,120 330,148 420,152 510,166 600,172" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="600" cy="172" r="4" fill="var(--accent)"/>
+            </svg>
+          </div>
+          <div class="legend">
+            <span><i style="background:var(--accent)"></i>MTTR (solid)</span>
+            <span><i style="background:var(--text-muted)"></i>p90 (dashed)</span>
+          </div>
+        </section>
+
+        <!-- Activity feed -->
+        <section class="widget" aria-label="Recent activity">
+          <div class="widget-head"><h2>Activity</h2><a class="hint" href="#" style="color:inherit">View all</a></div>
+          <ul class="feed">
+            <li><span class="t">14:02</span><span><b>Maya</b> resolved <b>#4128</b> — rollback applied</span></li>
+            <li><span class="t">13:47</span><span><b>Relay</b> attached runbook to <b>#4128</b></span></li>
+            <li><span class="t">12:15</span><span><b>Deniz</b> acknowledged <b>#4127</b> (checkout-api)</span></li>
+            <li><span class="t">10:30</span><span><b>Relay</b> auto-resolved <b>#4126</b> — flapping alert grouped</span></li>
+            <li><span class="t">09:12</span><span><b>Arda</b> updated the gateway rotation</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Incident table -->
+      <section class="widget" aria-label="Recent incidents">
+        <div class="widget-head"><h2>Recent incidents</h2><span class="hint num">1–5 of 42</span></div>
+        <div class="table-scroll" tabindex="0" aria-label="Incidents table, scrolls horizontally">
+          <table>
+            <thead>
+              <tr><th scope="col">ID</th><th scope="col">Service</th><th scope="col">Status</th><th scope="col">Owner</th><th scope="col" class="r">Duration</th><th scope="col" class="r">Started</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="id">#4128</td><td class="svc">api-gateway</td><td><span class="badge resolved">Resolved</span></td><td>Maya K.</td><td class="r num">5m 37s</td><td class="r num">02:14</td></tr>
+              <tr><td class="id">#4127</td><td class="svc">checkout-api</td><td><span class="badge sev2">SEV-2 · Active</span></td><td>Deniz A.</td><td class="r num">1h 48m</td><td class="r num">12:15</td></tr>
+              <tr><td class="id">#4126</td><td class="svc">notifications</td><td><span class="badge resolved">Resolved</span></td><td>Relay (auto)</td><td class="r num">0m 40s</td><td class="r num">10:29</td></tr>
+              <tr><td class="id">#4125</td><td class="svc">search-index</td><td><span class="badge neutral">Postmortem</span></td><td>Arda M.</td><td class="r num">22m 10s</td><td class="r num">Yesterday</td></tr>
+              <tr><td class="id">#4124</td><td class="svc">api-gateway</td><td><span class="badge resolved">Resolved</span></td><td>Maya K.</td><td class="r num">11m 03s</td><td class="r num">Yesterday</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+// Segmented timeframe control — instant-apply input semantics (tabs-accordions.md)
+document.querySelectorAll('.seg button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    btn.setAttribute('aria-pressed', 'true');
+  });
+});
+</script>
+</body>
+</html>
