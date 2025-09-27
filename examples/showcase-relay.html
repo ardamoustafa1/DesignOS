@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relay — Incident management that ends 2am archaeology</title>
+<meta name="description" content="Every alert arrives with its runbook, owner, and history. On-call teams resolve incidents 4× faster with Relay.">
+<style>
+/* ============================================================
+   RELAY — DesignOS showcase artifact
+   Produced per examples/saas-landing-walkthrough.md.
+   Every value below is a token; every decision cites a module.
+   ============================================================ */
+:root {
+  /* dark-first: industries/analytics-hosting.md · surfaces per colors.md */
+  --bg-page: #0b0c0e;
+  --bg-surface: #131519;
+  --bg-surface-raised: #1b1e24;
+  --text-primary: #fafafa;
+  --text-secondary: #c9ccd1;
+  --text-muted: #9a9fa8;          /* 4.6:1 on raised — a11y pass, see walkthrough */
+  --border-default: rgb(255 255 255 / 0.08);
+  --border-strong: rgb(255 255 255 / 0.16);
+  /* accent: amber-signal, NOT alert-red, NOT competitor blue (color-psychology procedure) */
+  --accent: #f5a623;
+  --accent-hover: #ffb84d;
+  --accent-subtle: rgb(245 166 35 / 0.12); --accent-deep: #d97706;
+  --text-on-accent: #1a1204;
+  --success: #4ade80;
+
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  --space-24: 96px; --space-32: 128px;
+
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-full: 9999px;
+
+  --duration-fast: 150ms; --duration-base: 200ms; --duration-slower: 500ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --container: 1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-page);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: var(--container); margin-inline: auto; padding-inline: var(--space-6); }
+@media (min-width: 1024px) { .container { padding-inline: var(--space-12); } }
+
+h1, h2, h3 { color: var(--text-primary); line-height: 1.15; letter-spacing: -0.03em; text-wrap: balance; }
+
+.eyebrow {
+  display: block;
+  font-size: 0.8125rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: var(--space-4);
+}
+
+a { color: var(--text-primary); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+::selection { background: var(--accent); color: var(--text-on-accent); }
+
+.skip-link {
+  position: absolute; left: var(--space-4); top: -100px;
+  background: var(--accent); color: var(--text-on-accent);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-sm);
+  font-weight: 600; z-index: 100; transition: top var(--duration-fast) var(--ease-out);
+}
+.skip-link:focus { top: var(--space-4); }
+
+/* ---------- buttons (components/buttons.md) ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  height: 48px; padding-inline: var(--space-6);
+  border-radius: var(--radius-md); border: 1px solid transparent;
+  font: inherit; font-size: 0.9375rem; font-weight: 600; text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
+}
+.btn:active { transform: translateY(1px) scale(0.99); }
+.btn-primary { background: var(--accent); color: var(--text-on-accent); }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-ghost { color: var(--text-primary); border-color: var(--border-strong); background: transparent; }
+.btn-ghost:hover { border-color: var(--text-muted); background: rgb(255 255 255 / 0.03); }
+
+/* ---------- nav (components/navigation.md) ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--bg-page) 82%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-out);
+}
+.nav.scrolled { border-bottom-color: var(--border-default); }
+.nav-inner { display: flex; align-items: center; height: 68px; gap: var(--space-8); }
+.logo { display: flex; align-items: center; gap: var(--space-2); font-weight: 700; font-size: 1.125rem; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; }
+.logo-mark { width: 22px; height: 22px; border-radius: var(--radius-sm); background: var(--accent); display: grid; place-items: center; color: var(--text-on-accent); font-size: 0.75rem; font-weight: 800; }
+.nav-links { display: none; gap: var(--space-8); list-style: none; padding: 0; margin-right: auto; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9375rem; font-weight: 500; transition: color var(--duration-fast) var(--ease-out); }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta { display: flex; gap: var(--space-3); margin-left: auto; }
+.nav-cta .btn { height: 40px; padding-inline: var(--space-4); font-size: 0.875rem; }
+@media (min-width: 768px) { .nav-links { display: flex; } .nav-cta { margin-left: 0; } }
+
+/* ---------- hero (components/hero.md · split 55/45) ---------- */
+.hero { padding-block: var(--space-24) var(--space-16); overflow: hidden; }
+@media (min-width: 1024px) { .hero { padding-block: var(--space-32) var(--space-24); } }
+.hero-grid { display: grid; gap: var(--space-12); align-items: center; }
+@media (min-width: 1024px) { .hero-grid { grid-template-columns: 55fr 45fr; } }
+.hero h1 {
+  font-size: clamp(2.5rem, 4.5vw + 1rem, 4.25rem);
+  font-weight: 700; margin-bottom: var(--space-6); max-width: 14ch;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: 1.25rem; max-width: 46ch; margin-bottom: var(--space-8); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+.hero-note { width: 100%; font-size: 0.8125rem; color: var(--text-muted); margin-top: var(--space-3); }
+
+/* entrance: one staggered sequence, once (motion/principles.md) */
+@media (prefers-reduced-motion: no-preference) {
+  .rise { opacity: 0; transform: translateY(14px); animation: rise var(--duration-slower) var(--ease-out) forwards; }
+  .rise:nth-child(2) { animation-delay: 60ms; }
+  .rise:nth-child(3) { animation-delay: 120ms; }
+  .rise:nth-child(4) { animation-delay: 180ms; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}
+
+/* ---------- the product panel (signature visual) ---------- */
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+.panel-bar { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-default); color: var(--text-muted); }
+.dot { width: 10px; height: 10px; border-radius: var(--radius-full); background: var(--border-strong); }
+.panel-title { margin-left: var(--space-2); font-size: 0.75rem; }
+.incident { padding: var(--space-4); display: grid; gap: var(--space-3); }
+.line { display: flex; gap: var(--space-3); align-items: baseline; }
+.ts { color: var(--text-muted); flex-shrink: 0; }
+.sev { color: var(--accent); font-weight: 700; }
+.ok { color: var(--success); }
+.line .msg { color: var(--text-secondary); }
+.resolved-chip {
+  justify-self: start; margin-top: var(--space-2);
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  background: rgb(74 222 128 / 0.10); color: var(--success);
+  border: 1px solid rgb(74 222 128 / 0.25);
+  padding: var(--space-1) var(--space-3); border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+/* ---------- logo strip (foundations/iconography.md) ---------- */
+.logos { padding-block: var(--space-12); border-block: 1px solid var(--border-default); }
+.logos p { text-align: center; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: var(--space-6); font-weight: 600; }
+.logo-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-8) var(--space-12); }
+.logo-row span { font-weight: 700; font-size: 1.0625rem; color: var(--text-muted); opacity: 0.75; letter-spacing: -0.01em; }
+
+/* ---------- sections & features ---------- */
+.section { padding-block: var(--space-24); }
+@media (min-width: 1024px) { .section { padding-block: var(--space-32); } }
+.section-head { max-width: 640px; margin-bottom: var(--space-16); }
+.section-head h2 { font-size: clamp(1.953rem, 2.5vw + 1rem, 2.75rem); margin-bottom: var(--space-4); }
+.section-head p { font-size: 1.125rem; }
+
+.features { display: grid; gap: var(--space-6); }
+@media (min-width: 768px) { .features { grid-template-columns: repeat(3, 1fr); } }
+.feature {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+.feature:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+.feature-icon {
+  width: 44px; height: 44px; border-radius: var(--radius-md);
+  background: var(--accent-subtle); color: var(--accent);
+  display: grid; place-items: center; margin-bottom: var(--space-6);
+}
+.feature-icon svg { width: 22px; height: 22px; }
+.feature h3 { font-size: 1.25rem; margin-bottom: var(--space-3); letter-spacing: -0.02em; }
+.feature p { font-size: 0.9375rem; }
+.feature code { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); background: var(--accent-subtle); padding: 1px 8px; border-radius: 4px; }
+
+/* ---------- proof (psychology/persuasion.md — one deep proof) ---------- */
+.proof { background: var(--bg-surface); border-block: 1px solid var(--border-default); }
+.proof-grid { display: grid; gap: var(--space-12); align-items: center; }
+@media (min-width: 1024px) { .proof-grid { grid-template-columns: 1fr 1fr; } }
+.metric { font-size: clamp(3.5rem, 6vw, 5.5rem); font-weight: 700; color: var(--text-primary); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; line-height: 1; }
+.metric-label { color: var(--text-muted); margin-top: var(--space-3); font-size: 1rem; }
+blockquote { border: 0; padding: 0; }
+blockquote p { font-size: 1.375rem; line-height: 1.5; color: var(--text-primary); letter-spacing: -0.01em; margin-bottom: var(--space-6); text-wrap: pretty; }
+.attribution { display: flex; align-items: center; gap: var(--space-4); }
+.avatar { width: 44px; height: 44px; border-radius: var(--radius-full); background: linear-gradient(135deg, var(--accent), var(--accent-deep)); display: grid; place-items: center; font-weight: 700; color: var(--text-on-accent); }
+.attribution strong { display: block; color: var(--text-primary); font-size: 0.9375rem; }
+.attribution span { font-size: 0.8125rem; color: var(--text-muted); }
+
+/* ---------- CTA band (components/footer.md pre-footer) ---------- */
+.cta-band { text-align: center; }
+.cta-band h2 { font-size: clamp(1.953rem, 3vw + 1rem, 3rem); margin-bottom: var(--space-8); }
+.cta-band .btn-primary { height: 52px; padding-inline: var(--space-8); font-size: 1rem; }
+.cta-band .hero-note { margin-top: var(--space-4); }
+
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--border-default); padding-block: var(--space-12); }
+.footer-inner { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: center; justify-content: space-between; font-size: 0.8125rem; color: var(--text-muted); }
+.footer-links { display: flex; gap: var(--space-6); list-style: none; padding: 0; }
+.footer-links a { color: var(--text-muted); text-decoration: none; transition: color var(--duration-fast) var(--ease-out); }
+.footer-links a:hover { color: var(--text-primary); }
+.status { display: inline-flex; align-items: center; gap: var(--space-2); }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--success); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#" aria-label="Relay home"><span class="logo-mark" aria-hidden="true">R</span>Relay</a>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#proof">Customers</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Docs</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#">Log in</a>
+      <a class="btn btn-primary" href="#cta">Start free</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO — split 55/45: strong product asset decides (brain/decision-framework.md) -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="rise">Incidents end <em>4× faster</em> when nobody's hunting for context</h1>
+        <p class="hero-sub rise">Every alert arrives with its runbook, its owner, and the last time it happened. Relay turns 2am archaeology into a five-minute fix.</p>
+        <div class="hero-cta rise">
+          <a class="btn btn-primary" href="#cta">Start free trial</a>
+          <a class="btn btn-ghost" href="#how">Watch 2-min demo →</a>
+          <p class="hero-note">Free 14 days · No credit card · 5-min setup</p>
+        </div>
+      </div>
+      <div class="rise" aria-label="Relay incident timeline, example">
+        <div class="panel">
+          <div class="panel-bar" aria-hidden="true">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="panel-title">incident #4128 — api-gateway</span>
+          </div>
+          <div class="incident">
+            <p class="line"><span class="ts">02:14:07</span> <span class="sev">SEV-2</span> <span class="msg">p99 latency breach — api-gateway</span></p>
+            <p class="line"><span class="ts">02:14:08</span> <span class="ok">→</span> <span class="msg">runbook attached: gateway-latency.md</span></p>
+            <p class="line"><span class="ts">02:14:09</span> <span class="ok">→</span> <span class="msg">paging @maya (primary, gateway rotation)</span></p>
+            <p class="line"><span class="ts">02:14:11</span> <span class="ok">→</span> <span class="msg">similar: #3971 resolved in 11m — fix linked</span></p>
+            <p class="line"><span class="ts">02:19:44</span> <span class="ok">✓</span> <span class="msg">rollback applied · latency recovering</span></p>
+            <span class="resolved-chip">✓ Resolved in 5m 37s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP — one credibility cue (components/hero.md) -->
+  <section class="logos" aria-label="Customers">
+    <div class="container">
+      <p>On call at 400+ engineering teams</p>
+      <div class="logo-row" role="list">
+        <span role="listitem">Northflank</span><span role="listitem">Datawire</span><span role="listitem">Quorum</span><span role="listitem">Fieldset</span><span role="listitem">Parallax</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES — three, mapped to buyer problems (patterns/landing-pages.md) -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>Context finds you — not the other way around</h2>
+        <p>Relay sits between your alerting and your team, and does the archaeology before the page even lands.</p>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19h16M4 5h16M7 5v14M12 12h9"/></svg></div>
+          <h3>Alerts arrive briefed</h3>
+          <p>Runbook, owning service, recent deploys, and the last three similar incidents — attached to the page automatically. <code>context: ready</code> before you're awake.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <h3>Wake the right person</h3>
+          <p>Ownership-aware routing pages the engineer who shipped the change or owns the service — not the whole rotation. Escalation only when it's earned.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3h9l5 5v13H6zM14 3v6h6M9 13h6M9 17h6"/></svg></div>
+          <h3>Postmortems write themselves</h3>
+          <p>Every action, decision, and timestamp is captured as you work. When it's over, the timeline <em>is</em> the draft — you edit, not excavate.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF — one deep case beats five shallow (psychology/persuasion.md) -->
+  <section class="section proof" id="proof">
+    <div class="container proof-grid">
+      <div>
+        <span class="eyebrow">Case study — Datawire</span>
+        <p class="metric">−43%</p>
+        <p class="metric-label">mean time to resolution, 90 days after switching to Relay</p>
+      </div>
+      <blockquote>
+        <p>"The first SEV-1 after we switched, the runbook and the last-time-this-happened thread were already in the channel. We fixed it before the status page even needed an update."</p>
+        <div class="attribution">
+          <span class="avatar" aria-hidden="true">EK</span>
+          <div><strong>Elif Kaya</strong><span>Staff SRE, Datawire</span></div>
+        </div>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FINAL CTA BAND -->
+  <section class="section cta-band" id="cta">
+    <div class="container">
+      <span class="eyebrow">Get started</span>
+      <h2>Try it on your next incident</h2>
+      <a class="btn btn-primary" href="#">Start free trial</a>
+      <p class="hero-note">Free 14 days · No credit card · Works with PagerDuty, Opsgenie &amp; Grafana</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Relay Systems, Inc.</span>
+    <ul class="footer-links">
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Security</a></li>
+      <li><a href="#">Docs</a></li>
+    </ul>
+    <span class="status">All systems operational</span>
+  </div>
+</footer>
+
+<script>
+// Nav border on scroll (components/navigation.md) — passive, style-write only
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+</script>
+</body>
+</html>
