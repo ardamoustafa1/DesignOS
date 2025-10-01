@@ -1,0 +1,47 @@
+{
+  "name": "designos",
+  "version": "1.5.0",
+  "description": "The Design Intelligence Operating System for AI coding agents — Claude, Fable, Cursor, Copilot.",
+  "bin": {
+    "designos": "bin/designos.js"
+  },
+  "files": [
+    "bin",
+    "agents",
+    "brain",
+    "checklists",
+    "components",
+    "examples",
+    "foundations",
+    "industries",
+    "loops",
+    "memory",
+    "motion",
+    "patterns",
+    "prompts",
+    "psychology",
+    "scoring",
+    "starter",
+    "workflows",
+    "CLAUDE.md",
+    "README.md",
+    "GETTING-STARTED.md",
+    "ARCHITECTURE.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "ai-agents",
+    "design-system",
+    "ui-design",
+    "prompt-engineering",
+    "cursor",
+    "design-rules"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
