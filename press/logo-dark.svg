@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-label="DesignOS logo, dark background variant">
+  <title>DesignOS (on dark)</title>
+  <g>
+    <path d="M60 14 L98 36 L98 82 L60 104 L22 82 L22 36 Z" fill="none" stroke="#818CF8" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M60 38 L79 49 L79 71 L60 82 L41 71 L41 49 Z" fill="#818CF8"/>
+  </g>
+  <text x="128" y="76" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="52" font-weight="700" letter-spacing="-1.5" fill="#FAFAFA">Design<tspan fill="#818CF8">OS</tspan></text>
+</svg>
