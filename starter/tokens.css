@@ -1,0 +1,131 @@
+/**
+ * DesignOS starter tokens — the canonical :root block.
+ *
+ * This is what the system's foundations produce for a neutral, sector-agnostic
+ * project. Copy it as your project's single source of design values, then let
+ * the agent adapt it per brand (decisions land in memory/design.md).
+ *
+ * Rules it encodes:
+ *  - colors.md:     semantic token layer, tinted neutrals, no pure black/white
+ *  - typography.md: 1.25 modular scale, clamp() display sizes
+ *  - spacing.md:    4px grid
+ *  - motion/:       duration + easing tokens, reduced-motion collapse
+ */
+
+:root {
+  /* ---------- color: neutral ramp (light) ---------- */
+  --neutral-50:  #fafafa;
+  --neutral-100: #f4f4f5;
+  --neutral-200: #e4e4e7;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-700: #3f3f46;
+  --neutral-900: #18181b;
+
+  /* ---------- color: semantic surface/text ---------- */
+  --bg-page:            #ffffff;
+  --bg-surface:         var(--neutral-50);
+  --bg-surface-raised:  #ffffff;
+  --bg-inverse:         var(--neutral-900);
+  --text-primary:       var(--neutral-900);
+  --text-secondary:     var(--neutral-700);
+  --text-muted:         var(--neutral-500);
+  --text-on-accent:     #ffffff;
+  --border-default:     var(--neutral-200);
+  --border-strong:      var(--neutral-400);
+
+  /* ---------- color: accent + semantics ---------- */
+  --accent:        #4f46e5;
+  --accent-hover:  #4338ca;
+  --accent-subtle: #eef2ff;
+  --border-focus:  var(--accent);
+  --success: #16a34a;  --success-subtle: #f0fdf4;
+  --warning: #d97706;  --warning-subtle: #fffbeb;
+  --danger:  #dc2626;  --danger-subtle:  #fef2f2;
+  --info:    #0284c7;  --info-subtle:    #f0f9ff;
+
+  /* ---------- type: families & scale (ratio 1.25, base 16) ---------- */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+  --text-xs:   0.75rem;    /* 12 — badges, legal, table meta   */
+  --text-sm:   0.875rem;   /* 14 — UI labels, secondary text   */
+  --text-base: 1rem;       /* 16 — app body                    */
+  --text-lg:   1.25rem;    /* 20 — marketing body, leads       */
+  --text-xl:   1.5625rem;  /* 25 — h3 / card titles            */
+  --text-2xl:  1.953rem;   /* 31 — h2 mobile                   */
+  --text-3xl:  2.441rem;   /* 39 — section headings            */
+  --text-display: clamp(2.5rem, 5vw + 1rem, 4.5rem);  /* hero */
+  --leading-tight: 1.15;   /* display     */
+  --leading-snug:  1.3;    /* headings    */
+  --leading-body:  1.65;   /* prose       */
+  --tracking-display: -0.03em;
+  --tracking-caps:     0.08em;
+
+  /* ---------- spacing: 4px grid ---------- */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-6: 24px;  --space-8: 32px;  --space-12: 48px; --space-16: 64px;
+  --space-24: 96px; --space-32: 128px;
+
+  /* ---------- shape & elevation ---------- */
+  --radius-sm: 6px;  --radius-md: 10px;  --radius-lg: 16px;  --radius-full: 9999px;
+  --shadow-1: 0 1px 2px rgb(24 24 27 / 0.06), 0 1px 3px rgb(24 24 27 / 0.08);
+  --shadow-2: 0 4px 8px rgb(24 24 27 / 0.06), 0 8px 24px rgb(24 24 27 / 0.10);
+  --shadow-3: 0 12px 24px rgb(24 24 27 / 0.10), 0 24px 48px rgb(24 24 27 / 0.14);
+
+  /* ---------- motion tokens ---------- */
+  --duration-instant: 100ms;
+  --duration-fast:    150ms;
+  --duration-base:    200ms;
+  --duration-slow:    300ms;
+  --duration-slower:  500ms;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---------- containers ---------- */
+  --container-prose:     700px;
+  --container-marketing: 1180px;
+  --container-wide:      1360px;
+}
+
+/* ---------- dark theme (colors.md dark construction) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-page:           #0a0a0b;
+    --bg-surface:        #131316;
+    --bg-surface-raised: #1c1c21;
+    --bg-inverse:        #fafafa;
+    --text-primary:      #fafafa;
+    --text-secondary:    #d4d4d8;
+    --text-muted:        #9d9da6;
+    --border-default:    rgb(255 255 255 / 0.08);
+    --border-strong:     rgb(255 255 255 / 0.16);
+    --accent:        #818cf8;   /* desaturated/lightened for dark */
+    --accent-hover:  #a5b4fc;
+    --accent-subtle: rgb(129 140 248 / 0.12);
+    --success: #4ade80;  --success-subtle: rgb(74 222 128 / 0.10);
+    --warning: #fbbf24;  --warning-subtle: rgb(251 191 36 / 0.10);
+    --danger:  #f87171;  --danger-subtle:  rgb(248 113 113 / 0.10);
+    --info:    #38bdf8;  --info-subtle:    rgb(56 189 248 / 0.10);
+    --shadow-1: none; --shadow-2: none; --shadow-3: none; /* elevation = surface steps */
+  }
+}
+
+/* ---------- reduced motion collapse (motion/performance.md floor) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- baseline craft ---------- */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+::selection {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
