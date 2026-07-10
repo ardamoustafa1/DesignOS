@@ -56,7 +56,7 @@ copywriter, SEO y un revisor adversarial con poder de veto.
 Un comando desde tu proyecto:
 
 ```bash
-npx github:<you>/DesignOS init --agents
+npx github:ardamoustafa1/DesignOS init --agents
 ```
 
 Copia el sistema a `./DesignOS`, lo conecta a tu `CLAUDE.md` y registra los 9

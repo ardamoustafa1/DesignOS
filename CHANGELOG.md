@@ -2,6 +2,35 @@
 
 All notable changes to DesignOS.
 
+## [1.6.0] — 2026-07-10
+
+The go-live wave: the repo goes public, the README earns its place as the front door,
+and the eval claim gets a receipt.
+
+### Added
+- **README overhaul** — logo header, animated boot-log GIF-equivalent (`press/demo.svg`),
+  a "what makes it different" comparison table, measured results surfaced above the fold,
+  collapsible repo map, and a Community section (badge, showcase, rule-challenge, roadmap)
+- **Press assets** — `press/logo.svg` + `logo-dark.svg` (theme-aware via `<picture>`),
+  `press/demo.svg`: a dependency-free animated SVG boot-log for anywhere a GIF would go
+- **First published eval run** — `evals/RESULTS.md`: real validator counts and contrast
+  ratios, control vs. treatment, with the reproduction commands and honest caveats;
+  `evals/samples/control-relay.html` is the checked-in control-arm fixture
+- **GitHub Pages workflow** — `.github/workflows/pages.yml` deploys the repo root
+  (website, examples, demo) on every push to `main`; root `index.html` redirects to
+  `website/index.html`
+- **Repo metadata** — `package.json` gained `repository`, `homepage`, `bugs`, `author`,
+  and the full module list in `files`
+
+### Fixed
+- All `USER`/`<you>` placeholders resolved to `ardamoustafa1` across every README,
+  the website, and `SHOWCASE.md`
+- `contrast.js` argument parsing when `--min` is omitted
+- `check-drift.js`: per-declaration spacing parsing (type/radius properties no longer
+  false-positive as spacing violations), a `:root` token-block exemption, and a
+  file-level `designos-drift-ignore-file` opt-out for intentional-violation fixtures
+- Real drift findings across all four showcase pages and the website, verified clean
+
 ## [1.5.0] — 2026-07-10
 
 The resonance wave: the demo asset, the community flywheel, and seven languages.

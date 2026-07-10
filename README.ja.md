@@ -52,7 +52,7 @@ Appleならこの要素を削るのでは？」と考え始めます。
 プロジェクトのディレクトリで1コマンド：
 
 ```bash
-npx github:<you>/DesignOS init --agents --skills
+npx github:ardamoustafa1/DesignOS init --agents --skills
 ```
 
 システムが `./DesignOS` にコピーされ、`CLAUDE.md` に接続され、9人の専門家が本物の

@@ -1,7 +1,16 @@
 {
   "name": "designos",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "The Design Intelligence Operating System for AI coding agents — Claude, Fable, Cursor, Copilot.",
+  "author": "Arda Moustafa (https://github.com/ardamoustafa1)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardamoustafa1/DesignOS.git"
+  },
+  "homepage": "https://ardamoustafa1.github.io/DesignOS/website/",
+  "bugs": {
+    "url": "https://github.com/ardamoustafa1/DesignOS/issues"
+  },
   "bin": {
     "designos": "bin/designos.js"
   },
@@ -11,22 +20,30 @@
     "brain",
     "checklists",
     "components",
+    "evals",
     "examples",
     "foundations",
     "industries",
+    "integrations",
     "loops",
     "memory",
     "motion",
+    "museum",
+    "native",
     "patterns",
     "prompts",
     "psychology",
     "scoring",
+    "skills",
     "starter",
+    "validators",
     "workflows",
     "CLAUDE.md",
     "README.md",
     "GETTING-STARTED.md",
     "ARCHITECTURE.md",
+    "CHEATSHEET.md",
+    "GLOSSARY.md",
     "CHANGELOG.md",
     "LICENSE"
   ],
@@ -38,7 +55,9 @@
     "ui-design",
     "prompt-engineering",
     "cursor",
-    "design-rules"
+    "copilot",
+    "design-rules",
+    "accessibility"
   ],
   "license": "MIT",
   "engines": {

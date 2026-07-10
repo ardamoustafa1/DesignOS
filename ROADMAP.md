@@ -25,6 +25,15 @@ Propose additions via a module-proposal issue.
 - Industries: insurance, logistics, automotive, manufacturing B2B (→24)
 - i18n: Türkçe README
 
+## Shipped (v1.6) — live on GitHub
+- **Public repo:** https://github.com/ardamoustafa1/DesignOS — all placeholders resolved
+- README overhaul: logo header, animated SVG boot-log (GIF-equivalent, dependency-free),
+  differentiator table, measured results above the fold, Community section
+- First published eval run (`evals/RESULTS.md`) with a checked-in control-arm fixture,
+  real validator counts, and stated caveats
+- GitHub Pages workflow — the website, showcase, and demo are deployable on every push
+- Repo metadata completed in `package.json` (repository/homepage/bugs/author)
+
 ## Shipped (v1.5)
 - Before/After demo page (museum-pinned flaws vs the scored result) — the launch centerpiece
 - `designos audit` command; validator upgrades (per-declaration parsing, :root exemption,
@@ -44,10 +53,10 @@ Propose additions via a module-proposal issue.
 - W3C Design Tokens JSON export; SECURITY / CODE_OF_CONDUCT / FUNDING
 - `LAUNCH.md` distribution playbook; 中文 + Español READMEs
 
-## Building (human-in-the-loop — see LAUNCH.md Phase 0)
-- The 30-second demo GIF for the README (requires a recorded live session)
-- First published eval run (requires executing `evals/` against a model pair)
-- GitHub publication: repo creation, Pages activation, `USER` placeholder replacement
+## Building
+- Enable Pages in repo Settings (Source → GitHub Actions) so `pages.yml` goes live
+- A recorded live-session GIF/video to sit alongside `press/demo.svg` on launch channels
+- Independent third-party eval runs submitted via PR to `evals/RESULTS.md`
 
 ## Planned
 - **Published eval results across major models** — the deltas as a living table

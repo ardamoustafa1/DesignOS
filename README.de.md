@@ -56,7 +56,7 @@ SEO — und ein adversarialer Reviewer mit Vetorecht.
 Ein Befehl aus deinem Projektverzeichnis:
 
 ```bash
-npx github:<you>/DesignOS init --agents --skills
+npx github:ardamoustafa1/DesignOS init --agents --skills
 ```
 
 Das kopiert das System nach `./DesignOS`, verdrahtet es mit deiner `CLAUDE.md` und

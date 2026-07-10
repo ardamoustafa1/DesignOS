@@ -54,7 +54,7 @@ Apple 会不会直接删掉这个元素？"
 在项目目录中一条命令：
 
 ```bash
-npx github:<you>/DesignOS init --agents
+npx github:ardamoustafa1/DesignOS init --agents
 ```
 
 系统复制到 `./DesignOS`，自动接入 `CLAUDE.md`，九位专家注册为真正的 Claude Code

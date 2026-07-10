@@ -10,7 +10,7 @@
 const args = process.argv.slice(2);
 const minIdx = args.indexOf('--min');
 const min = minIdx > -1 ? parseFloat(args[minIdx + 1]) : 4.5;
-const positional = args.filter((a, i) => i !== minIdx && i !== minIdx + 1);
+const positional = minIdx > -1 ? args.filter((a, i) => i !== minIdx && i !== minIdx + 1) : args;
 const hexes = positional.filter(a => /^#?[0-9a-fA-F]{3,8}$/.test(a));
 
 if (hexes.length !== 2) {

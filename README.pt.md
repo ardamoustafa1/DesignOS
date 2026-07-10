@@ -56,7 +56,7 @@ copywriter, SEO — e um revisor adversarial com poder de veto.
 Um comando a partir do seu projeto:
 
 ```bash
-npx github:<you>/DesignOS init --agents --skills
+npx github:ardamoustafa1/DesignOS init --agents --skills
 ```
 
 O sistema é copiado para `./DesignOS`, conectado ao seu `CLAUDE.md`, e os 9

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="ui-monospace, 'SF Mono', Menlo, monospace" role="img" aria-label="Animated demo: a prompt enters, DesignOS boots, routes modules, catches a contrast failure, re-scores to 96+ and ships.">
+  <title>DesignOS boot sequence demo</title>
+  <style>
+    .bg { fill: #101013; }
+    .frame { fill: none; stroke: rgba(255,255,255,0.12); stroke-width: 1; }
+    .dot { fill: rgba(255,255,255,0.15); }
+    text { font-size: 14px; }
+    .muted { fill: #71717a; }
+    .txt { fill: #d4d4d8; }
+    .acc { fill: #a5b4fc; }
+    .ok { fill: #4ade80; }
+    .amb { fill: #fbbf24; }
+    .line { opacity: 0; animation: reveal 9s linear infinite; }
+    .l1  { animation-delay: 0.2s; }
+    .l2  { animation-delay: 1.0s; }
+    .l3  { animation-delay: 1.8s; }
+    .l4  { animation-delay: 2.4s; }
+    .l5  { animation-delay: 3.0s; }
+    .l6  { animation-delay: 3.6s; }
+    .l7  { animation-delay: 4.6s; }
+    .l8  { animation-delay: 5.8s; }
+    .l9  { animation-delay: 6.8s; }
+    .l10 { animation-delay: 7.4s; }
+    @keyframes reveal {
+      0%, 100% { opacity: 0; }
+      2% { opacity: 1; }
+      92% { opacity: 1; }
+      96% { opacity: 0; }
+    }
+    .cursor { fill: #a5b4fc; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .line { animation: none; opacity: 1; }
+      .cursor { animation: none; }
+    }
+  </style>
+  <rect class="bg" x="0" y="0" width="720" height="340" rx="14"/>
+  <rect class="frame" x="0.5" y="0.5" width="719" height="339" rx="14"/>
+  <circle class="dot" cx="24" cy="24" r="5"/>
+  <circle class="dot" cx="44" cy="24" r="5"/>
+  <circle class="dot" cx="64" cy="24" r="5"/>
+
+  <g class="line l1"><text x="28" y="70"><tspan class="muted">you ›</tspan><tspan class="txt" dx="8">Design a Stripe-level SaaS landing page.</tspan></text></g>
+  <g class="line l2"><text x="28" y="102"><tspan class="acc">designos</tspan><tspan class="txt" dx="8">boot</tspan><tspan class="muted" dx="8">· kernel v1.6</tspan></text></g>
+  <g class="line l3"><text x="28" y="130"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">routed: landing-pages · hero · persuasion</tspan></text></g>
+  <g class="line l4"><text x="28" y="158"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">sector: industries/saas.md</tspan></text></g>
+  <g class="line l5"><text x="28" y="186"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">memory: brand.md · design.md loaded</tspan></text></g>
+  <g class="line l6"><text x="28" y="214"><tspan class="muted">→</tspan><tspan class="txt" dx="8">design loop: research → wireframe → ui …</tspan></text></g>
+  <g class="line l7"><text x="28" y="242"><tspan class="amb">▲</tspan><tspan class="txt" dx="8">review: contrast 4.2:1 on muted text —</tspan><tspan class="amb" dx="6">fixing</tspan></text></g>
+  <g class="line l8"><text x="28" y="270"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">re-scored: UI 96 · UX 97 · A11y 96 · Perf 97</tspan></text></g>
+  <g class="line l9"><text x="28" y="298"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">shipped · decisions → memory/design.md</tspan></text></g>
+  <g class="line l10"><rect class="cursor" x="28" y="312" width="9" height="16"/></g>
+</svg>

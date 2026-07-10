@@ -56,7 +56,7 @@ SEO — et un reviewer adversarial avec droit de veto.
 Une commande depuis votre projet :
 
 ```bash
-npx github:<you>/DesignOS init --agents --skills
+npx github:ardamoustafa1/DesignOS init --agents --skills
 ```
 
 Le système est copié dans `./DesignOS`, branché sur votre `CLAUDE.md`, et les 9
