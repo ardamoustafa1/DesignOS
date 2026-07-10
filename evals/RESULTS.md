@@ -4,7 +4,17 @@ Published runs of the benchmark. Methodology: `evals/README.md`. Raw fixtures li
 `evals/samples/`. Honesty rules apply to ourselves: what was measured is stated, what
 wasn't is labeled.
 
-## Run 001 — mechanical floor, brief B-Relay (2026-07-10)
+> ⚠️ **Read this before citing Run 001.** It is a **maintainer-authored sanity check**,
+> not independent validation. Both arms were written by the same person who wrote the
+> rules being tested. That's a legitimate way to verify the validators fire correctly
+> and to demonstrate the methodology — it is **not** evidence that DesignOS improves
+> *your* agent's *independent* output, because the "control" arm's flaws were written
+> deliberately, not produced by an unprompted agent. Treat the numbers below as "the
+> instrumentation works," not "the product is proven." **Run 002 — a real independent
+> run — is the one that would actually support the claim, and it doesn't exist yet.**
+> If you run one, PR it in, positive or negative result either way.
+
+## Run 001 — mechanical floor, brief B-Relay (2026-07-10) — MAINTAINER SELF-TEST
 
 **Scope:** the objective, script-measurable layer only (the validators). The judge arm
 (hierarchy, distinctiveness, fitness — `evals/judge-prompt.md`) requires independent
@@ -58,8 +68,11 @@ node validators/check-a11y-basics.js examples/showcase-relay.html
 node validators/contrast.js "#999999" "#ffffff"
 ```
 
-## Run 002 — your model, your judge (pending)
+## Run 002 — your model, your judge (pending — this is the one that matters)
 
-The judge-arm table is waiting for its first independent run:
-`evals/README.md` protocol + `evals/judge-prompt.md`, three judge passes, medians.
-Submit via PR with raw judge outputs attached.
+**This slot is empty. It is the most important unfilled gap in the whole repository.**
+Everything above this line is the maintainer checking their own homework; this is where
+someone else checks it. Protocol: `evals/README.md` + `evals/judge-prompt.md`, three
+judge passes, medians, raw outputs attached to the PR. A negative or mixed result is
+exactly as welcome as a positive one — see `evals/field-report-001.md` for what an
+honest negative-leaning finding looks like when we run the audit on ourselves.

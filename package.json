@@ -1,6 +1,6 @@
 {
   "name": "designos",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "The Design Intelligence Operating System for AI coding agents — Claude, Fable, Cursor, Copilot.",
   "author": "Arda Moustafa (https://github.com/ardamoustafa1)",
   "repository": {
@@ -44,6 +44,7 @@
     "ARCHITECTURE.md",
     "CHEATSHEET.md",
     "GLOSSARY.md",
+    "LIMITATIONS.md",
     "CHANGELOG.md",
     "LICENSE"
   ],

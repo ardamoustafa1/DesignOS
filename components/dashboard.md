@@ -11,7 +11,9 @@ someone actually asks — "is anything wrong?", "are we on track?", "what needs 
 
 ## Shell
 - Sidebar (240–280px) + topbar (search ⌘K, notifications, user) + content (`components/navigation.md`).
-- Content padding 24–32px; grid gap 16–24px; page title row with timeframe selector right-aligned (the timeframe governs *everything* below — make its scope visually clear).
+- Content padding 24–32px; grid gap 16–24px; page title row with timeframe selector at the
+  reading-end edge (`inset-inline-end`, not literally "right" — under RTL the sidebar and
+  this selector both flip to the opposite physical side: `foundations/rtl-i18n.md`).
 
 ## Widget taxonomy & specs
 

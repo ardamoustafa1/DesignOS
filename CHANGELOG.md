@@ -2,6 +2,36 @@
 
 All notable changes to DesignOS.
 
+## [1.7.0] — 2026-07-10
+
+The credibility wave: closing real gaps found by actually stress-testing the system,
+and being honest about what still isn't proven.
+
+### Added
+- **`foundations/rtl-i18n.md`** — a real coverage gap found via field-testing: logical
+  CSS properties, a mirrors-vs-doesn't-mirror reference table, bidi text handling,
+  non-Latin typography, `Intl`-based locale formatting, and an RTL testing protocol
+  added to the review loop's edge-attack list. Routed in the kernel.
+- **`evals/field-report-001.md`** — the first structural stress-test: a brief chosen to
+  exercise an untested module combination, the real gap it found (RTL had ~zero
+  coverage), the cross-reference gap found *after* fixing that (new modules are
+  invisible until routing AND downstream files both point to them), and what remains
+  honestly unresolved.
+- **`LIMITATIONS.md`** — a direct, un-hedged account of what isn't yet proven: the eval
+  is a maintainer self-test, the showcase is self-authored, scale has outrun field-
+  testing, there's no external validation yet, translations are unreviewed. Linked
+  prominently from the README rather than buried.
+
+### Changed
+- `evals/RESULTS.md` — Run 001 relabeled MAINTAINER SELF-TEST with an unmissable banner;
+  Run 002 (the independent run that would actually support the claim) reframed as the
+  single most important open gap, not a pending formality
+- README's results table softened from "the first published run" framing to an explicit
+  "sanity check, not independent validation" framing, with a direct link to fill Run 002
+- `components/tables.md`, `components/dashboard.md`, `components/navigation.md` — added
+  RTL subsections converting physical-position language (left/right) to logical
+  properties, cross-linked to the new module
+
 ## [1.6.0] — 2026-07-10
 
 The go-live wave: the repo goes public, the README earns its place as the front door,

@@ -56,6 +56,13 @@ Never: font-size 10px to "make it fit".
 - Real `<table>` semantics (`<thead> <th scope>`), caption or aria-label naming the table.
 - Sort buttons announce state (`aria-sort`); bulk bar focus-managed; row actions labelled per-row ("Delete invoice #1042", not "Delete").
 
+## RTL
+"Sticky first column" means sticky at the reading-start edge, not literally `left` —
+use `position: sticky; inset-inline-start: 0`. Column order follows `dir`; text
+alignment is `start`/`end`, not `left`/`right`. Numbers stay right-aligned via
+`text-align: end` in RTL contexts too (numerals read LTR internally even in RTL flow —
+`foundations/rtl-i18n.md`).
+
 ## Anti-patterns
 - Centered numbers · mixed date formats · vertical rules everywhere · 12 columns of equal width · actions column wider than data · tooltips hiding the only copy of critical info · checkbox selection with no bulk actions (why select?)
 

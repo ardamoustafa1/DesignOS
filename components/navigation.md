@@ -48,6 +48,12 @@ Background:  transparent over hero → solid/blur on scroll (see behavior)
 - Breadcrumbs for hierarchies ≥3 deep: 13–14px, `/` or `›` separators muted, current page unlinked, truncate middle on mobile.
 - Second-level nav: horizontal tab row under the header (marketing/apps) — underline-indicator tabs, scrollable on mobile with fade-edge cue.
 
+## RTL
+Logo stays reading-start (`inset-inline-start`), primary nav follows, CTA reading-end —
+the whole bar flips as a unit under `dir="rtl"` if built with logical properties and
+flex (no manual reordering needed). The `›` breadcrumb separator is directional — mirror
+it to `‹` under RTL, or use a script-neutral `/`. Full protocol: `foundations/rtl-i18n.md`.
+
 ## Anti-patterns
 - Nav items that are one-word mysteries ("Solutions", "Resources" hiding everything — if a dropdown has <3 strong items, promote or delete)
 - Logo not linking home; logo center on desktop marketing (breaks scan start)

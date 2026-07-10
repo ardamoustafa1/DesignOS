@@ -13,7 +13,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/ardamoustafa1/DesignOS?style=flat&color=4f46e5)](https://github.com/ardamoustafa1/DesignOS/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.6.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.7.0-blue.svg)](CHANGELOG.md)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-4f46e5.svg)](CONTRIBUTING.md)
@@ -23,6 +23,8 @@
 [**Get started**](#-quick-start) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
 [Türkçe](README.tr.md) · [中文](README.zh.md) · [Español](README.es.md) · [日本語](README.ja.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Português](README.pt.md)
+
+<sub>Translations are LLM-authored, unreviewed by native speakers — corrections welcome via PR.</sub>
 
 </div>
 
@@ -59,9 +61,12 @@ The agent stops thinking *"I'll make a button"* and starts thinking
 | Works with | one prompt | one framework | any agent, any stack — it's markdown |
 | Measurable | no | no | [validators + blind eval protocol](evals/README.md) |
 
-**Measured, not vibed** — the first published run ([full table](evals/RESULTS.md)):
+**We're trying to measure this, not just claim it.** Below is a maintainer-run sanity
+check — **not independent validation** ([full caveats](evals/RESULTS.md)) — showing the
+validators catch what they're supposed to catch. The eval slot that would actually prove
+the claim is open and unfilled; [run it and PR your numbers](evals/RESULTS.md#run-002--your-model-your-judge-pending--this-is-the-one-that-matters).
 
-| Mechanical check (same brief) | Without DesignOS | With DesignOS |
+| Mechanical check (same brief) | Default-style output | Through DesignOS |
 |---|---:|---:|
 | Token-drift findings | 43 | **0** |
 | A11y-basics findings | 6 | **0** |
@@ -135,7 +140,7 @@ DesignOS/
 │                          trend radar · originality
 ├── agents/              ← 9 specialist personas (Claude Code subagent-compatible)
 ├── foundations/         ← colors · typography · spacing · layout · grids · icons · a11y ·
-│                          design tokens · dark mode
+│                          design tokens · dark mode · RTL & i18n
 ├── components/          ← 20 modules: buttons · forms · cards · nav · footer · hero · dashboard ·
 │                          tables · modals · states · badges · tooltips · tabs · search & ⌘K ·
 │                          notifications · charts · code blocks · wizards · file upload · pickers
@@ -168,7 +173,8 @@ SEO — and an adversarial reviewer with veto power.
 
 Quick references: [**CHEATSHEET**](CHEATSHEET.md) — the whole system on one page ·
 [**GLOSSARY**](GLOSSARY.md) — the vocabulary A–Z ·
-[**The Anti-Pattern Museum**](museum/README.md) — 40+ design crimes, each with the rule that prevents it.
+[**The Anti-Pattern Museum**](museum/README.md) — 40+ design crimes, each with the rule that prevents it ·
+[**Field Report 001**](evals/field-report-001.md) — a real stress-test, a real gap found and fixed.
 
 ---
 
@@ -227,7 +233,9 @@ Under threshold → back to the loop with specific objections, *before you ever 
 - 🏗 **[Add your work to the Showcase](SHOWCASE.md)** — and take the
   [![badge](https://img.shields.io/badge/designed%20with-DesignOS-4f46e5)](SHOWCASE.md) with you
 - 🥊 **[Challenge a rule](CONTRIBUTING.md)** — every rule stands on evidence; bring yours
-- 🗺 **[Roadmap](ROADMAP.md)** · 🚀 **[Launch playbook](LAUNCH.md)** · 🛡 **[Security](SECURITY.md)** · 📰 **[Press kit](press/README.md)**
+- 🔍 **[Run the missing independent eval](evals/RESULTS.md)** — the single highest-value
+  contribution available right now
+- 🗺 **[Roadmap](ROADMAP.md)** · 🚀 **[Launch playbook](LAUNCH.md)** · 🛡 **[Security](SECURITY.md)** · 📰 **[Press kit](press/README.md)** · ⚠️ **[Known limitations](LIMITATIONS.md)**
 
 ## License
 
