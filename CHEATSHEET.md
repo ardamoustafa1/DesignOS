@@ -62,8 +62,9 @@ Keyboard-only completes everything?
 
 ## Commands
 ```
-npx designos init --agents --skills   install everything
-npx designos doctor                   health check
-npx designos export all               rules for Cursor/Copilot/Windsurf/Cline/Aider
+npx github:ardamoustafa1/DesignOS init --agents --skills   install everything (first time only)
+node DesignOS/bin/designos.js doctor                        health check
+node DesignOS/bin/designos.js export all                    rules for Cursor/Copilot/Windsurf/Cline/Aider
 /design-brief · /design-review · /design-score · /design-tokens
 ```
+⚠️ Never bare `npx designos …` — that name is taken by an unrelated npm package.

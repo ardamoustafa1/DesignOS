@@ -5,12 +5,16 @@ difference per tool is only *how the kernel gets loaded*. One command generates 
 right rules file for each:
 
 ```bash
-npx designos export all      # or: cursor · copilot · windsurf · cline · aider
+node DesignOS/bin/designos.js export all      # or: cursor · copilot · windsurf · cline · aider
 ```
+
+⚠️ Not `npx designos export` — that bare name resolves to an unrelated package on the
+npm registry, not this project. `init` copies the CLI to `DesignOS/bin/`; invoke it
+from there for every command after the first install.
 
 | Agent | Rules file generated | Modules loading | Subagents | Slash commands |
 |---|---|---|---|---|
-| **Claude Code** | native `@DesignOS/CLAUDE.md` import (via `init`) | on-demand (routing table) | ✓ real (`npx designos agents`) | ✓ (`npx designos skills`) |
+| **Claude Code** | native `@DesignOS/CLAUDE.md` import (via `init`) | on-demand (routing table) | ✓ real (`node DesignOS/bin/designos.js agents`) | ✓ (`node DesignOS/bin/designos.js skills`) |
 | **Cursor** | `.cursorrules` | agent reads `DesignOS/` files on request | persona-adopted | Cursor rules-triggered |
 | **GitHub Copilot** | `.github/copilot-instructions.md` | same | persona-adopted | — |
 | **Windsurf** | `.windsurfrules` | same | persona-adopted | — |

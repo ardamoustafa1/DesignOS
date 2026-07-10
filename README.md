@@ -13,7 +13,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/ardamoustafa1/DesignOS?style=flat&color=4f46e5)](https://github.com/ardamoustafa1/DesignOS/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.7.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.8.0-blue.svg)](CHANGELOG.md)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-4f46e5.svg)](CONTRIBUTING.md)
@@ -87,12 +87,15 @@ That copies the system into `./DesignOS`, wires `@DesignOS/CLAUDE.md` into your 
 adversarial reviewer…), and installs the slash commands:
 `/design-review` · `/design-score` · `/design-brief` · `/design-tokens`.
 
-**Not on Claude Code?** One export, every agent ([capability matrix](integrations/README.md)):
+**Not on Claude Code?** One export, every agent ([capability matrix](integrations/README.md)).
+`init` also copies the CLI itself to `DesignOS/bin/` — use that local path for every
+command after install (⚠️ **not** bare `npx designos …` — that name is already taken by
+an unrelated package on the npm registry):
 
 ```bash
-npx designos export all    # .cursorrules · copilot-instructions · .windsurfrules · .clinerules · CONVENTIONS.md
-npx designos doctor        # verify the install's health anytime
-npx designos audit src/    # run all validators against your code
+node DesignOS/bin/designos.js export all    # .cursorrules · copilot-instructions · .windsurfrules · .clinerules · CONVENTIONS.md
+node DesignOS/bin/designos.js doctor        # verify the install's health anytime
+node DesignOS/bin/designos.js audit src/    # run all validators against your code
 ```
 
 <details>

@@ -2,6 +2,40 @@
 
 All notable changes to DesignOS.
 
+## [1.8.0] — 2026-07-11
+
+The real-install wave: verified end-to-end against the live public repo for the first
+time, and fixed a launch-blocking discovery — a naming collision with an unrelated,
+already-published npm package.
+
+### Fixed — critical
+- **"designos" is already taken on the npm registry** by an unrelated package (v0.7.0,
+  a different Chinese-language design tool with its own skill system). This means bare
+  `npx designos <command>` — as every doc previously instructed for follow-up commands —
+  silently ran the wrong tool: it wrote to `~/.designos`, appended a `PATH` line to the
+  user's real `~/.zshrc`, and installed unrelated skills into `~/.claude/skills`,
+  `~/.codex/skills`, and `~/.cursor/skills-cursor`. Discovered by actually running the
+  documented commands end-to-end against the real public repo for the first time — not
+  found by static review, because it only manifests at runtime against the live registry.
+- `bin/designos.js`: `init` now copies the CLI itself into `DesignOS/bin/`, so every
+  command after the first install runs unambiguously via
+  `node DesignOS/bin/designos.js <command>` — never resolved through the npm registry
+  again. `doctor` gained a check confirming this local copy exists. All in-tool messages,
+  the `help` output, and error strings updated to the safe form with an explicit warning.
+- Removed `package.json` from the installer's skip-list (it was silently excluded from
+  the copy, which crashed `doctor`'s local version check with `ENOENT`).
+- Updated every actionable instruction across `README.md`, `CHEATSHEET.md`,
+  `integrations/README.md`, `skills/README.md`, `press/README.md` to the safe local-path
+  form; the one remaining first-install command (`npx github:ardamoustafa1/DesignOS init`)
+  was already safe since the `github:` specifier bypasses registry resolution entirely.
+
+### Verified
+- Ran `npx --yes github:ardamoustafa1/DesignOS init --agents --skills` for real against
+  the live public repo (not local files) for the first time since the CLAUDE.md-gitignore
+  fix — confirmed `DesignOS/CLAUDE.md` (167 lines), 9 agents, 4 slash commands, and 165
+  total files land correctly, then confirmed `doctor`, `export all`, and `audit` all work
+  end-to-end via the corrected local-path invocation.
+
 ## [1.7.0] — 2026-07-10
 
 The credibility wave: closing real gaps found by actually stress-testing the system,

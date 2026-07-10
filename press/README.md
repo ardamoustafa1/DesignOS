@@ -22,8 +22,8 @@ AI coding agents.*
 | What | Markdown-native design OS for AI coding agents |
 | License | MIT, zero runtime dependencies |
 | Size | 170+ files, ~9,500 lines of design judgment |
-| Install | `npx designos init --agents --skills` |
-| Works with | Claude Code (native) · Cursor · Copilot · Windsurf · Cline · Aider (via `designos export`) |
+| Install | `npx github:ardamoustafa1/DesignOS init --agents --skills` |
+| Works with | Claude Code (native) · Cursor · Copilot · Windsurf · Cline · Aider (via `export`) |
 | The gate | 6 dimensions, 95/100 threshold, accessibility failures cap at 60 |
 | Proof | 4-page showcase with per-decision walkthroughs; blind eval protocol included |
 

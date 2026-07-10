@@ -1,10 +1,13 @@
 # Skills — DesignOS Slash Commands
 
-Turnkey Claude Code slash commands. Install into a project:
+Turnkey Claude Code slash commands. Installed automatically by `init --skills`, or on
+their own (after `init` has already placed the CLI at `DesignOS/bin/`):
 
 ```bash
-npx designos skills        # copies these into .claude/commands/
+node DesignOS/bin/designos.js skills        # copies these into .claude/commands/
 ```
+
+⚠️ Not `npx designos skills` — that bare name belongs to an unrelated npm package.
 
 Then in any session:
 
