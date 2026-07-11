@@ -47,7 +47,7 @@ in your fork.
 - Hook: the before/after — same prompt, with/without DesignOS, two screenshots
 - Beats: the boot log → the 95 gate → the memory layer → the 24 sectors → the eval
   numbers → repo link. Tag relevant builders; don't beg for RTs
-- Turkish thread separately — kendi pazarında birinci elden ses getir
+- Turkish thread separately — be the first voice from your market; local context hits differently
 
 ## Phase 3 — The long tail (weeks 2–8)
 - [ ] Submit to lists: awesome-claude-code, awesome-cursorrules, awesome-ai-agents,

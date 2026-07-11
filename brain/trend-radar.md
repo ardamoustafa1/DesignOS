@@ -4,9 +4,11 @@ The Modernity dimension (`scoring/rubric.md`) demands work that reads *current-y
 professional*. This module is the radar: what signals fresh, what signals dated, what
 signals template — and the discipline for telling trend from principle.
 
-> **Maintenance note:** this file has a shelf life by design. The review loop's quarterly
-> health check (`loops/review-loop.md`) includes re-dating this radar; entries carry
-> their status so future updates edit judgments, not archaeology.
+> **Maintenance protocol:** this file has a shelf life by design.
+> - **When:** quarterly (or after any major industry shift — a new platform, a viral design trend, a tool discontinuation)
+> - **Who:** any contributor with evidence of the shift (link to real product/article, not opinion)
+> - **How:** edit the status on existing entries (CURRENT → DATED, etc.) or add new entries to the CURRENT shelf with a date stamp. PR format: `chore(trend-radar): update <entry> status to DATED — [reason]`
+> - **Review loop reference:** the quarterly health check in `loops/review-loop.md` includes re-dating this radar
 
 ## The three shelves (sort every visual idea)
 ```

@@ -8,7 +8,9 @@ welcome — rules for contributing rules:
 - **Sharpened judgments** — replacing a vague rule with a specific one, with reasoning
 - **Anti-pattern reports** — documented failure modes with the rule that prevents them
 - **Corrections** — outdated references, broken links, contradictions between modules
-- **Translations** — full-file translations under `i18n/<lang>/` mirroring the tree
+- **Translations** — full-file translations as `README.<lang>.md` in the repo root (e.g.
+  `README.fr.md`), mirroring the English README. A native-speaker review note is required
+  in the PR description if the translation is LLM-assisted.
 
 ## What we don't
 - Rules without reasons ("I prefer X" — every rule must cite a why a design director

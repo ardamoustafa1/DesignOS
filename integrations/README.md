@@ -8,6 +8,11 @@ right rules file for each:
 node DesignOS/bin/designos.js export all      # or: cursor · copilot · windsurf · cline · aider
 ```
 
+**Per-agent step-by-step guides:**
+- [cursor.md](cursor.md) — Cursor (AI code editor)
+- [copilot.md](copilot.md) — GitHub Copilot (VS Code, JetBrains, GitHub.com)
+- [windsurf-cline-aider.md](windsurf-cline-aider.md) — Windsurf, Cline, Aider
+
 ⚠️ Not `npx designos export` — that bare name resolves to an unrelated package on the
 npm registry, not this project. `init` copies the CLI to `DesignOS/bin/`; invoke it
 from there for every command after the first install.
