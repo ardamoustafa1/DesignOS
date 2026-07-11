@@ -1,53 +1,271 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="ui-monospace, 'SF Mono', Menlo, monospace" role="img" aria-label="Animated demo: a prompt enters, DesignOS boots, routes modules, catches a contrast failure, re-scores to 96+ and ships.">
-  <title>DesignOS boot sequence demo</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" font-family="ui-monospace,'SF Mono','Geist Mono',Menlo,monospace" role="img" aria-label="Animated demo: a prompt enters, DesignOS boots, routes modules, catches a contrast failure, re-scores to 96+ and ships.">
+  <title>DesignOS — boot sequence demo</title>
+  <defs>
+    <linearGradient id="g-border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="g-scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="48%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a5b4fc" stop-opacity="0.04"/>
+      <stop offset="52%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-inner">
+      <rect x="1" y="38" width="678" height="361" rx="0"/>
+    </clipPath>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
   <style>
-    .bg { fill: #101013; }
-    .frame { fill: none; stroke: rgba(255,255,255,0.12); stroke-width: 1; }
-    .dot { fill: rgba(255,255,255,0.15); }
-    text { font-size: 14px; }
-    .muted { fill: #71717a; }
-    .txt { fill: #d4d4d8; }
-    .acc { fill: #a5b4fc; }
-    .ok { fill: #4ade80; }
-    .amb { fill: #fbbf24; }
-    .line { opacity: 0; animation: reveal 9s linear infinite; }
-    .l1  { animation-delay: 0.2s; }
-    .l2  { animation-delay: 1.0s; }
-    .l3  { animation-delay: 1.8s; }
-    .l4  { animation-delay: 2.4s; }
-    .l5  { animation-delay: 3.0s; }
-    .l6  { animation-delay: 3.6s; }
-    .l7  { animation-delay: 4.6s; }
-    .l8  { animation-delay: 5.8s; }
-    .l9  { animation-delay: 6.8s; }
-    .l10 { animation-delay: 7.4s; }
-    @keyframes reveal {
-      0%, 100% { opacity: 0; }
-      2% { opacity: 1; }
-      92% { opacity: 1; }
-      96% { opacity: 0; }
+    .bg       { fill: #0d0d10; }
+    .titlebar { fill: #161619; }
+    .border   { fill: none; stroke: url(#g-border); stroke-width: 1; }
+    .border-t { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 1; }
+    .dot-r    { fill: #ff5f57; }
+    .dot-y    { fill: #ffbd2e; }
+    .dot-g    { fill: #28c840; }
+    .title-txt{ fill: #52525b; font-size: 11px; letter-spacing: 0.03em; }
+
+    /* colors */
+    .c-muted  { fill: #52525b; }
+    .c-dim    { fill: #71717a; }
+    .c-txt    { fill: #d4d4d8; }
+    .c-acc    { fill: #a5b4fc; filter: url(#glow); }
+    .c-ok     { fill: #4ade80; filter: url(#glow); }
+    .c-warn   { fill: #fbbf24; filter: url(#glow); }
+    .c-err    { fill: #f87171; }
+    .c-score  { fill: #e2e8f0; }
+    .c-label  { fill: #94a3b8; }
+
+    text { font-size: 12.5px; }
+
+    /* ── per-line reveal ── */
+    .line { opacity: 0; }
+    .ln-prompt  { animation: fade-in 16s 0.5s  linear infinite; }
+    .ln-boot    { animation: fade-in 16s 1.6s  linear infinite; }
+    .ln-r1      { animation: fade-in 16s 2.5s  linear infinite; }
+    .ln-r2      { animation: fade-in 16s 3.1s  linear infinite; }
+    .ln-r3      { animation: fade-in 16s 3.7s  linear infinite; }
+    .ln-mem     { animation: fade-in 16s 4.4s  linear infinite; }
+    .ln-loop    { animation: fade-in 16s 5.3s  linear infinite; }
+    .ln-sep     { animation: fade-in 16s 6.0s  linear infinite; }
+    .ln-rev     { animation: fade-in 16s 6.8s  linear infinite; }
+    .ln-fix     { animation: fade-in 16s 7.9s  linear infinite; }
+    .ln-sep2    { animation: fade-in 16s 8.8s  linear infinite; }
+    .ln-sc1     { animation: fade-in 16s 9.4s  linear infinite; }
+    .ln-sc2     { animation: fade-in 16s 9.9s  linear infinite; }
+    .ln-sep3    { animation: fade-in 16s 10.5s linear infinite; }
+    .ln-ship    { animation: fade-in 16s 11.0s linear infinite; }
+    .ln-mem2    { animation: fade-in 16s 11.6s linear infinite; }
+
+    @keyframes fade-in {
+      0%    { opacity: 0; }
+      1%    { opacity: 1; }
+      78%   { opacity: 1; }
+      82%   { opacity: 0; }
+      100%  { opacity: 0; }
     }
-    .cursor { fill: #a5b4fc; animation: blink 1s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
+
+    /* cursor blink */
+    .cursor { animation: blink 1s steps(1) infinite; fill: #a5b4fc; }
+    .cursor-active { animation: blink-on 16s 12.2s linear infinite; fill: #a5b4fc; }
+    @keyframes blink     { 0%,50%{opacity:1} 51%,100%{opacity:0} }
+    @keyframes blink-on  {
+      0%,74%{opacity:0} 75%{opacity:1} 75.5%{opacity:0} 76%{opacity:1} 76.5%{opacity:0}
+      77%{opacity:1} 78%{opacity:0} 79%{opacity:1} 80%{opacity:0} 81%,100%{opacity:0}
+    }
+
+    /* scanline sweep */
+    .scanline {
+      fill: url(#g-scan);
+      animation: scan 4s linear infinite;
+    }
+    @keyframes scan {
+      0%   { transform: translateY(-400px); }
+      100% { transform: translateY(800px);  }
+    }
+
+    /* score chip pulse */
+    .chip-pulse { animation: chip-appear 16s linear infinite; opacity: 0; }
+    .cp1 { animation-delay: 9.4s; }
+    .cp2 { animation-delay: 9.9s; }
+    @keyframes chip-appear {
+      0%,58%{opacity:0} 59%{opacity:1} 78%{opacity:1} 82%{opacity:0} 100%{opacity:0}
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .line { animation: none; opacity: 1; }
-      .cursor { animation: none; }
+      .line, .cursor, .cursor-active, .chip-pulse { animation: none; opacity: 1; }
+      .scanline { animation: none; opacity: 0; }
     }
   </style>
-  <rect class="bg" x="0" y="0" width="720" height="340" rx="14"/>
-  <rect class="frame" x="0.5" y="0.5" width="719" height="339" rx="14"/>
-  <circle class="dot" cx="24" cy="24" r="5"/>
-  <circle class="dot" cx="44" cy="24" r="5"/>
-  <circle class="dot" cx="64" cy="24" r="5"/>
 
-  <g class="line l1"><text x="28" y="70"><tspan class="muted">you ›</tspan><tspan class="txt" dx="8">Design a Stripe-level SaaS landing page.</tspan></text></g>
-  <g class="line l2"><text x="28" y="102"><tspan class="acc">designos</tspan><tspan class="txt" dx="8">boot</tspan><tspan class="muted" dx="8">· kernel v1.6</tspan></text></g>
-  <g class="line l3"><text x="28" y="130"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">routed: landing-pages · hero · persuasion</tspan></text></g>
-  <g class="line l4"><text x="28" y="158"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">sector: industries/saas.md</tspan></text></g>
-  <g class="line l5"><text x="28" y="186"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">memory: brand.md · design.md loaded</tspan></text></g>
-  <g class="line l6"><text x="28" y="214"><tspan class="muted">→</tspan><tspan class="txt" dx="8">design loop: research → wireframe → ui …</tspan></text></g>
-  <g class="line l7"><text x="28" y="242"><tspan class="amb">▲</tspan><tspan class="txt" dx="8">review: contrast 4.2:1 on muted text —</tspan><tspan class="amb" dx="6">fixing</tspan></text></g>
-  <g class="line l8"><text x="28" y="270"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">re-scored: UI 96 · UX 97 · A11y 96 · Perf 97</tspan></text></g>
-  <g class="line l9"><text x="28" y="298"><tspan class="ok">✓</tspan><tspan class="txt" dx="8">shipped · decisions → memory/design.md</tspan></text></g>
-  <g class="line l10"><rect class="cursor" x="28" y="312" width="9" height="16"/></g>
+  <!-- shell background -->
+  <rect class="bg" x="0" y="0" width="680" height="400" rx="12"/>
+
+  <!-- titlebar -->
+  <rect class="titlebar" x="0" y="0" width="680" height="38" rx="12"/>
+  <rect x="0" y="26" width="680" height="12" fill="#161619"/>
+  <line x1="0" y1="37.5" x2="680" y2="37.5" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- traffic lights -->
+  <circle class="dot-r" cx="22" cy="19" r="5.5"/>
+  <circle class="dot-y" cx="42" cy="19" r="5.5"/>
+  <circle class="dot-g" cx="62" cy="19" r="5.5"/>
+
+  <!-- window title -->
+  <text class="title-txt" x="340" y="23" text-anchor="middle">DesignOS — boot sequence</text>
+
+  <!-- outer border glow -->
+  <rect class="border" x="0.5" y="0.5" width="679" height="399" rx="12"/>
+
+  <!-- scanline effect -->
+  <rect class="scanline" x="0" y="0" width="680" height="80" clip-path="url(#clip-inner)"/>
+
+  <!-- ── CONTENT LINES ── -->
+
+  <!-- prompt input -->
+  <g class="line ln-prompt">
+    <text x="28" y="74">
+      <tspan class="c-muted">~/project</tspan>
+      <tspan class="c-dim" dx="6">›</tspan>
+      <tspan class="c-txt" dx="8">Design a Stripe-level SaaS landing page.</tspan>
+    </text>
+  </g>
+
+  <!-- kernel boot -->
+  <g class="line ln-boot">
+    <text x="28" y="100">
+      <tspan class="c-acc">⬡ designos</tspan>
+      <tspan class="c-dim" dx="6">booting kernel v1.9 ·</tspan>
+      <tspan class="c-txt" dx="4">loading intelligence…</tspan>
+    </text>
+  </g>
+
+  <!-- routing lines -->
+  <g class="line ln-r1">
+    <text x="28" y="124">
+      <tspan class="c-ok">✓</tspan>
+      <tspan class="c-label" dx="6">routed →</tspan>
+      <tspan class="c-txt" dx="4">patterns/landing-pages.md · components/hero.md</tspan>
+    </text>
+  </g>
+  <g class="line ln-r2">
+    <text x="28" y="144">
+      <tspan class="c-ok">✓</tspan>
+      <tspan class="c-label" dx="6">routed →</tspan>
+      <tspan class="c-txt" dx="4">psychology/persuasion.md · psychology/attention.md</tspan>
+    </text>
+  </g>
+  <g class="line ln-r3">
+    <text x="28" y="164">
+      <tspan class="c-ok">✓</tspan>
+      <tspan class="c-label" dx="6">sector  →</tspan>
+      <tspan class="c-acc" dx="4">industries/saas.md</tspan>
+      <tspan class="c-dim" dx="4">loaded</tspan>
+    </text>
+  </g>
+
+  <!-- memory -->
+  <g class="line ln-mem">
+    <text x="28" y="188">
+      <tspan class="c-ok">✓</tspan>
+      <tspan class="c-label" dx="6">memory  →</tspan>
+      <tspan class="c-txt" dx="4">brand.md · design.md · client.md</tspan>
+      <tspan class="c-dim" dx="4">restored</tspan>
+    </text>
+  </g>
+
+  <!-- loop -->
+  <g class="line ln-loop">
+    <text x="28" y="208">
+      <tspan class="c-dim">→</tspan>
+      <tspan class="c-label" dx="6">design loop:</tspan>
+      <tspan class="c-dim" dx="4">research → wireframe → ui → review → a11y → perf → seo</tspan>
+    </text>
+  </g>
+
+  <!-- separator -->
+  <g class="line ln-sep">
+    <line x1="28" y1="224" x2="652" y2="224" stroke="#27272a" stroke-width="1"/>
+  </g>
+
+  <!-- review catch -->
+  <g class="line ln-rev">
+    <text x="28" y="246">
+      <tspan class="c-warn">▲</tspan>
+      <tspan class="c-txt" dx="6">review:</tspan>
+      <tspan class="c-warn" dx="4">contrast 4.2:1</tspan>
+      <tspan class="c-dim" dx="4">on muted/surface — below 4.5 threshold</tspan>
+    </text>
+  </g>
+
+  <!-- auto-fix -->
+  <g class="line ln-fix">
+    <text x="28" y="266">
+      <tspan class="c-ok">✓</tspan>
+      <tspan class="c-txt" dx="6">auto-fixed →</tspan>
+      <tspan class="c-dim" dx="4">#9a9fa8 on #1b1e24 =</tspan>
+      <tspan class="c-ok" dx="4">6.28:1 ✓</tspan>
+      <tspan class="c-dim" dx="4">· loop cycle 2</tspan>
+    </text>
+  </g>
+
+  <!-- separator 2 -->
+  <g class="line ln-sep2">
+    <line x1="28" y1="280" x2="652" y2="280" stroke="#27272a" stroke-width="1"/>
+  </g>
+
+  <!-- scores row 1 -->
+  <g class="line ln-sc1">
+    <text x="28" y="302">
+      <tspan class="c-label">scored →</tspan>
+      <tspan class="c-ok" dx="8">UI 96</tspan>
+      <tspan class="c-dim" dx="4">·</tspan>
+      <tspan class="c-ok" dx="4">UX 97</tspan>
+      <tspan class="c-dim" dx="4">·</tspan>
+      <tspan class="c-ok" dx="4">A11y 96</tspan>
+      <tspan class="c-dim" dx="4">·</tspan>
+      <tspan class="c-ok" dx="4">Perf 97</tspan>
+      <tspan class="c-dim" dx="4">·</tspan>
+      <tspan class="c-ok" dx="4">Modernity 96</tspan>
+      <tspan class="c-dim" dx="4">·</tspan>
+      <tspan class="c-ok" dx="4">Conv 95</tspan>
+    </text>
+  </g>
+  <!-- scores row 2 -->
+  <g class="line ln-sc2">
+    <text x="28" y="320">
+      <tspan class="c-dim">         all ≥ 95 —</tspan>
+      <tspan class="c-ok" dx="4">threshold met</tspan>
+    </text>
+  </g>
+
+  <!-- separator 3 -->
+  <g class="line ln-sep3">
+    <line x1="28" y1="334" x2="652" y2="334" stroke="#27272a" stroke-width="1"/>
+  </g>
+
+  <!-- shipped -->
+  <g class="line ln-ship">
+    <text x="28" y="356">
+      <tspan class="c-ok" filter="url(#glow)">✓ SHIPPED</tspan>
+      <tspan class="c-dim" dx="8">· artifact + scorecard + rationale</tspan>
+    </text>
+  </g>
+
+  <!-- memory write -->
+  <g class="line ln-mem2">
+    <text x="28" y="376">
+      <tspan class="c-ok">✓</tspan>
+      <tspan class="c-dim" dx="6">decisions written → memory/design.md · memory/pages.md</tspan>
+    </text>
+  </g>
+
+  <!-- blinking cursor -->
+  <rect class="cursor-active" x="28" y="385" width="8" height="14" rx="1"/>
 </svg>

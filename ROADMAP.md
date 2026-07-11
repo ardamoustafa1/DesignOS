@@ -54,9 +54,10 @@ Propose additions via a module-proposal issue.
 - `LAUNCH.md` distribution playbook; 中文 + Español READMEs
 
 ## Building
-- Enable Pages in repo Settings (Source → GitHub Actions) so `pages.yml` goes live
+- Enable Pages in repo Settings (Source → GitHub Actions) so `pages.yml` goes live — workflow ready, **one-time Settings click required**
 - A recorded live-session GIF/video to sit alongside `press/demo.svg` on launch channels
-- Independent third-party eval runs submitted via PR to `evals/RESULTS.md`
+- Independent third-party eval runs submitted via PR to `evals/RESULTS.md` (Run 003)
+- GitHub Discussions — enable in repo Settings → Features → Discussions; add Q&A, Show and Tell, Ideas
 
 ## Planned
 - **Published eval results across major models** — the deltas as a living table

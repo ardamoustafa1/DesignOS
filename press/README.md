@@ -30,6 +30,7 @@ AI coding agents.*
 ## Assets
 
 - [logo.svg](logo.svg) — light backgrounds · [logo-dark.svg](logo-dark.svg) — dark backgrounds
+- **[social-preview.png](social-preview.png)** — 1280×640 GitHub social preview (upload at: repo Settings → Social preview → Edit → upload this file)
 - Usage: don't stretch, recolor, or set on busy imagery; clear space = the mark's height
 - Screenshots: render any `examples/showcase-*.html` or `website/index.html` at
   1440×900 — they're self-contained; or use the before/after demo

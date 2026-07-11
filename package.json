@@ -57,9 +57,20 @@
     "prompt-engineering",
     "cursor",
     "copilot",
+    "windsurf",
+    "cline",
+    "aider",
     "design-rules",
-    "accessibility"
+    "accessibility",
+    "design-intelligence",
+    "llm",
+    "openai"
   ],
+  "scripts": {
+    "validate": "bash validators/check-refs.sh && node validators/check-a11y-basics.js examples/ && node validators/check-a11y-basics.js website/ && node validators/check-drift.js examples/ && node validators/check-drift.js website/",
+    "doctor": "node bin/designos.js doctor",
+    "audit": "node bin/designos.js audit"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=18"

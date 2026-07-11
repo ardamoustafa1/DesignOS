@@ -2,6 +2,56 @@
 
 All notable changes to DesignOS.
 
+## [2.0.0] — 2026-07-11
+
+The launch-readiness wave: closing every gap the QA audit identified as blocking
+100k-star trajectory and production adoption. Six critical fixes shipped.
+
+### Added
+- **`press/social-preview.png`** — 1280×640 dark-theme GitHub/Twitter social preview
+  image (terminal boot log + scored UI preview + six dimension badges). Upload to
+  repo Settings → Social preview to activate link-share cards on all platforms.
+- **`DISCUSSIONS.md`** — setup guide for GitHub Discussions with category
+  recommendations and a ready-to-paste welcome post. Enable at Settings → Features.
+- **`evals/RESULTS.md` Run 002** — cross-file validator reproducibility run: all
+  four DesignOS showcase pages score zero findings across both `check-drift` and
+  `check-a11y-basics`; the control page's 43 drift and 6 a11y findings reproduce
+  exactly. Caveat stated: still maintainer-conducted; Run 003 slot opened for genuine
+  third-party independent validation.
+- **`package.json` scripts** — `npm run validate` (full validator suite), `npm run
+  doctor`, `npm run audit` — contributor-friendly one-command quality checks.
+- **`package.json` keywords expanded** — added `windsurf`, `cline`, `aider`,
+  `design-intelligence`, `llm`, `openai` for npm search discoverability.
+
+### Changed
+- **`press/demo.svg`** — complete rewrite of the animated terminal demo: per-line
+  typewriter reveal, scanline shimmer effect, blinking cursor, color-coded output
+  (green ✓, amber ▲, accent boot header), separator lines between phases, full
+  16-second loop showing prompt → boot → routing → memory → loop → contrast catch →
+  auto-fix → score → ship → memory write. 400px tall vs the previous 340px.
+- **`website/index.html`** — added full social meta suite: `og:image`, `og:type`,
+  `og:url`, `og:image:width/height/alt`, `twitter:card`, `twitter:image`, canonical
+  link. Link-share cards now render correctly on all platforms.
+- **`README.md`** — demo SVG width 680→720, alt text updated to describe the full
+  animated sequence.
+- **`.github/workflows/pages.yml`** — added `.nojekyll` creation step (bypasses
+  Jekyll so `_`-prefixed paths serve correctly); added live URL documentation in
+  comments so the one-time Settings step is unambiguous.
+- **`.gitignore`** — added `.designos-audit.log`, `.designos-journal.md`,
+  `screenshots/` (CI build artifacts should not land in git history).
+- **`SHOWCASE.md`** — community section CTA strengthened with numbered steps.
+- **`ROADMAP.md`** — Pages workflow status clarified; Discussions added to building
+  list; Run 003 terminology used consistently.
+- **`press/README.md`** — social-preview.png documented with Settings upload path.
+
+### What requires a manual action (cannot be automated)
+- **GitHub Pages:** Settings → Pages → Source: GitHub Actions → Save. Workflow
+  (`pages.yml`) is ready; the site deploys on the next push after this is enabled.
+- **Social preview upload:** Settings → Social preview → Edit → upload
+  `press/social-preview.png`.
+- **Discussions:** Settings → Features → Discussions (check). Then follow
+  `DISCUSSIONS.md` for category setup and the welcome pinned post.
+
 ## [1.9.0] — 2026-07-11
 
 The discoverability wave: closing the gap between "the docs exist" and "the docs are

@@ -28,7 +28,12 @@ Built something with it? Say so — every badge is a road back here:
 
 <!-- Add yours below this line — newest first. -->
 
-*Be the first — the PR template is two minutes of work.*
+> **Your project here.** Add one row via PR — it takes under 5 minutes:
+> 1. Fork → edit `SHOWCASE.md` → add your row (newest first, template below)
+> 2. Open the PR — it gets reviewed against the submission rules below
+> 3. Take the [`designed with DesignOS` badge](#the-badge) back to your repo
+
+*Waiting for the first external entry. The PR template is two minutes of work. Be the one who ships first.*
 
 ## Submission rules
 

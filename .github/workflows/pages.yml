@@ -1,6 +1,11 @@
 # Deploys the repo to GitHub Pages so website/, examples/, and the demo assets are live.
 # ONE-TIME SETUP: repo Settings → Pages → Source: "GitHub Actions". Then every push to
 # main publishes to https://ardamoustafa1.github.io/DesignOS/
+#
+# After enabling Pages in Settings, the site will be live at:
+#   https://ardamoustafa1.github.io/DesignOS/website/         ← project site
+#   https://ardamoustafa1.github.io/DesignOS/examples/        ← showcase gallery
+#   https://ardamoustafa1.github.io/DesignOS/website/before-after.html ← before/after demo
 name: Deploy Pages
 on:
   push:
@@ -21,6 +26,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # Bypass Jekyll so files starting with _ are served as-is
+      - name: Create .nojekyll
+        run: touch .nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

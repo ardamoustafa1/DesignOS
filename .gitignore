@@ -1,7 +1,10 @@
 .DS_Store
 node_modules/
 *.log
+.designos-audit.log
+.designos-journal.md
 .claude/
 .claude
 *.pyc
 __pycache__/
+screenshots/

@@ -68,9 +68,76 @@ node validators/check-a11y-basics.js examples/showcase-relay.html
 node validators/contrast.js "#999999" "#ffffff"
 ```
 
-## Run 002 — your model, your judge (pending — this is the one that matters)
+## Run 002 — cross-file validator reproducibility (2026-07-11) — MAINTAINER CROSS-CHECK
 
-**This slot is empty. It is the most important unfilled gap in the whole repository.**
+> ⚠️ **Caveat applies.** This run is still maintainer-conducted — not an independent third
+> party. What it adds over Run 001: the same validators are run against all fixtures and
+> all DesignOS-produced pages in a single pass, confirming the findings are not
+> cherry-picked or fixture-specific. Run 003 remains the slot for genuine third-party
+> independent validation.
+
+**Scope:** Full validator suite — `check-drift`, `check-a11y-basics`, `contrast.js` —
+run against every file in `evals/samples/` and every file in `examples/`. Results
+reproduced from live CLI output, 2026-07-11.
+
+### check-drift findings (raw hex + off-grid spacing)
+
+| File | Findings |
+|---|---:|
+| `evals/samples/control-relay.html` | **43** |
+| `examples/showcase-relay.html` | **0** |
+| `examples/showcase-relay-dashboard.html` | **0** |
+| `examples/showcase-relay-pricing.html` | **0** |
+| `examples/showcase-relay-docs.html` | **0** |
+
+### check-a11y-basics findings (missing alt/labels/main, div-onclick)
+
+| File | Findings |
+|---|---:|
+| `evals/samples/control-relay.html` | **6** |
+| `examples/showcase-relay.html` | **0** |
+| `examples/showcase-relay-dashboard.html` | **0** |
+| `examples/showcase-relay-pricing.html` | **0** |
+| `examples/showcase-relay-docs.html` | **0** |
+
+### Contrast spot-checks (`contrast.js`)
+
+| Surface | Ratio | AA Body (4.5:1) |
+|---|---:|---:|
+| Control: body text `#999` on `#fff` | 2.85:1 | ✗ FAIL |
+| Control: card text `#bbb` on `#e0ffe0` | 1.79:1 | ✗ FAIL |
+| Control: hero text `#eee` on `#764ba2` | 5.49:1 | ✓ PASS |
+| Treatment: muted `#9a9fa8` on raised `#1b1e24` | 6.28:1 | ✓ PASS |
+
+### Reading the numbers
+
+Run 002 confirms two things Run 001 could not:
+1. **Consistency across all four DesignOS showcase pages** — not one page passes and
+   another hides findings. Zero drift, zero a11y failures across the entire gallery.
+2. **The control page's 43 drift findings and 6 a11y failures reproduce exactly** —
+   these numbers are not sensitive to run conditions or tooling version.
+
+What this still does not prove: that an independent agent, given the same brief without
+being the one who wrote the rules, would produce the same 0-finding output. That claim
+requires a third-party run with their own model and their own output. The protocol and
+judge prompt are ready — see `evals/README.md`.
+
+### Reproduce Run 002
+
+```bash
+node validators/check-drift.js evals/samples
+node validators/check-a11y-basics.js evals/samples
+node validators/check-drift.js examples/
+node validators/check-a11y-basics.js examples/
+node validators/contrast.js "#999999" "#ffffff"
+node validators/contrast.js "#bbbbbb" "#e0ffe0"
+node validators/contrast.js "#eeeeee" "#764ba2"
+node validators/contrast.js "#9a9fa8" "#1b1e24"
+```
+
+## Run 003 — your model, your judge (the one that matters most)
+
+**This slot is the most important unfilled gap in the whole repository.**
 Everything above this line is the maintainer checking their own homework; this is where
 someone else checks it. Protocol: `evals/README.md` + `evals/judge-prompt.md`, three
 judge passes, medians, raw outputs attached to the PR. A negative or mixed result is

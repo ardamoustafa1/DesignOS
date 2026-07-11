@@ -20,7 +20,7 @@
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-4f46e5.svg)](CONTRIBUTING.md)
 
-<img src="press/demo.svg" alt="Demo: a prompt enters, DesignOS boots, routes modules, catches a contrast failure, re-scores to 96+ and ships." width="680">
+<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v1.9 → routes landing-pages/hero/persuasion/saas modules → loads project memory → runs design loop → catches contrast 4.2:1 below threshold → auto-fixes to 6.28:1 → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
 
 [**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Architecture](ARCHITECTURE.md) · [Full setup guide](GETTING-STARTED.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
