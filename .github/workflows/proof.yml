@@ -1,0 +1,96 @@
+# DesignOS live-proof pipeline.
+#
+# Renders the site + showcase in a real headless browser on every push and pull
+# request, so "it actually works" is a checkable CI status, not a claim. This
+# workflow NEVER commits back to the repo (screenshots are build artifacts only) —
+# it must never introduce a bot account as a repository contributor.
+name: Live proof
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  render-and-screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Real CLI install end-to-end, against this exact checkout — the same command
+      # every README/GETTING-STARTED.md instruction tells a real user to run.
+      - name: Run the real installer end-to-end
+        run: |
+          mkdir -p /tmp/designos-ci-install
+          cd /tmp/designos-ci-install
+          node ${{ github.workspace }}/bin/designos.js init --agents --skills
+          node DesignOS/bin/designos.js doctor
+          echo "---"
+          test -f DesignOS/CLAUDE.md || (echo "::error::CLAUDE.md missing after install" && exit 1)
+          test -d .claude/agents || (echo "::error::agents not installed" && exit 1)
+          test -d .claude/commands || (echo "::error::slash commands not installed" && exit 1)
+
+      # Same battery every contributor can run locally: validators/README.md.
+      - name: Run all validators
+        run: |
+          ./validators/check-refs.sh
+          node validators/check-a11y-basics.js website/
+          node validators/check-a11y-basics.js examples/
+          node validators/check-drift.js website/
+          node validators/check-drift.js examples/
+
+      - name: Install a headless browser (CI-only, not a project dependency)
+        run: npx --yes playwright install --with-deps chromium
+
+      - name: Serve the repo
+        run: |
+          python3 -m http.server 4173 &
+          echo $! > server.pid
+          sleep 1
+
+      - name: Screenshot the site + showcase (visual proof, uploaded as an artifact)
+        run: |
+          node - <<'NODE'
+          const { chromium } = require('playwright');
+          const pages = [
+            ['website-index', '/website/index.html'],
+            ['website-before-after', '/website/before-after.html'],
+            ['showcase-landing', '/examples/showcase-relay.html'],
+            ['showcase-dashboard', '/examples/showcase-relay-dashboard.html'],
+            ['showcase-pricing', '/examples/showcase-relay-pricing.html'],
+            ['showcase-docs', '/examples/showcase-relay-docs.html'],
+          ];
+          (async () => {
+            const browser = await chromium.launch();
+            const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+            const errors = [];
+            page.on('console', (msg) => { if (msg.type() === 'error') errors.push(`${msg.location().url}: ${msg.text()}`); });
+            page.on('pageerror', (err) => errors.push(String(err)));
+            for (const [name, path] of pages) {
+              await page.goto(`http://localhost:4173${path}`, { waitUntil: 'networkidle' });
+              await page.screenshot({ path: `screenshots/${name}.png`, fullPage: false });
+            }
+            await browser.close();
+            if (errors.length) {
+              console.error('Console errors found:\n' + errors.join('\n'));
+              process.exit(1);
+            }
+            console.log(`Captured ${pages.length} pages, zero console errors.`);
+          })();
+          NODE
+
+      - name: Stop the server
+        if: always()
+        run: kill "$(cat server.pid)" 2>/dev/null || true
+
+      - name: Upload screenshots as a build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: designos-live-proof-${{ github.sha }}
+          path: screenshots/
+          retention-days: 90

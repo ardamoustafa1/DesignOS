@@ -2,6 +2,34 @@
 
 All notable changes to DesignOS.
 
+## [1.9.0] — 2026-07-11
+
+The discoverability wave: closing the gap between "the docs exist" and "the docs are
+findable," plus CI that proves the install and every page actually work — continuously,
+not just at the moment someone happened to test it.
+
+### Added
+- **`.github/workflows/proof.yml`** — a CI pipeline that runs the real installer
+  end-to-end on every push and PR, then renders the website and all four showcase
+  pages in a headless browser, screenshots them as build artifacts, and fails the
+  build on any console error. Deliberately never commits back to the repository —
+  proof lives in Actions artifacts and a status badge, not in git history.
+- **README** — new "🔍 How It Works" section with the real control-flow diagram
+  (brief → kernel boot → route → design loop → review engine → deliver), linked to
+  `ARCHITECTURE.md` for the full version; `GETTING-STARTED.md` and `ARCHITECTURE.md`
+  are now linked from the top nav row (previously present but undiscoverable from
+  the README); a "Live proof" section explaining the CI pipeline as an
+  always-fresh alternative to a video demo, since CI can't go stale the way a
+  recorded video does.
+- Two new status badges (Live proof, Validate) at the top of the README.
+
+### Changed
+- **`GETTING-STARTED.md`** rewritten — the primary install path is now the verified
+  `npx github:ardamoustafa1/DesignOS init` command (previously showed manual `cp -r`
+  as the recommended path, predating the CLI); added a "verify the install" step
+  using `doctor`, a "going deeper" section linking architecture/cheatsheet/glossary,
+  and a troubleshooting entry for the npm name-collision issue.
+
 ## [1.8.0] — 2026-07-11
 
 The real-install wave: verified end-to-end against the live public repo for the first

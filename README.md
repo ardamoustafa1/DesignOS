@@ -13,14 +13,16 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/ardamoustafa1/DesignOS?style=flat&color=4f46e5)](https://github.com/ardamoustafa1/DesignOS/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.8.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.9.0-blue.svg)](CHANGELOG.md)
+[![Live proof](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)
+[![Validate](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-4f46e5.svg)](CONTRIBUTING.md)
 
 <img src="press/demo.svg" alt="Demo: a prompt enters, DesignOS boots, routes modules, catches a contrast failure, re-scores to 96+ and ships." width="680">
 
-[**Get started**](#-quick-start) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
+[**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Architecture](ARCHITECTURE.md) · [Full setup guide](GETTING-STARTED.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
 [Türkçe](README.tr.md) · [中文](README.zh.md) · [Español](README.es.md) · [日本語](README.ja.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Português](README.pt.md)
 
@@ -121,6 +123,40 @@ Then just ask:
 Watch it route `industries/cybersecurity.md` + `patterns/pricing.md` +
 `psychology/persuasion.md`, run the loop, and refuse to hand you anything under 95.
 
+Full walkthrough (verification steps, memory model, steering commands, troubleshooting):
+**[GETTING-STARTED.md](GETTING-STARTED.md)**.
+
+---
+
+## 🔍 How It Works
+
+DesignOS isn't a black box — every stage is observable in the agent's own output.
+One brief moves through a fixed control flow ([full diagram + module anatomy →
+ARCHITECTURE.md](ARCHITECTURE.md)):
+
+```
+your brief
+    │
+    ▼
+KERNEL BOOTS (CLAUDE.md)  ──▶  ROUTES by task + sector  ──▶  LOADS only the relevant
+    │                              (routing table)             modules + project memory
+    ▼
+DESIGN LOOP  research → wireframe → ui → review → a11y → perf → seo → refactor
+    │
+    ▼
+REVIEW ENGINE  scores 6 dimensions against a written rubric
+    │
+    ├── any dimension < 95 ──▶ specific objections feed back into the loop (max 3 cycles)
+    │
+    ▼ all ≥ 95
+DELIVERED: artifact + scorecard + rationale + memory written for next time
+```
+
+That loop is not a diagram we're asking you to trust — it's the exact process in
+[`examples/saas-landing-walkthrough.md`](examples/saas-landing-walkthrough.md), including
+two real failures the loop caught and fixed before delivery. Want to watch it run on a
+brief you pick? [GETTING-STARTED.md](GETTING-STARTED.md) step 3 tells you what to look for.
+
 ---
 
 ## The Five Layers
@@ -200,6 +236,12 @@ miss, an unverified metric, a CSS cascade bug found at 577px).
 
 🌐 **[The website](website/index.html)** — designed by the system it documents.
 View source: every value resolves to a token.
+
+🤖 **[The live-proof pipeline](.github/workflows/proof.yml)** ([latest run](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)) —
+runs the real installer end-to-end on every push, then renders the site and every
+showcase page in a headless browser and checks for console errors. It's CI, not a
+video — but unlike a video it can't go stale: if a change breaks the install or a page
+throws an error, the badge at the top of this file turns red the same day.
 
 ---
 
