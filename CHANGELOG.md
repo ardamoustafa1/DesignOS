@@ -2,6 +2,20 @@
 
 All notable changes to DesignOS.
 
+## [2.0.2] — 2026-07-11
+
+Cosmetic polish pass on the README header and website branding — no functional or
+content changes.
+
+### Changed
+- Website favicon and navbar logo switched to a cropped 3D mark (removed transparent
+  border padding so it renders full-size and sharp at small sizes) and reused as the
+  `apple-touch-icon`.
+- Website showcase grid centered into a single-row 4-column layout on wide viewports;
+  added an executive attribution line to the footer.
+- README logo and CI badges realigned to the project's signature emerald-green
+  gradient for visual consistency with the website.
+
 ## [2.0.1] — 2026-07-11
 
 QA audit fixes — a full pass verifying every claim in v2.0.0 against the *live* repo
