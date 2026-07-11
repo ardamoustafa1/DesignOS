@@ -2,6 +2,48 @@
 
 All notable changes to DesignOS.
 
+## [2.0.1] — 2026-07-11
+
+QA audit fixes — a full pass verifying every claim in v2.0.0 against the *live* repo
+(GitHub API, real Actions run logs, actual rendered pages), not just the local working
+tree. Found and fixed real, user-facing bugs; documented here per the same honesty
+standard the project holds its own design output to.
+
+### Fixed
+- **`.github/workflows/proof.yml` was failing on every run** (verified via the GitHub
+  Actions API, not assumed): `npx playwright install --with-deps chromium` only
+  fetches the browser binary, it does not install the `playwright` npm package —
+  `require('playwright')` in the screenshot step had nothing to resolve. Added a real
+  `npm install --no-save playwright@latest` step; verified locally end-to-end against
+  all 6 pages (website index, before/after, and all 4 showcase pages) with zero
+  console errors before pushing.
+- **`package.json` version was out of sync with the shipped CHANGELOG entry** — the
+  v2.0.0 release commit landed without bumping `"version"` or the README badge; both
+  said 1.9.0 while CHANGELOG said 2.0.0. Synced.
+- **`press/social-preview.png` was a JPEG with a `.png` extension**, and declared as
+  1280×640 in `website/index.html`'s Open Graph tags while actually being 1024×1024 —
+  link-share cards would have rendered with the wrong aspect ratio on every platform.
+  Converted to real PNG; `og:image:width/height` corrected to the actual dimensions.
+- **`ENTERPRISE.md` documented a git-tag-pinning example (`#v2.0.0`) for a tag that
+  did not exist** on the remote — copy-pasting it would 404. A real `v2.0.0` tag was
+  cut and pushed so the documented example actually works.
+- Stale `kernel v1.9` text in `press/demo.svg` and its README alt text (version had
+  moved to 2.0 without updating the animated demo's own boot line).
+- `DISCUSSIONS.md`, `ENTERPRISE.md`, `GOVERNANCE.md` were unreachable from README's
+  Community section (only linked from the top nav) — added.
+- `LAUNCH.md`'s pre-flight checklist still referenced the pre-correction 1280×640
+  social image spec.
+
+### Verified, not just assumed
+- Fetched the live repo via the GitHub REST API: confirmed public, confirmed
+  `stargazers_count`/`contributors` reflect single-maintainer attribution, confirmed
+  GitHub Pages is live at the documented URL (HTTP 200), confirmed `DesignOS validate`
+  workflow passes on real runs.
+- No secrets, tokens, or `.env` files found in a full repository scan.
+- `npm test` (13 CLI unit tests + 58-module structural check) and
+  `npm run check:links` both run clean or with only expected/template false-positives
+  (documented, not silently ignored).
+
 ## [2.0.0] — 2026-07-11
 
 The launch-readiness wave: closing every gap the QA audit identified as blocking

@@ -44,11 +44,17 @@ jobs:
           node validators/check-drift.js website/
           node validators/check-drift.js examples/
 
-      - name: Install a headless browser (CI-only, not a project dependency)
-        run: npx --yes playwright install --with-deps chromium
+      # `npx playwright install` only fetches the browser BINARY — the `playwright`
+      # npm package itself still has to be installed for `require('playwright')` to
+      # resolve. --no-save keeps this out of package.json (still zero project deps).
+      - name: Install Playwright (CI-only, not a project dependency)
+        run: |
+          npm install --no-save playwright@latest
+          npx playwright install --with-deps chromium
 
       - name: Serve the repo
         run: |
+          mkdir -p screenshots
           python3 -m http.server 4173 &
           echo $! > server.pid
           sleep 1

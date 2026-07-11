@@ -13,14 +13,14 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/ardamoustafa1/DesignOS?style=flat&color=4f46e5)](https://github.com/ardamoustafa1/DesignOS/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.9.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.0.1-blue.svg)](CHANGELOG.md)
 [![Live proof](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)
 [![Validate](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-4f46e5.svg)](CONTRIBUTING.md)
 
-<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v1.9 → routes landing-pages/hero/persuasion/saas modules → loads project memory → runs design loop → catches contrast 4.2:1 below threshold → auto-fixes to 6.28:1 → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
+<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.0 → routes landing-pages/hero/persuasion/saas modules → loads project memory → runs design loop → catches contrast 4.2:1 below threshold → auto-fixes to 6.28:1 → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
 
 [**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Architecture](ARCHITECTURE.md) · [Enterprise guide](ENTERPRISE.md) · [Governance](GOVERNANCE.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
@@ -280,7 +280,8 @@ Under threshold → back to the loop with specific objections, *before you ever 
 - 🥊 **[Challenge a rule](CONTRIBUTING.md)** — every rule stands on evidence; bring yours
 - 🔍 **[Run the missing independent eval](evals/RESULTS.md)** — the single highest-value
   contribution available right now
-- 🗺 **[Roadmap](ROADMAP.md)** · 🚀 **[Launch playbook](LAUNCH.md)** · 🛡 **[Security](SECURITY.md)** · 📰 **[Press kit](press/README.md)** · ⚠️ **[Known limitations](LIMITATIONS.md)**
+- 💬 **[Discussions](DISCUSSIONS.md)** — questions, show-and-tell, module ideas (setup guide; enable in repo Settings)
+- 🗺 **[Roadmap](ROADMAP.md)** · 🚀 **[Launch playbook](LAUNCH.md)** · 🛡 **[Security](SECURITY.md)** · 📰 **[Press kit](press/README.md)** · ⚠️ **[Known limitations](LIMITATIONS.md)** · 🏢 **[Enterprise](ENTERPRISE.md)** · ⚖️ **[Governance](GOVERNANCE.md)**
 
 ## License
 

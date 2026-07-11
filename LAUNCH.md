@@ -11,7 +11,8 @@ in your fork.
 - [ ] Repo polish: description line ("Design intelligence OS for AI coding agents —
       one prompt in, Stripe-grade UI out"), topics (`claude`, `claude-code`, `cursor`,
       `ai-agents`, `design-systems`, `prompt-engineering`, `ui-design`), social-preview
-      image uploaded (1280×640 — dark, the boot-log terminal as the visual)
+      image uploaded — `press/social-preview.png` (1024×1024, dark, the boot-log
+      terminal as the visual) is ready at Settings → Social preview → Edit
 - [ ] Run the full validator suite + click every README link
 - [ ] **Record the 30-second GIF** (the single highest-leverage asset): screen capture
       of a real session — prompt in → boot log → modules routing → scorecard → the
