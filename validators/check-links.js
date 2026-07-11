@@ -26,10 +26,11 @@ const FAST   = args.includes('--fast');
 const TARGET = args.find(a => !a.startsWith('--')) || '.';
 const TIMEOUT_MS = FAST ? 3000 : 8000;
 
-// Hosts known to block HEAD / return 403 for bots — skip them to avoid false positives
+// Hosts known to block HEAD / return 403 for bots or placeholder/local dev URLs — skip them to avoid false positives
 const SKIP_HOSTS = new Set([
   'twitter.com', 'x.com', 'linkedin.com', 'facebook.com',
   'fonts.googleapis.com', 'fonts.gstatic.com',
+  'live-url', 'localhost', '127.0.0.1', 'example.com',
 ]);
 
 // Collect all .md files under target
@@ -67,7 +68,9 @@ function checkUrl(rawUrl) {
     let parsed;
     try { parsed = new URL(rawUrl); } catch { return resolve({ ok: false, status: 'invalid-url' }); }
 
-    if (SKIP_HOSTS.has(parsed.hostname)) return resolve({ ok: true, status: 'skipped' });
+    if (SKIP_HOSTS.has(parsed.hostname) || (parsed.hostname === 'github.com' && parsed.pathname.endsWith('/stargazers'))) {
+      return resolve({ ok: true, status: 'skipped' });
+    }
 
     const lib = parsed.protocol === 'https:' ? https : http;
     const options = {
