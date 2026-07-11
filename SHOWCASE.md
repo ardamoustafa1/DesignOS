@@ -8,10 +8,10 @@ website.
 
 Built something with it? Say so — every badge is a road back here:
 
-[![Designed with DesignOS](https://img.shields.io/badge/designed%20with-DesignOS-4f46e5?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDJsOC42IDV2MTBMMTIgMjJsLTguNi01VjdMMTIgMnoiLz48L3N2Zz4=)](https://github.com/ardamoustafa1/DesignOS)
+[![Designed with DesignOS](https://img.shields.io/badge/designed%20with-DesignOS-10b981?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDJsOC42IDV2MTBMMTIgMjJsLTguNi01VjdMMTIgMnoiLz48L3N2Zz4=)](https://github.com/ardamoustafa1/DesignOS)
 
 ```markdown
-[![Designed with DesignOS](https://img.shields.io/badge/designed%20with-DesignOS-4f46e5)](https://github.com/ardamoustafa1/DesignOS)
+[![Designed with DesignOS](https://img.shields.io/badge/designed%20with-DesignOS-10b981)](https://github.com/ardamoustafa1/DesignOS)
 ```
 
 ## Official showcase (by the maintainers)
