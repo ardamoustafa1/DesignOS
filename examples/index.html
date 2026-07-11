@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DesignOS — Live Proof Gallery</title>
+<meta name="description" content="Four production-grade surfaces produced by DesignOS for Relay: Marketing Landing, SaaS Dashboard, Pricing & FAQ, and Technical Documentation.">
+<link rel="canonical" href="https://ardamoustafa1.github.io/DesignOS/examples/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ardamoustafa1.github.io/DesignOS/examples/">
+<meta property="og:title" content="DesignOS — Live Proof Gallery">
+<meta property="og:description" content="Four production-grade surfaces produced by DesignOS: Marketing Landing, App Dashboard, Pricing & FAQ, and Docs.">
+<meta property="og:image" content="https://ardamoustafa1.github.io/DesignOS/press/social-preview.png">
+<meta name="color-scheme" content="dark light">
+<style>
+:root {
+  --bg: #0c0c0e; --surface: #141418; --surface-hover: #1c1c22;
+  --text: #f4f4f5; --muted: #a1a1aa; --dim: #71717a;
+  --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.18);
+  --accent: #6366f1; --accent-hover: #818cf8; --accent-subtle: rgba(99,102,241,0.12);
+  --green: #4ade80; --amber: #fbbf24;
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  padding: 48px 24px;
+}
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+header {
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 40px;
+}
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  transition: color 150ms;
+}
+.nav-back:hover { color: var(--text); }
+h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 680px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 24px;
+}
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 200ms, transform 200ms, background 200ms;
+}
+.card:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+}
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-hover);
+  background: var(--accent-subtle);
+  padding: 4px 8px;
+  border-radius: 99px;
+  border: 1px solid rgba(99,102,241,0.25);
+}
+.score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--green);
+  background: rgba(74,222,128,0.1);
+  padding: 4px 8px;
+  border-radius: 99px;
+}
+.card h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+.modules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.mod-code {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--dim);
+  background: rgba(255,255,255,0.04);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+footer {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--dim);
+  font-size: 14px;
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="../website/" class="nav-back">← Back to DesignOS</a>
+    <h1>The Proof Gallery</h1>
+    <p class="subtitle">Four production-grade surfaces produced by DesignOS for Relay (incident management SaaS). Zero token drift, 100% WCAG 2.2 AA compliant, zero raw hex values.</p>
+  </header>
+
+  <main class="grid">
+    <a href="showcase-relay.html" class="card">
+      <div>
+        <div class="card-top">
+          <span class="tag">Marketing Surface</span>
+          <span class="score-pill">✓ 96/100 All Dimensions</span>
+        </div>
+        <h2>Relay — SaaS Landing Page →</h2>
+        <p>Stripe-level SaaS landing page with hero, interactive architecture diagram, persuasion proof stack, feature highlights, and conversion-optimized CTAs.</p>
+      </div>
+      <div class="modules">
+        <span class="mod-code">patterns/landing-pages.md</span>
+        <span class="mod-code">components/hero.md</span>
+        <span class="mod-code">psychology/persuasion.md</span>
+      </div>
+    </a>
+
+    <a href="showcase-relay-dashboard.html" class="card">
+      <div>
+        <div class="card-top">
+          <span class="tag">App Shell / Data UI</span>
+          <span class="score-pill">✓ 97/100 All Dimensions</span>
+        </div>
+        <h2>Relay — Incident Dashboard →</h2>
+        <p>Real-time telemetry shell with tabular-nums metrics cards, live filter tabs, accessible data tables, status badges, and incident timeline inspection.</p>
+      </div>
+      <div class="modules">
+        <span class="mod-code">components/dashboard.md</span>
+        <span class="mod-code">components/tables.md</span>
+        <span class="mod-code">components/badges-chips.md</span>
+      </div>
+    </a>
+
+    <a href="showcase-relay-pricing.html" class="card">
+      <div>
+        <div class="card-top">
+          <span class="tag">Conversion Surface</span>
+          <span class="score-pill">✓ 96/100 All Dimensions</span>
+        </div>
+        <h2>Relay — Pricing & Honesty FAQ →</h2>
+        <p>Three-tier pricing table with layout-stable annual/monthly billing toggle, transparent limits, and collapsible FAQ adhering to honesty doctrine.</p>
+      </div>
+      <div class="modules">
+        <span class="mod-code">patterns/pricing.md</span>
+        <span class="mod-code">components/tabs-accordions.md</span>
+        <span class="mod-code">honesty doctrine</span>
+      </div>
+    </a>
+
+    <a href="showcase-relay-docs.html" class="card">
+      <div>
+        <div class="card-top">
+          <span class="tag">Documentation UI</span>
+          <span class="score-pill">✓ 97/100 All Dimensions</span>
+        </div>
+        <h2>Relay — Developer Documentation →</h2>
+        <p>Three-panel developer docs shell with responsive sidebar navigation, copyable clean terminal code blocks, and keyboard-accessible table of contents.</p>
+      </div>
+      <div class="modules">
+        <span class="mod-code">patterns/docs-sites.md</span>
+        <span class="mod-code">components/code-blocks.md</span>
+        <span class="mod-code">foundations/typography.md</span>
+      </div>
+    </a>
+  </main>
+
+  <footer>
+    <span>DesignOS v2.0.0 — Open Source (MIT)</span>
+    <div>
+      <a href="../website/before-after.html">Before/After Demo</a> · 
+      <a href="../evals/RESULTS.md">Measured Results</a> · 
+      <a href="https://github.com/ardamoustafa1/DesignOS">GitHub</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
