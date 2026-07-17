@@ -44,7 +44,7 @@ Do not skip steps. If a module doesn't exist for the task, say so — do not imp
 | Buttons / CTA | `components/buttons.md`, `psychology/persuasion.md` |
 | Forms, auth, signup | `components/forms.md`, `patterns/onboarding-auth.md`, `psychology/cognition.md` |
 | Multi-step flows, wizards, checkout steps | `components/steppers-wizards.md`, `components/forms.md` |
-| Dashboard, admin, app UI | `components/dashboard.md`, `components/tables.md`, `foundations/grids.md` |
+| Dashboard, admin, app UI | `components/dashboard.md`, `components/tables.md`, `components/data-density.md`, `foundations/grids.md` |
 | Charts, data visualization | `components/charts.md`, `components/dashboard.md` |
 | Pricing page | `patterns/pricing.md`, `psychology/persuasion.md` |
 | Comparison / "vs" / alternatives page | `patterns/comparison-pages.md`, `psychology/trust.md` |
@@ -66,21 +66,22 @@ Do not skip steps. If a module doesn't exist for the task, say so — do not imp
 | Badges, chips, tags, status | `components/badges-chips.md` |
 | Tooltips, popovers, inline help | `components/tooltips-popovers.md` |
 | Tabs, accordions, segmented controls | `components/tabs-accordions.md` |
-| Search, ⌘K command palette | `components/search-command.md` |
+| Search, ⌘K command palette | `components/search-command.md`, `components/command-palette.md` |
 | Notifications, activity, inbox | `components/notifications.md` |
 | Code blocks, technical content | `components/code-blocks.md` |
 | File upload, import flows | `components/file-upload.md` |
 | Date/time/color pickers, advanced selects | `components/pickers.md` |
 | Modals, dialogs, toasts | `components/modals.md` |
-| Empty / loading / error UI | `components/states.md` |
+| Empty / loading / error UI | `components/states.md`, `components/loading-skeletons.md` |
 | Accessibility question | `foundations/accessibility.md`, `checklists/accessibility.md` |
 | SEO | `checklists/seo.md`, agent `agents/seo.md` |
 | "Make it feel premium / modern" | `brain/quality-bar.md`, `brain/reference-library.md`, `brain/trend-radar.md` |
 | "Make it distinctive / not generic" | `brain/originality.md`, `brain/reference-library.md` |
-| Trust, credibility concerns | `psychology/trust.md`, `psychology/persuasion.md` |
+| Trust, credibility concerns | `psychology/trust.md`, `psychology/persuasion.md`, `PROOF_STANDARD.md` |
 | Tone, emotion, personality | `psychology/emotional-design.md` |
 | Streaks, points, badges, engagement mechanics | `psychology/gamification.md`, `psychology/habit-retention.md` |
 | Retention, re-engagement, churn | `psychology/habit-retention.md`, `components/notifications.md` |
+| Product tours, activation, first-run education | `patterns/product-tours.md`, `patterns/onboarding-auth.md`, `components/states.md` |
 | Mobile app — iOS | `native/ios.md`, `native/app-patterns.md`, `native/motion-gestures.md` |
 | Mobile app — Android | `native/android.md`, `native/app-patterns.md`, `native/motion-gestures.md` |
 | React Native / Expo / Flutter | both platform files + `native/app-patterns.md` |
@@ -138,7 +139,7 @@ Minimum viable panel for any shipped page: **ui-designer → accessibility → r
 
 ---
 
-## 5. The Ten Questions
+## 5. The Eleven Questions
 
 Before finalizing any screen, answer all ten. If any answer is weak, return to the loop.
 
@@ -152,6 +153,7 @@ Before finalizing any screen, answer all ten. If any answer is weak, return to t
 8. Does it hold at 375px without compromise?
 9. Would Lighthouse score 95+ on this as written?
 10. Can a keyboard-only user complete every task on this screen?
+11. Is every proof claim real enough to satisfy `PROOF_STANDARD.md`?
 
 ---
 

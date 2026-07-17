@@ -5,6 +5,9 @@ must show the artifact, the design decision, and what changed.
 
 ## Submission Format
 
+Use [`TEMPLATE.md`](TEMPLATE.md) when the case study is more than a short showcase
+entry. Keep the shorter format below for early submissions.
+
 ```markdown
 ## Project Name
 

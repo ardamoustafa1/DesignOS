@@ -182,20 +182,20 @@ DesignOS/
 ├── agents/              ← 9 specialist personas (Claude Code subagent-compatible)
 ├── foundations/         ← colors · typography · spacing · layout · grids · icons · a11y ·
 │                          design tokens · dark mode · RTL & i18n
-├── components/          ← 20 modules: buttons · forms · cards · nav · footer · hero · dashboard ·
-│                          tables · modals · states · badges · tooltips · tabs · search & ⌘K ·
-│                          notifications · charts · code blocks · wizards · file upload · pickers
+├── components/          ← buttons · forms · cards · nav · footer · hero · dashboard · data density ·
+│                          tables · modals · states · skeletons · badges · tooltips · tabs ·
+│                          search & ⌘K · notifications · charts · code blocks · wizards · upload · pickers
 ├── psychology/          ← attention · persuasion · cognition · color · trust · emotion ·
 │                          gamification · habit & retention
 ├── motion/              ← principles · micro-interactions · page & scroll · performance
-├── patterns/            ← 12: landing · pricing · onboarding · docs · blog · changelog ·
+├── patterns/            ← landing · pricing · onboarding · product tours · docs · blog · changelog ·
 │                          settings · comparison · company pages · email · print · AI/chat UI
 ├── native/              ← iOS · Android · app patterns · motion & gestures
 ├── industries/          ← 24 sector playbooks (SaaS → AI → Fintech → … → Manufacturing)
 ├── loops/ workflows/    ← the processes: design/review/refactor loops, 4 workflows
-├── scoring/ checklists/ ← the rubric + report template; 5 quality gates
+├── scoring/ checklists/ ← rubric · scorecards · failure taxonomy · 5 quality gates
 ├── validators/          ← zero-dep CI scripts: refs · token drift · contrast · a11y basics
-├── evals/               ← blind benchmark protocol + 10 briefs + published RESULTS
+├── evals/               ← blind benchmark protocol + independent-run guide + published RESULTS
 ├── memory/              ← per-project memory protocol + 7 templates
 ├── skills/              ← the /design-* slash commands
 ├── integrations/        ← one export, every agent
@@ -218,10 +218,12 @@ SEO — and an adversarial reviewer with veto power.
 
 Quick references: [**CHEATSHEET**](CHEATSHEET.md) — the whole system on one page ·
 [**GLOSSARY**](GLOSSARY.md) — the vocabulary A–Z ·
+[**Proof Standard**](PROOF_STANDARD.md) — what claims are allowed to say ·
 [**The Anti-Pattern Museum**](museum/README.md) — 40+ design crimes, each with the rule that prevents it ·
 [**Field Report 001**](evals/field-report-001.md) — a real stress-test, a real gap found and fixed.
 
 Adoption surfaces: [**Real project playbook**](playbooks/real-project-adoption.md) ·
+[**Team rollout**](playbooks/team-rollout.md) · [**PR review workflow**](playbooks/pr-review-workflow.md) ·
 [**Agent adapters**](adapters/README.md) · [**Starters**](starter/README.md) ·
 [**Recipes**](recipes/README.md) · [**Case studies**](case-studies/README.md).
 
@@ -244,6 +246,8 @@ miss, an unverified metric, a CSS cascade bug found at 577px).
 [neutral judge prompt](evals/judge-prompt.md), validators as the objective floor, a
 [run report template](evals/RUN_TEMPLATE.md), and [published results](evals/RESULTS.md)
 with the caveats stated plainly.
+External runs should follow the [independent run guide](evals/independent-run-guide.md)
+and the [Run 003 call](evals/run-003-call-for-evals.md).
 
 🌐 **[The website](website/index.html)** — designed by the system it documents.
 View source: every value resolves to a token.

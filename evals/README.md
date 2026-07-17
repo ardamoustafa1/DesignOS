@@ -58,7 +58,9 @@ standard we ask of contributors.
 
 ## Submitting Run 003+
 
-Use [`RUN_TEMPLATE.md`](RUN_TEMPLATE.md) for independent reports. The template is
+Use [`independent-run-guide.md`](independent-run-guide.md) and
+[`RUN_TEMPLATE.md`](RUN_TEMPLATE.md) for independent reports. The template is
 intentionally specific: model versions, agent surface, prompt text, raw validator output,
-judge-pass medians, and negative findings all belong in the PR. A mixed or negative run
-is useful evidence; a perfect-looking report with no raw outputs is marketing, not eval.
+judge-pass medians, and negative findings all belong in the PR. Run 003 is tracked in
+[`run-003-call-for-evals.md`](run-003-call-for-evals.md). A mixed or negative run is
+useful evidence; a perfect-looking report with no raw outputs is marketing, not eval.

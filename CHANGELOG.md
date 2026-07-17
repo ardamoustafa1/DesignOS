@@ -8,6 +8,10 @@ The productization wave: DesignOS becomes something teams can run in PRs, not on
 something agents can read.
 
 ### Added
+- **Proof and adoption expansion:** `PROOF_STANDARD.md`, independent eval guidance,
+  Run 003 call, case-study template, team rollout, and PR review workflow.
+- **New quality modules:** command palettes, data density, loading skeletons, product
+  tours, failure taxonomy, and scorecard examples.
 - **`designos review <file-or-dir>`** — deterministic design-risk scoring for UI files:
   a11y tells, contrast risk, fake proof, token drift, missing states, and a
   six-dimension gate score. Supports `--json`, `--min`, and `--no-fail` for CI.
