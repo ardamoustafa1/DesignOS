@@ -29,6 +29,9 @@ something agents can read.
   prompt for taste, signature vehicles, product artifacts, proof quality, hierarchy,
   and state depth; `brain/taste-ladder.md` and `workflows/premium-redesign.md` define
   the 70→99 upgrade path.
+- **First-pass hardening:** `workflows/final-gate.md` makes deterministic CLI review
+  mandatory before any 95+/100/SHIP claim, and the kernel/brief/score commands now forbid
+  unsupported score claims and unsourced hard compliance language.
 - **`designos review <file-or-dir>`** — deterministic design-risk scoring for UI files:
   a11y tells, contrast risk, fake proof, token drift, missing states, and a
   six-dimension gate score. Supports `--json`, `--min`, and `--no-fail` for CI.

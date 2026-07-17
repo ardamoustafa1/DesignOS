@@ -31,6 +31,33 @@ Anything below L3 must not be described as independently proven.
 - Cherry-picked model outputs without the failed attempts.
 - Private claims that cannot be inspected.
 
+## Hard Trust Claims
+
+These words are regulated trust objects, not decorative copy:
+
+- SOC 2 / SOC2
+- ISO 27001
+- HIPAA compliant
+- PCI DSS
+- GDPR compliant
+- FIPS validated
+- audited, certified, independently verified
+
+They may appear only when the artifact links to, names, or clearly references a real
+source. If the page is fictional, a starter, a demo, or a first-pass concept, replace
+them with neutral procurement language:
+
+- security packet available
+- DPA available
+- subprocessor list
+- architecture notes
+- security questionnaire
+- BAA support
+- export controls
+
+Never place hard compliance claims in a footer, trust strip, pricing table, testimonial,
+or badge as a way to make a fictional product feel credible.
+
 ## Review Rule
 
 When adding a growth claim to README, launch copy, or press material, ask:

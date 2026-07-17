@@ -110,6 +110,11 @@ node DesignOS/bin/designos.js eval cursor-pricing --agent Cursor --brief B-001
 node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url https://example.com
 ```
 
+**Important:** agent self-scores are not accepted as final. A page is only "95+" or
+"100/100" when `designos review <target>` says so. If the review fails, run
+`designos review <target> --fix-prompt --no-fail`, paste the prompt back into your agent,
+and iterate until the deterministic gate is clean.
+
 <details>
 <summary><b>Manual install (no npx)</b></summary>
 
@@ -202,7 +207,7 @@ DesignOS/
 │                          settings · comparison · company pages · email · print · AI/chat UI
 ├── native/              ← iOS · Android · app patterns · motion & gestures
 ├── industries/          ← 24 sector playbooks (SaaS → AI → Fintech → … → Manufacturing)
-├── loops/ workflows/    ← the processes: design/review/refactor loops, 4 workflows
+├── loops/ workflows/    ← the processes: design/review/refactor loops, production workflows
 ├── scoring/ checklists/ ← rubric · scorecards · failure taxonomy · 5 quality gates
 ├── validators/          ← zero-dep CI scripts: refs · token drift · contrast · a11y basics
 ├── evals/               ← blind benchmark protocol + independent-run guide + published RESULTS

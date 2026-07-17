@@ -437,6 +437,7 @@ function printFixPrompt(report, min) {
   console.log('Rules:');
   console.log('- Do not trust the agent self-score; the final pass is this deterministic review output.');
   console.log('- Do not invent customers, testimonials, certifications, usage counts, awards, urgency, or compliance claims.');
+  console.log('- Do not claim SOC2, ISO 27001, HIPAA, PCI, GDPR, FIPS, audited, or certified unless a real source is linked.');
   console.log('- Keep visual direction unless a finding directly contradicts it.\n');
   console.log('Required fixes:');
   if (!report.findings.length) {
@@ -522,6 +523,7 @@ function report(target, args) {
     '```text',
     `Fix these DesignOS review findings, then rerun: ${RUN} review ${target} --min ${min}`,
     'Do not invent metrics, customers, testimonials, badges, urgency, or compliance claims.',
+    'Do not claim SOC2, ISO 27001, HIPAA, PCI, GDPR, FIPS, audited, or certified unless a real source is linked.',
     ...reviewReport.findings.map((f, i) => `${i + 1}. ${fixAdviceFor(f)}`),
     reviewReport.findings.length ? '' : 'No deterministic findings remain. Run human/model review for taste and fit.',
     '```',
@@ -665,6 +667,7 @@ function elevate(target, args) {
     '## Forbidden Moves',
     '',
     '- Do not add fake logos, fake testimonials, invented usage counts, invented compliance badges, or unsourced awards.',
+    '- Do not claim SOC2, ISO 27001, HIPAA, PCI, GDPR, FIPS, audited, or certified unless a real source is linked.',
     '- Do not hide layout bugs with `overflow-x: hidden`.',
     '- Do not add decoration that does not explain the product, data, workflow, or brand belief.',
     '- Do not make every section the same card/grid rhythm.',
@@ -752,12 +755,23 @@ function brief(args) {
     '- State which DesignOS modules you are loading and why.',
     '- Run research -> wireframe -> UI -> review -> accessibility -> performance -> refactor.',
     '- Score UI Craft, UX Flow, Accessibility, Performance, Modernity, and Conversion.',
+    '- Run the deterministic final gate before claiming a score: review, elevate, visual, then report.',
     '- Redo any dimension under 95 before delivery.',
+    '- Do not claim 95+, 100/100, zero findings, or SHIP unless the deterministic review output proves it.',
     '- Do not invent metrics, customers, testimonials, badges, urgency, or compliance claims.',
+    '- Do not claim SOC2, ISO 27001, HIPAA, PCI, GDPR, FIPS, audited, or certified unless a real source is linked.',
     '- Write durable decisions to memory/ after delivery.',
     '',
+    'Final gate commands:',
+    '```bash',
+    'node DesignOS/bin/designos.js review <target-file-or-dir> --min 95',
+    'node DesignOS/bin/designos.js elevate <target-file-or-dir> --no-fail',
+    'node DesignOS/bin/designos.js visual <target-html-file> --no-fail',
+    'node DesignOS/bin/designos.js report <target-file-or-dir> --min 95 --no-fail',
+    '```',
+    '',
     'Deliverable:',
-    '- A production-ready artifact plus scorecard, key decisions, and remaining risks.',
+    '- A production-ready artifact plus deterministic gate output, scorecard, key decisions, and remaining risks.',
   ].join('\n');
   const outPath = argValue(args, '--out', '');
   if (outPath) {

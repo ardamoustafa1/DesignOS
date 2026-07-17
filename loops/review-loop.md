@@ -22,11 +22,19 @@ project memory decisions. On legacy work with no memory: reverse-engineer the im
 system (scales, tokens, patterns actually in use) and record it in `memory/design.md` —
 the review's first gift is documentation.
 
-### 3. Instant-fail sweep (`brain/quality-bar.md`)
+### 3. Instant-fail sweep (`brain/quality-bar.md` + `workflows/final-gate.md`)
 The eight instant-fails, checked mechanically first. Grep-able ones get grepped
 (`outline: none`, raw hex, magic numbers, missing alt/labels); visual ones get inspected
 per breakpoint/theme. Hits cap dimensions at 60 immediately — this ordering stops
 wasted fine-grading on failing work.
+
+If the target is a local file or directory and `DesignOS/bin/designos.js` exists, run:
+
+```bash
+node DesignOS/bin/designos.js review <target> --json --no-fail
+```
+
+Use that output as the deterministic finding list. Do not replace it with model judgment.
 
 ### 4. Six-dimension audit
 `agents/reviewer.md` protocol against `scoring/rubric.md`, with the edge-attack doctrine:
@@ -58,6 +66,8 @@ On living projects, run quarterly or pre-launch:
 ## Discipline
 - Reviewer never fixes what it grades in the same breath — findings first, fixes as a
   separate pass (self-graded fixes inherit the author's blind spots).
+- Reviewer never reports 95+, 100/100, zero findings, or SHIP from memory. Those words
+  require pasted or summarized deterministic gate output when files exist.
 - Honesty over completeness theater: "not checked" is a valid and required label.
 - The report's summary must be readable by the *client*, findings by the *builder* —
   two altitudes, one document (`scoring/report-template.md` handles this).

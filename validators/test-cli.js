@@ -197,6 +197,7 @@ test('bin/designos.js contains npm-collision warning', () => {
   assert.ok(src.includes('eval <slug>'), 'eval command missing from help text');
   assert.ok(src.includes('case <slug>'), 'case command missing from help text');
   assert.ok(src.includes('--interactive'), 'interactive brief help text missing');
+  assert.ok(src.includes('SOC2, ISO 27001'), 'hard compliance warning missing');
 });
 
 test('bin/designos.js exports no external dependencies', () => {
@@ -364,6 +365,8 @@ test('brief --interactive: accepts piped answers line by line', () => {
   assert.ok(result.stdout.includes('Design a pricing for cybersecurity.'));
   assert.ok(result.stdout.includes('Audience: security teams.'));
   assert.ok(result.stdout.includes('Primary goal: book demos.'));
+  assert.ok(result.stdout.includes('Final gate commands:'), 'brief should include deterministic final gate commands');
+  assert.ok(result.stdout.includes('Do not claim 95+, 100/100'), 'brief should forbid unsupported score claims');
 });
 
 // ── SUMMARY ───────────────────────────────────────────────────────────────────

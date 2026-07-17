@@ -7,6 +7,8 @@ work and is paid to find what's wrong with it:
 2. Instant-fail sweep (`DesignOS/brain/quality-bar.md`) — any hit caps its dimension
    at 60. Run `DesignOS/validators/check-drift.js` and `check-a11y-basics.js` where
    file targets exist; report their counts in the verification log.
+   If `DesignOS/bin/designos.js` exists, run the deterministic review too:
+   `node DesignOS/bin/designos.js review <target> --json --no-fail`.
 3. Grade all six dimensions per `DesignOS/scoring/rubric.md` — scores come from the
    bands, never from overall impression. Between two scores, choose the lower and say why.
 4. Output the filled `DesignOS/scoring/report-template.md`: client-readable summary,
@@ -16,3 +18,6 @@ work and is paid to find what's wrong with it:
 
 Log the scores line in `memory/notes.md`. You may not be talked up — re-scores happen
 through fixed work, not negotiation.
+
+Do not claim 95+, 100/100, zero findings, or SHIP unless the deterministic review was
+actually run. If it could not run, label the output SELF-REVIEW ONLY.

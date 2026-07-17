@@ -12,9 +12,13 @@ This file is the kernel. It tells you **what to load, in what order, and what st
 
 1. **Never design from memory alone.** Load the relevant DesignOS modules before deciding.
 2. **Never ship without the Design Loop.** Every deliverable passes `loops/design-loop.md`.
-3. **Never ship below threshold.** Score with `scoring/rubric.md`; any dimension < 95 → iterate.
+3. **Never ship below threshold.** Score with `scoring/rubric.md` AND the deterministic
+   Final Gate (`workflows/final-gate.md`) when files exist; any dimension < 95 → iterate.
 4. **Never lose context.** Maintain the project memory files defined in `memory/README.md`.
 5. **Never decorate — decide.** Every visual choice must have a reason a design director could defend.
+6. **Never invent the score.** Self-scoring is a draft. Do not claim "95+", "100/100",
+   "zero findings", or "SHIP" unless `designos review` actually ran or you clearly label
+   the score as a self-review.
 
 ---
 
@@ -28,7 +32,8 @@ This file is the kernel. It tells you **what to load, in what order, and what st
 5. LOAD   memory/ project files             → client, brand, prior decisions
 6. RUN    loops/design-loop.md              → produce the work
 7. SCORE  scoring/rubric.md                 → self-review, iterate under 95
-8. WRITE  memory/ updates                   → record decisions and open items
+8. GATE   workflows/final-gate.md           → run deterministic review if files exist
+9. WRITE  memory/ updates                   → record decisions and open items
 ```
 
 Do not skip steps. If a module doesn't exist for the task, say so — do not improvise silently.
@@ -92,6 +97,7 @@ Do not skip steps. If a module doesn't exist for the task, say so — do not imp
 | Full project kickoff | `workflows/new-project.md` |
 | Redesign of existing UI | `workflows/redesign.md` |
 | Single component request | `workflows/component-request.md` |
+| Final delivery, "ship", score, 95+, 100/100 | `workflows/final-gate.md`, `scoring/rubric.md`, `PROOF_STANDARD.md` |
 
 **Sector routing:** SaaS → `industries/saas.md` · AI product → `industries/ai-startup.md` ·
 Fintech → `industries/fintech.md` · Healthcare → `industries/healthcare.md` ·
@@ -134,6 +140,8 @@ Minimum viable panel for any shipped page: **ui-designer → accessibility → r
 - **Performance:** Lighthouse ≥ 95 all categories. LCP < 2.0s, CLS < 0.1, INP < 200ms. System font fallbacks, `font-display: swap`, no layout shift from images (always set dimensions).
 - **Responsive:** Design at 375 / 768 / 1024 / 1440. No horizontal scroll, ever. Touch targets ≥ 44×44px.
 - **Semantics:** One `<h1>`. Landmarks (`header/nav/main/footer`). Buttons are `<button>`, links are `<a>`.
+- **Interactive semantics:** Never attach click behavior to `<div>` or `<span>`. Use a
+  semantic control, preserve keyboard access, and expose state with ARIA when needed.
 - **Type scale:** From `foundations/typography.md` — never invent ad-hoc sizes.
 - **Spacing:** 4px base grid from `foundations/spacing.md` — no magic numbers.
 - **Color:** Tokens from `foundations/colors.md` — never raw hex sprinkled in components.
@@ -141,9 +149,9 @@ Minimum viable panel for any shipped page: **ui-designer → accessibility → r
 
 ---
 
-## 5. The Eleven Questions
+## 5. The Twelve Questions
 
-Before finalizing any screen, answer all ten. If any answer is weak, return to the loop.
+Before finalizing any screen, answer all twelve. If any answer is weak, return to the loop.
 
 1. Where does the eye land first — and is that where it should land?
 2. Is the primary CTA unmistakable within 3 seconds?
@@ -156,6 +164,7 @@ Before finalizing any screen, answer all ten. If any answer is weak, return to t
 9. Would Lighthouse score 95+ on this as written?
 10. Can a keyboard-only user complete every task on this screen?
 11. Is every proof claim real enough to satisfy `PROOF_STANDARD.md`?
+12. Did the deterministic Final Gate run, and is the reported score copied from that output?
 
 ---
 
@@ -164,7 +173,8 @@ Before finalizing any screen, answer all ten. If any answer is weak, return to t
 Every deliverable includes:
 
 1. **The artifact** — production-grade code (HTML/CSS/JS or the project's stack), complete states (loading/error/empty/success), no TODOs, no placeholders.
-2. **The scorecard** — the filled `scoring/report-template.md`.
+2. **The scorecard** — the filled `scoring/report-template.md` plus deterministic
+   `designos review` result when a file target exists.
 3. **The rationale** — 3–6 bullet decisions with the module that justified each.
 4. **Memory updates** — appended to the project's `memory/` files.
 

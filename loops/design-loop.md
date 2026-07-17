@@ -6,7 +6,7 @@ a site gets the full ceremony), but **no stage is skipped**, because each stage 
 catch a class of failure the others can't see.
 
 ```
-RESEARCH → WIREFRAME → UI → REVIEW → ACCESSIBILITY → PERFORMANCE → SEO → REFACTOR → SCORE
+RESEARCH → WIREFRAME → UI → REVIEW → ACCESSIBILITY → PERFORMANCE → SEO → REFACTOR → SCORE → FINAL GATE
    │                                                                            │
    └────────────────────── findings loop back (max 3 cycles) ◄─────────────────┘
 ```
@@ -57,6 +57,20 @@ Six-dimension adversarial grading (`scoring/rubric.md`). ≥95 all dimensions �
 (with the Output Contract: artifact + scorecard + rationale + memory writes — kernel §6).
 <95 → findings return to the appropriate stage.
 
+### 10. FINAL GATE (owner: frontend-engineer + reviewer)
+Run `workflows/final-gate.md`. If a file target exists, run the deterministic CLI review
+before claiming any score:
+
+```bash
+node DesignOS/bin/designos.js review <target> --min 95
+node DesignOS/bin/designos.js elevate <target> --no-fail
+node DesignOS/bin/designos.js visual <target> --no-fail
+```
+
+The score shown to the user must come from the CLI output, not from the author model's
+self-assessment. If the CLI cannot run, label the score as **self-review only** and do
+not write SHIP/100/zero-findings language.
+
 ## Loop discipline
 - **Findings route to their stage:** a hierarchy problem goes back to WIREFRAME, not to a
   CSS patch. Fixing structure problems at the surface layer is how designs die of a thousand
@@ -73,8 +87,9 @@ Six-dimension adversarial grading (`scoring/rubric.md`). ≥95 all dimensions �
 ## Scaled ceremony
 | Scope | How the loop runs |
 |---|---|
-| Full site/page | every stage explicit, agents distinct (spawn if available) |
+| Full site/page | every stage explicit, agents distinct (spawn if available), deterministic final gate required |
 | Section/component | stages compressed but *answered* — one pass may cover 1–2 in a paragraph, 5–9 as checklist runs |
 | Tweak to existing | stages 1–2 inherited from memory; 3 → 5/6 → 9 minimum |
 
-The compressed form still ends with a score. Unscored work does not ship.
+The compressed form still ends with a score. Unscored work does not ship. Self-scored
+work without the final gate is not considered scored.

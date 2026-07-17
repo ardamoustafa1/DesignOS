@@ -27,6 +27,11 @@ node DesignOS/bin/designos.js elevate src/ --no-fail
 node DesignOS/bin/designos.js report src/ --no-fail
 ```
 
+Treat the agent's own score as a draft. The real score is the output from
+`node DesignOS/bin/designos.js review <target>`. If the command reports findings, paste
+`node DesignOS/bin/designos.js review <target> --fix-prompt --no-fail` back into the
+agent and make it fix the file before accepting the delivery.
+
 <details>
 <summary><b>Manual install (no npx)</b></summary>
 
