@@ -1,0 +1,11 @@
+@import '../tokens.css';
+body { margin: 0; font-family: var(--font-sans); background: var(--bg-page); color: var(--text-primary); }
+.shell { min-height: 100vh; padding: var(--space-8); }
+.panel { display: grid; gap: var(--space-6); }
+.eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: var(--tracking-caps); font-weight: 700; }
+h1 { max-width: 760px; font-size: var(--text-3xl); line-height: var(--leading-tight); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.metric { border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--bg-surface); }
+.metric span { display: block; color: var(--text-secondary); }
+.metric strong { display: block; margin-top: var(--space-2); font-size: var(--text-2xl); }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }

@@ -100,6 +100,9 @@ node DesignOS/bin/designos.js doctor        # verify the install's health anytim
 node DesignOS/bin/designos.js audit src/    # run all validators against your code
 node DesignOS/bin/designos.js review src/   # score deterministic design risks
 node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
+node DesignOS/bin/designos.js visual index.html --no-fail
+node DesignOS/bin/designos.js starter landing-page my-launch
+node DesignOS/bin/designos.js brief --interactive
 node DesignOS/bin/designos.js brief --type pricing --industry fintech --audience CFOs --goal "book demos"
 ```
 
@@ -180,6 +183,8 @@ DesignOS/
 ├── CLAUDE.md            ← the kernel: boot sequence, routing table, standards, output contract
 ├── brain/               ← how to think: intelligence · decisions · quality bar · references ·
 │                          trend radar · originality
+├── references/          ← visual taste packs: Stripe-level · Linear-style · Apple · Vercel docs · cyber dark
+├── goldens/             ← target bars for premium pricing, dashboards, docs, onboarding, AI landing
 ├── agents/              ← 9 specialist personas (Claude Code subagent-compatible)
 ├── foundations/         ← colors · typography · spacing · layout · grids · icons · a11y ·
 │                          design tokens · dark mode · RTL & i18n
@@ -197,11 +202,11 @@ DesignOS/
 ├── scoring/ checklists/ ← rubric · scorecards · failure taxonomy · 5 quality gates
 ├── validators/          ← zero-dep CI scripts: refs · token drift · contrast · a11y basics
 ├── evals/               ← blind benchmark protocol + independent-run guide + published RESULTS
-├── memory/              ← per-project memory protocol + 7 templates
+├── memory/              ← per-project memory protocol + 7 templates + design personality packs
 ├── skills/              ← the /design-* slash commands
 ├── integrations/        ← one export, every agent
 ├── museum/              ← the Anti-Pattern Museum: 40+ cataloged design crimes
-├── starter/             ← tokens + framework starter recipes
+├── starter/             ← tokens + copyable starter code for landing, docs, Next, React, mobile
 ├── recipes/             ← copy-ready high-demand UI prompts
 ├── adapters/            ← best-practice setup per agent surface
 ├── playbooks/           ← real-project adoption plans
@@ -220,6 +225,8 @@ SEO — and an adversarial reviewer with veto power.
 Quick references: [**CHEATSHEET**](CHEATSHEET.md) — the whole system on one page ·
 [**GLOSSARY**](GLOSSARY.md) — the vocabulary A–Z ·
 [**Proof Standard**](PROOF_STANDARD.md) — what claims are allowed to say ·
+[**Visual references**](references/README.md) — taste packs without copying ·
+[**Goldens**](goldens/README.md) — target bars for premium outputs ·
 [**The Anti-Pattern Museum**](museum/README.md) — 40+ design crimes, each with the rule that prevents it ·
 [**Field Report 001**](evals/field-report-001.md) — a real stress-test, a real gap found and fixed.
 

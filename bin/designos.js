@@ -15,12 +15,15 @@
  *   node DesignOS/bin/designos.js export <target>   cursor · copilot · windsurf · cline · aider · all
  *   node DesignOS/bin/designos.js audit <dir>
  *   node DesignOS/bin/designos.js review <file-or-dir> [--min 95] [--json] [--no-fail] [--fix-prompt]
- *   node DesignOS/bin/designos.js brief [--type landing] [--industry saas] [--audience "CFOs"] [--goal "book demos"]
+ *   node DesignOS/bin/designos.js visual <file-or-url> [--out designos-visual-report.md]
+ *   node DesignOS/bin/designos.js brief [--interactive] [--type landing] [--industry saas] [--audience "CFOs"] [--goal "book demos"]
+ *   node DesignOS/bin/designos.js starter <name> [target-dir]
  *   node DesignOS/bin/designos.js doctor
  *   node DesignOS/bin/designos.js help
  */
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
 const PKG_ROOT = path.resolve(__dirname, '..');
 const CWD = process.cwd();
@@ -58,6 +61,11 @@ function copyDir(src, dest) {
     if (entry.isDirectory()) copyDir(s, d);
     else fs.copyFileSync(s, d);
   }
+}
+
+function listDirs(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir, { withFileTypes: true }).filter(e => e.isDirectory()).map(e => e.name).sort();
 }
 
 function init(flags) {
@@ -160,7 +168,6 @@ function exportRules(targetName) {
 
 /* ---------- audit: run all validators against a target ---------- */
 function audit(target) {
-  const { spawnSync } = require('child_process');
   const dir = target || 'src';
   if (!fs.existsSync(path.join(CWD, dir))) fail(`Target "${dir}" not found — usage: ${RUN} audit <dir> [token-file]`);
   const vdir = fs.existsSync(path.join(CWD, 'DesignOS', 'validators'))
@@ -181,6 +188,31 @@ function audit(target) {
 
   if (failures) fail(`${failures} validator(s) reported findings — the mechanical floor is not clear.`);
   ok('audit clean — the mechanical floor holds. The six-dimension review still applies above it.');
+}
+
+/* ---------- starter: copy real starter files into a project ---------- */
+function starter(name, args) {
+  const startersDir = path.join(PKG_ROOT, 'starter');
+  const names = listDirs(startersDir);
+  if (!name || name === 'list') {
+    console.log('Available DesignOS starters:\n');
+    for (const n of names) console.log(`- ${n}`);
+    console.log(`\nUsage: ${RUN} starter <name> [target-dir]`);
+    return;
+  }
+  if (!names.includes(name)) fail(`Unknown starter "${name}". Use one of: ${names.join(' · ')}`);
+  const targetArg = args.find((a, i) => i > 0 && !a.startsWith('--')) || name;
+  const dest = path.resolve(CWD, targetArg);
+  if (fs.existsSync(dest) && !args.includes('--force')) {
+    fail(`${targetArg} already exists. Re-run with --force to overwrite.`);
+  }
+  copyDir(path.join(startersDir, name), dest);
+  for (const token of ['tokens.css', 'tokens.json']) {
+    const src = path.join(startersDir, token);
+    if (fs.existsSync(src)) fs.copyFileSync(src, path.join(dest, token));
+  }
+  ok(`Starter "${name}" copied to ${path.relative(CWD, dest) || '.'}`);
+  log(`Next: cd ${path.relative(CWD, dest) || '.'} && ${RUN} review . --no-fail`);
 }
 
 /* ---------- review: deterministic design-risk report for CI and local use ---------- */
@@ -411,7 +443,48 @@ function review(target, args) {
 }
 
 /* ---------- brief: generate a high-signal DesignOS brief ---------- */
+let pipedAnswers = null;
+function ask(question) {
+  process.stdout.write(`${question}: `);
+  if (!process.stdin.isTTY) {
+    if (pipedAnswers === null) {
+      pipedAnswers = fs.readFileSync(0, 'utf8').split(/\r?\n/);
+    }
+    const answer = (pipedAnswers.shift() || '').trim();
+    process.stdout.write(`${answer}\n`);
+    return answer;
+  }
+  let out = '';
+  const buffer = Buffer.alloc(1);
+  while (true) {
+    const bytes = fs.readSync(0, buffer, 0, 1, null);
+    if (!bytes) break;
+    const char = buffer.toString('utf8', 0, bytes);
+    if (char === '\n' || char === '\r') break;
+    out += char;
+  }
+  return out.trim();
+}
+
 function brief(args) {
+  if (args.includes('--interactive')) {
+    const answers = {
+      type: ask('Surface type (landing, pricing, dashboard, onboarding, mobile app)'),
+      industry: ask('Industry'),
+      audience: ask('Primary audience'),
+      goal: ask('Primary goal'),
+      tone: ask('Tone'),
+      constraints: ask('Constraints'),
+    };
+    args = [
+      '--type', answers.type,
+      '--industry', answers.industry,
+      '--audience', answers.audience,
+      '--goal', answers.goal,
+      '--tone', answers.tone,
+      '--constraints', answers.constraints,
+    ];
+  }
   const data = {
     type: argValue(args, '--type', '[surface: landing page / dashboard / pricing / onboarding / mobile app]'),
     industry: argValue(args, '--industry', '[industry]'),
@@ -448,6 +521,62 @@ function brief(args) {
   } else {
     console.log(out);
   }
+}
+
+/* ---------- visual: static/optional-browser visual QA report ---------- */
+function visual(target, args) {
+  if (!target) fail(`Usage: ${RUN} visual <html-file-or-url> [--out designos-visual-report.md]`);
+  const outPath = path.resolve(CWD, argValue(args, '--out', 'designos-visual-report.md'));
+  const isUrl = /^https?:\/\//i.test(target);
+  const abs = isUrl ? target : path.resolve(CWD, target);
+  if (!isUrl && !fs.existsSync(abs)) fail(`Visual target not found: ${target}`);
+
+  const body = isUrl ? '' : fs.readFileSync(abs, 'utf8');
+  const findings = [];
+  const add = (severity, code, message) => findings.push({ severity, code, message });
+
+  if (!isUrl) {
+    if (!/<meta[^>]+name=["']viewport["']/i.test(body)) add('P1', 'missing-viewport', 'No viewport meta tag; mobile rendering is likely broken.');
+    if (/<img\b(?![^>]*(width|height)=)/i.test(body)) add('P2', 'image-dimensions', 'At least one image lacks explicit width/height; verify CLS.');
+    if (/overflow-x\s*:\s*hidden/i.test(body)) add('P2', 'overflow-hidden', 'overflow-x hidden can mask mobile layout bugs; verify 375px manually.');
+    if (!/prefers-reduced-motion/i.test(body)) add('P2', 'motion-qa', 'No prefers-reduced-motion handling found.');
+    if (!/:focus-visible|outline-offset/i.test(body)) add('P1', 'focus-qa', 'No obvious focus-visible style found.');
+    if (/(position:\s*absolute|transform:\s*translate|white-space:\s*nowrap)/i.test(body)) add('P3', 'overlap-risk', 'Absolute/transform/nowrap usage present; inspect mobile screenshots for overlap.');
+  }
+
+  let browserNote = 'Browser render not run. Install Playwright in the project to enable screenshot QA.';
+  const playwrightCheck = spawnSync('node', ['-e', 'const m="play"+"wright"; require(m); console.log("ok")'], { cwd: CWD, encoding: 'utf8' });
+  if (playwrightCheck.status === 0) {
+    browserNote = 'Playwright is available. Browser screenshot automation is ready for a future deep visual pass.';
+  }
+
+  const report = [
+    '# DesignOS Visual QA',
+    '',
+    `Target: ${target}`,
+    `Generated: ${new Date().toISOString()}`,
+    '',
+    '## Browser Pass',
+    '',
+    browserNote,
+    '',
+    '## Static Visual Risk Findings',
+    '',
+    findings.length ? findings.map(f => `- **${f.severity} / ${f.code}** — ${f.message}`).join('\n') : 'No static visual-risk findings.',
+    '',
+    '## Manual Viewports',
+    '',
+    '- [ ] 375px mobile',
+    '- [ ] 768px tablet',
+    '- [ ] 1024px laptop',
+    '- [ ] 1440px desktop',
+    '- [ ] Keyboard-only path',
+    '- [ ] Reduced-motion mode',
+    '',
+  ].join('\n');
+  fs.writeFileSync(outPath, report);
+  ok(`Visual QA report written to ${path.relative(CWD, outPath)}`);
+  if (findings.some(f => f.severity === 'P1') && !args.includes('--no-fail')) process.exit(1);
 }
 
 /* ---------- doctor: install health ---------- */
@@ -510,7 +639,10 @@ function help() {
     ${RUN} audit <dir>        run all validators against a directory
     ${RUN} review <target>    deterministic design-risk report + six-dimension score
                              add --fix-prompt to print an agent-ready repair prompt
+    ${RUN} visual <target>    visual QA checklist/report for HTML or URL
     ${RUN} brief [options]    generate a high-signal brief for the agent
+                             add --interactive for the 6-question prompt builder
+    ${RUN} starter <name>     scaffold a DesignOS starter project
     ${RUN} doctor             check the install's health
 `);
 }
@@ -530,7 +662,9 @@ switch (cmd) {
   case 'export': exportRules(rest.find(a => !a.startsWith('--')) || 'all'); break;
   case 'audit': audit(firstPositional(rest)); break;
   case 'review': review(firstPositional(rest), rest); break;
+  case 'visual': visual(firstPositional(rest), rest); break;
   case 'brief': brief(rest); break;
+  case 'starter': starter(firstPositional(rest), rest); break;
   case 'doctor': doctor(); break;
   case 'help':
   case undefined: help(); break;

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DesignOS Landing Starter</title>
+  <link rel="stylesheet" href="./tokens.css">
+  <style>
+    body { margin: 0; font-family: var(--font-sans); background: var(--bg-page); color: var(--text-primary); }
+    main { min-height: 100vh; display: grid; place-items: center; padding: var(--space-8); }
+    .hero { max-width: 880px; display: grid; gap: var(--space-6); }
+    .eyebrow { color: var(--accent); font-size: var(--text-xs); font-weight: 700; letter-spacing: var(--tracking-caps); text-transform: uppercase; }
+    h1 { margin: 0; font-size: var(--text-display); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+    p { max-width: var(--container-prose); color: var(--text-secondary); font-size: var(--text-lg); line-height: var(--leading-body); }
+    .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    a { color: inherit; }
+    .btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-4); border-radius: var(--radius-md); text-decoration: none; font-weight: 700; }
+    .primary { background: var(--accent); color: var(--text-on-accent); }
+    .secondary { border: 1px solid var(--border-default); color: var(--text-secondary); }
+    .btn:focus-visible { outline: 2px solid var(--border-focus); outline-offset: var(--space-1); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">DesignOS starter</p>
+      <h1 id="hero-title">Replace generic launch pages with clear product proof.</h1>
+      <p>This starter is intentionally small: load DesignOS modules, replace the copy with a real brief, and keep proof honest.</p>
+      <div class="actions">
+        <a class="btn primary" href="#start">Start with real proof</a>
+        <a class="btn secondary" href="./README.md">Read the starter brief</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

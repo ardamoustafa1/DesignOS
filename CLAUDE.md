@@ -76,12 +76,14 @@ Do not skip steps. If a module doesn't exist for the task, say so — do not imp
 | Accessibility question | `foundations/accessibility.md`, `checklists/accessibility.md` |
 | SEO | `checklists/seo.md`, agent `agents/seo.md` |
 | "Make it feel premium / modern" | `brain/quality-bar.md`, `brain/reference-library.md`, `brain/trend-radar.md` |
-| "Make it distinctive / not generic" | `brain/originality.md`, `brain/reference-library.md` |
+| "Make it distinctive / not generic" | `brain/originality.md`, `brain/reference-library.md`, `references/README.md` |
+| "Stripe-level", "Linear-like", "Apple-like", "Vercel docs" | relevant `references/*.md` pack + `brain/originality.md` |
 | Trust, credibility concerns | `psychology/trust.md`, `psychology/persuasion.md`, `PROOF_STANDARD.md` |
 | Tone, emotion, personality | `psychology/emotional-design.md` |
 | Streaks, points, badges, engagement mechanics | `psychology/gamification.md`, `psychology/habit-retention.md` |
 | Retention, re-engagement, churn | `psychology/habit-retention.md`, `components/notifications.md` |
 | Product tours, activation, first-run education | `patterns/product-tours.md`, `patterns/onboarding-auth.md`, `components/states.md` |
+| "Wow example", golden bar, best-in-class target | relevant `goldens/*.md`, `references/README.md`, `scoring/rubric.md` |
 | Mobile app — iOS | `native/ios.md`, `native/app-patterns.md`, `native/motion-gestures.md` |
 | Mobile app — Android | `native/android.md`, `native/app-patterns.md`, `native/motion-gestures.md` |
 | React Native / Expo / Flutter | both platform files + `native/app-patterns.md` |

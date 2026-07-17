@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DesignOS Docs Starter</title>
+  <link rel="stylesheet" href="./tokens.css">
+  <style>
+    body { margin: 0; font-family: var(--font-sans); background: var(--bg-page); color: var(--text-primary); }
+    .shell { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+    nav { border-right: 1px solid var(--border-default); padding: var(--space-6); background: var(--bg-surface); }
+    main { padding: var(--space-8); max-width: 900px; }
+    a { color: var(--text-secondary); display: block; padding: var(--space-2) 0; }
+    a:focus-visible { outline: 2px solid var(--border-focus); outline-offset: var(--space-1); }
+    h1 { font-size: var(--text-3xl); line-height: var(--leading-tight); }
+    pre { overflow-x: auto; padding: var(--space-4); border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--bg-surface); }
+    @media (max-width: 760px) { .shell { grid-template-columns: 1fr; } nav { border-right: 0; border-bottom: 1px solid var(--border-default); } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav aria-label="Docs">
+      <strong>Docs Starter</strong>
+      <a href="#quickstart">Quickstart</a>
+      <a href="#concepts">Concepts</a>
+      <a href="#api">API</a>
+    </nav>
+    <main>
+      <h1 id="quickstart">Quickstart that gets to value fast.</h1>
+      <p>Replace this with a real developer flow. Keep examples copyable, versioned, and honest.</p>
+      <pre><code>npx github:ardamoustafa1/DesignOS init --agents --skills</code></pre>
+    </main>
+  </div>
+</body>
+</html>

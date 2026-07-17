@@ -15,6 +15,9 @@ something agents can read.
 - **Antigravity hardening:** `adapters/antigravity.md`, maintainer-observed Run 003
   notes, stronger proof-risk detection, token-aware review exceptions, and
   `designos review --fix-prompt`.
+- **Taste and productization layer:** visual reference packs, golden target bars,
+  memory packs, copyable starter code, `designos starter`, `designos visual`, and
+  `designos brief --interactive`.
 - **`designos review <file-or-dir>`** — deterministic design-risk scoring for UI files:
   a11y tells, contrast risk, fake proof, token drift, missing states, and a
   six-dimension gate score. Supports `--json`, `--min`, and `--no-fail` for CI.

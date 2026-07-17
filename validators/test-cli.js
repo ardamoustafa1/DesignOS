@@ -169,6 +169,9 @@ test('bin/designos.js contains npm-collision warning', () => {
   assert.ok(src.includes('review <target>'), 'review command missing from help text');
   assert.ok(src.includes('brief [options]'), 'brief command missing from help text');
   assert.ok(src.includes('--fix-prompt'), 'fix-prompt help text missing');
+  assert.ok(src.includes('visual <target>'), 'visual command missing from help text');
+  assert.ok(src.includes('starter <name>'), 'starter command missing from help text');
+  assert.ok(src.includes('--interactive'), 'interactive brief help text missing');
 });
 
 test('bin/designos.js exports no external dependencies', () => {
@@ -208,6 +211,49 @@ test('review: allows root tokens and emits fix prompt for unsourced proof', () =
   assert.ok(result.stdout.includes('Fix these DesignOS review findings'));
   assert.ok(result.stdout.includes('proof-risk') || result.stdout.includes('customer-proof-risk'));
   assert.ok(!result.stdout.includes('raw-color'), 'root token and theme-color should not be raw-color findings');
+});
+
+test('starter: scaffolds landing page with tokens', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-starter-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'starter'), path.join(tmp, 'DesignOS', 'starter'), { recursive: true });
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'starter', 'landing-page', 'site'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.ok(fs.existsSync(path.join(tmp, 'site', 'index.html')), 'starter index missing');
+  assert.ok(fs.existsSync(path.join(tmp, 'site', 'tokens.css')), 'starter tokens missing');
+});
+
+test('visual: writes static QA report', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-visual-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  fs.writeFileSync(path.join(tmp, 'index.html'), '<!doctype html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"></head><body><main><h1>Test</h1></main></body></html>');
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'visual', 'index.html', '--no-fail'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.ok(fs.existsSync(path.join(tmp, 'designos-visual-report.md')), 'visual report missing');
+});
+
+test('brief --interactive: accepts piped answers line by line', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-brief-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  const input = ['pricing', 'cybersecurity', 'security teams', 'book demos', 'premium technical', 'vanilla html', ''].join('\n');
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'brief', '--interactive'], {
+    cwd: tmp,
+    input,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.ok(result.stdout.includes('Design a pricing for cybersecurity.'));
+  assert.ok(result.stdout.includes('Audience: security teams.'));
+  assert.ok(result.stdout.includes('Primary goal: book demos.'));
 });
 
 // ── SUMMARY ───────────────────────────────────────────────────────────────────
