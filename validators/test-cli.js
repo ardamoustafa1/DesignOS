@@ -200,6 +200,21 @@ test('bin/designos.js contains npm-collision warning', () => {
   assert.ok(src.includes('SOC2, ISO 27001'), 'hard compliance warning missing');
 });
 
+test('AGENTS.md kernel mirror is byte-identical to CLAUDE.md', () => {
+  const root = path.resolve(__dirname, '..');
+  const claude = fs.readFileSync(path.join(root, 'CLAUDE.md'), 'utf8');
+  const agents = fs.readFileSync(path.join(root, 'AGENTS.md'), 'utf8');
+  assert.strictEqual(agents, claude,
+    'AGENTS.md has drifted from CLAUDE.md — it is a mirror for agents.md-standard tools; copy CLAUDE.md over it');
+});
+
+test('bin/designos.js export targets include the AGENTS.md standard', () => {
+  const binPath = path.resolve(__dirname, '..', 'bin', 'designos.js');
+  const src = fs.readFileSync(binPath, 'utf8');
+  assert.ok(src.includes('agentsmd'), 'agentsmd export target missing');
+  assert.ok(src.includes("'AGENTS.md'"), 'AGENTS.md destination file missing');
+});
+
 test('bin/designos.js exports no external dependencies', () => {
   const binPath = path.resolve(__dirname, '..', 'bin', 'designos.js');
   const src = fs.readFileSync(binPath, 'utf8');

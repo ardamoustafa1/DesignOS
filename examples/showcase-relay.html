@@ -118,7 +118,23 @@ a { color: var(--text-primary); }
 @media (min-width: 768px) { .nav-links { display: flex; } .nav-cta { margin-left: 0; } }
 
 /* ---------- hero (components/hero.md · split 55/45) ---------- */
-.hero { padding-block: var(--space-24) var(--space-16); overflow: hidden; }
+.hero { position: relative; padding-block: var(--space-24) var(--space-16); overflow: hidden; }
+/* Signature backdrop — the page's ONE backdrop effect (components/visual-effects.md):
+   off-center amber glow behind the product panel, away from body text (contrast re-checked
+   against the unlit page bg the copy actually sits on). Static — zero animation cost. */
+.hero::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  top: -80px; right: -120px; width: 640px; height: 480px;
+  background: radial-gradient(ellipse closest-side, var(--accent-subtle), transparent 72%);
+  filter: blur(64px);
+}
+/* Grain pass — kills gradient banding, finishes the surface (visual-effects.md recipe):
+   feTurbulence tile at 3% overlay — felt, not seen. */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.03; mix-blend-mode: overlay;
+}
 @media (min-width: 1024px) { .hero { padding-block: var(--space-32) var(--space-24); } }
 .hero-grid { display: grid; gap: var(--space-12); align-items: center; }
 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 55fr 45fr; } }
@@ -190,6 +206,18 @@ a { color: var(--text-primary); }
   transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 }
 .feature:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+/* Pointer spotlight — the page's ONE interaction effect (components/visual-effects.md):
+   desktop-only behind the hover gate; touch keeps the plain elevated state above. */
+@media (hover: hover) {
+  .feature { position: relative; overflow: hidden; --mx: 50%; --my: 0%; }
+  .feature::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(240px circle at var(--mx) var(--my),
+                color-mix(in srgb, var(--accent) 7%, transparent), transparent);
+    opacity: 0; transition: opacity var(--duration-base) var(--ease-out);
+  }
+  .feature:hover::before { opacity: 1; }
+}
 .feature-icon {
   width: 44px; height: 44px; border-radius: var(--radius-md);
   background: var(--accent-subtle); color: var(--accent);
@@ -364,6 +392,23 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
 // Nav border on scroll (components/navigation.md) — passive, style-write only
 const nav = document.getElementById('nav');
 addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+
+// Pointer spotlight on feature cards (components/visual-effects.md) — rAF-throttled,
+// custom-property write only; the hover:hover media gate keeps touch devices out.
+if (matchMedia('(hover: hover)').matches) {
+  document.querySelectorAll('.feature').forEach(card => {
+    let raf = 0;
+    card.addEventListener('pointermove', e => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        raf = 0;
+      });
+    });
+  });
+}
 </script>
 </body>
 </html>

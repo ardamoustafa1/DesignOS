@@ -5,7 +5,7 @@ difference per tool is only *how the kernel gets loaded*. One command generates 
 right rules file for each:
 
 ```bash
-node DesignOS/bin/designos.js export all      # or: cursor · copilot · windsurf · cline · aider
+node DesignOS/bin/designos.js export all      # or: cursor · copilot · windsurf · cline · aider · agentsmd
 ```
 
 **Per-agent step-by-step guides:**
@@ -25,7 +25,15 @@ from there for every command after the first install.
 | **Windsurf** | `.windsurfrules` | same | persona-adopted | — |
 | **Cline** | `.clinerules` | same | persona-adopted | — |
 | **Aider** | `CONVENTIONS.md` | same | persona-adopted | — |
+| **AGENTS.md standard** (Codex CLI, Gemini CLI, Amp, Zed, Jules, …) | `AGENTS.md` (`export agentsmd`) | same | persona-adopted | — |
 | **Any other** | paste `DesignOS/CLAUDE.md` into its rules slot | same | persona-adopted | — |
+
+The DesignOS repo itself also ships a root-level `AGENTS.md` — a byte-identical mirror
+of the kernel (CI enforces the sync) — so any agents.md-standard tool pointed at a clone
+of this repo boots the system with zero setup. `export` **never overwrites** a hand-written
+rules file it didn't generate: if your project already has its own `AGENTS.md` (or
+`CONVENTIONS.md`, etc.), the target is skipped with a warning — append the kernel yourself
+or re-run with `--force`.
 
 ## How the export works
 `export` writes the current kernel (your `./DesignOS/CLAUDE.md`, so project overrides

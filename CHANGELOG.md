@@ -2,6 +2,49 @@
 
 All notable changes to DesignOS.
 
+## [Unreleased]
+
+Universal-agent reach: first-class support for the open [agents.md](https://agents.md)
+standard and LLM discoverability.
+
+### Added
+- **`components/visual-effects.md` — the "wow" execution catalog.** The system taught
+  restraint and *where* to spend the signature budget (`brain/originality.md`) but had
+  no concrete recipes for *how*: radial glow/light leak, gradient mesh with grain-pass
+  banding control, noise overlay, line-grid/dot-matrix with mask fades, gradient text,
+  border beam (`@property` conic ring), pointer spotlight, glass surfaces with
+  fallbacks, framed screenshots, logo marquee — each with exact values, cost notes,
+  touch/reduced-motion gates, and a hard one-backdrop-one-interaction budget. Wired
+  into the kernel routing table (new "wow effects" row + the "premium/modern" row),
+  `components/hero.md` background treatments, and the README/website module counts.
+- **The showcase practices the new module:** `examples/showcase-relay.html` now carries
+  exactly the budgeted pair — an off-center amber hero glow + 3% grain pass (backdrop)
+  and a `hover: hover`-gated pointer spotlight on the feature cards (interaction) —
+  with the decision trail appended to `examples/saas-landing-walkthrough.md`, including
+  the effect that was *rejected* to stay inside the budget. Verified in-browser
+  (render, hover behavior, custom-property writes) plus `check-drift`/`check-a11y-basics` clean.
+- **Root `AGENTS.md`** — a byte-identical mirror of the kernel, so agents.md-standard
+  tools (Codex CLI, Gemini CLI, Amp, Zed, Jules, …) boot DesignOS from a clone with
+  zero setup. Sync is enforced: a `test-cli.js` unit test and a dedicated
+  `validate.yml` CI step both fail if the mirror drifts from `CLAUDE.md`.
+- **`export agentsmd` CLI target** — writes the kernel to your project's `AGENTS.md`
+  (included in `export all`).
+- **`llms.txt`** — the llmstxt.org discovery file mapping the kernel, brain, loop,
+  rubric, and getting-started docs for LLM consumers.
+- Animated `press/demo.gif` (rendered from `demo.svg`) now used at the top of the
+  README — GitHub does not run SMIL animations inside `<img>`, so the SVG rendered
+  as a static frame there.
+
+### Changed
+- **`export` no longer overwrites hand-written rules files.** Any export destination
+  that exists without the DesignOS generated-file header is skipped with a warning
+  (`--force` overrides) — previously `export all` would clobber a project's own
+  `CONVENTIONS.md` or `AGENTS.md`.
+- `AGENTS.md` and `llms.txt` added to the npm `files` list; export-target listings
+  updated across README, GETTING-STARTED, CHEATSHEET, and `integrations/README.md`.
+- Website hero/score grids: `min-width: 0` on grid children so long content can't
+  force horizontal overflow at narrow viewports.
+
 ## [2.1.0] — 2026-07-17
 
 The productization wave: DesignOS becomes something teams can run in PRs, not only

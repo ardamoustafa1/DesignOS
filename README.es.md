@@ -39,7 +39,7 @@ El agente deja de pensar *"haré un botón"* y empieza a pensar: *"¿dónde cae 
 
 | Capa | Qué hace | Dónde |
 |---|---|---|
-| **1 · Conocimiento** | 60+ módulos con criterio: fundamentos, 20 componentes, 8 de psicología, motion, 12 patrones | `foundations/` `components/` `psychology/` `motion/` `patterns/` `native/` |
+| **1 · Conocimiento** | 60+ módulos con criterio: fundamentos, 21 componentes, 8 de psicología, motion, 12 patrones | `foundations/` `components/` `psychology/` `motion/` `patterns/` `native/` |
 | **2 · Loops** | Research → Wireframe → UI → Review → A11y → Perf → SEO → Refactor → Score | `loops/` |
 | **3 · Motor de revisión** | Autoevaluación adversarial, 6 dimensiones, umbral duro de 95 | `scoring/` + `validators/` |
 | **4 · Memoria** | 7 archivos por proyecto: cliente, marca, diseño, páginas, tareas, bugs, notas | `memory/` |

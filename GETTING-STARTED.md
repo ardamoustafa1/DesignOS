@@ -20,7 +20,7 @@ running it silently invokes the wrong tool. Always:
 
 ```bash
 node DesignOS/bin/designos.js doctor        # health check
-node DesignOS/bin/designos.js export all    # rules for Cursor/Copilot/Windsurf/Cline/Aider
+node DesignOS/bin/designos.js export all    # rules for Cursor/Copilot/Windsurf/Cline/Aider + AGENTS.md (Codex, Gemini CLI, …)
 node DesignOS/bin/designos.js audit src/    # run the validators against your own code
 node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
 node DesignOS/bin/designos.js elevate src/ --no-fail

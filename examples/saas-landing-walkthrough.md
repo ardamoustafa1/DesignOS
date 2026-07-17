@@ -65,6 +65,16 @@ No credit card · 5-min setup"*.)
 pages.md (Home: shipped, min-score 95, metric: trial-signup rate), todo.md (verify logo-count
 claim), notes.md (score line + the assumption list).
 
+**EFFECTS PASS (post-2.0, `components/visual-effects.md`):** the page's effect budget spent
+in full and no further: ONE backdrop effect (off-center amber glow behind the product panel —
+placed away from the copy column, contrast re-verified against the unlit page background the
+text actually sits on, static so it costs the LCP nothing) with the mandatory grain pass
+(3% `feTurbulence` overlay — banding control, "felt not seen") · ONE interaction effect
+(pointer spotlight on the feature cards — `hover: hover` gated so touch keeps the plain
+elevated state, rAF-throttled, custom-property writes only). Both share the amber color
+story per the deployment law. A border beam on the primary CTA was considered and rejected:
+a third effect would cross the budget, and the CTA already wins the eye path without it.
+
 ## What to notice
 
 - Every "taste" decision traces to a module rule or a recorded reason — nothing was vibes.

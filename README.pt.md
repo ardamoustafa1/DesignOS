@@ -39,7 +39,7 @@ o CTA está ganhando? a Apple cortaria esse elemento por completo?"*
 
 | Camada | O que faz | Onde |
 |---|---|---|
-| **1 · Conhecimento** | 60+ módulos opinativos — fundamentos, 20 componentes, 8 de psicologia, motion, 12 padrões | `foundations/` `components/` `psychology/` `motion/` `patterns/` `native/` |
+| **1 · Conhecimento** | 60+ módulos opinativos — fundamentos, 21 componentes, 8 de psicologia, motion, 12 padrões | `foundations/` `components/` `psychology/` `motion/` `patterns/` `native/` |
 | **2 · Loops** | Research → Wireframe → UI → Review → A11y → Perf → SEO → Refactor → Score | `loops/` |
 | **3 · Motor de revisão** | Autoavaliação adversarial, 6 dimensões, limiar rígido de 95 | `scoring/` + `validators/` |
 | **4 · Memória** | 7 arquivos por projeto: cliente, marca, design, páginas, tarefas, bugs, notas | `memory/` |

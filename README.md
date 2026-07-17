@@ -20,7 +20,7 @@
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-10b981.svg)](CONTRIBUTING.md)
 
-<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.1.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
+<img src="press/demo.gif" alt="Animated demo: prompt enters → DesignOS boots kernel v2.1.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
 
 [**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Architecture](ARCHITECTURE.md) · [Enterprise guide](ENTERPRISE.md) · [Governance](GOVERNANCE.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
@@ -95,7 +95,7 @@ command after install (⚠️ **not** bare `npx designos …` — that name is a
 an unrelated package on the npm registry):
 
 ```bash
-node DesignOS/bin/designos.js export all    # .cursorrules · copilot-instructions · .windsurfrules · .clinerules · CONVENTIONS.md
+node DesignOS/bin/designos.js export all    # .cursorrules · copilot-instructions · .windsurfrules · .clinerules · CONVENTIONS.md · AGENTS.md
 node DesignOS/bin/designos.js doctor        # verify the install's health anytime
 node DesignOS/bin/designos.js audit src/    # run all validators against your code
 node DesignOS/bin/designos.js review src/   # score deterministic design risks
@@ -114,6 +114,10 @@ node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url h
 "100/100" when `designos review <target>` says so. If the review fails, run
 `designos review <target> --fix-prompt --no-fail`, paste the prompt back into your agent,
 and iterate until the deterministic gate is clean.
+
+Agents that speak the open [agents.md standard](https://agents.md) (Codex CLI, Gemini CLI,
+Amp, Zed, Jules…) need even less: this repo ships a root `AGENTS.md` kernel mirror they
+pick up automatically, and `export agentsmd` writes one into your own project.
 
 <details>
 <summary><b>Manual install (no npx)</b></summary>
@@ -190,6 +194,8 @@ brief you pick? [GETTING-STARTED.md](GETTING-STARTED.md) step 3 tells you what t
 ```
 DesignOS/
 ├── CLAUDE.md            ← the kernel: boot sequence, routing table, standards, output contract
+├── AGENTS.md            ← byte-identical kernel mirror for agents.md-standard tools (CI-enforced sync)
+├── llms.txt             ← llmstxt.org discovery map for LLM consumers
 ├── brain/               ← how to think: intelligence · decisions · quality bar · taste ladder ·
 │                          references · trend radar · originality
 ├── references/          ← visual taste packs: Stripe-level · Linear-style · Apple · Vercel docs · cyber dark
@@ -197,7 +203,7 @@ DesignOS/
 ├── agents/              ← 9 specialist personas (Claude Code subagent-compatible)
 ├── foundations/         ← colors · typography · spacing · layout · grids · icons · a11y ·
 │                          design tokens · dark mode · RTL & i18n
-├── components/          ← buttons · forms · cards · nav · footer · hero · dashboard · data density ·
+├── components/          ← buttons · forms · cards · nav · footer · hero · visual effects · dashboard · data density ·
 │                          tables · modals · states · skeletons · badges · tooltips · tabs ·
 │                          search & ⌘K · notifications · charts · code blocks · wizards · upload · pickers
 ├── psychology/          ← attention · persuasion · cognition · color · trust · emotion ·

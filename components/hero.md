@@ -50,6 +50,7 @@ Choose ONE per hero (stacking all three = flea market):
 
 ## Background treatments (one, subtle)
 - Gradient mesh (the page's gradient moment) · dot/line grid fading out · soft radial glow behind the visual · plain (`--bg-page`) — the strongest choice more often than not.
+- Exact recipes (values, masks, grain, fallbacks): `components/visual-effects.md` — including why every large gradient ships with a grain pass.
 - Decorative layers: `pointer-events: none`, contrast-checked under text, no parallax that moves text.
 
 ## Motion

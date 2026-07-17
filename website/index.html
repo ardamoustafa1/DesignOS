@@ -122,6 +122,7 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 @media (min-width: 1024px) { .hero { padding-block: var(--space-32) var(--space-24); } }
 .hero::before { content: ""; position: absolute; top: -120px; right: 15%; width: 520px; height: 520px; border-radius: var(--radius-full); background: radial-gradient(circle, rgb(16 185 129 / 0.08) 0%, transparent 70%); pointer-events: none; filter: blur(40px); }
 .hero-grid { display: grid; gap: var(--space-12); align-items: center; position: relative; z-index: 2; }
+.hero-grid > * { min-width: 0; }
 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 58fr 42fr; } }
 .hero h1 { font-size: clamp(2.15rem, 2.8vw + 1rem, 3.25rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.12; margin-bottom: var(--space-6); }
 .hero h1 em { font-style: normal; display: block; margin-top: 4px; background: linear-gradient(135deg, #09090b 0%, #047857 55%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 12px rgb(16 185 129 / 0.15)); }
@@ -175,6 +176,7 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 
 /* score table */
 .score-grid { display: grid; gap: var(--space-12); align-items: center; }
+.score-grid > * { min-width: 0; }
 @media (min-width: 1024px) { .score-grid { grid-template-columns: 1fr 1fr; } }
 .score-card { background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; font-size: 0.9063rem; }
 .score-card .row { display: flex; justify-content: space-between; align-items: center; padding: var(--space-3) var(--space-6); border-bottom: 1px solid var(--border-default); }
@@ -287,7 +289,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
         <p>Not a prompt pack — an operating system the agent boots into, routing only the modules each task needs.</p>
       </div>
       <div class="layers">
-        <div class="layer"><span class="n">01 · KNOWLEDGE</span><h3>Opinionated rules, not vibes</h3><p>Typography scales, spacing grids, 20 component specs, persuasion psychology, motion tokens — every rule with its reason.</p><span class="dirs">foundations/ components/ psychology/ motion/ patterns/ native/</span></div>
+        <div class="layer"><span class="n">01 · KNOWLEDGE</span><h3>Opinionated rules, not vibes</h3><p>Typography scales, spacing grids, 21 component specs, persuasion psychology, motion tokens — every rule with its reason.</p><span class="dirs">foundations/ components/ psychology/ motion/ patterns/ native/</span></div>
         <div class="layer"><span class="n">02 · LOOPS</span><h3>Process that catches what talent misses</h3><p>Research → wireframe → UI → review → accessibility → performance → SEO → refactor. No stage skipped, ever.</p><span class="dirs">loops/ workflows/ checklists/</span></div>
         <div class="layer"><span class="n">03 · REVIEW ENGINE</span><h3>An adversarial critic with veto power</h3><p>Six dimensions, hard 95 threshold, instant-fail caps for contrast and fake data. Under 95 goes back — before you ever see it.</p><span class="dirs">scoring/ validators/ evals/</span></div>
         <div class="layer"><span class="n">04 · MEMORY</span><h3>Decision #40 agrees with decision #4</h3><p>Seven files per project — brand, design, pages, todos, bugs. Every choice recorded with its reason, forever.</p><span class="dirs">memory/</span></div>

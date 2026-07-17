@@ -1,0 +1,42 @@
+# DesignOS
+
+> The Design Intelligence Operating System for AI coding agents. 60+ opinionated
+> markdown modules that teach any agent (Claude, Codex, Cursor, Copilot, Gemini CLI,
+> Windsurf, Cline, Aider…) design taste, process, and a hard quality gate: adversarial
+> self-scoring across 6 dimensions with a 95 threshold, sector playbooks for 24
+> industries, per-project memory, and zero-dependency validators.
+
+The system is plain markdown plus conventions — an agent "boots" by reading the kernel,
+which routes each task to only the relevant modules. Start with the kernel; everything
+else is loaded on demand via its routing table.
+
+## Kernel
+
+- [CLAUDE.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/CLAUDE.md): the operating kernel — boot sequence, routing table, non-negotiable standards, output contract
+- [AGENTS.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/AGENTS.md): byte-identical kernel mirror for agents.md-standard tools
+
+## How to think
+
+- [brain/design-intelligence.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/brain/design-intelligence.md): the designer's reasoning sequence and known LLM failure modes
+- [brain/decision-framework.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/brain/decision-framework.md): how to choose between competing design options
+- [brain/quality-bar.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/brain/quality-bar.md): what 95/100 means, calibrated against Stripe/Linear/Vercel/Apple
+
+## Process and quality gate
+
+- [loops/design-loop.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/loops/design-loop.md): research → wireframe → ui → review → a11y → perf → refactor
+- [scoring/rubric.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/scoring/rubric.md): the 6-dimension rubric — UI craft, UX, accessibility, performance, modernity, conversion
+- [CHEATSHEET.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/CHEATSHEET.md): the whole system compressed to one page of numbers and laws
+
+## Getting started
+
+- [README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/README.md): what DesignOS is, quick start, the five layers
+- [GETTING-STARTED.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/GETTING-STARTED.md): five minutes from install to first scored screen
+- [ARCHITECTURE.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/ARCHITECTURE.md): control flow diagram and module anatomy
+- [integrations/README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/integrations/README.md): one export command, every agent
+
+## Optional
+
+- [GLOSSARY.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/GLOSSARY.md): the vocabulary A–Z
+- [LIMITATIONS.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/LIMITATIONS.md): what DesignOS is not (yet) — honest caveats, including eval status
+- [museum/README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/museum/README.md): the Anti-Pattern Museum — 40+ cataloged design crimes
+- [evals/README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/evals/README.md): the blind benchmark protocol for measuring the system's effect
