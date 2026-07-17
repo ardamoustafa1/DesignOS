@@ -22,6 +22,8 @@ running it silently invokes the wrong tool. Always:
 node DesignOS/bin/designos.js doctor        # health check
 node DesignOS/bin/designos.js export all    # rules for Cursor/Copilot/Windsurf/Cline/Aider
 node DesignOS/bin/designos.js audit src/    # run the validators against your own code
+node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
+node DesignOS/bin/designos.js report src/ --no-fail
 ```
 
 <details>
@@ -106,7 +108,23 @@ Each project accumulates seven files (templates in `memory/templates/`):
 The agent reads them at boot and appends after every work session. Nothing gets
 forgotten — see `memory/README.md` for the write discipline.
 
-## 6. Going deeper
+## 6. Prove and publish the work
+
+Once you have a real screen, turn the result into something inspectable:
+
+```bash
+node DesignOS/bin/designos.js report src/ --no-fail
+node DesignOS/bin/designos.js eval cursor-pricing --agent Cursor --brief B-001
+node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url https://example.com
+```
+
+- `report` creates a delivery report with the deterministic review gate, an agent-ready
+  fix prompt, and the manual sign-off checklist.
+- `eval` creates the folders and README needed for an independent benchmark run:
+  `control/`, `treatment/`, and `logs/`.
+- `case` creates a full case-study page plus a ready-to-paste `SHOWCASE.md` row.
+
+## 7. Going deeper
 
 - **How the system is built:** [ARCHITECTURE.md](ARCHITECTURE.md) — the layer stack,
   the control-flow for one brief, why it's markdown instead of code.

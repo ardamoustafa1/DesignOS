@@ -101,9 +101,12 @@ node DesignOS/bin/designos.js audit src/    # run all validators against your co
 node DesignOS/bin/designos.js review src/   # score deterministic design risks
 node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
 node DesignOS/bin/designos.js visual index.html --no-fail   # screenshots if Playwright is installed
+node DesignOS/bin/designos.js report src/ --no-fail          # delivery report + fix prompt + sign-off checklist
 node DesignOS/bin/designos.js starter landing-page my-launch
 node DesignOS/bin/designos.js brief --interactive
 node DesignOS/bin/designos.js brief --type pricing --industry fintech --audience CFOs --goal "book demos"
+node DesignOS/bin/designos.js eval cursor-pricing --agent Cursor --brief B-001
+node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url https://example.com
 ```
 
 <details>
@@ -214,7 +217,7 @@ DesignOS/
 ├── examples/            ← 4-page live showcase, each with its decision walkthrough
 ├── website/             ← the project's own site — designed by the system itself
 ├── press/               ← logos, boilerplate, the demo SVG
-└── bin/                 ← the CLI: init · agents · skills · export · audit · doctor
+└── bin/                 ← the CLI: init · review · visual · report · starter · eval · case · doctor
 ```
 </details>
 

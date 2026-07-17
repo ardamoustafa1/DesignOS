@@ -62,7 +62,28 @@ function argValue(args, name, fallback = '') {
 }
 
 function firstPositional(args) {
-  const valueFlags = new Set(['--min', '--type', '--industry', '--audience', '--goal', '--tone', '--constraints', '--out']);
+  const valueFlags = new Set([
+    '--min',
+    '--type',
+    '--industry',
+    '--audience',
+    '--goal',
+    '--tone',
+    '--constraints',
+    '--out',
+    '--screenshots',
+    '--agent',
+    '--brief',
+    '--runner',
+    '--model',
+    '--project',
+    '--author',
+    '--url',
+    '--source',
+    '--stack',
+    '--surface',
+    '--summary',
+  ]);
   for (let i = 0; i < args.length; i++) {
     if (!args[i].startsWith('--')) return args[i];
     if (valueFlags.has(args[i])) i++;
@@ -170,7 +191,10 @@ test('bin/designos.js contains npm-collision warning', () => {
   assert.ok(src.includes('brief [options]'), 'brief command missing from help text');
   assert.ok(src.includes('--fix-prompt'), 'fix-prompt help text missing');
   assert.ok(src.includes('visual <target>'), 'visual command missing from help text');
+  assert.ok(src.includes('report <target>'), 'report command missing from help text');
   assert.ok(src.includes('starter <name>'), 'starter command missing from help text');
+  assert.ok(src.includes('eval <slug>'), 'eval command missing from help text');
+  assert.ok(src.includes('case <slug>'), 'case command missing from help text');
   assert.ok(src.includes('--interactive'), 'interactive brief help text missing');
 });
 
@@ -238,6 +262,66 @@ test('visual: writes static QA report', () => {
   });
   assert.strictEqual(result.status, 0, result.stderr);
   assert.ok(fs.existsSync(path.join(tmp, 'designos-visual-report.md')), 'visual report missing');
+});
+
+test('report: writes delivery report with review gate and checklist', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-report-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  fs.writeFileSync(path.join(tmp, 'index.html'), '<!doctype html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"></head><body><main><h1>Test</h1><button disabled>Start</button></main></body></html>');
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'report', 'index.html', '--no-fail'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const reportPath = path.join(tmp, 'designos-report.md');
+  assert.ok(fs.existsSync(reportPath), 'delivery report missing');
+  const body = fs.readFileSync(reportPath, 'utf8');
+  assert.ok(body.includes('DesignOS Delivery Report'), 'report title missing');
+  assert.ok(body.includes('Sign-off Checklist'), 'sign-off checklist missing');
+});
+
+test('eval: scaffolds independent run folders', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-eval-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  fs.mkdirSync(path.join(tmp, 'evals', 'runs'), { recursive: true });
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'eval', 'cursor-pricing', '--agent', 'Cursor', '--brief', 'B-001'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const runDir = path.join(tmp, 'evals', 'runs', 'run-003-cursor-pricing');
+  assert.ok(fs.existsSync(path.join(runDir, 'README.md')), 'eval README missing');
+  assert.ok(fs.existsSync(path.join(runDir, 'control')), 'control dir missing');
+  assert.ok(fs.existsSync(path.join(runDir, 'treatment')), 'treatment dir missing');
+});
+
+test('case: scaffolds case study and showcase row', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-case-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  const result = spawnSync('node', [
+    'DesignOS/bin/designos.js',
+    'case',
+    'acme-pricing',
+    '--project',
+    'Acme Pricing',
+    '--url',
+    'https://example.com',
+    '--surface',
+    'pricing',
+    '--summary',
+    'Removed fake proof and tightened pricing hierarchy.',
+  ], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const casePath = path.join(tmp, 'case-studies', 'acme-pricing.md');
+  assert.ok(fs.existsSync(casePath), 'case study missing');
+  const body = fs.readFileSync(casePath, 'utf8');
+  assert.ok(body.includes('| [Acme Pricing](https://example.com) | pricing | Removed fake proof and tightened pricing hierarchy. |'), 'showcase row missing');
 });
 
 test('brief --interactive: accepts piped answers line by line', () => {

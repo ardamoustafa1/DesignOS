@@ -21,6 +21,10 @@ something agents can read.
 - **Browser-grade visual QA:** `designos visual` now runs real Playwright screenshots
   when Playwright is installed, and the Review Action comments include a collapsible
   agent-ready fix prompt.
+- **Proof-collection CLI:** `designos report` writes a delivery report with review
+  gate, fix prompt, and sign-off checklist; `designos eval` scaffolds independent
+  benchmark folders; `designos case` creates external case studies plus a ready
+  `SHOWCASE.md` row.
 - **`designos review <file-or-dir>`** — deterministic design-risk scoring for UI files:
   a11y tells, contrast risk, fake proof, token drift, missing states, and a
   six-dimension gate score. Supports `--json`, `--min`, and `--no-fail` for CI.

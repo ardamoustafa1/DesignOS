@@ -16,8 +16,11 @@
  *   node DesignOS/bin/designos.js audit <dir>
  *   node DesignOS/bin/designos.js review <file-or-dir> [--min 95] [--json] [--no-fail] [--fix-prompt]
  *   node DesignOS/bin/designos.js visual <file-or-url> [--out designos-visual-report.md]
+ *   node DesignOS/bin/designos.js report <file-or-dir> [--min 95] [--out designos-report.md]
  *   node DesignOS/bin/designos.js brief [--interactive] [--type landing] [--industry saas] [--audience "CFOs"] [--goal "book demos"]
  *   node DesignOS/bin/designos.js starter <name> [target-dir]
+ *   node DesignOS/bin/designos.js eval <slug> [--agent cursor] [--brief B-001]
+ *   node DesignOS/bin/designos.js case <slug> [--project "Acme"] [--url https://...]
  *   node DesignOS/bin/designos.js doctor
  *   node DesignOS/bin/designos.js help
  */
@@ -34,7 +37,28 @@ const log = (msg) => console.log(`  ${msg}`);
 const ok = (msg) => console.log(`  \x1b[32m✓\x1b[0m ${msg}`);
 const warn = (msg) => console.log(`  \x1b[33m!\x1b[0m ${msg}`);
 const fail = (msg) => { console.error(`  \x1b[31m✗\x1b[0m ${msg}`); process.exit(1); };
-const VALUE_FLAGS = new Set(['--min', '--type', '--industry', '--audience', '--goal', '--tone', '--constraints', '--out']);
+const VALUE_FLAGS = new Set([
+  '--min',
+  '--type',
+  '--industry',
+  '--audience',
+  '--goal',
+  '--tone',
+  '--constraints',
+  '--out',
+  '--screenshots',
+  '--agent',
+  '--brief',
+  '--runner',
+  '--model',
+  '--project',
+  '--author',
+  '--url',
+  '--source',
+  '--stack',
+  '--surface',
+  '--summary',
+]);
 
 function argValue(args, name, fallback = '') {
   const inline = args.find(arg => arg.startsWith(`${name}=`));
@@ -442,6 +466,80 @@ function review(target, args) {
   if (!noFail && summary.overall < min) process.exit(1);
 }
 
+function buildReviewReport(target) {
+  const abs = path.resolve(CWD, target);
+  if (!fs.existsSync(abs)) fail(`Review target not found: ${target}`);
+  const files = [...walkReviewFiles(abs)];
+  if (!files.length) fail(`No reviewable UI files found in ${target}`);
+  const findings = files.flatMap(file => analyzeDesignFile(file, CWD));
+  const summary = summarizeReview(findings, files);
+  return { target, generatedAt: new Date().toISOString(), summary, findings };
+}
+
+function markdownForReviewReport(report) {
+  const lines = [
+    '# DesignOS Review',
+    '',
+    `Target: ${report.target}`,
+    `Generated: ${report.generatedAt}`,
+    `Files reviewed: ${report.summary.filesReviewed}`,
+    `Findings: ${report.summary.findingCount}`,
+    `Overall gate: ${report.summary.overall}/100`,
+    '',
+    '| Dimension | Score |',
+    '|---|---:|',
+  ];
+  for (const [dim, score] of Object.entries(report.summary.scores)) {
+    lines.push(`| ${dim} | ${score} |`);
+  }
+  lines.push('', '## Findings', '');
+  if (!report.findings.length) lines.push('No deterministic findings.');
+  else report.findings.forEach(f => lines.push(`- **${f.severity} ${f.dimension} / ${f.code}** — ${f.file}:${f.line} — ${f.message}`));
+  return lines.join('\n');
+}
+
+function report(target, args) {
+  const min = Number(argValue(args, '--min', '95'));
+  const outPath = path.resolve(CWD, argValue(args, '--out', 'designos-report.md'));
+  if (!target) fail(`Usage: ${RUN} report <file-or-dir> [--min 95] [--out designos-report.md] [--no-fail]`);
+  const reviewReport = buildReviewReport(target);
+  const sections = [
+    '# DesignOS Delivery Report',
+    '',
+    `Target: ${target}`,
+    `Generated: ${new Date().toISOString()}`,
+    `Gate: ${reviewReport.summary.overall}/100 (required ${min}/100)`,
+    '',
+    '## Review Gate',
+    '',
+    markdownForReviewReport(reviewReport).replace(/^# DesignOS Review\n\n/, ''),
+    '',
+    '## Agent Fix Prompt',
+    '',
+    'Use this if any findings remain:',
+    '',
+    '```text',
+    `Fix these DesignOS review findings, then rerun: ${RUN} review ${target} --min ${min}`,
+    'Do not invent metrics, customers, testimonials, badges, urgency, or compliance claims.',
+    ...reviewReport.findings.map((f, i) => `${i + 1}. ${fixAdviceFor(f)}`),
+    reviewReport.findings.length ? '' : 'No deterministic findings remain. Run human/model review for taste and fit.',
+    '```',
+    '',
+    '## Sign-off Checklist',
+    '',
+    '- [ ] Mobile 375px inspected',
+    '- [ ] Desktop 1440px inspected',
+    '- [ ] Keyboard-only path verified',
+    '- [ ] Reduced-motion mode verified',
+    '- [ ] Fake proof removed or sourced',
+    '- [ ] Memory updated with final decisions',
+    '',
+  ].join('\n');
+  fs.writeFileSync(outPath, sections);
+  ok(`Delivery report written to ${path.relative(CWD, outPath)}`);
+  if (!args.includes('--no-fail') && reviewReport.summary.overall < min) process.exit(1);
+}
+
 /* ---------- brief: generate a high-signal DesignOS brief ---------- */
 let pipedAnswers = null;
 function ask(question) {
@@ -638,6 +736,199 @@ function visual(target, args) {
   if (findings.some(f => f.severity === 'P1') && !args.includes('--no-fail')) process.exit(1);
 }
 
+/* ---------- eval/case: community proof scaffolding ---------- */
+function slugify(input) {
+  return String(input || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'untitled';
+}
+
+function nextRunId() {
+  const runsDir = path.join(CWD, 'evals', 'runs');
+  const names = fs.existsSync(runsDir) ? fs.readdirSync(runsDir) : [];
+  const max = names.reduce((acc, name) => {
+    const m = name.match(/run-(\d+)/i);
+    return m ? Math.max(acc, Number(m[1])) : acc;
+  }, 2);
+  return String(max + 1).padStart(3, '0');
+}
+
+function evalRun(slug, args) {
+  if (!slug) fail(`Usage: ${RUN} eval <slug> [--agent cursor] [--brief B-001] [--runner "@you"] [--model "model name"]`);
+  const id = nextRunId();
+  const safeSlug = slugify(slug);
+  const relDir = path.join('evals', 'runs', `run-${id}-${safeSlug}`);
+  const absDir = path.join(CWD, relDir);
+  if (fs.existsSync(absDir) && !args.includes('--force')) fail(`${relDir} already exists. Re-run with --force to overwrite.`);
+  fs.mkdirSync(path.join(absDir, 'control'), { recursive: true });
+  fs.mkdirSync(path.join(absDir, 'treatment'), { recursive: true });
+  fs.mkdirSync(path.join(absDir, 'logs'), { recursive: true });
+  const data = {
+    id,
+    date: new Date().toISOString().slice(0, 10),
+    runner: argValue(args, '--runner', 'TODO'),
+    agent: argValue(args, '--agent', 'TODO'),
+    model: argValue(args, '--model', 'TODO'),
+    brief: argValue(args, '--brief', 'TODO'),
+  };
+  const body = [
+    `# Run ${data.id} — ${safeSlug}`,
+    '',
+    '> Independent eval runs can be positive, mixed, or negative. The only failure is hiding raw conditions.',
+    '',
+    '## Metadata',
+    '',
+    '| Field | Value |',
+    '|---|---|',
+    `| Date | ${data.date} |`,
+    `| Runner | ${data.runner} |`,
+    `| Agent surface | ${data.agent} |`,
+    `| Model(s) | ${data.model} |`,
+    `| Brief set | ${data.brief} |`,
+    '| DesignOS commit SHA | TODO |',
+    '| Time budget | TODO |',
+    '| Follow-up steering | none / explain |',
+    '',
+    '## Raw Artifacts',
+    '',
+    '- Control output: `control/`',
+    '- Treatment output: `treatment/`',
+    '- Logs: `logs/`',
+    '',
+    '## Commands',
+    '',
+    '```bash',
+    'node validators/check-drift.js evals/runs/' + `run-${data.id}-${safeSlug}` + '/control',
+    'node validators/check-a11y-basics.js evals/runs/' + `run-${data.id}-${safeSlug}` + '/control',
+    'node validators/check-drift.js evals/runs/' + `run-${data.id}-${safeSlug}` + '/treatment',
+    'node validators/check-a11y-basics.js evals/runs/' + `run-${data.id}-${safeSlug}` + '/treatment',
+    '```',
+    '',
+    '## Validator Results',
+    '',
+    '| Brief | Arm | Drift findings | A11y findings | Contrast notes |',
+    '|---|---|---:|---:|---|',
+    `| ${data.brief} | Control | TODO | TODO | TODO |`,
+    `| ${data.brief} | Treatment | TODO | TODO | TODO |`,
+    '',
+    '## Blind Judge Results',
+    '',
+    '| Brief | Arm | Hierarchy | Craft | Accessibility | States | Distinctiveness | Fitness | Median total |',
+    '|---|---|---:|---:|---:|---:|---:|---:|---:|',
+    `| ${data.brief} | Control | TODO | TODO | TODO | TODO | TODO | TODO | TODO |`,
+    `| ${data.brief} | Treatment | TODO | TODO | TODO | TODO | TODO | TODO | TODO |`,
+    '',
+    '## Findings',
+    '',
+    '### Where DesignOS helped',
+    '',
+    '- TODO',
+    '',
+    '### Where DesignOS hurt or added cost',
+    '',
+    '- TODO',
+    '',
+    '### Ambiguous results',
+    '',
+    '- TODO',
+    '',
+    '## Conclusion',
+    '',
+    'TODO: State the result honestly. Avoid universal claims.',
+    '',
+  ].join('\n');
+  fs.writeFileSync(path.join(absDir, 'README.md'), body);
+  ok(`Eval run scaffolded at ${relDir}`);
+  log(`Next: add raw outputs to control/ and treatment/, then run validators and fill README.md.`);
+}
+
+function caseStudy(slug, args) {
+  if (!slug) fail(`Usage: ${RUN} case <slug> [--project "Project"] [--url https://...] [--author "@you"] [--surface pricing]`);
+  const safeSlug = slugify(slug);
+  const rel = path.join('case-studies', `${safeSlug}.md`);
+  const abs = path.join(CWD, rel);
+  if (fs.existsSync(abs) && !args.includes('--force')) fail(`${rel} already exists. Re-run with --force to overwrite.`);
+  fs.mkdirSync(path.dirname(abs), { recursive: true });
+  const project = argValue(args, '--project', safeSlug);
+  const url = argValue(args, '--url', 'TODO');
+  const source = argValue(args, '--source', 'TODO');
+  const author = argValue(args, '--author', 'TODO');
+  const stack = argValue(args, '--stack', 'TODO');
+  const surface = argValue(args, '--surface', 'TODO');
+  const summary = argValue(args, '--summary', 'TODO: one honest sentence on what DesignOS changed.');
+  const body = [
+    `# ${project} — DesignOS Case Study`,
+    '',
+    '## Summary',
+    '',
+    `- Project: ${project}`,
+    `- Author: ${author}`,
+    `- Date: ${new Date().toISOString().slice(0, 10)}`,
+    `- Agent/tool: TODO`,
+    `- Stack: ${stack}`,
+    `- Surface: ${surface}`,
+    `- Public link: ${url}`,
+    `- Source link: ${source}`,
+    `- Honest summary: ${summary}`,
+    '',
+    '## Starting Point',
+    '',
+    'TODO: Describe the original brief, target user, business goal, constraints, and known design issues.',
+    '',
+    '## DesignOS Setup',
+    '',
+    '- `brain/design-intelligence.md`',
+    '- `loops/design-loop.md`',
+    '- TODO: relevant component/pattern modules',
+    '- TODO: relevant industry module',
+    '- TODO: memory files used or created',
+    '',
+    '## Before / After',
+    '',
+    '- Desktop before: TODO',
+    '- Desktop after: TODO',
+    '- Mobile before: TODO',
+    '- Mobile after: TODO',
+    '',
+    '## Decisions',
+    '',
+    '| Decision | Why it was made | Module/rule |',
+    '|---|---|---|',
+    '| TODO | TODO | TODO |',
+    '',
+    '## Scorecard',
+    '',
+    '| Dimension | Score | Evidence |',
+    '|---|---:|---|',
+    '| UI Craft | TODO | TODO |',
+    '| UX Flow | TODO | TODO |',
+    '| Accessibility | TODO | TODO |',
+    '| Performance | TODO | TODO |',
+    '| Modernity | TODO | TODO |',
+    '| Conversion | TODO | TODO |',
+    '',
+    '## What Failed First',
+    '',
+    '- TODO: contrast miss, hierarchy issue, fake proof removed, missing state added, or mobile layout fixed.',
+    '',
+    '## Caveats',
+    '',
+    'TODO: State what this case study does not prove.',
+    '',
+    '## Showcase Row',
+    '',
+    '```markdown',
+    `| [${project}](${url}) | ${surface} | ${summary} |`,
+    '```',
+    '',
+  ].join('\n');
+  fs.writeFileSync(abs, body);
+  ok(`Case study scaffolded at ${rel}`);
+  log(`Showcase row ready inside ${rel}.`);
+}
+
 /* ---------- doctor: install health ---------- */
 function doctor() {
   let problems = 0;
@@ -699,9 +990,12 @@ function help() {
     ${RUN} review <target>    deterministic design-risk report + six-dimension score
                              add --fix-prompt to print an agent-ready repair prompt
     ${RUN} visual <target>    visual QA checklist/report for HTML or URL
+    ${RUN} report <target>    one-file delivery report: review gate + fix prompt + sign-off
     ${RUN} brief [options]    generate a high-signal brief for the agent
                              add --interactive for the 6-question prompt builder
     ${RUN} starter <name>     scaffold a DesignOS starter project
+    ${RUN} eval <slug>        scaffold an independent benchmark run folder
+    ${RUN} case <slug>        scaffold an external case study + SHOWCASE row
     ${RUN} doctor             check the install's health
 `);
 }
@@ -722,8 +1016,11 @@ switch (cmd) {
   case 'audit': audit(firstPositional(rest)); break;
   case 'review': review(firstPositional(rest), rest); break;
   case 'visual': visual(firstPositional(rest), rest); break;
+  case 'report': report(firstPositional(rest), rest); break;
   case 'brief': brief(rest); break;
   case 'starter': starter(firstPositional(rest), rest); break;
+  case 'eval': evalRun(firstPositional(rest), rest); break;
+  case 'case': caseStudy(firstPositional(rest), rest); break;
   case 'doctor': doctor(); break;
   case 'help':
   case undefined: help(); break;
