@@ -19,5 +19,7 @@ jobs:
         run: diff -u CLAUDE.md AGENTS.md
       - name: Showcase pages pass a11y basics
         run: node validators/check-a11y-basics.js examples/ && node validators/check-a11y-basics.js website/
+      - name: Golden artifacts pass the same mechanical floor they set
+        run: node validators/check-a11y-basics.js goldens/ && node validators/check-drift.js goldens/
       - name: Showcase token contrast (muted-on-raised, the classic dark-theme failure)
         run: node validators/contrast.js "#9a9fa8" "#1b1e24" --min 4.5

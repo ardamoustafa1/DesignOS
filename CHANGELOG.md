@@ -4,6 +4,21 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+### Fixed
+- **Exported rules files now resolve module paths.** `export` (all targets — AGENTS.md,
+  `.cursorrules`, copilot-instructions, …) rewrites every kernel module reference
+  (`foundations/colors.md` → `DesignOS/foundations/colors.md`). Claude Code's `@import` resolved
+  these relative to the kernel's location, but every other agent reads the rules file
+  from the project root and would look for `foundations/colors.md` where it doesn't exist —
+  silently breaking module routing on Antigravity, Cursor, Copilot, Codex, and every
+  agents.md-standard tool. Covered by a new `test-cli.js` regression test.
+- **`goldens/` artifacts held to their own bar:** the three golden HTML artifacts now run
+  through `check-a11y-basics` + `check-drift` in CI and `npm run validate`; fixed the one
+  finding this surfaced (an unlabeled `!important` in a reduced-motion reset, now carrying
+  its documented `drift-ok` reason).
+- `llms.txt` refreshed with the newer discovery surfaces: adapters, recipes, goldens,
+  references.
+
 Visual-gate hardening, driven by a real field failure (the "Vigilant AI" test build):
 a generated site shipped a navbar that collided at 1024px, had zero navigation on
 mobile (links hidden, no menu button), rendered raw LaTeX (`$T+00s \to T+04s$`) as UI

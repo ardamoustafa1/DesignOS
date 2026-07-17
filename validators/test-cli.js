@@ -200,6 +200,19 @@ test('bin/designos.js contains npm-collision warning', () => {
   assert.ok(src.includes('SOC2, ISO 27001'), 'hard compliance warning missing');
 });
 
+test('export: rewrites module paths so non-Claude rules files resolve under ./DesignOS/', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-export-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  fs.copyFileSync(path.resolve(__dirname, '..', 'CLAUDE.md'), path.join(tmp, 'DesignOS', 'CLAUDE.md'));
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'export', 'agentsmd'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const exported = fs.readFileSync(path.join(tmp, 'AGENTS.md'), 'utf8');
+  assert.ok(exported.includes('DesignOS/brain/design-intelligence.md'), 'boot-sequence path was not rewritten to ./DesignOS/');
+  assert.ok(exported.includes('DesignOS/foundations/'), 'routing-table path was not rewritten to ./DesignOS/');
+  assert.ok(!/[^/]\bbrain\/design-intelligence\.md/.test(exported), 'an unprefixed module path leaked through — agents outside Claude Code would 404 on it');
+});
+
 test('AGENTS.md kernel mirror is byte-identical to CLAUDE.md', () => {
   const root = path.resolve(__dirname, '..');
   const claude = fs.readFileSync(path.join(root, 'CLAUDE.md'), 'utf8');

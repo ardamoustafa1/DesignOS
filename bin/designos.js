@@ -165,11 +165,27 @@ const EXPORT_TARGETS = {
   agentsmd: { file: 'AGENTS.md',                           label: 'AGENTS.md standard (Codex · Gemini CLI · Amp · Zed · …)' },
 };
 
+// Directories the kernel's routing table and boot sequence reference by relative
+// path (`foundations/x.md`, `brain/x.md`, ...). Non-Claude-Code rules files don't get
+// Claude's `@import`-relative path resolution, so every reference must be rewritten to
+// point at ./DesignOS/<dir>/... — the actual location `init` copies modules into.
+const KERNEL_MODULE_DIRS = [
+  'agents', 'brain', 'checklists', 'components', 'foundations', 'industries',
+  'loops', 'memory', 'motion', 'native', 'patterns', 'psychology', 'references',
+  'scoring', 'workflows',
+];
+
+function rewriteKernelPathsForExport(kernel) {
+  const dirAlt = KERNEL_MODULE_DIRS.join('|');
+  const re = new RegExp(`\\b(${dirAlt})/[a-zA-Z0-9_./-]+\\.md\\b`, 'g');
+  return kernel.replace(re, (match) => `DesignOS/${match}`);
+}
+
 function exportRules(targetName, force) {
   const kernelPath = path.join(CWD, 'DesignOS', 'CLAUDE.md');
   const srcKernel = fs.existsSync(kernelPath) ? kernelPath : path.join(PKG_ROOT, 'CLAUDE.md');
   if (!fs.existsSync(srcKernel)) fail(`Kernel not found — run "npx github:ardamoustafa1/DesignOS init" first.`);
-  const kernel = fs.readFileSync(srcKernel, 'utf8');
+  const kernel = rewriteKernelPathsForExport(fs.readFileSync(srcKernel, 'utf8'));
 
   const names = targetName === 'all' ? Object.keys(EXPORT_TARGETS) : [targetName];
   if (!names.every(n => EXPORT_TARGETS[n])) {

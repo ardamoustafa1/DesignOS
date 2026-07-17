@@ -33,6 +33,13 @@ else is loaded on demand via its routing table.
 - [GETTING-STARTED.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/GETTING-STARTED.md): five minutes from install to first scored screen
 - [ARCHITECTURE.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/ARCHITECTURE.md): control flow diagram and module anatomy
 - [integrations/README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/integrations/README.md): one export command, every agent
+- [adapters/README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/adapters/README.md): best working setup per agent surface (Claude Code, Cursor, Copilot, Antigravity)
+- [recipes/README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/recipes/README.md): copy-ready prompts for high-demand builds — Stripe-level landing, pricing, dashboard, onboarding
+
+## Calibration targets
+
+- [goldens/README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/goldens/README.md): best-in-class reference artifacts the rubric's 95 bar is calibrated against
+- [references/README.md](https://raw.githubusercontent.com/ardamoustafa1/DesignOS/main/references/README.md): tactic packs distilled from the canon — Stripe marketing, Linear app, Vercel docs, Apple product pages
 
 ## Optional
 
