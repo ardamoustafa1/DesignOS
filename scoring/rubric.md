@@ -1,6 +1,6 @@
 # The Scoring Rubric
 
-Six dimensions, 0–100 each, threshold **95**. Scores come from the bands below — never
+Seven dimensions, 0–100 each, threshold **95**. Scores come from the bands below — never
 from overall impression. The reviewer walks each dimension's checks, tallies findings,
 and lands in the band the findings dictate. Calibration: `brain/quality-bar.md` —
 95 means "a design director at a reference company would ship this."
@@ -62,7 +62,16 @@ conversion path (every field/step justified) · **honesty gate: any dark pattern
 proof = instant-fail cap.** For non-converting surfaces (apps, docs), grade task-completion
 efficiency instead and say so.
 
+## 7. Brand Fit & Distinctiveness
+Product-material derivation (`brain/brief-compiler.md`) · signature relevance and
+repetition (`brain/originality.md`) · brand-belief expression · anti-clone discipline ·
+logo-swap resistance · next-day describability · consistency across states and pages.
+Clean but swappable work cannot exceed 89. A borrowed brand motif or unexplained trend
+stack is a serious finding. 95+ requires a written derivation chain, a signature that
+recurs as a system, and zero usability/accessibility/performance tax.
+
 ## Reporting
-Scores go into `scoring/report-template.md` with findings attached to dimensions.
+Scores go into `scoring/report-template.md` with findings attached to dimensions and
+evidence type, criterion/module, affected-user impact, and reproduction steps.
 Verdict: all ≥95 → SHIP · any <95 → RETURN TO LOOP with fix-ordered findings ·
 3 cycles without convergence → escalate cause (`loops/design-loop.md` discipline).

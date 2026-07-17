@@ -27,8 +27,9 @@ node DesignOS/bin/designos.js elevate src/ --no-fail
 node DesignOS/bin/designos.js report src/ --no-fail
 ```
 
-Treat the agent's own score as a draft. The real score is the output from
-`node DesignOS/bin/designos.js review <target>`. If the command reports findings, paste
+Treat the agent's own score as a draft. `node DesignOS/bin/designos.js review <target>`
+is a static risk gate, not the final design score; complete the evidence ledger in
+`workflows/final-gate.md` before making a numeric claim. If the command reports findings, paste
 `node DesignOS/bin/designos.js review <target> --fix-prompt --no-fail` back into the
 agent and make it fix the file before accepting the delivery.
 
@@ -78,8 +79,8 @@ directly observable, not a black box:
    `patterns/landing-pages.md`, …) — see `CLAUDE.md`'s routing table for how that
    decision gets made.
 2. It works through the Design Loop stages (`loops/design-loop.md`), not straight to code.
-3. It ends with a scorecard (`scoring/rubric.md`) — and if any dimension is under 95,
-   it iterates *before* showing you, not after.
+3. It ends with an evidence-backed scorecard (`scoring/rubric.md`) — unchecked dimensions
+   remain NOT ASSESSED, and reviewed failures route back into the loop.
 4. It creates `memory/` files recording the decisions it made, with reasons.
 
 Don't want to write a real brief yet? `examples/README.md` has four complete pages

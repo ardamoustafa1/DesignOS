@@ -16,9 +16,11 @@ Load:
 - DesignOS/scoring/rubric.md
 
 Requirements:
+- Boot the DesignOS kernel; compile this brief with brain/brief-compiler.md; do not treat this recipe as a mini-kernel.
+- Derive the visual language from the product's real data shapes and operator workflow.
 - Prioritize scan path over decoration.
 - Include loading, empty, error, filtered, selected, and bulk-action states.
 - Charts must have labels, units, and text summaries.
 - Avoid marketing hero composition inside the app shell.
-- End with a six-dimension scorecard and redo anything under 95.
+- Render and inspect the required viewports. Run the Final Gate; report unchecked dimensions as NOT ASSESSED.
 ```

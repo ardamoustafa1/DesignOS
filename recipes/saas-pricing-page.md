@@ -15,9 +15,11 @@ Load:
 - DesignOS/scoring/rubric.md
 
 Requirements:
+- Boot the DesignOS kernel; compile this brief with brain/brief-compiler.md; do not treat this recipe as a mini-kernel.
+- Compare material-led, audience-led, and belief-led directions; choose one derived signature.
 - Show plan comparison, FAQ, cancellation/upgrade honesty, and enterprise path.
 - Include monthly/annual toggle without layout shift.
 - Do not invent customer counts, discounts, or urgency.
 - Include edge states: selected plan, disabled plan, loading checkout, payment error.
-- End with a six-dimension scorecard and redo anything under 95.
+- Render and inspect the required viewports. Run the Final Gate; report unchecked dimensions as NOT ASSESSED.
 ```

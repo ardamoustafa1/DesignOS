@@ -23,6 +23,7 @@
 | Performance | /100 | ≥95 |
 | Modernity | /100 | ≥95 |
 | Conversion | /100 | ≥95 |
+| Brand Fit & Distinctiveness | /100 | ≥95 |
 
 **One-paragraph assessment:** <the design's idea, its strongest quality, its weakest, in plain language>
 
@@ -55,6 +56,12 @@ Ordered: instant-fails → largest score impact → cheap wins. Every finding fo
 |---|---|---|
 | Contrast sweep | <tool/manual> | |
 | Keyboard walk | manual | |
+| 320px reflow / 400% zoom | browser/manual | |
+| Text-spacing override | browser/manual | |
+| Focus order + not obscured | keyboard/manual | |
+| Target size | browser/manual | |
+| Accessibility tree / screen reader | <tool/manual/not assessed> | |
+| Forced colors | browser/not assessed | |
 | Lighthouse | <run/projected/not assessed> | LCP · CLS · INP · scores |
 | Breakpoints | 375 / 768 / 1024 / 1440 | |
 | Themes | light / dark | |

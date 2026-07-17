@@ -32,304 +32,545 @@
 
 ---
 
-## Why this exists
+## Start here
 
-AI agents ship flawless logic wrapped in 2015-grade interfaces: cramped spacing, five
-competing CTAs, gray-on-gray contrast failures, fake testimonials invented on the spot.
-The model isn't missing capability — it's missing **taste, process, and a quality gate**.
+DesignOS is a repository-native design intelligence layer for AI coding agents. It adds
+the part a code model usually lacks: a repeatable way to understand the brief, derive a
+distinct visual direction, select relevant design knowledge, inspect the rendered result,
+and remember decisions across sessions.
 
-DesignOS is all three, as an operating system the agent boots into:
+It is not a component library and it does not replace your framework. It sits beside your
+codebase as Markdown instructions, specialist roles, workflows, validators, and a small
+zero-dependency CLI.
 
-```
-You type:   "Design a Stripe-level SaaS landing page."
+> **The short version:** install once, verify the connection, then describe the interface
+> you want. DesignOS routes the task through the right modules and leaves an inspectable
+> trail of decisions, findings, and project memory.
 
-DesignOS:   boots the kernel → routes to the right modules → loads sector rules
-            → runs the Design Loop → scores itself across 6 dimensions
-            → REDOES anything under 95 → writes every decision to memory
-```
+### What changes after installation?
 
-The agent stops thinking *"I'll make a button"* and starts thinking
-*"where does attention land, is the CTA winning, would Apple cut this element entirely?"*
+| Without a design operating system | With DesignOS |
+|---|---|
+| The agent jumps from request to JSX | The brief becomes a testable design contract first |
+| “Premium” becomes gradients and cards | Visual direction is derived from product material and brand belief |
+| Every session starts from zero | Seven memory files preserve brand and system decisions |
+| The author grades its own work informally | Specialist review, static checks, and an evidence ledger separate creation from verification |
+| Happy-path mockups look finished | Loading, empty, error, success, keyboard, responsive, and reduced-motion states are considered |
+| References become style imitation | DesignOS transfers tactics while prohibiting branded motifs |
 
-## What makes it different
+<details>
+<summary><b>Table of contents</b></summary>
 
-| | Prompt packs | Component libraries | **DesignOS** |
-|---|---|---|---|
-| Encodes | wording tricks | pre-built UI | **judgment + process** |
-| Quality control | none | none | adversarial self-scoring, hard 95 gate |
-| Consistency across sessions | no | partial | 7-file project memory |
-| Sector awareness | no | no | 24 industry playbooks |
-| Honesty enforcement | no | no | fake proof & dark patterns = instant fail |
-| Works with | one prompt | one framework | any agent, any stack — it's markdown |
-| Measurable | no | no | [validators + blind eval protocol](evals/README.md) |
+- [Quick Start](#-quick-start)
+- [Choose your agent](#choose-your-agent)
+- [Create your first interface](#create-your-first-interface)
+- [How It Works](#-how-it-works)
+- [System architecture](#system-architecture)
+- [Project memory](#project-memory)
+- [CLI reference](#cli-reference)
+- [Quality and evidence](#quality-and-evidence)
+- [Examples and starters](#examples-and-starters)
+- [Troubleshooting](#troubleshooting)
+- [Community](#community)
 
-**We're trying to measure this, not just claim it.** Below is a maintainer-run sanity
-check — **not independent validation** ([full caveats](evals/RESULTS.md)) — showing the
-validators catch what they're supposed to catch. The eval slot that would actually prove
-the claim is open and unfilled; [run it and PR your numbers](evals/RESULTS.md#run-003--your-model-your-judge-the-one-that-matters-most).
-
-| Mechanical check (same brief) | Default-style output | Through DesignOS |
-|---|---:|---:|
-| Token-drift findings | 43 | **0** |
-| A11y-basics findings | 6 | **0** |
-| Body-text contrast | 2.85:1 ✗ | 6.28:1 ✓ |
+</details>
 
 ---
 
 ## ⚡ Quick Start
 
-One command, from your project directory:
+### 1. Open your project directory
+
+Run the installer from the root of the project you want DesignOS to guide — not from
+inside a DesignOS clone.
 
 ```bash
+cd path/to/your-project
 npx github:ardamoustafa1/DesignOS init --agents --skills
 ```
 
-That copies the system into `./DesignOS`, wires `@DesignOS/CLAUDE.md` into your project's
-`CLAUDE.md`, registers **9 specialist subagents** (creative director, a11y auditor,
-adversarial reviewer…), and installs the slash commands:
-`/design-review` · `/design-score` · `/design-brief` · `/design-tokens`.
+The installer creates a local `./DesignOS` copy, connects the Claude kernel, and optionally
+installs the nine specialist agents and four `/design-*` commands.
 
-**Not on Claude Code?** One export, every agent ([capability matrix](integrations/README.md)).
-`init` also copies the CLI itself to `DesignOS/bin/` — use that local path for every
-command after install (⚠️ **not** bare `npx designos …` — that name is already taken by
-an unrelated package on the npm registry):
-
-```bash
-node DesignOS/bin/designos.js export all    # .cursorrules · copilot-instructions · .windsurfrules · .clinerules · CONVENTIONS.md · AGENTS.md
-node DesignOS/bin/designos.js doctor        # verify the install's health anytime
-node DesignOS/bin/designos.js audit src/    # run all validators against your code
-node DesignOS/bin/designos.js review src/   # score deterministic design risks
-node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
-node DesignOS/bin/designos.js visual index.html --no-fail   # screenshots if Playwright is installed
-node DesignOS/bin/designos.js report src/ --no-fail          # delivery report + fix prompt + sign-off checklist
-node DesignOS/bin/designos.js elevate src/ --no-fail         # premium refactor prompt for taste/signature
-node DesignOS/bin/designos.js starter landing-page my-launch
-node DesignOS/bin/designos.js brief --interactive
-node DesignOS/bin/designos.js brief --type pricing --industry fintech --audience CFOs --goal "book demos"
-node DesignOS/bin/designos.js eval cursor-pricing --agent Cursor --brief B-001
-node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url https://example.com
+```text
+your-project/
+├── DesignOS/                 design knowledge, workflows, CLI, validators
+├── CLAUDE.md                 imports @DesignOS/CLAUDE.md
+├── .claude/
+│   ├── agents/               9 specialist roles
+│   └── commands/             /design-brief · /design-review · /design-score · /design-tokens
+└── your existing app files   untouched by installation
 ```
 
-**Important:** agent self-scores are not accepted as final. A page is only "95+" or
-"100/100" when `designos review <target>` says so. If the review fails, run
-`designos review <target> --fix-prompt --no-fail`, paste the prompt back into your agent,
-and iterate until the deterministic gate is clean.
+### 2. Verify the connection
 
-Agents that speak the open [agents.md standard](https://agents.md) (Codex CLI, Gemini CLI,
-Amp, Zed, Jules…) need even less: this repo ships a root `AGENTS.md` kernel mirror they
-pick up automatically, and `export agentsmd` writes one into your own project.
+All commands after installation use the local CLI copy:
+
+```bash
+node DesignOS/bin/designos.js doctor
+```
+
+A healthy setup confirms the kernel, local CLI, import, agents, skills, and project-memory
+status. If your agent is not Claude Code, export its native rules file next.
+
+> [!WARNING]
+> Never run bare `npx designos ...`. That npm name belongs to an unrelated package.
+> Use the GitHub installer once, then always use `node DesignOS/bin/designos.js ...`.
+
+### 3. Give it a real brief
+
+```text
+Design a pricing page for a cybersecurity SaaS.
+
+Audience: security leaders comparing vendors before a technical evaluation.
+Primary action: book a technical demo.
+Product material: risk timeline, asset table, and investigation workflow.
+Proof available: real dashboard screenshots; no customer logos yet.
+Tone: calm, precise, high-trust. Dark theme, but no neon cyber clichés.
+Stack: use the existing project stack and tokens.
+```
+
+A strong brief gives DesignOS material to derive from. If details are missing, the
+[Brief Compiler](brain/brief-compiler.md) asks only high-impact questions or records
+explicit assumptions instead of silently inventing facts.
+
+### 4. Review the result
+
+```bash
+node DesignOS/bin/designos.js audit src/
+node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
+node DesignOS/bin/designos.js visual path/to/page.html --no-fail
+node DesignOS/bin/designos.js report src/ --no-fail
+```
+
+`review` reports static source risks. It is intentionally not presented as proof of
+visual quality, WCAG conformance, performance, or conversion. Final claims require the
+[evidence ledger](workflows/final-gate.md).
+
+---
+
+## Choose your agent
+
+The knowledge system is shared; the connection step differs by tool.
+
+| Agent | After `init` | What it creates | Capability |
+|---|---|---|---|
+| Claude Code | Nothing else required | `CLAUDE.md`, specialist agents, slash commands | Full kernel + native subagents/commands |
+| Codex, Gemini CLI, Amp, Zed, Jules | `export agentsmd` | `AGENTS.md` | Kernel through the agents.md convention |
+| Cursor | `export cursor` | `.cursorrules` | Kernel rules in project context |
+| GitHub Copilot | `export copilot` | `.github/copilot-instructions.md` | Repository instructions |
+| Windsurf | `export windsurf` | `.windsurfrules` | Workspace rules |
+| Cline | `export cline` | `.clinerules` | Project rules |
+| Aider | `export aider` | `CONVENTIONS.md` | Repository conventions |
+
+```bash
+# Choose one, or generate every supported rules file:
+node DesignOS/bin/designos.js export agentsmd
+node DesignOS/bin/designos.js export cursor
+node DesignOS/bin/designos.js export copilot
+node DesignOS/bin/designos.js export windsurf
+node DesignOS/bin/designos.js export cline
+node DesignOS/bin/designos.js export aider
+node DesignOS/bin/designos.js export all
+```
+
+Existing non-DesignOS rules files are protected by default. The exporter warns instead of
+overwriting them; review [the integration guide](integrations/README.md) before using
+`--force`.
 
 <details>
-<summary><b>Manual install (no npx)</b></summary>
+<summary><b>Manual installation</b></summary>
 
 ```bash
 git clone https://github.com/ardamoustafa1/DesignOS.git
-cd your-project
-cp -r ../DesignOS ./DesignOS
-echo "@DesignOS/CLAUDE.md" >> CLAUDE.md        # Claude Code auto-loads it
-cp DesignOS/agents/*.md .claude/agents/         # optional: real subagents
-cp DesignOS/skills/design-*.md .claude/commands/ # optional: slash commands
+cd path/to/your-project
+cp -r path/to/DesignOS ./DesignOS
+echo "@DesignOS/CLAUDE.md" >> CLAUDE.md
 
-# or globally, for all projects:
-cp -r ../DesignOS ~/.claude/DesignOS
+# Optional Claude Code integrations
+cp DesignOS/agents/*.md .claude/agents/
+cp DesignOS/skills/design-*.md .claude/commands/
 ```
+
+Run `node DesignOS/bin/designos.js doctor` afterwards. For non-Claude agents, use the
+appropriate export command rather than hand-copying the kernel.
+
 </details>
 
-Then just ask:
+<details>
+<summary><b>Global installation</b></summary>
 
-> *Design a pricing page for a cybersecurity SaaS. Dark theme.*
+```bash
+cp -r path/to/DesignOS ~/.claude/DesignOS
+echo "@~/.claude/DesignOS/CLAUDE.md" >> ~/.claude/CLAUDE.md
+```
 
-Watch it route `industries/cybersecurity.md` + `patterns/pricing.md` +
-`psychology/persuasion.md`, run the loop, and refuse to hand you anything under 95.
+Local project installation is recommended when teams need versioned, reproducible rules.
 
-Full walkthrough (verification steps, memory model, steering commands, troubleshooting):
-**[GETTING-STARTED.md](GETTING-STARTED.md)**.
+</details>
+
+---
+
+## Create your first interface
+
+There are three good entry points. Pick the one that matches how much you already know.
+
+### A. Ask naturally
+
+```text
+Build a premium landing page for an AI incident-response product.
+Use our existing stack. The hero must show the real investigation timeline.
+Primary action is starting a sandbox. Do not invent logos, metrics, or compliance claims.
+Run the full DesignOS loop and show what was not verified.
+```
+
+### B. Generate a structured brief
+
+```bash
+node DesignOS/bin/designos.js brief --interactive
+```
+
+Or create one non-interactively:
+
+```bash
+node DesignOS/bin/designos.js brief \
+  --type pricing \
+  --industry fintech \
+  --audience "finance operations leaders" \
+  --goal "start a guided trial" \
+  --tone "precise, calm, evidence-first" \
+  --constraints "existing React stack, light theme, WCAG 2.2 AA target"
+```
+
+### C. Use a ready-made recipe
+
+Start from [recipes](recipes/README.md) for common surfaces:
+
+- [Stripe-level landing page](recipes/stripe-level-landing.md)
+- [SaaS pricing page](recipes/saas-pricing-page.md)
+- [Admin dashboard](recipes/admin-dashboard.md)
+- [Mobile onboarding](recipes/mobile-onboarding.md)
+- [Investor demo page](recipes/investor-demo-page.md)
+
+Each recipe is a high-signal brief, not an alternate mini-kernel. It still boots the same
+DesignOS process, originality discipline, render inspection, and evidence rules.
 
 ---
 
 ## 🔍 How It Works
 
-DesignOS isn't a black box — every stage is observable in the agent's own output.
-One brief moves through a fixed control flow ([full diagram + module anatomy →
-ARCHITECTURE.md](ARCHITECTURE.md)):
+DesignOS makes the design process observable. One request moves through a fixed control
+flow; findings return to the stage that caused them.
 
-```
-your brief
-    │
-    ▼
-KERNEL BOOTS (CLAUDE.md)  ──▶  ROUTES by task + sector  ──▶  LOADS only the relevant
-    │                              (routing table)             modules + project memory
-    ▼
-DESIGN LOOP  research → wireframe → ui → review → a11y → perf → seo → refactor
-    │
-    ▼
-REVIEW ENGINE  scores 6 dimensions against a written rubric
-    │
-    ├── any dimension < 95 ──▶ specific objections feed back into the loop (max 3 cycles)
-    │
-    ▼ all ≥ 95
-DELIVERED: artifact + scorecard + rationale + memory written for next time
+```mermaid
+flowchart TB
+    A["Your brief"] --> B["Kernel boots"]
+    B --> C["Brief Compiler<br/>intent · audience · truth · constraints"]
+    C --> D["Router<br/>task × sector × surface"]
+    D --> E["Relevant modules + project memory"]
+    E --> F["Research + 3 design directions"]
+    F --> G["Wireframe + UI implementation"]
+    G --> H["Render and inspect<br/>375 · 768 · 1024 · 1440"]
+    H --> I["Specialist review<br/>creative · a11y · engineering"]
+    I --> J{"Evidence-backed gate"}
+    J -- "finding" --> K["Route to responsible stage"]
+    K --> F
+    J -- "verified" --> L["Artifact + rationale + memory updates"]
 ```
 
-That loop is not a diagram we're asking you to trust — it's the exact process in
-[`examples/saas-landing-walkthrough.md`](examples/saas-landing-walkthrough.md), including
-two real failures the loop caught and fixed before delivery. Want to watch it run on a
-brief you pick? [GETTING-STARTED.md](GETTING-STARTED.md) step 3 tells you what to look for.
+### The loop, stage by stage
+
+| Stage | Question answered | Concrete output |
+|---|---|---|
+| Contract | What must this cause, for whom, using what truth? | Intent, audience state, proof/assets, never-list, acceptance evidence |
+| Directions | What could make this product unmistakable? | Material-led, audience-led, and belief-led hypotheses |
+| Wireframe | In what order should attention move? | Section structure, eye path, primary action, responsive priorities |
+| UI | What system expresses that hierarchy? | Tokens, type, spacing, components, states, motion |
+| Render/Inspect | Does the real artifact match the source-code intention? | Viewport evidence, visual findings, corrected implementation |
+| Specialist review | Is it coherent, usable, accessible, fast, and truthful? | Findings with owner and severity |
+| Final Gate | What was actually checked? | Static risk output + evidence ledger + NOT ASSESSED disclosures |
+| Memory | What must the next session remember? | Durable decisions, status, bugs, and open work |
+
+Read the complete contracts in [the Design Loop](loops/design-loop.md) and the
+[Final Gate](workflows/final-gate.md).
 
 ---
 
-## The Five Layers
+## System architecture
 
-| Layer | What it does | Where |
+DesignOS uses a small kernel and lazy-loads detailed modules only when they change a
+decision. This keeps the agent focused instead of flooding its context with every rule.
+
+```mermaid
+flowchart LR
+    K["Kernel<br/>CLAUDE.md · AGENTS.md"] --> R["Router"]
+    R --> B["Brain<br/>intent · decisions · originality"]
+    R --> N["Knowledge<br/>foundations · components · patterns"]
+    R --> S["Sector intelligence<br/>24 industry playbooks"]
+    B --> P["Process<br/>loops · workflows · agents"]
+    N --> P
+    S --> P
+    M["Project memory<br/>7 durable files"] <--> P
+    P --> Q["Quality<br/>rubric · checklists · validators"]
+    Q --> O["Artifact + evidence + rationale"]
+```
+
+### The seven layers
+
+| Layer | Responsibility | Explore |
 |---|---|---|
-| **1 · Knowledge** | 60+ opinionated modules — every rule with its reason | [`foundations/`](foundations/) [`components/`](components/) [`psychology/`](psychology/) [`motion/`](motion/) [`patterns/`](patterns/) [`native/`](native/) |
-| **2 · Loops** | Research → Wireframe → UI → Review → A11y → Perf → SEO → Refactor → Score — no stage skipped | [`loops/`](loops/) |
-| **3 · Review Engine** | Adversarial self-scoring: 6 dimensions, hard 95 threshold, a11y failures cap at 60 | [`scoring/`](scoring/) + [`validators/`](validators/) |
-| **4 · Memory** | 7 files per project — decision #40 stays consistent with decision #4 | [`memory/`](memory/) |
-| **5 · Industry Intelligence** | 24 sector playbooks: what fintech trusts, what gaming licenses, what healthcare forbids | [`industries/`](industries/) |
+| Kernel | Boot order, routing table, non-negotiable standards | [CLAUDE.md](CLAUDE.md) · [AGENTS.md](AGENTS.md) |
+| Design brain | Intent, decision rules, taste, originality, reference transfer | [brain](brain/) |
+| Knowledge | Foundations, components, patterns, motion, psychology, native UI | [foundations](foundations/) · [components](components/) · [patterns](patterns/) |
+| Sector intelligence | Buyer psychology, trust requirements, visual licenses | [industries](industries/) |
+| Process | Design/review loops, workflows, and specialist roles | [loops](loops/) · [workflows](workflows/) · [agents](agents/) |
+| Memory | Brand, system, pages, tasks, bugs, notes | [memory](memory/) |
+| Evidence | Rubric, checklists, static validators, eval protocol | [scoring](scoring/) · [checklists](checklists/) · [validators](validators/) · [evals](evals/) |
 
 <details>
-<summary><b>📁 Full repository map</b></summary>
+<summary><b>Repository map</b></summary>
 
-```
+```text
 DesignOS/
-├── CLAUDE.md            ← the kernel: boot sequence, routing table, standards, output contract
-├── AGENTS.md            ← byte-identical kernel mirror for agents.md-standard tools (CI-enforced sync)
-├── llms.txt             ← llmstxt.org discovery map for LLM consumers
-├── brain/               ← how to think: intelligence · decisions · quality bar · taste ladder ·
-│                          references · trend radar · originality
-├── references/          ← visual taste packs: Stripe-level · Linear-style · Apple · Vercel docs · cyber dark
-├── goldens/             ← target bars for premium pricing, dashboards, docs, onboarding, AI landing
-├── agents/              ← 9 specialist personas (Claude Code subagent-compatible)
-├── foundations/         ← colors · typography · spacing · layout · grids · icons · a11y ·
-│                          design tokens · dark mode · RTL & i18n
-├── components/          ← buttons · forms · cards · nav · footer · hero · visual effects · dashboard · data density ·
-│                          tables · modals · states · skeletons · badges · tooltips · tabs ·
-│                          search & ⌘K · notifications · charts · code blocks · wizards · upload · pickers
-├── psychology/          ← attention · persuasion · cognition · color · trust · emotion ·
-│                          gamification · habit & retention
-├── motion/              ← principles · micro-interactions · page & scroll · performance
-├── patterns/            ← landing · pricing · onboarding · product tours · docs · blog · changelog ·
-│                          settings · comparison · company pages · email · print · AI/chat UI
-├── native/              ← iOS · Android · app patterns · motion & gestures
-├── industries/          ← 24 sector playbooks (SaaS → AI → Fintech → … → Manufacturing)
-├── loops/ workflows/    ← the processes: design/review/refactor loops, production workflows
-├── scoring/ checklists/ ← rubric · scorecards · failure taxonomy · 5 quality gates
-├── validators/          ← zero-dep CI scripts: refs · token drift · contrast · a11y basics
-├── evals/               ← blind benchmark protocol + independent-run guide + published RESULTS
-├── memory/              ← per-project memory protocol + 7 templates + design personality packs
-├── skills/              ← the /design-* slash commands
-├── integrations/        ← one export, every agent
-├── museum/              ← the Anti-Pattern Museum: 40+ cataloged design crimes
-├── starter/             ← tokens + copyable starter code for landing, docs, Next, React, mobile
-├── recipes/             ← copy-ready high-demand UI prompts
-├── adapters/            ← best-practice setup per agent surface
-├── playbooks/           ← real-project adoption plans
-├── actions/             ← DesignOS Review Action docs
-├── examples/            ← 4-page live showcase, each with its decision walkthrough
-├── website/             ← the project's own site — designed by the system itself
-├── press/               ← logos, boilerplate, the demo SVG
-└── bin/                 ← the CLI: init · review · visual · report · elevate · starter · eval · case · doctor
+├── CLAUDE.md · AGENTS.md       kernel and routing
+├── brain/                       design reasoning and originality
+├── foundations/                color, type, spacing, layout, tokens, a11y
+├── components/                 UI component intelligence
+├── patterns/                   page and flow patterns
+├── psychology/                 attention, persuasion, trust, cognition
+├── motion/ · native/           motion and platform-native guidance
+├── industries/                 24 sector playbooks
+├── agents/                     9 specialist roles
+├── loops/ · workflows/         production and review processes
+├── scoring/ · checklists/      review rubric and evidence requirements
+├── validators/                 zero-dependency static checks
+├── memory/                     protocol, templates, personality packs
+├── references/ · goldens/      reference tactics and target bars
+├── starter/ · recipes/         executable starting points
+├── examples/ · website/        inspectable demonstrations
+├── evals/ · case-studies/      measurement and field evidence
+└── bin/designos.js             installer and local CLI
 ```
+
 </details>
 
-Plus a **nine-agent studio** ([`agents/`](agents/)): creative director, UX researcher,
-UI designer, frontend engineer, motion designer, accessibility specialist, copywriter,
-SEO — and an adversarial reviewer with veto power.
+---
 
-Quick references: [**CHEATSHEET**](CHEATSHEET.md) — the whole system on one page ·
-[**GLOSSARY**](GLOSSARY.md) — the vocabulary A–Z ·
-[**Proof Standard**](PROOF_STANDARD.md) — what claims are allowed to say ·
-[**Visual references**](references/README.md) — taste packs without copying ·
-[**Goldens**](goldens/README.md) — target bars + live HTML seeds for premium outputs ·
-[**The Anti-Pattern Museum**](museum/README.md) — 40+ design crimes, each with the rule that prevents it ·
-[**Field Report 001**](evals/field-report-001.md) — a real stress-test, a real gap found and fixed.
+## Project memory
 
-Adoption surfaces: [**Real project playbook**](playbooks/real-project-adoption.md) ·
-[**Team rollout**](playbooks/team-rollout.md) · [**PR review workflow**](playbooks/pr-review-workflow.md) ·
-[**Agent adapters**](adapters/README.md) · [**Starters**](starter/README.md) ·
-[**Recipes**](recipes/README.md) · [**Case studies**](case-studies/README.md).
+Without memory, every new chat can quietly change the brand, spacing scale, terminology,
+or page goals. DesignOS persists the reasoning, not only the final values.
+
+```mermaid
+flowchart TD
+    C["client.md<br/>audience · goals · constraints"] --> D["design work"]
+    B["brand.md<br/>voice · type · color · never-list"] --> D
+    S["design.md<br/>tokens · layout · motion · overrides"] --> D
+    D --> P["pages.md<br/>inventory · intent · status"]
+    D --> T["todo.md<br/>prioritized open work"]
+    D --> G["bugs.md<br/>known defects"]
+    D --> N["notes.md<br/>assumptions · feedback · review history"]
+    P --> NEXT["next session"]
+    T --> NEXT
+    G --> NEXT
+    N --> NEXT
+```
+
+Bootstrap the seven files from [memory/templates](memory/templates/) and follow the
+[memory protocol](memory/README.md): decisions carry reasons, dates are absolute,
+overrides are explicit, and superseded reasoning is preserved instead of erased.
 
 ---
 
-## See it, don't take our word
+## CLI reference
 
-🎭 **[The Before/After demo](website/before-after.html)** — the same brief with and
-without DesignOS; every flaw on the "before" page pinned with its Museum exhibit number.
+Every command runs from your project root after installation.
 
-🖼 **[The showcase gallery](examples/README.md)** — four complete pages (landing,
-dashboard, pricing, docs) for one fictional product, all on a single token system.
-Every page has its decision paper-trail:
-[landing](examples/saas-landing-walkthrough.md) · [dashboard](examples/dashboard-walkthrough.md) ·
-[pricing](examples/pricing-walkthrough.md) · [docs](examples/docs-walkthrough.md) —
-**including the real failures the loop caught before delivery** (a dark-theme contrast
-miss, an unverified metric, a CSS cascade bug found at 577px).
+| Command | Purpose | Writes files? |
+|---|---|---:|
+| `doctor` | Verify kernel, CLI, integrations, skills, and memory | No |
+| `export <agent>` | Generate the selected agent's rules file | Yes |
+| `brief` | Produce a structured, agent-ready design brief | Optional |
+| `starter <name> <dir>` | Copy a production-oriented starter | Yes |
+| `audit <target>` | Run token-drift and accessibility-basics validators | No |
+| `review <target>` | Report static design risks; optionally create a fix prompt | No |
+| `visual <target>` | Create screenshot/static visual QA evidence | Yes |
+| `elevate <target>` | Generate a premium-refactor prompt | Yes |
+| `report <target>` | Create a delivery report and sign-off ledger | Yes |
+| `eval <slug>` | Scaffold a controlled evaluation run | Yes |
+| `case <slug>` | Scaffold a case study and showcase entry | Yes |
 
-🔬 **[Measure it yourself](evals/README.md)** — 10 fixed briefs, a paste-ready
-[neutral judge prompt](evals/judge-prompt.md), validators as the objective floor, a
-[run report template](evals/RUN_TEMPLATE.md), and [published results](evals/RESULTS.md)
-with the caveats stated plainly.
-External runs should follow the [independent run guide](evals/independent-run-guide.md)
-and the [Run 003 call](evals/run-003-call-for-evals.md). The first maintainer-observed
-agent run is documented at [Run 003 — Antigravity Pricing](evals/runs/run-003-antigravity-pricing/).
+```bash
+node DesignOS/bin/designos.js doctor
+node DesignOS/bin/designos.js export all
+node DesignOS/bin/designos.js brief --interactive
+node DesignOS/bin/designos.js starter landing-page my-launch
+node DesignOS/bin/designos.js audit src/
+node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
+node DesignOS/bin/designos.js visual index.html --no-fail
+node DesignOS/bin/designos.js elevate src/ --no-fail
+node DesignOS/bin/designos.js report src/ --no-fail
+node DesignOS/bin/designos.js eval cursor-pricing --agent Cursor --brief B-001
+node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url https://example.com
+```
 
-🌐 **[The website](website/index.html)** — designed by the system it documents.
-View source: every value resolves to a token.
-
-🤖 **[The live-proof pipeline](.github/workflows/proof.yml)** ([latest run](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)) —
-runs the real installer end-to-end on every push, then renders the site and every
-showcase page in a headless browser and checks for console errors. It's CI, not a
-video — but unlike a video it can't go stale: if a change breaks the install or a page
-throws an error, the badge at the top of this file turns red the same day.
-
-🧪 **[The DesignOS Review Action](actions/README.md)** — drop-in PR review for UI files:
-contrast risk, missing states, fake proof, token drift, a11y tells, and a six-dimension
-gate score without calling a model.
+Run `node DesignOS/bin/designos.js help` for flags and usage. The CLI has no runtime
+dependencies beyond Node.js 18+.
 
 ---
 
-## The Review Engine
+## Quality and evidence
 
-Nothing ships on vibes. Every deliverable is scored against a
-[written rubric](scoring/rubric.md):
+DesignOS reviews seven dimensions. The written rubric sets the quality language; the
+evidence ledger records which checks actually happened.
 
-| Dimension | Gate | |
+| Dimension | What the reviewer attacks | Typical evidence |
 |---|---|---|
-| UI Craft | ≥ 95 | typography, spacing, color, detail discipline |
-| UX & Flow | ≥ 95 | hierarchy, cognitive load, state completeness |
-| Accessibility | ≥ 95 | **AA failures cap the score at 60 — no negotiation** |
-| Performance | ≥ 95 | LCP < 2.0s · CLS < 0.1 · INP < 200ms |
-| Modernity | ≥ 95 | current-year professional, zero trend cosplay |
-| Conversion | ≥ 95 | **fake proof & dark patterns = instant fail** |
+| UI Craft | Type, spacing, color, alignment, tokens, detail consistency | Source inspection + rendered viewports |
+| UX & Flow | Eye path, cognitive load, conventions, state completeness | Flow walk + responsive/state evidence |
+| Accessibility | Contrast, keyboard, semantics, reflow, announcements, motion | Tools + manual keyboard/tree checks |
+| Performance | LCP, CLS, INP, payloads, fonts, images, animation cost | Lighthouse/CWV measurement |
+| Modernity | Current craft without trend cosplay | Reference comparison + creative review |
+| Conversion | Claim, mechanism, proof, objections, ask, friction, honesty | Content/proof audit + task completion |
+| Brand Fit & Distinctiveness | Product derivation, signature, swap resistance | Derivation chain + logo-swap/recall review |
 
-Under threshold → back to the loop with specific objections, *before you ever see it*.
+```mermaid
+flowchart LR
+    A["Source checks"] --> E["Evidence ledger"]
+    B["Rendered viewports"] --> E
+    C["Keyboard · a11y · motion"] --> E
+    D["Performance + human review"] --> E
+    E --> F{"Every applicable row assessed?"}
+    F -- "No" --> G["Report NOT ASSESSED"]
+    F -- "Yes" --> H["Apply scoring rubric"]
+```
+
+> [!IMPORTANT]
+> A clean static `review` result means the configured source-risk checks found nothing.
+> It does not by itself prove WCAG conformance, visual excellence, Lighthouse scores, or
+> conversion performance. Read [Proof Standard](PROOF_STANDARD.md), [Final Gate](workflows/final-gate.md),
+> and [Known Limitations](LIMITATIONS.md) before publishing a quality claim.
+
+### What is mechanically checked today?
+
+- token drift and off-grid spacing risks
+- common semantic and accessible-name mistakes
+- missing landmarks/headings and suspicious focus removal
+- raw color usage outside token/exception boundaries
+- common fake-proof and hard-compliance claim risks
+- thin state coverage heuristics
+- optional browser screenshots and basic overflow/render checks
+
+The complete design review remains broader than these static checks. Unverified dimensions
+stay **NOT ASSESSED** rather than becoming an invented score.
 
 ---
 
-## Philosophy
+## Examples and starters
 
-- **Taste is teachable.** Encoded as rules, references, and anti-patterns — not adjectives.
-- **Process beats talent.** The loop catches what inspiration misses.
-- **Self-criticism is a feature.** The reviewer agent is paid to say no.
-- **Memory compounds.** Decision #40 should be consistent with decision #4.
-- **Honesty is enforced, not suggested.** Invented metrics and dark patterns fail the build.
-- **Every rule earns its place.** If a rule can't cite a reason, it gets deleted.
+### See the system applied
+
+| Resource | What to inspect |
+|---|---|
+| [Before / After](website/before-after.html) | The same brief with visible anti-pattern annotations |
+| [Live showcase](examples/README.md) | Landing, dashboard, pricing, and docs on one token system |
+| [Landing walkthrough](examples/saas-landing-walkthrough.md) | Decisions and failures behind the landing page |
+| [Dashboard walkthrough](examples/dashboard-walkthrough.md) | Density, hierarchy, tables, charts, and states |
+| [Pricing walkthrough](examples/pricing-walkthrough.md) | Plan choice, trust, proof, and conversion logic |
+| [Docs walkthrough](examples/docs-walkthrough.md) | Information architecture and developer experience |
+| [Goldens](goldens/README.md) | Target bars for premium output categories |
+| [Anti-Pattern Museum](museum/README.md) | Recognizable design failures and preventing rules |
+
+### Start with working files
+
+```bash
+node DesignOS/bin/designos.js starter list
+node DesignOS/bin/designos.js starter landing-page my-launch
+node DesignOS/bin/designos.js starter next-saas my-app
+node DesignOS/bin/designos.js starter react-dashboard operations-console
+node DesignOS/bin/designos.js starter docs-site developer-docs
+node DesignOS/bin/designos.js starter mobile-app mobile-onboarding
+```
+
+Browse [all starters](starter/README.md), [copy-ready recipes](recipes/README.md),
+[visual reference packs](references/README.md), and the one-page [cheatsheet](CHEATSHEET.md).
+
+---
+
+## Troubleshooting
+
+<details>
+<summary><b>The agent ignores DesignOS</b></summary>
+
+Run `doctor`. Confirm the correct rules file exists for your agent and that `./DesignOS`
+has not been moved. For Claude Code, `CLAUDE.md` must contain `@DesignOS/CLAUDE.md`.
+
+</details>
+
+<details>
+<summary><b>The output still looks generic</b></summary>
+
+Give the brief product material, real assets, a brand belief, and a never-list. Ask the
+agent to show the three design directions before implementation and name the chosen
+signature's derivation chain. See [Brief Compiler](brain/brief-compiler.md) and
+[Originality](brain/originality.md).
+
+</details>
+
+<details>
+<summary><b>The CLI says the target does not exist</b></summary>
+
+Run commands from the project root and pass a path relative to that root. `review` accepts
+supported UI source files or directories; `visual` expects an HTML file or URL.
+
+</details>
+
+<details>
+<summary><b>An export would overwrite my existing rules</b></summary>
+
+DesignOS protects non-generated rules files. Merge the instructions intentionally or back
+up the file before using `--force`. See [integrations](integrations/README.md).
+
+</details>
+
+<details>
+<summary><b>I accidentally ran npx designos</b></summary>
+
+That package is unrelated. Review any changes it made, then reinstall with
+`npx github:ardamoustafa1/DesignOS init --agents --skills` and use the local Node command.
+
+</details>
+
+For a longer onboarding and diagnostic guide, read [Getting Started](GETTING-STARTED.md).
+
+---
 
 ## Community
 
-- ⭐ **Star the repo** — it's how other builders find it
-- 🏗 **[Add your work to the Showcase](SHOWCASE.md)** — and take the
-  [![badge](https://img.shields.io/badge/designed%20with-DesignOS-10b981)](SHOWCASE.md) with you
-- 🥊 **[Challenge a rule](CONTRIBUTING.md)** — every rule stands on evidence; bring yours
-- 🔍 **[Run the missing independent eval](evals/RUN_TEMPLATE.md)** — the single highest-value
-  contribution available right now
-- 💬 **[Discussions](DISCUSSIONS.md)** — questions, show-and-tell, module ideas (setup guide; enable in repo Settings)
-- 🗺 **[Roadmap](ROADMAP.md)** · 🚀 **[Launch playbook](LAUNCH.md)** · 🛡 **[Security](SECURITY.md)** · 📰 **[Press kit](press/README.md)** · ⚠️ **[Known limitations](LIMITATIONS.md)** · 🏢 **[Enterprise](ENTERPRISE.md)** · ⚖️ **[Governance](GOVERNANCE.md)**
+DesignOS becomes more credible through inspectable work, independent runs, and challenged
+rules — not through louder claims.
+
+- Star the repository so other builders can find it.
+- Add real work to the [Showcase](SHOWCASE.md).
+- Submit an independent result using the [evaluation protocol](evals/README.md).
+- Challenge or sharpen a rule through [Contributing](CONTRIBUTING.md).
+- Share a real adoption story using the [case-study template](case-studies/TEMPLATE.md).
+- Join [Discussions](DISCUSSIONS.md) for questions, show-and-tell, and module proposals.
+
+Project guides: [Roadmap](ROADMAP.md) · [Security](SECURITY.md) ·
+[Enterprise](ENTERPRISE.md) · [Governance](GOVERNANCE.md) ·
+[Code of Conduct](CODE_OF_CONDUCT.md) · [Press kit](press/README.md)
+
+---
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Use it, fork it, ship with it.
+MIT — see [LICENSE](LICENSE). Use it, fork it, adapt it, and document what you learn.
 
 <div align="center">
-<sub><b>Built for the age of agents. Designed to make them dangerous.</b></sub>
+
+**Build interfaces that can explain every decision.**
+
+<sub>DesignOS is open source. The strongest contribution is evidence from real use.</sub>
+
 </div>

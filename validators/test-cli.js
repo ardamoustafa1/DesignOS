@@ -254,6 +254,22 @@ test('review: allows root tokens and emits fix prompt for unsourced proof', () =
   assert.ok(!result.stdout.includes('raw-color'), 'root token and theme-color should not be raw-color findings');
 });
 
+test('review: labels final score unassessed and caps accessibility blockers at 60', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-review-cap-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  fs.writeFileSync(path.join(tmp, 'index.html'), '<!doctype html><html><body><main><h1>Demo</h1><img src="x.png"></main></body></html>');
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'review', 'index.html', '--json', '--no-fail'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const report = JSON.parse(result.stdout);
+  assert.strictEqual(report.summary.finalScore, 'NOT ASSESSED');
+  assert.strictEqual(report.summary.staticRiskScores.Accessibility, 60);
+  assert.ok(!Object.prototype.hasOwnProperty.call(report.summary.staticRiskScores, 'Performance'), 'unmeasured Performance must not receive a static score');
+});
+
 test('starter: scaffolds landing page with tokens', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-starter-'));
   fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });

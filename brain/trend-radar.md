@@ -1,5 +1,8 @@
 # Trend Radar — Currency Without Cosplay
 
+**Last reviewed:** 2026-07-17 · **Review cadence:** quarterly · **Next review due:** 2026-10-17
+When overdue, treat CURRENT entries as hypotheses and do not use them as sole justification.
+
 The Modernity dimension (`scoring/rubric.md`) demands work that reads *current-year
 professional*. This module is the radar: what signals fresh, what signals dated, what
 signals template — and the discipline for telling trend from principle.

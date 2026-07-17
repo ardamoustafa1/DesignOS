@@ -13,7 +13,7 @@ Then in any session:
 
 | Command | Does |
 |---|---|
-| `/design-review [path or scope]` | Runs the Review Loop on existing work — six-dimension report, no fixes applied |
+| `/design-review [path or scope]` | Runs the Review Loop on existing work — seven-dimension report, no fixes applied |
 | `/design-score` | Score-only pass on the current working state; fills the report template |
 | `/design-brief` | Interactive intake — asks the five answers, then runs the right workflow |
 | `/design-tokens` | Generates or refreshes the project's canonical token block from memory + foundations |
