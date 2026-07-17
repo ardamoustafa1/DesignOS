@@ -15,10 +15,10 @@ in your fork.
       image uploaded — `press/social-preview.png` (1280×640, dark, the boot-log
       terminal as the visual) is ready at Settings → Social preview → Edit
 - [ ] Run the full validator suite + click every README link
-- [ ] **Record the 30-second GIF** (the single highest-leverage asset): screen capture
+- [x] **Ship a 30-second GIF** (the single highest-leverage asset): screen capture
       of a real session — prompt in → boot log → modules routing → scorecard → the
-      showcase page. Put it at the top of the README. Tools: any recorder + gifski.
-      No GIF = half the launch.
+      showcase page. `press/demo.gif` is now at the top of the README; `npm run
+      demo:terminal` remains available for a human-recorded MP4.
 - [ ] Get Run 003 from an external user with [`evals/RUN_TEMPLATE.md`](evals/RUN_TEMPLATE.md)
       attached — "measured, not vibed" is the differentiator claim; maintainer-only
       numbers are useful instrumentation, not proof
@@ -26,7 +26,8 @@ in your fork.
 ## Phase 1 — Seeding (1–2 weeks before the spike)
 - [ ] Soft-share in 3–5 niche communities where feedback > reach: Claude Code Discord,
       r/ClaudeAI, cursor forum, a designer-dev Slack. Ask for CRITICISM, not stars —
-      the feedback hardens the repo and the early users become launch-day validators
+      the feedback hardens the repo and the early users become launch-day validators.
+      Paste-ready drafts live in `launch/community-outreach.md`
 - [ ] Fix everything they find; their issues/PRs make the repo look alive (it is)
 - [ ] Line up 3–5 friends who'll genuinely try it launch-day (comments with real usage
       reports outperform any marketing reply)
@@ -54,14 +55,16 @@ in your fork.
 
 ## Phase 3 — The long tail (weeks 2–8)
 - [ ] Submit to lists: awesome-claude-code, awesome-cursorrules, awesome-ai-agents,
-      awesome-design-systems (each accepts PRs — read their contribution rules)
+      awesome-design-systems (each accepts PRs — read their contribution rules).
+      Draft copy lives in `launch/awesome-list-prs.md`
 - [ ] Write the deep-dive post (dev.to/Medium/own blog): "How we made an AI agent
       self-review its designs" — the scoring rubric + loop architecture is genuinely
       novel content; canonical-link it from the repo
 - [ ] Short-form video (60s): the boot-log demo — YouTube Shorts/TikTok/Reels reach
       the design-tool audience GitHub never will
 - [ ] Newsletter pitches: TLDR (Design + AI editions), Bytes, Console.dev, Prototypr —
-      each has a submission path; the GIF + one-paragraph pitch
+      each has a submission path; the GIF + one-paragraph pitch in
+      `launch/newsletter-pitches.md`
 - [ ] Respond to every issue within 24h for the first month — early responsiveness
       converts visitors to contributors; slow repos die in the trough
 - [ ] Ship a visible v2.1 within 3 weeks of launch (the changelog IS marketing —

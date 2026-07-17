@@ -70,6 +70,9 @@
     "validate": "bash validators/check-refs.sh && node validators/check-a11y-basics.js examples/ && node validators/check-a11y-basics.js website/ && node validators/check-drift.js examples/ && node validators/check-drift.js website/",
     "test": "node validators/test-cli.js && node validators/check-modules.js",
     "check:links": "node validators/check-links.js --fast",
+    "demo:terminal": "node scripts/demo-session.js",
+    "demo:transcript": "bash scripts/record-demo.sh",
+    "demo:gif": "python3 scripts/render-demo-gif.py",
     "doctor": "node bin/designos.js doctor",
     "audit": "node bin/designos.js audit"
   },

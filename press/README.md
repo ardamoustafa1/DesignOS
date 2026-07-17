@@ -31,6 +31,11 @@ AI coding agents.*
 
 - [logo.svg](logo.svg) — light backgrounds · [logo-dark.svg](logo-dark.svg) — dark backgrounds
 - **[social-preview.png](social-preview.png)** — 1280×640 GitHub social preview (upload at: repo Settings → Social preview → Edit → upload this file)
+- **[demo.svg](demo.svg)** — dependency-free animated boot sequence for README embeds
+- **[demo.gif](demo.gif)** — launch-ready animated terminal card; regenerate with
+  `npm run demo:gif`
+- **[demo-terminal.txt](demo-terminal.txt)** — launch demo transcript; regenerate with
+  `npm run demo:transcript`, record live with `npm run demo:terminal`
 - Usage: don't stretch, recolor, or set on busy imagery; clear space = the mark's height
 - Screenshots: render any `examples/showcase-*.html` or `website/index.html` at
   1440×900 — they're self-contained; or use the before/after demo
