@@ -13,7 +13,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/ardamoustafa1/DesignOS?style=flat&color=10b981)](https://github.com/ardamoustafa1/DesignOS/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.0.1-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.0.2-blue.svg)](CHANGELOG.md)
 [![Live proof](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)
 [![Validate](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
@@ -66,7 +66,7 @@ The agent stops thinking *"I'll make a button"* and starts thinking
 **We're trying to measure this, not just claim it.** Below is a maintainer-run sanity
 check — **not independent validation** ([full caveats](evals/RESULTS.md)) — showing the
 validators catch what they're supposed to catch. The eval slot that would actually prove
-the claim is open and unfilled; [run it and PR your numbers](evals/RESULTS.md#run-002--your-model-your-judge-pending--this-is-the-one-that-matters).
+the claim is open and unfilled; [run it and PR your numbers](evals/RESULTS.md#run-003--your-model-your-judge-the-one-that-matters-most).
 
 | Mechanical check (same brief) | Default-style output | Through DesignOS |
 |---|---:|---:|
@@ -231,8 +231,9 @@ Every page has its decision paper-trail:
 miss, an unverified metric, a CSS cascade bug found at 577px).
 
 🔬 **[Measure it yourself](evals/README.md)** — 10 fixed briefs, a paste-ready
-[neutral judge prompt](evals/judge-prompt.md), validators as the objective floor, and
-[published results](evals/RESULTS.md) with the caveats stated plainly.
+[neutral judge prompt](evals/judge-prompt.md), validators as the objective floor, a
+[run report template](evals/RUN_TEMPLATE.md), and [published results](evals/RESULTS.md)
+with the caveats stated plainly.
 
 🌐 **[The website](website/index.html)** — designed by the system it documents.
 View source: every value resolves to a token.
@@ -278,7 +279,7 @@ Under threshold → back to the loop with specific objections, *before you ever 
 - 🏗 **[Add your work to the Showcase](SHOWCASE.md)** — and take the
   [![badge](https://img.shields.io/badge/designed%20with-DesignOS-10b981)](SHOWCASE.md) with you
 - 🥊 **[Challenge a rule](CONTRIBUTING.md)** — every rule stands on evidence; bring yours
-- 🔍 **[Run the missing independent eval](evals/RESULTS.md)** — the single highest-value
+- 🔍 **[Run the missing independent eval](evals/RUN_TEMPLATE.md)** — the single highest-value
   contribution available right now
 - 💬 **[Discussions](DISCUSSIONS.md)** — questions, show-and-tell, module ideas (setup guide; enable in repo Settings)
 - 🗺 **[Roadmap](ROADMAP.md)** · 🚀 **[Launch playbook](LAUNCH.md)** · 🛡 **[Security](SECURITY.md)** · 📰 **[Press kit](press/README.md)** · ⚠️ **[Known limitations](LIMITATIONS.md)** · 🏢 **[Enterprise](ENTERPRISE.md)** · ⚖️ **[Governance](GOVERNANCE.md)**
