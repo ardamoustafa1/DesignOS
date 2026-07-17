@@ -192,6 +192,7 @@ test('bin/designos.js contains npm-collision warning', () => {
   assert.ok(src.includes('--fix-prompt'), 'fix-prompt help text missing');
   assert.ok(src.includes('visual <target>'), 'visual command missing from help text');
   assert.ok(src.includes('report <target>'), 'report command missing from help text');
+  assert.ok(src.includes('elevate <target>'), 'elevate command missing from help text');
   assert.ok(src.includes('starter <name>'), 'starter command missing from help text');
   assert.ok(src.includes('eval <slug>'), 'eval command missing from help text');
   assert.ok(src.includes('case <slug>'), 'case command missing from help text');
@@ -279,6 +280,31 @@ test('report: writes delivery report with review gate and checklist', () => {
   const body = fs.readFileSync(reportPath, 'utf8');
   assert.ok(body.includes('DesignOS Delivery Report'), 'report title missing');
   assert.ok(body.includes('Sign-off Checklist'), 'sign-off checklist missing');
+});
+
+test('elevate: writes premium refactor prompt', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-elevate-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  fs.writeFileSync(path.join(tmp, 'index.html'), [
+    '<!doctype html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"></head>',
+    '<body><main><h1>Modern powerful platform</h1>',
+    '<p>Unlock seamless innovative workflows with our all-in-one solution.</p>',
+    '<a href="/start">Get started</a><a href="/demo">Book demo</a><a href="/learn">Learn more</a>',
+    '<button>Start</button><button>Try now</button><button>Contact sales</button>',
+    '</main></body></html>',
+  ].join(''));
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'elevate', 'index.html', '--no-fail'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const promptPath = path.join(tmp, 'designos-elevate-prompt.md');
+  assert.ok(fs.existsSync(promptPath), 'elevation prompt missing');
+  const body = fs.readFileSync(promptPath, 'utf8');
+  assert.ok(body.includes('DesignOS Elevation Prompt'), 'elevation title missing');
+  assert.ok(body.includes('generic-copy'), 'generic copy heuristic missing');
+  assert.ok(body.includes('signature vehicle'), 'signature instruction missing');
 });
 
 test('eval: scaffolds independent run folders', () => {

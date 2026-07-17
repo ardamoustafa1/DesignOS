@@ -17,6 +17,7 @@
  *   node DesignOS/bin/designos.js review <file-or-dir> [--min 95] [--json] [--no-fail] [--fix-prompt]
  *   node DesignOS/bin/designos.js visual <file-or-url> [--out designos-visual-report.md]
  *   node DesignOS/bin/designos.js report <file-or-dir> [--min 95] [--out designos-report.md]
+ *   node DesignOS/bin/designos.js elevate <file-or-dir> [--out designos-elevate-prompt.md]
  *   node DesignOS/bin/designos.js brief [--interactive] [--type landing] [--industry saas] [--audience "CFOs"] [--goal "book demos"]
  *   node DesignOS/bin/designos.js starter <name> [target-dir]
  *   node DesignOS/bin/designos.js eval <slug> [--agent cursor] [--brief B-001]
@@ -540,6 +541,152 @@ function report(target, args) {
   if (!args.includes('--no-fail') && reviewReport.summary.overall < min) process.exit(1);
 }
 
+/* ---------- elevate: premium refactor prompt for better-than-clean UI ---------- */
+function readReviewBodies(target) {
+  const abs = path.resolve(CWD, target);
+  if (!fs.existsSync(abs)) fail(`Elevate target not found: ${target}`);
+  const files = [...walkReviewFiles(abs)];
+  if (!files.length) fail(`No reviewable UI files found in ${target}`);
+  return files.map(file => {
+    const raw = fs.readFileSync(file, 'utf8');
+    return { file, rel: path.relative(CWD, file) || path.basename(file), raw };
+  });
+}
+
+function detectSurfaceKind(src) {
+  const lower = src.toLowerCase();
+  if (/pricing|price|plan|billing|enterprise/.test(lower)) return 'pricing';
+  if (/dashboard|metric|table|chart|analytics|sidebar/.test(lower)) return 'dashboard';
+  if (/docs|api|code|quickstart|developer/.test(lower)) return 'docs';
+  if (/onboarding|signup|sign up|welcome|step/.test(lower)) return 'onboarding';
+  if (/checkout|cart|payment/.test(lower)) return 'checkout';
+  return 'landing';
+}
+
+function selectReferencePacks(src) {
+  const lower = src.toLowerCase();
+  const refs = new Set(['brain/quality-bar.md', 'brain/originality.md']);
+  if (/pricing|landing|hero|cta|demo|sales|marketing/.test(lower)) refs.add('references/stripe-level-marketing.md');
+  if (/dashboard|sidebar|table|command|changelog|dark/.test(lower)) refs.add('references/linear-style-app.md');
+  if (/docs|api|developer|code|deploy/.test(lower)) refs.add('references/vercel-docs-style.md');
+  if (/product|iphone|mobile|hardware|launch/.test(lower)) refs.add('references/apple-product-page.md');
+  if (/security|cyber|soc|edr|siem|risk|threat/.test(lower)) refs.add('references/cybersecurity-dark-ui.md');
+  return [...refs];
+}
+
+function premiumHeuristics(files) {
+  const joined = files.map(f => f.raw).join('\n').slice(0, 500000);
+  const stripped = joined.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  const lower = stripped.toLowerCase();
+  const findings = [];
+  const add = (code, message, action) => findings.push({ code, message, action });
+
+  const genericWords = stripped.match(/\b(seamless|powerful|beautiful|modern|innovative|next-gen|cutting-edge|all-in-one|unlock|supercharge|transform your)\b/gi) || [];
+  if (genericWords.length >= 3) {
+    add('generic-copy', 'Copy leans on generic SaaS adjectives.', 'Replace with concrete product mechanics, tradeoffs, named workflows, or before/after user outcomes.');
+  }
+  const ctaMatches = stripped.match(/\b(start|try|get started|book|schedule|demo|contact sales|learn more|sign up)\b/gi) || [];
+  if (ctaMatches.length > 8) {
+    add('cta-noise', `Detected ${ctaMatches.length} CTA-like phrases.`, 'Collapse to one primary action and one secondary action per viewport.');
+  }
+  if (!/\b(screenshot|screen|demo|preview|table|chart|timeline|workflow|terminal|code|invoice|report|map|calendar|feed)\b/i.test(stripped)) {
+    add('missing-product-artifact', 'No obvious product artifact or inspectable proof object found.', 'Add a real-feeling product surface: dashboard crop, workflow timeline, tabular pricing, code sample, report preview, or annotated demo.');
+  }
+  if (!/\b(error|empty|loading|disabled|success|offline|retry|skeleton)\b/i.test(stripped)) {
+    add('missing-state-story', 'No state language found in the surface.', 'Show at least one realistic edge state so the interface feels built, not staged.');
+  }
+  if (!/\b(because|so that|instead of|without|tradeoff|constraint|why)\b/i.test(stripped)) {
+    add('weak-rationale', 'The page does not expose much product reasoning.', 'Add compact explanatory proof: why the architecture, pricing, workflow, or UX choice exists.');
+  }
+  if (/(gradient|blur|glow|glass|orb|bento)/i.test(joined) && !/\b(system|data|artifact|workflow|proof|screenshot)\b/i.test(stripped)) {
+    add('decorative-modernity', 'Visual-modernity words appear without enough product substance.', 'Make the product artifact carry the design. Use decoration only to support hierarchy.');
+  }
+  if (!/\b(focus-visible|aria-|prefers-reduced-motion|alt=|role=)\b/i.test(joined)) {
+    add('thin-interaction-contract', 'Few accessibility or interaction hooks detected.', 'Add focus-visible, semantic labels, reduced-motion handling, and visible disabled/loading states.');
+  }
+  if (!/\b(signature|motif|ritual|timeline|map|canvas|ledger|signal|trace|command|notebook|studio)\b/i.test(stripped)) {
+    add('no-signature-vehicle', 'The design may pass quality checks but still feel swappable.', 'Pick one signature vehicle from brain/originality.md and repeat it across hero, section rhythm, and microcopy.');
+  }
+  return findings;
+}
+
+function elevate(target, args) {
+  if (!target) fail(`Usage: ${RUN} elevate <file-or-dir> [--out designos-elevate-prompt.md] [--min 97]`);
+  const min = Number(argValue(args, '--min', '97'));
+  const outPath = path.resolve(CWD, argValue(args, '--out', 'designos-elevate-prompt.md'));
+  const files = readReviewBodies(target);
+  const src = files.map(f => f.raw).join('\n');
+  const surface = detectSurfaceKind(src);
+  const refs = selectReferencePacks(src);
+  const reviewReport = buildReviewReport(target);
+  const premiumFindings = premiumHeuristics(files);
+  const visualTarget = (files.find(f => /\.html$/i.test(f.rel)) || files[0]).rel;
+  const lines = [
+    '# DesignOS Elevation Prompt',
+    '',
+    `Target: ${target}`,
+    `Surface detected: ${surface}`,
+    `Required bar: every deterministic and creative dimension >= ${min}`,
+    `Generated: ${new Date().toISOString()}`,
+    '',
+    '## Load These Modules First',
+    '',
+    ...refs.map(ref => `- \`${ref}\``),
+    `- \`patterns/${surface === 'landing' ? 'landing-pages' : surface}.md\` if present; otherwise use the closest pattern module.`,
+    '- `loops/refactor-loop.md`',
+    '- `scoring/rubric.md`',
+    '',
+    '## Mission',
+    '',
+    'Refactor this UI from clean/competent to memorable, premium, and inspectable. Preserve the product intent, stack, and truthful claims. Do not redesign for novelty alone.',
+    '',
+    '## Deterministic Gate Findings',
+    '',
+    reviewReport.findings.length
+      ? reviewReport.findings.map((f, i) => `${i + 1}. ${fixAdviceFor(f)}`).join('\n')
+      : 'No deterministic findings remain. The elevation work is now taste, hierarchy, product substance, and originality.',
+    '',
+    '## Premium Elevation Findings',
+    '',
+    premiumFindings.length
+      ? premiumFindings.map((f, i) => `${i + 1}. **${f.code}** — ${f.message}\n   Action: ${f.action}`).join('\n')
+      : 'No obvious premium-elevation heuristics fired. Still perform a creative-director pass against the reference packs.',
+    '',
+    '## Required Upgrade Moves',
+    '',
+    '1. Create one signature vehicle derived from the product material, not decoration.',
+    '2. Make the first viewport communicate product, audience, and primary action within 3 seconds.',
+    '3. Add one inspectable product artifact: screenshot-like UI, workflow, data table, code sample, report, or demo state.',
+    '4. Reduce CTA noise to one primary and one secondary action per viewport.',
+    '5. Add real states: loading, empty, disabled, error, success, and keyboard focus where relevant.',
+    '6. Remove fake proof. Use sourced proof, transparent placeholders, or architecture/economic proof instead.',
+    '7. Tighten typographic rhythm, spacing hierarchy, and section contrast against `brain/quality-bar.md`.',
+    '',
+    '## Forbidden Moves',
+    '',
+    '- Do not add fake logos, fake testimonials, invented usage counts, invented compliance badges, or unsourced awards.',
+    '- Do not hide layout bugs with `overflow-x: hidden`.',
+    '- Do not add decoration that does not explain the product, data, workflow, or brand belief.',
+    '- Do not make every section the same card/grid rhythm.',
+    '',
+    '## Final Verification',
+    '',
+    'Run these before delivery:',
+    '',
+    '```bash',
+    `${RUN} review ${target} --min ${min}`,
+    `${RUN} visual ${visualTarget} --no-fail`,
+    `${RUN} report ${target} --min ${min} --no-fail`,
+    '```',
+    '',
+    'Deliver: changed files, scorecard, before/after rationale, remaining caveats, and memory updates.',
+    '',
+  ];
+  fs.writeFileSync(outPath, lines.join('\n'));
+  ok(`Elevation prompt written to ${path.relative(CWD, outPath)}`);
+  if (reviewReport.summary.overall < min && !args.includes('--no-fail')) process.exit(1);
+}
+
 /* ---------- brief: generate a high-signal DesignOS brief ---------- */
 let pipedAnswers = null;
 function ask(question) {
@@ -991,6 +1138,7 @@ function help() {
                              add --fix-prompt to print an agent-ready repair prompt
     ${RUN} visual <target>    visual QA checklist/report for HTML or URL
     ${RUN} report <target>    one-file delivery report: review gate + fix prompt + sign-off
+    ${RUN} elevate <target>   premium refactor prompt: taste, signature, proof, hierarchy
     ${RUN} brief [options]    generate a high-signal brief for the agent
                              add --interactive for the 6-question prompt builder
     ${RUN} starter <name>     scaffold a DesignOS starter project
@@ -1017,6 +1165,7 @@ switch (cmd) {
   case 'review': review(firstPositional(rest), rest); break;
   case 'visual': visual(firstPositional(rest), rest); break;
   case 'report': report(firstPositional(rest), rest); break;
+  case 'elevate': elevate(firstPositional(rest), rest); break;
   case 'brief': brief(rest); break;
   case 'starter': starter(firstPositional(rest), rest); break;
   case 'eval': evalRun(firstPositional(rest), rest); break;

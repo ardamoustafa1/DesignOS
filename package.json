@@ -81,6 +81,7 @@
     "review": "node bin/designos.js review",
     "visual": "node bin/designos.js visual",
     "report": "node bin/designos.js report",
+    "elevate": "node bin/designos.js elevate",
     "starter": "node bin/designos.js starter",
     "brief": "node bin/designos.js brief",
     "eval": "node bin/designos.js eval",

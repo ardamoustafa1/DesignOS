@@ -102,6 +102,7 @@ node DesignOS/bin/designos.js review src/   # score deterministic design risks
 node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
 node DesignOS/bin/designos.js visual index.html --no-fail   # screenshots if Playwright is installed
 node DesignOS/bin/designos.js report src/ --no-fail          # delivery report + fix prompt + sign-off checklist
+node DesignOS/bin/designos.js elevate src/ --no-fail         # premium refactor prompt for taste/signature
 node DesignOS/bin/designos.js starter landing-page my-launch
 node DesignOS/bin/designos.js brief --interactive
 node DesignOS/bin/designos.js brief --type pricing --industry fintech --audience CFOs --goal "book demos"
@@ -184,8 +185,8 @@ brief you pick? [GETTING-STARTED.md](GETTING-STARTED.md) step 3 tells you what t
 ```
 DesignOS/
 ├── CLAUDE.md            ← the kernel: boot sequence, routing table, standards, output contract
-├── brain/               ← how to think: intelligence · decisions · quality bar · references ·
-│                          trend radar · originality
+├── brain/               ← how to think: intelligence · decisions · quality bar · taste ladder ·
+│                          references · trend radar · originality
 ├── references/          ← visual taste packs: Stripe-level · Linear-style · Apple · Vercel docs · cyber dark
 ├── goldens/             ← target bars for premium pricing, dashboards, docs, onboarding, AI landing
 ├── agents/              ← 9 specialist personas (Claude Code subagent-compatible)
@@ -217,7 +218,7 @@ DesignOS/
 ├── examples/            ← 4-page live showcase, each with its decision walkthrough
 ├── website/             ← the project's own site — designed by the system itself
 ├── press/               ← logos, boilerplate, the demo SVG
-└── bin/                 ← the CLI: init · review · visual · report · starter · eval · case · doctor
+└── bin/                 ← the CLI: init · review · visual · report · elevate · starter · eval · case · doctor
 ```
 </details>
 

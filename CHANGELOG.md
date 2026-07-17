@@ -25,6 +25,10 @@ something agents can read.
   gate, fix prompt, and sign-off checklist; `designos eval` scaffolds independent
   benchmark folders; `designos case` creates external case studies plus a ready
   `SHOWCASE.md` row.
+- **Premium elevation layer:** `designos elevate` generates an agent-ready refactor
+  prompt for taste, signature vehicles, product artifacts, proof quality, hierarchy,
+  and state depth; `brain/taste-ladder.md` and `workflows/premium-redesign.md` define
+  the 70→99 upgrade path.
 - **`designos review <file-or-dir>`** — deterministic design-risk scoring for UI files:
   a11y tells, contrast risk, fake proof, token drift, missing states, and a
   six-dimension gate score. Supports `--json`, `--min`, and `--no-fail` for CI.

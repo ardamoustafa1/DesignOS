@@ -23,6 +23,7 @@ node DesignOS/bin/designos.js doctor        # health check
 node DesignOS/bin/designos.js export all    # rules for Cursor/Copilot/Windsurf/Cline/Aider
 node DesignOS/bin/designos.js audit src/    # run the validators against your own code
 node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
+node DesignOS/bin/designos.js elevate src/ --no-fail
 node DesignOS/bin/designos.js report src/ --no-fail
 ```
 
@@ -113,11 +114,14 @@ forgotten — see `memory/README.md` for the write discipline.
 Once you have a real screen, turn the result into something inspectable:
 
 ```bash
+node DesignOS/bin/designos.js elevate src/ --no-fail
 node DesignOS/bin/designos.js report src/ --no-fail
 node DesignOS/bin/designos.js eval cursor-pricing --agent Cursor --brief B-001
 node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url https://example.com
 ```
 
+- `elevate` creates a premium refactor prompt for taste, signature, product artifact,
+  proof, hierarchy, and state depth.
 - `report` creates a delivery report with the deterministic review gate, an agent-ready
   fix prompt, and the manual sign-off checklist.
 - `eval` creates the folders and README needed for an independent benchmark run:

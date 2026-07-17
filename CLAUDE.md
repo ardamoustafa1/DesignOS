@@ -75,7 +75,7 @@ Do not skip steps. If a module doesn't exist for the task, say so — do not imp
 | Empty / loading / error UI | `components/states.md`, `components/loading-skeletons.md` |
 | Accessibility question | `foundations/accessibility.md`, `checklists/accessibility.md` |
 | SEO | `checklists/seo.md`, agent `agents/seo.md` |
-| "Make it feel premium / modern" | `brain/quality-bar.md`, `brain/reference-library.md`, `brain/trend-radar.md` |
+| "Make it feel premium / modern / top-tier" | `workflows/premium-redesign.md`, `brain/taste-ladder.md`, `brain/quality-bar.md`, `brain/reference-library.md`, `brain/trend-radar.md` |
 | "Make it distinctive / not generic" | `brain/originality.md`, `brain/reference-library.md`, `references/README.md` |
 | "Stripe-level", "Linear-like", "Apple-like", "Vercel docs" | relevant `references/*.md` pack + `brain/originality.md` |
 | Trust, credibility concerns | `psychology/trust.md`, `psychology/persuasion.md`, `PROOF_STANDARD.md` |
