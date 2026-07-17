@@ -55,3 +55,10 @@ After editing modules: re-run the affected briefs (a pricing-module change → b
 and 8). Score deltas below the noise floor are fine; systematic drops are a
 rule-challenge issue (`CONTRIBUTING.md`) with data attached — exactly the evidence
 standard we ask of contributors.
+
+## Submitting Run 003+
+
+Use [`RUN_TEMPLATE.md`](RUN_TEMPLATE.md) for independent reports. The template is
+intentionally specific: model versions, agent surface, prompt text, raw validator output,
+judge-pass medians, and negative findings all belong in the PR. A mixed or negative run
+is useful evidence; a perfect-looking report with no raw outputs is marketing, not eval.

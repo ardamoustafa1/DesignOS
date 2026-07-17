@@ -4,22 +4,24 @@ Stars come from distribution × proof × timing — not from file count. This is
 operational plan for taking DesignOS worldwide. Work it top to bottom; check items off
 in your fork.
 
-## Phase 0 — Pre-flight (do BEFORE any public link exists)
-- [ ] Replace every `USER` placeholder (README, website, package.json repo fields)
-- [ ] Push to GitHub; enable Pages on `website/` (Settings → Pages → /website folder or
-      a `gh-pages` action); verify the live URL on mobile
+## Phase 0 — Pre-flight (do BEFORE the big public push)
+- [x] Replace every `USER` placeholder (README, website, package.json repo fields)
+- [x] Push to GitHub; enable Pages via GitHub Actions; verify the live URL on mobile.
+      Last checked: <https://ardamoustafa1.github.io/DesignOS/website/> returned HTTP
+      200 on 2026-07-17.
 - [ ] Repo polish: description line ("Design intelligence OS for AI coding agents —
       one prompt in, Stripe-grade UI out"), topics (`claude`, `claude-code`, `cursor`,
       `ai-agents`, `design-systems`, `prompt-engineering`, `ui-design`), social-preview
-      image uploaded — `press/social-preview.png` (1024×1024, dark, the boot-log
+      image uploaded — `press/social-preview.png` (1280×640, dark, the boot-log
       terminal as the visual) is ready at Settings → Social preview → Edit
 - [ ] Run the full validator suite + click every README link
 - [ ] **Record the 30-second GIF** (the single highest-leverage asset): screen capture
       of a real session — prompt in → boot log → modules routing → scorecard → the
       showcase page. Put it at the top of the README. Tools: any recorder + gifski.
       No GIF = half the launch.
-- [ ] Run `evals/` on at least one model pair and put the numbers in the README —
-      "measured, not vibed" is the differentiator claim; back it before HN asks
+- [ ] Get Run 003 from an external user with [`evals/RUN_TEMPLATE.md`](evals/RUN_TEMPLATE.md)
+      attached — "measured, not vibed" is the differentiator claim; maintainer-only
+      numbers are useful instrumentation, not proof
 
 ## Phase 1 — Seeding (1–2 weeks before the spike)
 - [ ] Soft-share in 3–5 niche communities where feedback > reach: Claude Code Discord,
@@ -62,7 +64,7 @@ in your fork.
       each has a submission path; the GIF + one-paragraph pitch
 - [ ] Respond to every issue within 24h for the first month — early responsiveness
       converts visitors to contributors; slow repos die in the trough
-- [ ] Ship a visible v1.3/v1.4 within 3 weeks of launch (the changelog IS marketing —
+- [ ] Ship a visible v2.1 within 3 weeks of launch (the changelog IS marketing —
       `patterns/changelog.md`, applied to ourselves)
 
 ## The message discipline (all channels, one voice)
