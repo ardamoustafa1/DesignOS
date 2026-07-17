@@ -4,7 +4,9 @@ Use this before any design artifact is called "done", "ship", "95+", or "100/100
 
 ## Core rule
 
-Self-scoring is a draft. The final score is the deterministic gate output.
+Self-scoring is a draft. Static source review is a risk gate, not a complete design
+assessment. A final numeric score exists only when the delivery report contains evidence
+for every applicable rubric dimension; unchecked rows remain **NOT ASSESSED**.
 
 If the local CLI exists, run it before delivery:
 
@@ -18,7 +20,12 @@ node DesignOS/bin/designos.js report <target> --min 95 --no-fail
 If the user requested a stricter bar, replace `95` with that number. For launch-quality
 screens, use `--min 100` only when the deterministic review must be completely clean.
 
-## No CLI output, no score claim
+The `review` command may report a 0–100 **static risk indicator** for backwards-compatible
+CI thresholds. It must never be presented as the seven-dimension design score. Absence of a
+regex/static finding does not prove visual quality, keyboard completion, WCAG conformance,
+performance, or conversion quality.
+
+## No complete evidence, no score claim
 
 Do not write:
 
@@ -28,8 +35,8 @@ Do not write:
 - "SHIP"
 - "zero findings"
 
-unless the deterministic review command has actually been run and the result is included
-or summarized honestly.
+unless the static review ran **and** the verification ledger records the applicable browser,
+manual, performance, and accessibility evidence. Any NOT ASSESSED row blocks SHIP language.
 
 If the environment cannot run the CLI, say:
 
@@ -50,12 +57,22 @@ Before running the gate, remove these common first-pass failures:
   source is linked in the artifact
 - score history or memory notes that claim a pass before the deterministic gate has run
 
+## Required evidence ledger
+
+- static review findings and command provenance
+- screenshots inspected at 375 / 768 / 1024 / 1440; 320 CSS px reflow where applicable
+- keyboard path, focus visibility/order, and focus-not-obscured check
+- computed contrast and non-color meaning checks across real states
+- reduced-motion check; accessibility-tree/screen-reader check for complex interactions
+- Lighthouse/CWV measurement for deployable pages, otherwise explicitly NOT ASSESSED
+- human/model review for hierarchy, brand fit, distinctiveness, and task completion
+
 ## Required final response
 
 When delivering, include:
 
 - command(s) run
-- final deterministic score
+- static risk indicator and final score (or **NOT ASSESSED**)
 - finding count
 - files changed
 - what was not checked

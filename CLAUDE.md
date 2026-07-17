@@ -27,13 +27,14 @@ This file is the kernel. It tells you **what to load, in what order, and what st
 ```
 1. READ   brain/design-intelligence.md      → how to think
 2. READ   brain/decision-framework.md       → how to choose
-3. ROUTE  via the table below               → load only relevant modules
-4. LOAD   industries/<sector>.md            → sector conventions, if known
-5. LOAD   memory/ project files             → client, brand, prior decisions
-6. RUN    loops/design-loop.md              → produce the work
-7. SCORE  scoring/rubric.md                 → self-review, iterate under 95
-8. GATE   workflows/final-gate.md           → run deterministic review if files exist
-9. WRITE  memory/ updates                   → record decisions and open items
+3. COMPILE brain/brief-compiler.md          → turn the request into a testable contract
+4. ROUTE  via the table below               → load only relevant modules
+5. LOAD   industries/<sector>.md            → sector conventions, if known
+6. LOAD   memory/ project files             → client, brand, prior decisions
+7. RUN    loops/design-loop.md              → produce the work
+8. SCORE  scoring/rubric.md                 → self-review, iterate under 95
+9. GATE   workflows/final-gate.md           → run deterministic review if files exist
+10. WRITE memory/ updates                   → record decisions and open items
 ```
 
 Do not skip steps. If a module doesn't exist for the task, say so — do not improvise silently.
@@ -44,6 +45,7 @@ Do not skip steps. If a module doesn't exist for the task, say so — do not imp
 
 | Task signal | Load |
 |---|---|
+| Vague brief, prompt writing, "premium/beautiful/modern" without specifics | `brain/brief-compiler.md`, `brain/originality.md`, `PROOF_STANDARD.md` |
 | Landing page, marketing site | `patterns/landing-pages.md`, `components/hero.md`, `psychology/` (attention, persuasion, trust), `components/footer.md` |
 | Hero section | `components/hero.md`, `psychology/attention.md`, `foundations/typography.md` |
 | Glow, gradients, grain, glass, "wow" effects | `components/visual-effects.md`, `brain/originality.md`, `motion/performance.md` |

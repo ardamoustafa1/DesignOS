@@ -9,7 +9,8 @@ Target: **WCAG 2.2 AA everywhere, AAA where free.**
 2. Complete keyboard path: every action reachable and operable via Tab/Enter/Space/Esc/arrows.
 3. Visible focus indicator on every interactive element — styled, on-brand, ≥3:1 against adjacent colors, never removed.
 4. `prefers-reduced-motion` respected (`motion/performance.md`).
-5. Touch targets ≥ 44×44px (24×24 absolute minimum per WCAG 2.2, but 44 is the bar).
+5. Targets satisfy WCAG 2.2 AA 24×24px or its spacing/exceptions; DesignOS uses ≥44×44px
+   as the preferred house target (aligned with the larger AAA target).
 
 ## Structure
 - Landmarks: `<header> <nav> <main> <footer> <aside>` — exactly one `<main>`.
@@ -25,7 +26,9 @@ Target: **WCAG 2.2 AA everywhere, AAA where free.**
   outline-offset: 2px;
 }
 ```
-- Use `:focus-visible` (not `:focus`) so mouse users don't see rings, keyboard users always do.
+- Prefer `:focus-visible` with a safe `:focus` fallback where browser/support constraints
+  require it. Never suppress focus merely to avoid rings for pointer users.
+- Verify focus is not obscured by sticky headers, cookie banners, or overlays (WCAG 2.4.11).
 - Modals: focus moves in on open, is trapped inside, returns to the trigger on close.
 - Route changes (SPA): move focus to the new page's h1 or main.
 - Focus order = visual order. If CSS reorders (grid/flex `order`), fix the DOM instead.
@@ -43,7 +46,8 @@ Target: **WCAG 2.2 AA everywhere, AAA where free.**
 - Text over images: measure against the lightest/darkest pixel under the text, not the average.
 
 ## Motion & cognition
-- No flashing >3×/second, ever.
+- Stay below WCAG general-flash and red-flash thresholds; the safer DesignOS house rule is
+  to avoid content flashing more than three times per second.
 - Autoplaying carousels/videos: pausable, or better, absent.
 - Timeouts: warn and extend.
 - Reading level: interface copy at ~8th grade; jargon only where the audience owns it.
@@ -52,7 +56,9 @@ Target: **WCAG 2.2 AA everywhere, AAA where free.**
 1. Tab through the entire page — every stop visible, order logical, no traps.
 2. Contrast-check text tokens against every surface they appear on (including hover/disabled).
 3. Headings/landmarks audit (browser a11y tree).
-4. Zoom 200% — no loss of content or function, no horizontal scroll.
+4. Test 200% text zoom, WCAG text-spacing overrides, and 320 CSS px reflow (400% at
+   1280px). Two-dimensional content such as maps/tables may use its allowed exception
+   without hiding surrounding content or controls.
 5. `prefers-reduced-motion: reduce` — page still fully functional and non-janky.
 6. Run the full `checklists/accessibility.md` before scoring.
 

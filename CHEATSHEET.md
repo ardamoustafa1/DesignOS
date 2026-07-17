@@ -15,7 +15,7 @@ MOTION    100/150/200/300/500ms · ease-out default · exits < entrances
           interactive ≤300ms · stagger ≤60ms × ≤6 · transform/opacity ONLY
 TARGETS   44×44px touch · 48px inputs · 40–48px buttons · 44–48px table rows
 PERF      LCP <2.0s · CLS <0.1 · INP <200ms · Lighthouse ≥95 · page ≤1.5MB
-SCORE     6 dimensions · threshold 95 · AA failure caps at 60 · max 3 loop cycles
+SCORE     7 dimensions · threshold 95 · AA failure caps at 60 · max 3 loop cycles
 ```
 
 ## The one-of-each laws

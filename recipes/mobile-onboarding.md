@@ -15,9 +15,11 @@ Load:
 - DesignOS/psychology/habit-retention.md
 
 Requirements:
+- Boot the DesignOS kernel; compile this brief with brain/brief-compiler.md; do not treat this recipe as a mini-kernel.
+- Compare material-led, audience-led, and belief-led directions; choose one derived signature.
 - Show value before asking for account setup when possible.
 - Include permission prompts only at the moment of need.
 - Include skip, back, error, offline, loading, and success states.
 - Respect platform-native navigation, tap targets, and reduced motion.
-- End with a six-dimension scorecard and redo anything under 95.
+- Render and inspect both platform targets. Run the Final Gate; report unchecked dimensions as NOT ASSESSED.
 ```

@@ -13,6 +13,7 @@ protocol. Any unchecked box in the BLOCKER sections = audit FAIL = dimension cap
 ## Keyboard — BLOCKERS
 - [ ] Tab reaches every interactive element; order = visual order
 - [ ] Focus visible at every stop (styled `:focus-visible`, ≥3:1, never `outline:none` bare)
+- [ ] Focus is not obscured by sticky headers, cookie banners, drawers, or overlays (2.4.11)
 - [ ] No traps; Esc closes every overlay; focus returns to trigger
 - [ ] Skip link first, functional, visible on focus
 - [ ] Dropdowns/menus/tabs: arrow keys, Enter/Space, Esc per pattern
@@ -23,6 +24,8 @@ protocol. Any unchecked box in the BLOCKER sections = audit FAIL = dimension cap
 - [ ] Landmarks: header/nav/main/footer; exactly one main
 - [ ] Buttons are `<button>`, links are `<a href>`; no div-with-onClick
 - [ ] Every input has a visible `<label>`; errors linked `aria-describedby` + `aria-invalid`
+- [ ] Visible control text is included in the accessible name (2.5.3); page and language changes are named
+- [ ] Authentication does not require a cognitive-function test without an accessible alternative (3.3.8)
 - [ ] Images: meaningful alt or `alt=""`; icon-only buttons `aria-label`ed
 - [ ] Tables: real semantics, `<th scope>`, named
 
@@ -34,19 +37,24 @@ protocol. Any unchecked box in the BLOCKER sections = audit FAIL = dimension cap
 
 ## Motion & media — BLOCKERS where marked
 - [ ] `prefers-reduced-motion` implemented per-pattern and TESTED — BLOCKER
-- [ ] No flashing >3×/second — BLOCKER
+- [ ] Flashing stays below WCAG's general/red-flash thresholds; DesignOS house rule avoids >3×/second — BLOCKER
 - [ ] Autoplay: muted, pausable; carousels pausable (or absent)
-- [ ] Video: captions; audio content: transcripts (sector-critical: `industries/education.md`)
+- [ ] Prerecorded video: captions and required audio description; audio-only: transcript
 
 ## Reflow & targets — BLOCKERS
-- [ ] 200% zoom: no content/function loss, no horizontal scroll
-- [ ] 320px-width reflow intact
-- [ ] Touch targets ≥ 44×44 (24×24 hard floor never used as the design target)
+- [ ] 200% text zoom and browser text-size override: no content/function loss
+- [ ] 320 CSS px reflow (equivalent to 400% at 1280px): no two-dimensional scrolling except allowed content such as maps/data tables
+- [ ] WCAG text-spacing override causes no clipping or loss (1.4.12)
+- [ ] Hover/focus-triggered content is dismissible, hoverable, and persistent where required (1.4.13)
+- [ ] Pointer gestures have simple alternatives; dragging has a non-drag alternative; actions support cancellation
+- [ ] Targets meet WCAG 2.2 AA 24×24 or its spacing/exceptions; DesignOS house target is ≥44×44 (AAA-sized)
+- [ ] Orientation is not locked without essential reason; autocomplete/input-purpose tokens are correct
 
 ## Verification methods
 - [ ] Automated pass run (axe/Lighthouse) where tooling exists — findings triaged, not just run
 - [ ] Manual keyboard walk done (tooling can't check this)
 - [ ] Accessibility-tree read-through: page comprehensible without pixels
+- [ ] Forced-colors/high-contrast mode inspected where the target platform supports it
 - [ ] Both themes, all four breakpoints audited
 
 **Verdict:** ☐ PASS ☐ FAIL (n blockers) — one blocker fails; partial credit doesn't exist.

@@ -309,7 +309,7 @@ function analyzeDesignFile(absFile, root) {
     pushFinding(findings, rel, lineOf(raw, m.index), 'Accessibility', 'P1', 'img-no-alt', 'Image is missing alt text.');
   }
   for (const m of raw.matchAll(/<(button|a)\b([^>]*)>(\s*)<\/\1>/gi)) {
-    pushFinding(findings, rel, lineOf(raw, m.index), 'UX Flow', 'P1', 'empty-control', 'Interactive control has no visible label.');
+    pushFinding(findings, rel, lineOf(raw, m.index), 'UX & Flow', 'P1', 'empty-control', 'Interactive control has no visible label.');
   }
   for (const m of raw.matchAll(/<(div|span)\b[^>]*\bonclick=/gi)) {
     pushFinding(findings, rel, lineOf(raw, m.index), 'Accessibility', 'P1', 'nonsemantic-click', `${m[1]} uses onclick; prefer a semantic button/link.`);
@@ -318,7 +318,7 @@ function analyzeDesignFile(absFile, root) {
     pushFinding(findings, rel, 1, 'Accessibility', 'P2', 'missing-main', 'HTML page has no <main> landmark.');
   }
   if (absFile.endsWith('.html') && !/<h1[\s>]/i.test(raw)) {
-    pushFinding(findings, rel, 1, 'UX Flow', 'P2', 'missing-h1', 'HTML page has no <h1>; hierarchy may be unclear.');
+    pushFinding(findings, rel, 1, 'UX & Flow', 'P2', 'missing-h1', 'HTML page has no <h1>; hierarchy may be unclear.');
   }
 
   for (const m of raw.matchAll(/#[0-9a-fA-F]{3,8}\b/g)) {
@@ -381,7 +381,7 @@ function analyzeDesignFile(absFile, root) {
   }
 
   if (isUiSurface && /<form|type=["']submit|button/i.test(raw) && !/(error|invalid|required|aria-invalid|loading|pending|disabled|success|empty)/i.test(raw)) {
-    pushFinding(findings, rel, 1, 'UX Flow', 'P2', 'missing-states', 'Interactive surface appears to lack loading/error/disabled/success/empty states.');
+    pushFinding(findings, rel, 1, 'UX & Flow', 'P2', 'missing-states', 'Interactive surface appears to lack loading/error/disabled/success/empty states.');
   }
   if (isUiSurface && /(hero|pricing|dashboard|onboarding|checkout|signup|sign up|book demo)/i.test(raw) && !/(focus-visible|aria-|alt=|prefers-reduced-motion|loading|error|empty|disabled)/i.test(raw)) {
     pushFinding(findings, rel, 1, 'Modernity', 'P2', 'surface-thinness', 'Important UI surface lacks evidence of states, accessibility hooks, or motion safeguards.');
@@ -394,26 +394,46 @@ function analyzeDesignFile(absFile, root) {
 }
 
 function summarizeReview(findings, files) {
-  const dims = ['UI Craft', 'UX Flow', 'Accessibility', 'Performance', 'Modernity', 'Conversion'];
-  const scores = Object.fromEntries(dims.map(d => [d, 100]));
+  const assessedDims = ['UI Craft', 'UX & Flow', 'Accessibility', 'Modernity', 'Conversion'];
+  const staticRiskScores = Object.fromEntries(assessedDims.map(d => [d, 100]));
   const weights = { P0: 25, P1: 12, P2: 5 };
+  const blockerCodes = new Set([
+    'img-no-alt', 'empty-control', 'nonsemantic-click', 'focus-removed',
+    'proof-risk', 'customer-proof-risk', 'quote-proof-risk', 'placeholder-copy',
+  ]);
   for (const f of findings) {
-    scores[f.dimension] = Math.max(0, scores[f.dimension] - weights[f.severity]);
+    staticRiskScores[f.dimension] = Math.max(0, staticRiskScores[f.dimension] - weights[f.severity]);
+    if (blockerCodes.has(f.code)) staticRiskScores[f.dimension] = Math.min(60, staticRiskScores[f.dimension]);
   }
-  const overall = Math.min(...Object.values(scores));
-  return { filesReviewed: files.length, findingCount: findings.length, scores, overall };
+  const staticRiskFloor = Math.min(...Object.values(staticRiskScores));
+  const unassessed = [
+    'visual hierarchy and brand fit', 'keyboard completion', 'accessibility tree and screen reader',
+    'computed contrast across real states', '320px reflow/400% zoom', 'reduced motion',
+    'Lighthouse/Core Web Vitals', 'task completion and conversion quality',
+  ];
+  return {
+    filesReviewed: files.length,
+    findingCount: findings.length,
+    status: findings.length ? 'FINDINGS' : 'STATIC CHECKS CLEAN',
+    finalScore: 'NOT ASSESSED',
+    staticRiskScores,
+    staticRiskFloor,
+    unassessed,
+  };
 }
 
 function printReviewMarkdown(report) {
   console.log('# DesignOS Review\n');
   console.log(`Files reviewed: ${report.summary.filesReviewed}`);
   console.log(`Findings: ${report.summary.findingCount}`);
-  console.log(`Overall gate: ${report.summary.overall}/100\n`);
-  console.log('| Dimension | Score |');
+  console.log(`Static risk floor: ${report.summary.staticRiskFloor}/100 (not a final design score)`);
+  console.log(`Final design score: ${report.summary.finalScore}\n`);
+  console.log('| Dimension | Static risk indicator |');
   console.log('|---|---:|');
-  for (const [dim, score] of Object.entries(report.summary.scores)) {
+  for (const [dim, score] of Object.entries(report.summary.staticRiskScores)) {
     console.log(`| ${dim} | ${score} |`);
   }
+  console.log(`\nNot assessed: ${report.summary.unassessed.join('; ')}.`);
   if (!report.findings.length) {
     console.log('\nNo deterministic findings. Run the human/model review loop for taste, hierarchy, and fit.');
     return;
@@ -438,7 +458,8 @@ function fixAdviceFor(f) {
 function printFixPrompt(report, min) {
   console.log('Fix these DesignOS review findings, then rerun the DesignOS loop.');
   console.log(`Target: ${report.target}`);
-  console.log(`Current gate: ${report.summary.overall}/100. Required gate: ${min}/100.\n`);
+  console.log(`Current static risk floor: ${report.summary.staticRiskFloor}/100. Requested mechanical floor: ${min}/100.`);
+  console.log('Final design score: NOT ASSESSED until the manual/browser evidence ledger is complete.\n');
   console.log('Rules:');
   console.log('- Do not trust the agent self-score; the final pass is this deterministic review output.');
   console.log('- Do not invent customers, testimonials, certifications, usage counts, awards, urgency, or compliance claims.');
@@ -470,7 +491,7 @@ function review(target, args) {
   if (fixPrompt) printFixPrompt(report, min);
   else if (asJson) console.log(JSON.stringify(report, null, 2));
   else printReviewMarkdown(report);
-  if (!noFail && summary.overall < min) process.exit(1);
+  if (!noFail && summary.staticRiskFloor < min) process.exit(1);
 }
 
 function buildReviewReport(target) {
@@ -491,12 +512,13 @@ function markdownForReviewReport(report) {
     `Generated: ${report.generatedAt}`,
     `Files reviewed: ${report.summary.filesReviewed}`,
     `Findings: ${report.summary.findingCount}`,
-    `Overall gate: ${report.summary.overall}/100`,
+    `Static risk floor: ${report.summary.staticRiskFloor}/100 (not a final design score)`,
+    `Final design score: ${report.summary.finalScore}`,
     '',
-    '| Dimension | Score |',
+    '| Dimension | Static risk indicator |',
     '|---|---:|',
   ];
-  for (const [dim, score] of Object.entries(report.summary.scores)) {
+  for (const [dim, score] of Object.entries(report.summary.staticRiskScores)) {
     lines.push(`| ${dim} | ${score} |`);
   }
   lines.push('', '## Findings', '');
@@ -515,7 +537,8 @@ function report(target, args) {
     '',
     `Target: ${target}`,
     `Generated: ${new Date().toISOString()}`,
-    `Gate: ${reviewReport.summary.overall}/100 (required ${min}/100)`,
+    `Static risk floor: ${reviewReport.summary.staticRiskFloor}/100 (requested ${min}/100)`,
+    'Final design score: NOT ASSESSED until sign-off evidence is completed',
     '',
     '## Review Gate',
     '',
@@ -535,7 +558,10 @@ function report(target, args) {
     '',
     '## Sign-off Checklist',
     '',
+    '- [ ] 320px reflow / 400% zoom inspected',
     '- [ ] Mobile 375px inspected',
+    '- [ ] Tablet 768px inspected',
+    '- [ ] Laptop 1024px inspected',
     '- [ ] Desktop 1440px inspected',
     '- [ ] Keyboard-only path verified',
     '- [ ] Reduced-motion mode verified',
@@ -545,7 +571,7 @@ function report(target, args) {
   ].join('\n');
   fs.writeFileSync(outPath, sections);
   ok(`Delivery report written to ${path.relative(CWD, outPath)}`);
-  if (!args.includes('--no-fail') && reviewReport.summary.overall < min) process.exit(1);
+  if (!args.includes('--no-fail') && reviewReport.summary.staticRiskFloor < min) process.exit(1);
 }
 
 /* ---------- elevate: premium refactor prompt for better-than-clean UI ---------- */
@@ -692,7 +718,7 @@ function elevate(target, args) {
   ];
   fs.writeFileSync(outPath, lines.join('\n'));
   ok(`Elevation prompt written to ${path.relative(CWD, outPath)}`);
-  if (reviewReport.summary.overall < min && !args.includes('--no-fail')) process.exit(1);
+  if (reviewReport.summary.staticRiskFloor < min && !args.includes('--no-fail')) process.exit(1);
 }
 
 /* ---------- brief: generate a high-signal DesignOS brief ---------- */
@@ -758,11 +784,11 @@ function brief(args) {
     '',
     'Required process:',
     '- State which DesignOS modules you are loading and why.',
-    '- Run research -> wireframe -> UI -> review -> accessibility -> performance -> refactor.',
-    '- Score UI Craft, UX Flow, Accessibility, Performance, Modernity, and Conversion.',
-    '- Run the deterministic final gate before claiming a score: review, elevate, visual, then report.',
+    '- Compile the design contract, compare directions, then run research -> wireframe -> UI -> render/inspect -> review -> accessibility -> performance -> refactor.',
+    '- Score UI Craft, UX & Flow, Accessibility, Performance, Modernity, Conversion, and Brand Fit & Distinctiveness.',
+    '- Run the static risk gate and complete the evidence ledger before claiming a score: review, elevate, visual, then report.',
     '- Redo any dimension under 95 before delivery.',
-    '- Do not claim 95+, 100/100, zero findings, or SHIP unless the deterministic review output proves it.',
+    '- Do not claim 95+, 100/100, zero findings, or SHIP while any applicable evidence row is NOT ASSESSED.',
     '- Do not invent metrics, customers, testimonials, badges, urgency, or compliance claims.',
     '- Do not claim SOC2, ISO 27001, HIPAA, PCI, GDPR, FIPS, audited, or certified unless a real source is linked.',
     '- Write durable decisions to memory/ after delivery.',
@@ -776,7 +802,7 @@ function brief(args) {
     '```',
     '',
     'Deliverable:',
-    '- A production-ready artifact plus deterministic gate output, scorecard, key decisions, and remaining risks.',
+    '- A production-ready artifact plus static gate output, evidence ledger, scorecard or NOT ASSESSED labels, key decisions, and remaining risks.',
   ].join('\n');
   const outPath = argValue(args, '--out', '');
   if (outPath) {
@@ -1069,7 +1095,7 @@ function caseStudy(slug, args) {
     '| Dimension | Score | Evidence |',
     '|---|---:|---|',
     '| UI Craft | TODO | TODO |',
-    '| UX Flow | TODO | TODO |',
+    '| UX & Flow | TODO | TODO |',
     '| Accessibility | TODO | TODO |',
     '| Performance | TODO | TODO |',
     '| Modernity | TODO | TODO |',

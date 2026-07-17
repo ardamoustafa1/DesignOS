@@ -15,9 +15,11 @@ Load:
 - DesignOS/scoring/rubric.md
 
 Requirements:
+- Boot the DesignOS kernel; compile this brief with brain/brief-compiler.md; do not treat this recipe as a mini-kernel.
+- Compare material-led, audience-led, and belief-led directions; choose one derived signature.
 - Product proof above the fold.
 - One primary CTA and one secondary CTA.
 - No fake metrics, logos, testimonials, urgency, or security claims.
 - Include mobile, loading, error, and empty-state considerations where relevant.
-- End with a six-dimension scorecard and redo anything under 95.
+- Render and inspect the required viewports. Run the Final Gate; report unchecked dimensions as NOT ASSESSED.
 ```
