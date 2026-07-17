@@ -1,0 +1,21 @@
+name: DesignOS review
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  design-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/design-review
+        with:
+          path: "examples"
+          min-score: "95"
+          fail-under-min: "true"
+          github-token: ${{ github.token }}

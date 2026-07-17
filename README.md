@@ -98,6 +98,8 @@ an unrelated package on the npm registry):
 node DesignOS/bin/designos.js export all    # .cursorrules · copilot-instructions · .windsurfrules · .clinerules · CONVENTIONS.md
 node DesignOS/bin/designos.js doctor        # verify the install's health anytime
 node DesignOS/bin/designos.js audit src/    # run all validators against your code
+node DesignOS/bin/designos.js review src/   # score deterministic design risks
+node DesignOS/bin/designos.js brief --type pricing --industry fintech --audience CFOs --goal "book demos"
 ```
 
 <details>
@@ -198,7 +200,11 @@ DesignOS/
 ├── skills/              ← the /design-* slash commands
 ├── integrations/        ← one export, every agent
 ├── museum/              ← the Anti-Pattern Museum: 40+ cataloged design crimes
-├── starter/             ← tokens.css + tokens.json (W3C format)
+├── starter/             ← tokens + framework starter recipes
+├── recipes/             ← copy-ready high-demand UI prompts
+├── adapters/            ← best-practice setup per agent surface
+├── playbooks/           ← real-project adoption plans
+├── actions/             ← DesignOS Review Action docs
 ├── examples/            ← 4-page live showcase, each with its decision walkthrough
 ├── website/             ← the project's own site — designed by the system itself
 ├── press/               ← logos, boilerplate, the demo SVG
@@ -214,6 +220,10 @@ Quick references: [**CHEATSHEET**](CHEATSHEET.md) — the whole system on one pa
 [**GLOSSARY**](GLOSSARY.md) — the vocabulary A–Z ·
 [**The Anti-Pattern Museum**](museum/README.md) — 40+ design crimes, each with the rule that prevents it ·
 [**Field Report 001**](evals/field-report-001.md) — a real stress-test, a real gap found and fixed.
+
+Adoption surfaces: [**Real project playbook**](playbooks/real-project-adoption.md) ·
+[**Agent adapters**](adapters/README.md) · [**Starters**](starter/README.md) ·
+[**Recipes**](recipes/README.md) · [**Case studies**](case-studies/README.md).
 
 ---
 
@@ -243,6 +253,10 @@ runs the real installer end-to-end on every push, then renders the site and ever
 showcase page in a headless browser and checks for console errors. It's CI, not a
 video — but unlike a video it can't go stale: if a change breaks the install or a page
 throws an error, the badge at the top of this file turns red the same day.
+
+🧪 **[The DesignOS Review Action](actions/README.md)** — drop-in PR review for UI files:
+contrast risk, missing states, fake proof, token drift, a11y tells, and a six-dimension
+gate score without calling a model.
 
 ---
 

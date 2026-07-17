@@ -88,6 +88,10 @@ h1 {
   background: var(--surface-hover);
   transform: translateY(-2px);
 }
+.card:focus-visible {
+  outline: 2px solid var(--accent-hover);
+  outline-offset: 4px;
+}
 .card-top {
   display: flex;
   align-items: flex-start;
@@ -155,6 +159,10 @@ footer {
 }
 footer a { color: var(--muted); text-decoration: none; }
 footer a:hover { color: var(--text); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { /* drift-ok: reduced-motion reset requires !important to override component transitions */ transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  .card:hover { transform: none; }
+}
 </style>
 </head>
 <body>

@@ -60,8 +60,10 @@ Propose additions via a module-proposal issue.
 - GitHub Discussions — enable in repo Settings → Features → Discussions; add Q&A, Show and Tell, Ideas
 
 ## Planned
-- **Published eval results across major models** — the deltas as a living table
-- **Design-review GitHub Action v2:** validators + a rubric-prompted model pass on PR diffs
+- **Published eval results across major models** — the deltas as a living table in
+  `evals/runs/`
+- **Design-review GitHub Action v2:** deterministic review action + optional
+  rubric-prompted model pass on PR diffs
 - **Module translations** under `i18n/` (TR first), beyond the README layer
 - **Industry expansion by demand:** open a module-proposal issue with your sector
 

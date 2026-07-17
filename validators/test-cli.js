@@ -52,6 +52,23 @@ function appendIfMissing(existing, importLine) {
   return existing + `\n${importLine}\n`;
 }
 
+function argValue(args, name, fallback = '') {
+  const inline = args.find(arg => arg.startsWith(`${name}=`));
+  if (inline) return inline.slice(name.length + 1) || fallback;
+  const i = args.indexOf(name);
+  if (i === -1) return fallback;
+  return args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : fallback;
+}
+
+function firstPositional(args) {
+  const valueFlags = new Set(['--min', '--type', '--industry', '--audience', '--goal', '--tone', '--constraints', '--out']);
+  for (let i = 0; i < args.length; i++) {
+    if (!args[i].startsWith('--')) return args[i];
+    if (valueFlags.has(args[i])) i++;
+  }
+  return undefined;
+}
+
 // ── TESTS ──────────────────────────────────────────────────────────────────────
 
 console.log('\nDesignOS CLI — unit tests\n');
@@ -110,6 +127,18 @@ test('appendIfMissing: only one import added even if called twice', () => {
   assert.strictEqual(count, 1);
 });
 
+test('argValue: reads option value with fallback', () => {
+  assert.strictEqual(argValue(['--min', '97'], '--min', '95'), '97');
+  assert.strictEqual(argValue(['--json'], '--min', '95'), '95');
+  assert.strictEqual(argValue(['--min=88'], '--min', '95'), '88');
+});
+
+test('firstPositional: skips flags', () => {
+  assert.strictEqual(firstPositional(['--json', 'src', '--min', '95']), 'src');
+  assert.strictEqual(firstPositional(['--min', '88', 'examples']), 'examples');
+  assert.strictEqual(firstPositional(['--min=88', 'examples']), 'examples');
+});
+
 // Filesystem: init guard (using a real tmpdir)
 test('init guard: refuses to run inside PKG_ROOT', () => {
   const pkgRoot = path.resolve(__dirname, '..');
@@ -136,6 +165,8 @@ test('bin/designos.js contains npm-collision warning', () => {
   const src = fs.readFileSync(binPath, 'utf8');
   assert.ok(src.includes('npx designos'), 'npm collision guard text missing');
   assert.ok(src.includes('unrelated package'), 'unrelated package warning missing');
+  assert.ok(src.includes('review <target>'), 'review command missing from help text');
+  assert.ok(src.includes('brief [options]'), 'brief command missing from help text');
 });
 
 test('bin/designos.js exports no external dependencies', () => {

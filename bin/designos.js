@@ -14,6 +14,8 @@
  *   node DesignOS/bin/designos.js skills
  *   node DesignOS/bin/designos.js export <target>   cursor · copilot · windsurf · cline · aider · all
  *   node DesignOS/bin/designos.js audit <dir>
+ *   node DesignOS/bin/designos.js review <file-or-dir> [--min 95] [--json] [--no-fail]
+ *   node DesignOS/bin/designos.js brief [--type landing] [--industry saas] [--audience "CFOs"] [--goal "book demos"]
  *   node DesignOS/bin/designos.js doctor
  *   node DesignOS/bin/designos.js help
  */
@@ -29,6 +31,23 @@ const log = (msg) => console.log(`  ${msg}`);
 const ok = (msg) => console.log(`  \x1b[32m✓\x1b[0m ${msg}`);
 const warn = (msg) => console.log(`  \x1b[33m!\x1b[0m ${msg}`);
 const fail = (msg) => { console.error(`  \x1b[31m✗\x1b[0m ${msg}`); process.exit(1); };
+const VALUE_FLAGS = new Set(['--min', '--type', '--industry', '--audience', '--goal', '--tone', '--constraints', '--out']);
+
+function argValue(args, name, fallback = '') {
+  const inline = args.find(arg => arg.startsWith(`${name}=`));
+  if (inline) return inline.slice(name.length + 1) || fallback;
+  const i = args.indexOf(name);
+  if (i === -1) return fallback;
+  return args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : fallback;
+}
+
+function firstPositional(args) {
+  for (let i = 0; i < args.length; i++) {
+    if (!args[i].startsWith('--')) return args[i];
+    if (VALUE_FLAGS.has(args[i])) i++;
+  }
+  return undefined;
+}
 
 function copyDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
@@ -164,6 +183,193 @@ function audit(target) {
   ok('audit clean — the mechanical floor holds. The six-dimension review still applies above it.');
 }
 
+/* ---------- review: deterministic design-risk report for CI and local use ---------- */
+const REVIEW_EXT = /\.(html|css|jsx?|tsx?|vue|svelte|mdx)$/;
+
+function* walkReviewFiles(p) {
+  const st = fs.statSync(p);
+  if (st.isDirectory()) {
+    for (const e of fs.readdirSync(p)) {
+      if (['node_modules', '.git', 'dist', 'build', '.next', 'coverage'].includes(e)) continue;
+      yield* walkReviewFiles(path.join(p, e));
+    }
+  } else if (REVIEW_EXT.test(p)) {
+    yield p;
+  }
+}
+
+function lineOf(src, idx) {
+  return src.slice(0, idx).split('\n').length;
+}
+
+function lineAt(src, idx) {
+  return src.slice(0, idx).split('\n').pop() || '';
+}
+
+function pushFinding(findings, file, line, dimension, severity, code, message) {
+  findings.push({ file, line, dimension, severity, code, message });
+}
+
+function analyzeDesignFile(absFile, root) {
+  const raw = fs.readFileSync(absFile, 'utf8');
+  const rel = path.relative(root, absFile) || path.basename(absFile);
+  const findings = [];
+  const lower = raw.toLowerCase();
+  const isUiSurface = /\.(html|jsx?|tsx?|vue|svelte|mdx)$/.test(absFile);
+
+  for (const m of raw.matchAll(/<(img)\b(?![^>]*\balt=)[^>]*>/gi)) {
+    pushFinding(findings, rel, lineOf(raw, m.index), 'Accessibility', 'P1', 'img-no-alt', 'Image is missing alt text.');
+  }
+  for (const m of raw.matchAll(/<(button|a)\b([^>]*)>(\s*)<\/\1>/gi)) {
+    pushFinding(findings, rel, lineOf(raw, m.index), 'UX Flow', 'P1', 'empty-control', 'Interactive control has no visible label.');
+  }
+  for (const m of raw.matchAll(/<(div|span)\b[^>]*\bonclick=/gi)) {
+    pushFinding(findings, rel, lineOf(raw, m.index), 'Accessibility', 'P1', 'nonsemantic-click', `${m[1]} uses onclick; prefer a semantic button/link.`);
+  }
+  if (absFile.endsWith('.html') && !/<main[\s>]/i.test(raw)) {
+    pushFinding(findings, rel, 1, 'Accessibility', 'P2', 'missing-main', 'HTML page has no <main> landmark.');
+  }
+  if (absFile.endsWith('.html') && !/<h1[\s>]/i.test(raw)) {
+    pushFinding(findings, rel, 1, 'UX Flow', 'P2', 'missing-h1', 'HTML page has no <h1>; hierarchy may be unclear.');
+  }
+
+  for (const m of raw.matchAll(/#[0-9a-fA-F]{3,8}\b/g)) {
+    const line = lineAt(raw, m.index);
+    if (/(color|background|border|fill|stroke|shadow|outline|gradient)/i.test(line) && !line.includes('drift-ok')) {
+      pushFinding(findings, rel, lineOf(raw, m.index), 'UI Craft', 'P2', 'raw-color', `${m[0]} appears inline; prefer a token or documented exception.`);
+    }
+  }
+  for (const m of raw.matchAll(/(?:margin|padding|gap|inset)[\w-]*\s*:\s*([^;}"']+)/gi)) {
+    const line = lineAt(raw, m.index);
+    if (line.includes('drift-ok')) continue;
+    for (const px of m[1].matchAll(/\b(\d+)px\b/g)) {
+      const v = Number(px[1]);
+      if (![0, 1, 2].includes(v) && v % 4 !== 0) {
+        pushFinding(findings, rel, lineOf(raw, m.index), 'UI Craft', 'P2', 'off-grid-spacing', `${v}px spacing is off the 4px grid.`);
+      }
+    }
+  }
+  for (const m of raw.matchAll(/outline\s*:\s*(none|0)/gi)) {
+    const near = raw.split('\n').slice(Math.max(0, lineOf(raw, m.index) - 4), lineOf(raw, m.index) + 3).join(' ');
+    if (!/:focus-visible|outline-offset|box-shadow/.test(near)) {
+      pushFinding(findings, rel, lineOf(raw, m.index), 'Accessibility', 'P1', 'focus-removed', 'Focus outline removed without an obvious replacement.');
+    }
+  }
+
+  const weakContrast = /#[a-fA-F0-9]{3,8}|rgba?\(|opacity\s*:/g;
+  for (const m of raw.matchAll(weakContrast)) {
+    const token = m[0].toLowerCase();
+    if (/(#999|#aaa|#bbb|#ccc|opacity\s*:\s*0\.[0-5]|rgba?\([^)]*,\s*0\.[0-5]\))/.test(token)) {
+      pushFinding(findings, rel, lineOf(raw, m.index), 'Accessibility', 'P2', 'contrast-risk', 'Muted/transparent visual value may fail contrast; verify against the actual background.');
+    }
+  }
+
+  const fakeProof = /(trusted by|used by|loved by|join \d|[\d,.]+\+?\s*(users|customers|teams|companies)|★★★★★|john d\.|acme corp|fortune 500)/gi;
+  for (const m of raw.matchAll(fakeProof)) {
+    pushFinding(findings, rel, lineOf(raw, m.index), 'Conversion', 'P1', 'proof-risk', `Proof claim "${m[0]}" needs a real source or should be removed.`);
+  }
+
+  if (isUiSurface && /<form|type=["']submit|button/i.test(raw) && !/(error|invalid|required|aria-invalid|loading|pending|disabled|success|empty)/i.test(raw)) {
+    pushFinding(findings, rel, 1, 'UX Flow', 'P2', 'missing-states', 'Interactive surface appears to lack loading/error/disabled/success/empty states.');
+  }
+  if (isUiSurface && /(hero|pricing|dashboard|onboarding|checkout|signup|sign up|book demo)/i.test(raw) && !/(focus-visible|aria-|alt=|prefers-reduced-motion|loading|error|empty|disabled)/i.test(raw)) {
+    pushFinding(findings, rel, 1, 'Modernity', 'P2', 'surface-thinness', 'Important UI surface lacks evidence of states, accessibility hooks, or motion safeguards.');
+  }
+  if (lower.includes('lorem ipsum')) {
+    pushFinding(findings, rel, 1, 'Conversion', 'P2', 'placeholder-copy', 'Placeholder copy remains in the UI.');
+  }
+
+  return findings;
+}
+
+function summarizeReview(findings, files) {
+  const dims = ['UI Craft', 'UX Flow', 'Accessibility', 'Performance', 'Modernity', 'Conversion'];
+  const scores = Object.fromEntries(dims.map(d => [d, 100]));
+  const weights = { P0: 25, P1: 12, P2: 5 };
+  for (const f of findings) {
+    scores[f.dimension] = Math.max(0, scores[f.dimension] - weights[f.severity]);
+  }
+  const overall = Math.min(...Object.values(scores));
+  return { filesReviewed: files.length, findingCount: findings.length, scores, overall };
+}
+
+function printReviewMarkdown(report) {
+  console.log('# DesignOS Review\n');
+  console.log(`Files reviewed: ${report.summary.filesReviewed}`);
+  console.log(`Findings: ${report.summary.findingCount}`);
+  console.log(`Overall gate: ${report.summary.overall}/100\n`);
+  console.log('| Dimension | Score |');
+  console.log('|---|---:|');
+  for (const [dim, score] of Object.entries(report.summary.scores)) {
+    console.log(`| ${dim} | ${score} |`);
+  }
+  if (!report.findings.length) {
+    console.log('\nNo deterministic findings. Run the human/model review loop for taste, hierarchy, and fit.');
+    return;
+  }
+  console.log('\n## Findings\n');
+  for (const f of report.findings) {
+    console.log(`- **${f.severity} ${f.dimension} / ${f.code}** — ${f.file}:${f.line} — ${f.message}`);
+  }
+}
+
+function review(target, args) {
+  const min = Number(argValue(args, '--min', '95'));
+  const asJson = args.includes('--json');
+  const noFail = args.includes('--no-fail');
+  if (!target) fail(`Usage: ${RUN} review <file-or-dir> [--min 95] [--json] [--no-fail]`);
+  const abs = path.resolve(CWD, target);
+  if (!fs.existsSync(abs)) fail(`Review target not found: ${target}`);
+  const files = [...walkReviewFiles(abs)];
+  if (!files.length) fail(`No reviewable UI files found in ${target}`);
+  const findings = files.flatMap(file => analyzeDesignFile(file, CWD));
+  const summary = summarizeReview(findings, files);
+  const report = { target, generatedAt: new Date().toISOString(), summary, findings };
+  if (asJson) console.log(JSON.stringify(report, null, 2));
+  else printReviewMarkdown(report);
+  if (!noFail && summary.overall < min) process.exit(1);
+}
+
+/* ---------- brief: generate a high-signal DesignOS brief ---------- */
+function brief(args) {
+  const data = {
+    type: argValue(args, '--type', '[surface: landing page / dashboard / pricing / onboarding / mobile app]'),
+    industry: argValue(args, '--industry', '[industry]'),
+    audience: argValue(args, '--audience', '[primary audience]'),
+    goal: argValue(args, '--goal', '[one primary user/business goal]'),
+    tone: argValue(args, '--tone', '[tone: calm, technical, premium, playful, etc.]'),
+    constraints: argValue(args, '--constraints', '[stack, brand, compliance, deadline, content, accessibility constraints]'),
+  };
+  const out = [
+    '# DesignOS Brief',
+    '',
+    `Design a ${data.type} for ${data.industry}.`,
+    '',
+    `Audience: ${data.audience}.`,
+    `Primary goal: ${data.goal}.`,
+    `Tone: ${data.tone}.`,
+    `Constraints: ${data.constraints}.`,
+    '',
+    'Required process:',
+    '- State which DesignOS modules you are loading and why.',
+    '- Run research -> wireframe -> UI -> review -> accessibility -> performance -> refactor.',
+    '- Score UI Craft, UX Flow, Accessibility, Performance, Modernity, and Conversion.',
+    '- Redo any dimension under 95 before delivery.',
+    '- Do not invent metrics, customers, testimonials, badges, urgency, or compliance claims.',
+    '- Write durable decisions to memory/ after delivery.',
+    '',
+    'Deliverable:',
+    '- A production-ready artifact plus scorecard, key decisions, and remaining risks.',
+  ].join('\n');
+  const outPath = argValue(args, '--out', '');
+  if (outPath) {
+    fs.writeFileSync(path.resolve(CWD, outPath), out + '\n');
+    ok(`Brief written to ${outPath}`);
+  } else {
+    console.log(out);
+  }
+}
+
 /* ---------- doctor: install health ---------- */
 function doctor() {
   let problems = 0;
@@ -222,6 +428,8 @@ function help() {
     ${RUN} skills             only install slash commands
     ${RUN} export <target>    rules for: cursor · copilot · windsurf · cline · aider · all
     ${RUN} audit <dir>        run all validators against a directory
+    ${RUN} review <target>    deterministic design-risk report + six-dimension score
+    ${RUN} brief [options]    generate a high-signal brief for the agent
     ${RUN} doctor             check the install's health
 `);
 }
@@ -239,7 +447,9 @@ switch (cmd) {
   case 'agents': registerAgents(); break;
   case 'skills': installSkills(); break;
   case 'export': exportRules(rest.find(a => !a.startsWith('--')) || 'all'); break;
-  case 'audit': audit(rest.find(a => !a.startsWith('--'))); break;
+  case 'audit': audit(firstPositional(rest)); break;
+  case 'review': review(firstPositional(rest), rest); break;
+  case 'brief': brief(rest); break;
   case 'doctor': doctor(); break;
   case 'help':
   case undefined: help(); break;

@@ -2,6 +2,32 @@
 
 All notable changes to DesignOS.
 
+## [2.1.0] — 2026-07-17
+
+The productization wave: DesignOS becomes something teams can run in PRs, not only
+something agents can read.
+
+### Added
+- **`designos review <file-or-dir>`** — deterministic design-risk scoring for UI files:
+  a11y tells, contrast risk, fake proof, token drift, missing states, and a
+  six-dimension gate score. Supports `--json`, `--min`, and `--no-fail` for CI.
+- **`designos brief`** — structured brief generator for high-signal agent prompts,
+  with `--type`, `--industry`, `--audience`, `--goal`, `--tone`, `--constraints`,
+  and `--out`.
+- **DesignOS Review Action** — `.github/actions/design-review`, documented in
+  `actions/README.md`, for drop-in PR review workflows.
+- **Adoption surface:** `playbooks/`, `adapters/`, `recipes/`, `case-studies/`, and
+  `evals/runs/` so real-world use, agent setup, and independent proof have permanent
+  homes.
+- **Starter packages:** Next SaaS, React dashboard, landing page, mobile app, and docs
+  site recipes under `starter/`.
+
+### Changed
+- README now links the review action, starters, recipes, adapters, case studies, and
+  real-project adoption playbook from the main proof/adoption path.
+- `package.json` exposes `npm run review` and `npm run brief` convenience scripts and
+  packages the new adoption folders.
+
 ## [2.0.2] — 2026-07-11
 
 Cosmetic polish pass on the README header and website branding — no functional or
