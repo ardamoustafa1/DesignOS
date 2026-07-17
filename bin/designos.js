@@ -390,6 +390,25 @@ function analyzeDesignFile(absFile, root) {
     pushFinding(findings, rel, 1, 'Conversion', 'P2', 'placeholder-copy', 'Placeholder copy remains in the UI.');
   }
 
+  // Prompt-artifact leakage: LaTeX / markdown syntax rendered as visible UI text.
+  if (absFile.endsWith('.html')) {
+    const visibleText = raw.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ');
+    for (const m of visibleText.matchAll(/\\(to|times|rightarrow|leftarrow|infty|approx|neq|leq|geq|cdot|frac)\b|\$[^$\n]{1,60}\\[a-z]+[^$\n]{0,60}\$/g)) {
+      pushFinding(findings, rel, 1, 'UI Craft', 'P1', 'artifact-leak', `LaTeX markup "${m[0].slice(0, 40)}" is rendered as visible text — replace with real characters (→, ×, ≤).`);
+    }
+    for (const m of visibleText.matchAll(/\*\*[^*\n]{2,60}\*\*|(?:^|\s)```/g)) {
+      pushFinding(findings, rel, 1, 'UI Craft', 'P1', 'artifact-leak', `Markdown syntax "${m[0].trim().slice(0, 40)}" is rendered as visible text — use real HTML emphasis/code elements.`);
+    }
+  }
+
+  // Nav links hidden by a media query with no menu control anywhere in the document.
+  if (absFile.endsWith('.html') && /@media[^{]*\{[^@]*?(nav-links|nav\s+ul|\.nav\s+a|nav\s+a)[^{}]*\{[^}]*display\s*:\s*none/is.test(raw)) {
+    const hasMenuControl = /<button[^>]*(aria-expanded|aria-label=["'][^"']*menu|class=["'][^"']*(menu|burger|hamburger|nav-toggle))/i.test(raw);
+    if (!hasMenuControl) {
+      pushFinding(findings, rel, 1, 'Accessibility', 'P1', 'nav-hidden-no-menu', 'Nav links are hidden at some viewport but no menu button exists — navigation becomes unreachable (components/navigation.md).');
+    }
+  }
+
   return findings;
 }
 
@@ -835,10 +854,17 @@ function visual(target, args) {
     if (/(position:\s*absolute|transform:\s*translate|white-space:\s*nowrap)/i.test(body)) add('P3', 'overlap-risk', 'Absolute/transform/nowrap usage present; inspect mobile screenshots for overlap.');
   }
 
-  let browserNote = 'Browser render not run. Install Playwright in the project to enable screenshot QA.';
+  let browserNote = [
+    '**NOT RUN.** Playwright unavailable — no screenshots exist and no viewport was rendered.',
+    'Every viewport row below is therefore **UNVERIFIED**. Reporting any of them as',
+    '"inspected", "verified", or "CLEAN" without running this pass is fabrication',
+    '(`workflows/final-gate.md`). Install Playwright (`npm i -D playwright && npx playwright install chromium`) and rerun.',
+  ].join('\n');
   let browserFindings = [];
   let screenshots = [];
-  const playwrightCheck = spawnSync('node', ['-e', 'const m="play"+"wright"; require(m); console.log("ok")'], { cwd: CWD, encoding: 'utf8' });
+  // Resolve Playwright from the project first, then DesignOS's own node_modules.
+  const pwEnv = { ...process.env, NODE_PATH: [path.join(CWD, 'node_modules'), path.join(PKG_ROOT, 'node_modules'), process.env.NODE_PATH || ''].filter(Boolean).join(path.delimiter) };
+  const playwrightCheck = spawnSync('node', ['-e', 'const m="play"+"wright"; require(m); console.log("ok")'], { cwd: CWD, encoding: 'utf8', env: pwEnv });
   if (playwrightCheck.status === 0) {
     fs.mkdirSync(shotDir, { recursive: true });
     const script = [
@@ -849,7 +875,7 @@ function visual(target, args) {
       '(async()=>{',
       `const target=${JSON.stringify(isUrl ? target : `file://${abs}`)};`,
       `const out=${JSON.stringify(shotDir)};`,
-      'const viewports=[["mobile",375,812],["tablet",768,1024],["desktop",1440,1000]];',
+      'const viewports=[["mobile",375,812],["tablet",768,1024],["laptop",1024,900],["desktop",1440,1000]];',
       'const browser=await chromium.launch();',
       'const result={screenshots:[],findings:[]};',
       'for (const [name,width,height] of viewports) {',
@@ -862,15 +888,32 @@ function visual(target, args) {
       '    const main=document.querySelector("main");',
       '    const h1=document.querySelector("h1");',
       '    const bodyText=(document.body.innerText||"").trim();',
+      '    const header=document.querySelector("header, [role=banner]");',
+      '    const navLinks=[...document.querySelectorAll("header nav a, [role=banner] nav a, header .nav-links a")];',
+      '    const visible=el=>{ const r=el.getBoundingClientRect(); const s=getComputedStyle(el); return r.width>0 && r.height>0 && s.visibility!=="hidden" && s.display!=="none" && r.left>=-2 && r.right<=document.documentElement.clientWidth+2; };',
+      '    const visibleLinks=navLinks.filter(visible).length;',
+      '    const menuButton=[...document.querySelectorAll("header button, [role=banner] button, header [aria-expanded]")].some(b=>{ const s=getComputedStyle(b); const r=b.getBoundingClientRect(); return s.display!=="none" && r.width>0 && (b.hasAttribute("aria-expanded") || /menu|nav|burger/i.test(b.getAttribute("aria-label")||b.className||"")); });',
+      '    let headerOverflow=0, headerWrapped=false;',
+      '    if (header) {',
+      '      headerOverflow=Math.max(0, header.scrollWidth-header.clientWidth);',
+      '      const kids=[...header.querySelectorAll("*")].filter(visible);',
+      '      const hr=header.getBoundingClientRect();',
+      '      headerWrapped=hr.height>120 || kids.some(k=>{ const r=k.getBoundingClientRect(); return r.right>hr.right+2 || r.left<hr.left-2; });',
+      '    }',
       '    return {',
       '      scrollWidth: document.documentElement.scrollWidth,',
       '      clientWidth: document.documentElement.clientWidth,',
       '      bodyTextLength: bodyText.length,',
       '      h1: Boolean(h1),',
       '      main: Boolean(main),',
-      '      heroHeight: main ? main.getBoundingClientRect().height : 0',
+      '      heroHeight: main ? main.getBoundingClientRect().height : 0,',
+      '      hasHeader: Boolean(header),',
+      '      navLinkCount: navLinks.length, visibleLinks, menuButton, headerOverflow, headerWrapped',
       '    };',
       '  });',
+      '  if (metrics.hasHeader && metrics.headerOverflow>4) result.findings.push({ severity:"P1", code:"nav-overflow", message:`${name}: header content overflows its bar by ${metrics.headerOverflow}px (items colliding or clipped)` });',
+      '  if (metrics.hasHeader && metrics.headerWrapped) result.findings.push({ severity:"P1", code:"nav-wrap", message:`${name}: header items wrap or escape the bar bounds — nav does not fit at this width` });',
+      '  if (metrics.navLinkCount>0 && metrics.visibleLinks===0 && !metrics.menuButton) result.findings.push({ severity:"P1", code:"nav-unreachable", message:`${name}: all nav links are hidden and no menu button exists — navigation is unreachable` });',
       '  if (metrics.scrollWidth > metrics.clientWidth + 2) result.findings.push({ severity:"P1", code:"horizontal-scroll", message:`${name}: document scrollWidth ${metrics.scrollWidth}px exceeds viewport ${metrics.clientWidth}px` });',
       '  if (!metrics.h1) result.findings.push({ severity:"P2", code:"missing-h1-render", message:`${name}: rendered page has no h1` });',
       '  if (!metrics.main) result.findings.push({ severity:"P2", code:"missing-main-render", message:`${name}: rendered page has no main landmark` });',
@@ -885,7 +928,7 @@ function visual(target, args) {
       'console.log(JSON.stringify(result));',
       '})().catch(err=>{ console.error(err.stack||err.message); process.exit(1); });',
     ].join('\n');
-    const run = spawnSync('node', ['-e', script], { cwd: CWD, encoding: 'utf8', maxBuffer: 1024 * 1024 * 10 });
+    const run = spawnSync('node', ['-e', script], { cwd: CWD, encoding: 'utf8', maxBuffer: 1024 * 1024 * 10, env: pwEnv });
     if (run.status === 0) {
       const result = JSON.parse(run.stdout);
       browserFindings = result.findings || [];
@@ -914,6 +957,8 @@ function visual(target, args) {
     findings.length ? findings.map(f => `- **${f.severity} / ${f.code}** — ${f.message}`).join('\n') : 'No static visual-risk findings.',
     '',
     '## Manual Viewports',
+    '',
+    'An unchecked box means UNVERIFIED — report it as unverified, never as inspected.',
     '',
     '- [ ] 375px mobile',
     '- [ ] 768px tablet',

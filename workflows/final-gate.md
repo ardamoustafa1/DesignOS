@@ -43,6 +43,15 @@ If the environment cannot run the CLI, say:
 > Deterministic DesignOS review was not run in this environment. This is a self-review,
 > not a final score.
 
+## The renarration ban
+
+Generated reports are quoted, never paraphrased upward. If `designos-visual-report.md`
+says "NOT RUN" or contains unchecked viewport boxes, your summary must say exactly that —
+"visual pass NOT RUN, viewports unverified." Rewriting "Browser render not run" into
+"4 viewports verified" or an unchecked ledger into "CLEAN" is fabrication of evidence,
+the most serious failure this system recognizes. The same applies to
+"Final design score: NOT ASSESSED" — it never becomes a number in your retelling.
+
 ## First-pass failure traps
 
 Before running the gate, remove these common first-pass failures:
@@ -56,6 +65,9 @@ Before running the gate, remove these common first-pass failures:
 - hard compliance claims such as SOC2, ISO 27001, HIPAA, PCI, GDPR, FIPS unless a real
   source is linked in the artifact
 - score history or memory notes that claim a pass before the deterministic gate has run
+- nav links hidden at any breakpoint without a menu button replacing them
+- header items that wrap, collide, or slide under the CTA at 1024px (render it and look)
+- LaTeX or markdown syntax rendered as visible UI text (`\to`, `$…$`, `**bold**`)
 
 ## Required evidence ledger
 

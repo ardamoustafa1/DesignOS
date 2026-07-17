@@ -29,10 +29,9 @@ AI coding agents.*
 
 ## Assets
 
-- [demo.gif](demo.gif) — the boot-sequence animation used at the top of the README (rendered from [demo.svg](demo.svg))
+- [demo.svg](demo.svg) — dependency-free animated boot sequence used at the top of the README
 - [logo.svg](logo.svg) — light backgrounds · [logo-dark.svg](logo-dark.svg) — dark backgrounds
 - **[social-preview.png](social-preview.png)** — 1280×640 GitHub social preview (upload at: repo Settings → Social preview → Edit → upload this file)
-- **[demo.svg](demo.svg)** — dependency-free animated boot sequence used in the README embed
 - **[demo.gif](demo.gif)** — fallback launch-ready animated terminal card; regenerate with
   `npm run demo:gif`
 - **[demo-terminal.txt](demo-terminal.txt)** — launch demo transcript; regenerate with

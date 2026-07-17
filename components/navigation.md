@@ -24,6 +24,28 @@ Background:  transparent over hero → solid/blur on scroll (see behavior)
 - **Hide-on-down, show-on-up:** for content-heavy pages; transition 200ms; never hide while a dropdown is open.
 - Height may compress 8px on scroll — animate `height`, not padding jumps.
 
+### The width budget & the crowded middle (769–1279px)
+The navbar's most common real-world failure is not mobile — it's the **middle widths**,
+where desktop layout persists but no longer fits. These rules are binding:
+1. **The collapse breakpoint is measured, not defaulted.** Sum the bar's worst-case widths
+   (logo + gaps + every link at its longest label + auxiliary widgets + CTA + container
+   padding). Links collapse into the menu at the width where that sum exceeds the
+   container **minus 48px of breathing room** — not at a framework's 768px habit.
+   A 5-link bar with a wide logo typically needs to collapse below ~1150px, not 768px.
+2. **Bar items never wrap.** Logo, links, pills, and CTA all carry `white-space: nowrap`;
+   the bar is a single 64–72px line at every width until the collapse breakpoint. A
+   two-line logo or a wrapped link label is an instant finding, not a quirk.
+3. **Hiding links requires replacing them.** `display: none` on the link list without a
+   visible menu button in the same breakpoint = navigation unreachable = instant fail
+   (the CLI's `nav-unreachable` / `nav-hidden-no-menu` checks enforce this).
+4. **Auxiliary widgets yield first.** A status pill, version badge, or search box between
+   logo and links is a luxury: it needs a compact variant (icon/dot + short label) below
+   ~1280px and disappears from the bar entirely before any link does. One auxiliary
+   widget maximum — the bar is not a dashboard.
+5. **Test 1024 explicitly.** It's the classic danger zone: too wide to trigger tablet
+   collapse habits, too narrow for a full desktop bar. The visual gate renders it;
+   look at it.
+
 ### Dropdowns / mega-menus
 - Trigger: click (mobile+desktop safe) or hover-with-intent (150ms delay in, generous exit paths — no diagonal-move dropouts).
 - Panel: radius + shadow tier-2, 8px offset from bar, entrance 150ms fade+4px translate.
@@ -55,6 +77,9 @@ flex (no manual reordering needed). The `›` breadcrumb separator is directiona
 it to `‹` under RTL, or use a script-neutral `/`. Full protocol: `foundations/rtl-i18n.md`.
 
 ## Anti-patterns
+- Hiding nav links at a breakpoint with no hamburger/menu replacing them (navigation death)
+- Desktop bar surviving into widths where items wrap, collide, or slide under the CTA (the 1024 collision)
+- A status/version pill wider than the logo, wrapping to two lines, or outliving the links in the bar
 - Nav items that are one-word mysteries ("Solutions", "Resources" hiding everything — if a dropdown has <3 strong items, promote or delete)
 - Logo not linking home; logo center on desktop marketing (breaks scan start)
 - Transparent nav with white text over a light hero photo (contrast roulette)
@@ -64,6 +89,8 @@ it to `‹` under RTL, or use a script-neutral `/`. Full protocol: `foundations/
 
 ## Checklist
 - [ ] ≤6 top items (marketing); CTA present and visually terminal
+- [ ] Collapse breakpoint measured from real content widths; bar is one line with zero wrap/overflow at 375/768/1024/1440
+- [ ] Every breakpoint that hides links shows a menu button; auxiliary widgets have compact variants and yield first
 - [ ] Current page marked visibly + `aria-current`
 - [ ] Scroll behavior deliberate; contrast valid over all scroll positions
 - [ ] Full keyboard support incl. dropdown Esc/arrows; skip-link present

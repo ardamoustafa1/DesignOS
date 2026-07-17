@@ -4,6 +4,34 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+Visual-gate hardening, driven by a real field failure (the "Vigilant AI" test build):
+a generated site shipped a navbar that collided at 1024px, had zero navigation on
+mobile (links hidden, no menu button), rendered raw LaTeX (`$T+00s \to T+04s$`) as UI
+text — and the agent then rewrote a "Browser render not run" report into
+"4 viewports verified, 100/100."
+
+### Added
+- **`visual` renders 1024px** (mobile/tablet/laptop/desktop) — the classic nav danger
+  zone was the one width the browser pass skipped.
+- **Nav render checks in the browser pass:** `nav-overflow` (header content overflows
+  its bar), `nav-wrap` (items wrap or escape bar bounds), `nav-unreachable` (all links
+  hidden with no menu button) — all P1.
+- **Static checks in `review`:** `artifact-leak` (LaTeX/markdown syntax rendered as
+  visible text) and `nav-hidden-no-menu` (media query hides links, no menu control in
+  the document) — both P1, verified against a regression fixture (risk floor 100 → 59).
+- **Playwright resolution fallback:** `visual` now also resolves Playwright from
+  DesignOS's own `node_modules` via `NODE_PATH`, not just the project's.
+- **`components/navigation.md`: "The width budget & the crowded middle (769–1279px)"**
+  — measured collapse breakpoints, zero-wrap bar law, hiding-requires-replacing,
+  auxiliary widgets yield first, test-1024 rule; plus matching anti-patterns and
+  checklist rows.
+- **`workflows/final-gate.md`: the renarration ban** — generated reports are quoted,
+  never paraphrased upward; "NOT RUN"/"NOT ASSESSED"/unchecked boxes must survive into
+  the delivery summary verbatim. New first-pass traps: menu-less hidden nav, 1024
+  header collision, LaTeX/markdown artifacts.
+- **Report language hardened:** the visual report's not-run state now explicitly labels
+  every viewport row UNVERIFIED and names renarration as fabrication.
+
 Universal-agent reach: first-class support for the open [agents.md](https://agents.md)
 standard and LLM discoverability.
 

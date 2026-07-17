@@ -17,8 +17,8 @@ in your fork.
 - [ ] Run the full validator suite + click every README link
 - [x] **Ship a 30-second GIF** (the single highest-leverage asset): screen capture
       of a real session — prompt in → boot log → modules routing → scorecard → the
-      showcase page. `press/demo.gif` is now at the top of the README; `npm run
-      demo:terminal` remains available for a human-recorded MP4.
+      showcase page. `press/demo.svg` is now at the top of the README (`press/demo.gif`
+      as fallback); `npm run demo:terminal` remains available for a human-recorded MP4.
 - [ ] Get Run 003 from an external user with [`evals/RUN_TEMPLATE.md`](evals/RUN_TEMPLATE.md)
       attached — "measured, not vibed" is the differentiator claim; maintainer-only
       numbers are useful instrumentation, not proof
