@@ -13,14 +13,14 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/ardamoustafa1/DesignOS?style=flat&color=10b981)](https://github.com/ardamoustafa1/DesignOS/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.0.2-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](CHANGELOG.md)
 [![Live proof](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)
 [![Validate](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-10b981.svg)](CONTRIBUTING.md)
 
-<img src="press/demo.gif" alt="Animated demo: prompt enters → DesignOS boots kernel v2.0.2 → routes pricing/cybersecurity/card modules → loads project memory → runs design loop → catches hierarchy and contrast failures → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
+<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.1.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
 
 [**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Architecture](ARCHITECTURE.md) · [Enterprise guide](ENTERPRISE.md) · [Governance](GOVERNANCE.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
