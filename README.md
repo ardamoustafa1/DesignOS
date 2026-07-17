@@ -99,6 +99,7 @@ node DesignOS/bin/designos.js export all    # .cursorrules · copilot-instructio
 node DesignOS/bin/designos.js doctor        # verify the install's health anytime
 node DesignOS/bin/designos.js audit src/    # run all validators against your code
 node DesignOS/bin/designos.js review src/   # score deterministic design risks
+node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
 node DesignOS/bin/designos.js brief --type pricing --industry fintech --audience CFOs --goal "book demos"
 ```
 
@@ -247,7 +248,8 @@ miss, an unverified metric, a CSS cascade bug found at 577px).
 [run report template](evals/RUN_TEMPLATE.md), and [published results](evals/RESULTS.md)
 with the caveats stated plainly.
 External runs should follow the [independent run guide](evals/independent-run-guide.md)
-and the [Run 003 call](evals/run-003-call-for-evals.md).
+and the [Run 003 call](evals/run-003-call-for-evals.md). The first maintainer-observed
+agent run is documented at [Run 003 — Antigravity Pricing](evals/runs/run-003-antigravity-pricing/).
 
 🌐 **[The website](website/index.html)** — designed by the system it documents.
 View source: every value resolves to a token.

@@ -13,6 +13,7 @@ const assert = require('assert');
 const path   = require('path');
 const fs     = require('fs');
 const os     = require('os');
+const { spawnSync } = require('child_process');
 
 let passed = 0;
 let failed = 0;
@@ -167,6 +168,7 @@ test('bin/designos.js contains npm-collision warning', () => {
   assert.ok(src.includes('unrelated package'), 'unrelated package warning missing');
   assert.ok(src.includes('review <target>'), 'review command missing from help text');
   assert.ok(src.includes('brief [options]'), 'brief command missing from help text');
+  assert.ok(src.includes('--fix-prompt'), 'fix-prompt help text missing');
 });
 
 test('bin/designos.js exports no external dependencies', () => {
@@ -176,6 +178,36 @@ test('bin/designos.js exports no external dependencies', () => {
   const requires = [...src.matchAll(/require\(['"]([^'"]+)['"]\)/g)].map(m => m[1]);
   const external = requires.filter(r => !['fs', 'path', 'os', 'child_process', 'assert'].includes(r));
   assert.deepStrictEqual(external, [], `Unexpected external deps: ${external.join(', ')}`);
+});
+
+test('review: allows root tokens and emits fix prompt for unsourced proof', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-review-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  const html = [
+    '<!doctype html>',
+    '<html><head>',
+    '<meta name="theme-color" content="#0B0D10">',
+    '<style>',
+    ':root { --accent: #22D3EE; --bg: #0B0D10; }',
+    '.logo { color: var(--accent); }',
+    '</style>',
+    '</head><body>',
+    '<main><h1>Pricing</h1>',
+    '<section aria-label="Trusted by teams"><p>Trusted by 1,847 security teams</p><span>Cloudflare</span></section>',
+    '<button disabled>Start trial</button>',
+    '</main>',
+    '</body></html>',
+  ].join('\n');
+  fs.writeFileSync(path.join(tmp, 'pricing.html'), html);
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'review', 'pricing.html', '--fix-prompt', '--no-fail'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.ok(result.stdout.includes('Fix these DesignOS review findings'));
+  assert.ok(result.stdout.includes('proof-risk') || result.stdout.includes('customer-proof-risk'));
+  assert.ok(!result.stdout.includes('raw-color'), 'root token and theme-color should not be raw-color findings');
 });
 
 // ── SUMMARY ───────────────────────────────────────────────────────────────────

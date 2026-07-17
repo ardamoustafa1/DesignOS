@@ -14,7 +14,7 @@
  *   node DesignOS/bin/designos.js skills
  *   node DesignOS/bin/designos.js export <target>   cursor · copilot · windsurf · cline · aider · all
  *   node DesignOS/bin/designos.js audit <dir>
- *   node DesignOS/bin/designos.js review <file-or-dir> [--min 95] [--json] [--no-fail]
+ *   node DesignOS/bin/designos.js review <file-or-dir> [--min 95] [--json] [--no-fail] [--fix-prompt]
  *   node DesignOS/bin/designos.js brief [--type landing] [--industry saas] [--audience "CFOs"] [--goal "book demos"]
  *   node DesignOS/bin/designos.js doctor
  *   node DesignOS/bin/designos.js help
@@ -203,7 +203,33 @@ function lineOf(src, idx) {
 }
 
 function lineAt(src, idx) {
-  return src.slice(0, idx).split('\n').pop() || '';
+  const start = src.lastIndexOf('\n', idx) + 1;
+  const end = src.indexOf('\n', idx);
+  return src.slice(start, end === -1 ? src.length : end);
+}
+
+function windowAround(src, idx, radius = 180) {
+  return src.slice(Math.max(0, idx - radius), Math.min(src.length, idx + radius));
+}
+
+function isWithinRootTokenBlock(src, idx) {
+  const before = src.slice(0, idx);
+  const root = before.lastIndexOf(':root');
+  if (root === -1) return false;
+  const open = src.indexOf('{', root);
+  if (open === -1 || open > idx) return false;
+  const close = src.indexOf('}', open);
+  return close !== -1 && idx < close;
+}
+
+function isThemeColorMeta(src, idx) {
+  const line = lineAt(src, idx);
+  return /<meta\b[^>]*name=["']theme-color["'][^>]*>/i.test(line);
+}
+
+function hasInlineException(src, idx) {
+  const near = windowAround(src, idx, 140);
+  return /(drift-ok|token-ok|proof-ok):/i.test(near);
 }
 
 function pushFinding(findings, file, line, dimension, severity, code, message) {
@@ -235,13 +261,18 @@ function analyzeDesignFile(absFile, root) {
 
   for (const m of raw.matchAll(/#[0-9a-fA-F]{3,8}\b/g)) {
     const line = lineAt(raw, m.index);
-    if (/(color|background|border|fill|stroke|shadow|outline|gradient)/i.test(line) && !line.includes('drift-ok')) {
+    if (
+      /(color|background|border|fill|stroke|shadow|outline|gradient)/i.test(line) &&
+      !hasInlineException(raw, m.index) &&
+      !isWithinRootTokenBlock(raw, m.index) &&
+      !isThemeColorMeta(raw, m.index)
+    ) {
       pushFinding(findings, rel, lineOf(raw, m.index), 'UI Craft', 'P2', 'raw-color', `${m[0]} appears inline; prefer a token or documented exception.`);
     }
   }
   for (const m of raw.matchAll(/(?:margin|padding|gap|inset)[\w-]*\s*:\s*([^;}"']+)/gi)) {
     const line = lineAt(raw, m.index);
-    if (line.includes('drift-ok')) continue;
+    if (/(drift-ok|token-ok):/i.test(line) || hasInlineException(raw, m.index)) continue;
     for (const px of m[1].matchAll(/\b(\d+)px\b/g)) {
       const v = Number(px[1]);
       if (![0, 1, 2].includes(v) && v % 4 !== 0) {
@@ -264,9 +295,27 @@ function analyzeDesignFile(absFile, root) {
     }
   }
 
-  const fakeProof = /(trusted by|used by|loved by|join \d|[\d,.]+\+?\s*(users|customers|teams|companies)|★★★★★|john d\.|acme corp|fortune 500)/gi;
+  const fakeProof = /(trusted by|used by|loved by|join \d|[\d,.]+\+?\s*(users|customers|teams|companies)|★★★★★|john d\.|acme corp|fortune 500|soc 2 type ii|iso 27001|hipaa compliant|pci dss|gdpr compliant|mitre evaluations?)/gi;
   for (const m of raw.matchAll(fakeProof)) {
+    if (hasInlineException(raw, m.index)) continue;
     pushFinding(findings, rel, lineOf(raw, m.index), 'Conversion', 'P1', 'proof-risk', `Proof claim "${m[0]}" needs a real source or should be removed.`);
+  }
+  const knownLogoProof = /(cloudflare|vercel|tailscale|linear|planetscale|supabase|stripe|apple|google|microsoft|netflix|airbnb)/gi;
+  for (const m of raw.matchAll(knownLogoProof)) {
+    const line = lineAt(raw, m.index);
+    const near = windowAround(raw, m.index).toLowerCase();
+    if (hasInlineException(raw, m.index)) continue;
+    if (/\bstripe-level\b/i.test(line)) continue;
+    if (/(logo|trusted|customer|testimonial|proof|used by|loved by)/i.test(line) || /logo-strip|logo-item|customer-logo/i.test(near)) {
+      pushFinding(findings, rel, lineOf(raw, m.index), 'Conversion', 'P1', 'customer-proof-risk', `Customer/logo proof "${m[0]}" needs a real source or should be replaced with fictional/neutral wording.`);
+    }
+  }
+  for (const m of raw.matchAll(/<blockquote\b[\s\S]*?<\/blockquote>/gi)) {
+    const body = m[0].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    if (hasInlineException(raw, m.index)) continue;
+    if (/(testimonial|customer|quote|what .* say|trusted|proof)/i.test(windowAround(raw, m.index, 260)) && body.length > 20) {
+      pushFinding(findings, rel, lineOf(raw, m.index), 'Conversion', 'P1', 'quote-proof-risk', 'Blockquote appears to be proof/testimonial content; use a real source or normal explanatory copy.');
+    }
   }
 
   if (isUiSurface && /<form|type=["']submit|button/i.test(raw) && !/(error|invalid|required|aria-invalid|loading|pending|disabled|success|empty)/i.test(raw)) {
@@ -313,11 +362,41 @@ function printReviewMarkdown(report) {
   }
 }
 
+function fixAdviceFor(f) {
+  const base = `${f.file}:${f.line} (${f.severity} ${f.dimension}/${f.code})`;
+  if (f.code === 'raw-color') return `${base}: Replace inline color with a CSS token, move it into :root, use currentColor for SVG, or add a documented token-ok exception.`;
+  if (f.code === 'off-grid-spacing') return `${base}: Move spacing to the 4px scale or add a documented drift-ok exception with the module reason.`;
+  if (f.code.includes('proof') || f.code.includes('quote')) return `${base}: Remove unsourced proof, replace with neutral/fictional wording, or add a real source and proof-ok note.`;
+  if (f.code === 'missing-states') return `${base}: Add loading, error, disabled, success, and empty states where applicable.`;
+  if (f.code === 'contrast-risk') return `${base}: Verify contrast against the actual background and adjust the token if below threshold.`;
+  if (f.code === 'focus-removed') return `${base}: Restore a visible :focus-visible style with outline/offset or an equivalent tokenized ring.`;
+  return `${base}: Fix the reported issue and rerun DesignOS review.`;
+}
+
+function printFixPrompt(report, min) {
+  console.log('Fix these DesignOS review findings, then rerun the DesignOS loop.');
+  console.log(`Target: ${report.target}`);
+  console.log(`Current gate: ${report.summary.overall}/100. Required gate: ${min}/100.\n`);
+  console.log('Rules:');
+  console.log('- Do not trust the agent self-score; the final pass is this deterministic review output.');
+  console.log('- Do not invent customers, testimonials, certifications, usage counts, awards, urgency, or compliance claims.');
+  console.log('- Keep visual direction unless a finding directly contradicts it.\n');
+  console.log('Required fixes:');
+  if (!report.findings.length) {
+    console.log('- No deterministic findings remain. Run the human/model review loop for taste, hierarchy, and fit.');
+    return;
+  }
+  report.findings.forEach((f, i) => console.log(`${i + 1}. ${fixAdviceFor(f)}`));
+  console.log('\nAfter editing, run:');
+  console.log(`node DesignOS/bin/designos.js review ${report.target} --min ${min}`);
+}
+
 function review(target, args) {
   const min = Number(argValue(args, '--min', '95'));
   const asJson = args.includes('--json');
   const noFail = args.includes('--no-fail');
-  if (!target) fail(`Usage: ${RUN} review <file-or-dir> [--min 95] [--json] [--no-fail]`);
+  const fixPrompt = args.includes('--fix-prompt');
+  if (!target) fail(`Usage: ${RUN} review <file-or-dir> [--min 95] [--json] [--no-fail] [--fix-prompt]`);
   const abs = path.resolve(CWD, target);
   if (!fs.existsSync(abs)) fail(`Review target not found: ${target}`);
   const files = [...walkReviewFiles(abs)];
@@ -325,7 +404,8 @@ function review(target, args) {
   const findings = files.flatMap(file => analyzeDesignFile(file, CWD));
   const summary = summarizeReview(findings, files);
   const report = { target, generatedAt: new Date().toISOString(), summary, findings };
-  if (asJson) console.log(JSON.stringify(report, null, 2));
+  if (fixPrompt) printFixPrompt(report, min);
+  else if (asJson) console.log(JSON.stringify(report, null, 2));
   else printReviewMarkdown(report);
   if (!noFail && summary.overall < min) process.exit(1);
 }
@@ -429,6 +509,7 @@ function help() {
     ${RUN} export <target>    rules for: cursor · copilot · windsurf · cline · aider · all
     ${RUN} audit <dir>        run all validators against a directory
     ${RUN} review <target>    deterministic design-risk report + six-dimension score
+                             add --fix-prompt to print an agent-ready repair prompt
     ${RUN} brief [options]    generate a high-signal brief for the agent
     ${RUN} doctor             check the install's health
 `);

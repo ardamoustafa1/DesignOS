@@ -11,6 +11,11 @@ holds the detailed raw run reports.
 
 Use `evals/RUN_TEMPLATE.md` for each run.
 
+Current runs:
+
+- [`run-003-antigravity-pricing/`](run-003-antigravity-pricing/) — maintainer-observed
+  Antigravity pricing-page run that informed the review engine.
+
 ## Acceptance Bar
 
 A run is useful when it includes:

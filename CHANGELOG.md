@@ -12,6 +12,9 @@ something agents can read.
   Run 003 call, case-study template, team rollout, and PR review workflow.
 - **New quality modules:** command palettes, data density, loading skeletons, product
   tours, failure taxonomy, and scorecard examples.
+- **Antigravity hardening:** `adapters/antigravity.md`, maintainer-observed Run 003
+  notes, stronger proof-risk detection, token-aware review exceptions, and
+  `designos review --fix-prompt`.
 - **`designos review <file-or-dir>`** — deterministic design-risk scoring for UI files:
   a11y tells, contrast risk, fake proof, token drift, missing states, and a
   six-dimension gate score. Supports `--json`, `--min`, and `--no-fail` for CI.

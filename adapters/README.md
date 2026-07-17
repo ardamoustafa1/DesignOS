@@ -8,3 +8,4 @@ documents compatibility; this folder documents the best working setup.
 - [Claude Code](claude-code.md)
 - [Cursor](cursor.md)
 - [Copilot](copilot.md)
+- [Antigravity](antigravity.md)
