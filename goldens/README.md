@@ -21,6 +21,12 @@ and design decisions. They are not fake adoption.
 - mobile and desktop decisions included
 - failure caught by the loop is documented
 
+## Live HTML Seeds
+
+- [`cybersecurity-pricing/index.html`](cybersecurity-pricing/index.html)
+- [`fintech-dashboard/index.html`](fintech-dashboard/index.html)
+- [`ai-copilot-landing/index.html`](ai-copilot-landing/index.html)
+
 ## Checklist
 
 - [ ] Artifact exists

@@ -18,6 +18,9 @@ something agents can read.
 - **Taste and productization layer:** visual reference packs, golden target bars,
   memory packs, copyable starter code, `designos starter`, `designos visual`, and
   `designos brief --interactive`.
+- **Browser-grade visual QA:** `designos visual` now runs real Playwright screenshots
+  when Playwright is installed, and the Review Action comments include a collapsible
+  agent-ready fix prompt.
 - **`designos review <file-or-dir>`** — deterministic design-risk scoring for UI files:
   a11y tells, contrast risk, fake proof, token drift, missing states, and a
   six-dimension gate score. Supports `--json`, `--min`, and `--no-fail` for CI.

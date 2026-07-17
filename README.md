@@ -100,7 +100,7 @@ node DesignOS/bin/designos.js doctor        # verify the install's health anytim
 node DesignOS/bin/designos.js audit src/    # run all validators against your code
 node DesignOS/bin/designos.js review src/   # score deterministic design risks
 node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
-node DesignOS/bin/designos.js visual index.html --no-fail
+node DesignOS/bin/designos.js visual index.html --no-fail   # screenshots if Playwright is installed
 node DesignOS/bin/designos.js starter landing-page my-launch
 node DesignOS/bin/designos.js brief --interactive
 node DesignOS/bin/designos.js brief --type pricing --industry fintech --audience CFOs --goal "book demos"
@@ -226,7 +226,7 @@ Quick references: [**CHEATSHEET**](CHEATSHEET.md) — the whole system on one pa
 [**GLOSSARY**](GLOSSARY.md) — the vocabulary A–Z ·
 [**Proof Standard**](PROOF_STANDARD.md) — what claims are allowed to say ·
 [**Visual references**](references/README.md) — taste packs without copying ·
-[**Goldens**](goldens/README.md) — target bars for premium outputs ·
+[**Goldens**](goldens/README.md) — target bars + live HTML seeds for premium outputs ·
 [**The Anti-Pattern Museum**](museum/README.md) — 40+ design crimes, each with the rule that prevents it ·
 [**Field Report 001**](evals/field-report-001.md) — a real stress-test, a real gap found and fixed.
 

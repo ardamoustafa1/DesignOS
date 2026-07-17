@@ -527,6 +527,7 @@ function brief(args) {
 function visual(target, args) {
   if (!target) fail(`Usage: ${RUN} visual <html-file-or-url> [--out designos-visual-report.md]`);
   const outPath = path.resolve(CWD, argValue(args, '--out', 'designos-visual-report.md'));
+  const shotDir = path.resolve(CWD, argValue(args, '--screenshots', 'designos-visual'));
   const isUrl = /^https?:\/\//i.test(target);
   const abs = isUrl ? target : path.resolve(CWD, target);
   if (!isUrl && !fs.existsSync(abs)) fail(`Visual target not found: ${target}`);
@@ -545,10 +546,67 @@ function visual(target, args) {
   }
 
   let browserNote = 'Browser render not run. Install Playwright in the project to enable screenshot QA.';
+  let browserFindings = [];
+  let screenshots = [];
   const playwrightCheck = spawnSync('node', ['-e', 'const m="play"+"wright"; require(m); console.log("ok")'], { cwd: CWD, encoding: 'utf8' });
   if (playwrightCheck.status === 0) {
-    browserNote = 'Playwright is available. Browser screenshot automation is ready for a future deep visual pass.';
+    fs.mkdirSync(shotDir, { recursive: true });
+    const script = [
+      'const fs=require("fs");',
+      'const path=require("path");',
+      'const m="play"+"wright";',
+      'const { chromium } = require(m);',
+      '(async()=>{',
+      `const target=${JSON.stringify(isUrl ? target : `file://${abs}`)};`,
+      `const out=${JSON.stringify(shotDir)};`,
+      'const viewports=[["mobile",375,812],["tablet",768,1024],["desktop",1440,1000]];',
+      'const browser=await chromium.launch();',
+      'const result={screenshots:[],findings:[]};',
+      'for (const [name,width,height] of viewports) {',
+      '  const page=await browser.newPage({ viewport:{ width, height } });',
+      '  const errors=[];',
+      '  page.on("console", msg => { if (["error","warning"].includes(msg.type())) errors.push(`${msg.type()}: ${msg.text()}`); });',
+      '  page.on("pageerror", err => errors.push(`pageerror: ${err.message}`));',
+      '  await page.goto(target, { waitUntil:"networkidle", timeout:30000 });',
+      '  const metrics=await page.evaluate(() => {',
+      '    const main=document.querySelector("main");',
+      '    const h1=document.querySelector("h1");',
+      '    const bodyText=(document.body.innerText||"").trim();',
+      '    return {',
+      '      scrollWidth: document.documentElement.scrollWidth,',
+      '      clientWidth: document.documentElement.clientWidth,',
+      '      bodyTextLength: bodyText.length,',
+      '      h1: Boolean(h1),',
+      '      main: Boolean(main),',
+      '      heroHeight: main ? main.getBoundingClientRect().height : 0',
+      '    };',
+      '  });',
+      '  if (metrics.scrollWidth > metrics.clientWidth + 2) result.findings.push({ severity:"P1", code:"horizontal-scroll", message:`${name}: document scrollWidth ${metrics.scrollWidth}px exceeds viewport ${metrics.clientWidth}px` });',
+      '  if (!metrics.h1) result.findings.push({ severity:"P2", code:"missing-h1-render", message:`${name}: rendered page has no h1` });',
+      '  if (!metrics.main) result.findings.push({ severity:"P2", code:"missing-main-render", message:`${name}: rendered page has no main landmark` });',
+      '  if (metrics.bodyTextLength < 40) result.findings.push({ severity:"P1", code:"blank-render", message:`${name}: rendered body text is suspiciously empty` });',
+      '  for (const e of errors) result.findings.push({ severity:"P1", code:"console", message:`${name}: ${e}` });',
+      '  const file=path.join(out, `${name}.png`);',
+      '  await page.screenshot({ path:file, fullPage:true });',
+      '  result.screenshots.push(file);',
+      '  await page.close();',
+      '}',
+      'await browser.close();',
+      'console.log(JSON.stringify(result));',
+      '})().catch(err=>{ console.error(err.stack||err.message); process.exit(1); });',
+    ].join('\n');
+    const run = spawnSync('node', ['-e', script], { cwd: CWD, encoding: 'utf8', maxBuffer: 1024 * 1024 * 10 });
+    if (run.status === 0) {
+      const result = JSON.parse(run.stdout);
+      browserFindings = result.findings || [];
+      screenshots = result.screenshots || [];
+      browserNote = `Browser render completed with ${screenshots.length} screenshot(s).`;
+    } else {
+      add('P2', 'browser-qa-failed', `Playwright was available but browser QA failed: ${(run.stderr || run.stdout).trim()}`);
+      browserNote = 'Browser render attempted but failed; see static findings.';
+    }
   }
+  for (const f of browserFindings) add(f.severity, f.code, f.message);
 
   const report = [
     '# DesignOS Visual QA',
@@ -559,6 +617,7 @@ function visual(target, args) {
     '## Browser Pass',
     '',
     browserNote,
+    screenshots.length ? '\nScreenshots:\n' + screenshots.map(s => `- ${path.relative(CWD, s)}`).join('\n') : '',
     '',
     '## Static Visual Risk Findings',
     '',

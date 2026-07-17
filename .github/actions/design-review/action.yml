@@ -38,6 +38,9 @@ outputs:
   score:
     description: Overall six-dimension gate score.
     value: ${{ steps.review.outputs.score }}
+  fix-prompt:
+    description: Path to the agent-ready fix prompt.
+    value: ${{ steps.review.outputs.fix-prompt }}
 
 runs:
   using: composite
@@ -53,12 +56,14 @@ runs:
 
         node "$CLI" review "${{ inputs.path }}" "${FLAGS[@]}" --json > designos-review.json
         node "$CLI" review "${{ inputs.path }}" "${FLAGS[@]}" > designos-review.md
+        node "$CLI" review "${{ inputs.path }}" "${FLAGS[@]}" --fix-prompt > designos-fix-prompt.md
         cat designos-review.md
 
         if [ "${{ inputs.json }}" = "true" ]; then
           echo "report-json=designos-review.json" >> "$GITHUB_OUTPUT"
         fi
         echo "report-markdown=designos-review.md" >> "$GITHUB_OUTPUT"
+        echo "fix-prompt=designos-fix-prompt.md" >> "$GITHUB_OUTPUT"
 
         SCORE="$(node -e "const r=require('./designos-review.json'); console.log(r.summary.overall)")"
         echo "score=$SCORE" >> "$GITHUB_OUTPUT"
@@ -77,7 +82,8 @@ runs:
         const [owner, name] = repo.split('/');
         const marker = '<!-- designos-review-action -->';
         const report = fs.readFileSync('designos-review.md', 'utf8');
-        const body = `${marker}\n${report}\n\n_Run locally with \`node DesignOS/bin/designos.js review <path> --min ${{ inputs.min-score }}\`._`;
+        const fix = fs.readFileSync('designos-fix-prompt.md', 'utf8');
+        const body = `${marker}\n${report}\n\n<details><summary>Agent-ready fix prompt</summary>\n\n\`\`\`text\n${fix}\n\`\`\`\n\n</details>\n\n_Run locally with \`node DesignOS/bin/designos.js review <path> --min ${{ inputs.min-score }}\`._`;
 
         function request(method, path, payload) {
           return new Promise((resolve, reject) => {

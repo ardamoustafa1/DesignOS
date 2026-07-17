@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden: Fintech Dashboard</title>
+  <style>
+    :root { --bg:#f7f8fb; --surface:#fff; --text:#111827; --muted:#5b6472; --line:#d9dee8; --accent:#0f766e; --warn:#b45309; --danger:#b91c1c; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text)} .shell{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+    nav{padding:24px;border-right:1px solid var(--line);background:var(--surface)} nav a{display:block;padding:12px 0;color:var(--muted);text-decoration:none}
+    main{padding:32px;display:grid;gap:24px} h1{font-size:34px;letter-spacing:-.03em;margin:0}.sub{color:var(--muted);margin:0}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px}
+    .card span{color:var(--muted);font-size:13px}.card strong{display:block;font-size:28px;margin-top:8px}
+    table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden} th,td{text-align:left;padding:16px;border-bottom:1px solid var(--line)} th{font-size:12px;text-transform:uppercase;color:var(--muted)} .risk{color:var(--danger);font-weight:700}.ok{color:var(--accent);font-weight:700}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(max-width:850px){.shell{grid-template-columns:1fr}nav{border-right:0;border-bottom:1px solid var(--line)}.metrics{grid-template-columns:1fr 1fr}}@media(max-width:520px){.metrics{grid-template-columns:1fr}main{padding:16px;overflow-x:auto}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <nav aria-label="Finance operations"><strong>TreasuryOS</strong><a href="#overview">Overview</a><a href="#risk">Risk</a><a href="#audit">Audit trail</a></nav>
+  <main>
+    <header><h1 id="overview">Cash position and exception risk.</h1><p class="sub">Golden dashboard bar: dense, auditable, and calm enough for repeat finance work.</p></header>
+    <section class="metrics" aria-label="Key metrics">
+      <article class="card"><span>Available cash</span><strong>$4.82M</strong></article><article class="card"><span>Pending approvals</span><strong>18</strong></article><article class="card"><span>Reconciliation gaps</span><strong>3</strong></article><article class="card"><span>Data freshness</span><strong>2m</strong></article>
+    </section>
+    <section id="risk"><table><thead><tr><th>Account</th><th>Status</th><th>Exposure</th><th>Owner</th></tr></thead><tbody><tr><td>Operating · US</td><td class="ok">Matched</td><td>$1.2M</td><td>Finance Ops</td></tr><tr><td>Payroll · EU</td><td class="risk">Review</td><td>$420K</td><td>Controller</td></tr><tr><td>Reserve · US</td><td class="ok">Matched</td><td>$3.2M</td><td>Treasury</td></tr></tbody></table></section>
+  </main>
+</div>
+</body>
+</html>
