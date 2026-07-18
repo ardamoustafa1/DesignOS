@@ -37,7 +37,19 @@ the next iteration faster.
 | Keyboard trap | cannot escape or complete task | fix focus order and escape behavior |
 | Invisible focus | outline removed or too subtle | restore tokenized focus ring |
 | Contrast debt | muted text below threshold | increase contrast or change background |
+| Token-hidden contrast debt | zero raw hex, drift-clean, yet a token pair fails AA (eval Run 004: 3.14:1 through a clean gate) | run `validators/check-token-contrast.js`; token discipline and accessible contrast are different guarantees |
 | Semantic mismatch | div buttons, missing landmarks | use correct HTML and ARIA only where needed |
+| Unwired ARIA state | `aria-expanded`/`aria-selected` present in markup but no code ever changes it (eval Run 004: menu button with no JS at all) | wire the state or remove the control; ARIA must match reality, which only interaction testing proves |
+
+## Render-Only Failures
+
+Static review structurally cannot see these — they exist only in computed layout.
+Every one requires opening the page (eval Run 004 found both through a 100/100 static gate).
+
+| Failure | Signal | Fix |
+|---|---|---|
+| Flex-parent collapse | a flex container's only child ignores its own `max-width`/`margin: auto` and shrinks to content; header items bunch to 0px gaps | the parent centers, the child lays out — never both; remove the redundant `display: flex` |
+| Ghost interactive | control renders, looks complete, does nothing on click | every interactive element gets one real interaction in a browser before ship |
 
 ## Performance Failures
 

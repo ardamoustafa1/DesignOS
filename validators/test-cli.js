@@ -413,6 +413,52 @@ test('brief --interactive: accepts piped answers line by line', () => {
   assert.ok(result.stdout.includes('Do not claim 95+, 100/100'), 'brief should forbid unsupported score claims');
 });
 
+test('check-drift: exempts theme-color meta but still flags real raw hex', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-drift-'));
+  const html = [
+    '<!doctype html>',
+    '<html><head>',
+    '<meta name="theme-color" content="#FAFAFA">',
+    '<style>',
+    ':root { --accent: #2952E3; }',
+    '.card { color: #666666; }',
+    '</style>',
+    '</head><body><main><h1>Demo</h1></main></body></html>',
+  ].join('\n');
+  fs.writeFileSync(path.join(tmp, 'index.html'), html);
+  const result = spawnSync('node', [path.resolve(__dirname, 'check-drift.js'), 'index.html'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 1, 'raw hex outside :root must still fail');
+  assert.ok(result.stdout.includes('#666666'), 'real raw hex must be flagged');
+  assert.ok(!result.stdout.includes('#FAFAFA'), 'theme-color meta must not be flagged (run-003 regression)');
+  assert.ok(!result.stdout.includes('#2952E3'), ':root token values must not be flagged');
+});
+
+test('check-token-contrast: catches token-pair AA failures that drift cannot see (Run 004 regression)', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-contrast-'));
+  const html = [
+    '<!doctype html>',
+    '<html><head><style>',
+    ':root { --success: #16A34A; --success-subtle: #EFFDF4; --ink: #18181B; --paper: #FFFFFF; }',
+    '.badge { color: var(--success); background: var(--success-subtle); }', // 3.14:1 — the Run 004 bug
+    '.body { color: var(--ink); background: var(--paper); }',               // 16.9:1 — must NOT flag
+    '.demo { color: #999; background: #fff; /* contrast-ok: anti-pattern exhibit */ }',
+    '</style></head><body><main><h1>x</h1></main></body></html>',
+  ].join('\n');
+  fs.writeFileSync(path.join(tmp, 'index.html'), html);
+  const result = spawnSync('node', [path.resolve(__dirname, 'check-token-contrast.js'), 'index.html'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 1, 'the 3.14:1 token pair must fail');
+  assert.ok(result.stdout.includes('.badge'), 'failing pair must name its selector');
+  assert.ok(result.stdout.includes('3.14:1'), 'ratio must be shown');
+  assert.ok(!result.stdout.includes('.body'), 'passing pair must not be flagged');
+  assert.ok(!result.stdout.includes('.demo'), 'contrast-ok block escape must be honored');
+});
+
 // ── SUMMARY ───────────────────────────────────────────────────────────────────
 
 console.log(`\n  ${passed} passed, ${failed} failed\n`);

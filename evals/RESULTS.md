@@ -135,7 +135,39 @@ node validators/contrast.js "#eeeeee" "#764ba2"
 node validators/contrast.js "#9a9fa8" "#1b1e24"
 ```
 
-## Run 003 — your model, your judge (the one that matters most)
+## Run 004 — full A/B on brief B1, control vs treatment (2026-07-18) — SELF-RUN, NON-BLIND
+
+> ⚠️ **Caveat applies, same as above.** One agent (Claude Sonnet 5, single session)
+> wrote both arms, fixed the treatment's own bugs, and scored both. L2 evidence per
+> `PROOF_STANDARD.md`, not L3. Full report with raw artifacts:
+> [`runs/run-004-ledgerline-landing/`](runs/run-004-ledgerline-landing/).
+
+What this run adds that Runs 001–002 could not — the control arm was produced *as a
+default agent would produce it*, not authored as a deliberate strawman:
+
+| Measured | Control | Treatment |
+|---|---:|---:|
+| `check-drift` | 35 | 0 |
+| `check-a11y-basics` | 1 (no `<main>`) | 0 |
+| `designos review` static risk floor | 0/100, 41 findings (1×P1 nav-unreachable, 1×P1 fake proof) | 100/100, 0 findings |
+| Self-scored judge rubric (/60, non-blind) | 26 | 50 |
+
+The run's most useful products were its **failures**, all committed to the report:
+
+1. A 3.14:1 contrast failure shipped **through** the 100/100 static gate, because no
+   validator computed contrast on token-resolved pairs → `validators/check-token-contrast.js`
+   now exists and is wired into `designos audit`. On its first repo-wide sweep it found
+   real findings in the website, one golden pairing, and `starter/tokens.css` (dark-theme
+   `::selection` at 2.98:1) — all fixed in the same change.
+2. A header flex-collapse layout bug and an unwired `aria-expanded` menu button, both
+   invisible to static review, both found only by rendering → recorded as first-pass
+   traps in `workflows/final-gate.md` and as failure classes in `scoring/failure-taxonomy.md`.
+3. The `check-drift.js` theme-color exemption Run 003's report claimed was shipped
+   turned out to exist only in `designos review` — fixed in the validator with a
+   regression test, which then exposed (and fixed) a second bug: single-line `:root`
+   blocks left the brace tracker open and exempted the rest of the file from all checks.
+
+## Run 005+ — your model, your judge (the one that matters most)
 
 **This slot is the most important unfilled gap in the whole repository.**
 Everything above this line is the maintainer checking their own homework; this is where

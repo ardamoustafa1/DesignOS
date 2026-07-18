@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ledgerline — Bookkeeping automation for agencies</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    line-height: 1.5;
+  }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .logo { font-weight: 700; font-size: 20px; color: #2952e3; }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav a { text-decoration: none; color: #444; font-size: 14px; }
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: #2952e3; color: white; }
+  .btn-outline { border: 1px solid #ddd; color: #333; background: white; }
+
+  .hero {
+    text-align: center;
+    padding: 100px 0 80px;
+  }
+  .hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    max-width: 780px;
+    margin: 0 auto 20px;
+    letter-spacing: -1px;
+  }
+  .hero p {
+    font-size: 19px;
+    color: #666;
+    max-width: 560px;
+    margin: 0 auto 34px;
+  }
+  .hero-cta { display: flex; gap: 14px; justify-content: center; }
+  .hero-img {
+    margin-top: 64px;
+    height: 420px;
+    background: linear-gradient(135deg, #eef1ff, #f7f8ff);
+    border-radius: 14px;
+    border: 1px solid #e6e9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9aa5e8;
+    font-size: 14px;
+  }
+
+  .logos {
+    padding: 40px 0;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+  }
+  .logo-row {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    font-weight: 600;
+    color: #b8b8b8;
+  }
+
+  .features {
+    padding: 90px 0;
+    background: #fafbff;
+  }
+  .section-title { text-align: center; font-size: 34px; font-weight: 700; margin-bottom: 12px; }
+  .section-sub { text-align: center; color: #666; margin-bottom: 56px; }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .feature-card {
+    background: white;
+    padding: 32px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+  }
+  .feature-icon {
+    width: 44px; height: 44px;
+    background: #eef1ff;
+    border-radius: 8px;
+    margin-bottom: 18px;
+  }
+  .feature-card h3 { font-size: 18px; margin-bottom: 10px; }
+  .feature-card p { color: #666; font-size: 14px; }
+
+  .testimonials {
+    padding: 90px 0;
+    text-align: center;
+  }
+  .quote {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 22px;
+    font-weight: 500;
+    color: #222;
+  }
+  .quote-author { margin-top: 20px; color: #888; font-size: 14px; }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    padding: 60px 0;
+    background: #2952e3;
+    color: white;
+    text-align: center;
+  }
+  .stats .num { font-size: 36px; font-weight: 800; }
+  .stats .label { font-size: 13px; opacity: 0.8; }
+
+  .cta-final {
+    padding: 100px 0;
+    text-align: center;
+  }
+  .cta-final h2 { font-size: 36px; margin-bottom: 16px; }
+  .cta-final p { color: #666; margin-bottom: 30px; }
+
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 34px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .stats { flex-wrap: wrap; gap: 32px; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="container">
+  <div class="logo">Ledgerline</div>
+  <nav>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#testimonials">Customers</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+  </nav>
+  <div style="display:flex; gap:10px;">
+    <a href="#" class="btn btn-outline">Log in</a>
+    <a href="#" class="btn btn-primary">Start free trial</a>
+  </div>
+</header>
+
+<section class="hero container">
+  <h1>Bookkeeping that runs itself, so you can run your agency.</h1>
+  <p>Ledgerline automates reconciliation, invoicing, and reporting for small agencies — no more spreadsheets, no more late nights.</p>
+  <div class="hero-cta">
+    <a href="#" class="btn btn-primary">Start your free trial</a>
+    <a href="#" class="btn btn-outline">Watch demo</a>
+  </div>
+  <div class="hero-img">Product screenshot placeholder</div>
+</section>
+
+<section class="logos container">
+  Trusted by 2,400+ agencies worldwide
+  <div class="logo-row">
+    <span>NORTHWIND</span>
+    <span>BRIGHTPATH</span>
+    <span>ARCLIGHT</span>
+    <span>STUDIO NINE</span>
+    <span>KESTREL CO.</span>
+  </div>
+</section>
+
+<section class="features container" id="features">
+  <h2 class="section-title">Everything your books need, nothing you have to babysit</h2>
+  <p class="section-sub">Built for agencies who bill hourly, retainer, and project-based.</p>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>Auto-reconciliation</h3>
+      <p>Every transaction matched to the right client and category automatically, daily.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>One-click invoicing</h3>
+      <p>Generate and send client invoices from tracked time and expenses in seconds.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>Real-time reporting</h3>
+      <p>Profit-per-client and cash flow, always current, no month-end scramble.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>Multi-client dashboards</h3>
+      <p>See every client's financial health from a single screen.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>Tax-ready exports</h3>
+      <p>Hand your accountant a clean, categorized ledger every quarter.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>Bank-level security</h3>
+      <p>Your data is encrypted in transit and at rest, always.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials container" id="testimonials">
+  <p class="quote">"Ledgerline gave us back twelve hours a month. I finally trust our numbers again."</p>
+  <p class="quote-author">— Dana Reyes, Founder, Brightpath Studio</p>
+</section>
+
+<div class="stats">
+  <div>
+    <div class="num">2,400+</div>
+    <div class="label">Agencies onboarded</div>
+  </div>
+  <div>
+    <div class="num">98%</div>
+    <div class="label">Reconciliation accuracy</div>
+  </div>
+  <div>
+    <div class="num">12 hrs</div>
+    <div class="label">Saved per month, average</div>
+  </div>
+</div>
+
+<section class="cta-final container">
+  <h2>Ready to stop dreading your books?</h2>
+  <p>Start your 14-day free trial. No credit card required.</p>
+  <a href="#" class="btn btn-primary">Start free trial</a>
+</section>
+
+<footer class="container">
+  &copy; 2026 Ledgerline. All rights reserved.
+</footer>
+
+</body>
+</html>

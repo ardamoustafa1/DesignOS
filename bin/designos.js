@@ -231,6 +231,7 @@ function audit(target) {
   };
   run('token drift', [path.join(vdir, 'check-drift.js'), dir, ...tokenFile]);
   run('a11y basics', [path.join(vdir, 'check-a11y-basics.js'), dir]);
+  run('token-pair contrast', [path.join(vdir, 'check-token-contrast.js'), dir, ...tokenFile]);
 
   if (failures) fail(`${failures} validator(s) reported findings — the mechanical floor is not clear.`);
   ok('audit clean — the mechanical floor holds. The six-dimension review still applies above it.');

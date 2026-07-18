@@ -50,15 +50,25 @@ for (const file of walk(path.resolve(target))) {
   lines.forEach((line, i) => {
     const loc = `${path.relative(process.cwd(), file)}:${i + 1}`;
     const inRoot = rootDepth > 0;
-    if (/:root\b/.test(line)) rootDepth += (line.match(/{/g) || []).length || 1;
-    else if (rootDepth > 0) {
+    if (/:root\b/.test(line)) {
+      // count BOTH braces so a single-line `:root { … }` doesn't leave the
+      // tracker stuck open and exempt the rest of the file
+      rootDepth += (line.match(/{/g) || []).length || 1;
+      rootDepth -= (line.match(/}/g) || []).length;
+      if (rootDepth < 0) rootDepth = 0;
+    } else if (rootDepth > 0) {
       rootDepth += (line.match(/{/g) || []).length;
       rootDepth -= (line.match(/}/g) || []).length;
       if (rootDepth < 0) rootDepth = 0;
     }
     if (line.trimStart().startsWith('//') || line.trimStart().startsWith('*')) return;
-    if (isTokenFile || inRoot) return; // token layers may hold raw values — that's their job
+    // token layers may hold raw values — that's their job; the `:root` line itself
+    // counts (single-line :root blocks put declarations on that same line)
+    if (isTokenFile || inRoot || /:root\b/.test(line)) return;
     if (line.includes('drift-ok')) return; // line-level exception — must carry its reason
+    // browser-UI meta values (theme-color, msapplication-TileColor) are not component
+    // styling — they have no token indirection available and must stay raw hex
+    if (/<meta\b[^>]*(theme-color|tilecolor)/i.test(line)) return;
 
     // hex only in CSS-value position (guards against content like incident "#4128")
     if (/(color|background|border|fill|stroke|shadow|outline|gradient)[^;{]*#[0-9a-fA-F]/i.test(line)) {

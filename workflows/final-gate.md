@@ -67,6 +67,13 @@ Before running the gate, remove these common first-pass failures:
 - score history or memory notes that claim a pass before the deterministic gate has run
 - nav links hidden at any breakpoint without a menu button replacing them
 - header items that wrap, collide, or slide under the CTA at 1024px (render it and look)
+- a flex container whose only child is the centered `.container` — the child shrinks to
+  content and its `max-width`/`margin: auto` silently dies (eval Run 004; render and measure)
+- ARIA state attributes (`aria-expanded`, `aria-selected`) with no code that ever updates
+  them — a menu button that renders but does nothing (eval Run 004; click it, don't read it)
+- token pairs that fail contrast while the file is drift-clean — zero raw hex proves
+  nothing about ratios; run `validators/check-token-contrast.js` (eval Run 004: 3.14:1
+  badge through a 100/100 static gate)
 - LaTeX or markdown syntax rendered as visible UI text (`\to`, `$…$`, `**bold**`)
 
 ## Required evidence ledger

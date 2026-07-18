@@ -19,7 +19,8 @@
   --border-default: rgb(22 22 26 / 0.10); --border-strong: rgb(22 22 26 / 0.22);
   --accent: #4f46e5; --accent-subtle: rgb(79 70 229 / 0.08);
   --text-on-accent: #ffffff; --danger: #dc2626; --danger-subtle: rgb(220 38 38 / 0.08);
-  --success: #16a34a;
+  --success: #15803d;
+  --text-on-danger: #ffffff; --text-on-success: #ffffff;
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
   --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px;
@@ -35,6 +36,7 @@
     --accent: #818cf8; --accent-subtle: rgb(129 140 248 / 0.12);
     --text-on-accent: #101018; --danger: #f87171; --danger-subtle: rgb(248 113 113 / 0.12);
     --success: #4ade80;
+    --text-on-danger: #101018; --text-on-success: #101018;
   }
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; }
@@ -54,8 +56,8 @@ h1, h2 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 1.15
 .switch-row { display: flex; justify-content: center; padding-block: var(--space-8); position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg-page) 88%, transparent); backdrop-filter: blur(10px); }
 .switch { display: inline-flex; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-full); padding: 4px; }
 .switch button { font: inherit; font-size: 0.9375rem; font-weight: 600; padding: 10px 28px; border: 0; border-radius: var(--radius-full); background: transparent; color: var(--text-muted); cursor: pointer; transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out); }
-.switch button[aria-pressed="true"].bad-btn { background: var(--danger); color: #fff; }
-.switch button[aria-pressed="true"].good-btn { background: var(--success); color: #fff; }
+.switch button[aria-pressed="true"].bad-btn { background: var(--danger); color: var(--text-on-danger); }
+.switch button[aria-pressed="true"].good-btn { background: var(--success); color: var(--text-on-success); }
 
 .pane { display: none; padding-bottom: var(--space-24); }
 .pane.active { display: block; }
@@ -69,13 +71,13 @@ h1, h2 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 1.15
 @media (prefers-color-scheme: dark) { .chip.good { background: rgb(74 222 128 / 0.12); } }
 
 .pin { position: absolute; z-index: 5; transform: translate(-50%, -50%); }
-.pin button { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; background: var(--danger); color: #fff; font: 700 0.6875rem var(--font-mono); cursor: pointer; box-shadow: 0 2px 8px rgb(0 0 0 / 0.3); }
+.pin button { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; background: var(--danger); color: var(--text-on-danger); font: 700 0.6875rem var(--font-mono); cursor: pointer; box-shadow: 0 2px 8px rgb(0 0 0 / 0.3); }
 .pin .note { position: absolute; top: 32px; left: 50%; transform: translateX(-50%); width: 260px; background: var(--bg-surface-raised); color: var(--text-secondary); border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-size: 0.8125rem; line-height: 1.5; box-shadow: 0 8px 24px rgb(0 0 0 / 0.18); display: none; text-align: left; }
 .pin .note b { color: var(--danger); display: block; font-family: var(--font-mono); font-size: 0.6875rem; margin-bottom: 2px; }
 .pin.open .note { display: block; }
 
 /* ====== THE BAD PAGE (deliberately, precisely wrong) ====== */
-.bad-page { background: #ffffff; color: #999; font-family: Arial, Helvetica, sans-serif; text-align: center; position: relative; }
+.bad-page { background: #ffffff; color: #999; font-family: Arial, Helvetica, sans-serif; text-align: center; position: relative; /* contrast-ok: deliberate anti-pattern demo — low contrast IS the exhibit */ }
 .bad-nav { display: flex; justify-content: center; gap: 14px; padding: 10px; flex-wrap: wrap; font-size: 13px; background: linear-gradient(90deg, #7b2ff7, #f107a3); color: #fff; }
 .bad-nav span { text-decoration: underline; cursor: pointer; }
 .bad-hero { padding: 28px 10px 22px; background: linear-gradient(135deg, #667eea, #764ba2, #f107a3); color: #fff; }

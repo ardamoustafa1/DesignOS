@@ -102,6 +102,7 @@
     --accent:        #818cf8;   /* desaturated/lightened for dark */
     --accent-hover:  #a5b4fc;
     --accent-subtle: rgb(129 140 248 / 0.12);
+    --text-on-accent: #101018;  /* white on the lightened accent is 2.98:1 — fails even 3:1 */
     --success: #4ade80;  --success-subtle: rgb(74 222 128 / 0.10);
     --warning: #fbbf24;  --warning-subtle: rgb(251 191 36 / 0.10);
     --danger:  #f87171;  --danger-subtle:  rgb(248 113 113 / 0.10);
