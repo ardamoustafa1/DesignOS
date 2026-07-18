@@ -28,6 +28,30 @@ React Native/Flutter codebases.
   responsive breakpoints INSIDE the app (list-detail canonical layouts at ≥600dp,
   `foundations/layout.md` thinking applied to window-size classes).
 
+### The M3 type scale (default sp)
+
+| Role | Large / Medium / Small | Use |
+|---|---|---|
+| Display | 57 / 45 / 36 | hero numbers, splash moments only |
+| Headline | 32 / 28 / 24 | screen titles, section heads |
+| Title | 22 / 16 / 14 | card titles, list-row primary, app bar |
+| Body | 16 / 14 / 12 | reading text (Large is the default body) |
+| Label | 14 / 12 / 11 | buttons, chips, badges |
+
+Pick roles, not raw sp — roles carry the font-scaling behavior. Body Small (12sp) is a
+metadata floor, never paragraph text.
+
+### Window-size classes (the app's breakpoints)
+
+| Class | Width | Canonical layout |
+|---|---|---|
+| Compact | < 600dp | single pane, bottom nav |
+| Medium | 600–839dp | single pane + rail, or list-detail entering |
+| Expanded | ≥ 840dp | list-detail / supporting pane, navigation rail |
+
+Foldables cross classes at the hinge: test posture changes mid-task (state survives the
+fold — the rotation rule, doubled).
+
 ## Material as the token layer
 - Material 3's color system (primary/secondary/surface containers, tonal elevation) is
   the platform's Tier-1; brand tokens map ONTO it (`foundations/design-tokens.md`) —

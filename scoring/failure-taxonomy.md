@@ -29,6 +29,7 @@ the next iteration faster.
 | Dark urgency | countdowns or scarcity without basis | replace with honest value |
 | Compliance theater | badges without certification | cite real compliance or delete |
 | Risk hidden | pricing/limits buried | surface constraints near decision point |
+| Bare-stat fake proof (tool blind spot, eval Run 005) | large unsourced numbers near marketing copy — "10B+ spans/day", "5,000+ teams" — pass the proof-risk regex because it currently keys on quoted testimonials and "Trusted by" phrasing, not bare statistics | flag manually until `check-drift.js`/`designos review` adds a bare-large-number-near-copy pattern; never let "the tool didn't flag it" stand in for "it's sourced" |
 
 ## Accessibility Failures
 

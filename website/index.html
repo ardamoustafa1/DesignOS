@@ -125,7 +125,7 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 .hero-grid > * { min-width: 0; }
 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 58fr 42fr; } }
 .hero h1 { font-size: clamp(2.15rem, 2.8vw + 1rem, 3.25rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.12; margin-bottom: var(--space-6); }
-.hero h1 em { font-style: normal; display: block; margin-top: 4px; background: linear-gradient(135deg, #09090b 0%, #047857 55%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 12px rgb(16 185 129 / 0.15)); }
+.hero h1 em { font-style: normal; display: block; margin-top: 4px; background: linear-gradient(135deg, var(--text-primary) 0%, var(--btn-primary-bg) 55%, var(--grad-1) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 12px rgb(16 185 129 / 0.15)); }
 :root[data-theme="dark"] .hero h1 em { background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 35%, #34d399 75%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgb(16 185 129 / 0.22)); }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .hero h1 em { background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 35%, #34d399 75%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgb(16 185 129 / 0.22)); }
@@ -143,9 +143,9 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 .term { background: var(--code-bg); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; font-family: var(--font-mono); font-size: 0.8125rem; box-shadow: 0 24px 48px rgb(22 22 26 / 0.12); }
 .term-bar { display: flex; align-items: center; gap: 8px; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-default); }
 .term-bar i { display: inline-block; width: 12px; height: 12px; border-radius: var(--radius-full); cursor: pointer; transition: all var(--duration-fast) var(--ease-out); background-repeat: no-repeat; background-position: center; border: 1px solid rgb(0 0 0 / 0.15); }
-.term-bar i:nth-child(1) { background-color: #ff5f56; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d0000' stroke-width='1.5' stroke-linecap='round' d='M1.5 1.5l5 5m0-5l-5 5'/%3E%3C/svg%3E"); }
-.term-bar i:nth-child(2) { background-color: #ffbd2e; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d3300' stroke-width='1.6' stroke-linecap='round' d='M1.2 4h5.6'/%3E%3C/svg%3E"); }
-.term-bar i:nth-child(3) { background-color: #27c93f; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath fill='%23004e14' d='M1.5 1h3.5L1 5.5V1.5A.5.5 0 0 1 1.5 1zm5 6H3L7 2.5V6.5a.5.5 0 0 1-.5.5z'/%3E%3C/svg%3E"); }
+.term-bar i:nth-child(1) { background-color: #ff5f56; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d0000' stroke-width='1.5' stroke-linecap='round' d='M1.5 1.5l5 5m0-5l-5 5'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light red is a platform constant, not a theme color */
+.term-bar i:nth-child(2) { background-color: #ffbd2e; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d3300' stroke-width='1.6' stroke-linecap='round' d='M1.2 4h5.6'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light amber is a platform constant, not a theme color */
+.term-bar i:nth-child(3) { background-color: #27c93f; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath fill='%23004e14' d='M1.5 1h3.5L1 5.5V1.5A.5.5 0 0 1 1.5 1zm5 6H3L7 2.5V6.5a.5.5 0 0 1-.5.5z'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light green is a platform constant, not a theme color */
 .term-bar i:hover { filter: brightness(1.1); transform: scale(1.08); }
 
 .term pre { padding: var(--space-4) var(--space-6) var(--space-6); line-height: 1.9; color: var(--code-text); overflow-x: auto; }
@@ -190,8 +190,8 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 @media (min-width: 768px) { .shots { grid-template-columns: repeat(4, 1fr); } }
 .shot { display: flex; flex-direction: column; background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out); }
 .shot:hover { transform: translateY(-2px); border-color: var(--border-strong); box-shadow: 0 12px 28px rgb(0 0 0 / 0.22); }
-.shot .k { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 6px; }
-.shot h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; margin: 0 0 6px; }
+.shot .k { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: var(--space-2); }
+.shot h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; margin: 0 0 var(--space-2); }
 .shot p { font-size: 0.875rem; line-height: 1.5; color: var(--text-muted); margin: 0; }
 
 /* quickstart */
@@ -207,7 +207,9 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
 .footer-inner { display: flex; flex-wrap: wrap; gap: var(--space-6); justify-content: space-between; align-items: center; font-size: 0.8125rem; color: var(--text-muted); }
 .footer-inner a { color: var(--text-muted); text-decoration: none; margin-left: var(--space-4); transition: color var(--duration-fast) var(--ease-out); }
 .footer-inner a:hover { color: var(--text-primary); }
-.creator-link:hover { color: var(--accent) !important; border-bottom-color: var(--text-primary) !important; }
+.creator-link { color: var(--text-primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+.creator-link .handle { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); }
+.creator-link:hover { color: var(--accent); border-bottom-color: var(--text-primary); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -225,6 +227,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
     <ul class="nav-links">
       <li><a href="#layers">System</a></li>
       <li><a href="#engine">Review engine</a></li>
+      <li><a href="suggest.html">Generator</a></li>
       <li><a href="#showcase">Showcase</a></li>
       <li><a href="#quickstart">Install</a></li>
     </ul>
@@ -364,9 +367,9 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
   <div class="container footer-inner">
     <div>
       <span style="display:inline-flex;align-items:center;gap:8px;"><img src="logo-3d.png" alt="" style="width:22px;height:22px;object-fit:contain;"> <strong style="font-weight:800;color:var(--text-primary)">Design<span class="logo-os">OS</span></strong> <span style="color:var(--text-muted)">— built for the age of agents.</span></span>
-      <div style="margin-top:6px;display:flex;align-items:center;gap:6px;font-size:0.8125rem;">
+      <div style="margin-top:var(--space-2);display:flex;align-items:center;gap:var(--space-2);font-size:0.8125rem;">
         <span style="color:var(--text-muted)">Architected &amp; Engineered by</span>
-        <a href="https://ardamoustafacv.netlify.app" target="_blank" rel="noopener noreferrer" class="creator-link" style="color:var(--text-primary);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;border-bottom:1px solid var(--accent);padding-bottom:1px;margin-left:0;">Arda Moustafa <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--accent)">(@ardamoustafa)</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+        <a href="https://ardamoustafacv.netlify.app" target="_blank" rel="noopener noreferrer" class="creator-link">Arda Moustafa <span class="handle">(@ardamoustafa)</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
       </div>
     </div>
     <nav aria-label="Footer">

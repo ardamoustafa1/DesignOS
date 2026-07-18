@@ -40,5 +40,9 @@ What DesignOS did not solve, or where human taste still made the call.
 
 ## Current Status
 
-No external case study has landed yet. Add yours through `SHOWCASE.md` first, then
-expand it here if it has enough evidence.
+- [Live Generator Page](live-generator-page.md) — maintainer-session case study
+  (labeled as such): the build of `website/suggest.html` through the full gate, with
+  every finding and fix verifiable in-repo. L2 evidence, not independent proof.
+
+No **external** case study has landed yet — that slot is the one that matters most.
+Add yours through `SHOWCASE.md` first, then expand it here if it has enough evidence.

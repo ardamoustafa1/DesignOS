@@ -3,19 +3,278 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Golden: AI Copilot Landing</title>
+  <title>Relayer — AI Copilot for Revenue Teams (DesignOS Golden)</title>
+  <meta name="description" content="Golden example: an AI copilot landing page that shows the workflow — real input/output, stated limits, integration path. Fictional brand for DesignOS evaluation.">
   <style>
-    :root{--bg:#fbfbfd;--text:#111216;--muted:#616775;--line:#e4e7ee;--accent:#4f46e5;--surface:#fff;--on-accent:#fff;font-family:Inter,ui-sans-serif,system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}main{width:min(1120px,calc(100% - 40px));margin:0 auto;padding:72px 0}.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:12px}h1{font-size:clamp(42px,6vw,72px);line-height:.98;letter-spacing:-.04em;margin:0}p{color:var(--muted);font-size:18px;line-height:1.65}.demo{border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 24px 80px rgb(17 18 22 / .10);overflow:hidden}.bar{padding:12px 16px;border-bottom:1px solid var(--line);font-weight:700}.row{padding:16px;border-bottom:1px solid var(--line)}.label{font-size:12px;color:var(--muted);text-transform:uppercase;font-weight:800}.output{margin-top:8px;color:var(--text)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}.card{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:16px}.card strong{display:block;margin-bottom:8px}a{display:inline-flex;margin-top:16px;min-height:44px;align-items:center;border-radius:8px;background:var(--accent);color:var(--on-accent);text-decoration:none;padding:0 16px;font-weight:800}a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}@media(max-width:850px){.hero,.grid{grid-template-columns:1fr}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}} /* drift-ok: reduced-motion reset layer — !important guarantees the override wins */
+    :root {
+      --bg:#FBFBFD; --surface:#FFFFFF; --sunken:#F1F2F6;
+      --text:#111216; --muted:#565D6B;
+      --line:#E4E7EE; --line-strong:#C6CBD6;
+      --accent:#4F46E5; --accent-hover:#4338CA; --on-accent:#FFFFFF;
+      --accent-subtle:rgb(79 70 229 / 0.08);
+      --ok:#166534; --warn:#92400E;
+      --code-bg:#16161A; --code-text:#D4D4D8;
+      --radius:8px; --radius-lg:12px;
+      font-family:Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+    * { box-sizing:border-box; margin:0; }
+    body { background:var(--bg); color:var(--muted); font-size:16px; line-height:1.65; }
+    h1,h2,h3 { color:var(--text); letter-spacing:-.02em; line-height:1.12; text-wrap:balance; }
+    .wrap { width:min(1120px, calc(100% - 48px)); margin-inline:auto; }
+
+    .skip { position:absolute; left:16px; top:-48px; background:var(--accent); color:var(--on-accent); padding:12px 20px; border-radius:var(--radius); font-weight:700; font-size:14px; z-index:99; text-decoration:none; transition:top 150ms ease-out; }
+    .skip:focus { top:16px; }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+
+    header.site { padding-block:16px; border-bottom:1px solid var(--line); }
+    .site-inner { display:flex; align-items:center; gap:32px; }
+    .logo { color:var(--text); font-weight:800; font-size:17px; letter-spacing:-.02em; text-decoration:none; }
+    nav[aria-label="Primary"] ul { display:flex; gap:24px; list-style:none; padding:0; }
+    nav[aria-label="Primary"] a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:500; }
+    nav[aria-label="Primary"] a:hover { color:var(--text); }
+    .site-cta { margin-left:auto; display:flex; gap:8px; }
+
+    .btn { min-height:44px; display:inline-flex; justify-content:center; align-items:center; gap:8px; padding-inline:20px; border-radius:var(--radius); text-decoration:none; font-weight:700; font-size:15px; cursor:pointer; border:0; font-family:inherit; transition:background-color 130ms ease-out, transform 130ms ease-out; }
+    .btn-primary { background:var(--accent); color:var(--on-accent); }
+    .btn-primary:hover { background:var(--accent-hover); }
+    .btn-primary:active { transform:translateY(1px); }
+    .btn-ghost { background:transparent; color:var(--text); border:1px solid var(--line-strong); }
+    .btn-ghost:hover { background:var(--sunken); }
+    .micro { font-size:12px; }
+
+    .hero { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; padding-block:72px 56px; }
+    .eyebrow { color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:12px; margin-bottom:16px; display:block; }
+    h1 { font-size:clamp(36px, 4.5vw, 56px); letter-spacing:-.03em; margin-bottom:16px; }
+    .lead { font-size:18px; max-width:48ch; margin-bottom:28px; }
+    .cta-row { display:flex; gap:12px; flex-wrap:wrap; }
+    .hero .micro { margin-top:12px; color:var(--muted); }
+    .disclosure { margin-top:24px; border:1px solid var(--line); border-radius:var(--radius); padding:12px 16px; background:var(--accent-subtle); font-size:13px; }
+
+    .demo { border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--surface); box-shadow:0 1px 2px rgb(17 18 22 / .04), 0 24px 64px -24px rgb(17 18 22 / .16); overflow:hidden; }
+    .demo .bar { padding:12px 16px; border-bottom:1px solid var(--line); font-weight:700; font-size:13px; color:var(--text); display:flex; justify-content:space-between; gap:12px; }
+    .demo .bar .status { color:var(--ok); font-size:12px; font-weight:600; }
+    .demo .row { padding:16px; border-bottom:1px solid var(--line); }
+    .demo .row:last-child { border-bottom:0; }
+    .demo .label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:700; margin-bottom:8px; }
+    .demo .output { color:var(--text); font-size:14px; }
+    .demo .output ul { padding-left:20px; display:grid; gap:4px; margin-top:8px; }
+    .demo .sources { margin-top:8px; font-size:12px; }
+    .demo .sources a { color:var(--accent); font-weight:600; }
+    .demo .boundary { background:var(--sunken); }
+
+    section.block { padding-block:64px; }
+    .block-head { max-width:640px; margin-bottom:40px; display:grid; gap:12px; }
+    .block-head h2 { font-size:clamp(24px, 3vw, 32px); }
+    .block-head p { font-size:16px; }
+
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .step { border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--surface); padding:24px; display:grid; gap:8px; align-content:start; }
+    .step .n { font-family:ui-monospace, monospace; font-size:12px; color:var(--accent); font-weight:700; }
+    .step strong { color:var(--text); font-size:15px; }
+    .step p { font-size:14px; }
+
+    .limits { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .limits article { border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px; background:var(--surface); }
+    .limits h3 { font-size:15px; margin-bottom:12px; }
+    .limits ul { list-style:none; padding:0; display:grid; gap:12px; font-size:14px; }
+    .limits li { display:flex; gap:12px; align-items:baseline; }
+    .does li::before { content:"✓"; color:var(--ok); font-weight:800; flex:none; }
+    .doesnt li::before { content:"✕"; color:var(--warn); font-weight:800; flex:none; }
+
+    .integrate { border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; background:var(--code-bg); }
+    .integrate .bar { padding:12px 16px; color:var(--code-text); font-size:12px; border-bottom:1px solid rgb(255 255 255 / .10); display:flex; justify-content:space-between; align-items:center; }
+    .integrate pre { margin:0; padding:20px 16px; overflow-x:auto; color:var(--code-text); font-family:ui-monospace, "SF Mono", monospace; font-size:13px; line-height:1.7; }
+    .copy-btn { font:inherit; font-size:12px; font-weight:600; color:var(--code-text); background:transparent; border:1px solid rgb(255 255 255 / .22); border-radius:6px; padding:4px 12px; min-height:28px; cursor:pointer; }
+    .copy-btn:hover { background:rgb(255 255 255 / .08); }
+    .integrate-note { font-size:13px; margin-top:12px; }
+
+    .final { text-align:center; padding-block:72px; display:grid; gap:16px; justify-items:center; }
+    .final h2 { font-size:clamp(24px, 3vw, 32px); }
+
+    footer.site { border-top:1px solid var(--line); padding-block:32px; font-size:13px; }
+    .footer-inner { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; }
+    footer.site a { color:var(--muted); }
+
+    @media (max-width:860px) {
+      .hero { grid-template-columns:1fr; padding-block:48px 40px; }
+      .steps { grid-template-columns:1fr; }
+      .limits { grid-template-columns:1fr; }
+      nav[aria-label="Primary"] { display:none; }
+      .cta-row .btn { width:100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+    }
   </style>
 </head>
 <body>
-<main>
-  <section class="hero">
-    <div><p class="eyebrow">Golden example · AI copilot</p><h1>Show the workflow, not the AI mist.</h1><p>A strong AI landing page proves input, reasoning boundary, output, and user control before asking for trust.</p><a href="#demo">Inspect workflow</a></div>
-    <div class="demo" id="demo" aria-label="AI workflow example"><div class="bar">Copilot run preview</div><div class="row"><div class="label">Input</div><div class="output">Summarize open renewal risks for enterprise accounts.</div></div><div class="row"><div class="label">Boundary</div><div class="output">Uses CRM notes and billing events. Does not email customers without approval.</div></div><div class="row"><div class="label">Output</div><div class="output">3 accounts need human review, sorted by ARR and renewal date.</div></div></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap site-inner">
+    <a class="logo" href="#">Relayer</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#limits">Limits</a></li>
+        <li><a href="#integrate">Integrate</a></li>
+      </ul>
+    </nav>
+    <div class="site-cta">
+      <a class="btn btn-ghost" href="#integrate">View docs</a>
+      <a class="btn btn-primary" href="#start">Start free</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <div>
+      <span class="eyebrow">Golden example · fictional brand</span>
+      <h1>The copilot that shows its sources before you trust its summary.</h1>
+      <p class="lead">Relayer reads your CRM notes and billing events, drafts the renewal-risk analysis your team does by hand, and links every claim to the record it came from. It never contacts a customer on its own.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#start">Start free</a>
+        <a class="btn btn-ghost" href="#how">See a real run ↓</a>
+      </div>
+      <p class="micro">Free on your own CRM data · No card · Output stays yours</p>
+      <p class="disclosure">Example landing page for DesignOS evaluation. Brand fictional; the demo below is a designed illustration of the product mechanic, labeled as such — not a recorded live run.</p>
+    </div>
+
+    <div class="demo" aria-label="Example copilot run (illustrative)">
+      <div class="bar"><span>Copilot run — renewal risks</span><span class="status">completed in 9s</span></div>
+      <div class="row">
+        <div class="label">Your input</div>
+        <div class="output">"Summarize open renewal risks for enterprise accounts this quarter."</div>
+      </div>
+      <div class="row boundary">
+        <div class="label">What it may touch</div>
+        <div class="output">CRM notes + billing events, read-only. Sending email or editing records requires your approval, every time.</div>
+      </div>
+      <div class="row">
+        <div class="label">Output</div>
+        <div class="output">
+          3 accounts need human review:
+          <ul>
+            <li>Northwind — champion left in May; usage −38% <span class="sources">· <a href="#how">4 sources</a></span></li>
+            <li>Arclight — invoice disputed, renewal in 21 days <span class="sources">· <a href="#how">2 sources</a></span></li>
+            <li>Kestrel — seats capped 3 months straight <span class="sources">· <a href="#how">3 sources</a></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
-  <section class="grid" aria-label="Trust mechanics"><article class="card"><strong>Human approval</strong><p>No autonomous external messages.</p></article><article class="card"><strong>Source trail</strong><p>Every answer links to the records used.</p></article><article class="card"><strong>Fallback path</strong><p>Uncertain outputs become review tasks.</p></article></section>
+
+  <section class="block wrap" id="how" aria-labelledby="how-h">
+    <div class="block-head">
+      <h2 id="how-h">Input → boundary → output. Every run, the same shape.</h2>
+      <p>No agent theater: you see what went in, what it was allowed to touch, and where every sentence came from.</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <span class="n">01</span>
+        <strong>Ask in your words</strong>
+        <p>Plain-language questions over the accounts you own. No prompt engineering — the copilot asks a clarifying question when your ask is ambiguous instead of guessing.</p>
+      </article>
+      <article class="step">
+        <span class="n">02</span>
+        <strong>It reads, it never acts</strong>
+        <p>Analysis runs read-only. Any action — an email draft, a CRM field change — lands in your review queue as a proposal with a diff, never as a done deed.</p>
+      </article>
+      <article class="step">
+        <span class="n">03</span>
+        <strong>Answers carry receipts</strong>
+        <p>Every claim links to the note, ticket, or invoice behind it. Low-confidence findings are labeled and demoted to "worth checking," not stated as fact.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block wrap" id="limits" aria-labelledby="limits-h">
+    <div class="block-head">
+      <h2 id="limits-h">Great at some things. Deliberately not built for others.</h2>
+      <p>Stated limits are the fastest way to earn trust in a sector that oversells. Here are ours, plainly.</p>
+    </div>
+    <div class="limits">
+      <article class="does">
+        <h3>What it does well</h3>
+        <ul>
+          <li>Renewal-risk and account-health summaries across hundreds of accounts</li>
+          <li>Draft follow-ups grounded in the actual conversation history</li>
+          <li>"What changed since I last looked" digests per account list</li>
+          <li>Flagging contradictions between notes and billing reality</li>
+        </ul>
+      </article>
+      <article class="doesnt">
+        <h3>What it refuses to do</h3>
+        <ul>
+          <li>Send anything externally without a named human approving that send</li>
+          <li>Forecast revenue — that's your model's job; we surface inputs, not prophecy</li>
+          <li>Answer from data you haven't connected (it says "not connected," not a guess)</li>
+          <li>Train on your data — analysis is inference-only, per contract, at every tier</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="block wrap" id="integrate" aria-labelledby="int-h">
+    <div class="block-head">
+      <h2 id="int-h">In your stack before the meeting ends</h2>
+      <p>OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are documented end to end.</p>
+    </div>
+    <div class="integrate">
+      <div class="bar"><span>terminal</span><button class="copy-btn" type="button" data-copy="npm install @relayer/sdk">Copy</button></div>
+      <pre><code>npm install @relayer/sdk
+
+import { Relayer } from "@relayer/sdk";
+
+const run = await new Relayer({ apiKey }).analyze({
+  scope: "renewals:q3-enterprise",
+  sources: ["crm.notes", "billing.events"],   // read-only scopes
+  actions: "propose"                          // never "auto"
+});</code></pre>
+    </div>
+    <p class="integrate-note">The <code>actions: "propose"</code> default is enforced server-side — an integrator cannot accidentally ship an auto-acting copilot. <a href="#start">Read the security model →</a></p>
+  </section>
+
+  <section class="final wrap" id="start">
+    <h2>See your own accounts through it.</h2>
+    <a class="btn btn-primary" href="#">Start free</a>
+    <p class="micro">Connects read-only · Disconnect wipes our copy in 24h</p>
+  </section>
 </main>
+
+<footer class="site">
+  <div class="wrap footer-inner">
+    <span>Relayer — a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.</span>
+    <span><a href="../README.md">Golden catalog</a></span>
+  </div>
+</footer>
+
+<script>
+  /* Copy button states: default → disabled-while-writing → success / error → default.
+     The demo panel itself is static by design (illustrative, labeled as such). */
+  (function () {
+    var btn = document.querySelector('.copy-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var reset = function () { btn.textContent = 'Copy'; btn.disabled = false; };
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
+      var finish = function (label) {
+        btn.removeAttribute('aria-busy');
+        btn.textContent = label;
+        setTimeout(reset, 2000);
+      };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(btn.dataset.copy).then(
+          function () { finish('Copied ✓'); },
+          function () { finish('Select the code manually'); }
+        );
+      } else {
+        finish('Select the code manually');
+      }
+    });
+  })();
+</script>
 </body>
 </html>

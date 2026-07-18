@@ -13,7 +13,15 @@ All paths below are relative to this SKILL.md's directory (`skills/designos/`); 
 repository root is `../../`. When installed as a plugin, resolve from this skill's own
 location — never assume the project working directory.
 
-## Boot sequence (every design task)
+## Trivial gate (check first)
+
+One file + small diff (≈ under 10 lines) + no new visual decision + no new state or
+interaction → just make the change, check the non-negotiable floors below on the touched
+lines, report in two sentences. Skip the boot sequence entirely. Escalate to the full
+sequence the moment a new color/size/spacing value, a money/auth path, a hierarchy
+change, or any uncertainty appears — unsure means boot.
+
+## Boot sequence (every non-trivial design task)
 
 1. **Read the kernel**: `../../CLAUDE.md` — the routing table maps every task signal
    (hero, pricing, dashboard, dark mode, "make it premium", …) to the exact modules to

@@ -167,7 +167,40 @@ The run's most useful products were its **failures**, all committed to the repor
    regression test, which then exposed (and fixed) a second bug: single-line `:root`
    blocks left the brace tracker open and exempted the rest of the file from all checks.
 
-## Run 005+ — your model, your judge (the one that matters most)
+## Run 005 — full A/B on brief B2 (dark, dev-tool), control vs treatment (2026-07-18) — SELF-RUN, NON-BLIND
+
+> ⚠️ **Same caveat as Runs 001/002/004.** One agent (Claude Fable 5, single session)
+> wrote both arms and scored both. L2 evidence, not L3. Full report with raw artifacts:
+> [`runs/run-005-tracewise-devtool/`](runs/run-005-tracewise-devtool/).
+
+First brief run in this repo's dark-theme / developer-tool category (Run 004 covered
+light/SaaS). Same mechanical pattern as before, plus two new findings:
+
+| Measured | Control | Treatment |
+|---|---:|---:|
+| `check-drift` | 51 | 0 (14 on first pass, iterated) |
+| `check-a11y-basics` | 1 (no `<main>`) | 0 |
+| `designos review` static risk floor | 0/100, 55 findings | 100/100, 0 findings |
+
+What made this run worth running rather than a repeat of Run 004:
+
+1. **A real, previously-undocumented tool gap.** The control invented three unsourced
+   statistics ("10B+ spans processed daily", "5,000+ engineering teams", "99.99% uptime
+   SLA") that the proof-risk check did **not** flag — it caught a named-testimonial
+   fabrication in the same file but has no pattern for bare large numbers near marketing
+   copy. Filed as a known blind spot in `scoring/failure-taxonomy.md` and
+   `evals/independent-run-guide.md`, not silently fixed.
+2. **Run 004's flex-parent-collapse bug reproduced itself** — same agent, same failure
+   class, fresh file, minutes after documenting the fix pattern in
+   `scoring/failure-taxonomy.md`. `designos review` reported 100/100 throughout; only
+   `getBoundingClientRect()` measurement in a live render caught the header logo fusing
+   into the first nav link at 1024px. First real-world confirmation that a documented
+   failure mode does not prevent recurrence — only a render-and-measure step does.
+
+`evals/independent-run-guide.md` now includes a turnkey copy-paste command sequence for
+running B1–B10 yourself, built directly from this run's command log.
+
+## Run 006+ — your model, your judge (the one that matters most)
 
 **This slot is the most important unfilled gap in the whole repository.**
 Everything above this line is the maintainer checking their own homework; this is where

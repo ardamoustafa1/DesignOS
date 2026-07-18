@@ -54,6 +54,19 @@ list→detail path, once.
 - Budget like celebrations (`components/states.md`): constant buzzing = numbness;
   respect system settings (haptics off = off).
 
+## Spring & duration reference values
+
+| Context | iOS (response s / damping) | Android (M3 token) |
+|---|---|---|
+| Sheet settle / dismiss completion | 0.40–0.50 / 0.80–0.90 | emphasized 400–500ms |
+| Small state change (toggle, chip) | 0.25–0.30 / 0.90 | standard 200ms |
+| Drag-release spring-back | 0.30–0.35 / 0.75–0.85 (velocity-inheriting) | spring: medium damping |
+| Full-screen push/pop | interactive (gesture-driven) | emphasized 300–400ms |
+
+Starting points, not laws — tune per product voice, then freeze ONE configuration per
+context in `memory/design.md`; per-screen spring drift is the native version of the
+random-easing web sin (`motion/principles.md`).
+
 ## Performance & accessibility floors
 - 60fps minimum, 120fps-aware on ProMotion-class displays (springs render beautifully
   at high refresh; jank is doubly visible) — profile on mid-range Android, not the

@@ -43,6 +43,30 @@ Follow the sector skeleton: Buyer psychology → Visual language → Page priori
 patterns → Trust requirements → Motion character → Anti-patterns → References.
 The bar: a designer who's never worked the sector ships credible work from your file alone.
 
+## First contributions (concrete, scoped, genuinely wanted)
+
+Each of these is a real gap the maintainer cannot fill alone, sized for a first PR, with
+its acceptance test stated. Governance status, honestly: the co-maintainer pathway in
+`GOVERNANCE.md` is defined but **not yet exercised** — these are the road into it.
+
+1. **Run an eval brief independently** — the single most valuable PR this repo can
+   receive. Pick any brief from `evals/briefs.md` (B2–B10 are unclaimed), follow
+   `evals/independent-run-guide.md`, submit via `evals/RUN_TEMPLATE.md`. A negative or
+   mixed result is exactly as publishable as a win. *Accepted when:* raw outputs +
+   validator logs attached, conditions stated.
+2. **Add a sector to the suggest engine** — extend `bin/suggest-data.js` (and mirror it
+   in `website/suggest.html`). *Accepted when:* `node validators/test-cli.js` passes —
+   the palette-integrity test computes your contrast pairs, so a bad palette cannot merge.
+3. **Regenerate a golden's screenshot/Lighthouse evidence** — run any
+   `goldens/*/index.html` through a real Lighthouse pass and PR the numbers into its
+   `.md`. *Accepted when:* command + environment recorded next to the scores.
+4. **File a rule-challenge with data** — find a module rule you can beat, show the
+   evidence (A/B, real-world example, better reference). *Accepted when:* the challenge
+   names the rule, the evidence, and the replacement wording.
+5. **Native-speaker translation review** — any `README.<lang>.md` carries an
+   "LLM-authored, unreviewed" disclaimer; remove one by reviewing it. *Accepted when:*
+   the PR lists corrections made (or states none were needed) and drops the disclaimer.
+
 ## Process
 1. Open an issue describing the change + the reasoning (for new modules: the outline)
 2. PR with the change; kernel routing table (`CLAUDE.md`) updated if you added a module

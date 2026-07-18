@@ -51,6 +51,31 @@ it. The state matrix (`components/states.md`) grows a dimension:
   inputmode rule, natively: textContentType/autofillHints), form never hidden under the
   keyboard (scroll-into-view + inset handling).
 
+## Paywalls & monetization (consumer apps' highest-stakes screen)
+- **Value before wall:** the paywall lands after the aha-artifact, not before it — a
+  user who has felt the product converts at multiples of one who read about it. Hard
+  walls at launch are for products with brand pull you probably don't have.
+- Anatomy: one-line outcome restate → 3–5 concrete benefit rows (feature nouns, not
+  adjectives) → plan choice (annual pre-selected with monthly-equivalent math shown
+  honestly: "$39.99/yr · $3.33/mo") → primary CTA → restore purchases + terms, visible.
+- **Honesty rules are conversion rules here:** trial terms in plain language before the
+  OS sheet ("7 days free, then $39.99/yr — cancel anytime in Settings"), no fake
+  countdown, no pre-selected decoy the user must notice to escape.
+  `psychology/persuasion.md` ethics line applies with legal teeth (app-store review).
+- Close affordance present and honest (a hunt-the-X paywall trades one conversion for
+  the review score); "maybe later" keeps the free path real.
+- Test the paywall in `components/states.md` terms: loading (price fetch), error
+  (store unreachable → retry, never a dead CTA), restored, already-subscribed.
+
+## Launch & identity surfaces
+- **Launch screen:** a static frame of the app's first screen (platform doctrine) —
+  not a splash ad, not a 3-second logo animation; perceived cold-start time is a
+  design metric (`motion/performance.md`).
+- **Store listing is a landing page** (`patterns/landing-pages.md` compressed):
+  screenshot 1 carries the whole argument (most users see only it), captions are
+  headlines, preview video autoplays muted. Design these artifacts with the same loop
+  as any hero.
+
 ## Mobile-specific review additions (append to the loop)
 - Interruption resilience: call/app-switch mid-flow → state survives (the mobile
   dirty-state rule; OS kills processes — persist drafts aggressively)

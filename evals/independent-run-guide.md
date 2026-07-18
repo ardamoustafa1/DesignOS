@@ -14,6 +14,35 @@ Good evaluators:
 
 Avoid anonymous "looks good" reports. They are useful feedback, not benchmark evidence.
 
+## Turnkey path (copy-paste, ~20 minutes)
+
+```bash
+# 1. Scaffold the run folder (fill in a slug and pick a brief number, B1-B10)
+node bin/designos.js eval your-slug-here
+
+# 2. Paste your control output (no DesignOS) into control/index.html,
+#    and your DesignOS-guided output into treatment/index.html
+
+# 3. Run the full validator suite on both arms
+node validators/check-drift.js evals/runs/run-XXX-your-slug/control
+node validators/check-a11y-basics.js evals/runs/run-XXX-your-slug/control
+node validators/check-drift.js evals/runs/run-XXX-your-slug/treatment
+node validators/check-a11y-basics.js evals/runs/run-XXX-your-slug/treatment
+node validators/check-token-contrast.js evals/runs/run-XXX-your-slug/treatment
+
+# 4. Run the deterministic gate on both
+node bin/designos.js review evals/runs/run-XXX-your-slug/control/index.html --no-fail
+node bin/designos.js review evals/runs/run-XXX-your-slug/treatment/index.html --no-fail
+
+# 5. Fill the scaffolded README.md (real dates, real numbers, no TODOs left)
+```
+
+Known gap to watch for while scoring (found in Run 005, unfixed as of this writing): the
+proof-risk check catches named testimonials and "Trusted by" phrasing but currently misses
+**bare unsourced statistics** ("10B+ requests/day", "5,000+ teams") — if your control or
+treatment output invents numbers like these, flag it manually in your findings even though
+the tool stays silent. Report it either way; a silent tool is not the same as a clean page.
+
 ## Minimum Protocol
 
 1. Pick one brief from `evals/briefs.md` or write a real project brief.

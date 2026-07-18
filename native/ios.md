@@ -27,6 +27,32 @@ iOS build: platform-adaptive beats identical-everywhere.)
 - Spacing rhythm: 16pt default margins, 44pt minimum touch targets (the origin of the
   DesignOS-wide rule), list rows 44–56pt.
 
+### The text-style scale (default pt, the platform's `foundations/typography.md`)
+
+| Style | pt | Weight | Use |
+|---|---:|---|---|
+| Large Title | 34 | Bold | scroll-collapsing screen titles |
+| Title 1 / 2 / 3 | 28 / 22 / 20 | Bold–Semibold | section heads, card titles |
+| Headline | 17 | Semibold | list-row primary, emphasis body |
+| Body | 17 | Regular | the default reading style |
+| Callout / Subheadline | 16 / 15 | Regular | secondary content |
+| Footnote | 13 | Regular | metadata, timestamps |
+| Caption 1 / 2 | 12 / 11 | Regular | labels, badges |
+
+Never invent 18pt or 14pt body — pick the adjacent style; the scale is what Dynamic Type
+scales. iPad: same styles, wider margins (system readable-content guides), and
+list-detail split layouts at regular width (`foundations/layout.md` thinking, platform
+rendering).
+
+## Beyond the app (system surfaces)
+- **Widgets:** one glanceable fact per size, tap = deep link to exactly that fact —
+  a widget is a `components/cards.md` card with a 10-second read budget; no buttons-farm.
+- **Live Activities / Dynamic Island:** reserved for genuinely live processes (delivery,
+  ride, timer, score) with a defined end; a marketing surface there gets the feature
+  killed by users. Update honestly — a stale Live Activity is worse than none.
+- **App icon:** legible at 60px, no text, survives both light/dark/tinted treatments;
+  the icon is a token decision (`foundations/design-tokens.md` brand tier), not clip art.
+
 ## Platform components (use, don't rebuild)
 Native pickers/date wheels, swipe-actions on list rows (leading/trailing, destructive
 full-swipe), pull-to-refresh, context menus (long-press preview), share sheet,

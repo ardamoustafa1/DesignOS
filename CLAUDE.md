@@ -24,6 +24,17 @@ This file is the kernel. It tells you **what to load, in what order, and what st
 
 ## 1. Boot Sequence (run on every design task)
 
+**Trivial gate — check BEFORE booting.** A task is *trivial* when ALL hold: one file,
+a small diff (≈ under 10 lines), no new visual decision (uses existing tokens/scale/
+components), and no new state or interaction. Then: make the change, verify §4's floors
+still hold on the touched lines (contrast, focus, grid, semantics — run
+`validators/check-drift.js` on the file if it exists), and report in two sentences.
+No module loading, no loop, no scorecard. **Escalate to the full sequence the moment**
+the change needs a new color/size/spacing value, touches a money/auth path, alters
+hierarchy, or you're unsure — unsure means boot.
+
+For everything else:
+
 ```
 1. READ   brain/design-intelligence.md      → how to think
 2. READ   brain/decision-framework.md       → how to choose
@@ -42,6 +53,19 @@ Do not skip steps. If a module doesn't exist for the task, say so — do not imp
 ---
 
 ## 2. Routing Table
+
+**Multi-match rules (hybrid tasks).** Real briefs often hit several rows ("pricing page
+with a comparison table, dark theme"). Resolve deterministically:
+
+1. **Surface row first** — the row naming the page/screen type (landing, pricing,
+   dashboard, docs…) anchors the load; component rows (buttons, tabs, badges…) join it.
+2. **Union, capped at 6 modules + the sector file.** Beyond that, drop component-level
+   rows (their essentials are restated inside pattern files) before dropping pattern,
+   psychology, or foundation rows.
+3. **Sector beats surface on conflict** — if `industries/<sector>.md` contradicts a
+   generic pattern rule, the sector wins; note the override in the rationale.
+4. **No matching row** → treat as the closest surface row, say which one you chose and
+   why, and flag the gap (a missing row is a repo issue, not a license to improvise).
 
 | Task signal | Load |
 |---|---|

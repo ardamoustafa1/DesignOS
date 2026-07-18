@@ -24,7 +24,7 @@
 
 <img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.1.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
 
-[**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Architecture](ARCHITECTURE.md) · [Enterprise guide](ENTERPRISE.md) · [Governance](GOVERNANCE.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
+[**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Live generator](website/suggest.html) · [Architecture](ARCHITECTURE.md) · [Enterprise guide](ENTERPRISE.md) · [Governance](GOVERNANCE.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
 [Türkçe](README.tr.md) · [中文](README.zh.md) · [Español](README.es.md) · [日本語](README.ja.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Português](README.pt.md)
 
@@ -488,6 +488,7 @@ stay **NOT ASSESSED** rather than becoming an invented score.
 
 | Resource | What to inspect |
 |---|---|
+| [Live generator](website/suggest.html) | Type a brief in the browser → sector/surface routing + a palette whose WCAG ratios are computed on the page, live |
 | [Before / After](website/before-after.html) | The same brief with visible anti-pattern annotations |
 | [Live showcase](examples/README.md) | Landing, dashboard, pricing, and docs on one token system |
 | [Landing walkthrough](examples/saas-landing-walkthrough.md) | Decisions and failures behind the landing page |

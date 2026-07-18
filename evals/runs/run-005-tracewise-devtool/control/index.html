@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracewise - Distributed Tracing for Backend Teams</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #21262d;
+  }
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  nav a { color: #8b949e; text-decoration: none; margin-left: 25px; font-size: 14px; }
+  nav a:hover { color: #fff; }
+  .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #7c3aed, #2563eb);
+    color: white;
+    border: none;
+  }
+  .btn-outline { border: 1px solid #30363d; color: #e6edf3; }
+
+  .hero {
+    text-align: center;
+    padding: 110px 0 70px;
+    background: radial-gradient(ellipse at top, rgba(124, 58, 237, 0.15), transparent);
+  }
+  .hero h1 {
+    font-size: 54px;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg, #fff, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 19px;
+    color: #8b949e;
+    max-width: 620px;
+    margin: 0 auto 32px;
+  }
+  .hero-buttons { display: flex; gap: 15px; justify-content: center; }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .stats .num { font-size: 34px; font-weight: 800; color: #a78bfa; }
+  .stats .label { font-size: 13px; color: #8b949e; }
+
+  .features {
+    padding: 80px 0;
+  }
+  .section-title { text-align: center; font-size: 36px; margin-bottom: 10px; }
+  .section-sub { text-align: center; color: #8b949e; margin-bottom: 50px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 28px;
+    transition: transform 0.3s;
+  }
+  .card:hover { transform: translateY(-5px); }
+  .card .icon { font-size: 30px; margin-bottom: 14px; }
+  .card h3 { font-size: 18px; margin-bottom: 10px; }
+  .card p { color: #8b949e; font-size: 14px; }
+
+  .code-section {
+    padding: 70px 0;
+    text-align: center;
+  }
+  .code-box {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 600px;
+    margin: 30px auto 0;
+    text-align: left;
+    font-family: monospace;
+    font-size: 14px;
+    color: #7ee787;
+  }
+
+  .testimonials { padding: 70px 0; text-align: center; }
+  .quote { font-size: 20px; max-width: 640px; margin: 0 auto; font-style: italic; }
+  .author { margin-top: 15px; color: #8b949e; font-size: 14px; }
+
+  .cta {
+    text-align: center;
+    padding: 90px 0;
+    background: radial-gradient(ellipse at bottom, rgba(37, 99, 235, 0.15), transparent);
+  }
+  .cta h2 { font-size: 34px; margin-bottom: 15px; }
+  .cta p { color: #8b949e; margin-bottom: 30px; }
+
+  footer {
+    border-top: 1px solid #21262d;
+    padding: 30px 0;
+    text-align: center;
+    color: #8b949e;
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 36px; }
+    .grid { grid-template-columns: 1fr; }
+    .stats { flex-direction: column; gap: 25px; }
+    nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="container">
+  <div class="logo">Tracewise</div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#docs">Docs</a>
+    <a href="#pricing">Pricing</a>
+  </nav>
+  <a href="#" class="btn btn-primary">Get Started</a>
+</header>
+
+<section class="hero container">
+  <h1>Supercharge Your Observability</h1>
+  <p>Tracewise is the next-generation distributed tracing platform that empowers backend teams to debug faster and ship with confidence.</p>
+  <div class="hero-buttons">
+    <a href="#" class="btn btn-primary">Start Free Trial</a>
+    <a href="#" class="btn btn-outline">View Docs</a>
+  </div>
+</section>
+
+<div class="stats container">
+  <div>
+    <div class="num">10B+</div>
+    <div class="label">Spans processed daily</div>
+  </div>
+  <div>
+    <div class="num">5,000+</div>
+    <div class="label">Engineering teams</div>
+  </div>
+  <div>
+    <div class="num">99.99%</div>
+    <div class="label">Uptime SLA</div>
+  </div>
+</div>
+
+<section class="features container" id="features">
+  <h2 class="section-title">Powerful Features</h2>
+  <p class="section-sub">Everything you need for modern observability</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Blazing Fast</h3>
+      <p>Query billions of spans in milliseconds with our proprietary storage engine.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔍</div>
+      <h3>Deep Insights</h3>
+      <p>AI-powered anomaly detection surfaces issues before your customers notice.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔗</div>
+      <h3>Seamless Integration</h3>
+      <p>Works out of the box with OpenTelemetry, Jaeger, and all major frameworks.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Beautiful Dashboards</h3>
+      <p>Visualize your entire system with customizable, real-time dashboards.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🚨</div>
+      <h3>Smart Alerts</h3>
+      <p>Intelligent alerting that learns your baselines and reduces noise.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h3>Enterprise Security</h3>
+      <p>SOC2 certified with end-to-end encryption and SSO support.</p>
+    </div>
+  </div>
+</section>
+
+<section class="code-section container">
+  <h2 class="section-title">Up and Running in Minutes</h2>
+  <div class="code-box">
+    $ npm install @tracewise/sdk<br>
+    $ tracewise init --service my-api<br>
+    ✓ Traces flowing to app.tracewise.io
+  </div>
+</section>
+
+<section class="testimonials container">
+  <h2 class="section-title">Loved by Engineers</h2>
+  <p class="quote">"Tracewise cut our MTTR by 80%. It's the first tool our on-call engineers open."</p>
+  <p class="author">— Sarah Chen, Principal Engineer at CloudScale</p>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Transform Your Debugging?</h2>
+    <p>Join thousands of teams shipping with confidence.</p>
+    <a href="#" class="btn btn-primary">Start Free Trial</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Tracewise Inc. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

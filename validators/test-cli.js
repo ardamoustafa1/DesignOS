@@ -505,6 +505,40 @@ test('suggest: every sector palette passes all five declared contrast pairs', ()
   }
 });
 
+test('suggest: hybrid briefs route deterministically (routing-table tie-break proxy)', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-hybrid-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  const cases = [
+    ['pricing page with a comparison table for a security platform, dark', 'cybersecurity', 'pricing'],
+    ['healthcare appointment booking dashboard', 'healthcare', 'booking'],
+    ['checkout flow for a plant shop', 'ecommerce', 'checkout'],
+    ['blog for an AI devtools startup', 'ai-startup', 'blog'],
+  ];
+  for (const [brief, sector, surface] of cases) {
+    const r = spawnSync('node', ['DesignOS/bin/designos.js', 'suggest', brief], { cwd: tmp, encoding: 'utf8' });
+    assert.strictEqual(r.status, 0, r.stderr);
+    assert.ok(r.stdout.includes(`SECTOR: ${sector}`), `"${brief}" → expected sector ${sector}`);
+    assert.ok(r.stdout.includes(`SURFACE: ${surface}`), `"${brief}" → expected surface ${surface}`);
+  }
+});
+
+test('suggest web mirror: website/suggest.html carries every sector, palette hex, and surface from the CLI data', () => {
+  const { SECTORS, SURFACES } = require(path.resolve(__dirname, '..', 'bin', 'suggest-data.js'));
+  const page = fs.readFileSync(path.resolve(__dirname, '..', 'website', 'suggest.html'), 'utf8');
+  for (const [key, s] of Object.entries(SECTORS)) {
+    assert.ok(page.includes(`'${key}'`) || page.includes(`${key}:`) || page.includes(`'${key}':`),
+      `sector "${key}" missing from website/suggest.html — page has drifted from bin/suggest-data.js`);
+    for (const [tok, hex] of Object.entries(s.palette)) {
+      assert.ok(page.includes(hex), `${key}.${tok} ${hex} missing from website/suggest.html — sync the page data`);
+    }
+  }
+  for (const key of Object.keys(SURFACES)) {
+    assert.ok(page.includes(`${key}:`) || page.includes(`'${key}'`),
+      `surface "${key}" missing from website/suggest.html — sync the page data`);
+  }
+});
+
 // ── SUMMARY ───────────────────────────────────────────────────────────────────
 
 console.log(`\n  ${passed} passed, ${failed} failed\n`);

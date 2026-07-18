@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tracewise — Distributed tracing for backend teams</title>
+<meta name="description" content="Trace requests across every service without sampling blind spots. OpenTelemetry-native, self-hostable, one command to first trace." />
+<style>
+  :root {
+    --bg-page: #0A0A0B;
+    --bg-alt: #0E0F11;
+    --bg-surface: #141416;
+    --bg-raised: #1A1B1E;
+
+    --text-primary: #FAFAFA;
+    --text-secondary: #C7C9CC;
+    --text-muted: #8B8D91;
+    --text-on-accent: #04150C;
+
+    --border-default: rgba(255,255,255,0.09);
+    --border-strong: rgba(255,255,255,0.16);
+    --border-focus: #34D399;
+
+    --accent: #34D399;
+    --accent-hover: #6EE7B7;
+    --accent-subtle: rgba(52,211,153,0.10);
+
+    --danger: #F87171;
+    --warn: #FBBF24;
+
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    color: var(--text-secondary);
+    background: var(--bg-page);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { color: var(--text-primary); font-weight: 700; text-wrap: balance; letter-spacing: -0.02em; }
+  a { color: inherit; }
+  code, .mono { font-family: "SF Mono", "Geist Mono", ui-monospace, Menlo, monospace; }
+
+  .skip-link { position: absolute; left: 16px; top: -48px; background: var(--accent); color: var(--text-on-accent); padding: 12px 20px; border-radius: var(--radius-sm); font-weight: 600; font-size: 14px; z-index: 100; transition: top 150ms ease-out; }
+  .skip-link:focus { top: 16px; }
+  :focus-visible { outline: 2px solid var(--border-focus); outline-offset: 2px; border-radius: 4px; }
+
+  header {
+    padding: 16px 0; border-bottom: 1px solid var(--border-default);
+    position: sticky; top: 0; background: rgba(10,10,11,0.88); backdrop-filter: blur(10px); z-index: 50;
+  }
+  header .container { display: flex; justify-content: space-between; align-items: center; position: relative; }
+  .logo { font-weight: 700; font-size: 18px; color: var(--text-primary); letter-spacing: -0.02em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+  .logo .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; }
+  nav a:hover { color: var(--text-primary); }
+  .header-actions { display: flex; gap: 8px; align-items: center; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: var(--radius-md); font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; min-width: 44px; transition: background-color 120ms ease-out, border-color 120ms ease-out; }
+  .btn-primary { background: var(--accent); color: var(--text-on-accent); }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-ghost { background: transparent; color: var(--text-primary); border: 1px solid var(--border-strong); }
+  .btn-ghost:hover { background: var(--bg-surface); }
+  .btn-sm { height: 38px; padding: 0 16px; font-size: 13px; }
+  .cta-microcopy { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+
+  .menu-btn { display: none; }
+
+  .hero { padding: 88px 0 64px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .hero h1 { font-size: clamp(2.1rem, 3.6vw + 1rem, 3.25rem); line-height: 1.08; margin-bottom: 20px; }
+  .hero .lead { font-size: 18px; line-height: 1.6; max-width: 46ch; margin-bottom: 28px; color: var(--text-secondary); }
+  .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .install-box { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-md); overflow: hidden; }
+  .install-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--border-default); font-size: 12px; color: var(--text-muted); }
+  .install-body { padding: 16px; font-size: 14px; color: var(--accent); }
+  .install-body .prompt { color: var(--text-muted); }
+  .copy-btn { font: inherit; font-size: 12px; font-weight: 600; color: var(--text-muted); background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 4px 12px; min-height: 28px; cursor: pointer; }
+  .copy-btn:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+  .trace-panel { border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--bg-surface); box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 20px 48px -20px rgba(0,0,0,0.5); overflow: hidden; }
+  .trace-panel-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--border-default); font-size: 12px; }
+  .trace-panel-header .title { color: var(--text-primary); font-weight: 600; }
+  .trace-panel-header .dur { color: var(--text-muted); font-family: "SF Mono", monospace; }
+  .trace-row { display: grid; grid-template-columns: 140px 1fr auto; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--border-default); font-size: 12px; }
+  .trace-row:last-child { border-bottom: none; }
+  .trace-row .svc { color: var(--text-secondary); font-weight: 500; }
+  .trace-row .bar-track { height: 8px; background: var(--bg-raised); border-radius: 999px; position: relative; overflow: hidden; }
+  .trace-row .bar-fill { position: absolute; top: 0; left: 0; height: 100%; background: var(--accent); border-radius: 999px; }
+  .trace-row .bar-fill.warn { background: var(--warn); }
+  .trace-row .bar-fill.danger { background: var(--danger); }
+  .trace-row .ms { color: var(--text-muted); font-family: "SF Mono", monospace; text-align: right; min-width: 48px; }
+  .trace-caption { padding: 12px 16px; font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border-default); }
+
+  section { padding: 88px 0; }
+  .section-alt { background: var(--bg-alt); }
+  .section-head { max-width: 620px; margin: 0 auto 52px; text-align: center; }
+  .eyebrow-center { justify-content: center; }
+  .section-head h2 { font-size: clamp(1.6rem, 2.2vw + 1rem, 2.25rem); margin-bottom: 12px; }
+  .section-head p { color: var(--text-muted); font-size: 16px; }
+
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .feature-card { display: flex; flex-direction: column; gap: 12px; }
+  .feature-visual { height: 132px; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); margin-bottom: 8px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-family: "SF Mono", monospace; font-size: 13px; }
+  .feature-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+  .feature-card h3 { font-size: 19px; }
+  .feature-card p { font-size: 14px; color: var(--text-muted); }
+  .feature-card .num { font-family: "SF Mono", monospace; color: var(--text-primary); font-weight: 600; }
+
+  .mechanism { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .mechanism-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+  .mechanism-list li { display: flex; gap: 12px; font-size: 14px; color: var(--text-secondary); }
+  .mechanism-list .mark { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+  .log-panel { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+  .log-panel-header { padding: 12px 16px; border-bottom: 1px solid var(--border-default); font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between; }
+  .log-line { padding: 8px 16px; font-family: "SF Mono", monospace; font-size: 12px; color: var(--text-muted); border-bottom: 1px solid var(--border-default); }
+  .log-line:last-child { border-bottom: none; }
+  .log-line .ts { color: var(--text-muted); margin-right: 12px; }
+  .log-line .lvl-warn { color: var(--warn); font-weight: 700; margin-right: 8px; }
+  .log-line .lvl-info { color: var(--accent); font-weight: 700; margin-right: 8px; }
+  .log-line .msg { color: var(--text-secondary); }
+
+  .status-strip { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-md); max-width: 420px; margin: 0 auto; font-size: 13px; }
+  .status-strip .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); flex-shrink: 0; }
+  .status-strip a { color: var(--accent); font-weight: 600; text-decoration: none; margin-left: auto; }
+
+  .faq-list { max-width: 680px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border-default); }
+  .faq-item summary { padding: 20px 0; font-size: 15px; font-weight: 600; color: var(--text-primary); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 18px; font-weight: 400; color: var(--text-muted); transition: transform 150ms ease-out; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { padding-bottom: 20px; font-size: 14px; color: var(--text-muted); max-width: 65ch; }
+
+  .cta-final { text-align: center; }
+  .cta-final h2 { font-size: clamp(1.6rem, 2.2vw + 1rem, 2.25rem); margin-bottom: 12px; }
+  .cta-final p { color: var(--text-muted); font-size: 16px; margin-bottom: 28px; }
+  .cta-final .hero-cta-row { justify-content: center; }
+
+  footer { padding: 56px 0 32px; border-top: 1px solid var(--border-default); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 40px; }
+  .footer-brand p { font-size: 13px; color: var(--text-muted); margin-top: 12px; max-width: 32ch; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+  .footer-col a:hover { color: var(--text-primary); }
+  .footer-bottom { padding-top: 24px; border-top: 1px solid var(--border-default); font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: center; }
+
+  @media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+    .mechanism { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 768px) {
+    section { padding: 60px 0; }
+    .hero { padding: 44px 0 44px; }
+    nav[aria-label="Primary"] { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-page); border-bottom: 1px solid var(--border-default); padding: 8px 24px 20px; box-shadow: 0 12px 24px -12px rgba(0,0,0,0.5); }
+    nav[aria-label="Primary"].nav-open { display: block; }
+    nav[aria-label="Primary"] ul { flex-direction: column; gap: 4px; }
+    nav[aria-label="Primary"] a { display: block; padding: 12px 8px; font-size: 15px; border-radius: var(--radius-sm); }
+    nav[aria-label="Primary"] a:hover { background: var(--bg-surface); }
+    .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: transparent; cursor: pointer; color: var(--text-primary); }
+    .feature-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .hero-cta-row .btn { width: 100%; }
+    .hero-cta-row { flex-direction: column; }
+  }
+  @media (max-width: 400px) { .footer-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo"><span class="dot" aria-hidden="true"></span>Tracewise</a>
+    <nav aria-label="Primary" id="primary-nav">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="#docs" class="btn btn-ghost btn-sm">Docs</a>
+      <a href="#install" class="btn btn-primary btn-sm">Get started</a>
+      <button class="menu-btn" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5H16M2 9H16M2 13.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">OpenTelemetry-native · self-hostable</p>
+        <h1>Find the slow span before your pager does.</h1>
+        <p class="lead">Tracewise traces every request across every service with no sampling blind spots — so the trace that would have explained the incident is still there when you go looking.</p>
+        <div class="hero-cta-row">
+          <a href="#install" class="btn btn-primary">Get started</a>
+          <a href="#docs" class="btn btn-ghost">Read the docs</a>
+        </div>
+        <p class="cta-microcopy">Open-core · self-host or managed · OTel-compatible from day one</p>
+      </div>
+
+      <div class="trace-panel" aria-hidden="true">
+        <div class="trace-panel-header">
+          <span class="title">POST /checkout · trace 7f2a91</span>
+          <span class="dur">312ms total</span>
+        </div>
+        <div class="trace-row"><span class="svc">api-gateway</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="ms">312ms</span></div>
+        <div class="trace-row"><span class="svc">auth-service</span><span class="bar-track"><span class="bar-fill" style="width:14%"></span></span><span class="ms">44ms</span></div>
+        <div class="trace-row"><span class="svc">inventory-db</span><span class="bar-track"><span class="bar-fill warn" style="width:58%"></span></span><span class="ms">181ms</span></div>
+        <div class="trace-row"><span class="svc">payment-svc</span><span class="bar-track"><span class="bar-fill" style="width:22%"></span></span><span class="ms">68ms</span></div>
+        <div class="trace-row"><span class="svc">notify-queue</span><span class="bar-track"><span class="bar-fill danger" style="width:9%"></span></span><span class="ms">timeout</span></div>
+        <p class="trace-caption">Illustrative trace — not a live account</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="how">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow eyebrow-center">The mechanism</p>
+        <h2>Three problems this actually solves</h2>
+        <p>Not a metrics dump with a new coat of paint.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-visual">span → span → span</div>
+          <p class="feature-eyebrow">No sampling blind spots</p>
+          <h3>Every request, not a percentage of them</h3>
+          <p>Tail-based retention keeps the traces that matter — errors and outliers — at <span class="num">100%</span>, while boring traffic samples down automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-visual">svc_a → svc_b</div>
+          <p class="feature-eyebrow">Cross-service by default</p>
+          <h3>One trace ID, every hop, no manual stitching</h3>
+          <p>Context propagates through your existing OTel instrumentation — <span class="num">zero</span> custom SDKs to maintain.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-visual">p50 · p95 · p99</div>
+          <p class="feature-eyebrow">Query, not scroll</p>
+          <h3>Find the slow span in seconds, not a dashboard hunt</h3>
+          <p>Query by service, latency percentile, or error code directly — built for the moment you're already paged.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="docs">
+    <div class="container mechanism">
+      <div>
+        <p class="eyebrow">How it holds up</p>
+        <h2 style="font-size: clamp(1.4rem, 2vw + 1rem, 1.875rem);">Built on OpenTelemetry, not around it</h2>
+        <ul class="mechanism-list">
+          <li><span class="mark" aria-hidden="true">✓</span><span>If you already emit OTel spans, there's nothing new to instrument — point the exporter at Tracewise and traces start flowing.</span></li>
+          <li><span class="mark" aria-hidden="true">✓</span><span>Self-host on your own infrastructure with the open-core build, or use the managed service — same query engine either way.</span></li>
+          <li><span class="mark" aria-hidden="true">✓</span><span>Export anytime: traces are stored in an open Parquet format, not a proprietary lock-in.</span></li>
+        </ul>
+      </div>
+      <div class="log-panel">
+        <div class="log-panel-header"><span>ingest.log</span><span>tail -f</span></div>
+        <div class="log-line"><span class="ts">14:02:11.204</span><span class="lvl-info">INFO</span><span class="msg">otel-collector connected · service=checkout-api</span></div>
+        <div class="log-line"><span class="ts">14:02:11.980</span><span class="lvl-info">INFO</span><span class="msg">1,204 spans ingested · trace count 187</span></div>
+        <div class="log-line"><span class="ts">14:02:14.112</span><span class="lvl-warn">WARN</span><span class="msg">p95 latency inventory-db 181ms (baseline 62ms)</span></div>
+        <div class="log-line"><span class="ts">14:02:15.003</span><span class="lvl-info">INFO</span><span class="msg">tail-sampling retained trace 7f2a91 (error path)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="install">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow eyebrow-center">Get started</p>
+        <h2>First trace in one command</h2>
+        <p>No account required to try it locally.</p>
+      </div>
+      <div class="install-box" style="max-width: 560px; margin: 0 auto;">
+        <div class="install-bar">
+          <span>terminal</span>
+          <button class="copy-btn" id="copy-install" data-copy="curl -sSL https://get.tracewise.dev | sh">Copy</button>
+        </div>
+        <div class="install-body mono">
+          <div><span class="prompt">$</span> curl -sSL https://get.tracewise.dev | sh</div>
+          <div style="margin-top:8px;"><span class="prompt">$</span> tracewise up</div>
+          <div style="margin-top:8px; color: var(--text-muted);">→ collector listening on :4318 · UI at localhost:16686</div>
+        </div>
+      </div>
+      <p class="cta-microcopy" style="text-align:center; margin-top:16px;">Installer is a shell script — <a href="#docs" style="color:var(--accent);">read it before piping to sh</a>, as you should for any install script.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="status-strip">
+        <span class="dot" aria-hidden="true"></span>
+        <span>All systems operational</span>
+        <a href="#faq">Status history →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow eyebrow-center">Questions</p>
+        <h2>Before you install it</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do we have to rip out our existing OTel setup?</summary>
+          <p>No. If you're already emitting OpenTelemetry spans, point your existing exporter at Tracewise's collector endpoint. No new SDK, no re-instrumentation.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens to our data if we self-host and something breaks?</summary>
+          <p>Traces are stored in open Parquet files on disk you control — readable with standard tooling even if Tracewise itself is down. Nothing is locked in a proprietary format.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How does tail-based sampling avoid losing the trace I actually need?</summary>
+          <p>Every trace is buffered briefly before the sampling decision. Errors, timeouts, and latency outliers are always retained at 100%; only clean, fast, boring traces get sampled down.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a free tier for the managed service?</summary>
+          <p>Yes — free up to 10GB of ingested spans/month, no card required. Self-hosting the open-core build has no volume limit at all.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where do I see uptime history before trusting this in production?</summary>
+          <p>The status page above links to full incident history, not just a green dot — check it before you rely on us for the traces that explain your incidents.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <h2>Point your collector here. See what you've been missing.</h2>
+      <div class="hero-cta-row">
+        <a href="#install" class="btn btn-primary">Get started</a>
+        <a href="#docs" class="btn btn-ghost">Read the docs</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="dot" aria-hidden="true"></span>Tracewise</a>
+        <p>Distributed tracing built on OpenTelemetry, for teams who read the source before they trust the marketing.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#docs">Documentation</a></li>
+          <li><a href="#faq">Status</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Source (open-core)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Tracewise. All rights reserved.</span>
+      <span>Fictional brand — DesignOS eval fixture.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('menu-toggle');
+    var nav = document.getElementById('primary-nav');
+    if (!toggle || !nav) return;
+    function closeMenu() { nav.classList.remove('nav-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    function openMenu() {
+      nav.classList.add('nav-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      var firstLink = nav.querySelector('a');
+      if (firstLink) firstLink.focus();
+    }
+    toggle.addEventListener('click', function () {
+      nav.classList.contains('nav-open') ? closeMenu() : openMenu();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('nav-open')) { closeMenu(); toggle.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (nav.classList.contains('nav-open') && !nav.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)) closeMenu();
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth > 768) closeMenu(); });
+  })();
+
+  (function () {
+    var btn = document.getElementById('copy-install');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var reset = function () { btn.textContent = 'Copy'; btn.disabled = false; };
+      btn.disabled = true;
+      var finish = function (label) { btn.textContent = label; setTimeout(reset, 2000); };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(btn.dataset.copy).then(function () { finish('Copied ✓'); }, function () { finish('Select manually'); });
+      } else {
+        finish('Select manually');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
