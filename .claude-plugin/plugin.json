@@ -1,0 +1,26 @@
+{
+  "name": "designos",
+  "description": "Design intelligence OS for AI coding agents: 24 component modules, 24 industry packs, 13 UX patterns, 10 foundations (type/color/spacing/tokens/a11y), 8 psychology modules, motion system, 9 review agents — plus a deterministic review gate (designos review/audit/visual) with WCAG-computing validators and an honest eval protocol with committed runs. Use when designing, building, reviewing, or scoring UI: landing pages, dashboards, pricing, forms, docs, native apps, color, typography, layout, accessibility, motion.",
+  "version": "2.1.0",
+  "author": {
+    "name": "Arda Moustafa",
+    "url": "https://github.com/ardamoustafa1"
+  },
+  "homepage": "https://ardamoustafa1.github.io/DesignOS/website/",
+  "repository": "https://github.com/ardamoustafa1/DesignOS",
+  "license": "MIT",
+  "keywords": [
+    "design",
+    "ui",
+    "ux",
+    "design-system",
+    "accessibility",
+    "wcag",
+    "design-review",
+    "typography",
+    "color-palette",
+    "landing-page",
+    "dashboard"
+  ],
+  "skills": "./skills/"
+}

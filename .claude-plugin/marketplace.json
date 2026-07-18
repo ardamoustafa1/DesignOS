@@ -1,0 +1,21 @@
+{
+  "name": "designos",
+  "description": "Home of the DesignOS plugin: a complete design-intelligence operating system for AI coding agents, with a deterministic review gate and an eval protocol that keeps its claims honest.",
+  "owner": {
+    "name": "Arda Moustafa",
+    "url": "https://github.com/ardamoustafa1"
+  },
+  "plugins": [
+    {
+      "name": "designos",
+      "source": "./",
+      "description": "Design intelligence for any UI task: routed craft modules (components, industries, patterns, foundations, psychology, motion), 9 review personas, the deterministic designos review/audit gate with WCAG-computing validators, and honest self-scoring rules — never claim a score the gate didn't produce.",
+      "version": "2.1.0",
+      "author": {
+        "name": "Arda Moustafa"
+      },
+      "category": "design",
+      "strict": false
+    }
+  ]
+}

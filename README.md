@@ -18,6 +18,8 @@
 [![Validate](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
+[![Claude Code plugin](https://img.shields.io/badge/claude_code-plugin-blue.svg)](.claude-plugin/plugin.json)
+[![Industry packs](https://img.shields.io/badge/industry_packs-24-8b5cf6.svg)](industries/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-10b981.svg)](CONTRIBUTING.md)
 
 <img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.1.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
@@ -79,7 +81,20 @@ zero-dependency CLI.
 
 ## ⚡ Quick Start
 
-### 1. Open your project directory
+### Fastest path — Claude Code plugin (two commands)
+
+Inside any Claude Code session:
+
+```text
+/plugin marketplace add ardamoustafa1/DesignOS
+/plugin install designos@designos
+```
+
+The `designos` skill then activates automatically on any UI/design request — no slash
+command needed. It routes through the kernel, loads only the relevant modules, and runs
+the deterministic gate before any score claim.
+
+### Full install — repository-native (all agents + CLI)
 
 Run the installer from the root of the project you want DesignOS to guide — not from
 inside a DesignOS clone.
@@ -391,8 +406,9 @@ Every command runs from your project root after installation.
 | `doctor` | Verify kernel, CLI, integrations, skills, and memory | No |
 | `export <agent>` | Generate the selected agent's rules file | Yes |
 | `brief` | Produce a structured, agent-ready design brief | Optional |
+| `suggest <brief>` | Deterministic design-system recommendation: sector + surface routing, contrast-verified palette (ratios computed at output time), type pairing, anti-patterns | No |
 | `starter <name> <dir>` | Copy a production-oriented starter | Yes |
-| `audit <target>` | Run token-drift and accessibility-basics validators | No |
+| `audit <target>` | Run token-drift, accessibility-basics, and token-pair contrast validators | No |
 | `review <target>` | Report static design risks; optionally create a fix prompt | No |
 | `visual <target>` | Create screenshot/static visual QA evidence | Yes |
 | `elevate <target>` | Generate a premium-refactor prompt | Yes |

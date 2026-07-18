@@ -233,7 +233,8 @@ test('bin/designos.js exports no external dependencies', () => {
   const src = fs.readFileSync(binPath, 'utf8');
   // Only 'fs' and 'path' from stdlib are expected
   const requires = [...src.matchAll(/require\(['"]([^'"]+)['"]\)/g)].map(m => m[1]);
-  const external = requires.filter(r => !['fs', 'path', 'os', 'child_process', 'assert'].includes(r));
+  // stdlib and the CLI's own local modules (./suggest-data.js) are fine; npm packages are not
+  const external = requires.filter(r => !['fs', 'path', 'os', 'child_process', 'assert'].includes(r) && !r.startsWith('.'));
   assert.deepStrictEqual(external, [], `Unexpected external deps: ${external.join(', ')}`);
 });
 
@@ -457,6 +458,51 @@ test('check-token-contrast: catches token-pair AA failures that drift cannot see
   assert.ok(result.stdout.includes('3.14:1'), 'ratio must be shown');
   assert.ok(!result.stdout.includes('.body'), 'passing pair must not be flagged');
   assert.ok(!result.stdout.includes('.demo'), 'contrast-ok block escape must be honored');
+});
+
+test('suggest: routes sector + surface, prints verified ratios and gate commands', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-suggest-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'suggest', 'pricing page for a cybersecurity SaaS'], {
+    cwd: tmp,
+    encoding: 'utf8',
+  });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.ok(result.stdout.includes('SECTOR: cybersecurity'), 'cybersecurity must out-rank saas on this brief');
+  assert.ok(result.stdout.includes('SURFACE: pricing'));
+  assert.ok(result.stdout.includes('patterns/pricing.md'), 'surface modules must be listed');
+  assert.ok(result.stdout.includes('≥ 4.5:1 ✓'), 'computed ratios must be printed');
+  assert.ok(result.stdout.includes('review <file> --min 95'), 'gate commands must close the output');
+  assert.ok(!/100\/100|SHIP\b/.test(result.stdout), 'a recommendation must never claim a score');
+});
+
+test('suggest: every sector palette passes all five declared contrast pairs', () => {
+  const { SECTORS } = require(path.resolve(__dirname, '..', 'bin', 'suggest-data.js'));
+  const lum = (hex) => {
+    let h = hex.replace('#', '');
+    if (h.length === 3) h = [...h].map(c => c + c).join('');
+    const [r, g, b] = [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16) / 255);
+    const lin = c => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+    return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+  };
+  const ratio = (a, b) => {
+    const [l1, l2] = [lum(a), lum(b)].sort((x, y) => y - x);
+    return (l1 + 0.05) / (l2 + 0.05);
+  };
+  assert.ok(Object.keys(SECTORS).length >= 24, 'sector index must cover all 24 industry packs');
+  for (const [key, s] of Object.entries(SECTORS)) {
+    const P = s.palette;
+    for (const [label, fg, bg, min] of [
+      ['text/bg', P.text, P.bg, 4.5],
+      ['muted/bg', P.muted, P.bg, 4.5],
+      ['muted/surface', P.muted, P.surface, 4.5],
+      ['onAccent/accent', P.onAccent, P.accent, 4.5],
+      ['accent/bg', P.accent, P.bg, 3],
+    ]) {
+      assert.ok(ratio(fg, bg) >= min, `${key} ${label}: ${fg} on ${bg} = ${ratio(fg, bg).toFixed(2)} < ${min}`);
+    }
+  }
 });
 
 // ── SUMMARY ───────────────────────────────────────────────────────────────────

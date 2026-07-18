@@ -1183,6 +1183,114 @@ function caseStudy(slug, args) {
   log(`Showcase row ready inside ${rel}.`);
 }
 
+/* ---------- suggest: deterministic design-system recommendation ---------- */
+function suggestLuminance(hex) {
+  let h = hex.replace('#', '');
+  if (h.length === 3) h = [...h].map(c => c + c).join('');
+  const [r, g, b] = [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16) / 255);
+  const lin = c => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+}
+function suggestRatio(a, b) {
+  const [l1, l2] = [suggestLuminance(a), suggestLuminance(b)].sort((x, y) => y - x);
+  return Math.round(((l1 + 0.05) / (l2 + 0.05)) * 100) / 100;
+}
+
+function suggest(args) {
+  const briefText = args.filter(a => !a.startsWith('--')).join(' ').toLowerCase();
+  if (!briefText) fail(`usage: ${RUN} suggest <brief text>  e.g. ${RUN} suggest "pricing page for a security SaaS, dark"`);
+  const { SECTORS, SURFACES } = require('./suggest-data.js');
+
+  const score = (keywords) => keywords.reduce((s, k) =>
+    s + (new RegExp(`\\b${k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i').test(briefText) ? (k.includes(' ') ? 2 : 1) : 0), 0);
+
+  const rank = (table) => Object.entries(table)
+    .map(([key, v]) => {
+      // the entry's own name is its strongest keyword ("cybersecurity", "real-estate")
+      const nameHit = new RegExp(`\\b${key.replace(/-/g, '[ -]?')}`, 'i').test(briefText) ? 2 : 0;
+      // generic buckets (saas) lose ties to specific sectors: "cybersecurity SaaS" → cybersecurity
+      return { key, v, s: score(v.keywords) + nameHit - (v.generic ? 0.5 : 0) };
+    })
+    .sort((a, b) => b.s - a.s);
+
+  const sectors = rank(SECTORS);
+  const surfaces = rank(SURFACES);
+  const sector = sectors[0].s > 0 ? sectors[0] : null;
+  const surface = surfaces[0].s > 0 ? surfaces[0] : null;
+  const S = sector ? sector.v : SECTORS.saas;
+  const P = S.palette;
+
+  // verify every declared pair at output time — a recommendation that fails its
+  // own ratios must never print (the honesty guarantee vs. mood-board generators)
+  const pairs = [
+    ['text on bg', P.text, P.bg, 4.5],
+    ['muted on bg', P.muted, P.bg, 4.5],
+    ['muted on surface', P.muted, P.surface, 4.5],
+    ['CTA label on accent', P.onAccent, P.accent, 4.5],
+    ['accent on bg (UI/large)', P.accent, P.bg, 3],
+  ];
+  const verified = pairs.map(([label, fg, bg, min]) => {
+    const r = suggestRatio(fg, bg);
+    if (r < min) fail(`suggest-data integrity: "${label}" ${fg} on ${bg} = ${r}:1 < ${min}:1 — fix bin/suggest-data.js before shipping recommendations`);
+    return `    ${label.padEnd(26)} ${fg} on ${bg}  ${String(r).padEnd(6)} ≥ ${min}:1 ✓`;
+  });
+
+  const lines = [];
+  const push = (s = '') => lines.push(s);
+  push(`# DesignOS recommendation`);
+  push();
+  push(`BRIEF: ${args.filter(a => !a.startsWith('--')).join(' ')}`);
+  push(`SECTOR: ${sector ? sector.key : 'none matched — generic SaaS defaults'}  ·  SURFACE: ${surface ? surface.key : 'unspecified'}`);
+  push();
+  push(`STYLE DIRECTION (${S.module})`);
+  push(`  ${S.style}`);
+  const wantsDark = /\bdark\b/.test(briefText);
+  const wantsLight = /\blight\b/.test(briefText);
+  if ((wantsDark && S.theme === 'light') || (wantsLight && S.theme === 'dark')) {
+    const asked = wantsDark ? 'dark' : 'light';
+    push(`  Theme: brief explicitly asks ${asked}; sector default is ${S.theme}. Honor the brief —`);
+    push(`  derive the ${asked} variant deliberately via foundations/dark-mode.md (the palette below`);
+    push(`  is the ${S.theme} reference; re-verify every pair after conversion).`);
+  } else {
+    push(`  Theme: ${S.theme} — committed deliberately (foundations/dark-mode.md), not by accident.`);
+  }
+  push();
+  if (surface) {
+    push(`STRUCTURE (${surface.v.modules[0]})`);
+    push(`  ${surface.v.spine}`);
+    push(`  ${surface.v.note}`);
+    push();
+  }
+  push(`PALETTE — every pair computed now, not assumed (foundations/colors.md)`);
+  push(`  accent ${P.accent} · hover ${P.accentHover} · on-accent ${P.onAccent}`);
+  push(`  bg ${P.bg} · surface ${P.surface} · text ${P.text} · muted ${P.muted}`);
+  verified.forEach(v => push(v));
+  push();
+  push(`TYPOGRAPHY (foundations/typography.md)`);
+  push(`  Display: ${S.type.display}`);
+  push(`  Body:    ${S.type.body}`);
+  push(`  Mood:    ${S.type.mood}`);
+  push();
+  push(`KEY EFFECTS (motion/principles.md budget applies)`);
+  S.effects.forEach(e => push(`  · ${e}`));
+  push();
+  push(`AVOID (sector anti-patterns)`);
+  S.avoid.forEach(a => push(`  · ${a}`));
+  push();
+  push(`LOAD BEFORE DESIGNING`);
+  const mods = [S.module, ...(surface ? surface.v.modules : ['patterns/landing-pages.md'])];
+  [...new Set(mods)].forEach(m => push(`  · ${m}`));
+  push();
+  push(`GATE — a recommendation is not a score. Before any "done":`);
+  push(`  node ${path.relative(CWD, path.join(PKG_ROOT, 'bin', 'designos.js'))} review <file> --min 95`);
+  push(`  node ${path.relative(CWD, path.join(PKG_ROOT, 'bin', 'designos.js'))} audit <dir>`);
+  if (sectors[1] && sectors[1].s > 0 && sector) {
+    push();
+    push(`(runner-up sector: ${sectors[1].key} — if the brief leans that way, re-run with clearer wording)`);
+  }
+  console.log(lines.join('\n'));
+}
+
 /* ---------- doctor: install health ---------- */
 function doctor() {
   let problems = 0;
@@ -1248,6 +1356,8 @@ function help() {
     ${RUN} elevate <target>   premium refactor prompt: taste, signature, proof, hierarchy
     ${RUN} brief [options]    generate a high-signal brief for the agent
                              add --interactive for the 6-question prompt builder
+    ${RUN} suggest <brief>    deterministic design-system recommendation: sector + surface
+                             routing, contrast-verified palette, type pairing, anti-patterns
     ${RUN} starter <name>     scaffold a DesignOS starter project
     ${RUN} eval <slug>        scaffold an independent benchmark run folder
     ${RUN} case <slug>        scaffold an external case study + SHOWCASE row
@@ -1274,6 +1384,7 @@ switch (cmd) {
   case 'report': report(firstPositional(rest), rest); break;
   case 'elevate': elevate(firstPositional(rest), rest); break;
   case 'brief': brief(rest); break;
+  case 'suggest': suggest(rest); break;
   case 'starter': starter(firstPositional(rest), rest); break;
   case 'eval': evalRun(firstPositional(rest), rest); break;
   case 'case': caseStudy(firstPositional(rest), rest); break;
