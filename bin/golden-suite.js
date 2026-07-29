@@ -132,6 +132,12 @@ for (const manifestFile of manifests()) {
   if (broken.length) {
     failures += broken.length;
     for (const [, message] of broken) console.error(`${path.basename(dir)}: ${message}`);
+    for (const findingItem of report.findings) {
+      console.error(`${path.basename(dir)} finding: ${findingItem.id} ${JSON.stringify(findingItem.details || findingItem.elements || {})}`);
+    }
+    for (const diff of report.diffs.filter(item => item.status !== 'compared')) {
+      console.error(`${path.basename(dir)} pixel evidence: ${diff.scenario} ${diff.status} ${diff.baseline}`);
+    }
   } else {
     console.log(`${path.basename(dir)}: golden evidence complete (${report.results.length} scenarios, ${screenshotCount} screenshots)`);
   }

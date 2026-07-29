@@ -11,3 +11,5 @@ website/browser-ledger.json
 *.pyc
 __pycache__/
 screenshots/
+!goldens/*/evidence/screenshots/
+!goldens/*/evidence/screenshots/**
