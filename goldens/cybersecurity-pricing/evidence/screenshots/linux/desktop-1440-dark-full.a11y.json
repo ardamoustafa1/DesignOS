@@ -1,0 +1,4003 @@
+{
+  "semantic": {
+    "lang": "en",
+    "title": "SentinelCore · Pricing (DesignOS Golden)",
+    "landmarks": {
+      "header": 1,
+      "nav": 1,
+      "main": 1,
+      "aside": 0,
+      "footer": 1
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "EDR pricing without ingestion traps."
+      },
+      {
+        "level": 3,
+        "text": "Starter"
+      },
+      {
+        "level": 3,
+        "text": "Pro"
+      },
+      {
+        "level": 3,
+        "text": "Enterprise"
+      },
+      {
+        "level": 2,
+        "text": "What changes between plans"
+      },
+      {
+        "level": 2,
+        "text": "Built for how security actually buys"
+      },
+      {
+        "level": 2,
+        "text": "Procurement questions, answered before the call"
+      },
+      {
+        "level": 2,
+        "text": "Coverage you can budget for."
+      }
+    ],
+    "controls": [
+      {
+        "selector": "html > body > a.skip",
+        "role": "a",
+        "name": "Skip to content"
+      },
+      {
+        "selector": "html > body > header.site > div.wrap > a.logo",
+        "role": "a",
+        "name": "SentinelCore"
+      },
+      {
+        "selector": "div.wrap > nav > ul > li:nth-of-type(1) > a",
+        "role": "a",
+        "name": "Platform"
+      },
+      {
+        "selector": "div.wrap > nav > ul > li:nth-of-type(2) > a",
+        "role": "a",
+        "name": "Pricing"
+      },
+      {
+        "selector": "div.wrap > nav > ul > li:nth-of-type(3) > a",
+        "role": "a",
+        "name": "Docs"
+      },
+      {
+        "selector": "body > header.site > div.wrap > div.site-cta > a.btn",
+        "role": "a",
+        "name": "Start trial"
+      },
+      {
+        "selector": "#bill-monthly",
+        "role": "button",
+        "name": "Monthly"
+      },
+      {
+        "selector": "#bill-annual",
+        "role": "button",
+        "name": "Annual"
+      },
+      {
+        "selector": "main > section.wrap:nth-of-type(2) > div.plans:nth-of-type(2) > article.plan:nth-of-type(1) > a.btn",
+        "role": "a",
+        "name": "Start 14-day trial"
+      },
+      {
+        "selector": "main > section.wrap:nth-of-type(2) > div.plans:nth-of-type(2) > article.plan:nth-of-type(2) > a.btn",
+        "role": "a",
+        "name": "Start 14-day trial"
+      },
+      {
+        "selector": "main > section.wrap:nth-of-type(2) > div.plans:nth-of-type(2) > article.plan:nth-of-type(3) > a.btn",
+        "role": "a",
+        "name": "Talk to an engineer"
+      },
+      {
+        "selector": "html > body > main > section.final:nth-of-type(6) > a.btn",
+        "role": "a",
+        "name": "Start 14-day trial"
+      },
+      {
+        "selector": "body > footer.site > div.wrap > span:nth-of-type(2) > a:nth-of-type(1)",
+        "role": "a",
+        "name": "Golden catalog"
+      },
+      {
+        "selector": "#contact",
+        "role": "a",
+        "name": "Contact"
+      }
+    ]
+  },
+  "axe": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.12.1"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "windowWidth": 1440,
+      "windowHeight": 1000,
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<td class=\"col-featured yes\">✓</td>",
+            "target": [
+              "tr:nth-child(4) > .yes.col-featured"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<td class=\"yes\">✓</td>",
+            "target": [
+              "tr:nth-child(4) > .yes:nth-child(4)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<td class=\"col-featured yes\">✓</td>",
+            "target": [
+              "tr:nth-child(5) > .yes.col-featured"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<td class=\"yes\">✓</td>",
+            "target": [
+              "tr:nth-child(5) > .yes:nth-child(4)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<td class=\"col-featured yes\">✓</td>",
+            "target": [
+              "tr:nth-child(6) > .yes.col-featured"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<td class=\"yes\">✓</td>",
+            "target": [
+              "tr:nth-child(6) > .yes:nth-child(4)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<td class=\"yes\">✓</td>",
+            "target": [
+              "tr:nth-child(7) > .yes"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          }
+        ]
+      }
+    ],
+    "passes": 25
+  },
+  "accessibilityTree": [
+    {
+      "nodeId": "2",
+      "role": "RootWebArea",
+      "name": "SentinelCore · Pricing (DesignOS Golden)",
+      "ignored": false,
+      "properties": {
+        "focused": true
+      }
+    },
+    {
+      "nodeId": "8",
+      "parentId": "2",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "16",
+      "parentId": "8",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "17",
+      "parentId": "16",
+      "role": "link",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "18",
+      "parentId": "16",
+      "role": "banner",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "31",
+      "parentId": "16",
+      "role": "main",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "205",
+      "parentId": "16",
+      "role": "contentinfo",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "213",
+      "parentId": "17",
+      "role": "StaticText",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "19",
+      "parentId": "18",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "20",
+      "parentId": "19",
+      "role": "link",
+      "name": "SentinelCore",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "21",
+      "parentId": "19",
+      "role": "navigation",
+      "name": "Primary",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "29",
+      "parentId": "19",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "3",
+      "parentId": "31",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "36",
+      "parentId": "31",
+      "role": "region",
+      "name": "Pricing plans",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "87",
+      "parentId": "31",
+      "role": "region",
+      "name": "What changes between plans",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "141",
+      "parentId": "31",
+      "role": "region",
+      "name": "Built for how security actually buys",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "155",
+      "parentId": "31",
+      "role": "region",
+      "name": "Procurement questions, answered before the call",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "201",
+      "parentId": "31",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "206",
+      "parentId": "205",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "207",
+      "parentId": "206",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "325",
+      "parentId": "207",
+      "role": "StaticText",
+      "name": "SentinelCore is a fictional brand built as a DesignOS golden example.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "208",
+      "parentId": "206",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "209",
+      "parentId": "208",
+      "role": "link",
+      "name": "Golden catalog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "327",
+      "parentId": "208",
+      "role": "StaticText",
+      "name": " · ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "210",
+      "parentId": "208",
+      "role": "link",
+      "name": "Contact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000002",
+      "parentId": "213",
+      "role": "InlineTextBox",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "214",
+      "parentId": "20",
+      "role": "StaticText",
+      "name": "SentinelCore",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "22",
+      "parentId": "21",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "30",
+      "parentId": "29",
+      "role": "link",
+      "name": "Start trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "32",
+      "parentId": "3",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "33",
+      "parentId": "3",
+      "role": "heading",
+      "name": "EDR pricing without ingestion traps.",
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "34",
+      "parentId": "3",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "35",
+      "parentId": "3",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "37",
+      "parentId": "36",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "38",
+      "parentId": "37",
+      "role": "group",
+      "name": "Billing period",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "41",
+      "parentId": "37",
+      "role": "status",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "42",
+      "parentId": "36",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "43",
+      "parentId": "42",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "4",
+      "parentId": "42",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "73",
+      "parentId": "42",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "88",
+      "parentId": "87",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "89",
+      "parentId": "88",
+      "role": "heading",
+      "name": "What changes between plans",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "90",
+      "parentId": "88",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "91",
+      "parentId": "87",
+      "role": "region",
+      "name": "Scrollable plan comparison",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "142",
+      "parentId": "141",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "143",
+      "parentId": "142",
+      "role": "heading",
+      "name": "Built for how security actually buys",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "144",
+      "parentId": "142",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "145",
+      "parentId": "141",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "146",
+      "parentId": "145",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "149",
+      "parentId": "145",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "152",
+      "parentId": "145",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "156",
+      "parentId": "155",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "157",
+      "parentId": "156",
+      "role": "heading",
+      "name": "Procurement questions, answered before the call",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "158",
+      "parentId": "155",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "159",
+      "parentId": "158",
+      "role": "group",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "166",
+      "parentId": "158",
+      "role": "group",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "173",
+      "parentId": "158",
+      "role": "group",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "180",
+      "parentId": "158",
+      "role": "group",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "187",
+      "parentId": "158",
+      "role": "group",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "194",
+      "parentId": "158",
+      "role": "group",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "202",
+      "parentId": "201",
+      "role": "heading",
+      "name": "Coverage you can budget for.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "203",
+      "parentId": "201",
+      "role": "link",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "204",
+      "parentId": "201",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000149",
+      "parentId": "325",
+      "role": "InlineTextBox",
+      "name": "SentinelCore is a fictional brand built as a DesignOS golden example.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "326",
+      "parentId": "209",
+      "role": "StaticText",
+      "name": "Golden catalog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000151",
+      "parentId": "327",
+      "role": "InlineTextBox",
+      "name": " · ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "328",
+      "parentId": "210",
+      "role": "StaticText",
+      "name": "Contact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000003",
+      "parentId": "214",
+      "role": "InlineTextBox",
+      "name": "SentinelCore",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "23",
+      "parentId": "22",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "25",
+      "parentId": "22",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "27",
+      "parentId": "22",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "218",
+      "parentId": "30",
+      "role": "StaticText",
+      "name": "Start trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "219",
+      "parentId": "32",
+      "role": "StaticText",
+      "name": "GOLDEN EXAMPLE · FICTIONAL BRAND",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "220",
+      "parentId": "33",
+      "role": "StaticText",
+      "name": "EDR pricing without ingestion traps.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "221",
+      "parentId": "34",
+      "role": "StaticText",
+      "name": "Per-analyst seats plus flat endpoint tiers. Alert volume never changes your bill. Noisy weeks are our problem, not your budget's.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "222",
+      "parentId": "35",
+      "role": "StaticText",
+      "name": "Example pricing page for DesignOS evaluation. The brand is fictional; customer proof and certification claims are intentionally omitted rather than invented (PROOF_STANDARD.md).",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "39",
+      "parentId": "38",
+      "role": "button",
+      "name": "Monthly",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "40",
+      "parentId": "38",
+      "role": "button",
+      "name": "Annual",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "225",
+      "parentId": "41",
+      "role": "StaticText",
+      "name": "Annual = 2 months free (prices below reflect it)",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "44",
+      "parentId": "43",
+      "role": "heading",
+      "name": "Starter",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "45",
+      "parentId": "43",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "46",
+      "parentId": "43",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "47",
+      "parentId": "46",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "228",
+      "parentId": "47",
+      "role": "StaticText",
+      "name": "$29",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "48",
+      "parentId": "46",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "229",
+      "parentId": "48",
+      "role": "StaticText",
+      "name": "per analyst / month",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "49",
+      "parentId": "43",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "50",
+      "parentId": "43",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "55",
+      "parentId": "43",
+      "role": "link",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "56",
+      "parentId": "43",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "57",
+      "parentId": "4",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "237",
+      "parentId": "57",
+      "role": "StaticText",
+      "name": "MOST TEAMS LAND HERE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "58",
+      "parentId": "4",
+      "role": "heading",
+      "name": "Pro",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "59",
+      "parentId": "4",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "60",
+      "parentId": "4",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "61",
+      "parentId": "60",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "240",
+      "parentId": "61",
+      "role": "StaticText",
+      "name": "$79",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "62",
+      "parentId": "60",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "241",
+      "parentId": "62",
+      "role": "StaticText",
+      "name": "per analyst / month",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "63",
+      "parentId": "4",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "64",
+      "parentId": "4",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "71",
+      "parentId": "4",
+      "role": "link",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "72",
+      "parentId": "4",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "74",
+      "parentId": "73",
+      "role": "heading",
+      "name": "Enterprise",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "75",
+      "parentId": "73",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "76",
+      "parentId": "73",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "77",
+      "parentId": "76",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "253",
+      "parentId": "77",
+      "role": "StaticText",
+      "name": "Custom",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "78",
+      "parentId": "73",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "79",
+      "parentId": "73",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "85",
+      "parentId": "73",
+      "role": "link",
+      "name": "Talk to an engineer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "86",
+      "parentId": "73",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "262",
+      "parentId": "89",
+      "role": "StaticText",
+      "name": "What changes between plans",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "263",
+      "parentId": "90",
+      "role": "StaticText",
+      "name": "The differences, complete. If a row you care about is missing, that's a bug. Tell us.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "92",
+      "parentId": "91",
+      "role": "table",
+      "name": "Feature comparison across Starter, Pro, and Enterprise plans",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "301",
+      "parentId": "143",
+      "role": "StaticText",
+      "name": "Built for how security actually buys",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "302",
+      "parentId": "144",
+      "role": "StaticText",
+      "name": "Architecture proof replaces testimonial theater. The claims below are inspectable in the trial, not asserted by a logo wall.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "147",
+      "parentId": "146",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "148",
+      "parentId": "146",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "150",
+      "parentId": "149",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "151",
+      "parentId": "149",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "153",
+      "parentId": "152",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "154",
+      "parentId": "152",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "309",
+      "parentId": "157",
+      "role": "StaticText",
+      "name": "Procurement questions, answered before the call",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "160",
+      "parentId": "159",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "164",
+      "parentId": "160",
+      "role": "DisclosureTriangle",
+      "name": "What exactly counts as a \"seat\"? +",
+      "ignored": false,
+      "properties": {
+        "expanded": false
+      }
+    },
+    {
+      "nodeId": "162",
+      "parentId": "159",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "167",
+      "parentId": "166",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "171",
+      "parentId": "167",
+      "role": "DisclosureTriangle",
+      "name": "What happens when the trial ends? +",
+      "ignored": false,
+      "properties": {
+        "expanded": false
+      }
+    },
+    {
+      "nodeId": "169",
+      "parentId": "166",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "174",
+      "parentId": "173",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "178",
+      "parentId": "174",
+      "role": "DisclosureTriangle",
+      "name": "Can we run a proof-of-value on real endpoints? +",
+      "ignored": false,
+      "properties": {
+        "expanded": false
+      }
+    },
+    {
+      "nodeId": "176",
+      "parentId": "173",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "181",
+      "parentId": "180",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "185",
+      "parentId": "181",
+      "role": "DisclosureTriangle",
+      "name": "How does annual billing and true-up work? +",
+      "ignored": false,
+      "properties": {
+        "expanded": false
+      }
+    },
+    {
+      "nodeId": "183",
+      "parentId": "180",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "188",
+      "parentId": "187",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "192",
+      "parentId": "188",
+      "role": "DisclosureTriangle",
+      "name": "Security review, DPA, and questionnaires? +",
+      "ignored": false,
+      "properties": {
+        "expanded": false
+      }
+    },
+    {
+      "nodeId": "190",
+      "parentId": "187",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "195",
+      "parentId": "194",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "199",
+      "parentId": "195",
+      "role": "DisclosureTriangle",
+      "name": "How do we leave? +",
+      "ignored": false,
+      "properties": {
+        "expanded": false
+      }
+    },
+    {
+      "nodeId": "197",
+      "parentId": "194",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "322",
+      "parentId": "202",
+      "role": "StaticText",
+      "name": "Coverage you can budget for.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "323",
+      "parentId": "203",
+      "role": "StaticText",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "324",
+      "parentId": "204",
+      "role": "StaticText",
+      "name": "No card · Full Pro features · Your data exportable throughout",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000150",
+      "parentId": "326",
+      "role": "InlineTextBox",
+      "name": "Golden catalog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000152",
+      "parentId": "328",
+      "role": "InlineTextBox",
+      "name": "Contact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "24",
+      "parentId": "23",
+      "role": "link",
+      "name": "Platform",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "26",
+      "parentId": "25",
+      "role": "link",
+      "name": "Pricing",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "28",
+      "parentId": "27",
+      "role": "link",
+      "name": "Docs",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000007",
+      "parentId": "218",
+      "role": "InlineTextBox",
+      "name": "Start trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000008",
+      "parentId": "219",
+      "role": "InlineTextBox",
+      "name": "GOLDEN EXAMPLE · FICTIONAL BRAND",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000009",
+      "parentId": "220",
+      "role": "InlineTextBox",
+      "name": "EDR pricing without ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000010",
+      "parentId": "220",
+      "role": "InlineTextBox",
+      "name": "ingestion traps.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000011",
+      "parentId": "221",
+      "role": "InlineTextBox",
+      "name": "Per-analyst seats plus flat endpoint tiers. Alert volume never changes your ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000012",
+      "parentId": "221",
+      "role": "InlineTextBox",
+      "name": "bill. Noisy weeks are our problem, not your budget's.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000013",
+      "parentId": "222",
+      "role": "InlineTextBox",
+      "name": "Example pricing page for DesignOS evaluation. The brand is fictional; customer proof and certification ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000014",
+      "parentId": "222",
+      "role": "InlineTextBox",
+      "name": "claims are intentionally omitted rather than invented (PROOF_STANDARD.md).",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "223",
+      "parentId": "39",
+      "role": "StaticText",
+      "name": "Monthly",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "224",
+      "parentId": "40",
+      "role": "StaticText",
+      "name": "Annual",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000017",
+      "parentId": "225",
+      "role": "InlineTextBox",
+      "name": "Annual = 2 months free (prices below reflect it)",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "226",
+      "parentId": "44",
+      "role": "StaticText",
+      "name": "Starter",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "227",
+      "parentId": "45",
+      "role": "StaticText",
+      "name": "Small teams standing up their first real endpoint coverage.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000021",
+      "parentId": "228",
+      "role": "InlineTextBox",
+      "name": "$29",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000022",
+      "parentId": "229",
+      "role": "InlineTextBox",
+      "name": "per analyst / month",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "230",
+      "parentId": "49",
+      "role": "StaticText",
+      "name": "Includes 250 endpoints. Extra endpoints are $0.40/mo each, flat and not usage-metered.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "51",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "52",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "53",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "54",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "235",
+      "parentId": "55",
+      "role": "StaticText",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "236",
+      "parentId": "56",
+      "role": "StaticText",
+      "name": "No card required · Full features in trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000031",
+      "parentId": "237",
+      "role": "InlineTextBox",
+      "name": "MOST TEAMS LAND HERE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "238",
+      "parentId": "58",
+      "role": "StaticText",
+      "name": "Pro",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "239",
+      "parentId": "59",
+      "role": "StaticText",
+      "name": "SOC teams that triage daily and answer to auditors quarterly.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000035",
+      "parentId": "240",
+      "role": "InlineTextBox",
+      "name": "$79",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000036",
+      "parentId": "241",
+      "role": "InlineTextBox",
+      "name": "per analyst / month",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "242",
+      "parentId": "63",
+      "role": "StaticText",
+      "name": "Includes 1,000 endpoints. Extra endpoints $0.30/mo each. Seat = a named analyst who triages; read-only viewers are free.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "65",
+      "parentId": "64",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "66",
+      "parentId": "64",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "67",
+      "parentId": "64",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "68",
+      "parentId": "64",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "69",
+      "parentId": "64",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "70",
+      "parentId": "64",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "249",
+      "parentId": "71",
+      "role": "StaticText",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "250",
+      "parentId": "72",
+      "role": "StaticText",
+      "name": "No card required · Keep your rules if you downgrade",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "251",
+      "parentId": "74",
+      "role": "StaticText",
+      "name": "Enterprise",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "252",
+      "parentId": "75",
+      "role": "StaticText",
+      "name": "Private deployment, custom retention, procurement requirements.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000051",
+      "parentId": "253",
+      "role": "InlineTextBox",
+      "name": "Custom",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "254",
+      "parentId": "78",
+      "role": "StaticText",
+      "name": "Priced on endpoints + deployment model, in writing, before any commitment. No \"call us\" price anchoring games.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "80",
+      "parentId": "79",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "81",
+      "parentId": "79",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "82",
+      "parentId": "79",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "83",
+      "parentId": "79",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "84",
+      "parentId": "79",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "260",
+      "parentId": "85",
+      "role": "StaticText",
+      "name": "Talk to an engineer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "261",
+      "parentId": "86",
+      "role": "StaticText",
+      "name": "30-minute technical call · no deck, live product",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000062",
+      "parentId": "262",
+      "role": "InlineTextBox",
+      "name": "What changes between plans",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000063",
+      "parentId": "263",
+      "role": "InlineTextBox",
+      "name": "The differences, complete. If a row you care about is missing, that's a bug. Tell ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000064",
+      "parentId": "263",
+      "role": "InlineTextBox",
+      "name": "us.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "93",
+      "parentId": "92",
+      "role": "caption",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "94",
+      "parentId": "92",
+      "role": "rowgroup",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "100",
+      "parentId": "92",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "101",
+      "parentId": "100",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "106",
+      "parentId": "100",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "111",
+      "parentId": "100",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "116",
+      "parentId": "100",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "121",
+      "parentId": "100",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "126",
+      "parentId": "100",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "131",
+      "parentId": "100",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "136",
+      "parentId": "100",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000109",
+      "parentId": "301",
+      "role": "InlineTextBox",
+      "name": "Built for how security actually buys",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000110",
+      "parentId": "302",
+      "role": "InlineTextBox",
+      "name": "Architecture proof replaces testimonial theater. The claims below are ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000111",
+      "parentId": "302",
+      "role": "InlineTextBox",
+      "name": "inspectable in the trial, not asserted by a logo wall.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "303",
+      "parentId": "147",
+      "role": "StaticText",
+      "name": "On-device clustering",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "304",
+      "parentId": "148",
+      "role": "StaticText",
+      "name": "Alerts are correlated on the endpoint before shipping, so SIEM ingestion doesn't balloon with our noise. Verify it in the trial's volume report.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "305",
+      "parentId": "150",
+      "role": "StaticText",
+      "name": "Predictable unit economics",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "306",
+      "parentId": "151",
+      "role": "StaticText",
+      "name": "The bill scales with analysts and endpoints, two numbers you control. It never scales with log volume, which you don't.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "307",
+      "parentId": "153",
+      "role": "StaticText",
+      "name": "Evidence as workflow",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "308",
+      "parentId": "154",
+      "role": "StaticText",
+      "name": "Compliance shows up as exportable case timelines and evidence bundles. We name no certifications here because unsourced badges are how this sector lies.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000126",
+      "parentId": "309",
+      "role": "InlineTextBox",
+      "name": "Procurement questions, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000127",
+      "parentId": "309",
+      "role": "InlineTextBox",
+      "name": "answered before the call",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "310",
+      "parentId": "164",
+      "role": "StaticText",
+      "name": "What exactly counts as a \"seat\"?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "311",
+      "parentId": "164",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "312",
+      "parentId": "171",
+      "role": "StaticText",
+      "name": "What happens when the trial ends?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "313",
+      "parentId": "171",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "314",
+      "parentId": "178",
+      "role": "StaticText",
+      "name": "Can we run a proof-of-value on real endpoints?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "315",
+      "parentId": "178",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "316",
+      "parentId": "185",
+      "role": "StaticText",
+      "name": "How does annual billing and true-up work?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "317",
+      "parentId": "185",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "318",
+      "parentId": "192",
+      "role": "StaticText",
+      "name": "Security review, DPA, and questionnaires?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "319",
+      "parentId": "192",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "320",
+      "parentId": "199",
+      "role": "StaticText",
+      "name": "How do we leave?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "321",
+      "parentId": "199",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000146",
+      "parentId": "322",
+      "role": "InlineTextBox",
+      "name": "Coverage you can budget for.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000147",
+      "parentId": "323",
+      "role": "InlineTextBox",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000148",
+      "parentId": "324",
+      "role": "InlineTextBox",
+      "name": "No card · Full Pro features · Your data exportable throughout",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "215",
+      "parentId": "24",
+      "role": "StaticText",
+      "name": "Platform",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "216",
+      "parentId": "26",
+      "role": "StaticText",
+      "name": "Pricing",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "217",
+      "parentId": "28",
+      "role": "StaticText",
+      "name": "Docs",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000015",
+      "parentId": "223",
+      "role": "InlineTextBox",
+      "name": "Monthly",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000016",
+      "parentId": "224",
+      "role": "InlineTextBox",
+      "name": "Annual",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000018",
+      "parentId": "226",
+      "role": "InlineTextBox",
+      "name": "Starter",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000019",
+      "parentId": "227",
+      "role": "InlineTextBox",
+      "name": "Small teams standing up their first real endpoint ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000020",
+      "parentId": "227",
+      "role": "InlineTextBox",
+      "name": "coverage.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000023",
+      "parentId": "230",
+      "role": "InlineTextBox",
+      "name": "Includes 250 endpoints. Extra endpoints are ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000024",
+      "parentId": "230",
+      "role": "InlineTextBox",
+      "name": "$0.40/mo each, flat and not usage-metered.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "231",
+      "parentId": "51",
+      "role": "StaticText",
+      "name": "Endpoint telemetry & detection rules",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "232",
+      "parentId": "52",
+      "role": "StaticText",
+      "name": "Rule templates, weekly tuning digest",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "233",
+      "parentId": "53",
+      "role": "StaticText",
+      "name": "30-day hot retention",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "234",
+      "parentId": "54",
+      "role": "StaticText",
+      "name": "Email support, next business day",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000029",
+      "parentId": "235",
+      "role": "InlineTextBox",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000030",
+      "parentId": "236",
+      "role": "InlineTextBox",
+      "name": "No card required · Full features in trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000032",
+      "parentId": "238",
+      "role": "InlineTextBox",
+      "name": "Pro",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000033",
+      "parentId": "239",
+      "role": "InlineTextBox",
+      "name": "SOC teams that triage daily and answer to ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000034",
+      "parentId": "239",
+      "role": "InlineTextBox",
+      "name": "auditors quarterly.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000037",
+      "parentId": "242",
+      "role": "InlineTextBox",
+      "name": "Includes 1,000 endpoints. Extra endpoints $0.30/mo ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000038",
+      "parentId": "242",
+      "role": "InlineTextBox",
+      "name": "each. Seat = a named analyst who triages; read-",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000039",
+      "parentId": "242",
+      "role": "InlineTextBox",
+      "name": "only viewers are free.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "243",
+      "parentId": "65",
+      "role": "StaticText",
+      "name": "Everything in Starter",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "244",
+      "parentId": "66",
+      "role": "StaticText",
+      "name": "MITRE ATT&CK mapping workflow",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "245",
+      "parentId": "67",
+      "role": "StaticText",
+      "name": "Guided triage queues & case timelines",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "246",
+      "parentId": "68",
+      "role": "StaticText",
+      "name": "Audit export (evidence bundles)",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "247",
+      "parentId": "69",
+      "role": "StaticText",
+      "name": "90-day hot retention · 1-year cold",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "248",
+      "parentId": "70",
+      "role": "StaticText",
+      "name": "Support in 4 business hours",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000046",
+      "parentId": "249",
+      "role": "InlineTextBox",
+      "name": "Start 14-day trial",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000047",
+      "parentId": "250",
+      "role": "InlineTextBox",
+      "name": "No card required · Keep your rules if you downgrade",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000048",
+      "parentId": "251",
+      "role": "InlineTextBox",
+      "name": "Enterprise",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000049",
+      "parentId": "252",
+      "role": "InlineTextBox",
+      "name": "Private deployment, custom retention, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000050",
+      "parentId": "252",
+      "role": "InlineTextBox",
+      "name": "procurement requirements.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000052",
+      "parentId": "254",
+      "role": "InlineTextBox",
+      "name": "Priced on endpoints + deployment model, in writing, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000053",
+      "parentId": "254",
+      "role": "InlineTextBox",
+      "name": "before any commitment. No \"call us\" price ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000054",
+      "parentId": "254",
+      "role": "InlineTextBox",
+      "name": "anchoring games.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "255",
+      "parentId": "80",
+      "role": "StaticText",
+      "name": "Everything in Pro",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "256",
+      "parentId": "81",
+      "role": "StaticText",
+      "name": "Private/self-hosted deployment",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "257",
+      "parentId": "82",
+      "role": "StaticText",
+      "name": "Custom retention & residency",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "258",
+      "parentId": "83",
+      "role": "StaticText",
+      "name": "Security review & procurement support",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "259",
+      "parentId": "84",
+      "role": "StaticText",
+      "name": "Named support engineer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000060",
+      "parentId": "260",
+      "role": "InlineTextBox",
+      "name": "Talk to an engineer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000061",
+      "parentId": "261",
+      "role": "InlineTextBox",
+      "name": "30-minute technical call · no deck, live product",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "264",
+      "parentId": "93",
+      "role": "StaticText",
+      "name": "Feature comparison across Starter, Pro, and Enterprise plans",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "95",
+      "parentId": "94",
+      "role": "row",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "102",
+      "parentId": "101",
+      "role": "rowheader",
+      "name": "Included endpoints",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "103",
+      "parentId": "101",
+      "role": "cell",
+      "name": "250",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "104",
+      "parentId": "101",
+      "role": "cell",
+      "name": "1,000",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "105",
+      "parentId": "101",
+      "role": "cell",
+      "name": "Custom",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "107",
+      "parentId": "106",
+      "role": "rowheader",
+      "name": "Extra endpoint / month",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "108",
+      "parentId": "106",
+      "role": "cell",
+      "name": "$0.40",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "109",
+      "parentId": "106",
+      "role": "cell",
+      "name": "$0.30",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "110",
+      "parentId": "106",
+      "role": "cell",
+      "name": "Volume",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "112",
+      "parentId": "111",
+      "role": "rowheader",
+      "name": "Hot retention",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "113",
+      "parentId": "111",
+      "role": "cell",
+      "name": "30 days",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "114",
+      "parentId": "111",
+      "role": "cell",
+      "name": "90 days",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "115",
+      "parentId": "111",
+      "role": "cell",
+      "name": "Custom",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "117",
+      "parentId": "116",
+      "role": "rowheader",
+      "name": "MITRE mapping workflow",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "118",
+      "parentId": "116",
+      "role": "cell",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "119",
+      "parentId": "116",
+      "role": "cell",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "120",
+      "parentId": "116",
+      "role": "cell",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "122",
+      "parentId": "121",
+      "role": "rowheader",
+      "name": "Guided triage queues",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "123",
+      "parentId": "121",
+      "role": "cell",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "124",
+      "parentId": "121",
+      "role": "cell",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "125",
+      "parentId": "121",
+      "role": "cell",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "127",
+      "parentId": "126",
+      "role": "rowheader",
+      "name": "Audit evidence export",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "128",
+      "parentId": "126",
+      "role": "cell",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "129",
+      "parentId": "126",
+      "role": "cell",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "130",
+      "parentId": "126",
+      "role": "cell",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "132",
+      "parentId": "131",
+      "role": "rowheader",
+      "name": "Private deployment",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "133",
+      "parentId": "131",
+      "role": "cell",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "134",
+      "parentId": "131",
+      "role": "cell",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "135",
+      "parentId": "131",
+      "role": "cell",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "137",
+      "parentId": "136",
+      "role": "rowheader",
+      "name": "Support response",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "138",
+      "parentId": "136",
+      "role": "cell",
+      "name": "Next business day",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "139",
+      "parentId": "136",
+      "role": "cell",
+      "name": "4 business hours",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "140",
+      "parentId": "136",
+      "role": "cell",
+      "name": "Named engineer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000112",
+      "parentId": "303",
+      "role": "InlineTextBox",
+      "name": "On-device clustering",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000113",
+      "parentId": "304",
+      "role": "InlineTextBox",
+      "name": "Alerts are correlated on the endpoint before ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000114",
+      "parentId": "304",
+      "role": "InlineTextBox",
+      "name": "shipping, so SIEM ingestion doesn't balloon ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000115",
+      "parentId": "304",
+      "role": "InlineTextBox",
+      "name": "with our noise. Verify it in the trial's volume ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000116",
+      "parentId": "304",
+      "role": "InlineTextBox",
+      "name": "report.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000117",
+      "parentId": "305",
+      "role": "InlineTextBox",
+      "name": "Predictable unit economics",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000118",
+      "parentId": "306",
+      "role": "InlineTextBox",
+      "name": "The bill scales with analysts and endpoints, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000119",
+      "parentId": "306",
+      "role": "InlineTextBox",
+      "name": "two numbers you control. It never scales with ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000120",
+      "parentId": "306",
+      "role": "InlineTextBox",
+      "name": "log volume, which you don't.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000121",
+      "parentId": "307",
+      "role": "InlineTextBox",
+      "name": "Evidence as workflow",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000122",
+      "parentId": "308",
+      "role": "InlineTextBox",
+      "name": "Compliance shows up as exportable case ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000123",
+      "parentId": "308",
+      "role": "InlineTextBox",
+      "name": "timelines and evidence bundles. We name no ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000124",
+      "parentId": "308",
+      "role": "InlineTextBox",
+      "name": "certifications here because unsourced badges ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000125",
+      "parentId": "308",
+      "role": "InlineTextBox",
+      "name": "are how this sector lies.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000128",
+      "parentId": "310",
+      "role": "InlineTextBox",
+      "name": "What exactly counts as a \"seat\"?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000129",
+      "parentId": "311",
+      "role": "StaticText",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000130",
+      "parentId": "-1000000129",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000131",
+      "parentId": "312",
+      "role": "InlineTextBox",
+      "name": "What happens when the trial ends?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000132",
+      "parentId": "313",
+      "role": "StaticText",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000133",
+      "parentId": "-1000000132",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000134",
+      "parentId": "314",
+      "role": "InlineTextBox",
+      "name": "Can we run a proof-of-value on real endpoints?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000135",
+      "parentId": "315",
+      "role": "StaticText",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000136",
+      "parentId": "-1000000135",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000137",
+      "parentId": "316",
+      "role": "InlineTextBox",
+      "name": "How does annual billing and true-up work?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000138",
+      "parentId": "317",
+      "role": "StaticText",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000139",
+      "parentId": "-1000000138",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000140",
+      "parentId": "318",
+      "role": "InlineTextBox",
+      "name": "Security review, DPA, and questionnaires?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000141",
+      "parentId": "319",
+      "role": "StaticText",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000142",
+      "parentId": "-1000000141",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000143",
+      "parentId": "320",
+      "role": "InlineTextBox",
+      "name": "How do we leave?",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000144",
+      "parentId": "321",
+      "role": "StaticText",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000145",
+      "parentId": "-1000000144",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000004",
+      "parentId": "215",
+      "role": "InlineTextBox",
+      "name": "Platform",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000005",
+      "parentId": "216",
+      "role": "InlineTextBox",
+      "name": "Pricing",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000006",
+      "parentId": "217",
+      "role": "InlineTextBox",
+      "name": "Docs",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000025",
+      "parentId": "231",
+      "role": "InlineTextBox",
+      "name": "Endpoint telemetry & detection rules",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000026",
+      "parentId": "232",
+      "role": "InlineTextBox",
+      "name": "Rule templates, weekly tuning digest",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000027",
+      "parentId": "233",
+      "role": "InlineTextBox",
+      "name": "30-day hot retention",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000028",
+      "parentId": "234",
+      "role": "InlineTextBox",
+      "name": "Email support, next business day",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000040",
+      "parentId": "243",
+      "role": "InlineTextBox",
+      "name": "Everything in Starter",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000041",
+      "parentId": "244",
+      "role": "InlineTextBox",
+      "name": "MITRE ATT&CK mapping workflow",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000042",
+      "parentId": "245",
+      "role": "InlineTextBox",
+      "name": "Guided triage queues & case timelines",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000043",
+      "parentId": "246",
+      "role": "InlineTextBox",
+      "name": "Audit export (evidence bundles)",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000044",
+      "parentId": "247",
+      "role": "InlineTextBox",
+      "name": "90-day hot retention · 1-year cold",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000045",
+      "parentId": "248",
+      "role": "InlineTextBox",
+      "name": "Support in 4 business hours",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000055",
+      "parentId": "255",
+      "role": "InlineTextBox",
+      "name": "Everything in Pro",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000056",
+      "parentId": "256",
+      "role": "InlineTextBox",
+      "name": "Private/self-hosted deployment",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000057",
+      "parentId": "257",
+      "role": "InlineTextBox",
+      "name": "Custom retention & residency",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000058",
+      "parentId": "258",
+      "role": "InlineTextBox",
+      "name": "Security review & procurement support",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000059",
+      "parentId": "259",
+      "role": "InlineTextBox",
+      "name": "Named support engineer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000065",
+      "parentId": "264",
+      "role": "InlineTextBox",
+      "name": "Feature ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000066",
+      "parentId": "264",
+      "role": "InlineTextBox",
+      "name": "comparison ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000067",
+      "parentId": "264",
+      "role": "InlineTextBox",
+      "name": "across ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000068",
+      "parentId": "264",
+      "role": "InlineTextBox",
+      "name": "Starter, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000069",
+      "parentId": "264",
+      "role": "InlineTextBox",
+      "name": "Pro, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000070",
+      "parentId": "264",
+      "role": "InlineTextBox",
+      "name": "and ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000071",
+      "parentId": "264",
+      "role": "InlineTextBox",
+      "name": "Enterprise ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000072",
+      "parentId": "264",
+      "role": "InlineTextBox",
+      "name": "plans",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "96",
+      "parentId": "95",
+      "role": "columnheader",
+      "name": "Capability",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "97",
+      "parentId": "95",
+      "role": "columnheader",
+      "name": "Starter",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "98",
+      "parentId": "95",
+      "role": "columnheader",
+      "name": "Pro",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "99",
+      "parentId": "95",
+      "role": "columnheader",
+      "name": "Enterprise",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "269",
+      "parentId": "102",
+      "role": "StaticText",
+      "name": "Included endpoints",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "270",
+      "parentId": "103",
+      "role": "StaticText",
+      "name": "250",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "271",
+      "parentId": "104",
+      "role": "StaticText",
+      "name": "1,000",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "272",
+      "parentId": "105",
+      "role": "StaticText",
+      "name": "Custom",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "273",
+      "parentId": "107",
+      "role": "StaticText",
+      "name": "Extra endpoint / month",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "274",
+      "parentId": "108",
+      "role": "StaticText",
+      "name": "$0.40",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "275",
+      "parentId": "109",
+      "role": "StaticText",
+      "name": "$0.30",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "276",
+      "parentId": "110",
+      "role": "StaticText",
+      "name": "Volume",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "277",
+      "parentId": "112",
+      "role": "StaticText",
+      "name": "Hot retention",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "278",
+      "parentId": "113",
+      "role": "StaticText",
+      "name": "30 days",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "279",
+      "parentId": "114",
+      "role": "StaticText",
+      "name": "90 days",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "280",
+      "parentId": "115",
+      "role": "StaticText",
+      "name": "Custom",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "281",
+      "parentId": "117",
+      "role": "StaticText",
+      "name": "MITRE mapping workflow",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "282",
+      "parentId": "118",
+      "role": "StaticText",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "283",
+      "parentId": "119",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "284",
+      "parentId": "120",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "285",
+      "parentId": "122",
+      "role": "StaticText",
+      "name": "Guided triage queues",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "286",
+      "parentId": "123",
+      "role": "StaticText",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "287",
+      "parentId": "124",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "288",
+      "parentId": "125",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "289",
+      "parentId": "127",
+      "role": "StaticText",
+      "name": "Audit evidence export",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "290",
+      "parentId": "128",
+      "role": "StaticText",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "291",
+      "parentId": "129",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "292",
+      "parentId": "130",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "293",
+      "parentId": "132",
+      "role": "StaticText",
+      "name": "Private deployment",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "294",
+      "parentId": "133",
+      "role": "StaticText",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "295",
+      "parentId": "134",
+      "role": "StaticText",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "296",
+      "parentId": "135",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "297",
+      "parentId": "137",
+      "role": "StaticText",
+      "name": "Support response",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "298",
+      "parentId": "138",
+      "role": "StaticText",
+      "name": "Next business day",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "299",
+      "parentId": "139",
+      "role": "StaticText",
+      "name": "4 business hours",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "300",
+      "parentId": "140",
+      "role": "StaticText",
+      "name": "Named engineer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000130",
+      "parentId": "-1000000129",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000133",
+      "parentId": "-1000000132",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000136",
+      "parentId": "-1000000135",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000139",
+      "parentId": "-1000000138",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000142",
+      "parentId": "-1000000141",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000145",
+      "parentId": "-1000000144",
+      "role": "InlineTextBox",
+      "name": "+",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "265",
+      "parentId": "96",
+      "role": "StaticText",
+      "name": "Capability",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "266",
+      "parentId": "97",
+      "role": "StaticText",
+      "name": "Starter",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "267",
+      "parentId": "98",
+      "role": "StaticText",
+      "name": "Pro",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "268",
+      "parentId": "99",
+      "role": "StaticText",
+      "name": "Enterprise",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000077",
+      "parentId": "269",
+      "role": "InlineTextBox",
+      "name": "Included endpoints",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000078",
+      "parentId": "270",
+      "role": "InlineTextBox",
+      "name": "250",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000079",
+      "parentId": "271",
+      "role": "InlineTextBox",
+      "name": "1,000",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000080",
+      "parentId": "272",
+      "role": "InlineTextBox",
+      "name": "Custom",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000081",
+      "parentId": "273",
+      "role": "InlineTextBox",
+      "name": "Extra endpoint / month",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000082",
+      "parentId": "274",
+      "role": "InlineTextBox",
+      "name": "$0.40",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000083",
+      "parentId": "275",
+      "role": "InlineTextBox",
+      "name": "$0.30",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000084",
+      "parentId": "276",
+      "role": "InlineTextBox",
+      "name": "Volume",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000085",
+      "parentId": "277",
+      "role": "InlineTextBox",
+      "name": "Hot retention",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000086",
+      "parentId": "278",
+      "role": "InlineTextBox",
+      "name": "30 days",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000087",
+      "parentId": "279",
+      "role": "InlineTextBox",
+      "name": "90 days",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000088",
+      "parentId": "280",
+      "role": "InlineTextBox",
+      "name": "Custom",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000089",
+      "parentId": "281",
+      "role": "InlineTextBox",
+      "name": "MITRE mapping workflow",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000090",
+      "parentId": "282",
+      "role": "InlineTextBox",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000091",
+      "parentId": "283",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000092",
+      "parentId": "284",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000093",
+      "parentId": "285",
+      "role": "InlineTextBox",
+      "name": "Guided triage queues",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000094",
+      "parentId": "286",
+      "role": "InlineTextBox",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000095",
+      "parentId": "287",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000096",
+      "parentId": "288",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000097",
+      "parentId": "289",
+      "role": "InlineTextBox",
+      "name": "Audit evidence export",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000098",
+      "parentId": "290",
+      "role": "InlineTextBox",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000099",
+      "parentId": "291",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000100",
+      "parentId": "292",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000101",
+      "parentId": "293",
+      "role": "InlineTextBox",
+      "name": "Private deployment",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000102",
+      "parentId": "294",
+      "role": "InlineTextBox",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000103",
+      "parentId": "295",
+      "role": "InlineTextBox",
+      "name": "No",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000104",
+      "parentId": "296",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000105",
+      "parentId": "297",
+      "role": "InlineTextBox",
+      "name": "Support response",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000106",
+      "parentId": "298",
+      "role": "InlineTextBox",
+      "name": "Next business day",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000107",
+      "parentId": "299",
+      "role": "InlineTextBox",
+      "name": "4 business hours",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000108",
+      "parentId": "300",
+      "role": "InlineTextBox",
+      "name": "Named engineer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000073",
+      "parentId": "265",
+      "role": "InlineTextBox",
+      "name": "Capability",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000074",
+      "parentId": "266",
+      "role": "InlineTextBox",
+      "name": "Starter",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000075",
+      "parentId": "267",
+      "role": "InlineTextBox",
+      "name": "Pro",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000076",
+      "parentId": "268",
+      "role": "InlineTextBox",
+      "name": "Enterprise",
+      "ignored": false,
+      "properties": {}
+    }
+  ]
+}

@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -39,7 +39,7 @@ jobs:
         run: npm run test:independent
       - name: Commit-bound browser ledger
         run: node bin/browser-ledger.js --browser browser-evidence/browser-gate.json --out browser-evidence/browser-ledger.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: browser-ledger-${{ github.sha }}
@@ -51,8 +51,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -65,7 +65,7 @@ jobs:
         run: npm run test:goldens
       - name: Upload generated Linux golden baselines
         if: github.event_name == 'workflow_dispatch' && inputs.update_linux_goldens
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: linux-golden-baselines-${{ github.sha }}
           path: goldens/*/evidence/
