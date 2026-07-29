@@ -10,7 +10,7 @@
   --bg-page: #ffffff; --bg-surface: #f8fafc; --bg-surface-raised: #ffffff;
   --text-primary: #09090b; --text-secondary: #3f3f46; --text-muted: #71717a;
   --border-default: rgb(9 9 11 / 0.10); --border-strong: rgb(9 9 11 / 0.22);
-  --accent: #059669; --accent-hover: #047857; --accent-subtle: rgb(5 150 105 / 0.08);
+  --accent: #059669; --accent-hover: #047857; --accent-text: #047857; --accent-subtle: rgb(5 150 105 / 0.08);
   --text-on-accent: #ffffff; --success: #10b981;
   --btn-primary-bg: #047857; --btn-primary-hover: #065f46; --btn-primary-text: #ffffff;
   --code-bg: #16161a; --code-text: #d4d4d8; --code-muted: #a1a1aa;
@@ -27,7 +27,7 @@
     --bg-page: #09090b; --bg-surface: #121214; --bg-surface-raised: #18181b;
     --text-primary: #fafafa; --text-secondary: #d4d4d8; --text-muted: #9f9ea6;
     --border-default: rgb(255 255 255 / 0.09); --border-strong: rgb(255 255 255 / 0.18);
-    --accent: #10b981; --accent-hover: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
+    --accent: #10b981; --accent-hover: #34d399; --accent-text: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
     --text-on-accent: #09090b; --success: #34d399;
     --btn-primary-bg: #10b981; --btn-primary-hover: #34d399; --btn-primary-text: #042f1e;
     --code-bg: #101013;
@@ -37,7 +37,7 @@
   --bg-page: #09090b; --bg-surface: #121214; --bg-surface-raised: #18181b;
   --text-primary: #fafafa; --text-secondary: #d4d4d8; --text-muted: #9f9ea6;
   --border-default: rgb(255 255 255 / 0.09); --border-strong: rgb(255 255 255 / 0.18);
-  --accent: #10b981; --accent-hover: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
+  --accent: #10b981; --accent-hover: #34d399; --accent-text: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
   --text-on-accent: #09090b; --success: #34d399;
   --btn-primary-bg: #10b981; --btn-primary-hover: #34d399; --btn-primary-text: #042f1e;
   --code-bg: #101013;
@@ -48,15 +48,15 @@ body { background: var(--bg-page); color: var(--text-secondary); font-family: va
 h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 1.15; text-wrap: balance; }
 .container { max-width: var(--container); margin-inline: auto; padding-inline: var(--space-6); }
 
-.skip-link { position: absolute; left: var(--space-4); top: -48px; background: var(--btn-primary-bg); color: var(--btn-primary-text); padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); font-weight: 600; font-size: 0.875rem; z-index: 100; transition: top var(--duration-fast) var(--ease-out); text-decoration: none; }
-.skip-link:focus { top: var(--space-4); }
+.skip-link { position: absolute; left: var(--space-4); top: var(--space-4); transform: translateY(calc(-100% - var(--space-4))); background: var(--btn-primary-bg); color: var(--btn-primary-text); padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); font-weight: 600; font-size: 0.875rem; z-index: 100; transition: transform var(--duration-fast) var(--ease-out); text-decoration: none; }
+.skip-link:focus { transform: translateY(0); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 ::selection { background: var(--btn-primary-bg); color: var(--btn-primary-text); }
 
 header.site { padding-block: var(--space-4); border-bottom: 1px solid var(--border-default); position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg-page) 90%, transparent); backdrop-filter: blur(10px); }
 .site-inner { display: flex; align-items: center; gap: var(--space-6); }
 .logo { font-weight: 700; font-size: 1.125rem; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; }
-.logo em { font-style: normal; color: var(--accent); }
+.logo em { font-style: normal; color: var(--accent-text); }
 .site-actions { margin-left: auto; display: flex; align-items: center; gap: var(--space-3); }
 .theme-toggle-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; min-width: 40px; border-radius: var(--radius-full); background: var(--bg-surface-raised); border: 1px solid var(--border-default); color: var(--text-secondary); cursor: pointer; transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out); }
 .theme-toggle-btn:hover { color: var(--text-primary); border-color: var(--border-strong); }
@@ -73,7 +73,7 @@ header.site { padding-block: var(--space-4); border-bottom: 1px solid var(--bord
 .ghost-link:hover { color: var(--text-primary); background: var(--bg-surface); }
 
 .hero { padding-block: var(--space-16) var(--space-8); text-align: center; }
-.eyebrow { display: block; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: var(--space-4); }
+.eyebrow { display: block; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: var(--space-4); }
 .hero h1 { font-size: clamp(1.875rem, 3.2vw + 0.8rem, 2.75rem); margin-bottom: var(--space-4); }
 .hero .lead { max-width: 58ch; margin-inline: auto; font-size: 1.0625rem; color: var(--text-muted); }
 .hero .lead strong { color: var(--text-secondary); font-weight: 600; }
@@ -97,7 +97,7 @@ header.site { padding-block: var(--space-4); border-bottom: 1px solid var(--bord
 .result[hidden] { display: none; }
 .card { background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-8); box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 16px 40px -16px rgb(0 0 0 / 0.10); }
 .route-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; margin-bottom: var(--space-6); }
-.tag { display: inline-flex; align-items: center; gap: var(--space-2); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); background: var(--accent-subtle); border-radius: var(--radius-full); padding: 4px var(--space-3); }
+.tag { display: inline-flex; align-items: center; gap: var(--space-2); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-text); background: var(--accent-subtle); border-radius: var(--radius-full); padding: 4px var(--space-3); }
 .tag .k { color: var(--text-muted); font-weight: 500; }
 
 .result h2 { font-size: 1.0625rem; margin: var(--space-8) 0 var(--space-3); display: flex; align-items: baseline; gap: var(--space-2); }

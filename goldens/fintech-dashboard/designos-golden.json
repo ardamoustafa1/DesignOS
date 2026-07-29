@@ -1,0 +1,14 @@
+{
+  "target": "index.html",
+  "viewports": [320, 375, 768, 1024, 1440],
+  "themes": ["light", "dark"],
+  "motionModes": ["full", "reduced"],
+  "zoom": [200, 400],
+  "keyboardPath": ["skip-link", "primary-navigation", "filters", "table", "footer"],
+  "expectedFindings": [],
+  "acceptedAdvisories": [],
+  "expectedP1": 0,
+  "expectedTasks": 4,
+  "performanceBudget": {"transferBytes": 512000, "domContentLoadedMs": 2000, "loadMs": 3000},
+  "maxPixelDiffPercent": 0.25
+}

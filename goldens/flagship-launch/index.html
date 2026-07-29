@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadence — six release steps, one command</title>
+<meta name="description" content="Cadence collapses tag, changelog, build, sign, publish, and announce into a single command. A DesignOS golden example — fictional product, real code.">
+<meta name="color-scheme" content="dark">
+<style>
+/* ============================================================
+   GOLDEN: FLAGSHIP LAUNCH — the upper bound of the motion dial.
+   Rung 9 (brain/wow-calibration.md). Two signatures, deliberately
+   placed, with three calm sections doing the work between them:
+     signature 1 · hero-scale      → scroll-driven storytelling
+     signature 2 · interaction     → magnetic primary CTA
+   The split-text hero entrance is composition, not a third signature.
+   Every duration and easing is a token; every effect is compositor-only.
+   ============================================================ */
+:root {
+  --bg:        #0A0A0C;
+  --surface:   #131316;
+  --raised:    #1A1A1F;
+  --text:      #FAFAFA;
+  --muted:     #A5A5AE;
+  --dim:       #8A8A94;
+  --line:      rgb(255 255 255 / 0.10);
+  --line-loud: rgb(255 255 255 / 0.20);
+  --accent:       #34D399;
+  --accent-bright:#6EE7B7;
+  --accent-dim:   #0F5F44;
+  --on-accent:    #04231A;
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  --space-24: 96px; --space-32: 128px;
+  --radius: 10px; --radius-lg: 16px; --radius-full: 9999px;
+
+  --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms;
+  --duration-slow: 300ms;    --duration-slower: 500ms;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* the reduced-motion multiplier — distances collapse, opacity survives */
+  --motion: 1;
+
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Geist Mono", monospace;
+  --container: 1080px;
+}
+@media (prefers-reduced-motion: reduce) { :root { --motion: 0; } }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  background: var(--bg); color: var(--muted);
+  font-family: var(--font); font-size: 1rem; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { color: var(--text); letter-spacing: -0.03em; line-height: 1.08; text-wrap: balance; }
+.wrap { max-width: var(--container); margin-inline: auto; padding-inline: var(--space-6); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--accent); color: var(--on-accent); }
+
+.skip {
+  position: absolute; left: var(--space-4); top: var(--space-4); z-index: 100;
+  transform: translateY(calc(-100% - var(--space-8)));
+  background: var(--accent); color: var(--on-accent);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius);
+  font-weight: 700; text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+.skip:focus { transform: translateY(0); }
+
+/* ---------- header ---------- */
+header.site { border-bottom: 1px solid var(--line); }
+.site-in { display: flex; align-items: center; gap: var(--space-6); height: 64px; }
+.mark { font-weight: 700; font-size: 1.0625rem; color: var(--text); letter-spacing: -0.02em; }
+.mark span { color: var(--accent); }
+.site-in nav { margin-left: auto; display: flex; gap: var(--space-6); }
+.site-in nav a {
+  color: var(--muted); text-decoration: none; font-size: 0.9375rem;
+  display: inline-flex; align-items: center; min-height: 44px;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.site-in nav a:hover { color: var(--text); }
+
+/* ---------- hero: split-text entrance (composition, not a signature) ---------- */
+.hero { padding-block: var(--space-32) var(--space-24); }
+.hero h1 { font-size: clamp(2.5rem, 6.5vw + 0.5rem, 5rem); font-weight: 700; }
+.line { display: block; overflow: hidden; }
+.line > i {
+  display: inline-block; font-style: normal;
+  transform: translateY(calc(100% * var(--motion)));
+  opacity: 0;
+  animation: line-in var(--duration-slower) var(--ease-out) forwards;
+}
+@keyframes line-in { to { transform: translateY(0); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .line > i { animation: none; opacity: 1; transform: none; }
+}
+.hero p.lead {
+  max-width: 54ch; margin-top: var(--space-6); font-size: 1.125rem; color: var(--muted);
+  opacity: 0; animation: line-in var(--duration-slower) var(--ease-out) 320ms forwards;
+}
+.hero .cta-row { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-8); }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  height: 52px; padding-inline: var(--space-8); border-radius: var(--radius);
+  border: 1px solid transparent; font: inherit; font-size: 0.9375rem; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
+}
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-bright); }
+.btn-ghost { color: var(--text); border-color: var(--line-loud); }
+.btn-ghost:hover { border-color: var(--text); }
+/* signature 2 lives on a wrapper so the magnet never fights the button's own hover.
+   will-change is armed by JS only while the follow loop runs, then dropped — a
+   permanently promoted layer is the exact hygiene failure performance.md names. */
+.magnet { display: inline-block; }
+.magnet[data-armed="true"] { will-change: transform; }
+
+.mono-note { margin-top: var(--space-6); font-family: var(--mono); font-size: 0.8125rem; color: var(--dim); }
+
+/* ---------- calm section: the argument ---------- */
+.section { padding-block: var(--space-24); border-top: 1px solid var(--line); }
+.kicker {
+  display: block; font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--accent); margin-bottom: var(--space-4);
+}
+.section h2 { font-size: clamp(1.75rem, 2.6vw + 1rem, 2.5rem); max-width: 20ch; }
+.section p.body { max-width: 60ch; margin-top: var(--space-4); }
+
+.pair { display: grid; gap: var(--space-8); grid-template-columns: 1fr; margin-top: var(--space-12); }
+@media (min-width: 768px) { .pair { grid-template-columns: 1fr 1fr; } }
+.pane { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-6); }
+.pane h3 { font-size: 1rem; margin-bottom: var(--space-4); }
+.pane ol, .pane ul { margin: 0; padding-left: var(--space-6); font-size: 0.9375rem; }
+.pane li { margin-block: var(--space-2); }
+.pane li.gone { color: var(--dim); text-decoration: line-through; }
+
+/* ---------- SIGNATURE 1: scroll-driven storytelling ---------- */
+.story { position: relative; }
+.story-rail { height: 320vh; }
+.story-stage {
+  position: sticky; top: 0; height: 100vh;
+  display: grid; place-items: center; overflow: hidden;
+}
+.story-inner { width: 100%; max-width: var(--container); padding-inline: var(--space-6); }
+.story-count {
+  font-family: var(--mono); font-size: clamp(4rem, 18vw, 12rem); font-weight: 700;
+  color: var(--text); line-height: 1; letter-spacing: -0.06em;
+}
+.story-label { margin-top: var(--space-4); font-size: 1.125rem; color: var(--muted); max-width: 40ch; }
+.steps { margin-top: var(--space-8); display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.step {
+  font-family: var(--mono); font-size: 0.8125rem; padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line); border-radius: var(--radius-full); color: var(--dim);
+  transition: color var(--duration-slow) var(--ease-out),
+              border-color var(--duration-slow) var(--ease-out),
+              opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+/* the collapse: steps fold away as scroll progresses, leaving one */
+.step[data-folded="true"] {
+  opacity: 0; transform: translateY(calc(-8px * var(--motion))) scale(0.96);
+}
+.step[data-final="true"] { color: var(--on-accent); background: var(--accent); border-color: var(--accent); }
+.story-progress {
+  position: absolute; left: 0; bottom: 0; height: 2px; background: var(--accent);
+  width: calc(var(--progress, 0) * 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  /* the pin is the vestibular red flag — remove it, keep the content */
+  .story-rail { height: auto; }
+  .story-stage { position: static; height: auto; padding-block: var(--space-16); }
+  .step[data-folded="true"] { opacity: 1; transform: none; }
+}
+
+/* ---------- proof ---------- */
+.facts { display: grid; gap: var(--space-4); grid-template-columns: 1fr; margin-top: var(--space-12); }
+@media (min-width: 640px) { .facts { grid-template-columns: repeat(3, 1fr); } }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-6); }
+.fact dt { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); }
+.fact .fact-value { margin: var(--space-2) 0 0; font-size: 1.75rem; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.fact .fact-detail { margin: var(--space-2) 0 0; font-size: 0.875rem; font-weight: 400; color: var(--muted); }
+
+/* ---------- footer ---------- */
+footer.site { border-top: 1px solid var(--line); padding-block: var(--space-12); }
+footer.site p { font-size: 0.875rem; color: var(--dim); }
+footer.site a { display: inline-flex; align-items: center; min-height: 44px; }
+footer.site a { color: var(--muted); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap site-in">
+    <div class="mark">Cadence<span>.</span></div>
+    <nav aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#facts">Numbers</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <h1 id="hero-heading">
+      <span class="line"><i style="animation-delay:0ms">Six release steps.</i></span>
+      <span class="line"><i style="animation-delay:80ms">One command.</i></span>
+    </h1>
+    <p class="lead">Cadence tags the version, writes the changelog, builds, signs, publishes,
+      and announces. You run one line and watch it happen.</p>
+    <div class="cta-row">
+      <span class="magnet" data-magnet>
+        <a class="btn btn-primary" href="#how">Watch it collapse</a>
+      </span>
+      <a class="btn btn-ghost" href="#facts">See the numbers</a>
+    </div>
+    <p class="mono-note">$ cadence ship --tag v2.4.0</p>
+  </section>
+
+  <section class="section wrap" id="how">
+    <span class="kicker">The problem</span>
+    <h2>Every release is the same six steps, done by hand, at the worst possible hour.</h2>
+    <p class="body">They are not hard steps. They are steps that must all happen, in order,
+      without one being forgotten. That is a machine's job, and it has been a person's job
+      for a decade.</p>
+    <div class="pair">
+      <div class="pane">
+        <h3>Before</h3>
+        <ol>
+          <li>Tag the version</li>
+          <li>Write the changelog</li>
+          <li>Run the build</li>
+          <li>Sign the artifact</li>
+          <li>Publish to the registry</li>
+          <li>Announce in the channel</li>
+        </ol>
+      </div>
+      <div class="pane">
+        <h3>After</h3>
+        <ul>
+          <li class="gone">Tag the version</li>
+          <li class="gone">Write the changelog</li>
+          <li class="gone">Run the build</li>
+          <li class="gone">Sign the artifact</li>
+          <li class="gone">Publish to the registry</li>
+          <li><strong>cadence ship</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE 1 · hero-scale: the six-to-one collapse, driven by scroll -->
+  <section class="story" aria-labelledby="story-heading">
+    <h2 id="story-heading" class="wrap" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">
+      How six steps become one
+    </h2>
+    <div class="story-rail" data-story>
+      <div class="story-stage">
+        <div class="story-inner wrap">
+          <p class="story-count" data-count aria-hidden="true">6</p>
+          <p class="story-label" data-label>manual steps, every single release.</p>
+          <div class="steps" aria-hidden="true">
+            <span class="step" data-step="0">tag</span>
+            <span class="step" data-step="1">changelog</span>
+            <span class="step" data-step="2">build</span>
+            <span class="step" data-step="3">sign</span>
+            <span class="step" data-step="4">publish</span>
+            <span class="step" data-step="5">announce</span>
+          </div>
+        </div>
+        <div class="story-progress" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="facts">
+    <span class="kicker">Measured</span>
+    <h2>What the collapse actually saved.</h2>
+    <p class="body">Numbers from the Cadence team's own releases over one quarter. This is a
+      fictional product built as a DesignOS golden, so these are illustrative, not audited.</p>
+    <dl class="facts">
+      <div class="fact">
+        <dt>Median release time</dt>
+        <dd class="fact-value">4m 12s</dd>
+        <dd class="fact-detail">Down from 38 minutes of hands-on work spread across an afternoon.</dd>
+      </div>
+      <div class="fact">
+        <dt>Steps a human performs</dt>
+        <dd class="fact-value">1</dd>
+        <dd class="fact-detail">The command. Everything after it is the machine's responsibility.</dd>
+      </div>
+      <div class="fact">
+        <dt>Releases missing a changelog</dt>
+        <dd class="fact-value">0</dd>
+        <dd class="fact-detail">It cannot be forgotten if it is not a separate step.</dd>
+      </div>
+    </dl>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Cadence is a fictional product</strong>, built as a DesignOS golden example.
+      No customers, logos, or compliance claims appear on this page, because none exist.
+      Source and rationale: <a href="../flagship-launch.md">flagship-launch.md</a></p>
+  </div>
+</footer>
+
+<script type="application/json" data-designos-tasks>
+[
+  {
+    "id":"navigate-to-release-story",
+    "steps":[
+      {"action":"click","selector":".btn-primary"},
+      {"assert":"visible","selector":"#how","equals":true}
+    ]
+  },
+  {
+    "id":"navigate-to-measured-results",
+    "steps":[
+      {"action":"click","selector":".btn-ghost"},
+      {"assert":"visible","selector":"#facts","equals":true}
+    ]
+  }
+]
+</script>
+<script>
+(function () {
+  'use strict';
+  var teardown = [];
+  var fine = matchMedia('(hover: hover) and (pointer: fine)');
+  var calm = matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ---- SIGNATURE 2 · magnetic CTA (motion/signature-moments.md §1) ---- */
+  function magnetic(el) {
+    if (!fine.matches || calm.matches) return function () {};
+    var STRENGTH = 0.32, RADIUS = 130;
+    var raf = 0, tx = 0, ty = 0, cx = 0, cy = 0;
+    /* motion-ok: finite interaction — recursion stops at the 0.1px rest threshold,
+       is cancelled during teardown, and never runs without pointer input. */
+    function tick() {
+      cx += (tx - cx) * 0.18;
+      cy += (ty - cy) * 0.18;
+      el.style.transform = 'translate3d(' + cx.toFixed(2) + 'px,' + cy.toFixed(2) + 'px,0)';
+      if (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = 0;
+        el.removeAttribute('data-armed');   // drop the promoted layer once it settles
+      }
+    }
+    function onMove(e) {
+      var r = el.getBoundingClientRect();
+      var dx = e.clientX - (r.left + r.width / 2);
+      var dy = e.clientY - (r.top + r.height / 2);
+      var pull = Math.max(0, 1 - Math.hypot(dx, dy) / RADIUS);
+      tx = dx * STRENGTH * pull; ty = dy * STRENGTH * pull;
+      if (!raf) { el.setAttribute('data-armed', 'true'); raf = requestAnimationFrame(tick); }
+    }
+    function onLeave() {
+      tx = 0; ty = 0;
+      if (!raf) { el.setAttribute('data-armed', 'true'); raf = requestAnimationFrame(tick); }
+    }
+    window.addEventListener('pointermove', onMove, { passive: true });
+    el.addEventListener('pointerleave', onLeave);
+    return function () {
+      window.removeEventListener('pointermove', onMove);
+      el.removeEventListener('pointerleave', onLeave);
+      cancelAnimationFrame(raf);
+      el.style.transform = '';
+    };
+  }
+  var magnetEl = document.querySelector('[data-magnet]');
+  if (magnetEl) teardown.push(magnetic(magnetEl));
+
+  /* ---- SIGNATURE 1 · scroll-driven collapse (signature-moments.md §6) ---- */
+  function story(rail) {
+    var stage = rail.querySelector('.story-stage');
+    var count = rail.querySelector('[data-count]');
+    var label = rail.querySelector('[data-label]');
+    var bar   = rail.querySelector('.story-progress');
+    var steps = Array.prototype.slice.call(rail.querySelectorAll('.step'));
+    // Folding runs from the END of the row backwards, so the survivor lands where the eye
+    // started reading. The labels follow that order: announce absorbs first, tag last.
+    var LABELS = [
+      'manual steps, every single release.',
+      'steps left. Announcing is a webhook the release already knows how to call.',
+      'steps left. Publishing is the same artifact, moved.',
+      'steps left. Signing is a key the machine holds, not a person.',
+      'steps left. The build already knows its own inputs.',
+      'step left. The changelog is the commit range, formatted.',
+      'command. Everything above happens because you ran it.'
+    ];
+    var raf = 0;
+
+    function apply() {
+      var r = rail.getBoundingClientRect();
+      var span = rail.offsetHeight - window.innerHeight;
+      var p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
+      stage.style.setProperty('--progress', p.toFixed(4));
+      if (bar) bar.style.setProperty('--progress', p.toFixed(4));
+      // six folds across the scroll; the last leaves one live step
+      var folded = Math.min(6, Math.floor(p * 6.999));
+      for (var i = 0; i < steps.length; i++) {
+        var isFolded = i > 0 && i >= steps.length - folded;
+        steps[i].setAttribute('data-folded', isFolded ? 'true' : 'false');
+        steps[i].setAttribute('data-final', (folded >= 6 && i === 0) ? 'true' : 'false');
+      }
+      var survivor = folded >= 6 ? 'cadence ship' : 'tag';
+      if (steps[0].textContent !== survivor) steps[0].textContent = survivor;
+      count.textContent = String(Math.max(1, 6 - folded));
+      label.textContent = LABELS[Math.min(LABELS.length - 1, folded)];
+      raf = 0;
+    }
+    function onScroll() { if (!raf) raf = requestAnimationFrame(apply); }
+
+    if (calm.matches) { apply(); return function () {}; }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    apply();
+    return function () {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }
+  var rail = document.querySelector('[data-story]');
+  if (rail) teardown.push(story(rail));
+
+  window.addEventListener('pagehide', function () {
+    for (var i = 0; i < teardown.length; i++) teardown[i]();
+  });
+}());
+</script>
+</body>
+</html>

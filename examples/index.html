@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DesignOS — Live Proof Gallery</title>
+<title>DesignOS · Live Proof Gallery</title>
 <meta name="description" content="Four production-grade surfaces produced by DesignOS for Relay: Marketing Landing, SaaS Dashboard, Pricing & FAQ, and Technical Documentation.">
 <link rel="canonical" href="https://ardamoustafa1.github.io/DesignOS/examples/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ardamoustafa1.github.io/DesignOS/examples/">
-<meta property="og:title" content="DesignOS — Live Proof Gallery">
+<meta property="og:title" content="DesignOS · Live Proof Gallery">
 <meta property="og:description" content="Four production-grade surfaces produced by DesignOS: Marketing Landing, App Dashboard, Pricing & FAQ, and Docs.">
 <meta property="og:image" content="https://ardamoustafa1.github.io/DesignOS/press/social-preview.png">
 <meta name="color-scheme" content="dark light">
 <style>
 :root {
   --bg: #0c0c0e; --surface: #141418; --surface-hover: #1c1c22;
-  --text: #f4f4f5; --muted: #a1a1aa; --dim: #71717a;
+  --text: #f4f4f5; --muted: #a1a1aa; --dim: #90909a;
   --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.18);
   --accent: #6366f1; --accent-hover: #818cf8; --accent-subtle: rgba(99,102,241,0.12);
   --green: #4ade80; --amber: #fbbf24;
@@ -83,10 +83,12 @@ h1 {
   color: inherit;
   transition: border-color 200ms, transform 200ms, background 200ms;
 }
-.card:hover {
-  border-color: var(--accent);
-  background: var(--surface-hover);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: var(--accent);
+    background: var(--surface-hover);
+    transform: translateY(-2px);
+  }
 }
 .card:focus-visible {
   outline: 2px solid var(--accent-hover);
@@ -180,7 +182,7 @@ footer a:hover { color: var(--text); }
           <span class="tag">Marketing Surface</span>
           <span class="score-pill">✓ 96/100 All Dimensions</span>
         </div>
-        <h2>Relay — SaaS Landing Page →</h2>
+        <h2>Relay: SaaS Landing Page →</h2>
         <p>Stripe-level SaaS landing page with hero, interactive architecture diagram, persuasion proof stack, feature highlights, and conversion-optimized CTAs.</p>
       </div>
       <div class="modules">
@@ -196,7 +198,7 @@ footer a:hover { color: var(--text); }
           <span class="tag">App Shell / Data UI</span>
           <span class="score-pill">✓ 97/100 All Dimensions</span>
         </div>
-        <h2>Relay — Incident Dashboard →</h2>
+        <h2>Relay: Incident Dashboard →</h2>
         <p>Real-time telemetry shell with tabular-nums metrics cards, live filter tabs, accessible data tables, status badges, and incident timeline inspection.</p>
       </div>
       <div class="modules">
@@ -212,7 +214,7 @@ footer a:hover { color: var(--text); }
           <span class="tag">Conversion Surface</span>
           <span class="score-pill">✓ 96/100 All Dimensions</span>
         </div>
-        <h2>Relay — Pricing & Honesty FAQ →</h2>
+        <h2>Relay: Pricing &amp; Honesty FAQ →</h2>
         <p>Three-tier pricing table with layout-stable annual/monthly billing toggle, transparent limits, and collapsible FAQ adhering to honesty doctrine.</p>
       </div>
       <div class="modules">
@@ -228,7 +230,7 @@ footer a:hover { color: var(--text); }
           <span class="tag">Documentation UI</span>
           <span class="score-pill">✓ 97/100 All Dimensions</span>
         </div>
-        <h2>Relay — Developer Documentation →</h2>
+        <h2>Relay: Developer Documentation →</h2>
         <p>Three-panel developer docs shell with responsive sidebar navigation, copyable clean terminal code blocks, and keyboard-accessible table of contents.</p>
       </div>
       <div class="modules">
@@ -240,7 +242,7 @@ footer a:hover { color: var(--text); }
   </main>
 
   <footer>
-    <span>DesignOS v2.0.0 — Open Source (MIT)</span>
+    <span>DesignOS v2.0.0 · Open Source (MIT)</span>
     <div>
       <a href="../website/before-after.html">Before/After Demo</a> · 
       <a href="../evals/RESULTS.md">Measured Results</a> · 

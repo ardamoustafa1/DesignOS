@@ -1,0 +1,1 @@
+{"input":{"first":{"left":0,"top":0,"width":100,"height":100},"last":{"left":50,"top":50,"width":200,"height":200}},"expected":{"x":-50,"y":-50,"scaleX":0.5,"scaleY":0.5}}

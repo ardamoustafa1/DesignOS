@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relay — Incident management that ends 2am archaeology</title>
+<title>Relay · Incident management that ends 2am archaeology</title>
 <meta name="description" content="Every alert arrives with its runbook, owner, and history. On-call teams resolve incidents 4× faster with Relay.">
 <style>
 /* ============================================================
@@ -74,12 +74,13 @@ a { color: var(--text-primary); }
 ::selection { background: var(--accent); color: var(--text-on-accent); }
 
 .skip-link {
-  position: absolute; left: var(--space-4); top: -100px;
+  position: absolute; left: var(--space-4); top: var(--space-4);
+  transform: translateY(calc(-100% - var(--space-4)));
   background: var(--accent); color: var(--text-on-accent);
   padding: var(--space-2) var(--space-4); border-radius: var(--radius-sm);
-  font-weight: 600; z-index: 100; transition: top var(--duration-fast) var(--ease-out);
+  font-weight: 600; z-index: 100; transition: transform var(--duration-fast) var(--ease-out);
 }
-.skip-link:focus { top: var(--space-4); }
+.skip-link:focus { transform: translateY(0); }
 
 /* ---------- buttons (components/buttons.md) ---------- */
 .btn {
@@ -293,13 +294,13 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
         <div class="panel">
           <div class="panel-bar" aria-hidden="true">
             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="panel-title">incident #4128 — api-gateway</span>
+            <span class="panel-title">incident #4128 · api-gateway</span>
           </div>
           <div class="incident">
-            <p class="line"><span class="ts">02:14:07</span> <span class="sev">SEV-2</span> <span class="msg">p99 latency breach — api-gateway</span></p>
+            <p class="line"><span class="ts">02:14:07</span> <span class="sev">SEV-2</span> <span class="msg">p99 latency breach: api-gateway</span></p>
             <p class="line"><span class="ts">02:14:08</span> <span class="ok">→</span> <span class="msg">runbook attached: gateway-latency.md</span></p>
             <p class="line"><span class="ts">02:14:09</span> <span class="ok">→</span> <span class="msg">paging @maya (primary, gateway rotation)</span></p>
-            <p class="line"><span class="ts">02:14:11</span> <span class="ok">→</span> <span class="msg">similar: #3971 resolved in 11m — fix linked</span></p>
+            <p class="line"><span class="ts">02:14:11</span> <span class="ok">→</span> <span class="msg">similar: #3971 resolved in 11m; fix linked</span></p>
             <p class="line"><span class="ts">02:19:44</span> <span class="ok">✓</span> <span class="msg">rollback applied · latency recovering</span></p>
             <span class="resolved-chip">✓ Resolved in 5m 37s</span>
           </div>
@@ -323,24 +324,24 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">How it works</span>
-        <h2>Context finds you — not the other way around</h2>
+        <h2>Context finds you, not the other way around</h2>
         <p>Relay sits between your alerting and your team, and does the archaeology before the page even lands.</p>
       </div>
       <div class="features">
         <article class="feature">
           <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19h16M4 5h16M7 5v14M12 12h9"/></svg></div>
           <h3>Alerts arrive briefed</h3>
-          <p>Runbook, owning service, recent deploys, and the last three similar incidents — attached to the page automatically. <code>context: ready</code> before you're awake.</p>
+          <p>Runbook, owning service, recent deploys, and the last three similar incidents arrive on the page automatically. <code>context: ready</code> before you're awake.</p>
         </article>
         <article class="feature">
           <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
           <h3>Wake the right person</h3>
-          <p>Ownership-aware routing pages the engineer who shipped the change or owns the service — not the whole rotation. Escalation only when it's earned.</p>
+          <p>Ownership-aware routing pages the engineer who shipped the change or owns the service, not the whole rotation. Escalation happens only when it's earned.</p>
         </article>
         <article class="feature">
           <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3h9l5 5v13H6zM14 3v6h6M9 13h6M9 17h6"/></svg></div>
           <h3>Postmortems write themselves</h3>
-          <p>Every action, decision, and timestamp is captured as you work. When it's over, the timeline <em>is</em> the draft — you edit, not excavate.</p>
+          <p>Every action, decision, and timestamp is captured as you work. When it's over, the timeline <em>is</em> the draft. You edit instead of excavating.</p>
         </article>
       </div>
     </div>
@@ -350,7 +351,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
   <section class="section proof" id="proof">
     <div class="container proof-grid">
       <div>
-        <span class="eyebrow">Case study — Datawire</span>
+        <span class="eyebrow">Case study: Datawire</span>
         <p class="metric">−43%</p>
         <p class="metric-label">mean time to resolution, 90 days after switching to Relay</p>
       </div>
@@ -367,7 +368,6 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
   <!-- FINAL CTA BAND -->
   <section class="section cta-band" id="cta">
     <div class="container">
-      <span class="eyebrow">Get started</span>
       <h2>Try it on your next incident</h2>
       <a class="btn btn-primary" href="#">Start free trial</a>
       <p class="hero-note">Free 14 days · No credit card · Works with PagerDuty, Opsgenie &amp; Grafana</p>

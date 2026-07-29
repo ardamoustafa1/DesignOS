@@ -11,11 +11,30 @@ for every applicable rubric dimension; unchecked rows remain **NOT ASSESSED**.
 If the local CLI exists, run it before delivery:
 
 ```bash
+node DesignOS/bin/designos.js audit  <dir> [token-file]      # all five validators
 node DesignOS/bin/designos.js review <target> --min 95
 node DesignOS/bin/designos.js elevate <target> --no-fail
 node DesignOS/bin/designos.js visual <target> --no-fail
 node DesignOS/bin/designos.js report <target> --min 95 --no-fail
 ```
+
+`audit` runs token drift, a11y basics, contrast (same-rule **and** inherited cascade),
+motion, and aesthetic slop. A clean `review` with a skipped `audit` is not a cleared floor —
+`review` is a regex pass over source, while the validators resolve tokens, walk the element
+tree, and compute ratios.
+
+When the work is an iteration on an existing screen, record the before and measure the
+after rather than describing the change:
+
+```bash
+node DesignOS/bin/designos.js visual <target> --baseline    # before the edit
+node DesignOS/bin/designos.js visual <target> --compare     # after it
+```
+
+The diff reports pixels changed, the changed band, and any full-page height shift per
+viewport. Movement *outside* the region you edited is the finding worth chasing; add
+`--max-diff <pct>` to turn it into a regression gate. A percentage is a measurement, not a
+verdict — quote it, do not translate it into "looks the same".
 
 If the user requested a stricter bar, replace `95` with that number. For launch-quality
 screens, use `--min 100` only when the deterministic review must be completely clean.
@@ -42,6 +61,49 @@ If the environment cannot run the CLI, say:
 
 > Deterministic DesignOS review was not run in this environment. This is a self-review,
 > not a final score.
+
+## The adversarial panel
+
+The deterministic CLI covers what a regex can see. The seven rubric dimensions are
+judgment, and judgment self-graded by the author who just produced the work is the weakest
+evidence this system accepts — the same context that made the decisions is being asked to
+find them wrong.
+
+If the environment provides subagents, spawn **isolated reviewers** before delivery. Each
+one gets the artifact and the rubric dimension, and **not** the rationale, the brief
+history, or the score you were hoping for. Contaminating a reviewer with the defence is how
+a panel becomes a rubber stamp.
+
+Minimum panel for a shipped page (`CLAUDE.md` §3): **ui-designer → accessibility →
+reviewer**. Each returns a structured verdict, not prose:
+
+| Field | Required content |
+|---|---|
+| Dimension | one of the seven rubric dimensions |
+| Score | 0–100 with the band from `scoring/rubric.md` |
+| Heuristic scores | Nielsen's 10, each 0–4, for `reviewer` and `ux-researcher` |
+| Findings | file:line, severity, what breaks and for whom |
+| Blocking? | does any finding hit the `brain/quality-bar.md` instant-fail list |
+
+Reviewers are told to **refute, not confirm**: the job is to find the reason this fails, and
+"I could not find one" is a finding in itself. A panel that returns three enthusiastic
+passes on the first attempt has usually been asked the wrong question.
+
+Resolve disagreement by evidence, not by majority: a single reviewer with a reproducible
+finding beats two without one. Record dissent in the delivery report — a suppressed
+minority verdict is the same trust failure as a hidden first score.
+
+### The DEGRADED banner
+
+When subagents are unavailable, or the panel could not be run, the delivery report carries
+this verbatim:
+
+> **DEGRADED — single-context review.** No isolated reviewer ran. Dimension scores below are
+> self-assessed by the author of the work and are not independent.
+
+Omitting the banner while claiming a dimension score is fabrication of provenance, and it
+falls under the same rule as renarration below. A degraded review is a legitimate result; a
+degraded review presented as a panel is not.
 
 ## The renarration ban
 

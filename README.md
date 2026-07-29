@@ -408,9 +408,20 @@ Every command runs from your project root after installation.
 | `brief` | Produce a structured, agent-ready design brief | Optional |
 | `suggest <brief>` | Deterministic design-system recommendation: sector + surface routing, contrast-verified palette (ratios computed at output time), type pairing, anti-patterns | No |
 | `starter <name> <dir>` | Copy a production-oriented starter | Yes |
-| `audit <target>` | Run token-drift, accessibility-basics, and token-pair contrast validators | No |
+| `audit <target>` | Run the registry-owned static provider suite and write its validator ledger | Yes |
 | `review <target>` | Report static design risks; optionally create a fix prompt | No |
 | `visual <target>` | Create screenshot/static visual QA evidence | Yes |
+| `hooks install/status` | Install or inspect observe/warn/block/deep-on-stop edit gates | Yes |
+| `live <target>` | Open the transactional Live Director; resolve component source, preview context-derived variants, enforce browser/performance budgets, accept, or roll back | Optional |
+| `motion-decide <interaction>` | Select no-motion, feedback-only, transition, spring, or signature behavior from use context | No |
+| `motion-recipe <recipe> --stack <stack>` | Emit one of 15 tested recipes for Vanilla, React, Motion, GSAP, Vue, or Svelte | No |
+| `motion-lab <target>` | Generate the interactive timing, easing, spring, replay, and reduced-motion laboratory | Yes |
+| `find <query>` | BM25 retrieval across motion, type, and knowledge-graph nodes; supports typed filters | No |
+| `knowledge <query>` | Structured sector/surface/component/platform/rule/recipe/validator/golden graph response | No |
+| `coverage` | Report rules-to-recipes-to-fixtures-to-golden evidence coverage | No |
+| `signature <brief>` | Compile three material-, audience-, and belief-led signature directions | No |
+| `compose <brief>` | Select from ten composition grammar primitives | No |
+| `asset-direct <brief>` | Produce an asset direction contract with crop, source, accessibility, and size budgets | No |
 | `elevate <target>` | Generate a premium-refactor prompt | Yes |
 | `report <target>` | Create a delivery report and sign-off ledger | Yes |
 | `eval <slug>` | Scaffold a controlled evaluation run | Yes |
@@ -424,14 +435,25 @@ node DesignOS/bin/designos.js starter landing-page my-launch
 node DesignOS/bin/designos.js audit src/
 node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
 node DesignOS/bin/designos.js visual index.html --no-fail
+node DesignOS/bin/designos.js hooks install --mode warn --target index.html
+node DesignOS/bin/designos.js live index.html
+node DesignOS/bin/designos.js motion-decide "command palette" --frequency very-high --initiator keyboard
+node DesignOS/bin/designos.js motion-recipe momentum-projection --stack react
+node DesignOS/bin/designos.js motion-lab index.html
+node DesignOS/bin/designos.js knowledge "fintech transaction success" --platform ios
+node DesignOS/bin/designos.js coverage
+node DesignOS/bin/designos.js signature "developer launch" --material "deployment timeline"
+node DesignOS/bin/designos.js compose "analytics dashboard" --density 9
+node DesignOS/bin/designos.js asset-direct "product screenshot" --surface web
 node DesignOS/bin/designos.js elevate src/ --no-fail
 node DesignOS/bin/designos.js report src/ --no-fail
 node DesignOS/bin/designos.js eval cursor-pricing --agent Cursor --brief B-001
 node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url https://example.com
 ```
 
-Run `node DesignOS/bin/designos.js help` for flags and usage. The CLI has no runtime
-dependencies beyond Node.js 18+.
+Run `node DesignOS/bin/designos.js help` for flags and usage. Node.js 18+ is required.
+Browser-native evidence uses the pinned Playwright dependency and a locally installed
+Chromium (`npx playwright install chromium`).
 
 ---
 

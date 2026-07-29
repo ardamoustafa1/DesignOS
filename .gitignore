@@ -1,5 +1,8 @@
 .DS_Store
 node_modules/
+fixtures/frameworks/dist/
+.designos/
+website/browser-ledger.json
 *.log
 .designos-audit.log
 .designos-journal.md

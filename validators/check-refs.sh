@@ -13,7 +13,8 @@ while IFS= read -r ref; do
     echo "BROKEN REF: $ref"
     fail=1
   fi
-done < <(grep -rhoE '`[a-z-]+/[a-z0-9./-]+\.md`' --include="*.md" . | tr -d '`' | sort -u)
+done < <(grep -rhoE '`[a-z-]+/[a-z0-9./-]+\.md`' --include="*.md" \
+  --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=evidence . | tr -d '`' | sort -u)
 
 if [ "$fail" -eq 0 ]; then
   echo "check-refs: clean"

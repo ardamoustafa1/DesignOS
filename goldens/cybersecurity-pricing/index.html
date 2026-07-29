@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SentinelCore — Pricing (DesignOS Golden)</title>
-  <meta name="description" content="Golden example: an EDR pricing page that stays honest — seat economics, real comparison, no fake logos or certifications. Fictional brand for DesignOS evaluation.">
+  <title>SentinelCore · Pricing (DesignOS Golden)</title>
+  <meta name="description" content="Golden example: an EDR pricing page with explicit seat economics, a real comparison, and no fake logos or certifications. Fictional brand for DesignOS evaluation.">
   <style>
     :root {
       --bg:#090D11; --surface:#101821; --raised:#172232;
@@ -13,22 +13,22 @@
       --accent:#22D3EE; --accent-hover:#67E8F9; --on-accent:#061014;
       --ok:#4ADE80; --warn:#FBBF24;
       --radius:8px; --radius-lg:12px;
-      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-family: ui-sans-serif, system-ui, sans-serif;
     }
     * { box-sizing:border-box; margin:0; }
     body { background:var(--bg); color:var(--muted); font-size:16px; line-height:1.65; }
     h1,h2,h3 { color:var(--text); letter-spacing:-.02em; line-height:1.15; text-wrap:balance; }
     .wrap { width:min(1180px, calc(100% - 48px)); margin-inline:auto; }
 
-    .skip { position:absolute; left:16px; top:-48px; background:var(--accent); color:var(--on-accent); padding:12px 20px; border-radius:var(--radius); font-weight:700; font-size:14px; z-index:99; text-decoration:none; transition:top 150ms ease-out; }
-    .skip:focus { top:16px; }
+    .skip { position:absolute; left:16px; top:16px; transform:translateY(calc(-100% - 24px)); background:var(--accent); color:var(--on-accent); padding:12px 20px; border-radius:var(--radius); font-weight:700; font-size:14px; z-index:99; text-decoration:none; transition:transform 150ms ease-out; }
+    .skip:focus { transform:translateY(0); }
     :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
 
     header.site { border-bottom:1px solid var(--line); padding-block:16px; }
     .site-inner { display:flex; align-items:center; gap:32px; }
-    .logo { color:var(--text); font-weight:800; font-size:17px; letter-spacing:-.02em; text-decoration:none; }
+    .logo { color:var(--text); font-weight:800; font-size:17px; letter-spacing:-.02em; text-decoration:none; display:inline-flex; align-items:center; min-height:44px; }
     nav[aria-label="Primary"] ul { display:flex; gap:24px; list-style:none; padding:0; }
-    nav[aria-label="Primary"] a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:500; }
+    nav[aria-label="Primary"] a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:500; display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; }
     nav[aria-label="Primary"] a:hover { color:var(--text); }
     nav[aria-label="Primary"] a[aria-current="page"] { color:var(--text); }
     .site-cta { margin-left:auto; }
@@ -48,14 +48,14 @@
 
     .toggle-row { display:flex; align-items:center; gap:12px; padding-block:8px 24px; flex-wrap:wrap; }
     .toggle { display:inline-flex; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:4px; }
-    .toggle button { font:inherit; font-size:14px; font-weight:600; color:var(--muted); background:transparent; border:0; border-radius:999px; padding:8px 20px; min-height:36px; cursor:pointer; }
+    .toggle button { font:inherit; font-size:14px; font-weight:600; color:var(--muted); background:transparent; border:0; border-radius:999px; padding:8px 20px; min-height:44px; cursor:pointer; }
     .toggle button[aria-pressed="true"] { background:var(--raised); color:var(--text); box-shadow:inset 0 0 0 1px var(--line-strong); }
     .toggle-note { font-size:13px; color:var(--ok); font-weight:600; }
 
     .plans { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
     .plan { border:1px solid var(--line); border-radius:var(--radius-lg); padding:28px 24px; background:var(--surface); display:flex; flex-direction:column; gap:16px; }
     .plan.featured { border-color:rgb(34 211 238 / .55); background:var(--raised); box-shadow:0 0 0 1px rgb(34 211 238 / .22); position:relative; }
-    .plan.featured .flag { position:absolute; top:-12px; left:24px; background:var(--accent); color:var(--on-accent); font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; border-radius:999px; padding:4px 12px; }
+    .plan.featured .flag { position:absolute; top:-12px; left:24px; background:var(--accent); color:var(--on-accent); font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; border-radius:999px; padding:4px 12px; }
     .plan h3 { font-size:18px; }
     .plan .who { font-size:13px; min-height:40px; }
     .price-row { display:flex; align-items:baseline; gap:8px; }
@@ -102,7 +102,7 @@
     .final .anxiety { font-size:13px; }
 
     footer.site { border-top:1px solid var(--line); padding-block:32px; font-size:13px; }
-    footer.site a { color:var(--muted); }
+    footer.site a { color:var(--muted); display:inline-flex; align-items:center; min-height:44px; }
     .footer-inner { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; }
 
     @media (max-width:860px) {
@@ -137,7 +137,7 @@
   <section class="hero wrap">
     <p class="eyebrow">Golden example · fictional brand</p>
     <h1>EDR pricing without ingestion traps.</h1>
-    <p class="lead">Per-analyst seats plus flat endpoint tiers. Alert volume never changes your bill — noisy weeks are our problem, not your budget's.</p>
+    <p class="lead">Per-analyst seats plus flat endpoint tiers. Alert volume never changes your bill. Noisy weeks are our problem, not your budget's.</p>
     <p class="disclosure">Example pricing page for DesignOS evaluation. The brand is fictional; customer proof and certification claims are intentionally omitted rather than invented (PROOF_STANDARD.md).</p>
   </section>
 
@@ -155,7 +155,7 @@
         <h3>Starter</h3>
         <p class="who">Small teams standing up their first real endpoint coverage.</p>
         <div class="price-row"><span class="price" data-monthly="$35" data-annual="$29">$29</span><span class="per">per analyst / month</span></div>
-        <p class="unit-note">Includes 250 endpoints. Extra endpoints $0.40/mo each — flat, not usage-metered.</p>
+        <p class="unit-note">Includes 250 endpoints. Extra endpoints are $0.40/mo each, flat and not usage-metered.</p>
         <ul>
           <li>Endpoint telemetry &amp; detection rules</li>
           <li>Rule templates, weekly tuning digest</li>
@@ -205,9 +205,9 @@
   <section class="block wrap" aria-labelledby="compare-h">
     <div class="block-head">
       <h2 id="compare-h">What changes between plans</h2>
-      <p>The differences, complete. If a row you care about is missing, that's a bug — tell us.</p>
+      <p>The differences, complete. If a row you care about is missing, that's a bug. Tell us.</p>
     </div>
-    <div class="compare-wrap">
+    <div class="compare-wrap" tabindex="0" role="region" aria-label="Scrollable plan comparison">
       <table class="compare">
         <caption>Feature comparison across Starter, Pro, and Enterprise plans</caption>
         <thead>
@@ -217,10 +217,10 @@
           <tr><th scope="row">Included endpoints</th><td>250</td><td class="col-featured">1,000</td><td>Custom</td></tr>
           <tr><th scope="row">Extra endpoint / month</th><td>$0.40</td><td class="col-featured">$0.30</td><td>Volume</td></tr>
           <tr><th scope="row">Hot retention</th><td>30 days</td><td class="col-featured">90 days</td><td>Custom</td></tr>
-          <tr><th scope="row">MITRE mapping workflow</th><td class="no">—</td><td class="col-featured yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th scope="row">Guided triage queues</th><td class="no">—</td><td class="col-featured yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th scope="row">Audit evidence export</th><td class="no">—</td><td class="col-featured yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th scope="row">Private deployment</th><td class="no">—</td><td class="col-featured no">—</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">MITRE mapping workflow</th><td class="no">No</td><td class="col-featured yes">✓</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">Guided triage queues</th><td class="no">No</td><td class="col-featured yes">✓</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">Audit evidence export</th><td class="no">No</td><td class="col-featured yes">✓</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">Private deployment</th><td class="no">No</td><td class="col-featured no">No</td><td class="yes">✓</td></tr>
           <tr><th scope="row">Support response</th><td>Next business day</td><td class="col-featured">4 business hours</td><td>Named engineer</td></tr>
         </tbody>
       </table>
@@ -230,7 +230,7 @@
   <section class="block wrap" aria-labelledby="procure-h">
     <div class="block-head">
       <h2 id="procure-h">Built for how security actually buys</h2>
-      <p>Architecture proof instead of testimonial theater — the claims below are inspectable in the trial, not asserted by a logo wall.</p>
+      <p>Architecture proof replaces testimonial theater. The claims below are inspectable in the trial, not asserted by a logo wall.</p>
     </div>
     <div class="procure">
       <article>
@@ -239,7 +239,7 @@
       </article>
       <article>
         <strong>Predictable unit economics</strong>
-        <p>The bill scales with analysts and endpoints — two numbers you control — never with log volume, which you don't.</p>
+        <p>The bill scales with analysts and endpoints, two numbers you control. It never scales with log volume, which you don't.</p>
       </article>
       <article>
         <strong>Evidence as workflow</strong>
@@ -255,27 +255,27 @@
     <div class="faq">
       <details>
         <summary>What exactly counts as a "seat"?</summary>
-        <p>A named analyst who can act on alerts — triage, close, escalate, edit rules. Read-only dashboard viewers (management, auditors) are free and unlimited on every plan.</p>
+        <p>A named analyst who can triage, close, escalate, and edit rules. Read-only dashboard viewers (management, auditors) are free and unlimited on every plan.</p>
       </details>
       <details>
         <summary>What happens when the trial ends?</summary>
-        <p>The workspace locks read-only for 30 days — detections stop, but your rules, cases, and evidence stay exportable. Nothing is deleted silently.</p>
+        <p>The workspace locks read-only for 30 days. Detections stop, but your rules, cases, and evidence stay exportable. Nothing is deleted silently.</p>
       </details>
       <details>
         <summary>Can we run a proof-of-value on real endpoints?</summary>
-        <p>Yes — the 14-day trial is the full Pro product on up to 200 real endpoints. Extension for a structured PoV with acceptance criteria is a one-email ask.</p>
+        <p>Yes. The 14-day trial is the full Pro product on up to 200 real endpoints. Extension for a structured PoV with acceptance criteria is a one-email ask.</p>
       </details>
       <details>
         <summary>How does annual billing and true-up work?</summary>
-        <p>Annual is billed up front for committed seats/endpoints; growth mid-term is trued up quarterly at your contracted per-unit rate — never at list price as a gotcha.</p>
+        <p>Annual is billed up front for committed seats/endpoints; growth mid-term is trued up quarterly at your contracted per-unit rate, never at list price as a gotcha.</p>
       </details>
       <details>
         <summary>Security review, DPA, and questionnaires?</summary>
-        <p>Enterprise includes a named engineer for your review process. Standard DPA and architecture docs ship on request at any tier — before you pay, not after.</p>
+        <p>Enterprise includes a named engineer for your review process. Standard DPA and architecture docs ship on request at any tier, before you pay rather than after.</p>
       </details>
       <details>
         <summary>How do we leave?</summary>
-        <p>Export rules, cases, and evidence bundles in open formats at any time. Offboarding is documented in the docs like any other feature — lock-in is not our retention strategy.</p>
+        <p>Export rules, cases, and evidence bundles in open formats at any time. Offboarding is documented like any other feature because lock-in is not our retention strategy.</p>
       </details>
     </div>
   </section>
@@ -289,11 +289,24 @@
 
 <footer class="site">
   <div class="wrap footer-inner">
-    <span>SentinelCore — a fictional brand built as a DesignOS golden example.</span>
+    <span>SentinelCore is a fictional brand built as a DesignOS golden example.</span>
     <span><a href="../README.md">Golden catalog</a> · <a href="#contact" id="contact">Contact</a></span>
   </div>
 </footer>
 
+<script type="application/json" data-designos-tasks>
+[
+  {
+    "id":"monthly-billing",
+    "steps":[
+      {"action":"click","selector":"#bill-monthly"},
+      {"assert":"attribute","selector":"#bill-monthly","name":"aria-pressed","equals":"true"},
+      {"assert":"text","selector":".price","includes":"$35"},
+      {"assert":"announcement","selector":"#toggle-note","includes":"Billed monthly"}
+    ]
+  }
+]
+</script>
 <script>
   (function () {
     var monthly = document.getElementById('bill-monthly');

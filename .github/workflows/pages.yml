@@ -26,6 +26,18 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Block deployment unless browser and golden gates pass
+        run: |
+          node bin/browser-gate.js website/index.html --out browser-evidence/browser-gate.json --screenshots browser-evidence/screenshots
+          node bin/lighthouse-gate.js website/index.html --out browser-evidence/lighthouse.json
+          npm run test:goldens
+          node bin/browser-ledger.js --browser browser-evidence/browser-gate.json --out website/browser-ledger.json
       # Bypass Jekyll so files starting with _ are served as-is
       - name: Create .nojekyll
         run: touch .nojekyll

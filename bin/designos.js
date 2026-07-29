@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * DesignOS installer & toolkit — zero dependencies.
+ * DesignOS installer & toolkit — Node-first, with Playwright for browser evidence.
  *
  * IMPORTANT: "designos" is NOT published to the npm registry, and the bare name
  * already belongs to an unrelated package there. Bare `npx designos <command>`
@@ -59,6 +59,35 @@ const VALUE_FLAGS = new Set([
   '--stack',
   '--surface',
   '--summary',
+  '--limit',
+  '--kind',
+  '--max-diff',
+  '--json-out',
+  '--baseline-dir',
+  '--frequency',
+  '--purpose',
+  '--initiator',
+  '--interruptibility',
+  '--cost',
+  '--motion',
+  '--material',
+  '--audience',
+  '--belief',
+  '--variance',
+  '--density',
+  '--sector',
+  '--platform',
+  '--state',
+  '--evidence',
+  '--role',
+  '--mode',
+  '--aspect',
+  '--port',
+  '--accept',
+  '--reject',
+  '--reason',
+  '--edits',
+  '--target',
 ]);
 
 function argValue(args, name, fallback = '') {
@@ -70,11 +99,17 @@ function argValue(args, name, fallback = '') {
 }
 
 function firstPositional(args) {
+  return positionals(args)[0];
+}
+
+/** every non-flag argument, skipping the values consumed by value-taking flags */
+function positionals(args) {
+  const out = [];
   for (let i = 0; i < args.length; i++) {
-    if (!args[i].startsWith('--')) return args[i];
-    if (VALUE_FLAGS.has(args[i])) i++;
+    if (!args[i].startsWith('--')) { out.push(args[i]); continue; }
+    if (VALUE_FLAGS.has(args[i]) && args[i + 1] && !args[i + 1].startsWith('--')) i++;
   }
-  return undefined;
+  return out;
 }
 
 function copyDir(src, dest) {
@@ -219,21 +254,11 @@ function audit(target) {
   const vdir = fs.existsSync(path.join(CWD, 'DesignOS', 'validators'))
     ? path.join(CWD, 'DesignOS', 'validators')
     : path.join(PKG_ROOT, 'validators');
-  const tokenFile = process.argv[4] && !process.argv[4].startsWith('--') ? [process.argv[4]] : [];
-
-  log(`auditing ${dir} …\n`);
-  let failures = 0;
-  const run = (label, args) => {
-    console.log(`  \x1b[36m▸ ${label}\x1b[0m`);
-    const r = spawnSync('node', args, { stdio: 'inherit', cwd: CWD });
-    if (r.status !== 0) failures++;
-    console.log('');
-  };
-  run('token drift', [path.join(vdir, 'check-drift.js'), dir, ...tokenFile]);
-  run('a11y basics', [path.join(vdir, 'check-a11y-basics.js'), dir]);
-  run('token-pair contrast', [path.join(vdir, 'check-token-contrast.js'), dir, ...tokenFile]);
-
-  if (failures) fail(`${failures} validator(s) reported findings — the mechanical floor is not clear.`);
+  const ledger = path.join(CWD, '.designos', 'validator-ledger.json');
+  const result = spawnSync(process.execPath, [
+    path.join(vdir, 'run-registry.js'), dir, '--json-out', ledger,
+  ], { stdio: 'inherit', cwd: CWD });
+  if (result.status !== 0) fail('Registry-driven validator providers reported findings — the mechanical floor is not clear.');
   ok('audit clean — the mechanical floor holds. The six-dimension review still applies above it.');
 }
 
@@ -380,7 +405,11 @@ function analyzeDesignFile(absFile, root) {
     pushFinding(findings, rel, lineOf(raw, m.index), 'Conversion', 'P1', 'proof-risk', `Proof claim "${m[0]}" needs a real source or should be removed.`);
   }
   const knownLogoProof = /(cloudflare|vercel|tailscale|linear|planetscale|supabase|stripe|apple|google|microsoft|netflix|airbnb)/gi;
-  for (const m of raw.matchAll(knownLogoProof)) {
+  const proofSurface = raw.replace(
+    /<style[\s\S]*?<\/style>|<script[\s\S]*?<\/script>|<link\b[^>]*>|<meta\b[^>]*>/gi,
+    block => block.replace(/[^\n]/g, ' '),
+  );
+  for (const m of proofSurface.matchAll(knownLogoProof)) {
     const line = lineAt(raw, m.index);
     const near = windowAround(raw, m.index).toLowerCase();
     if (hasInlineException(raw, m.index)) continue;
@@ -851,12 +880,87 @@ function brief(args) {
 
 /* ---------- visual: static/optional-browser visual QA report ---------- */
 function visual(target, args) {
-  if (!target) fail(`Usage: ${RUN} visual <html-file-or-url> [--out designos-visual-report.md]`);
+  if (!target) fail(`Usage: ${RUN} visual <html-file-or-url> [--baseline|--compare] [--out designos-visual-report.md]`);
   const outPath = path.resolve(CWD, argValue(args, '--out', 'designos-visual-report.md'));
-  const shotDir = path.resolve(CWD, argValue(args, '--screenshots', 'designos-visual'));
+  const rootShotDir = path.resolve(CWD, argValue(args, '--screenshots', 'designos-visual'));
+  // Iteration mode: --baseline records the "before", --compare renders the "after" and
+  // measures what actually moved. Neither flag = the original single-pass behaviour.
+  const mode = args.includes('--baseline') ? 'baseline' : args.includes('--compare') ? 'compare' : 'single';
+  const shotDir = mode === 'single' ? rootShotDir : path.join(rootShotDir, mode);
+  const baselineDir = path.join(rootShotDir, 'baseline');
+  const maxDiff = Number(argValue(args, '--max-diff', 'NaN'));
   const isUrl = /^https?:\/\//i.test(target);
   const abs = isUrl ? target : path.resolve(CWD, target);
   if (!isUrl && !fs.existsSync(abs)) fail(`Visual target not found: ${target}`);
+
+  // The browser gate is the authoritative path. Unlike the legacy source-risk report
+  // below, it renders the page across themes, reduced motion, zoom and five viewports.
+  // The legacy path remains as an explicit degraded fallback so old installs produce an
+  // honest NOT RUN ledger rather than silently claiming browser evidence.
+  const browserGatePath = path.join(PKG_ROOT, 'bin', 'browser-gate.js');
+  const browserJsonPath = path.resolve(CWD, argValue(args, '--json-out',
+    outPath.replace(/\.(?:md|markdown)$/i, '') + '.json'));
+  if (fs.existsSync(browserGatePath) && !args.includes('--legacy-static')) {
+    const gateArgs = [browserGatePath, target, '--out', browserJsonPath,
+      '--screenshots', mode === 'baseline' ? baselineDir : mode === 'compare' ? path.join(rootShotDir, 'compare') : rootShotDir];
+    if (mode === 'compare') gateArgs.push('--baseline-dir', baselineDir);
+    if (!Number.isNaN(maxDiff)) gateArgs.push('--max-diff', String(maxDiff));
+    const gate = spawnSync('node', gateArgs, {
+      cwd: CWD,
+      encoding: 'utf8',
+      maxBuffer: 1024 * 1024 * 32,
+      env: { ...process.env, NODE_PATH: [path.join(CWD, 'node_modules'), path.join(PKG_ROOT, 'node_modules'),
+        process.env.NODE_PATH || ''].filter(Boolean).join(path.delimiter) },
+    });
+    if (gate.status !== 2 && fs.existsSync(browserJsonPath)) {
+      const data = JSON.parse(fs.readFileSync(browserJsonPath, 'utf8'));
+      const report = [
+        '# DesignOS Browser-native Final Gate',
+        '',
+        `Target: ${target}`,
+        `Generated: ${data.generatedAt}`,
+        `JSON evidence: ${path.relative(CWD, browserJsonPath)}`,
+        '',
+        '## Measured coverage',
+        '',
+        `- ${data.summary.scenarios} rendered scenarios and ${data.summary.screenshots} screenshots`,
+        `- viewports: ${data.viewports.map(item => item.width).join(' / ')} CSS px`,
+        `- themes: ${data.themes.join(' / ')}`,
+        `- motion: ${data.motions.join(' / ')}`,
+        `- zoom/reflow: ${data.zooms.join('% / ')}%`,
+        '',
+        '## Findings',
+        '',
+        data.findings.length
+          ? data.findings.map(item => `- **${item.severity} / ${item.id} / ${item.scenario || 'global'}** — ${item.message}`).join('\n')
+          : 'No P1/P2 browser-gate findings.',
+        '',
+        '## Evidence ledger',
+        '',
+        '- [x] 320 / 375 / 768 / 1024 / 1440 render',
+        '- [x] Light and dark color schemes',
+        '- [x] Full and reduced-motion modes',
+        '- [x] 200% and 400% text zoom/reflow',
+        '- [x] Runtime console and failed-resource capture',
+        '- [x] DOM geometry, clipping, target size and semantic snapshots',
+        `- [${data.summary.keyboardPaths ? 'x' : ' '}] Keyboard path and focus-obscured traversal`,
+        '- [ ] Human hierarchy, brand and conversion review',
+        '- [ ] Screen-reader listening pass',
+        '- [ ] Lighthouse lab run',
+        '',
+        `Browser gate: ${data.summary.passed ? 'MECHANICAL PASS' : 'RETURN TO LOOP'}.`,
+        'This is not the seven-dimension final design score.',
+        '',
+      ].join('\n');
+      fs.writeFileSync(outPath, report);
+      ok(`Browser-native visual gate written to ${path.relative(CWD, outPath)}`);
+      if (!data.summary.passed && !args.includes('--no-fail')) process.exit(1);
+      return;
+    }
+    if (!args.includes('--no-fail')) {
+      fail((gate.stderr || gate.stdout || 'Browser gate did not run.').trim());
+    }
+  }
 
   const body = isUrl ? '' : fs.readFileSync(abs, 'utf8');
   const findings = [];
@@ -958,6 +1062,113 @@ function visual(target, args) {
   }
   for (const f of browserFindings) add(f.severity, f.code, f.message);
 
+  /* ---------- iteration diff: what actually moved between two renders ---------- */
+  let diffNote = '';
+  let diffRows = [];
+  if (mode === 'compare') {
+    if (!fs.existsSync(baselineDir)) {
+      diffNote = `**NO BASELINE.** ${path.relative(CWD, baselineDir)} does not exist — run \`${RUN} visual ${target} --baseline\` before the change, then \`--compare\` after it. Nothing was measured.`;
+    } else if (!screenshots.length) {
+      diffNote = '**NOT RUN.** The browser pass produced no screenshots, so there was nothing to compare. Treat every viewport as unmeasured.';
+    } else {
+      const pairs = screenshots
+        .map(cur => ({ name: path.basename(cur, '.png'), current: cur, baseline: path.join(baselineDir, path.basename(cur)) }))
+        .filter(p => fs.existsSync(p.baseline));
+      const missing = screenshots.length - pairs.length;
+      if (!pairs.length) {
+        diffNote = '**NO MATCHING VIEWPORTS.** The baseline directory holds no screenshot with a matching name. Re-record the baseline.';
+      } else {
+        const diffDir = path.join(rootShotDir, 'diff');
+        fs.mkdirSync(diffDir, { recursive: true });
+        // The comparison runs in the page: canvas gives real per-pixel access with no
+        // image-decoding dependency. Images go in as data URLs so the canvas is never
+        // tainted (a file:// image would make getImageData throw).
+        const diffScript = [
+          'const fs=require("fs");const path=require("path");',
+          'const m="play"+"wright";const { chromium }=require(m);',
+          '(async()=>{',
+          `const pairs=${JSON.stringify(pairs)};`,
+          `const diffDir=${JSON.stringify(diffDir)};`,
+          'const browser=await chromium.launch();',
+          'const page=await browser.newPage();',
+          'const rows=[];',
+          'for (const p of pairs) {',
+          '  const a="data:image/png;base64,"+fs.readFileSync(p.baseline).toString("base64");',
+          '  const b="data:image/png;base64,"+fs.readFileSync(p.current).toString("base64");',
+          '  const r=await page.evaluate(async ([a,b])=>{',
+          '    const load=src=>new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=()=>rej(new Error("decode"));i.src=src;});',
+          '    const A=await load(a), B=await load(b);',
+          '    const w=Math.max(A.width,B.width), h=Math.max(A.height,B.height);',
+          '    const draw=img=>{const c=document.createElement("canvas");c.width=w;c.height=h;const x=c.getContext("2d",{willReadFrequently:true});x.fillStyle="#ffffff";x.fillRect(0,0,w,h);x.drawImage(img,0,0);return x.getImageData(0,0,w,h).data;};',
+          '    const da=draw(A), db=draw(B);',
+          '    const canvas=document.createElement("canvas");canvas.width=w;canvas.height=h;',
+          '    const ctx=canvas.getContext("2d");const out=ctx.createImageData(w,h);',
+          '    let changed=0, top=-1, bottom=-1;',
+          '    for (let i=0;i<da.length;i+=4) {',
+          '      const d=Math.abs(da[i]-db[i])+Math.abs(da[i+1]-db[i+1])+Math.abs(da[i+2]-db[i+2]);',
+          '      if (d>24) {',
+          '        changed++;',
+          '        const y=Math.floor((i/4)/w);',
+          '        if (top===-1) top=y; bottom=y;',
+          '        out.data[i]=255; out.data[i+1]=32; out.data[i+2]=96; out.data[i+3]=255;',
+          '      } else {',
+          '        out.data[i]=db[i]; out.data[i+1]=db[i+1]; out.data[i+2]=db[i+2]; out.data[i+3]=36;',
+          '      }',
+          '    }',
+          '    ctx.putImageData(out,0,0);',
+          '    return { w, h, changed, total:w*h, top, bottom, heightDelta:B.height-A.height, png:canvas.toDataURL("image/png") };',
+          '  }, [a,b]);',
+          '  const file=path.join(diffDir, p.name+".png");',
+          '  fs.writeFileSync(file, Buffer.from(r.png.split(",")[1], "base64"));',
+          '  delete r.png;',
+          '  rows.push(Object.assign({ name:p.name, file }, r));',
+          '}',
+          'await browser.close();',
+          'console.log(JSON.stringify(rows));',
+          '})().catch(err=>{ console.error(err.stack||err.message); process.exit(1); });',
+        ].join('\n');
+        const dr = spawnSync('node', ['-e', diffScript], { cwd: CWD, encoding: 'utf8', maxBuffer: 1024 * 1024 * 32, env: pwEnv });
+        if (dr.status === 0) {
+          diffRows = JSON.parse(dr.stdout);
+          diffNote = `Compared ${diffRows.length} viewport(s) against ${path.relative(CWD, baselineDir)}.`;
+          if (missing) diffNote += ` ${missing} viewport(s) had no baseline and were skipped.`;
+          for (const row of diffRows) {
+            const pct = (row.changed / row.total) * 100;
+            if (!Number.isNaN(maxDiff) && pct > maxDiff) {
+              add('P1', 'visual-regression', `${row.name}: ${pct.toFixed(2)}% of pixels changed, over the --max-diff ${maxDiff}% budget (diff: ${path.relative(CWD, row.file)})`);
+            }
+            if (row.heightDelta) {
+              add('P2', 'layout-height-shift', `${row.name}: full-page height moved by ${row.heightDelta}px — confirm this was intended and did not push content below the fold`);
+            }
+          }
+        } else {
+          diffNote = `**DIFF FAILED.** ${(dr.stderr || dr.stdout).trim().split('\n')[0]} — viewports remain uncompared.`;
+        }
+      }
+    }
+  } else if (mode === 'baseline') {
+    diffNote = screenshots.length
+      ? `Baseline recorded in ${path.relative(CWD, shotDir)}. Make the change, then rerun with \`--compare\`.`
+      : '**NOT RUN.** No screenshots were captured, so no baseline exists. Install Playwright and rerun.';
+  }
+
+  const diffSection = mode === 'single' ? [] : [
+    '## Iteration Diff',
+    '',
+    diffNote || 'Not applicable.',
+    '',
+    diffRows.length
+      ? ['| Viewport | Pixels changed | % of frame | Changed band (y) | Height Δ | Diff image |',
+        '|---|---|---|---|---|---|',
+        ...diffRows.map(r => `| ${r.name} | ${r.changed.toLocaleString()} | ${((r.changed / r.total) * 100).toFixed(2)}% | ${r.top === -1 ? '—' : `${r.top}–${r.bottom}`} | ${r.heightDelta > 0 ? '+' : ''}${r.heightDelta}px | ${path.relative(CWD, r.file)} |`),
+        '',
+        'A percentage is a measurement, not a verdict: a deliberate redesign *should* move',
+        'most of the frame. Read the changed band — motion outside the region you edited is',
+        'the finding worth chasing.'].join('\n')
+      : '',
+    '',
+  ];
+
   const report = [
     '# DesignOS Visual QA',
     '',
@@ -969,6 +1180,7 @@ function visual(target, args) {
     browserNote,
     screenshots.length ? '\nScreenshots:\n' + screenshots.map(s => `- ${path.relative(CWD, s)}`).join('\n') : '',
     '',
+    ...diffSection,
     '## Static Visual Risk Findings',
     '',
     findings.length ? findings.map(f => `- **${f.severity} / ${f.code}** — ${f.message}`).join('\n') : 'No static visual-risk findings.',
@@ -1292,6 +1504,117 @@ function suggest(args) {
 }
 
 /* ---------- doctor: install health ---------- */
+/* ---------- find: retrieval over the curated library ---------- */
+const STOPWORDS = new Set(['a', 'an', 'and', 'the', 'for', 'to', 'of', 'in', 'on', 'with', 'is', 'it', 'that', 'i', 'my', 'me', 'how', 'do']);
+const tokenize = (s) => String(s).toLowerCase().split(/[^a-z0-9]+/).filter(t => t.length > 1 && !STOPWORDS.has(t));
+
+/**
+ * Okapi BM25 over the library. Small corpus, but the saturation and length-normalisation
+ * still matter: without them a long `when` field outranks an exact tag match, which is
+ * the opposite of useful.
+ */
+function bm25(docs, query, k1 = 1.2, b = 0.75) {
+  const terms = tokenize(query);
+  if (!terms.length) return [];
+  const N = docs.length;
+  const lens = docs.map(d => d.tokens.length);
+  const avgdl = lens.reduce((a, c) => a + c, 0) / N || 1;
+  const df = new Map();
+  for (const d of docs) for (const t of new Set(d.tokens)) df.set(t, (df.get(t) || 0) + 1);
+
+  return docs.map((d, i) => {
+    let score = 0;
+    for (const t of terms) {
+      const n = df.get(t) || 0;
+      if (!n) continue;
+      const tf = d.tokens.filter(x => x === t).length;
+      if (!tf) continue;
+      const idf = Math.log(1 + (N - n + 0.5) / (n + 0.5));
+      score += idf * (tf * (k1 + 1)) / (tf + k1 * (1 - b + b * (lens[i] / avgdl)));
+    }
+    return { doc: d, score };
+  }).filter(r => r.score > 0).sort((a, b2) => b2.score - a.score);
+}
+
+function find(args) {
+  const query = positionals(args).join(' ').trim();
+  const limit = Number(argValue(args, '--limit', '3')) || 3;
+  const kindFlag = argValue(args, '--kind', '');
+  if (!query) {
+    fail(`Usage: ${RUN} find <query> [--kind motion|type|graph] [--limit 3]\n  e.g. ${RUN} find "accordion expand height"\n       ${RUN} find "dashboard dense table" --kind type\n       ${RUN} find "fintech success state" --kind graph --platform ios`);
+  }
+  const { MOTION_PRESETS, TYPE_PAIRINGS } = require('./library-data.js');
+  const docs = [];
+    if (!kindFlag || kindFlag === 'motion') {
+    for (const p of MOTION_PRESETS) {
+      // name and tags are weighted by repetition — the cheapest honest field boost
+      const text = `${p.name} ${p.name} ${p.tags.join(' ')} ${p.tags.join(' ')} ${p.id} ${p.tier} ${p.when} ${p.doNot} ${p.module}`;
+      docs.push({ kind: 'motion', item: p, tokens: tokenize(text) });
+    }
+  }
+    if (!kindFlag || kindFlag === 'type') {
+    for (const t of TYPE_PAIRINGS) {
+      const text = `${t.display} ${t.body} ${t.mono} ${t.tags.join(' ')} ${t.tags.join(' ')} ${t.sectors.join(' ')} ${t.sectors.join(' ')} ${t.why} ${t.avoidWhen} typography typeface font pairing`;
+      docs.push({ kind: 'type', item: t, tokens: tokenize(text) });
+    }
+  }
+  const graphFilterEntries = ['platform', 'state', 'evidence', 'sector', 'surface']
+    .map(name => [name, argValue(args, `--${name}`, '')]).filter(([, filterValue]) => filterValue);
+  const graphFilters = graphFilterEntries.map(([, filterValue]) => filterValue);
+  if (!kindFlag || kindFlag === 'graph') {
+    const { graphNodes } = require('./intelligence.js');
+    for (const node of graphNodes()) {
+      const text = `${node.label} ${node.label} ${node.type} ${node.file} ${node.text || ''}`;
+      docs.push({ kind: 'graph', item: node, tokens: tokenize(text) });
+    }
+  }
+
+  const queryTokens = tokenize(query);
+  const hits = bm25(docs, `${query} ${graphFilters.join(' ')}`).map(hit => {
+    if (hit.doc.kind !== 'graph') return hit;
+    const node = hit.doc.item;
+    const labelTokens = tokenize(node.label);
+    const exactLabelBoost = queryTokens.some(token => labelTokens.includes(token)) ? 10 : 0;
+    const filterBoost = graphFilterEntries.reduce((score, [filterType, filterValue]) => {
+      const filterTokens = tokenize(filterValue);
+      const exactTypeMatch = node.type === filterType && filterTokens.some(token => labelTokens.includes(token));
+      const contentMatch = filterTokens.some(token => hit.doc.tokens.includes(token));
+      return score + (exactTypeMatch ? 14 : contentMatch ? 2 : 0);
+    }, 0);
+    return { ...hit, score: hit.score + exactLabelBoost + filterBoost };
+  }).sort((a, b) => b.score - a.score).slice(0, limit);
+  if (!hits.length) {
+    warn(`No library entry matches "${query}".`);
+    log('The library is deliberately small and curated — a miss means the answer is not in it,');
+    log('not that any answer will do. Route to the module instead (CLAUDE.md §2) and decide there.');
+    return;
+  }
+
+  console.log(`\n  \x1b[36mDesignOS library — "${query}"\x1b[0m\n`);
+  for (const { doc, score } of hits) {
+    const it = doc.item;
+    if (doc.kind === 'motion') {
+      console.log(`  \x1b[1m${it.name}\x1b[0m  \x1b[2m[${it.tier} · score ${score.toFixed(2)}]\x1b[0m`);
+      console.log(`  ${it.when}`);
+      if (it.tokens.length) console.log(`  \x1b[2mtokens:\x1b[0m ${it.tokens.join(' · ')}`);
+      console.log('');
+      for (const line of it.code.split('\n')) console.log(`    \x1b[2m${line}\x1b[0m`);
+      console.log(`\n  \x1b[33m✗\x1b[0m ${it.doNot}`);
+      console.log(`  \x1b[2mgoverned by ${it.module}\x1b[0m\n`);
+    } else if (doc.kind === 'type') {
+      console.log(`  \x1b[1m${it.display} + ${it.body}\x1b[0m \x1b[2m(mono: ${it.mono}) [score ${score.toFixed(2)}]\x1b[0m`);
+      console.log(`  ${it.why}`);
+      console.log(`  \x1b[33m✗ avoid when:\x1b[0m ${it.avoidWhen}`);
+      console.log(`  \x1b[2msectors: ${it.sectors.join(' · ')}\x1b[0m\n`);
+    } else {
+      console.log(`  \x1b[1m${it.label}\x1b[0m  \x1b[2m[graph:${it.type} · score ${score.toFixed(2)}]\x1b[0m`);
+      console.log(`  ${it.file}`);
+      console.log(`  \x1b[2mgoverning graph node ${it.id}\x1b[0m\n`);
+    }
+  }
+  log('Retrieved, not recalled. The module still governs — this is the artefact, not the argument.');
+}
+
 function doctor() {
   let problems = 0;
   const check = (cond, okMsg, failMsg, critical = true) => {
@@ -1334,6 +1657,154 @@ function doctor() {
   log(`\n  DesignOS ${pkgVersion} · ${problems === 0 ? '\x1b[32mall systems go\x1b[0m' : `\x1b[33m${problems} advisory item(s)\x1b[0m`}`);
 }
 
+/* ---------- product intelligence engines ---------- */
+function intelligence(command, args) {
+  const engines = require('./intelligence.js');
+  const handlers = {
+    'motion-decide': engines.motionDecision,
+    'motion-recipe': engines.motionRecipe,
+    knowledge: engines.knowledge,
+    coverage: engines.coverage,
+    signature: engines.signature,
+    compose: engines.composition,
+    'asset-direct': engines.assetDirection,
+  };
+  try {
+    handlers[command](args);
+  } catch (error) {
+    fail(error.message);
+  }
+}
+
+function motionLabCommand(target, args) {
+  try {
+    const output = require('./motion-lab.js').motionLab(target, args, CWD);
+    ok(`Motion Lab written to ${path.relative(CWD, output)}`);
+  } catch (error) {
+    fail(error.message);
+  }
+}
+
+function liveCommand(target, args) {
+  if (!target) fail(`Usage: ${RUN} live <html-target> [--init-only|--port 4179|--accept a|--reject b|--edits edits.json|--rollback]`);
+  const director = require('./live-director.js');
+  try {
+    const initialized = director.initSession(target, CWD);
+    if (args.includes('--init-only')) {
+      ok(`Live session initialized at ${path.relative(CWD, initialized.files.root)}`);
+      return;
+    }
+    if (args.includes('--rollback')) {
+      const transaction = director.rollback(target, CWD);
+      ok(`Rolled back live transaction ${transaction.id}`);
+      return;
+    }
+    const acceptId = argValue(args, '--accept', '');
+    if (acceptId) {
+      const transaction = director.acceptVariant(target, acceptId, argValue(args, '--reason', ''), CWD);
+      ok(`Accepted variant ${acceptId}; transaction ${transaction.id}`);
+      return;
+    }
+    const rejectId = argValue(args, '--reject', '');
+    if (rejectId) {
+      const file = initialized.files.transactions;
+      const transactions = JSON.parse(fs.readFileSync(file, 'utf8'));
+      transactions.push({ id: `reject-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, type: 'variant-reject',
+        variant: rejectId, reason: argValue(args, '--reason', ''), createdAt: new Date().toISOString() });
+      fs.writeFileSync(file, JSON.stringify(transactions, null, 2) + '\n');
+      ok(`Rejected variant ${rejectId}; decision recorded`);
+      return;
+    }
+    const editsFile = argValue(args, '--edits', '');
+    if (editsFile) {
+      const edits = JSON.parse(fs.readFileSync(path.resolve(CWD, editsFile), 'utf8'));
+      const transaction = director.applyManualEdits(target, edits, argValue(args, '--reason', 'Manual Live Director edit'), CWD);
+      ok(`Applied manual edit transaction ${transaction.id}`);
+      return;
+    }
+    director.serve(target, { port: Number(argValue(args, '--port', '4179')) }, CWD);
+  } catch (error) {
+    fail(error.message);
+  }
+}
+
+function hooksCommand(args) {
+  const action = positionals(args)[0] || 'status';
+  const mode = argValue(args, '--mode', 'warn');
+  const hookPath = path.join(PKG_ROOT, 'hooks', 'designos-hook.js');
+  const configDir = path.join(CWD, '.designos');
+  const configPath = path.join(configDir, 'config.json');
+  const manifests = {
+    codex: {
+      file: path.join(CWD, '.codex', 'hooks.json'),
+      value: {
+        hooks: {
+          PostToolUse: [{
+            matcher: 'Edit|Write|apply_patch',
+            hooks: [{ type: 'command', command: `DESIGNOS_HOOK_MODE=${mode} node "${hookPath}"`, timeout: 8, statusMessage: 'DesignOS edit gate' }],
+          }],
+          Stop: [{
+            hooks: [{ type: 'command', command: `DESIGNOS_HOOK_MODE=deep-on-stop node "${hookPath}"`, timeout: 120, statusMessage: 'DesignOS browser gate' }],
+          }],
+        },
+      },
+    },
+    github: {
+      file: path.join(CWD, '.github', 'hooks', 'designos.json'),
+      value: {
+        version: 1,
+        hooks: {
+          postToolUse: [{ type: 'command', matcher: 'edit|create|apply_patch', bash: `DESIGNOS_HOOK_MODE=${mode} node "${hookPath}"`, timeoutSec: 8 }],
+        },
+      },
+    },
+    claude: {
+      file: path.join(CWD, '.claude', 'settings.local.json'),
+      value: {
+        hooks: {
+          PostToolUse: [{
+            matcher: 'Edit|Write',
+            hooks: [{ type: 'command', command: `DESIGNOS_HOOK_MODE=${mode} node "${hookPath}"`, timeout: 8 }],
+          }],
+          Stop: [{
+            hooks: [{ type: 'command', command: `DESIGNOS_HOOK_MODE=deep-on-stop node "${hookPath}"`, timeout: 120 }],
+          }],
+        },
+      },
+    },
+  };
+  if (action === 'status') {
+    for (const [name, manifest] of Object.entries(manifests)) {
+      log(`${name}: ${fs.existsSync(manifest.file) ? 'installed' : 'not installed'} (${path.relative(CWD, manifest.file)})`);
+    }
+    return;
+  }
+  if (action !== 'install') fail(`Unknown hooks action "${action}". Use hooks install or hooks status.`);
+  fs.mkdirSync(configDir, { recursive: true });
+  const config = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath, 'utf8')) : {};
+  config.hook = { ...(config.hook || {}), mode, target: argValue(args, '--target', config.hook?.target || '') };
+  fs.writeFileSync(configPath, JSON.stringify(config, null, 2) + '\n');
+  for (const [name, manifest] of Object.entries(manifests)) {
+    fs.mkdirSync(path.dirname(manifest.file), { recursive: true });
+    if (fs.existsSync(manifest.file)) {
+      const existing = JSON.parse(fs.readFileSync(manifest.file, 'utf8'));
+      if (existing.hooks && JSON.stringify(existing.hooks) !== JSON.stringify(manifest.value.hooks)) {
+        warn(`${name}: existing hook manifest preserved; merge the DesignOS entry manually (${path.relative(CWD, manifest.file)})`);
+        continue;
+      }
+    }
+    fs.writeFileSync(manifest.file, JSON.stringify(manifest.value, null, 2) + '\n');
+    ok(`${name} hook installed`);
+  }
+}
+
+function goldenCommand(args) {
+  const result = spawnSync('node', [path.join(PKG_ROOT, 'bin', 'golden-suite.js'), ...args], {
+    cwd: CWD, encoding: 'utf8', stdio: 'inherit',
+  });
+  if (result.status) process.exit(result.status);
+}
+
 function help() {
   console.log(`
   DesignOS — the Design Intelligence Operating System for AI coding agents
@@ -1352,10 +1823,25 @@ function help() {
     ${RUN} review <target>    deterministic design-risk report + six-dimension score
                              add --fix-prompt to print an agent-ready repair prompt
     ${RUN} visual <target>    visual QA checklist/report for HTML or URL
+                             --baseline records the before, --compare measures what moved
+                             (--max-diff <pct> turns it into a regression gate)
     ${RUN} report <target>    one-file delivery report: review gate + fix prompt + sign-off
     ${RUN} elevate <target>   premium refactor prompt: taste, signature, proof, hierarchy
     ${RUN} brief [options]    generate a high-signal brief for the agent
                              add --interactive for the 6-question prompt builder
+    ${RUN} find <query>       one BM25 engine across motion, type and the knowledge graph
+                             (--kind motion|type|graph, filters, --limit N)
+    ${RUN} knowledge <query>  query the sector→surface→component→state→platform graph
+    ${RUN} coverage           report rule/recipe/validator/golden/eval capability coverage
+    ${RUN} motion-decide <x>  decide whether and how an interaction should move
+    ${RUN} motion-recipe <id> emit a tested runtime adapter (--stack vanilla|react|motion|gsap|vue|svelte)
+    ${RUN} motion-lab <html>  generate the interactive motion inspection laboratory
+    ${RUN} live <html>        start Live Director; annotations, variants and safe transactions
+    ${RUN} signature <brief>  compile material/audience/belief-led signature specifications
+    ${RUN} compose <brief>    select a guarded composition primitive from the grammar
+    ${RUN} asset-direct <x>   produce an implementation-ready asset direction contract
+    ${RUN} hooks install      install edit-time and deep-on-stop provider hooks
+    ${RUN} golden [--update]  verify or refresh golden browser evidence
     ${RUN} suggest <brief>    deterministic design-system recommendation: sector + surface
                              routing, contrast-verified palette, type pairing, anti-patterns
     ${RUN} starter <name>     scaffold a DesignOS starter project
@@ -1384,6 +1870,18 @@ switch (cmd) {
   case 'report': report(firstPositional(rest), rest); break;
   case 'elevate': elevate(firstPositional(rest), rest); break;
   case 'brief': brief(rest); break;
+  case 'find': find(rest); break;
+  case 'knowledge':
+  case 'coverage':
+  case 'motion-decide':
+  case 'motion-recipe':
+  case 'signature':
+  case 'compose':
+  case 'asset-direct': intelligence(cmd, rest); break;
+  case 'motion-lab': motionLabCommand(firstPositional(rest), rest); break;
+  case 'live': liveCommand(firstPositional(rest), rest); break;
+  case 'hooks': hooksCommand(rest); break;
+  case 'golden': goldenCommand(rest); break;
   case 'suggest': suggest(rest); break;
   case 'starter': starter(firstPositional(rest), rest); break;
   case 'eval': evalRun(firstPositional(rest), rest); break;

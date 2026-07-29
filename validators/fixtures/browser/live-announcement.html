@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Live announcement failure fixture</title>
+  <style>:focus-visible { outline: 2px solid CanvasText; } button { min-width: 44px; min-height: 44px; }</style>
+</head>
+<body>
+  <main>
+    <h1>Live announcement fixture</h1>
+    <button id="save" type="button">Save</button>
+    <p id="result">Idle</p>
+  </main>
+  <script>
+    document.querySelector('#save').addEventListener('click', () => {
+      document.querySelector('#result').textContent = 'Saved';
+    });
+  </script>
+  <script type="application/json" data-designos-tasks>
+    [{"id":"save","steps":[{"action":"click","selector":"#save"},{"assert":"announcement","selector":"#result","includes":"Saved"}]}]
+  </script>
+</body>
+</html>

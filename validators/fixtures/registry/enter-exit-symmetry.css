@@ -1,0 +1,4 @@
+.popover {
+  --duration-enter: 200ms;
+  --duration-exit: 200ms;
+}

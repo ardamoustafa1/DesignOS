@@ -58,6 +58,60 @@ them with neutral procurement language:
 Never place hard compliance claims in a footer, trust strip, pricing table, testimonial,
 or badge as a way to make a fictional product feel credible.
 
+## Named Defaults
+
+Fabricated proof is the loud failure. The quiet one is the **default that arrives without a
+decision** — the palette, the typeface, the phrase, and the fake name that every generated
+page reaches for. It is not dishonest the way a fake SOC 2 badge is, but it makes the
+artifact indistinguishable from every other artifact, which is its own kind of untruth: the
+page claims a point of view it does not have.
+
+These are enforced by `validators/check-aesthetic-slop.js`. P1/P2 fail the run; P3 prints as
+an advisory, because "you picked the obvious thing" is a conversation, not a compile error.
+
+### Placeholder identity — never ships (P2)
+
+`Acme` / `Acme Corp` · `John Doe` / `Jane Doe` / `Jane Smith` · `Company Name` /
+`Your Company` · `example@example.com` · `Lorem ipsum` · `placeholder.com` / `via.placeholder`
+
+A fictional product needs a fiction that is *internally consistent and labelled fictional*
+(see "Evidence That Does Not Count"). `Acme` is not a fiction; it is an unfilled field.
+
+### Filler copy — true of every competitor, so it says nothing (P2)
+
+`Elevate your …` · `Unlock the power/potential of …` · `Take your X to the next level` ·
+`Revolutionize` · `Game-changing` · `Cutting-edge` · `Supercharge` ·
+`Seamlessly integrates` · `Effortlessly` · `In just seconds` · `10x` ·
+`Harness the power` · `Transform the way …` · `Built for the future` · `Reimagine` ·
+`The future of X is here` · `Say goodbye to …`
+
+The test: swap in a direct competitor's name. If the sentence stays true, it was never
+about this product. Replace it with the specific thing the product does
+(`brain/brief-compiler.md` — product material).
+
+### Visual defaults — legal, but argue for them (P3)
+
+| Default | Why it reads as generated |
+|---|---|
+| Violet → fuchsia gradient (hue 250–330) | the single most recognizable AI-default palette |
+| Gradient-filled text | contrast becomes unmeasurable across the fill, and it is a template tell |
+| Cream + clay/brass + near-black | the "premium artisan" reflex, shipped as if it were a decision |
+| Inter · Roboto · Poppins · Montserrat · Space Grotesk · Fraunces · Instrument Serif · Plus Jakarta Sans · DM Sans · Manrope | fine faces; picking one is not yet a choice |
+| Backdrop-blur on a non-overlay surface | glass is a depth cue for something floating, not a card texture |
+| Emoji as iconography | platform-variable, cannot inherit colour or stroke weight, read aloud by their CLDR name |
+| Everything centered | flattens hierarchy and destroys the left edge the eye scans |
+| An eyebrow label above every section | when every section announces itself, the announcement stops meaning anything |
+
+None of these are forbidden. They are **unearned until argued**: if the artifact uses one,
+the derivation chain in `memory/design.md` must say why this brand, this audience, and this
+material led there. "It looked good" is not a derivation.
+
+### Em-dash cadence (P3)
+
+More than roughly one em-dash per 60 words of visible copy is a generated-prose
+fingerprint, not house voice. Most of them are a period or a comma. This is a rhythm check
+on *rendered UI text*, not on documentation or code comments.
+
 ## Review Rule
 
 When adding a growth claim to README, launch copy, or press material, ask:

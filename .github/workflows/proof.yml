@@ -20,7 +20,13 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
+
+      - name: Install pinned dependencies and Chromium
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
 
       # Real CLI install end-to-end, against this exact checkout — the same command
       # every README/GETTING-STARTED.md instruction tells a real user to run.
@@ -35,68 +41,20 @@ jobs:
           test -d .claude/agents || (echo "::error::agents not installed" && exit 1)
           test -d .claude/commands || (echo "::error::slash commands not installed" && exit 1)
 
-      # Same battery every contributor can run locally: validators/README.md.
-      - name: Run all validators
+      - name: Run registry-owned validators
+        run: npm run validate:strict
+
+      - name: Browser geometry, Axe, accessibility tree and runtime proof
         run: |
-          ./validators/check-refs.sh
-          node validators/check-a11y-basics.js website/
-          node validators/check-a11y-basics.js examples/
-          node validators/check-drift.js website/
-          node validators/check-drift.js examples/
+          node bin/browser-gate.js website/index.html --out browser-evidence/browser-gate.json --screenshots browser-evidence/screenshots
+          node bin/lighthouse-gate.js website/index.html --out browser-evidence/lighthouse.json
+          npm run test:goldens
+          node bin/browser-ledger.js --browser browser-evidence/browser-gate.json --out browser-evidence/browser-ledger.json
 
-      # `npx playwright install` only fetches the browser BINARY — the `playwright`
-      # npm package itself still has to be installed for `require('playwright')` to
-      # resolve. --no-save keeps this out of package.json (still zero project deps).
-      - name: Install Playwright (CI-only, not a project dependency)
-        run: |
-          npm install --no-save playwright@latest
-          npx playwright install --with-deps chromium
-
-      - name: Serve the repo
-        run: |
-          mkdir -p screenshots
-          python3 -m http.server 4173 &
-          echo $! > server.pid
-          sleep 1
-
-      - name: Screenshot the site + showcase (visual proof, uploaded as an artifact)
-        run: |
-          node - <<'NODE'
-          const { chromium } = require('playwright');
-          const pages = [
-            ['website-index', '/website/index.html'],
-            ['website-before-after', '/website/before-after.html'],
-            ['showcase-landing', '/examples/showcase-relay.html'],
-            ['showcase-dashboard', '/examples/showcase-relay-dashboard.html'],
-            ['showcase-pricing', '/examples/showcase-relay-pricing.html'],
-            ['showcase-docs', '/examples/showcase-relay-docs.html'],
-          ];
-          (async () => {
-            const browser = await chromium.launch();
-            const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-            const errors = [];
-            page.on('console', (msg) => { if (msg.type() === 'error') errors.push(`${msg.location().url}: ${msg.text()}`); });
-            page.on('pageerror', (err) => errors.push(String(err)));
-            for (const [name, path] of pages) {
-              await page.goto(`http://localhost:4173${path}`, { waitUntil: 'networkidle' });
-              await page.screenshot({ path: `screenshots/${name}.png`, fullPage: false });
-            }
-            await browser.close();
-            if (errors.length) {
-              console.error('Console errors found:\n' + errors.join('\n'));
-              process.exit(1);
-            }
-            console.log(`Captured ${pages.length} pages, zero console errors.`);
-          })();
-          NODE
-
-      - name: Stop the server
-        if: always()
-        run: kill "$(cat server.pid)" 2>/dev/null || true
-
-      - name: Upload screenshots as a build artifact
+      - name: Upload browser evidence as a build artifact
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: designos-live-proof-${{ github.sha }}
-          path: screenshots/
+          path: browser-evidence/
           retention-days: 90
