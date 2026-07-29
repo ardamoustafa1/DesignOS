@@ -92,6 +92,8 @@
 
     .audit { display:grid; }
     .audit-item { display:grid; grid-template-columns:auto 1fr auto; gap:12px; padding:12px 16px; border-bottom:1px solid var(--line); align-items:baseline; }
+    .audit-item > * { min-width:0; }
+    .audit-item .what { overflow-wrap:anywhere; }
     .audit-item:last-child { border-bottom:0; }
     .audit-item .who { font-weight:600; font-size:13px; }
     .audit-item .what { color:var(--muted); font-size:13px; }
@@ -117,6 +119,8 @@
       .side nav { grid-column:1 / -1; min-width:0; }
       .side nav ul { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
       .side .env { margin:0; max-width:14ch; text-align:right; }
+      .audit-item { grid-template-columns:auto minmax(0,1fr); }
+      .audit-item .when { grid-column:2; white-space:normal; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition-duration:.01ms !important; animation-duration:.01ms !important; }

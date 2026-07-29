@@ -103,6 +103,11 @@
       nav[aria-label="Primary"] { display:none; }
       .cta-row .btn { width:100%; }
     }
+    @media (max-width:480px) {
+      .site-inner { gap:12px; }
+      .site-cta .btn-ghost { display:none; }
+      .site-cta .btn { padding-inline:16px; }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition-duration:.01ms !important; animation-duration:.01ms !important; }
     }

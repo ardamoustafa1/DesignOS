@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "file:///Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/index.html",
-  "generatedAt": "2026-07-29T18:46:45.824Z",
+  "generatedAt": "2026-07-29T19:10:00.880Z",
   "viewports": [
     {
       "name": "reflow-320",
@@ -131,8 +131,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 11.599999999627471,
-        "load": 11.900000000372529,
+        "domContentLoaded": 11.200000000186265,
+        "load": 11.399999999441206,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -2048,7 +2048,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/reflow-320-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/reflow-320-light-full.png"
     },
     {
       "scenario": "reflow-320-light-reduced",
@@ -2139,8 +2139,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 11.399999999441206,
-        "load": 11.700000000186265,
+        "domContentLoaded": 11,
+        "load": 11.200000000186265,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -3960,7 +3960,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/reflow-320-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/reflow-320-light-reduced.png"
     },
     {
       "scenario": "reflow-320-dark-full",
@@ -4051,8 +4051,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 10.700000000186265,
-        "load": 10.899999999441206,
+        "domContentLoaded": 10.599999999627471,
+        "load": 10.799999999813735,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -5872,7 +5872,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/reflow-320-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/reflow-320-dark-full.png"
     },
     {
       "scenario": "reflow-320-dark-reduced",
@@ -5963,8 +5963,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 11.5,
-        "load": 11.700000000186265,
+        "domContentLoaded": 10.300000000745058,
+        "load": 10.600000000558794,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -7784,7 +7784,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/reflow-320-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/reflow-320-dark-reduced.png"
     },
     {
       "scenario": "mobile-375-light-full",
@@ -7875,8 +7875,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 10.799999999813735,
-        "load": 10.900000000372529,
+        "domContentLoaded": 10.600000000558794,
+        "load": 10.799999999813735,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -9720,7 +9720,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/mobile-375-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/mobile-375-light-full.png"
     },
     {
       "scenario": "mobile-375-light-reduced",
@@ -9811,8 +9811,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 14.200000000186265,
-        "load": 14.400000000372529,
+        "domContentLoaded": 10.599999999627471,
+        "load": 10.699999999254942,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -11560,7 +11560,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/mobile-375-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/mobile-375-light-reduced.png"
     },
     {
       "scenario": "mobile-375-dark-full",
@@ -11651,8 +11651,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 11,
-        "load": 11.200000000186265,
+        "domContentLoaded": 10.700000000186265,
+        "load": 10.899999999441206,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -13400,7 +13400,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/mobile-375-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/mobile-375-dark-full.png"
     },
     {
       "scenario": "mobile-375-dark-reduced",
@@ -13491,8 +13491,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 10.900000000372529,
-        "load": 11.200000000186265,
+        "domContentLoaded": 16.200000000186265,
+        "load": 16.299999999813735,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -15240,7 +15240,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/mobile-375-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/mobile-375-dark-reduced.png"
     },
     {
       "scenario": "tablet-768-light-full",
@@ -15331,8 +15331,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 11.099999999627471,
-        "load": 11.299999999813735,
+        "domContentLoaded": 10.799999999813735,
+        "load": 10.899999999441206,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -17152,7 +17152,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/tablet-768-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/tablet-768-light-full.png"
     },
     {
       "scenario": "tablet-768-light-reduced",
@@ -17243,8 +17243,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 15.5,
-        "load": 15.799999999813735,
+        "domContentLoaded": 11.199999999254942,
+        "load": 11.299999999813735,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -18968,7 +18968,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/tablet-768-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/tablet-768-light-reduced.png"
     },
     {
       "scenario": "tablet-768-dark-full",
@@ -19059,8 +19059,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 16.59999999962747,
-        "load": 16.899999999441206,
+        "domContentLoaded": 11.100000000558794,
+        "load": 11.300000000745058,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -20784,7 +20784,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/tablet-768-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/tablet-768-dark-full.png"
     },
     {
       "scenario": "tablet-768-dark-reduced",
@@ -20875,7 +20875,7 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 10.700000000186265,
+        "domContentLoaded": 10.800000000745058,
         "load": 10.900000000372529,
         "longTaskMs": 0,
         "layoutShift": 0
@@ -22600,7 +22600,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/tablet-768-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/tablet-768-dark-reduced.png"
     },
     {
       "scenario": "laptop-1024-light-full",
@@ -22691,8 +22691,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 14.799999999813735,
-        "load": 15,
+        "domContentLoaded": 16.200000000186265,
+        "load": 16.299999999813735,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -24480,7 +24480,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/laptop-1024-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/laptop-1024-light-full.png"
     },
     {
       "scenario": "laptop-1024-light-reduced",
@@ -24571,8 +24571,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 10.900000000372529,
-        "load": 11,
+        "domContentLoaded": 10.700000000186265,
+        "load": 10.900000000372529,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -26264,7 +26264,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/laptop-1024-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/laptop-1024-light-reduced.png"
     },
     {
       "scenario": "laptop-1024-dark-full",
@@ -26355,8 +26355,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 16.199999999254942,
-        "load": 16.399999999441206,
+        "domContentLoaded": 11.099999999627471,
+        "load": 11.399999999441206,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -28048,7 +28048,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/laptop-1024-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/laptop-1024-dark-full.png"
     },
     {
       "scenario": "laptop-1024-dark-reduced",
@@ -28139,8 +28139,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 14.399999999441206,
-        "load": 14.599999999627471,
+        "domContentLoaded": 16.299999999813735,
+        "load": 16.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -29832,7 +29832,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/laptop-1024-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/laptop-1024-dark-reduced.png"
     },
     {
       "scenario": "desktop-1440-light-full",
@@ -29923,8 +29923,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 15.799999999813735,
-        "load": 16,
+        "domContentLoaded": 10.800000000745058,
+        "load": 11.100000000558794,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -31712,7 +31712,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/desktop-1440-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/desktop-1440-light-full.png"
     },
     {
       "scenario": "desktop-1440-light-reduced",
@@ -31803,8 +31803,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13.700000000186265,
-        "load": 13.900000000372529,
+        "domContentLoaded": 16.299999999813735,
+        "load": 16.40000000037253,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -33496,7 +33496,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/desktop-1440-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/desktop-1440-light-reduced.png"
     },
     {
       "scenario": "desktop-1440-dark-full",
@@ -33587,8 +33587,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13.399999999441206,
-        "load": 13.599999999627471,
+        "domContentLoaded": 16.40000000037253,
+        "load": 16.600000000558794,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -35280,7 +35280,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/desktop-1440-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/desktop-1440-dark-full.png"
     },
     {
       "scenario": "desktop-1440-dark-reduced",
@@ -35371,8 +35371,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 10.5,
-        "load": 10.700000000186265,
+        "domContentLoaded": 10.700000000186265,
+        "load": 10.900000000372529,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -37064,7 +37064,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/desktop-1440-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/desktop-1440-dark-reduced.png"
     },
     {
       "scenario": "text-zoom-200",
@@ -37155,12 +37155,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 10.799999999813735,
-        "load": 11,
+        "domContentLoaded": 10.299999999813735,
+        "load": 10.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/text-zoom-200.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/text-zoom-200.png"
     },
     {
       "scenario": "text-zoom-400",
@@ -37251,12 +37251,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.5,
-        "load": 12.700000000186265,
+        "domContentLoaded": 11.100000000558794,
+        "load": 11.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/text-zoom-400.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/text-zoom-400.png"
     }
   ],
   "supplemental": {
@@ -37349,12 +37349,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 16,
-        "load": 16.199999999254942,
+        "domContentLoaded": 15.900000000372529,
+        "load": 16.09999999962747,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/text-spacing.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/text-spacing.png"
     },
     "forcedColors": {
       "scenario": "forced-colors",
@@ -37455,7 +37455,7 @@
         ],
         "complete": true
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/forced-colors.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/forced-colors.png"
     }
   },
   "taskFlows": [
@@ -37466,7 +37466,7 @@
         "height": 812
       },
       "passed": true,
-      "interactionLatencyMs": 64,
+      "interactionLatencyMs": 40,
       "steps": [
         {
           "action": "click",

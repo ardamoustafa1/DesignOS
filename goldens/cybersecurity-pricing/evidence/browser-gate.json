@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "file:///Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/index.html",
-  "generatedAt": "2026-07-29T18:45:58.498Z",
+  "generatedAt": "2026-07-29T19:09:14.611Z",
   "viewports": [
     {
       "name": "reflow-320",
@@ -50,248 +50,7 @@
         "scrollHeight": 5843,
         "viewportHeight": 800
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(2)",
-          "rect": {
-            "left": 224,
-            "top": 3103,
-            "right": 377,
-            "bottom": 3157,
-            "width": 152,
-            "height": 54
-          },
-          "text": "Starter"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 3103,
-            "right": 522,
-            "bottom": 3157,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3158,
-            "right": 377,
-            "bottom": 3213,
-            "width": 152,
-            "height": 56
-          },
-          "text": "250"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3158,
-            "right": 522,
-            "bottom": 3213,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3213,
-            "right": 377,
-            "bottom": 3269,
-            "width": 152,
-            "height": 56
-          },
-          "text": "$0.40"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3213,
-            "right": 522,
-            "bottom": 3269,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3269,
-            "right": 377,
-            "bottom": 3325,
-            "width": 152,
-            "height": 56
-          },
-          "text": "30 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3269,
-            "right": 522,
-            "bottom": 3325,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 3325,
-            "right": 665,
-            "bottom": 3405,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -405,8 +164,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 4,
-        "load": 7.7999999998137355,
+        "domContentLoaded": 3.7999999998137355,
+        "load": 7.599999999627471,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -5193,7 +4952,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/reflow-320-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/reflow-320-light-full.png"
     },
     {
       "scenario": "reflow-320-light-reduced",
@@ -5203,248 +4962,7 @@
         "scrollHeight": 5843,
         "viewportHeight": 800
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(2)",
-          "rect": {
-            "left": 224,
-            "top": 3103,
-            "right": 377,
-            "bottom": 3157,
-            "width": 152,
-            "height": 54
-          },
-          "text": "Starter"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 3103,
-            "right": 522,
-            "bottom": 3157,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3158,
-            "right": 377,
-            "bottom": 3213,
-            "width": 152,
-            "height": 56
-          },
-          "text": "250"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3158,
-            "right": 522,
-            "bottom": 3213,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3213,
-            "right": 377,
-            "bottom": 3269,
-            "width": 152,
-            "height": 56
-          },
-          "text": "$0.40"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3213,
-            "right": 522,
-            "bottom": 3269,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3269,
-            "right": 377,
-            "bottom": 3325,
-            "width": 152,
-            "height": 56
-          },
-          "text": "30 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3269,
-            "right": 522,
-            "bottom": 3325,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 3325,
-            "right": 665,
-            "bottom": 3405,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -5558,8 +5076,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.900000000372529,
-        "load": 7.7000000001862645,
+        "domContentLoaded": 3.7999999998137355,
+        "load": 7.3999999994412065,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -10070,7 +9588,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/reflow-320-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/reflow-320-light-reduced.png"
     },
     {
       "scenario": "reflow-320-dark-full",
@@ -10080,248 +9598,7 @@
         "scrollHeight": 5843,
         "viewportHeight": 800
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(2)",
-          "rect": {
-            "left": 224,
-            "top": 3103,
-            "right": 377,
-            "bottom": 3157,
-            "width": 152,
-            "height": 54
-          },
-          "text": "Starter"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 3103,
-            "right": 522,
-            "bottom": 3157,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3158,
-            "right": 377,
-            "bottom": 3213,
-            "width": 152,
-            "height": 56
-          },
-          "text": "250"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3158,
-            "right": 522,
-            "bottom": 3213,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3213,
-            "right": 377,
-            "bottom": 3269,
-            "width": 152,
-            "height": 56
-          },
-          "text": "$0.40"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3213,
-            "right": 522,
-            "bottom": 3269,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3269,
-            "right": 377,
-            "bottom": 3325,
-            "width": 152,
-            "height": 56
-          },
-          "text": "30 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3269,
-            "right": 522,
-            "bottom": 3325,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 3325,
-            "right": 665,
-            "bottom": 3405,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -10435,8 +9712,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.699999999254942,
-        "load": 7.2999999998137355,
+        "domContentLoaded": 3.5,
+        "load": 7,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -14947,7 +14224,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/reflow-320-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/reflow-320-dark-full.png"
     },
     {
       "scenario": "reflow-320-dark-reduced",
@@ -14957,248 +14234,7 @@
         "scrollHeight": 5843,
         "viewportHeight": 800
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(2)",
-          "rect": {
-            "left": 224,
-            "top": 3103,
-            "right": 377,
-            "bottom": 3157,
-            "width": 152,
-            "height": 54
-          },
-          "text": "Starter"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 3103,
-            "right": 522,
-            "bottom": 3157,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3158,
-            "right": 377,
-            "bottom": 3213,
-            "width": 152,
-            "height": 56
-          },
-          "text": "250"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3158,
-            "right": 522,
-            "bottom": 3213,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3213,
-            "right": 377,
-            "bottom": 3269,
-            "width": 152,
-            "height": 56
-          },
-          "text": "$0.40"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3213,
-            "right": 522,
-            "bottom": 3269,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3269,
-            "right": 377,
-            "bottom": 3325,
-            "width": 152,
-            "height": 56
-          },
-          "text": "30 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3269,
-            "right": 522,
-            "bottom": 3325,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 3325,
-            "right": 665,
-            "bottom": 3405,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -15312,8 +14348,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.6000000005587935,
-        "load": 7.2000000001862645,
+        "domContentLoaded": 3.7999999998137355,
+        "load": 8.100000000558794,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -19824,7 +18860,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/reflow-320-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/reflow-320-dark-reduced.png"
     },
     {
       "scenario": "mobile-375-light-full",
@@ -19834,248 +18870,7 @@
         "scrollHeight": 5229,
         "viewportHeight": 812
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 3177,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 2628,
-            "right": 522,
-            "bottom": 2682,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 2683,
-            "right": 665,
-            "bottom": 3177,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 2683,
-            "right": 665,
-            "bottom": 2739,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2683,
-            "right": 522,
-            "bottom": 2739,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2683,
-            "right": 665,
-            "bottom": 2739,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 2739,
-            "right": 665,
-            "bottom": 2795,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2739,
-            "right": 522,
-            "bottom": 2795,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2739,
-            "right": 665,
-            "bottom": 2795,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 2795,
-            "right": 665,
-            "bottom": 2851,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2795,
-            "right": 522,
-            "bottom": 2851,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2795,
-            "right": 665,
-            "bottom": 2851,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 2851,
-            "right": 665,
-            "bottom": 2930,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2851,
-            "right": 522,
-            "bottom": 2930,
-            "width": 145,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.yes:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2851,
-            "right": 665,
-            "bottom": 2930,
-            "width": 143,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5)",
-          "rect": {
-            "left": 25,
-            "top": 2930,
-            "right": 665,
-            "bottom": 2986,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Guided triage queuesNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2930,
-            "right": 522,
-            "bottom": 2986,
-            "width": 145,
-            "height": 56
-          },
-          "text": "✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -20189,8 +18984,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.800000000745058,
-        "load": 7.300000000745058,
+        "domContentLoaded": 3.8999999994412065,
+        "load": 7.3999999994412065,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -24737,7 +23532,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/mobile-375-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/mobile-375-light-full.png"
     },
     {
       "scenario": "mobile-375-light-reduced",
@@ -24747,248 +23542,7 @@
         "scrollHeight": 5229,
         "viewportHeight": 812
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 3177,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 2628,
-            "right": 522,
-            "bottom": 2682,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 2683,
-            "right": 665,
-            "bottom": 3177,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 2683,
-            "right": 665,
-            "bottom": 2739,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2683,
-            "right": 522,
-            "bottom": 2739,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2683,
-            "right": 665,
-            "bottom": 2739,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 2739,
-            "right": 665,
-            "bottom": 2795,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2739,
-            "right": 522,
-            "bottom": 2795,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2739,
-            "right": 665,
-            "bottom": 2795,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 2795,
-            "right": 665,
-            "bottom": 2851,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2795,
-            "right": 522,
-            "bottom": 2851,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2795,
-            "right": 665,
-            "bottom": 2851,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 2851,
-            "right": 665,
-            "bottom": 2930,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2851,
-            "right": 522,
-            "bottom": 2930,
-            "width": 145,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.yes:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2851,
-            "right": 665,
-            "bottom": 2930,
-            "width": 143,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5)",
-          "rect": {
-            "left": 25,
-            "top": 2930,
-            "right": 665,
-            "bottom": 2986,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Guided triage queuesNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2930,
-            "right": 522,
-            "bottom": 2986,
-            "width": 145,
-            "height": 56
-          },
-          "text": "✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -25102,8 +23656,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.599999999627471,
-        "load": 7.2999999998137355,
+        "domContentLoaded": 3.7000000001862645,
+        "load": 7.400000000372529,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -29374,7 +27928,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/mobile-375-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/mobile-375-light-reduced.png"
     },
     {
       "scenario": "mobile-375-dark-full",
@@ -29384,248 +27938,7 @@
         "scrollHeight": 5229,
         "viewportHeight": 812
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 3177,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 2628,
-            "right": 522,
-            "bottom": 2682,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 2683,
-            "right": 665,
-            "bottom": 3177,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 2683,
-            "right": 665,
-            "bottom": 2739,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2683,
-            "right": 522,
-            "bottom": 2739,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2683,
-            "right": 665,
-            "bottom": 2739,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 2739,
-            "right": 665,
-            "bottom": 2795,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2739,
-            "right": 522,
-            "bottom": 2795,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2739,
-            "right": 665,
-            "bottom": 2795,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 2795,
-            "right": 665,
-            "bottom": 2851,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2795,
-            "right": 522,
-            "bottom": 2851,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2795,
-            "right": 665,
-            "bottom": 2851,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 2851,
-            "right": 665,
-            "bottom": 2930,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2851,
-            "right": 522,
-            "bottom": 2930,
-            "width": 145,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.yes:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2851,
-            "right": 665,
-            "bottom": 2930,
-            "width": 143,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5)",
-          "rect": {
-            "left": 25,
-            "top": 2930,
-            "right": 665,
-            "bottom": 2986,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Guided triage queuesNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2930,
-            "right": 522,
-            "bottom": 2986,
-            "width": 145,
-            "height": 56
-          },
-          "text": "✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -29739,8 +28052,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.599999999627471,
-        "load": 7,
+        "domContentLoaded": 3.5,
+        "load": 6.8999999994412065,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -34011,7 +32324,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/mobile-375-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/mobile-375-dark-full.png"
     },
     {
       "scenario": "mobile-375-dark-reduced",
@@ -34021,248 +32334,7 @@
         "scrollHeight": 5229,
         "viewportHeight": 812
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 3177,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 2628,
-            "right": 522,
-            "bottom": 2682,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 2628,
-            "right": 665,
-            "bottom": 2682,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 2683,
-            "right": 665,
-            "bottom": 3177,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 2683,
-            "right": 665,
-            "bottom": 2739,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2683,
-            "right": 522,
-            "bottom": 2739,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2683,
-            "right": 665,
-            "bottom": 2739,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 2739,
-            "right": 665,
-            "bottom": 2795,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2739,
-            "right": 522,
-            "bottom": 2795,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2739,
-            "right": 665,
-            "bottom": 2795,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 2795,
-            "right": 665,
-            "bottom": 2851,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2795,
-            "right": 522,
-            "bottom": 2851,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2795,
-            "right": 665,
-            "bottom": 2851,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 2851,
-            "right": 665,
-            "bottom": 2930,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2851,
-            "right": 522,
-            "bottom": 2930,
-            "width": 145,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.yes:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2851,
-            "right": 665,
-            "bottom": 2930,
-            "width": 143,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5)",
-          "rect": {
-            "left": 25,
-            "top": 2930,
-            "right": 665,
-            "bottom": 2986,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Guided triage queuesNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 2930,
-            "right": 522,
-            "bottom": 2986,
-            "width": 145,
-            "height": 56
-          },
-          "text": "✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -34376,8 +32448,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.599999999627471,
-        "load": 7.2000000001862645,
+        "domContentLoaded": 3.5,
+        "load": 11.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -38648,7 +36720,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/mobile-375-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/mobile-375-dark-reduced.png"
     },
     {
       "scenario": "tablet-768-light-full",
@@ -38772,8 +36844,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.599999999627471,
-        "load": 7.099999999627471,
+        "domContentLoaded": 3.7999999998137355,
+        "load": 10.299999999813735,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -42700,7 +40772,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/tablet-768-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/tablet-768-light-full.png"
     },
     {
       "scenario": "tablet-768-light-reduced",
@@ -42824,8 +40896,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.599999999627471,
-        "load": 7.199999999254942,
+        "domContentLoaded": 3.6000000005587935,
+        "load": 7.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -46476,7 +44548,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/tablet-768-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/tablet-768-light-reduced.png"
     },
     {
       "scenario": "tablet-768-dark-full",
@@ -46600,8 +44672,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 4.099999999627471,
-        "load": 7.599999999627471,
+        "domContentLoaded": 3.7000000001862645,
+        "load": 7.7000000001862645,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -50252,7 +48324,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/tablet-768-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/tablet-768-dark-full.png"
     },
     {
       "scenario": "tablet-768-dark-reduced",
@@ -50376,8 +48448,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.5,
-        "load": 7.2000000001862645,
+        "domContentLoaded": 3.699999999254942,
+        "load": 7.699999999254942,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -54028,7 +52100,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/tablet-768-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/tablet-768-dark-reduced.png"
     },
     {
       "scenario": "laptop-1024-light-full",
@@ -54167,8 +52239,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 5.5,
-        "load": 9.200000000186265,
+        "domContentLoaded": 4,
+        "load": 7.6000000005587935,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -58418,7 +56490,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/laptop-1024-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/laptop-1024-light-full.png"
     },
     {
       "scenario": "laptop-1024-light-reduced",
@@ -58557,8 +56629,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 4.900000000372529,
-        "load": 8.799999999813735,
+        "domContentLoaded": 3.599999999627471,
+        "load": 7.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -62487,7 +60559,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/laptop-1024-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/laptop-1024-light-reduced.png"
     },
     {
       "scenario": "laptop-1024-dark-full",
@@ -62626,8 +60698,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.400000000372529,
-        "load": 11.100000000558794,
+        "domContentLoaded": 3.5,
+        "load": 7.2999999998137355,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -66556,7 +64628,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/laptop-1024-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/laptop-1024-dark-full.png"
     },
     {
       "scenario": "laptop-1024-dark-reduced",
@@ -66695,8 +64767,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 8.299999999813735,
-        "load": 12.099999999627471,
+        "domContentLoaded": 4.2000000001862645,
+        "load": 8.700000000186265,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -70625,7 +68697,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/laptop-1024-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/laptop-1024-dark-reduced.png"
     },
     {
       "scenario": "desktop-1440-light-full",
@@ -70764,8 +68836,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 4.6000000005587935,
-        "load": 8.400000000372529,
+        "domContentLoaded": 4,
+        "load": 8,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -74959,7 +73031,7 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/desktop-1440-light-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/desktop-1440-light-full.png"
     },
     {
       "scenario": "desktop-1440-light-reduced",
@@ -75098,8 +73170,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.6000000005587935,
-        "load": 7.2000000001862645,
+        "domContentLoaded": 4.1000000005587935,
+        "load": 7.900000000372529,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -78972,7 +77044,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/desktop-1440-light-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/desktop-1440-light-reduced.png"
     },
     {
       "scenario": "desktop-1440-dark-full",
@@ -79111,8 +77183,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.6000000005587935,
-        "load": 7.400000000372529,
+        "domContentLoaded": 4.1000000005587935,
+        "load": 8.300000000745058,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -82985,7 +81057,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/desktop-1440-dark-full.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/desktop-1440-dark-full.png"
     },
     {
       "scenario": "desktop-1440-dark-reduced",
@@ -83124,8 +81196,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 4.5,
-        "load": 8.299999999813735,
+        "domContentLoaded": 3.599999999627471,
+        "load": 7.3999999994412065,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -86998,7 +85070,7 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/desktop-1440-dark-reduced.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/desktop-1440-dark-reduced.png"
     },
     {
       "scenario": "text-zoom-200",
@@ -87008,248 +85080,7 @@
         "scrollHeight": 4562,
         "viewportHeight": 450
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 2308,
-            "right": 665,
-            "bottom": 2856,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 2308,
-            "right": 665,
-            "bottom": 2362,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 2308,
-            "right": 665,
-            "bottom": 2362,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 2308,
-            "right": 665,
-            "bottom": 2362,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 2362,
-            "right": 665,
-            "bottom": 2856,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 2362,
-            "right": 665,
-            "bottom": 2418,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2362,
-            "right": 665,
-            "bottom": 2418,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 2418,
-            "right": 665,
-            "bottom": 2474,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2418,
-            "right": 665,
-            "bottom": 2474,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 2474,
-            "right": 665,
-            "bottom": 2530,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2474,
-            "right": 665,
-            "bottom": 2530,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 2530,
-            "right": 665,
-            "bottom": 2609,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4) > td.yes:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2530,
-            "right": 665,
-            "bottom": 2609,
-            "width": 143,
-            "height": 79
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5)",
-          "rect": {
-            "left": 25,
-            "top": 2609,
-            "right": 665,
-            "bottom": 2665,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Guided triage queuesNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(5) > td.yes:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2609,
-            "right": 665,
-            "bottom": 2665,
-            "width": 143,
-            "height": 56
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(6)",
-          "rect": {
-            "left": 25,
-            "top": 2665,
-            "right": 665,
-            "bottom": 2722,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Audit evidence exportNo✓✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(6) > td.yes:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2665,
-            "right": 665,
-            "bottom": 2722,
-            "width": 143,
-            "height": 56
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(7)",
-          "rect": {
-            "left": 25,
-            "top": 2722,
-            "right": 665,
-            "bottom": 2778,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Private deploymentNoNo✓"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(7) > td.yes:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 2722,
-            "right": 665,
-            "bottom": 2778,
-            "width": 143,
-            "height": 56
-          },
-          "text": "✓"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(8)",
-          "rect": {
-            "left": 25,
-            "top": 2778,
-            "right": 665,
-            "bottom": 2856,
-            "width": 640,
-            "height": 79
-          },
-          "text": "Support responseNext business day4 business hoursNamed engineer"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -87363,12 +85194,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 5,
-        "load": 8.900000000372529,
+        "domContentLoaded": 3.7000000001862645,
+        "load": 7.8999999994412065,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/text-zoom-200.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/text-zoom-200.png"
     },
     {
       "scenario": "text-zoom-400",
@@ -87378,248 +85209,7 @@
         "scrollHeight": 5843,
         "viewportHeight": 225
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 548
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 640,
-            "height": 54
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(2)",
-          "rect": {
-            "left": 224,
-            "top": 3103,
-            "right": 377,
-            "bottom": 3157,
-            "width": 152,
-            "height": 54
-          },
-          "text": "Starter"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 377,
-            "top": 3103,
-            "right": 522,
-            "bottom": 3157,
-            "width": 145,
-            "height": 54
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 522,
-            "top": 3103,
-            "right": 665,
-            "bottom": 3157,
-            "width": 143,
-            "height": 54
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3652,
-            "width": 640,
-            "height": 494
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3158,
-            "right": 377,
-            "bottom": 3213,
-            "width": 152,
-            "height": 56
-          },
-          "text": "250"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3158,
-            "right": 522,
-            "bottom": 3213,
-            "width": 145,
-            "height": 56
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3158,
-            "right": 665,
-            "bottom": 3213,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3213,
-            "right": 377,
-            "bottom": 3269,
-            "width": 152,
-            "height": 56
-          },
-          "text": "$0.40"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3213,
-            "right": 522,
-            "bottom": 3269,
-            "width": 145,
-            "height": 56
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3213,
-            "right": 665,
-            "bottom": 3269,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 640,
-            "height": 56
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(1)",
-          "rect": {
-            "left": 224,
-            "top": 3269,
-            "right": 377,
-            "bottom": 3325,
-            "width": 152,
-            "height": 56
-          },
-          "text": "30 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 377,
-            "top": 3269,
-            "right": 522,
-            "bottom": 3325,
-            "width": 145,
-            "height": 56
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 522,
-            "top": 3269,
-            "right": 665,
-            "bottom": 3325,
-            "width": 143,
-            "height": 56
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 3325,
-            "right": 665,
-            "bottom": 3405,
-            "width": 640,
-            "height": 79
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -87733,12 +85323,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 4.199999999254942,
-        "load": 8.099999999627471,
+        "domContentLoaded": 5.3999999994412065,
+        "load": 9.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/text-zoom-400.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/text-zoom-400.png"
     }
   ],
   "supplemental": {
@@ -87747,251 +85337,10 @@
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 6899,
+        "scrollHeight": 5843,
         "viewportHeight": 800
       },
-      "overflow": [
-        {
-          "selector": "body > main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare",
-          "rect": {
-            "left": 25,
-            "top": 3712,
-            "right": 665,
-            "bottom": 4342,
-            "width": 640,
-            "height": 631
-          },
-          "text": "Feature comparison across Starter, Pro, and Enterprise plans CapabilityStarterProEnterprise Included"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead",
-          "rect": {
-            "left": 25,
-            "top": 3712,
-            "right": 665,
-            "bottom": 3764,
-            "width": 640,
-            "height": 52
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > thead > tr",
-          "rect": {
-            "left": 25,
-            "top": 3712,
-            "right": 665,
-            "bottom": 3764,
-            "width": 640,
-            "height": 52
-          },
-          "text": "CapabilityStarterProEnterprise"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(2)",
-          "rect": {
-            "left": 218,
-            "top": 3712,
-            "right": 370,
-            "bottom": 3764,
-            "width": 152,
-            "height": 52
-          },
-          "text": "Starter"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th.col-featured:nth-of-type(3)",
-          "rect": {
-            "left": 370,
-            "top": 3712,
-            "right": 517,
-            "bottom": 3764,
-            "width": 147,
-            "height": 52
-          },
-          "text": "Pro"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > thead > tr > th:nth-of-type(4)",
-          "rect": {
-            "left": 517,
-            "top": 3712,
-            "right": 665,
-            "bottom": 3764,
-            "width": 148,
-            "height": 52
-          },
-          "text": "Enterprise"
-        },
-        {
-          "selector": "main > section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody",
-          "rect": {
-            "left": 25,
-            "top": 3764,
-            "right": 665,
-            "bottom": 4342,
-            "width": 640,
-            "height": 578
-          },
-          "text": "Included endpoints2501,000Custom Extra endpoint / month$0.40$0.30Volume Hot retention30 days90 daysC"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1)",
-          "rect": {
-            "left": 25,
-            "top": 3764,
-            "right": 665,
-            "bottom": 3839,
-            "width": 640,
-            "height": 75
-          },
-          "text": "Included endpoints2501,000Custom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(1)",
-          "rect": {
-            "left": 218,
-            "top": 3764,
-            "right": 370,
-            "bottom": 3839,
-            "width": 152,
-            "height": 75
-          },
-          "text": "250"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 370,
-            "top": 3764,
-            "right": 517,
-            "bottom": 3839,
-            "width": 147,
-            "height": 75
-          },
-          "text": "1,000"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
-          "rect": {
-            "left": 517,
-            "top": 3764,
-            "right": 665,
-            "bottom": 3839,
-            "width": 148,
-            "height": 75
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2)",
-          "rect": {
-            "left": 25,
-            "top": 3839,
-            "right": 665,
-            "bottom": 3914,
-            "width": 640,
-            "height": 75
-          },
-          "text": "Extra endpoint / month$0.40$0.30Volume"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(1)",
-          "rect": {
-            "left": 218,
-            "top": 3839,
-            "right": 370,
-            "bottom": 3914,
-            "width": 152,
-            "height": 75
-          },
-          "text": "$0.40"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 370,
-            "top": 3839,
-            "right": 517,
-            "bottom": 3914,
-            "width": 147,
-            "height": 75
-          },
-          "text": "$0.30"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
-          "rect": {
-            "left": 517,
-            "top": 3839,
-            "right": 665,
-            "bottom": 3914,
-            "width": 148,
-            "height": 75
-          },
-          "text": "Volume"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3)",
-          "rect": {
-            "left": 25,
-            "top": 3914,
-            "right": 665,
-            "bottom": 3968,
-            "width": 640,
-            "height": 54
-          },
-          "text": "Hot retention30 days90 daysCustom"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(1)",
-          "rect": {
-            "left": 218,
-            "top": 3914,
-            "right": 370,
-            "bottom": 3968,
-            "width": 152,
-            "height": 54
-          },
-          "text": "30 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td.col-featured:nth-of-type(2)",
-          "rect": {
-            "left": 370,
-            "top": 3914,
-            "right": 517,
-            "bottom": 3968,
-            "width": 147,
-            "height": 54
-          },
-          "text": "90 days"
-        },
-        {
-          "selector": "div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
-          "rect": {
-            "left": 517,
-            "top": 3914,
-            "right": 665,
-            "bottom": 3968,
-            "width": 148,
-            "height": 54
-          },
-          "text": "Custom"
-        },
-        {
-          "selector": "section.block:nth-of-type(3) > div.compare-wrap:nth-of-type(2) > table.compare > tbody > tr:nth-of-type(4)",
-          "rect": {
-            "left": 25,
-            "top": 3968,
-            "right": 665,
-            "bottom": 4043,
-            "width": 640,
-            "height": 75
-          },
-          "text": "MITRE mapping workflowNo✓✓"
-        }
-      ],
+      "overflow": [],
       "smallTargets": [],
       "smallText": [],
       "clipped": [],
@@ -88105,12 +85454,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.300000000745058,
-        "load": 7.1000000005587935,
+        "domContentLoaded": 7.1000000005587935,
+        "load": 11.400000000372529,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/text-spacing.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/text-spacing.png"
     },
     "forcedColors": {
       "scenario": "forced-colors",
@@ -88391,7 +85740,7 @@
         ],
         "complete": true
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/forced-colors.png"
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/cybersecurity-pricing/evidence/screenshots/darwin/forced-colors.png"
     }
   },
   "taskFlows": [

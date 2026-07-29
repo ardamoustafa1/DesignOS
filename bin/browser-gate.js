@@ -85,9 +85,17 @@ async function inspectPage(page, scenario) {
     const all = [...document.body.querySelectorAll('*')].filter(visible);
     const controls = all.filter(element =>
       element.matches('button,input,select,textarea,[role="button"],[role="switch"],[role="checkbox"],a[href],[data-designos-target]'));
+    const insideHorizontalScroller = element => {
+      for (let ancestor = element.parentElement; ancestor && ancestor !== document.body; ancestor = ancestor.parentElement) {
+        const style = getComputedStyle(ancestor);
+        if (/auto|scroll/.test(style.overflowX) && ancestor.scrollWidth > ancestor.clientWidth + 2) return true;
+      }
+      return false;
+    };
     const overflow = all.filter(element => {
       const rect = element.getBoundingClientRect();
       return !element.closest('[data-designos-allow-overflow]')
+        && !insideHorizontalScroller(element)
         && (rect.right > width + 2 || rect.left < -2);
     }).slice(0, 20).map(element => ({ selector: selectorFor(element), rect: rectOf(element),
       text: (element.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100) }));
@@ -114,6 +122,7 @@ async function inspectPage(page, scenario) {
       const clips = /hidden|clip/.test(style.overflow + style.overflowX + style.overflowY)
         || style.textOverflow === 'ellipsis';
       return clips && !visuallyHidden && !element.matches('pre,code') && !element.closest('[data-designos-allow-clip]')
+        && !insideHorizontalScroller(element)
         && (element.scrollWidth > element.clientWidth + 4 || element.scrollHeight > element.clientHeight + 4);
     }).slice(0, 30).map(element => ({ selector: selectorFor(element), rect: rectOf(element),
       scrollWidth: element.scrollWidth, scrollHeight: element.scrollHeight }));

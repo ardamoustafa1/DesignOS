@@ -5,6 +5,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      update_linux_goldens:
+        description: Generate Linux golden baselines before verification
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   browser-gate:
@@ -52,5 +58,15 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
+      - name: Generate Linux golden baselines
+        if: github.event_name == 'workflow_dispatch' && inputs.update_linux_goldens
+        run: DESIGNOS_BASELINE_PLATFORM=linux node bin/golden-suite.js --update
       - name: Golden screenshot and pixel regression
         run: npm run test:goldens
+      - name: Upload generated Linux golden baselines
+        if: github.event_name == 'workflow_dispatch' && inputs.update_linux_goldens
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-golden-baselines-${{ github.sha }}
+          path: goldens/*/evidence/
+          retention-days: 7

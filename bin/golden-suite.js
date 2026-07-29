@@ -8,6 +8,7 @@ const { spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const GOLDENS = path.join(ROOT, 'goldens');
+const BASELINE_PLATFORM = process.env.DESIGNOS_BASELINE_PLATFORM || process.platform;
 const mode = process.argv.includes('--update') ? 'update' : 'verify';
 const only = (() => {
   const index = process.argv.indexOf('--only');
@@ -45,14 +46,15 @@ for (const manifestFile of manifests()) {
   const evidenceDir = path.join(dir, 'evidence');
   const reportFile = path.join(evidenceDir, 'browser-gate.json');
   let activeReportFile = reportFile;
-  let activeScreenshotDir = path.join(evidenceDir, 'screenshots');
+  const baselineScreenshotDir = path.join(evidenceDir, 'screenshots', BASELINE_PLATFORM);
+  let activeScreenshotDir = baselineScreenshotDir;
   let verifyRoot = null;
   if (mode === 'update') {
     fs.mkdirSync(evidenceDir, { recursive: true });
     const result = spawnSync(process.execPath, [
       path.join(ROOT, 'bin/browser-gate.js'), target,
       '--out', reportFile,
-      '--screenshots', path.join(evidenceDir, 'screenshots'),
+      '--screenshots', baselineScreenshotDir,
     ], { cwd: ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 32 });
     if (!fs.existsSync(reportFile)) {
       console.error(`${path.basename(dir)}: browser evidence was not produced\n${result.stderr || result.stdout}`);
@@ -67,7 +69,7 @@ for (const manifestFile of manifests()) {
       path.join(ROOT, 'bin/browser-gate.js'), target,
       '--out', activeReportFile,
       '--screenshots', activeScreenshotDir,
-      '--baseline-dir', path.join(evidenceDir, 'screenshots'),
+      '--baseline-dir', baselineScreenshotDir,
       '--max-diff', String(manifest.maxPixelDiffPercent),
     ], { cwd: ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 32 });
     if (!fs.existsSync(activeReportFile)) {
