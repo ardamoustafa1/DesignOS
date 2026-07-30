@@ -8,6 +8,10 @@ const { spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const GOLDENS = path.join(ROOT, 'goldens');
+if (!fs.existsSync(GOLDENS)) {
+  console.error('golden-suite: evidence bundle not installed. Unpack the matching designos-evidence package beside the core package.');
+  process.exit(1);
+}
 const BASELINE_PLATFORM = process.env.DESIGNOS_BASELINE_PLATFORM || process.platform;
 const mode = process.argv.includes('--update') ? 'update' : 'verify';
 const only = (() => {

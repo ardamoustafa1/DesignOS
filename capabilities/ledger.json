@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "package": {
+    "name": "designos",
+    "version": "2.1.0",
+    "node": ">=18"
+  },
+  "dependencies": {
+    "productionCount": 3,
+    "production": [
+      {
+        "name": "@jridgewell/trace-mapping",
+        "range": "^0.3.31"
+      },
+      {
+        "name": "axe-core",
+        "range": "^4.10.3"
+      },
+      {
+        "name": "playwright",
+        "range": "^1.59.1"
+      }
+    ],
+    "developmentCount": 9,
+    "development": [
+      {
+        "name": "chrome-launcher",
+        "range": "^1.2.1"
+      },
+      {
+        "name": "esbuild",
+        "range": "^0.25.8"
+      },
+      {
+        "name": "gsap",
+        "range": "^3.13.0"
+      },
+      {
+        "name": "lighthouse",
+        "range": "^13.4.1"
+      },
+      {
+        "name": "motion",
+        "range": "^12.23.12"
+      },
+      {
+        "name": "react",
+        "range": "^19.1.1"
+      },
+      {
+        "name": "react-dom",
+        "range": "^19.1.1"
+      },
+      {
+        "name": "svelte",
+        "range": "^5.37.3"
+      },
+      {
+        "name": "vue",
+        "range": "^3.5.18"
+      }
+    ]
+  },
+  "capabilities": {
+    "registryRules": 38,
+    "registryProviders": 7,
+    "knowledgeModules": 67,
+    "industryPacks": 24,
+    "motionRecipes": 15,
+    "frameworkStacks": 6,
+    "executableAdapterCombinations": 90,
+    "reducedMotionBrowserScenarios": 90,
+    "knowledgeGraphNodes": 140,
+    "goldenProjects": 4,
+    "cliCommandModules": 7,
+    "componentAstTransforms": 3,
+    "motionEvidenceEngines": 2,
+    "leaderProductFeatures": 12,
+    "leaderProductFeaturesImplemented": 12,
+    "motionStateGraphCompiler": true,
+    "interruptionTortureScenarios": 8,
+    "designGenomeScanner": true,
+    "compositionCompilerStacks": 6,
+    "responsiveConstraintSolver": true,
+    "generatedComponentStates": 16,
+    "mutationOperators": 9,
+    "crossPageConsistencyGraph": true,
+    "nativeMotionAdapters": 4,
+    "isolatedRuleEval": true,
+    "externalEval": false,
+    "externalEvalRuns": 0
+  },
+  "distribution": {
+    "corePackageExcludesGeneratedEvidence": true,
+    "evidencePackageBuilder": "scripts/build-evidence-package.js"
+  },
+  "documents": [
+    "README.md",
+    "ARCHITECTURE.md",
+    "ROADMAP.md",
+    "LIMITATIONS.md"
+  ],
+  "sources": {
+    "dependencies": "package.json",
+    "rulesAndProviders": "validators/rule-registry.js",
+    "motion": "runtime/motion/recipes.js",
+    "browserConformance": "fixtures/frameworks/test-matrix.js",
+    "componentTransforms": "bin/live/component-transform.js",
+    "motionProfile": "bin/motion-profiler.js",
+    "temporalRegression": "bin/temporal-motion.js",
+    "leaderFeatures": "capabilities/product-features.js",
+    "motionStateGraph": "runtime/motion/state-graph.js",
+    "interruptionTorture": "bin/interruption-torture.js",
+    "designGenome": "bin/design-genome.js",
+    "compositionCompiler": "bin/composition-compiler.js",
+    "responsiveSolver": "bin/responsive-constraint.js",
+    "stateMatrix": "bin/state-matrix.js",
+    "mutationTesting": "bin/mutation-testing.js",
+    "consistencyGraph": "bin/consistency-graph.js",
+    "nativeMotion": "runtime/native/adapters.js",
+    "evals": "evals/isolated/registry-eval.json + evals/external/registry.json",
+    "knowledgeGraph": "bin/intelligence.js"
+  }
+}

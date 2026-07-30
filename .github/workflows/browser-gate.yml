@@ -35,8 +35,16 @@ jobs:
         run: node bin/lighthouse-gate.js website/index.html --out browser-evidence/lighthouse.json
       - name: Framework build and browser matrix
         run: npm run test:frameworks
-      - name: Independent black-box rule evaluations
-        run: npm run test:independent
+      - name: Isolated black-box rule evaluations
+        run: npm run test:isolated
+      - name: External-eval registry contract
+        run: npm run verify:external-eval
+      - name: CDP motion profile and temporal regression
+        run: npm run test:motion-evidence
+      - name: Source-mapped component AST transaction
+        run: npm run test:live-component
+      - name: Mission 4 leader engine conformance
+        run: npm run test:leader
       - name: Commit-bound browser ledger
         run: node bin/browser-ledger.js --browser browser-evidence/browser-gate.json --out browser-evidence/browser-ledger.json
       - uses: actions/upload-artifact@v7

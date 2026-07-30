@@ -1,3 +1,4 @@
 import App from './App.svelte';
-import { mount } from 'svelte';
-mount(App, { target: document.querySelector('#app') });
+import { mount, unmount } from 'svelte';
+const app = mount(App, { target: document.querySelector('#app') });
+window.__designosUnmount = () => unmount(app);

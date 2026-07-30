@@ -9,8 +9,8 @@ const { RULES } = require('../validators/rule-registry');
 
 const ROOT = path.resolve(__dirname, '..');
 const output = path.resolve(ROOT, process.argv.includes('--out')
-  ? process.argv[process.argv.indexOf('--out') + 1] : 'evals/independent/registry-eval.json');
-const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-independent-eval-'));
+  ? process.argv[process.argv.indexOf('--out') + 1] : 'evals/isolated/registry-eval.json');
+const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-isolated-rule-eval-'));
 const results = [];
 
 function runStatic(rule) {
@@ -77,8 +77,10 @@ for (const rule of RULES) {
   console.log(`${result.passed ? '✓' : '✗'} ${rule.id} — ${result.evaluator}`);
 }
 const report = {
-  schema: 1,
+  schema: 2,
   generatedAt: new Date().toISOString(),
+  isolatedRuleEval: true,
+  externalEval: false,
   evaluatorContract: 'Each rule is exercised through a child-process black box using only its public fixture and emitted finding ID.',
   results,
   summary: { total: results.length, passed: results.filter(item => item.passed).length, failed: results.filter(item => !item.passed).length },
@@ -86,5 +88,5 @@ const report = {
 fs.mkdirSync(path.dirname(output), { recursive: true });
 fs.writeFileSync(output, JSON.stringify(report, null, 2) + '\n');
 fs.rmSync(temporary, { recursive: true, force: true });
-console.log(`independent-eval: ${report.summary.passed}/${report.summary.total} → ${path.relative(ROOT, output)}`);
+console.log(`isolated-rule-eval: ${report.summary.passed}/${report.summary.total} → ${path.relative(ROOT, output)}`);
 if (report.summary.failed) process.exit(1);

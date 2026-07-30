@@ -3,6 +3,55 @@
 Where DesignOS is going. Items move: planned → building → shipped (to `CHANGELOG.md`).
 Propose additions via a module-proposal issue.
 
+## Generated capability ledger
+
+<!-- DESIGNOS_CAPABILITY_LEDGER:START -->
+> Generated from executable sources by `npm run ledger:update`. Do not edit this block manually.
+
+| Capability | Verified source count |
+|---|---:|
+| Production dependencies | 3 (`@jridgewell/trace-mapping`, `axe-core`, `playwright`) |
+| Registry rules / providers | 38 / 7 |
+| Validated knowledge modules | 67 |
+| Industry packs | 24 |
+| Motion recipes / framework stacks | 15 / 6 |
+| Executable adapter combinations | 90 |
+| Full + reduced-motion browser scenarios | 180 |
+| Knowledge graph nodes | 140 |
+| Golden projects | 4 |
+| Component AST directions / CLI command modules | 3 / 7 |
+| Motion evidence engines | 2 (CDP profile + temporal regression) |
+| Mission 4 leader features | 12 / 12 implemented |
+| Torture scenarios / generated component states | 8 / 16 |
+| Composition compiler stacks / native motion adapters | 6 / 4 |
+| Mutation operators | 9 |
+| Isolated rule eval / external eval | yes / not yet |
+<!-- DESIGNOS_CAPABILITY_LEDGER:END -->
+
+## Shipped (v2.1 hardening)
+
+- Component-AST Live Director directions for tree, slots, copy, CTA, state, motion,
+  responsive rules, and proof placement; global CSS variant injection removed.
+- CDP motion profiler and temporal trajectory regression with full/reduced evidence.
+- Isolated rule eval renamed truthfully; external eval requires third-party blind
+  evidence and remains false until such a run exists.
+- Domain command modules under `bin/cli/commands/`.
+- Core/evidence npm package split and four-document generated capability ledger.
+
+## Shipped (v2.2 leader engines)
+
+- Common `mount/play/reverse/cancel/update/destroy` MotionController contract and
+  executable motion state-graph compiler.
+- CDP trace report extended with FPS, worst frame, drop ratio, rendering counts,
+  compositor status, input latency, settle/overshoot/cancel response, and cleanup data.
+- Eight-scenario interruption torture lab and nine-operator mutation-quality report.
+- Material-, audience-, and belief-led Live Director AST directions with token, tree,
+  copy, state graph, responsive, accessibility, performance, and proof diffs.
+- Design Genome Scanner, executable six-stack composition grammar, responsive constraint
+  solver, 16-state evidence generator, and cross-page consistency graph.
+- SwiftUI, Jetpack Compose, React Native/Reanimated, and Flutter motion adapter sources
+  with shared physics/accessibility capability contracts.
+
 ## Shipped (v1.1)
 - 20-module component library (added: badges/chips, tooltips/popovers, tabs/accordions,
   search/⌘K, notifications, charts, code blocks, wizards, file upload, pickers)
@@ -56,7 +105,8 @@ Propose additions via a module-proposal issue.
 ## Building
 - Enable Pages in repo Settings (Source → GitHub Actions) so `pages.yml` goes live — workflow ready, **one-time Settings click required**
 - A recorded live-session GIF/video to sit alongside `press/demo.svg` on launch channels
-- Independent third-party eval runs submitted via PR to `evals/RESULTS.md` (Run 003)
+- External third-party eval runs submitted with organization, blind protocol, immutable
+  evidence, and rule-level results under `evals/external/`
 - GitHub Discussions — enable in repo Settings → Features → Discussions; add Q&A, Show and Tell, Ideas
 
 ## Planned

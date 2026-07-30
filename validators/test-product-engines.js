@@ -11,6 +11,7 @@ const { RECIPES, STACKS, adapterSource } = require('../runtime/motion/recipes');
 const { graphNodes, COMPOSITIONS } = require('../bin/intelligence');
 const live = require('../bin/live-director');
 const { motionLab } = require('../bin/motion-lab');
+const { verifyExternalRegistry } = require('../bin/external-eval');
 
 const ROOT = path.resolve(__dirname, '..');
 const CLI = path.join(ROOT, 'bin/designos.js');
@@ -104,11 +105,33 @@ assert.deepStrictEqual(
 assert(live.contextualVariants(temp, annotation).c.provenance.compiler.includes('brief-compiler'));
 const injected = live.injectVariant(fs.readFileSync(target, 'utf8'), '#go', 'b');
 assert(injected.includes('data-designos-live="b"'));
+assert(!injected.includes('<style data-designos-live'), 'Live Director must not fall back to CSS injection');
+const componentSource = '<section id="hero"><p>Support</p><button>Later</button><div class="proof" data-proof>99%</div><button class="primary">Start</button><h2>Headline</h2></section>';
+for (const id of ['a', 'b', 'c']) {
+  const transformed = live.transformComponent(componentSource, '#hero', id);
+  assert(Object.values(transformed.changes).every(Boolean), `${id}: every component transform dimension must be active`);
+  for (const marker of ['data-slot="copy"', 'data-slot="proof"', 'data-slot="actions"', 'data-state=', 'data-motion=', 'data-responsive=', 'data-copy-hierarchy=', 'data-cta-order=', 'data-proof-placement=']) {
+    assert(transformed.source.includes(marker), `${id}: missing ${marker}`);
+  }
+  assert(transformed.source.indexOf('class="primary"') < transformed.source.indexOf('>Later</button>'), `${id}: primary CTA must come first`);
+}
+for (const source of [
+  'export default () => <section id="hero"><h2>JSX</h2><button>Go</button></section>;',
+  '<template><section id="hero"><h2>Vue</h2><button>Go</button></section></template>',
+  '<script>let ready=true;</script><section id="hero"><h2>Svelte</h2><button>Go</button></section>',
+]) assert(live.transformComponent(source, '#hero', 'a').source.includes('data-designos-component'));
 const lab = motionLab(target, ['--out', path.join(temp, 'lab.html')], temp);
 assert(fs.existsSync(lab));
 const labText = fs.readFileSync(lab, 'utf8');
-for (const feature of ['0.25×', 'Frame +16.7ms', 'Easing curve', 'Spring response', 'Interaction recording', 'Full ↔ reduced']) {
+for (const feature of ['0.25×', 'Frame +16.7ms', 'Easing curve', 'Spring response', 'Interaction recording', 'Full ↔ reduced', 'CDP trace profile', 'Dropped frames', 'Frame P50 / P95 / P99']) {
   assert(labText.includes(feature), `motion lab needs ${feature}`);
+}
+assert.strictEqual(verifyExternalRegistry(path.join(ROOT, 'evals/external/registry.json')).externalEval, false);
+const isolated = JSON.parse(fs.readFileSync(path.join(ROOT, 'evals/isolated/registry-eval.json'), 'utf8'));
+assert.strictEqual(isolated.isolatedRuleEval, true);
+assert.strictEqual(isolated.externalEval, false);
+for (const module of ['intelligence', 'motion', 'live', 'evidence', 'community', 'leader', 'system']) {
+  assert(fs.existsSync(path.join(ROOT, `bin/cli/commands/${module}.js`)), `CLI command module missing: ${module}`);
 }
 
 console.log(`product-engines: ${RULES.length} rules, ${RECIPES.length * STACKS.length} adapters, ${nodes.length} graph nodes clean`);

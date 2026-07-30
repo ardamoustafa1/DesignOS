@@ -1,7 +1,9 @@
-import { projectMomentum } from '../../../runtime/motion/core.js';
+import { createMotionController } from '../../../runtime/motion/controller.js';
 const button = document.querySelector('#run');
-button.addEventListener('click', () => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  button.style.transform = `translateX(${reduce ? 0 : projectMomentum(120, .8)}px)`;
-  button.dataset.complete = 'true';
-});
+const recipe = new URLSearchParams(location.search).get('recipe') || 'momentum-projection';
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const controller = createMotionController(recipe, button, { reduced, duration: 72 });
+controller.mount();
+window.__designosAdapter = controller;
+window.__designosUnmount = () => controller.destroy();
+window.__designosReady = true;

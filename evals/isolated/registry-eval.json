@@ -1,6 +1,8 @@
 {
-  "schema": 1,
-  "generatedAt": "2026-07-29T18:50:55.040Z",
+  "schema": 2,
+  "generatedAt": "2026-07-30T08:36:22.317Z",
+  "isolatedRuleEval": true,
+  "externalEval": false,
   "evaluatorContract": "Each rule is exercised through a child-process black box using only its public fixture and emitted finding ID.",
   "results": [
     {
@@ -42,6 +44,15 @@
       ]
     },
     {
+      "ruleId": "source-image-dimensions",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/missing-image-dimensions.html",
+      "passed": true,
+      "observed": [
+        "source-image-dimensions"
+      ]
+    },
+    {
       "ruleId": "source-named-default",
       "evaluator": "isolated-static-black-box",
       "fixture": "validators/fixtures/registry/named-default.html",
@@ -56,6 +67,7 @@
       "fixture": "validators/fixtures/registry/transition-all.css",
       "passed": true,
       "observed": [
+        "motion-reduced-motion-missing",
         "motion-transition-all"
       ]
     },
@@ -84,7 +96,8 @@
       "passed": true,
       "observed": [
         "source-missing-focus",
-        "motion-keyboard-latency"
+        "motion-keyboard-latency",
+        "motion-reduced-motion-missing"
       ]
     },
     {
@@ -93,6 +106,7 @@
       "fixture": "validators/fixtures/registry/unbounded-loop.css",
       "passed": true,
       "observed": [
+        "motion-reduced-motion-missing",
         "motion-unbounded-loop"
       ]
     },
@@ -143,6 +157,15 @@
       ]
     },
     {
+      "ruleId": "motion-reduced-motion-missing",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/no-reduced-motion.css",
+      "passed": true,
+      "observed": [
+        "motion-reduced-motion-missing"
+      ]
+    },
+    {
       "ruleId": "motion-stagger-budget",
       "evaluator": "isolated-static-black-box",
       "fixture": "validators/fixtures/registry/stagger-budget.css",
@@ -157,6 +180,7 @@
       "fixture": "validators/fixtures/registry/blocked-animation.css",
       "passed": true,
       "observed": [
+        "motion-reduced-motion-missing",
         "motion-interaction-blocked"
       ]
     },
@@ -175,6 +199,7 @@
       "fixture": "validators/fixtures/registry/missing-transform-origin.css",
       "passed": true,
       "observed": [
+        "motion-reduced-motion-missing",
         "motion-transform-origin"
       ]
     },
@@ -381,8 +406,8 @@
     }
   ],
   "summary": {
-    "total": 36,
-    "passed": 36,
+    "total": 38,
+    "passed": 38,
     "failed": 0
   }
 }

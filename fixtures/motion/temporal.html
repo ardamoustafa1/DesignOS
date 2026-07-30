@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Temporal motion fixture</title>
+<style>
+  button { min-width: 56px; min-height: 56px; transform-origin: left center; transition: transform 180ms cubic-bezier(.2,.8,.2,1), opacity 180ms cubic-bezier(.2,.8,.2,1); }
+  button[data-state="open"] { transform: translate3d(48px,0,0) scale(1.04); opacity: .82; }
+  @media (prefers-reduced-motion: reduce) {
+    button { transition-duration: .01ms; }
+    button[data-state="open"] { transform: none; }
+  }
+</style>
+<body>
+<main>
+  <button id="motion-target" type="button" data-state="closed" aria-pressed="false">Toggle motion state</button>
+</main>
+<script>
+  const target = document.getElementById('motion-target');
+  target.addEventListener('click', () => {
+    const open = target.dataset.state !== 'open';
+    target.dataset.state = open ? 'open' : 'closed';
+    target.setAttribute('aria-pressed', String(open));
+  });
+</script>
+</body>
+</html>

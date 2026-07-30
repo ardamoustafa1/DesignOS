@@ -17,7 +17,7 @@
 [![Live proof](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)
 [![Validate](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
-[![Zero dependencies](https://img.shields.io/badge/dependencies-0-success.svg)](SECURITY.md)
+[![Capability ledger](https://img.shields.io/badge/capabilities-generated-10b981.svg)](capabilities/ledger.json)
 [![Claude Code plugin](https://img.shields.io/badge/claude_code-plugin-blue.svg)](.claude-plugin/plugin.json)
 [![Industry packs](https://img.shields.io/badge/industry_packs-24-8b5cf6.svg)](industries/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-10b981.svg)](CONTRIBUTING.md)
@@ -42,8 +42,33 @@ distinct visual direction, select relevant design knowledge, inspect the rendere
 and remember decisions across sessions.
 
 It is not a component library and it does not replace your framework. It sits beside your
-codebase as Markdown instructions, specialist roles, workflows, validators, and a small
-zero-dependency CLI.
+codebase as Markdown instructions, specialist roles, workflows, validators, browser
+evidence, and a dependency-declared Node.js CLI.
+
+### Generated capability ledger
+
+<!-- DESIGNOS_CAPABILITY_LEDGER:START -->
+> Generated from executable sources by `npm run ledger:update`. Do not edit this block manually.
+
+| Capability | Verified source count |
+|---|---:|
+| Production dependencies | 3 (`@jridgewell/trace-mapping`, `axe-core`, `playwright`) |
+| Registry rules / providers | 38 / 7 |
+| Validated knowledge modules | 67 |
+| Industry packs | 24 |
+| Motion recipes / framework stacks | 15 / 6 |
+| Executable adapter combinations | 90 |
+| Full + reduced-motion browser scenarios | 180 |
+| Knowledge graph nodes | 140 |
+| Golden projects | 4 |
+| Component AST directions / CLI command modules | 3 / 7 |
+| Motion evidence engines | 2 (CDP profile + temporal regression) |
+| Mission 4 leader features | 12 / 12 implemented |
+| Torture scenarios / generated component states | 8 / 16 |
+| Composition compiler stacks / native motion adapters | 6 / 4 |
+| Mutation operators | 9 |
+| Isolated rule eval / external eval | yes / not yet |
+<!-- DESIGNOS_CAPABILITY_LEDGER:END -->
 
 > **The short version:** install once, verify the connection, then describe the interface
 > you want. DesignOS routes the task through the right modules and leaves an inspectable
@@ -358,7 +383,7 @@ DesignOS/
 ├── agents/                     9 specialist roles
 ├── loops/ · workflows/         production and review processes
 ├── scoring/ · checklists/      review rubric and evidence requirements
-├── validators/                 zero-dependency static checks
+├── validators/                 registry, source, DOM, browser, and evidence checks
 ├── memory/                     protocol, templates, personality packs
 ├── references/ · goldens/      reference tactics and target bars
 ├── starter/ · recipes/         executable starting points
@@ -412,10 +437,22 @@ Every command runs from your project root after installation.
 | `review <target>` | Report static design risks; optionally create a fix prompt | No |
 | `visual <target>` | Create screenshot/static visual QA evidence | Yes |
 | `hooks install/status` | Install or inspect observe/warn/block/deep-on-stop edit gates | Yes |
-| `live <target>` | Open the transactional Live Director; resolve component source, preview context-derived variants, enforce browser/performance budgets, accept, or roll back | Optional |
+| `live <target>` | Open the transactional Live Director; resolve component source, apply AST-backed component/slot/copy/CTA/state/motion/responsive/proof directions, enforce gates, accept, or roll back | Optional |
 | `motion-decide <interaction>` | Select no-motion, feedback-only, transition, spring, or signature behavior from use context | No |
-| `motion-recipe <recipe> --stack <stack>` | Emit one of 15 tested recipes for Vanilla, React, Motion, GSAP, Vue, or Svelte | No |
-| `motion-lab <target>` | Generate the interactive timing, easing, spring, replay, and reduced-motion laboratory | Yes |
+| `motion-recipe <recipe> --stack <stack>` | Emit a ledger-backed executable recipe adapter for Vanilla, React, Motion, GSAP, Vue, or Svelte | No |
+| `motion-lab <target>` | Generate the timing/easing/replay lab; `--profile` attaches a real CDP trace report | Yes |
+| `motion-profile <target>` | Record dropped frames, long animation frames, main-thread blocking, style/layout/paint/composite cost, layers, attribution, and frame percentiles | Yes |
+| `motion-regression <target> --selector <css>` | Capture full/reduced frame sequences, trajectories, easing, enter/exit, origin, overshoot, settle, and interruption evidence | Yes |
+| `adapter-conformance` | Build and exercise 15 recipes across six web stacks and both motion modes | Yes |
+| `motion-graph` | Compile and validate the idle/hover/pressed/loading/success/exit state graph | No |
+| `motion-torture <target> --selector <css>` | Run eight aggressive interruption, resize, preference-change, route, and unmount scenarios | Yes |
+| `genome <project> [--compare <component>]` | Extract the project dialect fingerprint and report token/component/copy drift | Yes |
+| `composition-compile --dsl <grammar> --stack <stack>` | Compile composition grammar to HTML, React, Vue, Svelte, Tailwind, or CSS Modules | Optional |
+| `responsive-solve <target>` | Solve rendered layout constraints and emit minimum valid changes | Yes |
+| `state-matrix <component>` | Generate 16 states plus fixture, screenshot, accessibility, interaction, and motion artifacts | Yes |
+| `mutation-test` | Measure validator recall, precision, overlap, false results, and latency against nine mutations | Yes |
+| `consistency <project>` | Compare CTA, dialog motion, status color, heading, navigation, and proof contracts across pages | Yes |
+| `native-motion` | Generate and verify SwiftUI, Compose, Reanimated, and Flutter motion adapters | Yes |
 | `find <query>` | BM25 retrieval across motion, type, and knowledge-graph nodes; supports typed filters | No |
 | `knowledge <query>` | Structured sector/surface/component/platform/rule/recipe/validator/golden graph response | No |
 | `coverage` | Report rules-to-recipes-to-fixtures-to-golden evidence coverage | No |
@@ -440,6 +477,17 @@ node DesignOS/bin/designos.js live index.html
 node DesignOS/bin/designos.js motion-decide "command palette" --frequency very-high --initiator keyboard
 node DesignOS/bin/designos.js motion-recipe momentum-projection --stack react
 node DesignOS/bin/designos.js motion-lab index.html
+node DesignOS/bin/designos.js motion-lab index.html --profile --selector ".hero-model"
+node DesignOS/bin/designos.js motion-profile index.html --selector ".hero-model"
+node DesignOS/bin/designos.js motion-regression index.html --selector ".hero-model" --frames .designos/motion-frames
+node DesignOS/bin/designos.js motion-torture fixtures/motion/torture.html --selector "#torture-target"
+node DesignOS/bin/designos.js genome src/ --compare src/components/NewCard.tsx
+node DesignOS/bin/designos.js composition-compile --dsl "hero(split(proof-stack,interactive-product-model),trust-rail,action-cluster)" --stack react
+node DesignOS/bin/designos.js responsive-solve index.html
+node DesignOS/bin/designos.js state-matrix checkout-button
+node DesignOS/bin/designos.js mutation-test
+node DesignOS/bin/designos.js consistency website/
+node DesignOS/bin/designos.js native-motion
 node DesignOS/bin/designos.js knowledge "fintech transaction success" --platform ios
 node DesignOS/bin/designos.js coverage
 node DesignOS/bin/designos.js signature "developer launch" --material "deployment timeline"
@@ -454,6 +502,20 @@ node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url h
 Run `node DesignOS/bin/designos.js help` for flags and usage. Node.js 18+ is required.
 Browser-native evidence uses the pinned Playwright dependency and a locally installed
 Chromium (`npx playwright install chromium`).
+
+## Mission 4 executable product engines
+
+The twelve leader features are executable capabilities, not roadmap prose. The canonical
+inventory is `capabilities/product-features.js`, and `npm run test:leader` exercises their
+shared contracts. Adapter conformance and the state-graph compiler govern behavior;
+CDP/temporal tracing and the torture lab supply motion evidence; genome, responsive,
+state-matrix, mutation, and consistency engines audit system-level quality; composition
+and native generators produce inspectable implementation artifacts.
+
+Generated screenshots, platform baselines, eval runs, and framework build output are not
+shipped in the core npm archive. Build the matching evidence companion with
+`npm run pack:evidence`; `npm pack --dry-run` guards that the core archive remains free
+of golden evidence and generated framework bundles.
 
 ---
 

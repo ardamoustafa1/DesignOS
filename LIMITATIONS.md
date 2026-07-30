@@ -6,6 +6,31 @@ labeling of what wasn't checked before anything ships (`checklists/pre-flight.md
 output would be the least credible thing it could do
 (`psychology/trust.md` — the ledger applies to us too). This file is that sweep.
 
+## Generated capability ledger
+
+<!-- DESIGNOS_CAPABILITY_LEDGER:START -->
+> Generated from executable sources by `npm run ledger:update`. Do not edit this block manually.
+
+| Capability | Verified source count |
+|---|---:|
+| Production dependencies | 3 (`@jridgewell/trace-mapping`, `axe-core`, `playwright`) |
+| Registry rules / providers | 38 / 7 |
+| Validated knowledge modules | 67 |
+| Industry packs | 24 |
+| Motion recipes / framework stacks | 15 / 6 |
+| Executable adapter combinations | 90 |
+| Full + reduced-motion browser scenarios | 180 |
+| Knowledge graph nodes | 140 |
+| Golden projects | 4 |
+| Component AST directions / CLI command modules | 3 / 7 |
+| Motion evidence engines | 2 (CDP profile + temporal regression) |
+| Mission 4 leader features | 12 / 12 implemented |
+| Torture scenarios / generated component states | 8 / 16 |
+| Composition compiler stacks / native motion adapters | 6 / 4 |
+| Mutation operators | 9 |
+| Isolated rule eval / external eval | yes / not yet |
+<!-- DESIGNOS_CAPABILITY_LEDGER:END -->
+
 ## 1. The eval results are a maintainer self-test, not independent proof
 
 Both arms of `evals/RESULTS.md`'s Run 001 were authored by the same person who wrote the
@@ -45,6 +70,19 @@ outside the maintainer, no production usage the maintainer can point to. The
 comprehensiveness is real; the track record is not yet. A reader should weight this
 project's claims accordingly until that changes — and it can only change through real
 external use, which this document is explicitly inviting rather than obscuring.
+
+The 36-rule child-process ledger is labeled `isolatedRuleEval`, not independent or
+external evaluation. `externalEval` remains `false` in the capability registry until a
+third-party run satisfies the evaluator, blind-protocol, immutable-evidence, and
+rule-result contract in `evals/external/registry.json`.
+
+Native adapter conformance currently combines shared physics execution, capability
+contract checks, iOS Swift type-checking and Flutter analysis when those SDKs are present,
+plus portable Swift/Dart/TSX parsing fallbacks. It does not claim
+device-level frame, haptic, keyboard, Dynamic Type, or TalkBack/VoiceOver proof; those
+remain platform-lab evidence and must be attached before a production app calls a native
+adapter device-verified. Jetpack Compose receives structural/source-contract validation
+when a Kotlin/Android toolchain is unavailable.
 
 ## 5. Translations are unreviewed
 

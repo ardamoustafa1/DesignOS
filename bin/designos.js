@@ -1202,199 +1202,6 @@ function visual(target, args) {
   if (findings.some(f => f.severity === 'P1') && !args.includes('--no-fail')) process.exit(1);
 }
 
-/* ---------- eval/case: community proof scaffolding ---------- */
-function slugify(input) {
-  return String(input || '')
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '') || 'untitled';
-}
-
-function nextRunId() {
-  const runsDir = path.join(CWD, 'evals', 'runs');
-  const names = fs.existsSync(runsDir) ? fs.readdirSync(runsDir) : [];
-  const max = names.reduce((acc, name) => {
-    const m = name.match(/run-(\d+)/i);
-    return m ? Math.max(acc, Number(m[1])) : acc;
-  }, 2);
-  return String(max + 1).padStart(3, '0');
-}
-
-function evalRun(slug, args) {
-  if (!slug) fail(`Usage: ${RUN} eval <slug> [--agent cursor] [--brief B-001] [--runner "@you"] [--model "model name"]`);
-  const id = nextRunId();
-  const safeSlug = slugify(slug);
-  const relDir = path.join('evals', 'runs', `run-${id}-${safeSlug}`);
-  const absDir = path.join(CWD, relDir);
-  if (fs.existsSync(absDir) && !args.includes('--force')) fail(`${relDir} already exists. Re-run with --force to overwrite.`);
-  fs.mkdirSync(path.join(absDir, 'control'), { recursive: true });
-  fs.mkdirSync(path.join(absDir, 'treatment'), { recursive: true });
-  fs.mkdirSync(path.join(absDir, 'logs'), { recursive: true });
-  const data = {
-    id,
-    date: new Date().toISOString().slice(0, 10),
-    runner: argValue(args, '--runner', 'TODO'),
-    agent: argValue(args, '--agent', 'TODO'),
-    model: argValue(args, '--model', 'TODO'),
-    brief: argValue(args, '--brief', 'TODO'),
-  };
-  const body = [
-    `# Run ${data.id} — ${safeSlug}`,
-    '',
-    '> Independent eval runs can be positive, mixed, or negative. The only failure is hiding raw conditions.',
-    '',
-    '## Metadata',
-    '',
-    '| Field | Value |',
-    '|---|---|',
-    `| Date | ${data.date} |`,
-    `| Runner | ${data.runner} |`,
-    `| Agent surface | ${data.agent} |`,
-    `| Model(s) | ${data.model} |`,
-    `| Brief set | ${data.brief} |`,
-    '| DesignOS commit SHA | TODO |',
-    '| Time budget | TODO |',
-    '| Follow-up steering | none / explain |',
-    '',
-    '## Raw Artifacts',
-    '',
-    '- Control output: `control/`',
-    '- Treatment output: `treatment/`',
-    '- Logs: `logs/`',
-    '',
-    '## Commands',
-    '',
-    '```bash',
-    'node validators/check-drift.js evals/runs/' + `run-${data.id}-${safeSlug}` + '/control',
-    'node validators/check-a11y-basics.js evals/runs/' + `run-${data.id}-${safeSlug}` + '/control',
-    'node validators/check-drift.js evals/runs/' + `run-${data.id}-${safeSlug}` + '/treatment',
-    'node validators/check-a11y-basics.js evals/runs/' + `run-${data.id}-${safeSlug}` + '/treatment',
-    '```',
-    '',
-    '## Validator Results',
-    '',
-    '| Brief | Arm | Drift findings | A11y findings | Contrast notes |',
-    '|---|---|---:|---:|---|',
-    `| ${data.brief} | Control | TODO | TODO | TODO |`,
-    `| ${data.brief} | Treatment | TODO | TODO | TODO |`,
-    '',
-    '## Blind Judge Results',
-    '',
-    '| Brief | Arm | Hierarchy | Craft | Accessibility | States | Distinctiveness | Fitness | Median total |',
-    '|---|---|---:|---:|---:|---:|---:|---:|---:|',
-    `| ${data.brief} | Control | TODO | TODO | TODO | TODO | TODO | TODO | TODO |`,
-    `| ${data.brief} | Treatment | TODO | TODO | TODO | TODO | TODO | TODO | TODO |`,
-    '',
-    '## Findings',
-    '',
-    '### Where DesignOS helped',
-    '',
-    '- TODO',
-    '',
-    '### Where DesignOS hurt or added cost',
-    '',
-    '- TODO',
-    '',
-    '### Ambiguous results',
-    '',
-    '- TODO',
-    '',
-    '## Conclusion',
-    '',
-    'TODO: State the result honestly. Avoid universal claims.',
-    '',
-  ].join('\n');
-  fs.writeFileSync(path.join(absDir, 'README.md'), body);
-  ok(`Eval run scaffolded at ${relDir}`);
-  log(`Next: add raw outputs to control/ and treatment/, then run validators and fill README.md.`);
-}
-
-function caseStudy(slug, args) {
-  if (!slug) fail(`Usage: ${RUN} case <slug> [--project "Project"] [--url https://...] [--author "@you"] [--surface pricing]`);
-  const safeSlug = slugify(slug);
-  const rel = path.join('case-studies', `${safeSlug}.md`);
-  const abs = path.join(CWD, rel);
-  if (fs.existsSync(abs) && !args.includes('--force')) fail(`${rel} already exists. Re-run with --force to overwrite.`);
-  fs.mkdirSync(path.dirname(abs), { recursive: true });
-  const project = argValue(args, '--project', safeSlug);
-  const url = argValue(args, '--url', 'TODO');
-  const source = argValue(args, '--source', 'TODO');
-  const author = argValue(args, '--author', 'TODO');
-  const stack = argValue(args, '--stack', 'TODO');
-  const surface = argValue(args, '--surface', 'TODO');
-  const summary = argValue(args, '--summary', 'TODO: one honest sentence on what DesignOS changed.');
-  const body = [
-    `# ${project} — DesignOS Case Study`,
-    '',
-    '## Summary',
-    '',
-    `- Project: ${project}`,
-    `- Author: ${author}`,
-    `- Date: ${new Date().toISOString().slice(0, 10)}`,
-    `- Agent/tool: TODO`,
-    `- Stack: ${stack}`,
-    `- Surface: ${surface}`,
-    `- Public link: ${url}`,
-    `- Source link: ${source}`,
-    `- Honest summary: ${summary}`,
-    '',
-    '## Starting Point',
-    '',
-    'TODO: Describe the original brief, target user, business goal, constraints, and known design issues.',
-    '',
-    '## DesignOS Setup',
-    '',
-    '- `brain/design-intelligence.md`',
-    '- `loops/design-loop.md`',
-    '- TODO: relevant component/pattern modules',
-    '- TODO: relevant industry module',
-    '- TODO: memory files used or created',
-    '',
-    '## Before / After',
-    '',
-    '- Desktop before: TODO',
-    '- Desktop after: TODO',
-    '- Mobile before: TODO',
-    '- Mobile after: TODO',
-    '',
-    '## Decisions',
-    '',
-    '| Decision | Why it was made | Module/rule |',
-    '|---|---|---|',
-    '| TODO | TODO | TODO |',
-    '',
-    '## Scorecard',
-    '',
-    '| Dimension | Score | Evidence |',
-    '|---|---:|---|',
-    '| UI Craft | TODO | TODO |',
-    '| UX & Flow | TODO | TODO |',
-    '| Accessibility | TODO | TODO |',
-    '| Performance | TODO | TODO |',
-    '| Modernity | TODO | TODO |',
-    '| Conversion | TODO | TODO |',
-    '',
-    '## What Failed First',
-    '',
-    '- TODO: contrast miss, hierarchy issue, fake proof removed, missing state added, or mobile layout fixed.',
-    '',
-    '## Caveats',
-    '',
-    'TODO: State what this case study does not prove.',
-    '',
-    '## Showcase Row',
-    '',
-    '```markdown',
-    `| [${project}](${url}) | ${surface} | ${summary} |`,
-    '```',
-    '',
-  ].join('\n');
-  fs.writeFileSync(abs, body);
-  ok(`Case study scaffolded at ${rel}`);
-  log(`Showcase row ready inside ${rel}.`);
-}
-
 /* ---------- suggest: deterministic design-system recommendation ---------- */
 function suggestLuminance(hex) {
   let h = hex.replace('#', '');
@@ -1616,239 +1423,36 @@ function find(args) {
 }
 
 function doctor() {
-  let problems = 0;
-  const check = (cond, okMsg, failMsg, critical = true) => {
-    if (cond) ok(okMsg);
-    else { (critical ? fail : warn)(failMsg); if (!critical) problems++; }
-  };
-
-  const dir = path.join(CWD, 'DesignOS');
-  if (!fs.existsSync(dir)) fail('./DesignOS not found — run "npx github:ardamoustafa1/DesignOS init" from your project root.');
-  ok('./DesignOS present');
-
-  const kernel = path.join(dir, 'CLAUDE.md');
-  check(fs.existsSync(kernel), 'kernel (DesignOS/CLAUDE.md) present', 'kernel missing — reinstall with --force');
-
-  const localBin = path.join(dir, 'bin', 'designos.js');
-  if (fs.existsSync(localBin)) ok('local CLI present at DesignOS/bin/designos.js (the safe invocation path)');
-  else warn(`DesignOS/bin/designos.js missing — re-run init to get the local CLI copy (don't rely on bare "npx designos")`);
-
-  const claudeMd = path.join(CWD, 'CLAUDE.md');
-  if (fs.existsSync(claudeMd) && fs.readFileSync(claudeMd, 'utf8').includes('@DesignOS/CLAUDE.md')) {
-    ok('CLAUDE.md imports the kernel');
-  } else { warn('CLAUDE.md does not import @DesignOS/CLAUDE.md — the agent will not boot the system'); problems++; }
-
-  const agentsDir = path.join(CWD, '.claude', 'agents');
-  const agentCount = fs.existsSync(agentsDir) ? fs.readdirSync(agentsDir).filter(f => f.endsWith('.md')).length : 0;
-  if (agentCount >= 9) ok(`${agentCount} subagents registered`);
-  else { warn(`subagents: ${agentCount}/9 — run "${RUN} agents" for the independent reviewer`); problems++; }
-
-  const cmdsDir = path.join(CWD, '.claude', 'commands');
-  const cmdCount = fs.existsSync(cmdsDir) ? fs.readdirSync(cmdsDir).filter(f => f.startsWith('design-')).length : 0;
-  if (cmdCount > 0) ok(`${cmdCount} DesignOS slash commands installed`);
-  else { warn(`no slash commands — run "${RUN} skills" for /design-review etc.`); problems++; }
-
-  const mem = path.join(CWD, 'memory');
-  if (fs.existsSync(path.join(mem, 'brand.md'))) ok('project memory/ bootstrapped');
-  else { warn('memory/ not bootstrapped — the agent creates it at first kickoff (or: cp DesignOS/memory/templates/*.md memory/)'); problems++; }
-
-  const pkgJsonPath = path.join(PKG_ROOT, 'package.json');
-  const pkgVersion = fs.existsSync(pkgJsonPath) ? JSON.parse(fs.readFileSync(pkgJsonPath, 'utf8')).version : '(unknown)';
-  log(`\n  DesignOS ${pkgVersion} · ${problems === 0 ? '\x1b[32mall systems go\x1b[0m' : `\x1b[33m${problems} advisory item(s)\x1b[0m`}`);
+  require('./cli/commands/system').doctor(commandContext());
 }
 
 /* ---------- product intelligence engines ---------- */
+function commandContext() {
+  return { cwd: CWD, pkgRoot: PKG_ROOT, run: RUN, fail, ok, warn, log, argValue, firstPositional, positionals };
+}
+
 function intelligence(command, args) {
-  const engines = require('./intelligence.js');
-  const handlers = {
-    'motion-decide': engines.motionDecision,
-    'motion-recipe': engines.motionRecipe,
-    knowledge: engines.knowledge,
-    coverage: engines.coverage,
-    signature: engines.signature,
-    compose: engines.composition,
-    'asset-direct': engines.assetDirection,
-  };
-  try {
-    handlers[command](args);
-  } catch (error) {
-    fail(error.message);
-  }
+  require('./cli/commands/intelligence').execute(command, args, commandContext());
 }
 
 function motionLabCommand(target, args) {
-  try {
-    const output = require('./motion-lab.js').motionLab(target, args, CWD);
-    ok(`Motion Lab written to ${path.relative(CWD, output)}`);
-  } catch (error) {
-    fail(error.message);
-  }
+  require('./cli/commands/motion').execute('motion-lab', target, args, commandContext());
 }
 
 function liveCommand(target, args) {
-  if (!target) fail(`Usage: ${RUN} live <html-target> [--init-only|--port 4179|--accept a|--reject b|--edits edits.json|--rollback]`);
-  const director = require('./live-director.js');
-  try {
-    const initialized = director.initSession(target, CWD);
-    if (args.includes('--init-only')) {
-      ok(`Live session initialized at ${path.relative(CWD, initialized.files.root)}`);
-      return;
-    }
-    if (args.includes('--rollback')) {
-      const transaction = director.rollback(target, CWD);
-      ok(`Rolled back live transaction ${transaction.id}`);
-      return;
-    }
-    const acceptId = argValue(args, '--accept', '');
-    if (acceptId) {
-      const transaction = director.acceptVariant(target, acceptId, argValue(args, '--reason', ''), CWD);
-      ok(`Accepted variant ${acceptId}; transaction ${transaction.id}`);
-      return;
-    }
-    const rejectId = argValue(args, '--reject', '');
-    if (rejectId) {
-      const file = initialized.files.transactions;
-      const transactions = JSON.parse(fs.readFileSync(file, 'utf8'));
-      transactions.push({ id: `reject-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, type: 'variant-reject',
-        variant: rejectId, reason: argValue(args, '--reason', ''), createdAt: new Date().toISOString() });
-      fs.writeFileSync(file, JSON.stringify(transactions, null, 2) + '\n');
-      ok(`Rejected variant ${rejectId}; decision recorded`);
-      return;
-    }
-    const editsFile = argValue(args, '--edits', '');
-    if (editsFile) {
-      const edits = JSON.parse(fs.readFileSync(path.resolve(CWD, editsFile), 'utf8'));
-      const transaction = director.applyManualEdits(target, edits, argValue(args, '--reason', 'Manual Live Director edit'), CWD);
-      ok(`Applied manual edit transaction ${transaction.id}`);
-      return;
-    }
-    director.serve(target, { port: Number(argValue(args, '--port', '4179')) }, CWD);
-  } catch (error) {
-    fail(error.message);
-  }
+  require('./cli/commands/live').execute(target, args, commandContext());
 }
 
 function hooksCommand(args) {
-  const action = positionals(args)[0] || 'status';
-  const mode = argValue(args, '--mode', 'warn');
-  const hookPath = path.join(PKG_ROOT, 'hooks', 'designos-hook.js');
-  const configDir = path.join(CWD, '.designos');
-  const configPath = path.join(configDir, 'config.json');
-  const manifests = {
-    codex: {
-      file: path.join(CWD, '.codex', 'hooks.json'),
-      value: {
-        hooks: {
-          PostToolUse: [{
-            matcher: 'Edit|Write|apply_patch',
-            hooks: [{ type: 'command', command: `DESIGNOS_HOOK_MODE=${mode} node "${hookPath}"`, timeout: 8, statusMessage: 'DesignOS edit gate' }],
-          }],
-          Stop: [{
-            hooks: [{ type: 'command', command: `DESIGNOS_HOOK_MODE=deep-on-stop node "${hookPath}"`, timeout: 120, statusMessage: 'DesignOS browser gate' }],
-          }],
-        },
-      },
-    },
-    github: {
-      file: path.join(CWD, '.github', 'hooks', 'designos.json'),
-      value: {
-        version: 1,
-        hooks: {
-          postToolUse: [{ type: 'command', matcher: 'edit|create|apply_patch', bash: `DESIGNOS_HOOK_MODE=${mode} node "${hookPath}"`, timeoutSec: 8 }],
-        },
-      },
-    },
-    claude: {
-      file: path.join(CWD, '.claude', 'settings.local.json'),
-      value: {
-        hooks: {
-          PostToolUse: [{
-            matcher: 'Edit|Write',
-            hooks: [{ type: 'command', command: `DESIGNOS_HOOK_MODE=${mode} node "${hookPath}"`, timeout: 8 }],
-          }],
-          Stop: [{
-            hooks: [{ type: 'command', command: `DESIGNOS_HOOK_MODE=deep-on-stop node "${hookPath}"`, timeout: 120 }],
-          }],
-        },
-      },
-    },
-  };
-  if (action === 'status') {
-    for (const [name, manifest] of Object.entries(manifests)) {
-      log(`${name}: ${fs.existsSync(manifest.file) ? 'installed' : 'not installed'} (${path.relative(CWD, manifest.file)})`);
-    }
-    return;
-  }
-  if (action !== 'install') fail(`Unknown hooks action "${action}". Use hooks install or hooks status.`);
-  fs.mkdirSync(configDir, { recursive: true });
-  const config = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath, 'utf8')) : {};
-  config.hook = { ...(config.hook || {}), mode, target: argValue(args, '--target', config.hook?.target || '') };
-  fs.writeFileSync(configPath, JSON.stringify(config, null, 2) + '\n');
-  for (const [name, manifest] of Object.entries(manifests)) {
-    fs.mkdirSync(path.dirname(manifest.file), { recursive: true });
-    if (fs.existsSync(manifest.file)) {
-      const existing = JSON.parse(fs.readFileSync(manifest.file, 'utf8'));
-      if (existing.hooks && JSON.stringify(existing.hooks) !== JSON.stringify(manifest.value.hooks)) {
-        warn(`${name}: existing hook manifest preserved; merge the DesignOS entry manually (${path.relative(CWD, manifest.file)})`);
-        continue;
-      }
-    }
-    fs.writeFileSync(manifest.file, JSON.stringify(manifest.value, null, 2) + '\n');
-    ok(`${name} hook installed`);
-  }
+  require('./cli/commands/system').hooks(args, commandContext());
 }
 
 function goldenCommand(args) {
-  const result = spawnSync('node', [path.join(PKG_ROOT, 'bin', 'golden-suite.js'), ...args], {
-    cwd: CWD, encoding: 'utf8', stdio: 'inherit',
-  });
-  if (result.status) process.exit(result.status);
+  require('./cli/commands/evidence').execute(args, commandContext());
 }
 
 function help() {
-  console.log(`
-  DesignOS — the Design Intelligence Operating System for AI coding agents
-
-  ⚠ "designos" is already taken on the npm registry by an unrelated package.
-    Bare "npx designos <command>" will run THAT package, not this one.
-
-  First install (unambiguous — fetches this exact GitHub repo):
-    npx github:ardamoustafa1/DesignOS init [--agents] [--skills] [--force]
-
-  Every command after that (uses the local copy init placed at DesignOS/bin/):
-    ${RUN} agents             only register subagents
-    ${RUN} skills             only install slash commands
-    ${RUN} export <target>    rules for: cursor · copilot · windsurf · cline · aider · agentsmd · all
-    ${RUN} audit <dir>        run all validators against a directory
-    ${RUN} review <target>    deterministic design-risk report + six-dimension score
-                             add --fix-prompt to print an agent-ready repair prompt
-    ${RUN} visual <target>    visual QA checklist/report for HTML or URL
-                             --baseline records the before, --compare measures what moved
-                             (--max-diff <pct> turns it into a regression gate)
-    ${RUN} report <target>    one-file delivery report: review gate + fix prompt + sign-off
-    ${RUN} elevate <target>   premium refactor prompt: taste, signature, proof, hierarchy
-    ${RUN} brief [options]    generate a high-signal brief for the agent
-                             add --interactive for the 6-question prompt builder
-    ${RUN} find <query>       one BM25 engine across motion, type and the knowledge graph
-                             (--kind motion|type|graph, filters, --limit N)
-    ${RUN} knowledge <query>  query the sector→surface→component→state→platform graph
-    ${RUN} coverage           report rule/recipe/validator/golden/eval capability coverage
-    ${RUN} motion-decide <x>  decide whether and how an interaction should move
-    ${RUN} motion-recipe <id> emit a tested runtime adapter (--stack vanilla|react|motion|gsap|vue|svelte)
-    ${RUN} motion-lab <html>  generate the interactive motion inspection laboratory
-    ${RUN} live <html>        start Live Director; annotations, variants and safe transactions
-    ${RUN} signature <brief>  compile material/audience/belief-led signature specifications
-    ${RUN} compose <brief>    select a guarded composition primitive from the grammar
-    ${RUN} asset-direct <x>   produce an implementation-ready asset direction contract
-    ${RUN} hooks install      install edit-time and deep-on-stop provider hooks
-    ${RUN} golden [--update]  verify or refresh golden browser evidence
-    ${RUN} suggest <brief>    deterministic design-system recommendation: sector + surface
-                             routing, contrast-verified palette, type pairing, anti-patterns
-    ${RUN} starter <name>     scaffold a DesignOS starter project
-    ${RUN} eval <slug>        scaffold an independent benchmark run folder
-    ${RUN} case <slug>        scaffold an external case study + SHOWCASE row
-    ${RUN} doctor             check the install's health
-`);
+  require('./cli/commands/system').help(commandContext());
 }
 
 const [, , cmd, ...rest] = process.argv;
@@ -1879,13 +1483,28 @@ switch (cmd) {
   case 'compose':
   case 'asset-direct': intelligence(cmd, rest); break;
   case 'motion-lab': motionLabCommand(firstPositional(rest), rest); break;
+  case 'motion-profile':
+  case 'motion-regression':
+    require('./cli/commands/motion').execute(cmd, firstPositional(rest), rest, commandContext()); break;
+  case 'adapter-conformance':
+  case 'motion-graph':
+  case 'motion-torture':
+  case 'genome':
+  case 'composition-compile':
+  case 'responsive-solve':
+  case 'state-matrix':
+  case 'mutation-test':
+  case 'consistency':
+  case 'native-motion':
+    require('./cli/commands/leader').execute(cmd, rest, commandContext()); break;
   case 'live': liveCommand(firstPositional(rest), rest); break;
   case 'hooks': hooksCommand(rest); break;
   case 'golden': goldenCommand(rest); break;
   case 'suggest': suggest(rest); break;
   case 'starter': starter(firstPositional(rest), rest); break;
-  case 'eval': evalRun(firstPositional(rest), rest); break;
-  case 'case': caseStudy(firstPositional(rest), rest); break;
+  case 'eval':
+  case 'case':
+    require('./cli/commands/community').execute(cmd, firstPositional(rest), rest, commandContext()); break;
   case 'doctor': doctor(); break;
   case 'help':
   case undefined: help(); break;

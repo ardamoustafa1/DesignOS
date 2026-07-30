@@ -7,23 +7,24 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 const { TraceMap, originalPositionFor } = require('@jridgewell/trace-mapping');
 const { compileSignature } = require('./intelligence');
+const { VARIANT_TRANSFORMS, transformComponent } = require('./live/component-transform');
 
 const CLASSIFICATIONS = ['Hierarchy weak', 'Too generic', 'Motion too slow', 'Proof unsupported', 'Target too small', 'Density mismatch', 'Brand signature missing'];
 const VARIANTS = {
   a: {
-    name: 'Restraint',
-    rationale: 'Reduce competing emphasis and make the selected element the single local decision.',
-    css: '[data-designos-selected]{outline:2px solid #0f766e!important;outline-offset:4px!important;filter:saturate(.88)}',
+    ...VARIANT_TRANSFORMS.a,
+    rationale: 'Turn the selected product material into the structure and proof-bearing visual grammar.',
+    transform: VARIANT_TRANSFORMS.a,
   },
   b: {
-    name: 'Hierarchy',
-    rationale: 'Increase isolation and hierarchy without changing the page’s design dialect.',
-    css: '[data-designos-selected]{position:relative!important;z-index:2!important;transform:translateY(-2px)!important;box-shadow:0 16px 40px rgb(15 23 42/.16)!important}',
+    ...VARIANT_TRANSFORMS.b,
+    rationale: 'Use the audience’s decision order: evidence first, claim second, action third.',
+    transform: VARIANT_TRANSFORMS.b,
   },
   c: {
-    name: 'Signature',
-    rationale: 'Add one scarce product-signature emphasis while preserving standard chrome.',
-    css: '[data-designos-selected]::after{content:"";position:absolute;inset:-4px;border:1px solid currentColor;border-radius:inherit;opacity:.32;pointer-events:none}',
+    ...VARIANT_TRANSFORMS.c,
+    rationale: 'Express the product belief through one repeated, origin-aware verification gesture.',
+    transform: VARIANT_TRANSFORMS.c,
   },
 };
 
@@ -64,23 +65,23 @@ function contextualVariants(cwd, annotation = {}) {
   const signatureDirection = signature.directions.find(item => item.kind === 'belief-led');
   return {
     a: {
-      name: 'Restraint',
+      ...VARIANT_TRANSFORMS.a,
       rationale: `${context.sector}: remove competing emphasis around “${issue}”; preserve ${context.proofPolicy}.`,
-      css: '[data-designos-selected]{outline:2px solid currentColor!important;outline-offset:4px!important;filter:saturate(.82)}',
-      provenance: { ...context, strategy: 'restraint', issue },
+      transform: VARIANT_TRANSFORMS.a,
+      provenance: { ...context, strategy: 'material-led', issue },
     },
     b: {
-      name: 'Hierarchy',
+      ...VARIANT_TRANSFORMS.b,
       rationale: `${context.sector}: isolate the decision implied by “${issue}” without adding unsupported proof.`,
-      css: '[data-designos-selected]{position:relative!important;z-index:2!important;transform:translateY(-2px)!important;box-shadow:0 16px 40px rgb(15 23 42/.16)!important}',
-      provenance: { ...context, strategy: 'hierarchy', issue },
+      transform: VARIANT_TRANSFORMS.b,
+      provenance: { ...context, strategy: 'audience-led', issue },
     },
     c: {
-      name: 'Signature',
+      ...VARIANT_TRANSFORMS.c,
       rationale: `${signatureDirection.derivation}; no new proof claims.`,
-      css: '[data-designos-selected]{position:relative!important}[data-designos-selected]::after{content:"";position:absolute;inset:-4px;border:1px solid currentColor;border-radius:inherit;opacity:.32;pointer-events:none}',
+      transform: VARIANT_TRANSFORMS.c,
       provenance: {
-        ...context, strategy: 'signature', issue, proofGuard: 'no claims inserted',
+        ...context, strategy: 'belief-led', issue, proofGuard: 'no claims inserted',
         compiler: signature.module, signatureKind: signatureDirection.kind,
         signatureDerivation: signatureDirection.derivation,
       },
@@ -119,6 +120,8 @@ function initSession(target, cwd = process.cwd()) {
     updatedAt: new Date().toISOString(),
     sourceLock: sha(source),
     selectedSelector: existing.selectedSelector || null,
+    selectedSource: existing.selectedSource || null,
+    selectedSourceLock: existing.selectedSourceLock || null,
     status: existing.status || 'active',
     variants: existing.variants || contextualVariants(cwd),
   };
@@ -208,6 +211,9 @@ function annotate(target, annotation, cwd = process.cwd()) {
   annotations.push(item);
   writeJson(files.annotations, annotations);
   session.selectedSelector = item.selector;
+  session.selectedSource = item.source;
+  session.selectedSourceLock = fs.existsSync(item.source.file)
+    ? sha(fs.readFileSync(item.source.file, 'utf8')) : null;
   session.variants = contextualVariants(cwd, item);
   session.updatedAt = new Date().toISOString();
   writeJson(files.session, session);
@@ -249,10 +255,7 @@ async function captureAnnotationCrop(target, item, pageUrl, cwd = process.cwd())
 function injectVariant(source, selector, variantId, variants = VARIANTS) {
   const variant = variants[variantId];
   if (!variant) throw new Error(`Unknown variant: ${variantId}`);
-  const marker = `data-designos-live="${variantId}"`;
-  const selectorCss = variant.css.replaceAll('[data-designos-selected]', selector);
-  const style = `<style ${marker}>\n/* DesignOS Live Director: ${variant.name} */\n${selectorCss}\n</style>`;
-  return /<\/head>/i.test(source) ? source.replace(/<\/head>/i, `${style}\n</head>`) : `${style}\n${source}`;
+  return transformComponent(source, selector, variantId, variants).source;
 }
 
 function runGate(file, root, label) {
@@ -296,6 +299,25 @@ function performanceRegressions(before, after, budget) {
   });
 }
 
+function componentBuildConfig(cwd) {
+  const configFile = path.join(cwd, '.designos/config.json');
+  const config = fs.existsSync(configFile) ? json(configFile).live || {} : {};
+  if (!Array.isArray(config.buildCommand) || !config.buildCommand.length || !config.previewTarget) {
+    throw new Error('Component source transforms require .designos/config.json live.buildCommand (argv array) and live.previewTarget.');
+  }
+  return {
+    command: config.buildCommand,
+    previewTarget: path.resolve(cwd, config.previewTarget),
+  };
+}
+
+function runComponentBuild(config, cwd) {
+  const [command, ...args] = config.command;
+  const result = spawnSync(command, args, { cwd, encoding: 'utf8', maxBuffer: 1024 * 1024 * 32 });
+  if (result.status) throw new Error(`Component build failed: ${result.stderr || result.stdout}`);
+  if (!fs.existsSync(config.previewTarget)) throw new Error(`Component build did not produce preview target: ${config.previewTarget}`);
+}
+
 function updateMemory(cwd, transaction) {
   const memoryDir = path.join(cwd, 'memory');
   fs.mkdirSync(memoryDir, { recursive: true });
@@ -307,31 +329,71 @@ function updateMemory(cwd, transaction) {
 function acceptVariant(target, variantId, reason, cwd = process.cwd()) {
   const { files, session } = initSession(target, cwd);
   if (!session.selectedSelector) throw new Error('No selected element. Add an annotation or select an element first.');
-  const before = fs.readFileSync(files.source, 'utf8');
-  if (sha(before) !== session.sourceLock) throw new Error('Source lock changed. Reinitialize the live session before applying a variant.');
+  const componentFile = session.selectedSource?.file && fs.existsSync(session.selectedSource.file)
+    ? session.selectedSource.file : files.source;
+  const componentNative = componentFile !== files.source;
+  const before = fs.readFileSync(componentFile, 'utf8');
+  const expectedLock = componentNative ? session.selectedSourceLock : session.sourceLock;
+  if (sha(before) !== expectedLock) throw new Error('Selected component source lock changed. Re-annotate before applying a variant.');
   const variants = session.variants || contextualVariants(cwd);
-  const after = injectVariant(before, session.selectedSelector, variantId, variants);
-  const temporary = path.join(files.root, `candidate-${variantId}${path.extname(files.source) || '.html'}`);
-  fs.writeFileSync(temporary, after);
-  const beforeGate = runGate(files.source, files.root, 'before');
-  const afterGate = runGate(temporary, files.root, `candidate-${variantId}`);
-  if (!beforeGate.available || !afterGate.available) throw new Error('Browser regression evidence is required before accepting a live variant.');
+  const transformed = transformComponent(before, session.selectedSelector, variantId, variants);
+  const after = transformed.source;
+  const backup = path.join(files.root, `backup-${Date.now()}${path.extname(componentFile) || '.html'}`);
+  fs.copyFileSync(componentFile, backup);
+  let beforeGate;
+  let afterGate;
+  let previewTarget = files.source;
+  let build = null;
+  if (componentNative) {
+    build = componentBuildConfig(cwd);
+    previewTarget = build.previewTarget;
+    beforeGate = runGate(previewTarget, files.root, 'before');
+    try {
+      fs.writeFileSync(componentFile, after);
+      runComponentBuild(build, cwd);
+      afterGate = runGate(previewTarget, files.root, `candidate-${variantId}`);
+    } catch (error) {
+      fs.copyFileSync(backup, componentFile);
+      try { runComponentBuild(build, cwd); } catch {}
+      throw error;
+    }
+  } else {
+    const temporary = path.join(files.root, `candidate-${variantId}${path.extname(files.source) || '.html'}`);
+    fs.writeFileSync(temporary, after);
+    beforeGate = runGate(files.source, files.root, 'before');
+    afterGate = runGate(temporary, files.root, `candidate-${variantId}`);
+  }
+  if (!beforeGate.available || !afterGate.available) {
+    if (componentNative) {
+      fs.copyFileSync(backup, componentFile);
+      try { runComponentBuild(build, cwd); } catch {}
+    }
+    throw new Error('Browser regression evidence is required before accepting a live variant.');
+  }
   if (afterGate.p1 > beforeGate.p1 || afterGate.p2 > beforeGate.p2) {
+    if (componentNative) {
+      fs.copyFileSync(backup, componentFile);
+      try { runComponentBuild(build, cwd); } catch {}
+    }
     throw new Error(`Variant rejected by regression gate: before P1/P2 ${beforeGate.p1}/${beforeGate.p2}, after ${afterGate.p1}/${afterGate.p2}.`);
   }
   const budget = performanceBudget(cwd);
   const performanceFindings = performanceRegressions(beforeGate.performance, afterGate.performance, budget);
   if (performanceFindings.length) {
+    if (componentNative) {
+      fs.copyFileSync(backup, componentFile);
+      try { runComponentBuild(build, cwd); } catch {}
+    }
     throw new Error(`Variant rejected by performance gate: ${performanceFindings.map(item =>
       `${item.metric} ${item.before}→${item.after} (budget ${item.budget})`).join(', ')}.`);
   }
-  const backup = path.join(files.root, `backup-${Date.now()}${path.extname(files.source) || '.html'}`);
-  fs.copyFileSync(files.source, backup);
-  fs.writeFileSync(files.source, after);
+  if (!componentNative) fs.writeFileSync(componentFile, after);
   const transaction = {
     id: crypto.randomUUID(),
     type: 'variant-accept',
-    target: files.source,
+    target: componentFile,
+    previewTarget,
+    componentNative,
     variant: variantId,
     selector: session.selectedSelector,
     reason: reason || variants[variantId].rationale,
@@ -343,12 +405,19 @@ function acceptVariant(target, variantId, reason, cwd = process.cwd()) {
     performanceBudget: budget,
     performanceFindings,
     variantSpec: variants[variantId],
+    componentTransform: {
+      ast: transformed.ast,
+      changes: transformed.changes,
+      transform: transformed.transform,
+      impact: transformed.impact,
+    },
     createdAt: new Date().toISOString(),
   };
   const transactions = json(files.transactions);
   transactions.push(transaction);
   writeJson(files.transactions, transactions);
-  session.sourceLock = transaction.afterHash;
+  if (componentNative) session.selectedSourceLock = transaction.afterHash;
+  else session.sourceLock = transaction.afterHash;
   session.updatedAt = new Date().toISOString();
   writeJson(files.session, session);
   updateMemory(cwd, transaction);
@@ -395,12 +464,18 @@ function rollback(target, cwd = process.cwd()) {
   const transactions = json(files.transactions);
   const transaction = [...transactions].reverse().find(item => !item.rolledBackAt);
   if (!transaction) throw new Error('No recoverable live transaction exists.');
-  const current = fs.readFileSync(files.source, 'utf8');
+  const transactionTarget = transaction.target || files.source;
+  const current = fs.readFileSync(transactionTarget, 'utf8');
   if (sha(current) !== transaction.afterHash) throw new Error('Current source differs from the transaction. Refusing destructive rollback.');
-  fs.copyFileSync(transaction.backup, files.source);
+  fs.copyFileSync(transaction.backup, transactionTarget);
+  if (transaction.componentNative) {
+    const build = componentBuildConfig(cwd);
+    runComponentBuild(build, cwd);
+  }
   transaction.rolledBackAt = new Date().toISOString();
   writeJson(files.transactions, transactions);
-  session.sourceLock = sha(fs.readFileSync(files.source, 'utf8'));
+  if (transaction.componentNative) session.selectedSourceLock = sha(fs.readFileSync(transactionTarget, 'utf8'));
+  else session.sourceLock = sha(fs.readFileSync(files.source, 'utf8'));
   session.updatedAt = new Date().toISOString();
   writeJson(files.session, session);
   return transaction;
@@ -490,5 +565,5 @@ function serve(target, options = {}, cwd = process.cwd()) {
 module.exports = {
   CLASSIFICATIONS, VARIANTS, initSession, annotate, injectVariant, acceptVariant,
   applyManualEdits, rollback, serve, pathsFor, captureAnnotationCrop, contextualVariants,
-  resolveComponentSource, performanceRegressions,
+  resolveComponentSource, performanceRegressions, transformComponent,
 };

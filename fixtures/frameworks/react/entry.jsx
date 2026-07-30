@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { projectMomentum } from '../../../runtime/motion/core.js';
+import { createMotionController } from '../../../runtime/motion/controller.js';
 function App() {
-  const [complete, setComplete] = useState(false);
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  return <button id="run" data-complete={String(complete)} data-designos-source="fixtures/frameworks/react/entry.jsx:6:10"
-    style={{ transform: `translateX(${complete && !reduce ? projectMomentum(120, .8) : 0}px)` }}
-    onClick={() => setComplete(true)}>React motion fixture</button>;
+  const target = useRef(null);
+  useEffect(() => {
+    const recipe = new URLSearchParams(location.search).get('recipe') || 'momentum-projection';
+    const controller = createMotionController(recipe, target.current, {
+      reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
+      duration: 72,
+    });
+    controller.mount();
+    window.__designosAdapter = controller;
+    window.__designosReady = true;
+    return () => controller.destroy();
+  }, []);
+  return <button id="run" ref={target} data-designos-source="fixtures/frameworks/react/entry.jsx:16:10">React motion fixture</button>;
 }
-createRoot(document.querySelector('#app')).render(<App />);
+const root = createRoot(document.querySelector('#app'));
+root.render(<App />);
+window.__designosUnmount = () => root.unmount();

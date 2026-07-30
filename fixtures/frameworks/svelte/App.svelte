@@ -1,9 +1,18 @@
 <script>
-  import { projectMomentum } from '../../../runtime/motion/core.js';
-  let complete = false;
-  const run = () => { complete = true; };
+  import { onMount } from 'svelte';
+  import { createMotionController } from '../../../runtime/motion/controller.js';
+  let target;
+  onMount(() => {
+    const recipe = new URLSearchParams(location.search).get('recipe') || 'momentum-projection';
+    const controller = createMotionController(recipe, target, {
+      reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
+      duration: 72,
+    });
+    controller.mount();
+    window.__designosAdapter = controller;
+    window.__designosReady = true;
+    return () => controller.destroy();
+  });
 </script>
-<button id="run" data-complete={String(complete)}
-  data-designos-source="fixtures/frameworks/svelte/App.svelte:6:1"
-  style:transform={`translateX(${complete && !matchMedia('(prefers-reduced-motion: reduce)').matches ? projectMomentum(120, .8) : 0}px)`}
-  on:click={run}>Svelte motion fixture</button>
+<button id="run" bind:this={target}
+  data-designos-source="fixtures/frameworks/svelte/App.svelte:16:1">Svelte motion fixture</button>

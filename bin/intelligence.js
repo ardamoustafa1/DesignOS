@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { RULES } = require('../validators/rule-registry');
 const { RECIPES, STACKS, adapterSource } = require('../runtime/motion/recipes');
+const { verifyExternalRegistry } = require('./external-eval');
 
 const ROOT = path.resolve(__dirname, '..');
 const value = (args, name, fallback = '') => {
@@ -278,9 +279,10 @@ function coverage(args) {
     && fs.readdirSync(path.join(ROOT, 'goldens'), { withFileTypes: true })
       .filter(entry => entry.isDirectory())
       .some(entry => fs.existsSync(path.join(ROOT, 'goldens', entry.name, 'evidence/browser-gate.json')));
-  const independentFile = path.join(ROOT, 'evals/independent/registry-eval.json');
-  const independentReport = fs.existsSync(independentFile) ? JSON.parse(fs.readFileSync(independentFile, 'utf8')) : { results: [] };
-  const independentRules = new Set(independentReport.results.filter(item => item.passed).map(item => item.ruleId));
+  const isolatedFile = path.join(ROOT, 'evals/isolated/registry-eval.json');
+  const isolatedReport = fs.existsSync(isolatedFile) ? JSON.parse(fs.readFileSync(isolatedFile, 'utf8')) : { results: [] };
+  const isolatedRules = new Set(isolatedReport.results.filter(item => item.passed).map(item => item.ruleId));
+  const external = verifyExternalRegistry(path.join(ROOT, 'evals/external/registry.json'));
   const rows = RULES.map(rule => {
     const recipe = RECIPES.find(item => rule.id.includes(item.id) || rule.module.includes('motion/'));
     return {
@@ -291,11 +293,13 @@ function coverage(args) {
       engines: rule.engines,
       testFixture: fs.existsSync(path.join(ROOT, rule.fixture)),
       goldenEvidence,
-      independentEval: independentRules.has(rule.id),
+      isolatedRuleEval: isolatedRules.has(rule.id),
+      externalEval: external.externalEval,
       gaps: [
         !recipe && rule.category === 'motion' ? 'implementation recipe' : null,
         !goldenEvidence ? 'browser evidence' : null,
-        !independentRules.has(rule.id) ? 'independent eval' : null,
+        !isolatedRules.has(rule.id) ? 'isolated rule eval' : null,
+        !external.externalEval ? 'external eval' : null,
       ].filter(Boolean),
     };
   });
@@ -304,7 +308,8 @@ function coverage(args) {
     fixtures: rows.filter(row => row.testFixture).length,
     automated: rows.filter(row => row.automatedValidator).length,
     goldenEvidence: rows.filter(row => row.goldenEvidence).length,
-    independent: rows.filter(row => row.independentEval).length,
+    isolated: rows.filter(row => row.isolatedRuleEval).length,
+    external: rows.filter(row => row.externalEval).length,
   };
   return write({ generatedAt: new Date().toISOString(), summary, rows }, args);
 }

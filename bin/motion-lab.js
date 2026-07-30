@@ -4,12 +4,15 @@ const fs = require('fs');
 const path = require('path');
 
 function motionLab(target, args = [], cwd = process.cwd()) {
-  if (!target) throw new Error('Usage: designos motion-lab <local-html> [--out motion-lab.html]');
+  if (!target) throw new Error('Usage: designos motion-lab <local-html> [--profile] [--selector <css>] [--out motion-lab.html]');
   if (/^https?:\/\//i.test(target)) throw new Error('Motion Lab requires a local HTML target so it can instrument animations without weakening cross-origin security.');
   const sourceFile = path.resolve(cwd, target);
   if (!fs.existsSync(sourceFile)) throw new Error(`Motion Lab target not found: ${target}`);
   const outputIndex = args.indexOf('--out');
   const output = path.resolve(cwd, outputIndex >= 0 && args[outputIndex + 1] ? args[outputIndex + 1] : '.designos/motion-lab.html');
+  const profileIndex = args.indexOf('--profile-report');
+  const profileFile = profileIndex >= 0 && args[profileIndex + 1] ? path.resolve(cwd, args[profileIndex + 1]) : null;
+  const profile = profileFile && fs.existsSync(profileFile) ? JSON.parse(fs.readFileSync(profileFile, 'utf8')) : null;
   const source = fs.readFileSync(sourceFile, 'utf8');
   const base = `file://${path.dirname(sourceFile).replace(/\\/g, '/')}/`;
   const html = `<!doctype html>
@@ -56,6 +59,23 @@ ol{padding-left:20px;color:var(--muted)}code{color:var(--accent)}
     <div class="metric"><span>Long tasks</span><strong id="longTasks">0</strong></div>
     <div class="metric"><span>Layout shifts</span><strong id="shifts">0</strong></div>
     <div class="metric"><span>Animations</span><strong id="count">0</strong></div>
+    <h2>CDP trace profile</h2>
+    <div class="metric"><span>Average FPS / worst frame</span><strong id="fpsWorst">—</strong></div>
+    <div class="metric"><span>Dropped frames</span><strong id="dropped">—</strong></div>
+    <div class="metric"><span>Dropped-frame ratio</span><strong id="dropRatio">—</strong></div>
+    <div class="metric"><span>Long animation frames</span><strong id="loaf">—</strong></div>
+    <div class="metric"><span>Main-thread blocking</span><strong id="blocking">—</strong></div>
+    <div class="metric"><span>Style / layout</span><strong id="styleLayout">—</strong></div>
+    <div class="metric"><span>Paint / composite</span><strong id="paintComposite">—</strong></div>
+    <div class="metric"><span>Layout / paint count</span><strong id="renderCounts">—</strong></div>
+    <div class="metric"><span>Composite-only</span><strong id="compositeOnly">—</strong></div>
+    <div class="metric"><span>Composite layers</span><strong id="layers">—</strong></div>
+    <div class="metric"><span>Frame P50 / P95 / P99</span><strong id="percentiles">—</strong></div>
+    <div class="metric"><span>Animation attribution</span><strong id="attribution">—</strong></div>
+    <div class="metric"><span>Input latency / settle</span><strong id="latencySettle">—</strong></div>
+    <div class="metric"><span>Overshoot / cancel response</span><strong id="overshootCancel">—</strong></div>
+    <div class="metric"><span>Listener / heap cleanup</span><strong id="cleanup">—</strong></div>
+    <div class="metric"><span>Reduced-motion result</span><strong id="reducedResult">—</strong></div>
     <h2>Easing curve</h2>
     <label>Curve <input id="curve" value="0.16,1,0.3,1" aria-label="Cubic bezier values"></label>
     <canvas id="easing" width="288" height="140"></canvas>
@@ -71,6 +91,7 @@ ol{padding-left:20px;color:var(--muted)}code{color:var(--accent)}
 </main>
 <script>
 const original=${JSON.stringify(source)};
+const cdpProfile=${JSON.stringify(profile)};
 const base=${JSON.stringify(base)};
 const baseTag='<base href="'+base+'">';
 const full=document.getElementById('full'), reduced=document.getElementById('reduced');
@@ -78,6 +99,23 @@ full.srcdoc=original.replace(/<head([^>]*)>/i,'<head$1>'+baseTag);
 const reducedCss='<style>*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}</style>';
 reduced.srcdoc=original.replace(/<head([^>]*)>/i,'<head$1>'+baseTag+reducedCss);
 let rate=1, paused=false, recording=false, events=[], rafSamples=[], longTasks=0, shifts=0;
+if(cdpProfile){const m=cdpProfile.metrics,fmt=v=>v==null?'not measured':Number(v).toFixed(1)+'ms';
+document.getElementById('fpsWorst').textContent=m.averageFps.toFixed(1)+' / '+fmt(m.worstFrameMs);
+document.getElementById('dropped').textContent=m.droppedFrames;
+document.getElementById('dropRatio').textContent=(m.droppedFrameRatio*100).toFixed(2)+'%';
+document.getElementById('loaf').textContent=m.longAnimationFrames.count;
+document.getElementById('blocking').textContent=fmt(m.mainThread.blockingTimeMs);
+document.getElementById('styleLayout').textContent=fmt(m.rendering.styleRecalculationMs)+' / '+fmt(m.rendering.layoutMs);
+document.getElementById('paintComposite').textContent=fmt(m.rendering.paintMs)+' / '+fmt(m.rendering.compositeMs);
+document.getElementById('renderCounts').textContent=m.rendering.layoutCount+' / '+m.rendering.paintCount;
+document.getElementById('compositeOnly').textContent=String(m.rendering.compositeOnly);
+document.getElementById('layers').textContent=m.rendering.maxCompositeLayers;
+document.getElementById('percentiles').textContent=[m.frameTimeMs.p50,m.frameTimeMs.p95,m.frameTimeMs.p99].map(v=>v.toFixed(1)).join(' / ')+'ms';
+document.getElementById('attribution').textContent=[...(m.animationAttribution.targets||[]),...(m.animationAttribution.traceEvents||[]).slice(0,3).map(v=>v.name+'×'+v.count)].join(', ')||'none';
+document.getElementById('latencySettle').textContent=fmt(m.interaction.inputToMotionLatencyMs)+' / '+fmt(m.interaction.settleTimeMs);
+document.getElementById('overshootCancel').textContent=(m.interaction.overshoot==null?'not measured':m.interaction.overshoot.toFixed(3))+' / '+fmt(m.interaction.cancelResponseTimeMs);
+document.getElementById('cleanup').textContent=String(m.cleanup.listenerDelta)+' / '+(m.cleanup.heapDeltaBytes==null?'not measured':m.cleanup.heapDeltaBytes+'B');
+document.getElementById('reducedResult').textContent=m.reducedMotion||'not measured'}
 const doc=()=>full.contentDocument, win=()=>full.contentWindow;
 function animations(){try{return doc().getAnimations({subtree:true})}catch{return[]}}
 function applyRate(){for(const animation of animations()){animation.playbackRate=rate;if(paused)animation.pause();else animation.play()}document.getElementById('count').textContent=animations().length}

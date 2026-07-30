@@ -1,14 +1,26 @@
-import { createApp, h, ref } from 'vue';
-import { projectMomentum } from '../../../runtime/motion/core.js';
-createApp({
+import { createApp, h, onBeforeUnmount, onMounted, ref } from 'vue';
+import { createMotionController } from '../../../runtime/motion/controller.js';
+const app = createApp({
   setup() {
-    const complete = ref(false);
+    const target = ref(null);
+    let controller;
+    onMounted(() => {
+      const recipe = new URLSearchParams(location.search).get('recipe') || 'momentum-projection';
+      controller = createMotionController(recipe, target.value, {
+        reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
+        duration: 72,
+      });
+      controller.mount();
+      window.__designosAdapter = controller;
+      window.__designosReady = true;
+    });
+    onBeforeUnmount(() => controller?.destroy());
     return () => h('button', {
       id: 'run',
-      'data-complete': String(complete.value),
-      'data-designos-source': 'fixtures/frameworks/vue/entry.js:7:18',
-      style: { transform: `translateX(${complete.value && !matchMedia('(prefers-reduced-motion: reduce)').matches ? projectMomentum(120, .8) : 0}px)` },
-      onClick: () => { complete.value = true; },
+      ref: target,
+      'data-designos-source': 'fixtures/frameworks/vue/entry.js:20:18',
     }, 'Vue motion fixture');
   },
-}).mount('#app');
+});
+app.mount('#app');
+window.__designosUnmount = () => app.unmount();

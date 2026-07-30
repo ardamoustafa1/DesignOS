@@ -92,8 +92,9 @@ design score or production Core Web Vitals claim can be reported.
   all 80 standard viewport scenarios contain Axe and AX-tree artifacts.
 - Six framework fixtures are real package builds. Playwright completed 48 browser assertions,
   and real React/Vue/Svelte source maps resolved back to their component sources.
-- Independent black-box evaluation passes 36/36 registry rule IDs. This closes the
-  capability map's previous `independentEval: 0` gap; it is rule-engine independence, not
+- Isolated black-box evaluation passes 36/36 registry rule IDs. This closes the
+  capability map's detector-isolation gap through `isolatedRuleEval`; it is not
+  `externalEval` or third-party proof,
   an independent human design panel.
 - Live Director now rejects performance-budget regressions and records Signature Compiler,
   sector, memory, and proof-policy provenance for generated variants.

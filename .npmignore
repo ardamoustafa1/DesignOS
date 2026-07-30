@@ -1,0 +1,6 @@
+# Generated and platform-specific evidence ships through `npm run pack:evidence`.
+goldens/*/evidence/**
+evals/runs/**
+fixtures/frameworks/dist/**
+.designos/**
+browser-evidence/**

@@ -17,6 +17,13 @@ jobs:
         run: ./validators/check-refs.sh
       - name: AGENTS.md kernel mirror in sync with CLAUDE.md
         run: diff -u CLAUDE.md AGENTS.md
+      - name: Generate dependency/capability ledger and reject committed drift
+        run: |
+          npm run ledger:update
+          git diff --exit-code -- capabilities/ledger.json README.md ARCHITECTURE.md ROADMAP.md LIMITATIONS.md
+          npm run check:ledger
+      - name: Enforce core npm package boundary
+        run: npm run check:package
       - name: Showcase pages pass a11y basics
         run: node validators/check-a11y-basics.js examples/ && node validators/check-a11y-basics.js website/
       - name: Golden artifacts pass the same mechanical floor they set

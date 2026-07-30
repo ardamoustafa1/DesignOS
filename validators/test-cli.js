@@ -184,7 +184,8 @@ test('bin/designos.js exists', () => {
 
 test('bin/designos.js contains npm-collision warning', () => {
   const binPath = path.resolve(__dirname, '..', 'bin', 'designos.js');
-  const src = fs.readFileSync(binPath, 'utf8');
+  const helpPath = path.resolve(__dirname, '..', 'bin', 'cli', 'commands', 'system.js');
+  const src = fs.readFileSync(binPath, 'utf8') + fs.readFileSync(helpPath, 'utf8');
   assert.ok(src.includes('npx designos'), 'npm collision guard text missing');
   assert.ok(src.includes('unrelated package'), 'unrelated package warning missing');
   assert.ok(src.includes('review <target>'), 'review command missing from help text');
@@ -353,7 +354,7 @@ test('elevate: writes premium refactor prompt', () => {
   assert.ok(body.includes('signature vehicle'), 'signature instruction missing');
 });
 
-test('eval: scaffolds independent run folders', () => {
+  test('eval: scaffolds comparative run folders without claiming external evidence', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-eval-'));
   fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
   fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });

@@ -44,6 +44,13 @@ function inspect(file) {
       if (!/slop-ok:\s*before-state fixture/i.test(source)
         && !excepted(source, match.index, 'slop-ok:')) add('source-named-default', match);
     }
+    for (const match of source.matchAll(/<img\b[^>]*>/gi)) {
+      const hasDimensions = /\bwidth\s*=/.test(match[0]) && /\bheight\s*=/.test(match[0]);
+      const window = source.slice(Math.max(0, match.index - 240), match.index + match[0].length + 240);
+      if (!hasDimensions && !/(?:aspect-ratio|runtime-ok:\s*verified intrinsic wrapper)/i.test(window)) {
+        add('source-image-dimensions', match);
+      }
+    }
     for (const match of source.matchAll(/<[^>]*data-trigger=["']keyboard["'][^>]*>/gi)) {
       const durations = [...match[0].matchAll(/(\d+)ms/gi)].map(item => Number(item[1]));
       if (durations.some(duration => duration > 80) && !excepted(source, match.index, 'motion-ok:')) add('motion-keyboard-latency', match);
@@ -64,6 +71,11 @@ function inspect(file) {
   }
 
   if (/\.(?:css|scss|sass|less|html?)$/i.test(file)) {
+    const hasMotionDeclaration = /(?:transition|animation)\s*:/i.test(source);
+    if (hasMotionDeclaration && !/prefers-reduced-motion\s*:/i.test(source)
+      && !/motion-ok:\s*(?:non-spatial or user-controlled motion|reduced path)/i.test(source)) {
+      add('motion-reduced-motion-missing', { index: source.search(/(?:transition|animation)\s*:/i) });
+    }
     for (const match of source.matchAll(/transition(?:-property)?\s*:\s*all\b/gi)) {
       if (!excepted(source, match.index, 'motion-ok:')) add('motion-transition-all', match);
     }
@@ -83,13 +95,16 @@ function inspect(file) {
     const delays = [...source.matchAll(/animation-delay\s*:\s*(\d+)ms/gi)].map(match => ({ match, value: Number(match[1]) }));
     for (const { match, value } of delays) if (value > 500 && !excepted(source, match.index, 'motion-ok:')) add('motion-stagger-budget', match);
     for (const match of source.matchAll(/--duration-enter\s*:\s*(\d+(?:\.\d+)?)ms[\s\S]{0,320}?--duration-exit\s*:\s*(\d+(?:\.\d+)?)ms/gi)) {
-      if (Number(match[1]) === Number(match[2]) && !excepted(source, match.index, 'motion-ok:')) {
+      const ratio = Number(match[2]) / Math.max(1, Number(match[1]));
+      if ((ratio < .55 || ratio > .85) && !excepted(source, match.index, 'motion-ok:')) {
         add('motion-enter-exit-symmetry', match);
       }
     }
     const anchoredSurface = source.search(/[.#][\w-]*(?:popover|dropdown|menu|dialog|tooltip)[\w-]*[\s\S]{0,1200}?(?:scale\(|animation\s*:)/i);
-    if (anchoredSurface >= 0 && /\bscale\(/i.test(source) && !/transform-origin\s*:/i.test(source)
-      && !/motion-ok:\s*center-origin reason/i.test(source)) {
+    const origin = /transform-origin\s*:\s*([^;}{]+)/i.exec(source)?.[1].trim();
+    if (anchoredSurface >= 0 && /\bscale\(/i.test(source) &&
+      (!origin || /^(?:center|50%\s+50%)$/i.test(origin)) &&
+      !/motion-ok:\s*center-origin reason/i.test(source)) {
       add('motion-transform-origin', { index: anchoredSurface });
     }
     for (const match of source.matchAll(/pointer-events\s*:\s*none/gi)) {
