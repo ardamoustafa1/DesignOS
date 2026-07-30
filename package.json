@@ -108,7 +108,7 @@
     "ledger:update": "node validators/check-capability-ledger.js --write",
     "claims:update": "node scripts/compile-public-claims.js --write",
     "check:claims": "node scripts/compile-public-claims.js",
-    "test": "node validators/test-cli.js && node validators/check-modules.js && node runtime/motion/test-runtime.js && node validators/test-motion-semantics.js && node validators/test-public-claims.js && node validators/test-product-engines.js && node validators/test-motion-workbench.js && node validators/test-gesture-studio.js && node validators/test-component-grammar.js",
+    "test": "node validators/test-cli.js && node validators/check-modules.js && node runtime/motion/test-runtime.js && node validators/test-motion-semantics.js && node validators/test-public-claims.js && node validators/test-product-engines.js && node validators/test-motion-workbench.js && node validators/test-gesture-studio.js && node validators/test-component-grammar.js && node validators/test-torture-simulator.js && node validators/test-design-genome.js",
     "test:frameworks": "node fixtures/frameworks/test-matrix.js",
     "test:motion-evidence": "node validators/test-motion-evidence.js",
     "test:leader": "node validators/test-leader-features.js",

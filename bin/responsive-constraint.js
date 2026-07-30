@@ -10,6 +10,34 @@ const DEFAULT_WIDTHS = Object.freeze([375, 768, 1024, 1440]);
 
 async function inspectWidth(page, width, options) {
   await page.setViewportSize({ width, height: options.height || 900 });
+  
+  if (options.torture) {
+    await page.evaluate(() => {
+      // Adaptive Torture Simulator: Aggressive DOM Mutation
+      // 1. Text Expansion & RTL
+      document.documentElement.dir = 'rtl';
+      document.documentElement.style.fontSize = '300%';
+      
+      const walk = node => {
+        if (node.nodeType === 3 && node.nodeValue.trim()) {
+          node.nodeValue = 'Donaudampfschifffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft ' + node.nodeValue + ' 日中韓 漢語';
+        } else if (node.nodeType === 1) {
+          // 2. Multiply Collections (1-100 items)
+          if (node.tagName === 'UL' || node.tagName === 'OL' || node.tagName === 'TBODY' || node.getAttribute('role') === 'list') {
+            if (node.children.length > 0) {
+              const clone = node.children[0].cloneNode(true);
+              for(let i=0; i<40; i++) node.appendChild(clone.cloneNode(true)); // Add 40 items
+            }
+          }
+          // 3. Force scrollbars & virtual keyboard safe areas
+          node.style.setProperty('--safe-area-inset-bottom', '300px'); // virtual keyboard
+          for(const child of node.childNodes) walk(child);
+        }
+      };
+      walk(document.body);
+    });
+  }
+  
   await page.waitForTimeout(40);
   return page.evaluate(({ minimumReadableLinePx, maximumMeasureCh, touchTargetPx, safeAreaPx }) => {
     const visible = element => {
@@ -78,6 +106,59 @@ async function inspectWidth(page, width, options) {
         add('data-table-fallback', element, rect.width, innerWidth - safeAreaPx * 2,
           { action: 'wrap in keyboard-focusable horizontal region or switch to labelled rows', deltaPx: Math.ceil(rect.width - (innerWidth - safeAreaPx * 2)) });
       }
+      
+      // Torture constraints
+      if (element.matches('button,a[href],input,select,textarea,[role=button],[role=link]')) {
+        // Touch Collision
+        for(const other of document.querySelectorAll('button,a[href],input,select,textarea,[role=button],[role=link]')) {
+          if(element !== other && visible(other)) {
+            const oRect = other.getBoundingClientRect();
+            if (!(rect.right < oRect.left || rect.left > oRect.right || rect.bottom < oRect.top || rect.top > oRect.bottom)) {
+              add('touch-collision', element, { overlap: true }, { overlap: false }, { action: 'Add sufficient spacing between touch targets' });
+            }
+          }
+        }
+      }
+      
+      // Hierarchy Collapse
+      if (element.matches('header,main,footer,section,article')) {
+        for(const other of document.querySelectorAll('header,main,footer,section,article')) {
+          if(element !== other && element.parentElement === other.parentElement && visible(other)) {
+            const oRect = other.getBoundingClientRect();
+            if (!(rect.right < oRect.left || rect.left > oRect.right || rect.bottom < oRect.top || rect.top > oRect.bottom)) {
+              add('hierarchy-collapse', element, { overlap: true }, { overlap: false }, { action: 'Fix z-index, absolute positioning, or float clearing' });
+            }
+          }
+        }
+      }
+      
+      // Orphan CTA
+      if (element.matches('button[type="submit"],button.primary,[data-primary="true"]')) {
+        let parent = element.parentElement;
+        while(parent && parent !== document.body) {
+          if(getComputedStyle(parent).overflowY === 'hidden' || getComputedStyle(parent).overflow === 'hidden') {
+            const pRect = parent.getBoundingClientRect();
+            if (rect.bottom > pRect.bottom || rect.top < pRect.top) {
+              add('orphan-cta', element, { hidden: true }, { hidden: false }, { action: 'Primary CTA is trapped inside hidden overflow without a scroll route' });
+            }
+          }
+          parent = parent.parentElement;
+        }
+      }
+      
+      // Clipped Focus
+      if (element.matches(':focus-visible') || element.tabIndex >= 0) {
+        let parent = element.parentElement;
+        while(parent && parent !== document.body) {
+          if(getComputedStyle(parent).overflow === 'hidden') {
+            const pRect = parent.getBoundingClientRect();
+            if (rect.left < pRect.left || rect.right > pRect.right || Math.max(0, rect.width) === 0) {
+              add('clipped-focus', element, { clipped: true }, { clipped: false }, { action: 'Focusable element is clipped horizontally or scaled to 0 width' });
+            }
+          }
+          parent = parent.parentElement;
+        }
+      }
     }
     return {
       viewport: { width: innerWidth, height: innerHeight },
@@ -134,13 +215,14 @@ async function main() {
     const index = args.indexOf(name);
     return index >= 0 ? args[index + 1] : fallback;
   };
+  const torture = args.includes('--torture');
   const target = args.find(arg => !arg.startsWith('--'));
-  if (!target) throw new Error('Usage: responsive-constraint <html-or-url> [--out report.json] [--no-fail]');
-  const report = await solveResponsiveConstraints({ target, cwd: process.cwd() });
+  if (!target) throw new Error('Usage: responsive-constraint <html-or-url> [--out report.json] [--no-fail] [--torture]');
+  const report = await solveResponsiveConstraints({ target, cwd: process.cwd(), torture });
   const output = path.resolve(value('--out', '.designos/responsive-constraints.json'));
   fs.mkdirSync(path.dirname(output), { recursive: true });
   fs.writeFileSync(output, JSON.stringify(report, null, 2) + '\n');
-  console.log(`responsive-constraint: ${report.violations.length} violation(s) → ${path.relative(process.cwd(), output)}`);
+  console.log(`responsive-constraint: ${report.violations.length} violation(s) → ${path.relative(process.cwd(), output)}${torture ? ' (TORTURE MODE)' : ''}`);
   if (!report.passed && !args.includes('--no-fail')) process.exit(1);
 }
 
