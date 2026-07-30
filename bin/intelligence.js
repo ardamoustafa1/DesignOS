@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { RULES } = require('../validators/rule-registry');
 const { RECIPES, STACKS, adapterSource } = require('../runtime/motion/recipes');
+const { compileMotionSemantics } = require('../runtime/motion/semantics');
 const { verifyExternalRegistry } = require('./external-eval');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -16,7 +17,8 @@ const value = (args, name, fallback = '') => {
 const positionals = args => {
   const valueFlags = new Set(['--frequency', '--purpose', '--initiator', '--interruptibility', '--cost', '--motion',
     '--material', '--audience', '--belief', '--variance', '--density', '--sector', '--platform', '--state', '--stack',
-    '--evidence', '--out', '--role', '--surface', '--mode', '--aspect']);
+    '--evidence', '--out', '--role', '--surface', '--mode', '--aspect', '--component', '--transition', '--modality',
+    '--geometry', '--preference', '--device-power', '--importance']);
   const out = [];
   for (let index = 0; index < args.length; index++) {
     if (!args[index].startsWith('--')) out.push(args[index]);
@@ -40,61 +42,20 @@ const tokens = input => String(input).toLowerCase().split(/[^a-z0-9]+/).filter(t
 
 function motionDecision(args) {
   const interaction = positionals(args).join(' ') || 'interaction';
-  const frequency = value(args, '--frequency', 'medium');
-  const purpose = value(args, '--purpose', 'feedback');
-  const initiator = value(args, '--initiator', 'pointer');
-  const interruptibility = value(args, '--interruptibility', 'reversible');
-  const cost = value(args, '--cost', 'compositor');
-  const intensity = clampDial(value(args, '--motion', '4'));
-  const reasons = [];
-  let decision = 'animate';
-  let duration = 180;
-  let implementation = 'CSS transition on transform/opacity';
-  let easing = 'var(--ease-out)';
-
-  const frequencyCeilings = { 'very-high': 80, high: 120, medium: 200, low: 300, rare: 500 };
-  duration = frequencyCeilings[frequency] || 200;
-  reasons.push(`${frequency} frequency caps the response at ${duration}ms`);
-  if (initiator === 'keyboard' && ['very-high', 'high'].includes(frequency)) {
-    decision = 'feedback-only';
-    duration = Math.min(duration, 80);
-    implementation = 'opacity-only feedback; no entrance translation';
-    reasons.push('frequent keyboard actions must feel immediate');
-  }
-  if (interruptibility === 'direct-manipulation') {
-    decision = 'track-then-settle';
-    duration = 0;
-    implementation = '1:1 pointer tracking, then cancellable spring/WAAPI settle';
-    reasons.push('direct manipulation forbids easing while the pointer is down');
-  }
-  if (['layout', 'main-thread'].includes(cost)) {
-    decision = 'reject-until-reworked';
-    implementation = cost === 'layout' ? 'FLIP/compositor alternative required' : 'worker/CSS/WAAPI alternative required';
-    reasons.push(`${cost} cost violates the default performance budget`);
-  }
-  if (purpose === 'delight' && (intensity < 6 || !['low', 'rare'].includes(frequency))) {
-    decision = 'reject';
-    reasons.push('delight requires intensity 6+ and low/rare frequency');
-  }
-  if (purpose === 'continuity' && decision === 'animate') {
-    easing = 'var(--ease-in-out)';
-    reasons.push('continuity moves an object already on screen');
-  }
-  const result = {
-    interaction,
-    inputs: { frequency, purpose, initiator, interruptibility, cost, motionIntensity: intensity },
-    decision,
-    maximumDurationMs: duration,
-    exitDurationMs: duration ? Math.round(duration * 0.75) : 0,
-    easing,
-    implementation,
-    reducedMotion: interruptibility === 'direct-manipulation'
-      ? 'Keep 1:1 tracking; remove momentum/bounce and snap to the nearest state.'
-      : 'Remove spatial travel; use opacity ≤80ms or an immediate state change.',
-    verification: ['cancellation/reversal', '4× CPU throttle', 'INP <200ms', 'reduced-motion functional equivalence'],
-    reasons,
-    module: 'motion/decision-engine.md',
-  };
+  const geometry = value(args, '--geometry', '0x0,0');
+  const result = compileMotionSemantics({
+    componentType: value(args, '--component', interaction),
+    stateTransition: value(args, '--transition', value(args, '--purpose', 'update')),
+    frequency: value(args, '--frequency', 'medium'),
+    inputModality: value(args, '--modality', value(args, '--initiator', 'pointer')),
+    geometry,
+    motionIntensity: value(args, '--motion', '4'),
+    userPreference: value(args, '--preference', 'full'),
+    devicePower: value(args, '--device-power', 'medium'),
+    semanticImportance: value(args, '--importance', 'normal'),
+  });
+  result.interaction = interaction;
+  result.module = 'motion/decision-engine.md + runtime/motion/semantics.js';
   return write(result, args);
 }
 
@@ -332,4 +293,5 @@ module.exports = {
   graphNodes,
   COMPOSITIONS,
   compileSignature,
+  compileMotionSemantics,
 };
