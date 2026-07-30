@@ -184,7 +184,8 @@ test('bin/designos.js exists', () => {
 
 test('bin/designos.js contains npm-collision warning', () => {
   const binPath = path.resolve(__dirname, '..', 'bin', 'designos.js');
-  const src = fs.readFileSync(binPath, 'utf8');
+  const helpPath = path.resolve(__dirname, '..', 'bin', 'cli', 'commands', 'system.js');
+  const src = fs.readFileSync(binPath, 'utf8') + fs.readFileSync(helpPath, 'utf8');
   assert.ok(src.includes('npx designos'), 'npm collision guard text missing');
   assert.ok(src.includes('unrelated package'), 'unrelated package warning missing');
   assert.ok(src.includes('review <target>'), 'review command missing from help text');
@@ -353,7 +354,7 @@ test('elevate: writes premium refactor prompt', () => {
   assert.ok(body.includes('signature vehicle'), 'signature instruction missing');
 });
 
-test('eval: scaffolds independent run folders', () => {
+  test('eval: scaffolds comparative run folders without claiming external evidence', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-eval-'));
   fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
   fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
@@ -537,6 +538,185 @@ test('suggest web mirror: website/suggest.html carries every sector, palette hex
     assert.ok(page.includes(`${key}:`) || page.includes(`'${key}'`),
       `surface "${key}" missing from website/suggest.html — sync the page data`);
   }
+});
+
+test('check-motion: catches the compositor, ceiling, easing, and loop violations', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-motion-'));
+  const css = [
+    ':root { --duration-fast: 150ms; --ease-out: cubic-bezier(0.16, 1, 0.3, 1); }',
+    '@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }',
+    '.a { transition: all 400ms ease-in-out; }',          // transition-all + over 300ms
+    '.b { transition: height 200ms ease-out; }',          // layout property
+    '.c { transition: opacity 200ms ease-in; }',          // ease-in outside an exit
+    '.d { animation: float 6s ease-out infinite; }',      // decorative infinite loop
+    '.e:hover { transition: color 240ms ease-out; }',     // sluggish hover
+    '.ok { transition: transform var(--duration-fast) var(--ease-out); }',
+  ].join('\n');
+  fs.writeFileSync(path.join(tmp, 'a.css'), css);
+  const r = spawnSync('node', [path.resolve(__dirname, 'check-motion.js'), 'a.css'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(r.status, 1, 'motion violations must fail the run');
+  for (const rule of ['motion-transition-all', 'motion-duration-ceiling', 'motion-noncomposited',
+    'motion-ease-in-entrance', 'motion-infinite-decoration', 'motion-hover-sluggish']) {
+    assert.ok(r.stdout.includes(rule), `${rule} must be reported`);
+  }
+  assert.ok(!/\.ok\b/.test(r.stdout.replace(/motion-ok/g, '')), 'tokenised transform transition must not be flagged');
+});
+
+test('check-motion: honours the motion-ok directive and the reduced-motion rule', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-motion2-'));
+  fs.writeFileSync(path.join(tmp, 'ok.css'), [
+    '@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }',
+    '/* motion-ok: hero signature moment, once per visit */',
+    '.hero { animation: rise 800ms ease-out; }',
+  ].join('\n'));
+  const ok = spawnSync('node', [path.resolve(__dirname, 'check-motion.js'), 'ok.css'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(ok.status, 0, 'a documented exception must clear the run');
+
+  fs.writeFileSync(path.join(tmp, 'bare.css'), '.x { transition: opacity 200ms ease-out; }');
+  const bare = spawnSync('node', [path.resolve(__dirname, 'check-motion.js'), 'bare.css'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(bare.status, 1, 'motion without a reduced-motion policy must fail');
+  assert.ok(bare.stdout.includes('motion-no-reduced-motion'), 'the reduced-motion rule must name itself');
+});
+
+test('check-aesthetic-slop: P2 violations fail, P3 advisories do not', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-slop-'));
+  const bad = [
+    '<!doctype html><html><head><style>',
+    '.hero { background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); }',
+    '</style></head><body><main><h1>Elevate your workflow</h1>',
+    '<p>Acme Corp trusted us.</p></main></body></html>',
+  ].join('\n');
+  fs.writeFileSync(path.join(tmp, 'bad.html'), bad);
+  const r = spawnSync('node', [path.resolve(__dirname, 'check-aesthetic-slop.js'), 'bad.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(r.status, 1, 'named defaults must fail the run');
+  assert.ok(r.stdout.includes('slop-ai-gradient'), 'the violet→fuchsia default must be caught');
+  assert.ok(r.stdout.includes('slop-filler-copy'), 'category filler must be caught');
+  assert.ok(r.stdout.includes('slop-placeholder-identity'), 'placeholder identity must be caught');
+
+  // advisory-only page: a default typeface is P3, so the run still passes
+  fs.writeFileSync(path.join(tmp, 'mild.html'),
+    '<!doctype html><html><head><style>body { font-family: Inter, sans-serif; }</style></head><body><main><h1>Ledger reconciliation</h1></main></body></html>');
+  const mild = spawnSync('node', [path.resolve(__dirname, 'check-aesthetic-slop.js'), 'mild.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(mild.status, 0, 'a P3 advisory alone must not fail the run');
+  assert.ok(mild.stdout.includes('slop-default-typeface'), 'the advisory must still be printed');
+  const strict = spawnSync('node', [path.resolve(__dirname, 'check-aesthetic-slop.js'), 'mild.html', '--strict'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(strict.status, 1, '--strict must promote advisories to failures');
+});
+
+test('check-aesthetic-slop: BEM card regions are not nested cards (false-positive regression)', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-slop2-'));
+  fs.writeFileSync(path.join(tmp, 'a.html'),
+    '<!doctype html><html><body><main><div class="card"><div class="card-top">Region, not a card</div></div>' +
+    '<div class="panel"><div class="panel-head">Also a region</div></div></main></body></html>');
+  const ok = spawnSync('node', [path.resolve(__dirname, 'check-aesthetic-slop.js'), 'a.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.ok(!ok.stdout.includes('slop-nested-card'), 'card-top / panel-head are BEM regions, not nested cards');
+
+  fs.writeFileSync(path.join(tmp, 'b.html'),
+    '<!doctype html><html><body><main><div class="card"><div class="feature-card">Really nested</div></div></main></body></html>');
+  const bad = spawnSync('node', [path.resolve(__dirname, 'check-aesthetic-slop.js'), 'b.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.ok(bad.stdout.includes('slop-nested-card'), 'a real card inside a card must still be caught');
+});
+
+test('check-token-contrast: catches inherited color over an ancestor background', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-cascade-'));
+  const html = [
+    '<!doctype html><html><head><style>',
+    ':root { --muted: #a8a8ad; --paper: #ffffff; --ink: #18181b; }',
+    'body { background: var(--paper); color: var(--ink); }',
+    '.panel { background: #f4f4f5; }',           // the ancestor that paints
+    '.panel .note { color: var(--muted); }',     // 2.15:1 — invisible to the same-rule pass
+    '.veil { background: rgb(0 0 0 / 0.06); }',  // translucent layer, must composite
+    '.veil small { color: #8e8e95; }',
+    '.fine { color: #444444; }',                 // 9.7:1 — must NOT be flagged
+    '</style></head><body><main>',
+    '<div class="panel"><span class="note">Muted text on a light panel</span></div>',
+    '<div class="veil"><small>Composited veil text</small></div>',
+    '<p class="fine">Perfectly readable body copy</p>',
+    '</main></body></html>',
+  ].join('\n');
+  fs.writeFileSync(path.join(tmp, 'index.html'), html);
+  const r = spawnSync('node', [path.resolve(__dirname, 'check-token-contrast.js'), 'index.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(r.status, 1, 'inherited contrast failures must fail the run');
+  assert.ok(r.stdout.includes('contrast-inherited-fail'), 'the cascade rule must name itself');
+  assert.ok(r.stdout.includes('span.note'), 'the failing element must be identified');
+  assert.ok(/#8e8e95 on #f0f0f0/.test(r.stdout), 'a translucent background must be composited before judging');
+  assert.ok(!r.stdout.includes('.fine'), 'a passing element must not be flagged');
+});
+
+test('check-token-contrast: a comment above a rule does not break selector matching', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-cascade2-'));
+  const html = [
+    '<!doctype html><html><head><style>',
+    'body { background: #ffffff; }',
+    '/* the terminal surface */',
+    '.term { background: #16161a; }',
+    '.term .muted { color: #71717a; }',   // 3.73:1 on #16161a, NOT on the white body
+    '</style></head><body><main><div class="term"><span class="muted">boot log line</span></div></main></body></html>',
+  ].join('\n');
+  fs.writeFileSync(path.join(tmp, 'index.html'), html);
+  const r = spawnSync('node', [path.resolve(__dirname, 'check-token-contrast.js'), 'index.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.ok(r.stdout.includes('#16161a'), 'the commented rule must still resolve as the painted ancestor');
+  assert.ok(!r.stdout.includes('on #ffffff'), 'the body background must not leak past a painted ancestor');
+});
+
+test('find: BM25 retrieval returns the governing preset and its module', () => {
+  const cli = path.resolve(__dirname, '..', 'bin', 'designos.js');
+  const r = spawnSync('node', [cli, 'find', 'accordion expand collapse height', '--limit', '1'], { encoding: 'utf8' });
+  assert.strictEqual(r.status, 0, 'find must succeed');
+  assert.ok(r.stdout.includes('Accordion'), 'the accordion preset must rank first');
+  assert.ok(r.stdout.includes('grid-template-rows'), 'the retrieved artefact must carry real code');
+  assert.ok(r.stdout.includes('motion/performance.md'), 'a retrieved answer must name the module that governs it');
+
+  const typed = spawnSync('node', [cli, 'find', 'dense dashboard table', '--kind', 'type', '--limit', '1'], { encoding: 'utf8' });
+  assert.ok(typed.stdout.includes('Archivo'), '--kind type must restrict the corpus to type pairings');
+  assert.ok(typed.stdout.includes('avoid when'), 'a pairing must carry its counter-case');
+});
+
+test('find: library presets stay consistent with the motion module they cite', () => {
+  const { MOTION_PRESETS, TYPE_PAIRINGS } = require(path.resolve(__dirname, '..', 'bin', 'library-data.js'));
+  const root = path.resolve(__dirname, '..');
+  for (const p of MOTION_PRESETS) {
+    assert.ok(fs.existsSync(path.join(root, p.module)), `${p.id} cites a module that does not exist: ${p.module}`);
+    assert.ok(p.doNot && p.doNot.length > 20, `${p.id} must carry a real anti-pattern, not a stub`);
+    assert.ok(['subtle', 'standard', 'expressive'].includes(p.tier), `${p.id} has an unmapped tier`);
+  }
+  for (const t of TYPE_PAIRINGS) {
+    assert.ok(t.avoidWhen && t.avoidWhen.length > 20, `${t.id} must say when NOT to use it`);
+  }
+});
+
+test('find: the wow layer is retrievable and every signature preset is expressive', () => {
+  const cli = path.resolve(__dirname, '..', 'bin', 'designos.js');
+  const r = spawnSync('node', [cli, 'find', 'magnetic cursor button pull', '--limit', '1'], { encoding: 'utf8' });
+  assert.ok(r.stdout.includes('Magnetic button'), 'the wow layer must be reachable by query');
+  assert.ok(r.stdout.includes('expressive'), 'signature presets must be tiered expressive');
+  assert.ok(r.stdout.includes('signature-moments.md'), 'a signature must cite the module that governs it');
+
+  const { MOTION_PRESETS } = require(path.resolve(__dirname, '..', 'bin', 'library-data.js'));
+  const signatures = MOTION_PRESETS.filter(p => p.module === 'motion/signature-moments.md');
+  assert.ok(signatures.length >= 10, `the catalogue must carry all ten techniques, found ${signatures.length}`);
+  for (const s of signatures) {
+    assert.strictEqual(s.tier, 'expressive', `${s.id} is a signature and must be expressive tier`);
+  }
+});
+
+test('golden flagship-launch: both artifacts exist and the lab declares itself a lab', () => {
+  const dir = path.resolve(__dirname, '..', 'goldens', 'flagship-launch');
+  const page = fs.readFileSync(path.join(dir, 'index.html'), 'utf8');
+  const lab = fs.readFileSync(path.join(dir, 'lab.html'), 'utf8');
+
+  // the golden obeys the scarcity law: reduced motion, tokens, cleanup
+  assert.ok(page.includes('prefers-reduced-motion'), 'the golden must carry a reduced-motion policy');
+  assert.ok(/--duration-slower:\s*500ms/.test(page), 'the golden must define the motion token layer');
+  assert.ok(!/transition:\s*all\b/.test(page), 'the golden must never use transition: all');
+  assert.ok(page.includes('pagehide'), 'the golden must tear its listeners down');
+  assert.ok(/\{\s*passive:\s*true\s*\}/.test(page), 'scroll listeners must be passive');
+  assert.ok(!/preventDefault/.test(page), 'a scroll story must never jack the scroll');
+
+  // the lab breaks the law on purpose and must say so, loudly and near the top
+  assert.ok(/not a page to imitate/i.test(lab), 'the lab must disclaim itself');
+  assert.ok(lab.indexOf('not a page to imitate') < lab.length / 2, 'the disclaimer must be near the top');
+  assert.ok(lab.includes('signature-moments.md'), 'the lab must cite the catalogue it demonstrates');
 });
 
 // ── SUMMARY ───────────────────────────────────────────────────────────────────

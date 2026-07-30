@@ -1,0 +1,1 @@
+{"input":{"distance":10,"dimension":400,"velocity":0.2},"expected":{"dismiss":true,"flicked":true}}

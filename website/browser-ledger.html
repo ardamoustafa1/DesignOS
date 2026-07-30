@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DesignOS Browser Evidence Ledger</title>
+  <style>
+    :root{color-scheme:light dark;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;--bg:#0b0d10;--panel:#14181e;--text:#f4f7fb;--muted:#a8b2c1;--ok:#48d597;--line:#303844}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.55}.wrap{width:min(960px,calc(100% - 32px));margin:auto;padding:48px 0}a{color:var(--ok);min-height:44px;display:inline-flex;align-items:center}h1{font:700 clamp(2rem,5vw,3.5rem)/1.05 system-ui;margin:0 0 16px}.lede{color:var(--muted);max-width:70ch}.panel{margin-top:24px;padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}.status{color:var(--ok);font-weight:800}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.metric{padding:16px;border:1px solid var(--line);border-radius:8px}.metric b{display:block;font-size:1.5rem}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;margin-top:16px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line)}:focus-visible{outline:2px solid var(--ok);outline-offset:3px}
+  </style>
+</head>
+<body><main class="wrap">
+  <a href="index.html">← DesignOS</a>
+  <h1>Browser evidence ledger</h1>
+  <p class="lede">This page is generated from the browser gate for the exact deployed commit. It is evidence of the listed automated checks, not a claim of complete WCAG conformance or a human design score.</p>
+  <section class="panel" id="ledger" aria-live="polite"><p>Loading signed commit evidence…</p></section>
+</main><script>
+fetch('browser-ledger.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('ledger unavailable');return response.json()}).then(data=>{
+  const summary=data.browserGate.summary;
+  const lh=data.lighthouse;
+  document.getElementById('ledger').innerHTML=`<p class="status">${data.claim}</p><p>Commit: ${data.commitUrl?`<a href="${data.commitUrl}"><code>${data.shortSha}</code></a>`:`<code>${data.shortSha}</code>`} · Generated: ${new Date(data.generatedAt).toLocaleString()}</p>${data.runUrl?`<p><a href="${data.runUrl}">Open GitHub Actions run ↗</a></p>`:''}<div class="grid"><div class="metric"><b>${summary.scenarios}</b>scenarios</div><div class="metric"><b>${summary.keyboardPaths}</b>keyboard paths</div><div class="metric"><b>${summary.tasksPassed}/${summary.tasksDeclared}</b>tasks</div><div class="metric"><b>${summary.p1}</b>P1 findings</div></div>${lh?`<h2>Lighthouse lab gate</h2><p class="lede">${lh.throttlingMethod} throttling · Lighthouse ${lh.version}</p><div class="grid">${Object.entries(lh.categories).map(([name,score])=>`<div class="metric"><b>${score}</b>${name}</div>`).join('')}<div class="metric"><b>${Math.round(lh.metrics.lcpMs)}ms</b>LCP</div><div class="metric"><b>${lh.metrics.cls}</b>CLS</div><div class="metric"><b>${Math.round(lh.metrics.tbtMs)}ms</b>TBT</div></div>`:''}<h2>Golden baselines</h2><div class="table-wrap" role="region" aria-label="Golden browser evidence" tabindex="0"><table><thead><tr><th>Golden</th><th>Scenarios</th><th>P1</th><th>P2</th></tr></thead><tbody>${data.goldens.map(item=>`<tr><td>${item.name}</td><td>${item.summary.scenarios}</td><td>${item.summary.p1}</td><td>${item.summary.p2}</td></tr>`).join('')}</tbody></table></div>`;
+}).catch(error=>{document.getElementById('ledger').innerHTML=`<p role="alert">No deployed ledger is available: ${error.message}</p>`});
+</script></body></html>

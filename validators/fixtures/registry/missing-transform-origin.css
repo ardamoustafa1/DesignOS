@@ -1,0 +1,6 @@
+.popover[data-state="open"] {
+  animation: popover-in 150ms ease-out;
+}
+@keyframes popover-in {
+  from { opacity: .01; transform: scale(.96); }
+}

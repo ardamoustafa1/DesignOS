@@ -1,0 +1,413 @@
+{
+  "schema": 2,
+  "generatedAt": "2026-07-30T08:36:22.317Z",
+  "isolatedRuleEval": true,
+  "externalEval": false,
+  "evaluatorContract": "Each rule is exercised through a child-process black box using only its public fixture and emitted finding ID.",
+  "results": [
+    {
+      "ruleId": "source-raw-color",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/raw-color.css",
+      "passed": true,
+      "observed": [
+        "source-raw-color"
+      ]
+    },
+    {
+      "ruleId": "source-clickable-noncontrol",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/clickable-div.html",
+      "passed": true,
+      "observed": [
+        "source-clickable-noncontrol",
+        "source-missing-focus"
+      ]
+    },
+    {
+      "ruleId": "source-missing-focus",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/missing-focus.html",
+      "passed": true,
+      "observed": [
+        "source-missing-focus"
+      ]
+    },
+    {
+      "ruleId": "source-fake-proof",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/fake-proof.html",
+      "passed": true,
+      "observed": [
+        "source-fake-proof",
+        "source-fake-proof"
+      ]
+    },
+    {
+      "ruleId": "source-image-dimensions",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/missing-image-dimensions.html",
+      "passed": true,
+      "observed": [
+        "source-image-dimensions"
+      ]
+    },
+    {
+      "ruleId": "source-named-default",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/named-default.html",
+      "passed": true,
+      "observed": [
+        "source-named-default"
+      ]
+    },
+    {
+      "ruleId": "motion-transition-all",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/transition-all.css",
+      "passed": true,
+      "observed": [
+        "motion-reduced-motion-missing",
+        "motion-transition-all"
+      ]
+    },
+    {
+      "ruleId": "motion-scale-zero",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/scale-zero.css",
+      "passed": true,
+      "observed": [
+        "motion-scale-zero"
+      ]
+    },
+    {
+      "ruleId": "motion-hover-without-pointer-query",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/hover-touch.css",
+      "passed": true,
+      "observed": [
+        "motion-hover-without-pointer-query"
+      ]
+    },
+    {
+      "ruleId": "motion-keyboard-latency",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/keyboard-motion.html",
+      "passed": true,
+      "observed": [
+        "source-missing-focus",
+        "motion-keyboard-latency",
+        "motion-reduced-motion-missing"
+      ]
+    },
+    {
+      "ruleId": "motion-unbounded-loop",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/unbounded-loop.css",
+      "passed": true,
+      "observed": [
+        "motion-reduced-motion-missing",
+        "motion-unbounded-loop"
+      ]
+    },
+    {
+      "ruleId": "motion-scroll-unthrottled",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/scroll-handler.js",
+      "passed": true,
+      "observed": [
+        "motion-scroll-unthrottled"
+      ]
+    },
+    {
+      "ruleId": "motion-drag-no-capture",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/drag-no-capture.js",
+      "passed": true,
+      "observed": [
+        "motion-drag-no-capture"
+      ]
+    },
+    {
+      "ruleId": "motion-no-cancellation",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/no-cancel.js",
+      "passed": true,
+      "observed": [
+        "motion-no-cancellation"
+      ]
+    },
+    {
+      "ruleId": "motion-no-visibility-pause",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/no-visibility.js",
+      "passed": true,
+      "observed": [
+        "motion-no-cancellation",
+        "motion-no-visibility-pause"
+      ]
+    },
+    {
+      "ruleId": "motion-spring-no-reduction",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/spring-no-reduce.js",
+      "passed": true,
+      "observed": [
+        "motion-spring-no-reduction"
+      ]
+    },
+    {
+      "ruleId": "motion-reduced-motion-missing",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/no-reduced-motion.css",
+      "passed": true,
+      "observed": [
+        "motion-reduced-motion-missing"
+      ]
+    },
+    {
+      "ruleId": "motion-stagger-budget",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/stagger-budget.css",
+      "passed": true,
+      "observed": [
+        "motion-stagger-budget"
+      ]
+    },
+    {
+      "ruleId": "motion-interaction-blocked",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/blocked-animation.css",
+      "passed": true,
+      "observed": [
+        "motion-reduced-motion-missing",
+        "motion-interaction-blocked"
+      ]
+    },
+    {
+      "ruleId": "motion-enter-exit-symmetry",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/enter-exit-symmetry.css",
+      "passed": true,
+      "observed": [
+        "motion-enter-exit-symmetry"
+      ]
+    },
+    {
+      "ruleId": "motion-transform-origin",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/missing-transform-origin.css",
+      "passed": true,
+      "observed": [
+        "motion-reduced-motion-missing",
+        "motion-transform-origin"
+      ]
+    },
+    {
+      "ruleId": "dom-horizontal-overflow",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/horizontal-overflow.html",
+      "passed": true,
+      "observed": [
+        "dom-horizontal-overflow",
+        "axe-violation",
+        "dom-text-spacing"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-header-collision",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/header-collision.html",
+      "passed": true,
+      "observed": [
+        "dom-horizontal-overflow",
+        "dom-header-collision",
+        "axe-violation",
+        "dom-text-spacing"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-tap-target",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/tap-target.html",
+      "passed": true,
+      "observed": [
+        "dom-tap-target",
+        "axe-violation"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-text-too-small",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/small-text.html",
+      "passed": true,
+      "observed": [
+        "dom-text-too-small",
+        "axe-violation"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-focus-obscured",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/focus-obscured.html",
+      "passed": true,
+      "observed": [
+        "dom-focus-obscured",
+        "dom-tap-target",
+        "dom-fixed-overlap",
+        "dom-text-spacing",
+        "dom-forced-colors"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-clipped-text",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/clipped-text.html",
+      "passed": true,
+      "observed": [
+        "dom-clipped-text",
+        "axe-violation",
+        "dom-text-spacing"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-fixed-overlap",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/fixed-overlap.html",
+      "passed": true,
+      "observed": [
+        "dom-focus-obscured",
+        "dom-tap-target",
+        "dom-fixed-overlap",
+        "axe-violation",
+        "dom-text-spacing",
+        "dom-forced-colors"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "runtime-console-error",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/console-error.html",
+      "passed": true,
+      "observed": [
+        "axe-violation",
+        "runtime-console-error"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "runtime-broken-resource",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/broken-resource.html",
+      "passed": true,
+      "observed": [
+        "axe-violation",
+        "runtime-broken-resource",
+        "runtime-console-error"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "axe-violation",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/axe-violation.html",
+      "passed": true,
+      "observed": [
+        "dom-tap-target",
+        "axe-violation"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-text-spacing",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/text-spacing.html",
+      "passed": true,
+      "observed": [
+        "dom-clipped-text",
+        "dom-text-spacing"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-forced-colors",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/forced-colors.html",
+      "passed": true,
+      "observed": [
+        "dom-forced-colors"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-task-flow",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/task-flow.html",
+      "passed": true,
+      "observed": [
+        "dom-task-flow"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "dom-live-announcement",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/live-announcement.html",
+      "passed": true,
+      "observed": [
+        "dom-live-announcement",
+        "dom-task-flow"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "runtime-interaction-latency",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/interaction-latency.html",
+      "passed": true,
+      "observed": [
+        "runtime-interaction-latency",
+        "dom-task-flow"
+      ],
+      "scenarios": 1
+    },
+    {
+      "ruleId": "lighthouse-budget",
+      "evaluator": "isolated-lighthouse-black-box",
+      "fixture": "validators/fixtures/lighthouse/budget.html",
+      "passed": true,
+      "observed": [
+        "lighthouse-budget"
+      ],
+      "categories": {
+        "performance": 71,
+        "accessibility": 77,
+        "best-practices": 96,
+        "seo": 90
+      }
+    },
+    {
+      "ruleId": "visual-regression",
+      "evaluator": "isolated-browser-black-box",
+      "fixture": "validators/fixtures/browser/regression.html",
+      "passed": true,
+      "observed": [
+        "axe-violation",
+        "visual-regression"
+      ],
+      "scenarios": 1
+    }
+  ],
+  "summary": {
+    "total": 38,
+    "passed": 38,
+    "failed": 0
+  }
+}

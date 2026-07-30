@@ -1,0 +1,2889 @@
+{
+  "semantic": {
+    "lang": "en",
+    "title": "Relayer · AI Copilot for Revenue Teams (DesignOS Golden)",
+    "landmarks": {
+      "header": 1,
+      "nav": 1,
+      "main": 1,
+      "aside": 0,
+      "footer": 1
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "The copilot that shows its sources before you trust its summary."
+      },
+      {
+        "level": 2,
+        "text": "Input → boundary → output. Every run, the same shape."
+      },
+      {
+        "level": 2,
+        "text": "Great at some things. Deliberately not built for others."
+      },
+      {
+        "level": 3,
+        "text": "What it does well"
+      },
+      {
+        "level": 3,
+        "text": "What it refuses to do"
+      },
+      {
+        "level": 2,
+        "text": "In your stack before the meeting ends"
+      },
+      {
+        "level": 2,
+        "text": "See your own accounts through it."
+      }
+    ],
+    "controls": [
+      {
+        "selector": "html > body > a.skip",
+        "role": "a",
+        "name": "Skip to content"
+      },
+      {
+        "selector": "html > body > header.site > div.wrap > a.logo",
+        "role": "a",
+        "name": "Relayer"
+      },
+      {
+        "selector": "div.wrap > nav > ul > li:nth-of-type(1) > a",
+        "role": "a",
+        "name": "How it works"
+      },
+      {
+        "selector": "div.wrap > nav > ul > li:nth-of-type(2) > a",
+        "role": "a",
+        "name": "Limits"
+      },
+      {
+        "selector": "div.wrap > nav > ul > li:nth-of-type(3) > a",
+        "role": "a",
+        "name": "Integrate"
+      },
+      {
+        "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(1)",
+        "role": "a",
+        "name": "View docs"
+      },
+      {
+        "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(2)",
+        "role": "a",
+        "name": "Start free"
+      },
+      {
+        "selector": "main > section.hero:nth-of-type(1) > div:nth-of-type(1) > div.cta-row > a.btn:nth-of-type(1)",
+        "role": "a",
+        "name": "Start free"
+      },
+      {
+        "selector": "main > section.hero:nth-of-type(1) > div:nth-of-type(1) > div.cta-row > a.btn:nth-of-type(2)",
+        "role": "a",
+        "name": "See a real run ↓"
+      },
+      {
+        "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(1) > span.sources > a",
+        "role": "a",
+        "name": "4 sources"
+      },
+      {
+        "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(2) > span.sources > a",
+        "role": "a",
+        "name": "2 sources"
+      },
+      {
+        "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(3) > span.sources > a",
+        "role": "a",
+        "name": "3 sources"
+      },
+      {
+        "selector": "main > section.block:nth-of-type(4) > div.integrate:nth-of-type(2) > div.bar > button.copy-btn",
+        "role": "button",
+        "name": "Copy"
+      },
+      {
+        "selector": "body > main > section.block:nth-of-type(4) > p.integrate-note > a",
+        "role": "a",
+        "name": "Read the security model →"
+      },
+      {
+        "selector": "html > body > main > section.final:nth-of-type(5) > a.btn",
+        "role": "a",
+        "name": "Start free"
+      },
+      {
+        "selector": "body > footer.site > div.wrap > span:nth-of-type(2) > a",
+        "role": "a",
+        "name": "Golden catalog"
+      }
+    ]
+  },
+  "axe": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.12.1"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "windowWidth": 1024,
+      "windowHeight": 900,
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "impact": "serious",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2",
+          "RGAAv4",
+          "RGAA-7.1.1"
+        ],
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "help": "Elements must only use permitted ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-prohibited-attr",
+                "data": {
+                  "role": null,
+                  "nodeName": "div",
+                  "messageKey": "noRoleSingular",
+                  "prohibited": [
+                    "aria-label"
+                  ]
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-label attribute is not well supported on a div with no valid role attribute."
+              }
+            ],
+            "impact": "serious",
+            "html": "<div class=\"demo\" aria-label=\"Example copilot run (illustrative)\">",
+            "target": [
+              ".demo"
+            ],
+            "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute."
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-prohibited-attr",
+                "data": {
+                  "role": null,
+                  "nodeName": "pre",
+                  "messageKey": "noRoleSingular",
+                  "prohibited": [
+                    "aria-label"
+                  ]
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-label attribute is not well supported on a pre with no valid role attribute."
+              }
+            ],
+            "impact": "serious",
+            "html": "<pre tabindex=\"0\" aria-label=\"Relayer SDK installation example\">",
+            "target": [
+              "pre"
+            ],
+            "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a pre with no valid role attribute."
+          }
+        ]
+      }
+    ],
+    "passes": 22
+  },
+  "accessibilityTree": [
+    {
+      "nodeId": "2",
+      "role": "RootWebArea",
+      "name": "Relayer · AI Copilot for Revenue Teams (DesignOS Golden)",
+      "ignored": false,
+      "properties": {
+        "focused": true
+      }
+    },
+    {
+      "nodeId": "8",
+      "parentId": "2",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "16",
+      "parentId": "8",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "17",
+      "parentId": "16",
+      "role": "status",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "18",
+      "parentId": "16",
+      "role": "link",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "19",
+      "parentId": "16",
+      "role": "banner",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "33",
+      "parentId": "16",
+      "role": "main",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "118",
+      "parentId": "16",
+      "role": "contentinfo",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "125",
+      "parentId": "18",
+      "role": "StaticText",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "20",
+      "parentId": "19",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "21",
+      "parentId": "20",
+      "role": "link",
+      "name": "Relayer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "22",
+      "parentId": "20",
+      "role": "navigation",
+      "name": "Primary",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "30",
+      "parentId": "20",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "31",
+      "parentId": "30",
+      "role": "link",
+      "name": "View docs",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "32",
+      "parentId": "30",
+      "role": "link",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "3",
+      "parentId": "33",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "4",
+      "parentId": "33",
+      "role": "region",
+      "name": "Input → boundary → output. Every run, the same shape.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "82",
+      "parentId": "33",
+      "role": "region",
+      "name": "Great at some things. Deliberately not built for others.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "101",
+      "parentId": "33",
+      "role": "region",
+      "name": "In your stack before the meeting ends",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "114",
+      "parentId": "33",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "119",
+      "parentId": "118",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "120",
+      "parentId": "119",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "202",
+      "parentId": "120",
+      "role": "StaticText",
+      "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "121",
+      "parentId": "119",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "122",
+      "parentId": "121",
+      "role": "link",
+      "name": "Golden catalog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000002",
+      "parentId": "125",
+      "role": "InlineTextBox",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "126",
+      "parentId": "21",
+      "role": "StaticText",
+      "name": "Relayer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "23",
+      "parentId": "22",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "130",
+      "parentId": "31",
+      "role": "StaticText",
+      "name": "View docs",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "131",
+      "parentId": "32",
+      "role": "StaticText",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "34",
+      "parentId": "3",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "35",
+      "parentId": "34",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "132",
+      "parentId": "35",
+      "role": "StaticText",
+      "name": "GOLDEN EXAMPLE · FICTIONAL BRAND",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "36",
+      "parentId": "34",
+      "role": "heading",
+      "name": "The copilot that shows its sources before you trust its summary.",
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "37",
+      "parentId": "34",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "38",
+      "parentId": "34",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "39",
+      "parentId": "38",
+      "role": "link",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "40",
+      "parentId": "38",
+      "role": "link",
+      "name": "See a real run ↓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "41",
+      "parentId": "34",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "42",
+      "parentId": "34",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "43",
+      "parentId": "3",
+      "role": "generic",
+      "name": "Example copilot run (illustrative)",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "66",
+      "parentId": "4",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "67",
+      "parentId": "66",
+      "role": "heading",
+      "name": "Input → boundary → output. Every run, the same shape.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "68",
+      "parentId": "66",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "69",
+      "parentId": "4",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "70",
+      "parentId": "69",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "74",
+      "parentId": "69",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "78",
+      "parentId": "69",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "83",
+      "parentId": "82",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "84",
+      "parentId": "83",
+      "role": "heading",
+      "name": "Great at some things. Deliberately not built for others.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "85",
+      "parentId": "83",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "86",
+      "parentId": "82",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "87",
+      "parentId": "86",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "94",
+      "parentId": "86",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "102",
+      "parentId": "101",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "103",
+      "parentId": "102",
+      "role": "heading",
+      "name": "In your stack before the meeting ends",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "104",
+      "parentId": "102",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "105",
+      "parentId": "101",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "106",
+      "parentId": "105",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "107",
+      "parentId": "106",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "192",
+      "parentId": "107",
+      "role": "StaticText",
+      "name": "terminal",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "108",
+      "parentId": "106",
+      "role": "button",
+      "name": "Copy",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "109",
+      "parentId": "105",
+      "role": "generic",
+      "name": "Relayer SDK installation example",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "111",
+      "parentId": "101",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "115",
+      "parentId": "114",
+      "role": "heading",
+      "name": "See your own accounts through it.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "116",
+      "parentId": "114",
+      "role": "link",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "117",
+      "parentId": "114",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000134",
+      "parentId": "202",
+      "role": "InlineTextBox",
+      "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "203",
+      "parentId": "122",
+      "role": "StaticText",
+      "name": "Golden catalog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000003",
+      "parentId": "126",
+      "role": "InlineTextBox",
+      "name": "Relayer",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "24",
+      "parentId": "23",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "26",
+      "parentId": "23",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "28",
+      "parentId": "23",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "-1000000007",
+      "parentId": "130",
+      "role": "InlineTextBox",
+      "name": "View docs",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000008",
+      "parentId": "131",
+      "role": "InlineTextBox",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000009",
+      "parentId": "132",
+      "role": "InlineTextBox",
+      "name": "GOLDEN EXAMPLE · FICTIONAL BRAND",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "133",
+      "parentId": "36",
+      "role": "StaticText",
+      "name": "The copilot that shows its sources before you trust its summary.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "134",
+      "parentId": "37",
+      "role": "StaticText",
+      "name": "Relayer reads your CRM notes and billing events, drafts the renewal-risk analysis your team does by hand, and links every claim to the record it came from. It never contacts a customer on its own.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "135",
+      "parentId": "39",
+      "role": "StaticText",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "136",
+      "parentId": "40",
+      "role": "StaticText",
+      "name": "See a real run ↓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "137",
+      "parentId": "41",
+      "role": "StaticText",
+      "name": "Free on your own CRM data · No card · Output stays yours",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "138",
+      "parentId": "42",
+      "role": "StaticText",
+      "name": "Example landing page for DesignOS evaluation. Brand fictional; the demo below is a designed illustration of the product mechanic, not a recorded live run.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "44",
+      "parentId": "43",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "45",
+      "parentId": "44",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "139",
+      "parentId": "45",
+      "role": "StaticText",
+      "name": "Copilot run: renewal risks",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "46",
+      "parentId": "44",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "140",
+      "parentId": "46",
+      "role": "StaticText",
+      "name": "completed in 9s",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "47",
+      "parentId": "43",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "48",
+      "parentId": "47",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "49",
+      "parentId": "47",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "50",
+      "parentId": "43",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "51",
+      "parentId": "50",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "52",
+      "parentId": "50",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "53",
+      "parentId": "43",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "54",
+      "parentId": "53",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "55",
+      "parentId": "53",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "146",
+      "parentId": "55",
+      "role": "StaticText",
+      "name": "3 accounts need human review:",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "56",
+      "parentId": "55",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "159",
+      "parentId": "67",
+      "role": "StaticText",
+      "name": "Input → boundary → output. Every run, the same shape.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "160",
+      "parentId": "68",
+      "role": "StaticText",
+      "name": "No agent theater: you see what went in, what it was allowed to touch, and where every sentence came from.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "71",
+      "parentId": "70",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "161",
+      "parentId": "71",
+      "role": "StaticText",
+      "name": "01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "72",
+      "parentId": "70",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "73",
+      "parentId": "70",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "75",
+      "parentId": "74",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "164",
+      "parentId": "75",
+      "role": "StaticText",
+      "name": "02",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "76",
+      "parentId": "74",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "77",
+      "parentId": "74",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "79",
+      "parentId": "78",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "167",
+      "parentId": "79",
+      "role": "StaticText",
+      "name": "03",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "80",
+      "parentId": "78",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "81",
+      "parentId": "78",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "170",
+      "parentId": "84",
+      "role": "StaticText",
+      "name": "Great at some things. Deliberately not built for others.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "171",
+      "parentId": "85",
+      "role": "StaticText",
+      "name": "Stated limits are the fastest way to earn trust in a sector that oversells. Here are ours, plainly.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "88",
+      "parentId": "87",
+      "role": "heading",
+      "name": "What it does well",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "89",
+      "parentId": "87",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "95",
+      "parentId": "94",
+      "role": "heading",
+      "name": "What it refuses to do",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "96",
+      "parentId": "94",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "190",
+      "parentId": "103",
+      "role": "StaticText",
+      "name": "In your stack before the meeting ends",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "191",
+      "parentId": "104",
+      "role": "StaticText",
+      "name": "OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are documented end to end.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000110",
+      "parentId": "192",
+      "role": "InlineTextBox",
+      "name": "terminal",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "193",
+      "parentId": "108",
+      "role": "StaticText",
+      "name": "Copy",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "110",
+      "parentId": "109",
+      "role": "code",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "195",
+      "parentId": "111",
+      "role": "StaticText",
+      "name": "The ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "112",
+      "parentId": "111",
+      "role": "code",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "197",
+      "parentId": "111",
+      "role": "StaticText",
+      "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "113",
+      "parentId": "111",
+      "role": "link",
+      "name": "Read the security model →",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "199",
+      "parentId": "115",
+      "role": "StaticText",
+      "name": "See your own accounts through it.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "200",
+      "parentId": "116",
+      "role": "StaticText",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "201",
+      "parentId": "117",
+      "role": "StaticText",
+      "name": "Connects read-only · Disconnect wipes our copy in 24h",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000135",
+      "parentId": "203",
+      "role": "InlineTextBox",
+      "name": "Golden catalog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "25",
+      "parentId": "24",
+      "role": "link",
+      "name": "How it works",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "27",
+      "parentId": "26",
+      "role": "link",
+      "name": "Limits",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "29",
+      "parentId": "28",
+      "role": "link",
+      "name": "Integrate",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000010",
+      "parentId": "133",
+      "role": "InlineTextBox",
+      "name": "The copilot that ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000011",
+      "parentId": "133",
+      "role": "InlineTextBox",
+      "name": "shows its sources ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000012",
+      "parentId": "133",
+      "role": "InlineTextBox",
+      "name": "before you trust ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000013",
+      "parentId": "133",
+      "role": "InlineTextBox",
+      "name": "its summary.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000014",
+      "parentId": "134",
+      "role": "InlineTextBox",
+      "name": "Relayer reads your CRM notes and billing events, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000015",
+      "parentId": "134",
+      "role": "InlineTextBox",
+      "name": "drafts the renewal-risk analysis your team does by ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000016",
+      "parentId": "134",
+      "role": "InlineTextBox",
+      "name": "hand, and links every claim to the record it came ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000017",
+      "parentId": "134",
+      "role": "InlineTextBox",
+      "name": "from. It never contacts a customer on its own.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000018",
+      "parentId": "135",
+      "role": "InlineTextBox",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000019",
+      "parentId": "136",
+      "role": "InlineTextBox",
+      "name": "See a real run ↓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000020",
+      "parentId": "137",
+      "role": "InlineTextBox",
+      "name": "Free on your own CRM data · No card · Output stays yours",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000021",
+      "parentId": "138",
+      "role": "InlineTextBox",
+      "name": "Example landing page for DesignOS evaluation. Brand fictional; ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000022",
+      "parentId": "138",
+      "role": "InlineTextBox",
+      "name": "the demo below is a designed illustration of the product ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000023",
+      "parentId": "138",
+      "role": "InlineTextBox",
+      "name": "mechanic, not a recorded live run.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000024",
+      "parentId": "139",
+      "role": "InlineTextBox",
+      "name": "Copilot run: renewal risks",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000025",
+      "parentId": "140",
+      "role": "InlineTextBox",
+      "name": "completed in 9s",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "141",
+      "parentId": "48",
+      "role": "StaticText",
+      "name": "YOUR INPUT",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "142",
+      "parentId": "49",
+      "role": "StaticText",
+      "name": "\"Summarize open renewal risks for enterprise accounts this quarter.\"",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "143",
+      "parentId": "51",
+      "role": "StaticText",
+      "name": "WHAT IT MAY TOUCH",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "144",
+      "parentId": "52",
+      "role": "StaticText",
+      "name": "CRM notes + billing events, read-only. Sending email or editing records requires your approval, every time.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "145",
+      "parentId": "54",
+      "role": "StaticText",
+      "name": "OUTPUT",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000033",
+      "parentId": "146",
+      "role": "InlineTextBox",
+      "name": "3 accounts need human review:",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "57",
+      "parentId": "56",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "60",
+      "parentId": "56",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "63",
+      "parentId": "56",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "-1000000046",
+      "parentId": "159",
+      "role": "InlineTextBox",
+      "name": "Input → boundary → output. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000047",
+      "parentId": "159",
+      "role": "InlineTextBox",
+      "name": "Every run, the same shape.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000048",
+      "parentId": "160",
+      "role": "InlineTextBox",
+      "name": "No agent theater: you see what went in, what it was allowed to touch, and ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000049",
+      "parentId": "160",
+      "role": "InlineTextBox",
+      "name": "where every sentence came from.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000050",
+      "parentId": "161",
+      "role": "InlineTextBox",
+      "name": "01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "162",
+      "parentId": "72",
+      "role": "StaticText",
+      "name": "Ask in your words",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "163",
+      "parentId": "73",
+      "role": "StaticText",
+      "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot asks a clarifying question instead of guessing.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000057",
+      "parentId": "164",
+      "role": "InlineTextBox",
+      "name": "02",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "165",
+      "parentId": "76",
+      "role": "StaticText",
+      "name": "It reads, it never acts",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "166",
+      "parentId": "77",
+      "role": "StaticText",
+      "name": "Analysis runs read-only. Email drafts and CRM field changes land in your review queue as proposals with diffs, never as completed actions.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000063",
+      "parentId": "167",
+      "role": "InlineTextBox",
+      "name": "03",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "168",
+      "parentId": "80",
+      "role": "StaticText",
+      "name": "Answers carry receipts",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "169",
+      "parentId": "81",
+      "role": "StaticText",
+      "name": "Every claim links to the note, ticket, or invoice behind it. Low-confidence findings are labeled and demoted to \"worth checking,\" not stated as fact.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000069",
+      "parentId": "170",
+      "role": "InlineTextBox",
+      "name": "Great at some things. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000070",
+      "parentId": "170",
+      "role": "InlineTextBox",
+      "name": "Deliberately not built for others.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000071",
+      "parentId": "171",
+      "role": "InlineTextBox",
+      "name": "Stated limits are the fastest way to earn trust in a sector that oversells. Here ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000072",
+      "parentId": "171",
+      "role": "InlineTextBox",
+      "name": "are ours, plainly.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "172",
+      "parentId": "88",
+      "role": "StaticText",
+      "name": "What it does well",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "90",
+      "parentId": "89",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "91",
+      "parentId": "89",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "92",
+      "parentId": "89",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "93",
+      "parentId": "89",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "181",
+      "parentId": "95",
+      "role": "StaticText",
+      "name": "What it refuses to do",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "97",
+      "parentId": "96",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "98",
+      "parentId": "96",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "99",
+      "parentId": "96",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "100",
+      "parentId": "96",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "-1000000106",
+      "parentId": "190",
+      "role": "InlineTextBox",
+      "name": "In your stack before ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000107",
+      "parentId": "190",
+      "role": "InlineTextBox",
+      "name": "the meeting ends",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000108",
+      "parentId": "191",
+      "role": "InlineTextBox",
+      "name": "OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000109",
+      "parentId": "191",
+      "role": "InlineTextBox",
+      "name": "documented end to end.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000111",
+      "parentId": "193",
+      "role": "InlineTextBox",
+      "name": "Copy",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "194",
+      "parentId": "110",
+      "role": "StaticText",
+      "name": "npm install @relayer/sdk\n\nimport { Relayer } from \"@relayer/sdk\";\n\nconst run = await new Relayer({ apiKey }).analyze({\n  scope: \"renewals:q3-enterprise\",\n  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes\n  actions: \"propose\"                          // never \"auto\"\n});",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000127",
+      "parentId": "195",
+      "role": "InlineTextBox",
+      "name": "The ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "196",
+      "parentId": "112",
+      "role": "StaticText",
+      "name": "actions: \"propose\"",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000129",
+      "parentId": "197",
+      "role": "InlineTextBox",
+      "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "198",
+      "parentId": "113",
+      "role": "StaticText",
+      "name": "Read the security model →",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000131",
+      "parentId": "199",
+      "role": "InlineTextBox",
+      "name": "See your own accounts through it.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000132",
+      "parentId": "200",
+      "role": "InlineTextBox",
+      "name": "Start free",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000133",
+      "parentId": "201",
+      "role": "InlineTextBox",
+      "name": "Connects read-only · Disconnect wipes our copy in 24h",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "127",
+      "parentId": "25",
+      "role": "StaticText",
+      "name": "How it works",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "128",
+      "parentId": "27",
+      "role": "StaticText",
+      "name": "Limits",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "129",
+      "parentId": "29",
+      "role": "StaticText",
+      "name": "Integrate",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000026",
+      "parentId": "141",
+      "role": "InlineTextBox",
+      "name": "YOUR INPUT",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000027",
+      "parentId": "142",
+      "role": "InlineTextBox",
+      "name": "\"Summarize open renewal risks for enterprise accounts this ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000028",
+      "parentId": "142",
+      "role": "InlineTextBox",
+      "name": "quarter.\"",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000029",
+      "parentId": "143",
+      "role": "InlineTextBox",
+      "name": "WHAT IT MAY TOUCH",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000030",
+      "parentId": "144",
+      "role": "InlineTextBox",
+      "name": "CRM notes + billing events, read-only. Sending email or ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000031",
+      "parentId": "144",
+      "role": "InlineTextBox",
+      "name": "editing records requires your approval, every time.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000032",
+      "parentId": "145",
+      "role": "InlineTextBox",
+      "name": "OUTPUT",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "147",
+      "parentId": "57",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "148",
+      "parentId": "57",
+      "role": "StaticText",
+      "name": "Northwind: champion left in May; usage −38% ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "149",
+      "parentId": "57",
+      "role": "StaticText",
+      "name": "· ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "59",
+      "parentId": "57",
+      "role": "link",
+      "name": "4 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "151",
+      "parentId": "60",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "152",
+      "parentId": "60",
+      "role": "StaticText",
+      "name": "Arclight: invoice disputed, renewal in 21 days ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "153",
+      "parentId": "60",
+      "role": "StaticText",
+      "name": "· ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "62",
+      "parentId": "60",
+      "role": "link",
+      "name": "2 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "155",
+      "parentId": "63",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "156",
+      "parentId": "63",
+      "role": "StaticText",
+      "name": "Kestrel: seats capped 3 months straight ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "157",
+      "parentId": "63",
+      "role": "StaticText",
+      "name": "· ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "65",
+      "parentId": "63",
+      "role": "link",
+      "name": "3 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000051",
+      "parentId": "162",
+      "role": "InlineTextBox",
+      "name": "Ask in your words",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000052",
+      "parentId": "163",
+      "role": "InlineTextBox",
+      "name": "Ask plain-language questions over ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000053",
+      "parentId": "163",
+      "role": "InlineTextBox",
+      "name": "the accounts you own. When the ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000054",
+      "parentId": "163",
+      "role": "InlineTextBox",
+      "name": "request is ambiguous, the copilot ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000055",
+      "parentId": "163",
+      "role": "InlineTextBox",
+      "name": "asks a clarifying question instead of ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000056",
+      "parentId": "163",
+      "role": "InlineTextBox",
+      "name": "guessing.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000058",
+      "parentId": "165",
+      "role": "InlineTextBox",
+      "name": "It reads, it never acts",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000059",
+      "parentId": "166",
+      "role": "InlineTextBox",
+      "name": "Analysis runs read-only. Email drafts ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000060",
+      "parentId": "166",
+      "role": "InlineTextBox",
+      "name": "and CRM field changes land in your ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000061",
+      "parentId": "166",
+      "role": "InlineTextBox",
+      "name": "review queue as proposals with diffs, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000062",
+      "parentId": "166",
+      "role": "InlineTextBox",
+      "name": "never as completed actions.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000064",
+      "parentId": "168",
+      "role": "InlineTextBox",
+      "name": "Answers carry receipts",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000065",
+      "parentId": "169",
+      "role": "InlineTextBox",
+      "name": "Every claim links to the note, ticket, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000066",
+      "parentId": "169",
+      "role": "InlineTextBox",
+      "name": "or invoice behind it. Low-confidence ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000067",
+      "parentId": "169",
+      "role": "InlineTextBox",
+      "name": "findings are labeled and demoted to ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000068",
+      "parentId": "169",
+      "role": "InlineTextBox",
+      "name": "\"worth checking,\" not stated as fact.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000073",
+      "parentId": "172",
+      "role": "InlineTextBox",
+      "name": "What it does well",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "173",
+      "parentId": "90",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "174",
+      "parentId": "90",
+      "role": "StaticText",
+      "name": "Renewal-risk and account-health summaries across hundreds of accounts",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "175",
+      "parentId": "91",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "176",
+      "parentId": "91",
+      "role": "StaticText",
+      "name": "Draft follow-ups grounded in the actual conversation history",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "177",
+      "parentId": "92",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "178",
+      "parentId": "92",
+      "role": "StaticText",
+      "name": "\"What changed since I last looked\" digests per account list",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "179",
+      "parentId": "93",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "180",
+      "parentId": "93",
+      "role": "StaticText",
+      "name": "Flagging contradictions between notes and billing reality",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000089",
+      "parentId": "181",
+      "role": "InlineTextBox",
+      "name": "What it refuses to do",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "182",
+      "parentId": "97",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "183",
+      "parentId": "97",
+      "role": "StaticText",
+      "name": "Send anything externally without a named human approving that send",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "184",
+      "parentId": "98",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "185",
+      "parentId": "98",
+      "role": "StaticText",
+      "name": "Forecast revenue. That's your model's job; we surface inputs, not prophecy",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "186",
+      "parentId": "99",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "187",
+      "parentId": "99",
+      "role": "StaticText",
+      "name": "Answer from data you haven't connected (it says \"not connected,\" not a guess)",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "188",
+      "parentId": "100",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "189",
+      "parentId": "100",
+      "role": "StaticText",
+      "name": "Train on your data. Analysis is inference-only, per contract, at every tier",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000112",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "npm install @relayer/sdk",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000113",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000114",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000115",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "import { Relayer } from \"@relayer/sdk\";",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000116",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000117",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000118",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "const run = await new Relayer({ apiKey }).analyze({",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000119",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000120",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "  scope: \"renewals:q3-enterprise\",",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000121",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000122",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000123",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000124",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "  actions: \"propose\"                          // never \"auto\"",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000125",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000126",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "});",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000128",
+      "parentId": "196",
+      "role": "InlineTextBox",
+      "name": "actions: \"propose\"",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000130",
+      "parentId": "198",
+      "role": "InlineTextBox",
+      "name": "Read the security model →",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000004",
+      "parentId": "127",
+      "role": "InlineTextBox",
+      "name": "How it works",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000005",
+      "parentId": "128",
+      "role": "InlineTextBox",
+      "name": "Limits",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000006",
+      "parentId": "129",
+      "role": "InlineTextBox",
+      "name": "Integrate",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000034",
+      "parentId": "147",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000035",
+      "parentId": "148",
+      "role": "InlineTextBox",
+      "name": "Northwind: champion left in May; usage −38% ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000036",
+      "parentId": "149",
+      "role": "InlineTextBox",
+      "name": "· ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "150",
+      "parentId": "59",
+      "role": "StaticText",
+      "name": "4 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000038",
+      "parentId": "151",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000039",
+      "parentId": "152",
+      "role": "InlineTextBox",
+      "name": "Arclight: invoice disputed, renewal in 21 days ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000040",
+      "parentId": "153",
+      "role": "InlineTextBox",
+      "name": "· ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "154",
+      "parentId": "62",
+      "role": "StaticText",
+      "name": "2 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000042",
+      "parentId": "155",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000043",
+      "parentId": "156",
+      "role": "InlineTextBox",
+      "name": "Kestrel: seats capped 3 months straight ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000044",
+      "parentId": "157",
+      "role": "InlineTextBox",
+      "name": "· ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "158",
+      "parentId": "65",
+      "role": "StaticText",
+      "name": "3 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000074",
+      "parentId": "173",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000075",
+      "parentId": "-1000000074",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000076",
+      "parentId": "174",
+      "role": "InlineTextBox",
+      "name": "Renewal-risk and account-health summaries across ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000077",
+      "parentId": "174",
+      "role": "InlineTextBox",
+      "name": "hundreds of accounts",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000078",
+      "parentId": "175",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000079",
+      "parentId": "-1000000078",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000080",
+      "parentId": "176",
+      "role": "InlineTextBox",
+      "name": "Draft follow-ups grounded in the actual conversation ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000081",
+      "parentId": "176",
+      "role": "InlineTextBox",
+      "name": "history",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000082",
+      "parentId": "177",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000083",
+      "parentId": "-1000000082",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000084",
+      "parentId": "178",
+      "role": "InlineTextBox",
+      "name": "\"What changed since I last looked\" digests per account ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000085",
+      "parentId": "178",
+      "role": "InlineTextBox",
+      "name": "list",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000086",
+      "parentId": "179",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000087",
+      "parentId": "-1000000086",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000088",
+      "parentId": "180",
+      "role": "InlineTextBox",
+      "name": "Flagging contradictions between notes and billing reality",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000090",
+      "parentId": "182",
+      "role": "StaticText",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000091",
+      "parentId": "-1000000090",
+      "role": "InlineTextBox",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000092",
+      "parentId": "183",
+      "role": "InlineTextBox",
+      "name": "Send anything externally without a named human ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000093",
+      "parentId": "183",
+      "role": "InlineTextBox",
+      "name": "approving that send",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000094",
+      "parentId": "184",
+      "role": "StaticText",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000095",
+      "parentId": "-1000000094",
+      "role": "InlineTextBox",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000096",
+      "parentId": "185",
+      "role": "InlineTextBox",
+      "name": "Forecast revenue. That's your model's job; we surface ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000097",
+      "parentId": "185",
+      "role": "InlineTextBox",
+      "name": "inputs, not prophecy",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000098",
+      "parentId": "186",
+      "role": "StaticText",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000099",
+      "parentId": "-1000000098",
+      "role": "InlineTextBox",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000100",
+      "parentId": "187",
+      "role": "InlineTextBox",
+      "name": "Answer from data you haven't connected (it says \"not ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000101",
+      "parentId": "187",
+      "role": "InlineTextBox",
+      "name": "connected,\" not a guess)",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000102",
+      "parentId": "188",
+      "role": "StaticText",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000103",
+      "parentId": "-1000000102",
+      "role": "InlineTextBox",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000104",
+      "parentId": "189",
+      "role": "InlineTextBox",
+      "name": "Train on your data. Analysis is inference-only, per ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000105",
+      "parentId": "189",
+      "role": "InlineTextBox",
+      "name": "contract, at every tier",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000037",
+      "parentId": "150",
+      "role": "InlineTextBox",
+      "name": "4 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000041",
+      "parentId": "154",
+      "role": "InlineTextBox",
+      "name": "2 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000045",
+      "parentId": "158",
+      "role": "InlineTextBox",
+      "name": "3 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000075",
+      "parentId": "-1000000074",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000079",
+      "parentId": "-1000000078",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000083",
+      "parentId": "-1000000082",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000087",
+      "parentId": "-1000000086",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000091",
+      "parentId": "-1000000090",
+      "role": "InlineTextBox",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000095",
+      "parentId": "-1000000094",
+      "role": "InlineTextBox",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000099",
+      "parentId": "-1000000098",
+      "role": "InlineTextBox",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000103",
+      "parentId": "-1000000102",
+      "role": "InlineTextBox",
+      "name": "✕",
+      "ignored": false,
+      "properties": {}
+    }
+  ]
+}

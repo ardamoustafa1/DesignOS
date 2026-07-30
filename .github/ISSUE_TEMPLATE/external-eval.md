@@ -1,5 +1,5 @@
 ---
-name: Independent eval run
+name: External eval run
 about: Submit or coordinate a third-party DesignOS benchmark run
 title: "[eval] Run 00X — "
 labels: eval, evidence
@@ -22,3 +22,10 @@ labels: eval, evidence
 
 ## What should change because of this?
 <!-- README claim, module rule, validator, docs caveat, or no change yet. -->
+
+## External evidence eligibility
+- [ ] Evaluator organization is named
+- [ ] Evaluator is independent from DesignOS maintainers
+- [ ] Immutable evidence URL and digest are supplied
+- [ ] Rule-level results are machine-readable
+- [ ] `node bin/external-eval.js` accepts the registered run

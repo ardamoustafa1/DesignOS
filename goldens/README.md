@@ -10,16 +10,20 @@ and design decisions. They are not fake adoption.
 - [AI Copilot Landing](ai-copilot-landing.md)
 - [Mobile Onboarding](mobile-onboarding.md)
 - [Developer Docs](developer-docs.md)
+- [Flagship Launch](flagship-launch.md) — the upper bound of the motion dial (rung 9)
 
 ## Golden Acceptance Bar
 
 - brief is exact
 - visual reference pack named
 - source artifact or live page linked
-- `designos review` score recorded
+- deterministic review result recorded without inventing a human design score
 - proof claims are real or labelled fictional
 - mobile and desktop decisions included
 - failure caught by the loop is documented
+- 22 standard browser scenarios plus text-spacing and forced-colors evidence pass
+- every declared interaction task passes with AX announcement and <200ms response evidence
+- pixel comparison stays inside the manifest budget
 
 ## Live HTML Seeds
 
@@ -29,8 +33,8 @@ and design decisions. They are not fake adoption.
 
 ## Checklist
 
-- [ ] Artifact exists
-- [ ] Scorecard exists
-- [ ] Screenshots or live page exists
-- [ ] Caveats exist
-- [ ] No external adoption claim unless external evidence exists
+- [x] Artifact exists
+- [x] Deterministic report exists
+- [x] Screenshots and browser evidence exist
+- [x] Caveats exist
+- [x] No external adoption claim unless external evidence exists

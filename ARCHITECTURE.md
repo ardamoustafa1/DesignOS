@@ -1,75 +1,241 @@
 # DesignOS Architecture
 
-How the system fits together, and why it's shaped this way.
+DesignOS is a repository-native design intelligence and verification system. Its
+knowledge lives in inspectable Markdown; its contracts, runtime tools, browser
+evidence, and release gates are executable.
 
 ## Design goals
 
-1. **Deterministic quality.** Same brief, same standard — regardless of model mood.
-2. **Lazy loading.** Agents have finite context. The kernel routes; modules load on demand.
-3. **Adversarial review.** The entity that grades should not be the entity that drew.
-4. **Compounding memory.** Session 30 must honor decisions from session 1.
-5. **Agent-agnostic.** Markdown + conventions. No runtime, no lock-in.
+1. **Deterministic quality.** The same artifact is judged by the same registry-owned
+   rules, regardless of agent or session.
+2. **Lazy-loaded judgment.** The kernel routes only the knowledge needed for the
+   current surface and sector.
+3. **Browser-backed evidence.** Source heuristics never stand in for rendered
+   geometry, accessibility, interaction, performance, or pixel evidence.
+4. **Executable motion.** Recipes share a cancellable lifecycle contract and are
+   exercised in real framework builds.
+5. **Transactional iteration.** Live changes carry source locks, regression gates,
+   performance budgets, provenance, acceptance, and rollback.
+6. **Compounding memory.** Durable project decisions outlive an individual agent
+   session.
+7. **Agent portability.** Knowledge and outputs remain readable outside any one AI
+   provider; runtime dependencies are explicit in `package.json`.
 
-## The stack
+## Generated capability ledger
 
-```
-┌─────────────────────────────────────────────────┐
-│  KERNEL          CLAUDE.md                      │  boot sequence · routing · standards
-├─────────────────────────────────────────────────┤
-│  COGNITION       brain/                         │  how to think & judge
-├─────────────────────────────────────────────────┤
-│  KNOWLEDGE       foundations/ components/       │  the rules themselves
-│                  psychology/ motion/ patterns/  │
-│                  industries/                    │
-├─────────────────────────────────────────────────┤
-│  PROCESS         loops/ workflows/ checklists/  │  how work moves
-├─────────────────────────────────────────────────┤
-│  JUDGMENT        scoring/ agents/reviewer.md    │  the quality gate
-├─────────────────────────────────────────────────┤
-│  STATE           memory/                        │  what persists per project
-└─────────────────────────────────────────────────┘
+<!-- DESIGNOS_CAPABILITY_LEDGER:START -->
+> Generated from executable sources by `npm run ledger:update`. Do not edit this block manually.
+
+| Capability | Verified source count |
+|---|---:|
+| Production dependencies | 3 (`@jridgewell/trace-mapping`, `axe-core`, `playwright`) |
+| Registry rules / providers | 38 / 7 |
+| Validated knowledge modules | 67 |
+| Industry packs | 24 |
+| Motion recipes / framework stacks | 15 / 6 |
+| Executable adapter combinations | 90 |
+| Full + reduced-motion browser scenarios | 180 |
+| Knowledge graph nodes | 140 |
+| Golden projects | 4 |
+| Component AST directions / CLI command modules | 3 / 7 |
+| Motion evidence engines | 2 (CDP profile + temporal regression) |
+| Mission 4 leader features | 12 / 12 implemented |
+| Torture scenarios / generated component states | 8 / 16 |
+| Composition compiler stacks / native motion adapters | 6 / 4 |
+| Mutation operators | 9 |
+| Isolated rule eval / external eval | yes / not yet |
+<!-- DESIGNOS_CAPABILITY_LEDGER:END -->
+
+The machine-readable counterpart is
+[`capabilities/ledger.json`](capabilities/ledger.json). CI runs
+`npm run check:ledger`; any dependency, registry, recipe, framework, graph, golden,
+README, or architecture count change must be regenerated intentionally with
+`npm run ledger:update`.
+
+## Runtime stack
+
+```text
+┌──────────────────────────────────────────────────────────────────┐
+│ KERNEL        CLAUDE.md · AGENTS.md                              │
+│               boot order · routing · standards · output contract │
+├──────────────────────────────────────────────────────────────────┤
+│ INTELLIGENCE  brain/ · bin/intelligence.js                       │
+│               decisions · retrieval · graph · composition         │
+│               signature compiler · capability coverage            │
+├──────────────────────────────────────────────────────────────────┤
+│ KNOWLEDGE     foundations/ · components/ · patterns/ · motion/   │
+│               psychology/ · industries/ · native/                 │
+├──────────────────────────────────────────────────────────────────┤
+│ MOTION        runtime/motion/ · fixtures/frameworks/             │
+│               recipe state · controller lifecycle · six adapters  │
+│               full/reduced browser conformance                    │
+├──────────────────────────────────────────────────────────────────┤
+│ DIRECTION     bin/live-director.js · bin/motion-lab.js           │
+│               annotation · source maps · variants · transactions   │
+│               timing/spring inspection                            │
+├──────────────────────────────────────────────────────────────────┤
+│ VERIFICATION  validators/ · bin/browser-gate.js                  │
+│               registry · source · geometry · Axe · AX tree        │
+│               tasks · latency · Lighthouse · pixel regression      │
+├──────────────────────────────────────────────────────────────────┤
+│ EVIDENCE      goldens/ · evals/ · browser ledger · CI            │
+│               commit-bound artifacts · required checks             │
+├──────────────────────────────────────────────────────────────────┤
+│ STATE         memory/                                             │
+│               client · brand · design · pages · todo · bugs · notes│
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 ## Control flow for one brief
 
-```
-brief ──▶ kernel boot ──▶ route (task × sector) ──▶ load modules + memory
-                                                        │
-              ┌─────────────────────────────────────────┘
-              ▼
-        DESIGN LOOP:  research → wireframe → ui → review → a11y → perf → seo → refactor
-              │
-              ▼
-        REVIEW ENGINE: 6-dimension score
-              │
-        under 95? ──yes──▶ reviewer objections feed back into loop (max 3 cycles,
-              │            then surface the tradeoff to the user honestly)
-              no
-              ▼
-        deliver: artifact + scorecard + rationale + memory writes
+```text
+brief
+  └─▶ kernel boot
+       └─▶ surface + sector routing
+            └─▶ knowledge + project memory
+                 └─▶ design loop
+                      ├─▶ implementation
+                      ├─▶ registry-owned source validation
+                      ├─▶ browser geometry + Axe + AX tree
+                      ├─▶ declared interaction tasks + latency
+                      ├─▶ Lighthouse + golden pixel regression
+                      └─▶ evidence ledger + memory update
 ```
 
-## Module anatomy
+The written rubric defines the quality language. A final score is reported only when
+the deterministic review actually ran; otherwise the dimension remains
+`NOT ASSESSED`.
 
-Every knowledge module follows the same skeleton so agents can scan fast:
+## Unified rule ownership
 
-1. **Principles** — the 3–7 rules that matter most, stated as imperatives.
-2. **Specifications** — concrete numbers: sizes, ratios, durations, tokens.
-3. **Patterns** — named, reusable solutions with when-to-use guidance.
-4. **Anti-patterns** — what failure looks like, so it's recognizable.
-5. **Reference moves** — what Apple/Stripe/Linear/Vercel do, stated as stealable tactics.
-6. **Checklist** — binary pass/fail items for the review stage.
+`validators/rule-registry.js` is the source of truth for deterministic findings.
+Every rule owns:
 
-## Why markdown, not code
+- a stable ID, category, and severity;
+- one or more enforcement engines;
+- a user-facing message and concrete fix;
+- a governing DesignOS module;
+- an explicit exception format;
+- a positive or negative fixture.
 
-The product is *judgment*, and judgment lives in language. Markdown is diffable,
-forkable, reviewable in a PR, and readable by every agent on the market. The only
-"executable" parts are conventions the kernel enforces: boot order, score gates,
-memory writes.
+Provider metadata in the same registry decides which executable validator owns each
+capability. `validators/run-registry.js` executes that metadata; individual
+validators do not maintain a second rule catalog.
+
+## Motion lifecycle
+
+`runtime/motion/controller.js` supplies the shared adapter contract:
+
+```text
+mount → play ⇄ reverse
+          └─▶ cancel
+mount ─────────▶ destroy
+```
+
+Each recipe produces a measured semantic and visual state. Vanilla, React, Motion,
+GSAP, Vue, and Svelte bind the controller through their real lifecycle. The browser
+matrix executes every recipe/stack combination in full and reduced-motion contexts
+and rejects:
+
+- missing mount or click activation;
+- an incorrect computed final state;
+- reverse-state drift;
+- an animation that cannot be cancelled;
+- lifecycle teardown that retains listeners;
+- reduced motion that loses the semantic result.
+
+## Browser evidence
+
+The browser gate complements static validators with rendered evidence:
+
+- responsive geometry and horizontal overflow;
+- tap targets, focus, clipping, fixed overlap, zoom, and reflow;
+- Axe and Chromium accessibility-tree snapshots;
+- forced colors and WCAG text-spacing overrides;
+- console and resource failures;
+- declared task completion, announcements, and interaction latency;
+- Lighthouse budgets;
+- golden screenshot regression.
+
+Required CI jobs bind the evidence to the tested commit. A clean static run alone is
+never described as full browser proof.
+
+## Intelligence and Live Director
+
+`bin/intelligence.js` combines motion decisions, composition grammar, signature
+compilation, asset direction, BM25 retrieval, knowledge-graph responses, and
+capability coverage.
+
+`bin/live-director.js` resolves selected DOM elements back to source, including
+React, Vue, and Svelte source maps. `bin/live/component-transform.js` parses component
+markup into a ranged tree and changes the component tree, slots, copy hierarchy, CTA
+order, state, motion contract, responsive contract, and proof placement without
+injecting a global style patch. Candidate changes are transactional: a source lock
+prevents stale writes, browser and performance gates block unsafe acceptance, and
+accepted changes record transform provenance and support rollback.
+
+`bin/motion-profiler.js` records Chrome tracing/CDP evidence for frame delivery,
+long-animation frames, main-thread tasks, style, layout, paint, compositing, layers,
+and animation attribution. `bin/temporal-motion.js` captures rAF frame sequences and
+compares trajectory, easing, enter/exit timing, transform origin, overshoot, settle
+time, interruption continuity, and reduced-motion semantics. `bin/motion-lab.js`
+renders those metrics beside its timing, spring, replay, and reduced-motion controls.
+
+## Leader engine layer
+
+`capabilities/product-features.js` is the canonical inventory for twelve Mission 4
+engines. `runtime/motion/state-graph.js` compiles interaction states and rejects missing
+reverse/exit, loading-hover conflicts, dishonest origins, unreachable states, and
+pointer/focus parity gaps. `bin/interruption-torture.js` attacks the compiled behavior
+with rapid reversal, retargeting, route/back, resize, runtime preference changes, and
+active unmount.
+
+`bin/design-genome.js`, `bin/responsive-constraint.js`, `bin/state-matrix.js`,
+`bin/mutation-testing.js`, and `bin/consistency-graph.js` operate above a single page:
+they fingerprint a dialect, solve minimum geometry changes, generate complete state
+evidence, measure detector quality, and compare semantic component contracts across
+pages. `bin/composition-compiler.js` turns a nested grammar into six implementation
+stacks. `runtime/native/adapters.js` emits four platform-native motion sources from one
+capability contract.
+
+## Evaluation evidence levels
+
+- `isolatedRuleEval: true` means every registry rule was exercised through a
+  child-process black box. It proves detector isolation, not evaluator independence.
+- `externalEval: true` is possible only when `evals/external/registry.json` contains a
+  valid third-party organization, maintainer-independence declaration, blind protocol,
+  immutable evidence, and rule-level results.
+- Empty external evidence remains explicitly false; it is never inferred from internal
+  CI success.
+
+## Package boundary
+
+The core npm archive contains executable product code and lightweight registries.
+Platform screenshots, golden evidence, eval run artifacts, and generated framework
+bundles are built separately by `scripts/build-evidence-package.js`. Golden commands
+fail with an explicit evidence-bundle message when those artifacts are absent.
+
+## Dependency boundary
+
+Runtime dependencies are deliberately small but not hidden:
+
+- `@jridgewell/trace-mapping` resolves generated UI back to component source;
+- `axe-core` supplies browser accessibility rules;
+- `playwright` drives rendered evidence and conformance fixtures.
+
+Development dependencies build and exercise framework fixtures and performance
+evidence. The generated ledger records both sets directly from `package.json`.
 
 ## Extending DesignOS
 
-- **New sector:** copy any `industries/*.md`, keep the section skeleton, change the judgments.
-- **New component module:** follow the module anatomy above; register it in the kernel routing table.
-- **House style:** put overrides in the project's `memory/brand.md` + `memory/design.md` — memory
-  outranks modules on conflicts (the kernel's conflict rule: memory > industry > component > foundation).
+- **New deterministic rule:** register metadata and a fixture in
+  `validators/rule-registry.js`; use its finding contract from the owning provider.
+- **New motion recipe:** add its state and recipe metadata, then make all framework
+  conformance scenarios pass.
+- **New sector:** follow the industry module anatomy and add routing in the kernel.
+- **New knowledge module:** follow the module anatomy and register its route.
+- **New runtime capability:** add it to an executable source counted by the ledger,
+  regenerate the ledger, document its acceptance evidence, and add a CI gate.
+- **House style:** record project overrides in `memory/brand.md` and
+  `memory/design.md`; project memory outranks generic modules when the conflict is
+  explicit and documented.

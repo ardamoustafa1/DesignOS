@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Interaction latency failure fixture</title>
+  <style>:focus-visible { outline: 2px solid CanvasText; } button { min-width: 44px; min-height: 44px; }</style>
+</head>
+<body>
+  <main>
+    <h1>Interaction latency fixture</h1>
+    <button id="run" type="button">Run slow action</button>
+    <p id="result" role="status">Idle</p>
+  </main>
+  <script>
+    document.querySelector('#run').addEventListener('click', () => {
+      const started = performance.now();
+      while (performance.now() - started < 320) {}
+      document.querySelector('#result').textContent = 'Complete';
+    });
+  </script>
+  <script type="application/json" data-designos-tasks>
+    [{"id":"slow-action","steps":[{"action":"click","selector":"#run"},{"assert":"announcement","selector":"#result","includes":"Complete"}]}]
+  </script>
+</body>
+</html>

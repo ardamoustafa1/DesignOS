@@ -1,0 +1,80 @@
+name: Required browser evidence
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      update_linux_goldens:
+        description: Generate Linux golden baselines before verification
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  browser-gate:
+    name: browser-gate-required
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Registry-driven static floor
+        run: npm run validate:strict
+      - name: Unit and product engines
+        run: npm test
+      - name: Website browser geometry, Axe and accessibility tree
+        run: node bin/browser-gate.js website/index.html --out browser-evidence/browser-gate.json --screenshots browser-evidence/screenshots
+      - name: Lighthouse category and lab metric budgets
+        run: node bin/lighthouse-gate.js website/index.html --out browser-evidence/lighthouse.json
+      - name: Framework build and browser matrix
+        run: npm run test:frameworks
+      - name: Isolated black-box rule evaluations
+        run: npm run test:isolated
+      - name: External-eval registry contract
+        run: npm run verify:external-eval
+      - name: CDP motion profile and temporal regression
+        run: npm run test:motion-evidence
+      - name: Source-mapped component AST transaction
+        run: npm run test:live-component
+      - name: Mission 4 leader engine conformance
+        run: npm run test:leader
+      - name: Commit-bound browser ledger
+        run: node bin/browser-ledger.js --browser browser-evidence/browser-gate.json --out browser-evidence/browser-ledger.json
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: browser-ledger-${{ github.sha }}
+          path: browser-evidence/
+          retention-days: 90
+
+  golden-pixel:
+    name: golden-pixel-required
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Generate Linux golden baselines
+        if: github.event_name == 'workflow_dispatch' && inputs.update_linux_goldens
+        run: DESIGNOS_BASELINE_PLATFORM=linux node bin/golden-suite.js --update
+      - name: Golden screenshot and pixel regression
+        run: npm run test:goldens
+      - name: Upload generated Linux golden baselines
+        if: github.event_name == 'workflow_dispatch' && inputs.update_linux_goldens
+        uses: actions/upload-artifact@v7
+        with:
+          name: linux-golden-baselines-${{ github.sha }}
+          path: goldens/*/evidence/
+          retention-days: 7

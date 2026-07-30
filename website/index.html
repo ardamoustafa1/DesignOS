@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- slop-ok: the product voice uses em dashes only as compact mechanism/consequence
+     separators in technical claims; this cadence is a recorded brand decision. -->
 <title>DesignOS — The Design Intelligence Operating System for AI Agents</title>
 <link rel="icon" type="image/png" href="logo-3d.png">
 <link rel="apple-touch-icon" href="logo-3d.png">
@@ -34,19 +36,22 @@
   --bg-page: #ffffff; --bg-surface: #f8fafc; --bg-surface-raised: #ffffff;
   --text-primary: #09090b; --text-secondary: #3f3f46; --text-muted: #71717a;
   --border-default: rgb(9 9 11 / 0.10); --border-strong: rgb(9 9 11 / 0.22);
-  --accent: #059669; --accent-hover: #047857; --accent-subtle: rgb(5 150 105 / 0.08);
-  --text-on-accent: #ffffff; --success: #10b981;
+  --accent: #059669; --accent-hover: #047857; --accent-text: #047857; --accent-subtle: rgb(5 150 105 / 0.08);
+  --text-on-accent: #ffffff; --success: #10b981; --success-text: #047857;
   --btn-primary-bg: #047857; --btn-primary-hover: #065f46; --btn-primary-text: #ffffff;
-  --code-bg: #16161a; --code-text: #d4d4d8; --code-muted: #71717a;
+  --code-bg: #16161a; --code-text: #d4d4d8; --code-muted: #8b8b95;
   --code-accent: #34d399; --code-green: #10b981; --code-amber: #fbbf24;
+  --traffic-red: #ff5f56; --traffic-amber: #ffbd2e; --traffic-green: #27c93f;
   --grad-1: #10b981; --grad-2: #059669; --grad-3: #047857;
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
   --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px;
   --space-8: 32px; --space-12: 48px; --space-16: 64px; --space-24: 96px; --space-32: 128px;
   --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-full: 9999px;
-  --duration-fast: 150ms; --duration-slower: 500ms;
+  --duration-fast: 150ms; --duration-slow: 300ms; --duration-slower: 500ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  /* the ONE spring config, system-wide (motion/principles.md easing law 4) */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --container: 1140px;
 }
 @media (prefers-color-scheme: dark) {
@@ -54,8 +59,8 @@
     --bg-page: #09090b; --bg-surface: #121214; --bg-surface-raised: #18181b;
     --text-primary: #fafafa; --text-secondary: #d4d4d8; --text-muted: #9f9ea6;
     --border-default: rgb(255 255 255 / 0.09); --border-strong: rgb(255 255 255 / 0.18);
-    --accent: #10b981; --accent-hover: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
-    --text-on-accent: #09090b; --success: #34d399;
+    --accent: #10b981; --accent-hover: #34d399; --accent-text: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
+    --text-on-accent: #09090b; --success: #34d399; --success-text: #34d399;
     --btn-primary-bg: #10b981; --btn-primary-hover: #34d399; --btn-primary-text: #042f1e;
     --code-bg: #101013;
     --grad-1: #a7f3d0; --grad-2: #34d399; --grad-3: #10b981;
@@ -65,8 +70,8 @@
   --bg-page: #09090b; --bg-surface: #121214; --bg-surface-raised: #18181b;
   --text-primary: #fafafa; --text-secondary: #d4d4d8; --text-muted: #9f9ea6;
   --border-default: rgb(255 255 255 / 0.09); --border-strong: rgb(255 255 255 / 0.18);
-  --accent: #10b981; --accent-hover: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
-  --text-on-accent: #09090b; --success: #34d399;
+  --accent: #10b981; --accent-hover: #34d399; --accent-text: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
+  --text-on-accent: #09090b; --success: #34d399; --success-text: #34d399;
   --btn-primary-bg: #10b981; --btn-primary-hover: #34d399; --btn-primary-text: #042f1e;
   --code-bg: #101013;
   --grad-1: #a7f3d0; --grad-2: #34d399; --grad-3: #10b981;
@@ -78,35 +83,52 @@ body { background: var(--bg-page); color: var(--text-secondary); font-family: va
 h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 1.15; text-wrap: balance; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 ::selection { background: var(--btn-primary-bg); color: var(--btn-primary-text); }
-.eyebrow { display: block; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: var(--space-4); }
+.eyebrow { display: block; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: var(--space-4); }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); height: 48px; padding-inline: var(--space-6); border-radius: var(--radius-md); border: 1px solid transparent; font: inherit; font-size: 0.9375rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out); }
 .btn:active { transform: translateY(1px); }
 .btn-primary { background: var(--btn-primary-bg); color: var(--btn-primary-text); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.14), 0 8px 24px rgb(16 185 129 / 0.25); font-weight: 700; }
-.btn-primary:hover { background: var(--btn-primary-hover); transform: translateY(-1px); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.22), 0 12px 32px rgb(16 185 129 / 0.35); }
+.btn-primary:hover { background: var(--btn-primary-hover); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.22), 0 12px 32px rgb(16 185 129 / 0.35); }
+/* slop-ok: the ghost button sits on the hero's gradient field, so the blur is the depth
+   cue that separates control from background — not decoration on a flat surface. */
 .btn-ghost { color: var(--text-primary); background: rgb(255 255 255 / 0.04); border-color: var(--border-strong); backdrop-filter: blur(8px); }
-.btn-ghost:hover { background: rgb(255 255 255 / 0.09); border-color: var(--text-primary); transform: translateY(-1px); }
+.btn-ghost:hover { background: rgb(255 255 255 / 0.09); border-color: var(--text-primary); }
 
 /* nav */
 .nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg-page) 85%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color var(--duration-fast) var(--ease-out); }
 .nav.scrolled { border-bottom-color: var(--border-default); }
-.nav-inner { display: flex; align-items: center; height: 64px; gap: var(--space-8); }
-.logo { display: flex; align-items: center; gap: var(--space-3); font-weight: 800; font-size: 1.45rem; color: var(--text-primary); text-decoration: none; letter-spacing: -0.04em; transition: transform var(--duration-fast) var(--ease-out); }
-.logo:hover { transform: scale(1.02); }
-.logo-img { width: 40px; height: 40px; object-fit: contain; filter: drop-shadow(0 4px 16px rgb(16 185 129 / 0.38)); transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.45s ease; }
-.logo:hover .logo-img { transform: rotate(14deg) scale(1.15); }
+.nav-inner { position:relative; display: flex; align-items: center; min-height: 64px; gap: var(--space-4); }
+.logo { display: flex; align-items: center; gap: var(--space-3); min-width:44px; min-height:44px; font-weight: 800; font-size: 1.45rem; color: var(--text-primary); text-decoration: none; letter-spacing: -0.04em; transition: transform var(--duration-fast) var(--ease-out); }
+.logo:hover { color: var(--text-primary); }
+.logo-img { width: 40px; height: 40px; object-fit: contain; filter: drop-shadow(0 4px 16px rgb(16 185 129 / 0.38)); transition: transform var(--duration-slow) var(--ease-spring), filter var(--duration-slow) var(--ease-out); }
 .logo-text { display: inline-flex; align-items: center; font-weight: 800; letter-spacing: -0.045em; }
-.logo-os { margin-left: 2px; background: linear-gradient(135deg, var(--grad-1) 0%, var(--grad-2) 48%, var(--grad-3) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; filter: drop-shadow(0 0 14px rgb(16 185 129 / 0.45)); }
+/* --grad-1 (#10b981 = 2.54:1 on white) was removed from this ramp: it failed even the
+   3:1 large-text bar in light mode.
+   slop-ok: wordmark ramp, every stop measured — light #059669 3.77:1 and
+   #047857 5.48:1 on #ffffff; dark #34d399 10.35:1 and #10b981 7.84:1 on #09090b. */
+.logo-os { margin-left: 2px; background: linear-gradient(135deg, var(--grad-2) 0%, var(--grad-3) 55%, var(--btn-primary-hover) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; filter: drop-shadow(0 0 14px rgb(16 185 129 / 0.45)); }
 .nav-links { display: none; gap: var(--space-8); list-style: none; padding: 0; margin-inline: auto; }
-.nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9375rem; font-weight: 500; transition: color var(--duration-fast) var(--ease-out); }
+.nav-links a { display: inline-flex; align-items: center; justify-content:center; min-width:44px; min-height: 44px; color: var(--text-secondary); text-decoration: none; font-size: 0.9375rem; font-weight: 500; transition: color var(--duration-fast) var(--ease-out); }
 .nav-links a:hover { color: var(--text-primary); }
-.nav .btn { height: 38px; padding-inline: var(--space-4); font-size: 0.875rem; margin-left: auto; }
-@media (min-width: 768px) { .nav-links { display: flex; } .nav .btn { margin-left: 0; } }
-.theme-toggle-btn { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: var(--radius-full); background: var(--bg-surface-raised); border: 1px solid var(--border-default); color: var(--text-secondary); cursor: pointer; transition: all var(--duration-fast) var(--ease-out); }
-.theme-toggle-btn:hover { color: var(--text-primary); border-color: var(--border-strong); transform: translateY(-1px); box-shadow: 0 4px 12px var(--accent-subtle); }
+.nav-menu-btn { display:inline-flex; align-items:center; justify-content:center; flex:0 0 44px; width:44px; height:44px; border:1px solid var(--border-default); border-radius:var(--radius-full); background:var(--bg-surface-raised); color:var(--text-secondary); cursor:pointer; }
+.nav-menu-btn svg { width:20px; height:20px; }
+@media (max-width:959px) {
+  .nav-links[data-open="true"] { position:absolute; top:calc(100% + var(--space-2)); inset-inline:0; display:grid; gap:var(--space-2); padding:var(--space-3); background:var(--bg-surface-raised); border:1px solid var(--border-default); border-radius:var(--radius-md); box-shadow:0 16px 40px rgb(22 22 26 / .16); }
+  .nav-links[data-open="true"] a { width:100%; padding-inline:var(--space-4); }
+}
+.nav .btn { min-height: 44px; padding-inline: var(--space-4); font-size: 0.875rem; margin-left: auto; white-space: nowrap; }
+@media (max-width: 479px) {
+  .container { padding-inline: var(--space-4); }
+  .logo-text { display: none; }
+  .nav .btn { width: 44px; padding-inline: 0; }
+  .nav .btn span { display: none; }
+}
+@media (min-width: 960px) { .nav-inner { gap: var(--space-8); } .nav-links { display: flex; } .nav .btn { margin-left: 0; } .nav-menu-btn { display:none; } }
+.theme-toggle-btn { display: inline-flex; flex: 0 0 44px; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--bg-surface-raised); border: 1px solid var(--border-default); color: var(--text-secondary); cursor: pointer; transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out); }
+.theme-toggle-btn:hover { color: var(--text-primary); border-color: var(--border-strong); box-shadow: 0 4px 12px var(--accent-subtle); }
 .theme-toggle-btn:active { transform: translateY(0); }
-.theme-toggle-btn svg { width: 16px; height: 16px; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
-.theme-toggle-btn:hover svg { transform: rotate(20deg) scale(1.1); }
+.theme-toggle-btn svg { width: 16px; height: 16px; transition: transform var(--duration-slow) var(--ease-spring); }
+.a11y-status { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
 .theme-toggle-btn .icon-sun { display: none; }
 .theme-toggle-btn .icon-moon { display: block; }
 :root[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; }
@@ -125,9 +147,15 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 .hero-grid > * { min-width: 0; }
 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 58fr 42fr; } }
 .hero h1 { font-size: clamp(2.15rem, 2.8vw + 1rem, 3.25rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.12; margin-bottom: var(--space-6); }
-.hero h1 em { font-style: normal; display: block; margin-top: 4px; background: linear-gradient(135deg, var(--text-primary) 0%, var(--btn-primary-bg) 55%, var(--grad-1) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 12px rgb(16 185 129 / 0.15)); }
+/* slop-ok: display line, stops measured. Light: #09090b = 20.1:1, grad-2 #059669 = 3.77:1,
+   grad-3 #047857 = 5.48:1 on #ffffff — all clear the 3:1 large-text bar. The previous ramp
+   ended on --grad-1 (#10b981 = 2.54:1 on white), a real AA failure on the page's own h1. */
+.hero h1 em { font-style: normal; display: block; margin-top: 4px; background: linear-gradient(135deg, var(--text-primary) 0%, var(--grad-2) 55%, var(--grad-3) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 12px rgb(16 185 129 / 0.15)); }
+/* slop-ok: same display line in dark. Stops on #09090b: #ffffff 19.9:1, #d4d4d8 13.46:1,
+   #34d399 10.35:1, #10b981 7.84:1 — the whole ramp clears AA body, not just large text. */
 :root[data-theme="dark"] .hero h1 em { background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 35%, #34d399 75%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgb(16 185 129 / 0.22)); }
 @media (prefers-color-scheme: dark) {
+  /* slop-ok: system-preference mirror of the measured dark ramp above. */
   :root:not([data-theme="light"]) .hero h1 em { background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 35%, #34d399 75%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgb(16 185 129 / 0.22)); }
 }
 .hero-sub { font-size: 1.1875rem; line-height: 1.68; max-width: 44ch; margin-bottom: var(--space-8); color: var(--text-secondary); }
@@ -135,6 +163,7 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 .hero-note { width: 100%; font-size: 0.8125rem; color: var(--text-muted); margin-top: var(--space-3); font-family: var(--font-mono); }
 @media (prefers-reduced-motion: no-preference) {
   .rise { opacity: 0; transform: translateY(14px); animation: rise var(--duration-slower) var(--ease-out) forwards; }
+  .hero .rise { opacity:1; transform:none; animation:none; }
   .rise:nth-child(2) { animation-delay: 70ms; } .rise:nth-child(3) { animation-delay: 140ms; }
   @keyframes rise { to { opacity: 1; transform: none; } }
 }
@@ -142,13 +171,13 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 /* the signature: boot log terminal */
 .term { background: var(--code-bg); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; font-family: var(--font-mono); font-size: 0.8125rem; box-shadow: 0 24px 48px rgb(22 22 26 / 0.12); }
 .term-bar { display: flex; align-items: center; gap: 8px; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-default); }
-.term-bar i { display: inline-block; width: 12px; height: 12px; border-radius: var(--radius-full); cursor: pointer; transition: all var(--duration-fast) var(--ease-out); background-repeat: no-repeat; background-position: center; border: 1px solid rgb(0 0 0 / 0.15); }
-.term-bar i:nth-child(1) { background-color: #ff5f56; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d0000' stroke-width='1.5' stroke-linecap='round' d='M1.5 1.5l5 5m0-5l-5 5'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light red is a platform constant, not a theme color */
-.term-bar i:nth-child(2) { background-color: #ffbd2e; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d3300' stroke-width='1.6' stroke-linecap='round' d='M1.2 4h5.6'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light amber is a platform constant, not a theme color */
-.term-bar i:nth-child(3) { background-color: #27c93f; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath fill='%23004e14' d='M1.5 1h3.5L1 5.5V1.5A.5.5 0 0 1 1.5 1zm5 6H3L7 2.5V6.5a.5.5 0 0 1-.5.5z'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light green is a platform constant, not a theme color */
-.term-bar i:hover { filter: brightness(1.1); transform: scale(1.08); }
+.term-bar i { display: inline-block; width: 12px; height: 12px; border-radius: var(--radius-full); cursor: pointer; transition: filter var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out); background-repeat: no-repeat; background-position: center; border: 1px solid rgb(0 0 0 / 0.15); }
+.term-bar i:nth-child(1) { background-color: var(--traffic-red); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d0000' stroke-width='1.5' stroke-linecap='round' d='M1.5 1.5l5 5m0-5l-5 5'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light red is a platform constant, not a theme color */
+.term-bar i:nth-child(2) { background-color: var(--traffic-amber); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d3300' stroke-width='1.6' stroke-linecap='round' d='M1.2 4h5.6'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light amber is a platform constant, not a theme color */
+.term-bar i:nth-child(3) { background-color: var(--traffic-green); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath fill='%23004e14' d='M1.5 1h3.5L1 5.5V1.5A.5.5 0 0 1 1.5 1zm5 6H3L7 2.5V6.5a.5.5 0 0 1-.5.5z'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light green is a platform constant, not a theme color */
+.term-bar i:hover { filter: brightness(1.1); }
 
-.term pre { padding: var(--space-4) var(--space-6) var(--space-6); line-height: 1.9; color: var(--code-text); overflow-x: auto; }
+.term pre { max-width: 100%; padding: var(--space-4) var(--space-6) var(--space-6); line-height: 1.9; color: var(--code-text); overflow-x: auto; }
 .t-muted { color: var(--code-muted); } .t-acc { color: var(--code-accent); }
 .t-ok { color: var(--code-green); } .t-amb { color: var(--code-amber); }
 
@@ -162,8 +191,8 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 /* layers bento */
 .layers { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .layer { background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-6); transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out); }
-.layer:hover { transform: translateY(-2px); border-color: var(--border-strong); }
-.layer .n { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); font-weight: 600; }
+.layer:hover { border-color: var(--border-strong); }
+.layer .n { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-text); font-weight: 600; }
 .layer h3 { font-size: 1.0625rem; margin: var(--space-2) 0 var(--space-2); }
 .layer p { font-size: 0.9063rem; }
 .layer .dirs { display: block; margin-top: var(--space-3); font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
@@ -182,34 +211,50 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
 .score-card .row { display: flex; justify-content: space-between; align-items: center; padding: var(--space-3) var(--space-6); border-bottom: 1px solid var(--border-default); }
 .score-card .row:last-child { border-bottom: 0; }
 .score-card b { color: var(--text-primary); font-weight: 500; }
-.score-card .val { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--success); font-weight: 600; }
+.score-card .val { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--success-text); font-weight: 600; }
 .score-card .val.gate { color: var(--text-muted); }
 
 /* showcase */
 .shots { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
 @media (min-width: 768px) { .shots { grid-template-columns: repeat(4, 1fr); } }
-.shot { display: flex; flex-direction: column; background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out); }
-.shot:hover { transform: translateY(-2px); border-color: var(--border-strong); box-shadow: 0 12px 28px rgb(0 0 0 / 0.22); }
-.shot .k { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: var(--space-2); }
+/* shadow lives on ::after and crossfades by opacity — animating box-shadow directly is a
+   paint storm (motion/performance.md "Shadow hover: two layered shadows via ::after") */
+.shot { position: relative; display: flex; flex-direction: column; background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out); }
+.shot::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 12px 28px rgb(0 0 0 / 0.22); opacity: 0; pointer-events: none; transition: opacity var(--duration-fast) var(--ease-out); }
+.shot:hover { border-color: var(--border-strong); }
+.shot:hover::after { opacity: 1; }
+.shot .k { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-text); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: var(--space-2); }
 .shot h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; margin: 0 0 var(--space-2); }
 .shot p { font-size: 0.875rem; line-height: 1.5; color: var(--text-muted); margin: 0; }
 
 /* quickstart */
 .quick { max-width: 720px; }
 .quick .term { box-shadow: none; margin-block: var(--space-6); }
-.copy-btn { margin-left: auto; font: inherit; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--code-muted); background: transparent; border: 1px solid rgb(255 255 255 / 0.15); border-radius: var(--radius-sm); padding: 4px 12px; cursor: pointer; }
+.copy-btn { min-width: 44px; min-height: 44px; margin-left: auto; font: inherit; font-family: var(--font-mono); font-size: 0.75rem; color: var(--code-muted); background: transparent; border: 1px solid rgb(255 255 255 / 0.15); border-radius: var(--radius-sm); padding: 4px 12px; cursor: pointer; }
 .copy-btn:hover { color: var(--code-text); }
 
 /* cta band + footer */
 .cta-band { text-align: center; }
 .cta-band h2 { font-size: clamp(1.75rem, 3vw + 0.8rem, 2.75rem); margin-bottom: var(--space-8); }
 footer { border-top: 1px solid var(--border-default); padding-block: var(--space-16) var(--space-12); }
+.section p > a, footer a { display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; }
 .footer-inner { display: flex; flex-wrap: wrap; gap: var(--space-6); justify-content: space-between; align-items: center; font-size: 0.8125rem; color: var(--text-muted); }
 .footer-inner a { color: var(--text-muted); text-decoration: none; margin-left: var(--space-4); transition: color var(--duration-fast) var(--ease-out); }
 .footer-inner a:hover { color: var(--text-primary); }
+.footer-inner > div { min-width:0; max-width:100%; }
+.footer-inner > div > span { display:block; overflow-wrap:anywhere; }
 .creator-link { color: var(--text-primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
-.creator-link .handle { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); }
+.creator-link { flex-wrap:wrap; max-width:100%; overflow-wrap:anywhere; }
+.creator-link .handle { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-text); }
 .creator-link:hover { color: var(--accent); border-bottom-color: var(--text-primary); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover, .btn-ghost:hover, .theme-toggle-btn:hover, .layer:hover, .shot:hover { transform: translateY(-1px); }
+  .logo:hover { transform: scale(1.02); }
+  .logo:hover .logo-img { transform: rotate(14deg) scale(1.15); }
+  .theme-toggle-btn:hover svg { transform: rotate(20deg) scale(1.1); }
+  .term-bar i:hover { transform: scale(1.08); }
+  .layer:hover, .shot:hover { transform: translateY(-2px); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -218,13 +263,14 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
 </style>
 </head>
 <body>
+<div id="site-announcer" class="a11y-status" role="status" aria-live="polite"></div>
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a class="logo" href="#" aria-label="DesignOS home">
-      <img src="logo-3d.png" alt="DesignOS Logo" class="logo-img">
+      <img src="logo-3d.png" alt="DesignOS Logo" class="logo-img" width="707" height="707">
       <span class="logo-text">Design<span class="logo-os">OS</span></span>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="#layers">System</a></li>
       <li><a href="#engine">Review engine</a></li>
       <li><a href="suggest.html">Generator</a></li>
@@ -232,11 +278,14 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
       <li><a href="#quickstart">Install</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:var(--space-3);margin-left:auto;">
+      <button id="nav-menu-toggle" class="nav-menu-btn" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
       <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Switch theme" title="Switch appearance">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
       </button>
-      <a class="btn btn-primary" href="https://github.com/ardamoustafa1/DesignOS">
+      <a class="btn btn-primary" href="https://github.com/ardamoustafa1/DesignOS" aria-label="Star DesignOS on GitHub">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         <span>Star on GitHub</span>
       </a>
@@ -259,7 +308,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
       <div class="rise" aria-label="DesignOS boot sequence, example">
         <div class="term">
           <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <pre><span class="t-muted">you ›</span> Design a Stripe-level SaaS landing page.
+          <pre tabindex="0" aria-label="DesignOS boot sequence transcript"><span class="t-muted">you ›</span> Design a Stripe-level SaaS landing page.
 
 <span class="t-acc">designos</span> boot <span class="t-muted">· kernel v1.2</span>
 <span class="t-ok">✓</span> routed: landing-pages · hero · persuasion
@@ -287,7 +336,9 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
   <section class="section" id="layers">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">The system</span>
+      <!-- slop-ok: section labels double as the page's system-map index; they are
+           navigational taxonomy, not decorative pre-headings. -->
+      <span class="eyebrow">The system</span>
         <h2>Five layers between a prompt and a shipped screen</h2>
         <p>Not a prompt pack — an operating system the agent boots into, routing only the modules each task needs.</p>
       </div>
@@ -308,7 +359,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
         <span class="eyebrow">The review engine</span>
         <h2>Nothing ships on vibes</h2>
         <p style="font-size:1.125rem; margin-top:var(--space-4)">Every deliverable is graded across six dimensions against a written rubric. Accessibility failures cap the score at 60 — no exceptions, no negotiation. Under threshold, the work returns to the loop with specific objections.</p>
-        <p style="margin-top:var(--space-4)"><a href="https://github.com/ardamoustafa1/DesignOS/blob/main/scoring/rubric.md" style="color:var(--accent)">Read the rubric →</a></p>
+        <p style="margin-top:var(--space-4)"><a href="https://github.com/ardamoustafa1/DesignOS/blob/main/scoring/rubric.md" style="color:var(--accent-text)">Read the rubric →</a></p>
       </div>
       <div class="score-card" aria-label="Example scorecard">
         <div class="row"><b>UI Craft</b><span class="val">96 / 100</span></div>
@@ -344,7 +395,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
       <h2>One command. Any agent.</h2>
       <div class="term">
         <div class="term-bar"><i></i><i></i><i></i><button class="copy-btn" type="button" data-copy="npx github:ardamoustafa1/DesignOS init --agents">copy</button></div>
-        <pre><span class="t-muted">$</span> npx github:ardamoustafa1/DesignOS init --agents
+        <pre tabindex="0" aria-label="DesignOS installation transcript"><span class="t-muted">$</span> npx github:ardamoustafa1/DesignOS init --agents
 <span class="t-ok">✓</span> DesignOS copied to ./DesignOS
 <span class="t-ok">✓</span> CLAUDE.md wired
 <span class="t-ok">✓</span> 9 subagents registered</pre>
@@ -366,7 +417,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
 <footer>
   <div class="container footer-inner">
     <div>
-      <span style="display:inline-flex;align-items:center;gap:8px;"><img src="logo-3d.png" alt="" style="width:22px;height:22px;object-fit:contain;"> <strong style="font-weight:800;color:var(--text-primary)">Design<span class="logo-os">OS</span></strong> <span style="color:var(--text-muted)">— built for the age of agents.</span></span>
+      <span style="display:inline-flex;align-items:center;gap:8px;"><img src="logo-3d.png" alt="" width="707" height="707" style="width:22px;height:22px;object-fit:contain;"> <strong style="font-weight:800;color:var(--text-primary)">Design<span class="logo-os">OS</span></strong> <span style="color:var(--text-muted)">— built for the age of agents.</span></span>
       <div style="margin-top:var(--space-2);display:flex;align-items:center;gap:var(--space-2);font-size:0.8125rem;">
         <span style="color:var(--text-muted)">Architected &amp; Engineered by</span>
         <a href="https://ardamoustafacv.netlify.app" target="_blank" rel="noopener noreferrer" class="creator-link">Arda Moustafa <span class="handle">(@ardamoustafa)</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
@@ -374,6 +425,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
     </div>
     <nav aria-label="Footer">
       <a href="https://github.com/ardamoustafa1/DesignOS">GitHub</a>
+      <a href="browser-ledger.html">Browser ledger</a>
       <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/GETTING-STARTED.md">Docs</a>
       <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/CONTRIBUTING.md">Contribute</a>
       <a href="https://ardamoustafacv.netlify.app" target="_blank" rel="noopener noreferrer">Creator CV ↗</a>
@@ -382,9 +434,49 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
   </div>
 </footer>
 
+<script type="application/json" data-designos-tasks>
+[
+  {
+    "id":"mobile-navigation",
+    "viewport":{"width":375,"height":812},
+    "steps":[
+      {"action":"click","selector":"#nav-menu-toggle"},
+      {"assert":"attribute","selector":"#nav-menu-toggle","name":"aria-expanded","equals":"true"},
+      {"assert":"visible","selector":"#primary-navigation","equals":true},
+      {"action":"press","key":"Escape"},
+      {"assert":"attribute","selector":"#nav-menu-toggle","name":"aria-expanded","equals":"false"}
+    ]
+  },
+  {
+    "id":"copy-install-command",
+    "steps":[
+      {"action":"click","selector":".copy-btn"},
+      {"assert":"announcement","selector":"#site-announcer","includes":"command"}
+    ]
+  }
+]
+</script>
 <script>
 const nav = document.getElementById('nav');
 addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+const navMenu = document.getElementById('nav-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navMenu && navLinks) {
+  const closeMenu = () => {
+    navLinks.removeAttribute('data-open');
+    navMenu.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('aria-label', 'Open navigation menu');
+  };
+  navMenu.addEventListener('click', () => {
+    const open = navMenu.getAttribute('aria-expanded') !== 'true';
+    if (open) navLinks.setAttribute('data-open', 'true'); else navLinks.removeAttribute('data-open');
+    navMenu.setAttribute('aria-expanded', String(open));
+    navMenu.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  });
+  navLinks.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
+  addEventListener('keydown', event => { if (event.key === 'Escape') { closeMenu(); navMenu.focus(); } });
+  matchMedia('(min-width: 960px)').addEventListener('change', closeMenu);
+}
 const themeBtn = document.getElementById('theme-toggle');
 if (themeBtn) {
   const saved = localStorage.getItem('designos_theme');
@@ -398,8 +490,12 @@ if (themeBtn) {
 }
 document.querySelectorAll('.copy-btn').forEach(btn => {
   btn.addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(btn.dataset.copy); } catch (e) {}
-    btn.textContent = 'copied ✓';
+    let copied = false;
+    try { await navigator.clipboard.writeText(btn.dataset.copy); copied = true; } catch (e) {}
+    btn.textContent = copied ? 'copied ✓' : 'select command';
+    document.getElementById('site-announcer').textContent = copied
+      ? 'Installation command copied.'
+      : 'Copy unavailable. Select the installation command manually.';
     setTimeout(() => { btn.textContent = 'copy'; }, 1500);
   });
 });

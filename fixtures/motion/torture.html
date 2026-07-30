@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>DesignOS interruption torture fixture</title>
+<style>
+  :root { --duration: 120ms; --ease: cubic-bezier(.2,0,0,1); }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; font: 16px/1.5 system-ui; }
+  #torture-target {
+    min-width: 160px; min-height: 56px; border: 2px solid currentColor; background: Canvas;
+    color: CanvasText; transform: translate3d(0,0,0); touch-action: none;
+  }
+  #torture-target:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) { :root { --duration: 1ms; } }
+</style>
+<main>
+  <button id="torture-target" data-state="idle" data-expected-state="idle">Interrupt me</button>
+  <a href="#route" data-route>Route fixture</a>
+</main>
+<script>
+  const target = document.querySelector('#torture-target');
+  let animation = null;
+  let open = false;
+  let dragging = false;
+  let startX = 0;
+  const listeners = [];
+  const on = (type, handler, options) => {
+    target.addEventListener(type, handler, options);
+    listeners.push([type, handler, options]);
+  };
+  const settle = next => {
+    animation?.cancel();
+    open = next;
+    target.dataset.state = next ? 'open' : 'idle';
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    animation = target.animate(
+      [{ transform: getComputedStyle(target).transform }, { transform: next && !reduce ? 'translate3d(24px,0,0)' : 'translate3d(0,0,0)' }],
+      { duration: reduce ? 1 : 120, easing: 'cubic-bezier(.2,0,0,1)', fill: 'forwards' }
+    );
+    animation.finished.catch(() => {});
+  };
+  on('click', () => settle(!open));
+  on('pointerenter', () => { if (!open && !dragging) settle(true); });
+  on('pointerleave', () => { if (!dragging) settle(false); });
+  on('pointerdown', event => {
+    dragging = true; startX = event.clientX; target.setPointerCapture(event.pointerId); animation?.cancel();
+  });
+  on('pointermove', event => {
+    if (!dragging) return;
+    target.style.transform = `translate3d(${event.clientX - startX}px,0,0)`;
+  });
+  on('pointerup', event => {
+    if (!dragging) return;
+    dragging = false; target.releasePointerCapture(event.pointerId); settle(false);
+  });
+  on('keydown', event => { if (event.key === 'Escape') settle(false); });
+  const media = matchMedia('(prefers-reduced-motion: reduce)');
+  const onMedia = () => settle(false);
+  media.addEventListener('change', onMedia);
+  const route = document.querySelector('[data-route]');
+  route.addEventListener('click', event => {
+    event.preventDefault(); history.pushState({ fixture: true }, '', '#route'); settle(true);
+  });
+  addEventListener('popstate', () => settle(false));
+  on('designos:unmount', () => {
+    animation?.cancel();
+    for (const [type, handler, options] of listeners.splice(0)) target.removeEventListener(type, handler, options);
+    media.removeEventListener('change', onMedia);
+  });
+</script>
+</html>

@@ -23,6 +23,73 @@ label the assumption, and continue.
 | Constraints | implementation | stack, target files, themes, locales, performance, legal, timeline |
 | Acceptance | completion | breakpoints, states, task success, measured checks, required gate |
 
+## Design dials
+
+The contract fixes *what* the surface must do. The dials fix **how far** to push it — the
+three axes where "premium" means opposite things depending on the brief. Set them once,
+from the contract, before any module is loaded; every downstream decision reads them.
+
+| Dial | 1 | 5 | 10 |
+|---|---|---|---|
+| `DESIGN_VARIANCE` | strict grid, symmetric, one column rhythm | asymmetry with intent, one broken rule | editorial collage, overlap, rule-breaking as the language |
+| `MOTION_INTENSITY` | state feedback only, nothing else moves | entrances, one signature moment | scroll choreography, pinned sequences, cinematic |
+| `VISUAL_DENSITY` | gallery — one idea per screen | product default | cockpit — every pixel is a live value |
+
+### Inferring them (do not ask; derive, label, continue)
+
+| Signal in the brief | Variance | Motion | Density |
+|---|---|---|---|
+| Enterprise dashboard, admin, ops console | 2–3 | 2–3 | 8–9 |
+| Fintech / health / legal / insurance surface | 2–4 | 2–3 | 5–7 |
+| Developer tool, docs, technical product | 3–4 | 3–4 | 6–7 |
+| B2B SaaS marketing page | 4–5 | 4–5 | 4–5 |
+| Consumer app onboarding | 5–6 | 5–7 | 3–4 |
+| Agency, portfolio, creative studio | 8–10 | 7–9 | 2–4 |
+| Gaming, entertainment, media launch | 7–9 | 7–9 | 4–6 |
+| Print, invoice, report, PDF | 2–3 | 1 | 6–8 |
+
+The sector file wins on conflict (`CLAUDE.md` §2 rule 3). A "playful fintech" brief does not
+license `MOTION_INTENSITY: 8` — `industries/fintech.md` caps it, and the rationale records
+the override.
+
+### What each dial actually binds to
+
+**`DESIGN_VARIANCE`** → `foundations/grids.md` (column count and whether the grid may be
+broken), `foundations/layout.md`, `brain/originality.md` (how aggressive the signature
+vehicle may be). Below 4, every element sits on the grid. Above 7, the brief must name the
+one structural rule being broken and why — variance without a reason is noise, not taste.
+
+**`MOTION_INTENSITY`** → `motion/principles.md` character preset, `motion/recipes.md`,
+`motion/page-and-scroll.md`. Binding thresholds:
+
+- **≤ 2** — state feedback only. No entrances, no scroll reveals. `motion/micro-interactions.md` alone.
+- **3–5** — entrances allowed; exactly one signature moment; scroll reveals fire once.
+- **6–8** — scroll choreography licensed; `motion/page-and-scroll.md` applies in full;
+  `prefers-reduced-motion` handling stops being a checkbox and becomes a designed second state.
+- **9–10** — pinned/scrubbed sequences; requires an explicit performance budget and a
+  measured 4× CPU-throttle pass, or it is not shipped.
+
+Above 3, a reduced-motion path is not optional and the deliverable is incomplete without it.
+
+**`VISUAL_DENSITY`** → `components/data-density.md`, `foundations/spacing.md`,
+`foundations/typography.md` (scale compression). Below 4, whitespace is the primary
+compositional tool and the type scale opens up. Above 7, `components/tables.md` and
+`components/data-density.md` govern; row height, not margin, becomes the rhythm.
+
+### Recording them
+
+The chosen triple goes in `memory/design.md` next to the signature vehicle, in this form:
+
+```
+dials: variance 4 · motion 3 · density 6
+why:   B2B SaaS pricing page for procurement readers; industries/saas.md caps motion,
+       the comparison table sets density, variance stays low so the table reads first.
+```
+
+Two surfaces in one product may not disagree on the dials without a recorded reason. A
+landing page at `motion 7` next to an app shell at `motion 2` is not a range — it is two
+products wearing one logo.
+
 ## Originality synthesis
 
 Do not ask the user to invent a visual style. Derive three meaningfully different

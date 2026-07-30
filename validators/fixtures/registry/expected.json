@@ -1,0 +1,23 @@
+{
+  "raw-color.css": ["source-raw-color"],
+  "clickable-div.html": ["source-clickable-noncontrol", "source-missing-focus"],
+  "missing-focus.html": ["source-missing-focus"],
+  "fake-proof.html": ["source-fake-proof"],
+  "missing-image-dimensions.html": ["source-image-dimensions"],
+  "named-default.html": ["source-named-default"],
+  "transition-all.css": ["motion-transition-all"],
+  "scale-zero.css": ["motion-scale-zero"],
+  "hover-touch.css": ["motion-hover-without-pointer-query"],
+  "keyboard-motion.html": ["motion-keyboard-latency", "source-missing-focus"],
+  "unbounded-loop.css": ["motion-unbounded-loop"],
+  "scroll-handler.js": ["motion-scroll-unthrottled"],
+  "drag-no-capture.js": ["motion-drag-no-capture"],
+  "no-cancel.js": ["motion-no-cancellation"],
+  "no-visibility.js": ["motion-no-cancellation", "motion-no-visibility-pause"],
+  "spring-no-reduce.js": ["motion-spring-no-reduction"],
+  "no-reduced-motion.css": ["motion-reduced-motion-missing"],
+  "stagger-budget.css": ["motion-stagger-budget"],
+  "blocked-animation.css": ["motion-interaction-blocked"],
+  "enter-exit-symmetry.css": ["motion-enter-exit-symmetry"],
+  "missing-transform-origin.css": ["motion-transform-origin"]
+}

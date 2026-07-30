@@ -1,0 +1,1942 @@
+{
+  "semantic": {
+    "lang": "en",
+    "title": "Cadence — six release steps, one command",
+    "landmarks": {
+      "header": 1,
+      "nav": 1,
+      "main": 1,
+      "aside": 0,
+      "footer": 1
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "Six release steps.\n      One command."
+      },
+      {
+        "level": 2,
+        "text": "Every release is the same six steps, done by hand, at the worst possible hour."
+      },
+      {
+        "level": 3,
+        "text": "Before"
+      },
+      {
+        "level": 3,
+        "text": "After"
+      },
+      {
+        "level": 2,
+        "text": "How six steps become one"
+      },
+      {
+        "level": 2,
+        "text": "What the collapse actually saved."
+      }
+    ],
+    "controls": [
+      {
+        "selector": "html > body > a.skip",
+        "role": "a",
+        "name": "Skip to content"
+      },
+      {
+        "selector": "body > header.site > div.wrap > nav > a:nth-of-type(1)",
+        "role": "a",
+        "name": "How it works"
+      },
+      {
+        "selector": "body > header.site > div.wrap > nav > a:nth-of-type(2)",
+        "role": "a",
+        "name": "Numbers"
+      },
+      {
+        "selector": "main > section.hero:nth-of-type(1) > div.cta-row > span.magnet > a.btn",
+        "role": "a",
+        "name": "Watch it collapse"
+      },
+      {
+        "selector": "body > main > section.hero:nth-of-type(1) > div.cta-row > a.btn",
+        "role": "a",
+        "name": "See the numbers"
+      },
+      {
+        "selector": "body > footer.site > div.wrap > p > a",
+        "role": "a",
+        "name": "flagship-launch.md"
+      }
+    ]
+  },
+  "axe": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.12.1"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "windowWidth": 320,
+      "windowHeight": 800,
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary"
+    },
+    "violations": [],
+    "incomplete": [],
+    "passes": 21
+  },
+  "accessibilityTree": [
+    {
+      "nodeId": "2",
+      "role": "RootWebArea",
+      "name": "Cadence — six release steps, one command",
+      "ignored": false,
+      "properties": {
+        "focused": true
+      }
+    },
+    {
+      "nodeId": "5",
+      "parentId": "2",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "14",
+      "parentId": "5",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "15",
+      "parentId": "14",
+      "role": "link",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "16",
+      "parentId": "14",
+      "role": "banner",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "23",
+      "parentId": "14",
+      "role": "main",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "90",
+      "parentId": "14",
+      "role": "contentinfo",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "97",
+      "parentId": "15",
+      "role": "StaticText",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "17",
+      "parentId": "16",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "18",
+      "parentId": "17",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "20",
+      "parentId": "17",
+      "role": "navigation",
+      "name": "Primary",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "24",
+      "parentId": "23",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "34",
+      "parentId": "23",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "58",
+      "parentId": "23",
+      "role": "region",
+      "name": "How six steps become one",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "73",
+      "parentId": "23",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "91",
+      "parentId": "90",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "92",
+      "parentId": "91",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000002",
+      "parentId": "97",
+      "role": "InlineTextBox",
+      "name": "Skip to content",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "98",
+      "parentId": "18",
+      "role": "StaticText",
+      "name": "Cadence",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "99",
+      "parentId": "18",
+      "role": "StaticText",
+      "name": ".",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "21",
+      "parentId": "20",
+      "role": "link",
+      "name": "How it works",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "22",
+      "parentId": "20",
+      "role": "link",
+      "name": "Numbers",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "25",
+      "parentId": "24",
+      "role": "heading",
+      "name": "Six release steps. One command.",
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "3",
+      "parentId": "24",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "30",
+      "parentId": "24",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "31",
+      "parentId": "30",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "32",
+      "parentId": "31",
+      "role": "link",
+      "name": "Watch it collapse",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "33",
+      "parentId": "30",
+      "role": "link",
+      "name": "See the numbers",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "4",
+      "parentId": "24",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "35",
+      "parentId": "34",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "108",
+      "parentId": "35",
+      "role": "StaticText",
+      "name": "THE PROBLEM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "36",
+      "parentId": "34",
+      "role": "heading",
+      "name": "Every release is the same six steps, done by hand, at the worst possible hour.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "37",
+      "parentId": "34",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "38",
+      "parentId": "34",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "39",
+      "parentId": "38",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "40",
+      "parentId": "39",
+      "role": "heading",
+      "name": "Before",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "41",
+      "parentId": "39",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "48",
+      "parentId": "38",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "49",
+      "parentId": "48",
+      "role": "heading",
+      "name": "After",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "50",
+      "parentId": "48",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "59",
+      "parentId": "58",
+      "role": "heading",
+      "name": "How six steps become one",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "60",
+      "parentId": "58",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "61",
+      "parentId": "60",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "62",
+      "parentId": "61",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "64",
+      "parentId": "62",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "74",
+      "parentId": "73",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "146",
+      "parentId": "74",
+      "role": "StaticText",
+      "name": "MEASURED",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "75",
+      "parentId": "73",
+      "role": "heading",
+      "name": "What the collapse actually saved.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "76",
+      "parentId": "73",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "77",
+      "parentId": "73",
+      "role": "DescriptionList",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "93",
+      "parentId": "92",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "159",
+      "parentId": "92",
+      "role": "StaticText",
+      "name": ", built as a DesignOS golden example. No customers, logos, or compliance claims appear on this page, because none exist. Source and rationale: ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "94",
+      "parentId": "92",
+      "role": "link",
+      "name": "flagship-launch.md",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000003",
+      "parentId": "98",
+      "role": "InlineTextBox",
+      "name": "Cadence",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000004",
+      "parentId": "99",
+      "role": "InlineTextBox",
+      "name": ".",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "100",
+      "parentId": "21",
+      "role": "StaticText",
+      "name": "How it works",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "101",
+      "parentId": "22",
+      "role": "StaticText",
+      "name": "Numbers",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "26",
+      "parentId": "25",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "27",
+      "parentId": "26",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "28",
+      "parentId": "25",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "29",
+      "parentId": "28",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "104",
+      "parentId": "3",
+      "role": "StaticText",
+      "name": "Cadence tags the version, writes the changelog, builds, signs, publishes, and announces. You run one line and watch it happen.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "105",
+      "parentId": "32",
+      "role": "StaticText",
+      "name": "Watch it collapse",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "106",
+      "parentId": "33",
+      "role": "StaticText",
+      "name": "See the numbers",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "107",
+      "parentId": "4",
+      "role": "StaticText",
+      "name": "$ cadence ship --tag v2.4.0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000020",
+      "parentId": "108",
+      "role": "InlineTextBox",
+      "name": "THE PROBLEM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "109",
+      "parentId": "36",
+      "role": "StaticText",
+      "name": "Every release is the same six steps, done by hand, at the worst possible hour.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "110",
+      "parentId": "37",
+      "role": "StaticText",
+      "name": "They are not hard steps. They are steps that must all happen, in order, without one being forgotten. That is a machine's job, and it has been a person's job for a decade.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "111",
+      "parentId": "40",
+      "role": "StaticText",
+      "name": "Before",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "42",
+      "parentId": "41",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "43",
+      "parentId": "41",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "44",
+      "parentId": "41",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "45",
+      "parentId": "41",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "46",
+      "parentId": "41",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "47",
+      "parentId": "41",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "124",
+      "parentId": "49",
+      "role": "StaticText",
+      "name": "After",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "51",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "52",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "53",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "54",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "55",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "56",
+      "parentId": "50",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "137",
+      "parentId": "59",
+      "role": "StaticText",
+      "name": "How six steps become one",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "139",
+      "parentId": "64",
+      "role": "StaticText",
+      "name": "manual steps, every single release.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000066",
+      "parentId": "146",
+      "role": "InlineTextBox",
+      "name": "MEASURED",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "147",
+      "parentId": "75",
+      "role": "StaticText",
+      "name": "What the collapse actually saved.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "148",
+      "parentId": "76",
+      "role": "StaticText",
+      "name": "Numbers from the Cadence team's own releases over one quarter. This is a fictional product built as a DesignOS golden, so these are illustrative, not audited.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "78",
+      "parentId": "77",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "79",
+      "parentId": "78",
+      "role": "term",
+      "name": "MEDIAN RELEASE TIME",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "80",
+      "parentId": "78",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "81",
+      "parentId": "78",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "82",
+      "parentId": "77",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "83",
+      "parentId": "82",
+      "role": "term",
+      "name": "STEPS A HUMAN PERFORMS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "84",
+      "parentId": "82",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "85",
+      "parentId": "82",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "86",
+      "parentId": "77",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "87",
+      "parentId": "86",
+      "role": "term",
+      "name": "RELEASES MISSING A CHANGELOG",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "88",
+      "parentId": "86",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "89",
+      "parentId": "86",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "158",
+      "parentId": "93",
+      "role": "StaticText",
+      "name": "Cadence is a fictional product",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000091",
+      "parentId": "159",
+      "role": "InlineTextBox",
+      "name": ", ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000092",
+      "parentId": "159",
+      "role": "InlineTextBox",
+      "name": "built as a DesignOS golden example. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000093",
+      "parentId": "159",
+      "role": "InlineTextBox",
+      "name": "No customers, logos, or compliance ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000094",
+      "parentId": "159",
+      "role": "InlineTextBox",
+      "name": "claims appear on this page, because ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000095",
+      "parentId": "159",
+      "role": "InlineTextBox",
+      "name": "none exist. Source and rationale: ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "160",
+      "parentId": "94",
+      "role": "StaticText",
+      "name": "flagship-launch.md",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000005",
+      "parentId": "100",
+      "role": "InlineTextBox",
+      "name": "How it ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000006",
+      "parentId": "100",
+      "role": "InlineTextBox",
+      "name": "works",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000007",
+      "parentId": "101",
+      "role": "InlineTextBox",
+      "name": "Numbers",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "102",
+      "parentId": "27",
+      "role": "StaticText",
+      "name": "Six release steps.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "103",
+      "parentId": "29",
+      "role": "StaticText",
+      "name": "One command.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000012",
+      "parentId": "104",
+      "role": "InlineTextBox",
+      "name": "Cadence tags the version, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000013",
+      "parentId": "104",
+      "role": "InlineTextBox",
+      "name": "writes the changelog, builds, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000014",
+      "parentId": "104",
+      "role": "InlineTextBox",
+      "name": "signs, publishes, and ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000015",
+      "parentId": "104",
+      "role": "InlineTextBox",
+      "name": "announces. You run one line ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000016",
+      "parentId": "104",
+      "role": "InlineTextBox",
+      "name": "and watch it happen.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000017",
+      "parentId": "105",
+      "role": "InlineTextBox",
+      "name": "Watch it collapse",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000018",
+      "parentId": "106",
+      "role": "InlineTextBox",
+      "name": "See the numbers",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000019",
+      "parentId": "107",
+      "role": "InlineTextBox",
+      "name": "$ cadence ship --tag v2.4.0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000021",
+      "parentId": "109",
+      "role": "InlineTextBox",
+      "name": "Every release ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000022",
+      "parentId": "109",
+      "role": "InlineTextBox",
+      "name": "is the same ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000023",
+      "parentId": "109",
+      "role": "InlineTextBox",
+      "name": "six steps, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000024",
+      "parentId": "109",
+      "role": "InlineTextBox",
+      "name": "done by hand, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000025",
+      "parentId": "109",
+      "role": "InlineTextBox",
+      "name": "at the worst ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000026",
+      "parentId": "109",
+      "role": "InlineTextBox",
+      "name": "possible hour.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000027",
+      "parentId": "110",
+      "role": "InlineTextBox",
+      "name": "They are not hard steps. They are ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000028",
+      "parentId": "110",
+      "role": "InlineTextBox",
+      "name": "steps that must all happen, in ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000029",
+      "parentId": "110",
+      "role": "InlineTextBox",
+      "name": "order, without one being ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000030",
+      "parentId": "110",
+      "role": "InlineTextBox",
+      "name": "forgotten. That is a machine's ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000031",
+      "parentId": "110",
+      "role": "InlineTextBox",
+      "name": "job, and it has been a person's ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000032",
+      "parentId": "110",
+      "role": "InlineTextBox",
+      "name": "job for a decade.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000033",
+      "parentId": "111",
+      "role": "InlineTextBox",
+      "name": "Before",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "112",
+      "parentId": "42",
+      "role": "ListMarker",
+      "name": "1. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "113",
+      "parentId": "42",
+      "role": "StaticText",
+      "name": "Tag the version",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "114",
+      "parentId": "43",
+      "role": "ListMarker",
+      "name": "2. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "115",
+      "parentId": "43",
+      "role": "StaticText",
+      "name": "Write the changelog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "116",
+      "parentId": "44",
+      "role": "ListMarker",
+      "name": "3. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "117",
+      "parentId": "44",
+      "role": "StaticText",
+      "name": "Run the build",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "118",
+      "parentId": "45",
+      "role": "ListMarker",
+      "name": "4. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "119",
+      "parentId": "45",
+      "role": "StaticText",
+      "name": "Sign the artifact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "120",
+      "parentId": "46",
+      "role": "ListMarker",
+      "name": "5. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "121",
+      "parentId": "46",
+      "role": "StaticText",
+      "name": "Publish to the registry",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "122",
+      "parentId": "47",
+      "role": "ListMarker",
+      "name": "6. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "123",
+      "parentId": "47",
+      "role": "StaticText",
+      "name": "Announce in the channel",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000046",
+      "parentId": "124",
+      "role": "InlineTextBox",
+      "name": "After",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "125",
+      "parentId": "51",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "126",
+      "parentId": "51",
+      "role": "StaticText",
+      "name": "Tag the version",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "127",
+      "parentId": "52",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "128",
+      "parentId": "52",
+      "role": "StaticText",
+      "name": "Write the changelog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "129",
+      "parentId": "53",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "130",
+      "parentId": "53",
+      "role": "StaticText",
+      "name": "Run the build",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "131",
+      "parentId": "54",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "132",
+      "parentId": "54",
+      "role": "StaticText",
+      "name": "Sign the artifact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "133",
+      "parentId": "55",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "134",
+      "parentId": "55",
+      "role": "StaticText",
+      "name": "Publish to the registry",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "135",
+      "parentId": "56",
+      "role": "ListMarker",
+      "name": "• ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "57",
+      "parentId": "56",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000059",
+      "parentId": "137",
+      "role": "InlineTextBox",
+      "name": "How ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000060",
+      "parentId": "137",
+      "role": "InlineTextBox",
+      "name": "six ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000061",
+      "parentId": "137",
+      "role": "InlineTextBox",
+      "name": "steps ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000062",
+      "parentId": "137",
+      "role": "InlineTextBox",
+      "name": "become ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000063",
+      "parentId": "137",
+      "role": "InlineTextBox",
+      "name": "one",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000064",
+      "parentId": "139",
+      "role": "InlineTextBox",
+      "name": "manual steps, every single ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000065",
+      "parentId": "139",
+      "role": "InlineTextBox",
+      "name": "release.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000067",
+      "parentId": "147",
+      "role": "InlineTextBox",
+      "name": "What the collapse ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000068",
+      "parentId": "147",
+      "role": "InlineTextBox",
+      "name": "actually saved.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000069",
+      "parentId": "148",
+      "role": "InlineTextBox",
+      "name": "Numbers from the Cadence ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000070",
+      "parentId": "148",
+      "role": "InlineTextBox",
+      "name": "team's own releases over one ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000071",
+      "parentId": "148",
+      "role": "InlineTextBox",
+      "name": "quarter. This is a fictional product ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000072",
+      "parentId": "148",
+      "role": "InlineTextBox",
+      "name": "built as a DesignOS golden, so ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000073",
+      "parentId": "148",
+      "role": "InlineTextBox",
+      "name": "these are illustrative, not ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000074",
+      "parentId": "148",
+      "role": "InlineTextBox",
+      "name": "audited.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "149",
+      "parentId": "79",
+      "role": "StaticText",
+      "name": "MEDIAN RELEASE TIME",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "150",
+      "parentId": "80",
+      "role": "StaticText",
+      "name": "4m 12s",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "151",
+      "parentId": "81",
+      "role": "StaticText",
+      "name": "Down from 38 minutes of hands-on work spread across an afternoon.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "152",
+      "parentId": "83",
+      "role": "StaticText",
+      "name": "STEPS A HUMAN PERFORMS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "153",
+      "parentId": "84",
+      "role": "StaticText",
+      "name": "1",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "154",
+      "parentId": "85",
+      "role": "StaticText",
+      "name": "The command. Everything after it is the machine's responsibility.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "155",
+      "parentId": "87",
+      "role": "StaticText",
+      "name": "RELEASES MISSING A CHANGELOG",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "156",
+      "parentId": "88",
+      "role": "StaticText",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "157",
+      "parentId": "89",
+      "role": "StaticText",
+      "name": "It cannot be forgotten if it is not a separate step.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000090",
+      "parentId": "158",
+      "role": "InlineTextBox",
+      "name": "Cadence is a fictional product",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000096",
+      "parentId": "160",
+      "role": "InlineTextBox",
+      "name": "flagship-launch.md",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000008",
+      "parentId": "102",
+      "role": "InlineTextBox",
+      "name": "Six release ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000009",
+      "parentId": "102",
+      "role": "InlineTextBox",
+      "name": "steps.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000010",
+      "parentId": "103",
+      "role": "InlineTextBox",
+      "name": "One ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000011",
+      "parentId": "103",
+      "role": "InlineTextBox",
+      "name": "command.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000034",
+      "parentId": "112",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000035",
+      "parentId": "113",
+      "role": "InlineTextBox",
+      "name": "Tag the version",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000036",
+      "parentId": "114",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000037",
+      "parentId": "115",
+      "role": "InlineTextBox",
+      "name": "Write the changelog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000038",
+      "parentId": "116",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000039",
+      "parentId": "117",
+      "role": "InlineTextBox",
+      "name": "Run the build",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000040",
+      "parentId": "118",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000041",
+      "parentId": "119",
+      "role": "InlineTextBox",
+      "name": "Sign the artifact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000042",
+      "parentId": "120",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000043",
+      "parentId": "121",
+      "role": "InlineTextBox",
+      "name": "Publish to the registry",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000044",
+      "parentId": "122",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000045",
+      "parentId": "123",
+      "role": "InlineTextBox",
+      "name": "Announce in the channel",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000047",
+      "parentId": "125",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000048",
+      "parentId": "126",
+      "role": "InlineTextBox",
+      "name": "Tag the version",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000049",
+      "parentId": "127",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000050",
+      "parentId": "128",
+      "role": "InlineTextBox",
+      "name": "Write the changelog",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000051",
+      "parentId": "129",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000052",
+      "parentId": "130",
+      "role": "InlineTextBox",
+      "name": "Run the build",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000053",
+      "parentId": "131",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000054",
+      "parentId": "132",
+      "role": "InlineTextBox",
+      "name": "Sign the artifact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000055",
+      "parentId": "133",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000056",
+      "parentId": "134",
+      "role": "InlineTextBox",
+      "name": "Publish to the registry",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000057",
+      "parentId": "135",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "136",
+      "parentId": "57",
+      "role": "StaticText",
+      "name": "cadence ship",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000075",
+      "parentId": "149",
+      "role": "InlineTextBox",
+      "name": "MEDIAN RELEASE TIME",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000076",
+      "parentId": "150",
+      "role": "InlineTextBox",
+      "name": "4m 12s",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000077",
+      "parentId": "151",
+      "role": "InlineTextBox",
+      "name": "Down from 38 minutes of ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000078",
+      "parentId": "151",
+      "role": "InlineTextBox",
+      "name": "hands-on work spread across ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000079",
+      "parentId": "151",
+      "role": "InlineTextBox",
+      "name": "an afternoon.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000080",
+      "parentId": "152",
+      "role": "InlineTextBox",
+      "name": "STEPS A HUMAN PERFORMS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000081",
+      "parentId": "153",
+      "role": "InlineTextBox",
+      "name": "1",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000082",
+      "parentId": "154",
+      "role": "InlineTextBox",
+      "name": "The command. Everything ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000083",
+      "parentId": "154",
+      "role": "InlineTextBox",
+      "name": "after it is the machine's ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000084",
+      "parentId": "154",
+      "role": "InlineTextBox",
+      "name": "responsibility.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000085",
+      "parentId": "155",
+      "role": "InlineTextBox",
+      "name": "RELEASES MISSING A ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000086",
+      "parentId": "155",
+      "role": "InlineTextBox",
+      "name": "CHANGELOG",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000087",
+      "parentId": "156",
+      "role": "InlineTextBox",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000088",
+      "parentId": "157",
+      "role": "InlineTextBox",
+      "name": "It cannot be forgotten if it is ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000089",
+      "parentId": "157",
+      "role": "InlineTextBox",
+      "name": "not a separate step.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000058",
+      "parentId": "136",
+      "role": "InlineTextBox",
+      "name": "cadence ship",
+      "ignored": false,
+      "properties": {}
+    }
+  ]
+}

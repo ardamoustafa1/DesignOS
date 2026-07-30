@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quickstart — Relay Docs</title>
+<title>Quickstart · Relay Docs</title>
 <meta name="description" content="Get your first context-briefed alert in under 10 minutes. Relay documentation quickstart.">
 <style>
 /* ============================================================
@@ -16,7 +16,7 @@
   --text-primary: #fafafa; --text-secondary: #c9ccd1; --text-muted: #9a9fa8;
   --border-default: rgb(255 255 255 / 0.08); --border-strong: rgb(255 255 255 / 0.16);
   --accent: #f5a623; --accent-hover: #ffb84d; --accent-subtle: rgb(245 166 35 / 0.12);
-  --text-on-accent: #1a1204; --success: #4ade80; --info: #38bdf8; --code-bg: #0d0f12; --code-comment: #6b7280; --code-key: #38bdf8; --code-str: #4ade80;
+  --text-on-accent: #1a1204; --success: #4ade80; --info: #38bdf8; --code-bg: #0d0f12; --code-comment: #7b8392; --code-key: #38bdf8; --code-str: #4ade80;
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
@@ -140,7 +140,7 @@ code.inline { font-family: var(--font-mono); font-size: 0.85em; background: var(
   <main class="article">
     <p class="breadcrumb">Getting started / Quickstart</p>
     <h1>Quickstart</h1>
-    <p class="lede">Your first context-briefed alert in under 10 minutes — one happy path, no theory.</p>
+    <p class="lede">Your first context-briefed alert in under 10 minutes. One happy path, no theory.</p>
     <div class="meta-row"><span>Updated Jul 2026</span><span>≈ 8 min</span></div>
 
     <h2 id="install"><a class="anchor" href="#install" aria-label="Link to Install">#</a>1. Install the CLI</h2>
@@ -151,11 +151,11 @@ code.inline { font-family: var(--font-mono); font-size: 0.85em; background: var(
         </button>
       </div>
       <pre><code><span class="prompt">$ </span>npm install -g @relay/cli
-<span class="out">+ @relay/cli@3.2.0 — installed in 4s</span></code></pre>
+<span class="out">+ @relay/cli@3.2.0 · installed in 4s</span></code></pre>
     </div>
 
     <h2 id="connect"><a class="anchor" href="#connect" aria-label="Link to Connect">#</a>2. Connect your alert source</h2>
-    <p>Relay sits between your alerting and your team. Point any source at it — Prometheus, Datadog, CloudWatch, or plain webhooks:</p>
+    <p>Relay sits between your alerting and your team. Point any source at it: Prometheus, Datadog, CloudWatch, or plain webhooks.</p>
     <div class="codeblock">
       <div class="codeblock-bar">terminal
         <button class="copy-btn" type="button" data-copy="relay connect prometheus --url https://prom.internal:9090">
@@ -168,7 +168,7 @@ code.inline { font-family: var(--font-mono); font-size: 0.85em; background: var(
     <div class="callout"><span aria-hidden="true">ⓘ</span><p><b>Note:</b> Migrating from PagerDuty? <a href="#">The importer</a> brings rotations, escalations, and history in one command.</p></div>
 
     <h2 id="brief"><a class="anchor" href="#brief" aria-label="Link to Brief">#</a>3. Attach context to a service</h2>
-    <p>This is the step that ends 2am archaeology — tell Relay where a service's runbook and ownership live:</p>
+    <p>This is the step that ends 2am archaeology. Tell Relay where a service's runbook and ownership live:</p>
     <div class="lang-tabs" role="tablist" aria-label="Configuration format">
       <button role="tab" aria-selected="true" type="button">CLI</button>
       <button role="tab" aria-selected="false" type="button">relay.yaml</button>
@@ -196,14 +196,14 @@ code.inline { font-family: var(--font-mono); font-size: 0.85em; background: var(
       <pre><code><span class="prompt">$ </span>relay test api-gateway <span class="tok-k">--severity</span> <span class="tok-a">2</span>
 <span class="out">→ paging @maya (primary, gateway rotation)
 → runbook attached: gateway-latency.md
-→ similar: #3971 resolved in 11m — fix linked
-✓ Test incident #4129 created — check Slack.</span></code></pre>
+→ similar: #3971 resolved in 11m; fix linked
+✓ Test incident #4129 created. Check Slack.</span></code></pre>
     </div>
     <p>That's the whole loop: alert in, context attached, right person paged. From here:</p>
     <ol>
-      <li><a href="#">Route by ownership</a> — page the engineer who shipped the change</li>
-      <li><a href="#">Escalation policies</a> — escalate only when it's earned</li>
-      <li><a href="#">Auto-drafted postmortems</a> — the timeline writes itself</li>
+      <li><a href="#">Route by ownership</a>: page the engineer who shipped the change</li>
+      <li><a href="#">Escalation policies</a>: escalate only when it's earned</li>
+      <li><a href="#">Auto-drafted postmortems</a>: the timeline writes itself</li>
     </ol>
 
     <div class="article-footer">

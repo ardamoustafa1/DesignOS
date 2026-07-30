@@ -53,8 +53,85 @@ If any beat is missing the interaction feels broken; if any beat is long it feel
 - Custom cursors: creative-portfolio license only; never in products.
 - Drag affordances: `grab`/`grabbing` + visible handle.
 
-## Sound
-- Default: none. Web products are silent. (Exceptions: explicit media, games, opt-in notification sounds — always with user control.)
+## Sound & haptics
+
+**Default: silent, and no vibration.** Web products are silent, and this is right almost
+always — an unrequested sound in an open-plan office or a quiet room is not delight, it is
+an intrusion the user cannot undo. But "never" and "here is how to do it correctly" are
+different instructions, and the top tier of launch and consumer work does use this layer.
+
+### The four gates
+
+Sound or haptics may exist only when **all four** hold:
+
+1. **User-initiated.** It answers an action the user just took. Nothing the system decides
+   to do on its own makes a noise — that is a notification, and notifications are opt-in.
+2. **Off by default, with a visible control.** A toggle the user can find without hunting,
+   its state persisted. `prefers-reduced-motion: reduce` also silences the layer: the same
+   people frequently want both.
+3. **Redundant.** The sound or buzz *confirms* something already visible. It is never the
+   only channel — deaf users, muted phones, and desktop browsers with no vibration API all
+   have to get the same information.
+4. **Licensed by the sector.** Consumer, gaming, media, and creative tools may. Fintech,
+   health, legal, enterprise dashboards, and anything used all day may not
+   (`industries/`). Frequency is the real test: a sound heard 200 times a day is a
+   grievance, however lovely it was the first time.
+
+### Sound craft, when it is earned
+
+- **Under 100ms, under −20dBFS.** A UI sound is a *texture*, not a note. If a listener can
+  hum it back, it is too long and too loud.
+- **One family.** Sounds from one instrument or one synthesis source, differing by pitch
+  and length, not by character. Three unrelated stock sounds is the audio equivalent of
+  three unrelated fonts.
+- **Pitch carries meaning:** upward interval = success/forward, downward = dismissal/back,
+  flat click = acknowledgement, dissonant = error. Never a "buzzer" — the error sound
+  should be the *quietest* thing in the set, because errors already have the user's
+  attention.
+- **Debounce.** Rapid repeats (a key held, a list scrubbing) collapse to a single event or
+  drop the sound entirely. Machine-gun UI audio is the fastest route to a permanent mute.
+- **Preload and decode once.** Use `AudioContext` with a decoded buffer, not `new Audio()`
+  per event, or the first play arrives late and the feedback lands after the visual.
+
+```js
+// One context, one decoded buffer, gated behind an explicit user preference.
+const enabled = () => prefs.sound && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+let ctx, buf;
+async function prime() {                        // call from the first real user gesture —
+  ctx = ctx || new AudioContext();              // browsers refuse to start audio otherwise
+  if (!buf) buf = await ctx.decodeAudioData(await (await fetch(url)).arrayBuffer());
+}
+function tick(gain = 0.08) {                    // ~ -22dBFS
+  if (!enabled() || !ctx || !buf) return;
+  const src = ctx.createBufferSource(); const g = ctx.createGain();
+  src.buffer = buf; g.gain.value = gain;
+  src.connect(g).connect(ctx.destination); src.start();
+}
+```
+
+### Haptics (mobile web and native)
+
+- **Web:** `navigator.vibrate()` is the only primitive, it is coarse, iOS Safari does not
+  support it, and it is silently ignored without a user gesture. Treat it as a bonus that
+  usually does not fire — never build meaning on top of it.
+- **Native:** the vocabulary is real and should be used properly —
+  `selection` for a picker crossing a detent, `impact(light|medium|heavy)` for a landing or
+  a snap, `notification(success|warning|error)` for an outcome. Full platform tables in
+  `native/motion-gestures.md`.
+- **Pair haptics with the frame the event happens on**, not with the start of an animation.
+  A buzz that arrives 200ms before the visual snap reads as a fault in the device.
+- **One per gesture.** A drag that ticks at every detent is a broken toy; tick at the
+  detent the user lands on.
+
+### Anti-patterns
+
+- Sound on page load, on scroll, or on hover. All three are the interface talking without
+  being spoken to.
+- A "delightful" success chime on an action performed dozens of times a day.
+- Vibration used as the only error signal — it is invisible, inaudible, and frequently
+  disabled at the OS level.
+- Audio feedback with no visible control, or a control buried in a settings sub-page.
+- Sounds that duck or interrupt the user's own media playback.
 
 ## Anti-patterns
 - Hover effects >150ms (the UI feels like it's underwater)

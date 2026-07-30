@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Relayer — AI Copilot for Revenue Teams (DesignOS Golden)</title>
-  <meta name="description" content="Golden example: an AI copilot landing page that shows the workflow — real input/output, stated limits, integration path. Fictional brand for DesignOS evaluation.">
+  <title>Relayer · AI Copilot for Revenue Teams (DesignOS Golden)</title>
+  <meta name="description" content="Golden example: an AI copilot landing page that shows the workflow through real input/output, stated limits, and an integration path. Fictional brand for DesignOS evaluation.">
   <style>
     :root {
       --bg:#FBFBFD; --surface:#FFFFFF; --sunken:#F1F2F6;
@@ -15,22 +15,22 @@
       --ok:#166534; --warn:#92400E;
       --code-bg:#16161A; --code-text:#D4D4D8;
       --radius:8px; --radius-lg:12px;
-      font-family:Inter, ui-sans-serif, system-ui, sans-serif;
+      font-family:ui-sans-serif, system-ui, sans-serif;
     }
     * { box-sizing:border-box; margin:0; }
     body { background:var(--bg); color:var(--muted); font-size:16px; line-height:1.65; }
     h1,h2,h3 { color:var(--text); letter-spacing:-.02em; line-height:1.12; text-wrap:balance; }
     .wrap { width:min(1120px, calc(100% - 48px)); margin-inline:auto; }
 
-    .skip { position:absolute; left:16px; top:-48px; background:var(--accent); color:var(--on-accent); padding:12px 20px; border-radius:var(--radius); font-weight:700; font-size:14px; z-index:99; text-decoration:none; transition:top 150ms ease-out; }
-    .skip:focus { top:16px; }
+    .skip { position:absolute; left:16px; top:16px; transform:translateY(calc(-100% - 24px)); background:var(--accent); color:var(--on-accent); padding:12px 20px; border-radius:var(--radius); font-weight:700; font-size:14px; z-index:99; text-decoration:none; transition:transform 150ms ease-out; }
+    .skip:focus { transform:translateY(0); }
     :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
 
     header.site { padding-block:16px; border-bottom:1px solid var(--line); }
     .site-inner { display:flex; align-items:center; gap:32px; }
-    .logo { color:var(--text); font-weight:800; font-size:17px; letter-spacing:-.02em; text-decoration:none; }
+    .logo { color:var(--text); font-weight:800; font-size:17px; letter-spacing:-.02em; text-decoration:none; display:inline-flex; align-items:center; min-height:44px; }
     nav[aria-label="Primary"] ul { display:flex; gap:24px; list-style:none; padding:0; }
-    nav[aria-label="Primary"] a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:500; }
+    nav[aria-label="Primary"] a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:500; display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; }
     nav[aria-label="Primary"] a:hover { color:var(--text); }
     .site-cta { margin-left:auto; display:flex; gap:8px; }
 
@@ -55,11 +55,11 @@
     .demo .bar .status { color:var(--ok); font-size:12px; font-weight:600; }
     .demo .row { padding:16px; border-bottom:1px solid var(--line); }
     .demo .row:last-child { border-bottom:0; }
-    .demo .label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:700; margin-bottom:8px; }
+    .demo .label { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:700; margin-bottom:8px; }
     .demo .output { color:var(--text); font-size:14px; }
     .demo .output ul { padding-left:20px; display:grid; gap:4px; margin-top:8px; }
     .demo .sources { margin-top:8px; font-size:12px; }
-    .demo .sources a { color:var(--accent); font-weight:600; }
+    .demo .sources a { color:var(--accent); font-weight:600; display:inline-flex; align-items:center; min-height:44px; }
     .demo .boundary { background:var(--sunken); }
 
     section.block { padding-block:64px; }
@@ -84,16 +84,17 @@
     .integrate { border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; background:var(--code-bg); }
     .integrate .bar { padding:12px 16px; color:var(--code-text); font-size:12px; border-bottom:1px solid rgb(255 255 255 / .10); display:flex; justify-content:space-between; align-items:center; }
     .integrate pre { margin:0; padding:20px 16px; overflow-x:auto; color:var(--code-text); font-family:ui-monospace, "SF Mono", monospace; font-size:13px; line-height:1.7; }
-    .copy-btn { font:inherit; font-size:12px; font-weight:600; color:var(--code-text); background:transparent; border:1px solid rgb(255 255 255 / .22); border-radius:6px; padding:4px 12px; min-height:28px; cursor:pointer; }
+    .copy-btn { font:inherit; font-size:12px; font-weight:600; color:var(--code-text); background:transparent; border:1px solid rgb(255 255 255 / .22); border-radius:6px; padding:8px 12px; min-height:44px; cursor:pointer; }
     .copy-btn:hover { background:rgb(255 255 255 / .08); }
     .integrate-note { font-size:13px; margin-top:12px; }
+    .a11y-status { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
 
     .final { text-align:center; padding-block:72px; display:grid; gap:16px; justify-items:center; }
     .final h2 { font-size:clamp(24px, 3vw, 32px); }
 
     footer.site { border-top:1px solid var(--line); padding-block:32px; font-size:13px; }
     .footer-inner { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; }
-    footer.site a { color:var(--muted); }
+    footer.site a, .integrate-note a { color:var(--muted); display:inline-flex; align-items:center; min-height:44px; }
 
     @media (max-width:860px) {
       .hero { grid-template-columns:1fr; padding-block:48px 40px; }
@@ -102,12 +103,18 @@
       nav[aria-label="Primary"] { display:none; }
       .cta-row .btn { width:100%; }
     }
+    @media (max-width:480px) {
+      .site-inner { gap:12px; }
+      .site-cta .btn-ghost { display:none; }
+      .site-cta .btn { padding-inline:16px; }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition-duration:.01ms !important; animation-duration:.01ms !important; }
     }
   </style>
 </head>
 <body>
+<div id="copy-announcer" class="a11y-status" role="status" aria-live="polite"></div>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site">
@@ -138,11 +145,11 @@
         <a class="btn btn-ghost" href="#how">See a real run ↓</a>
       </div>
       <p class="micro">Free on your own CRM data · No card · Output stays yours</p>
-      <p class="disclosure">Example landing page for DesignOS evaluation. Brand fictional; the demo below is a designed illustration of the product mechanic, labeled as such — not a recorded live run.</p>
+      <p class="disclosure">Example landing page for DesignOS evaluation. Brand fictional; the demo below is a designed illustration of the product mechanic, not a recorded live run.</p>
     </div>
 
     <div class="demo" aria-label="Example copilot run (illustrative)">
-      <div class="bar"><span>Copilot run — renewal risks</span><span class="status">completed in 9s</span></div>
+      <div class="bar"><span>Copilot run: renewal risks</span><span class="status">completed in 9s</span></div>
       <div class="row">
         <div class="label">Your input</div>
         <div class="output">"Summarize open renewal risks for enterprise accounts this quarter."</div>
@@ -156,9 +163,9 @@
         <div class="output">
           3 accounts need human review:
           <ul>
-            <li>Northwind — champion left in May; usage −38% <span class="sources">· <a href="#how">4 sources</a></span></li>
-            <li>Arclight — invoice disputed, renewal in 21 days <span class="sources">· <a href="#how">2 sources</a></span></li>
-            <li>Kestrel — seats capped 3 months straight <span class="sources">· <a href="#how">3 sources</a></span></li>
+            <li>Northwind: champion left in May; usage −38% <span class="sources">· <a href="#how">4 sources</a></span></li>
+            <li>Arclight: invoice disputed, renewal in 21 days <span class="sources">· <a href="#how">2 sources</a></span></li>
+            <li>Kestrel: seats capped 3 months straight <span class="sources">· <a href="#how">3 sources</a></span></li>
           </ul>
         </div>
       </div>
@@ -174,12 +181,12 @@
       <article class="step">
         <span class="n">01</span>
         <strong>Ask in your words</strong>
-        <p>Plain-language questions over the accounts you own. No prompt engineering — the copilot asks a clarifying question when your ask is ambiguous instead of guessing.</p>
+        <p>Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot asks a clarifying question instead of guessing.</p>
       </article>
       <article class="step">
         <span class="n">02</span>
         <strong>It reads, it never acts</strong>
-        <p>Analysis runs read-only. Any action — an email draft, a CRM field change — lands in your review queue as a proposal with a diff, never as a done deed.</p>
+        <p>Analysis runs read-only. Email drafts and CRM field changes land in your review queue as proposals with diffs, never as completed actions.</p>
       </article>
       <article class="step">
         <span class="n">03</span>
@@ -208,9 +215,9 @@
         <h3>What it refuses to do</h3>
         <ul>
           <li>Send anything externally without a named human approving that send</li>
-          <li>Forecast revenue — that's your model's job; we surface inputs, not prophecy</li>
+          <li>Forecast revenue. That's your model's job; we surface inputs, not prophecy</li>
           <li>Answer from data you haven't connected (it says "not connected," not a guess)</li>
-          <li>Train on your data — analysis is inference-only, per contract, at every tier</li>
+          <li>Train on your data. Analysis is inference-only, per contract, at every tier</li>
         </ul>
       </article>
     </div>
@@ -223,7 +230,7 @@
     </div>
     <div class="integrate">
       <div class="bar"><span>terminal</span><button class="copy-btn" type="button" data-copy="npm install @relayer/sdk">Copy</button></div>
-      <pre><code>npm install @relayer/sdk
+      <pre tabindex="0" aria-label="Relayer SDK installation example"><code>npm install @relayer/sdk
 
 import { Relayer } from "@relayer/sdk";
 
@@ -233,7 +240,7 @@ const run = await new Relayer({ apiKey }).analyze({
   actions: "propose"                          // never "auto"
 });</code></pre>
     </div>
-    <p class="integrate-note">The <code>actions: "propose"</code> default is enforced server-side — an integrator cannot accidentally ship an auto-acting copilot. <a href="#start">Read the security model →</a></p>
+    <p class="integrate-note">The <code>actions: "propose"</code> default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. <a href="#start">Read the security model →</a></p>
   </section>
 
   <section class="final wrap" id="start">
@@ -245,11 +252,22 @@ const run = await new Relayer({ apiKey }).analyze({
 
 <footer class="site">
   <div class="wrap footer-inner">
-    <span>Relayer — a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.</span>
+    <span>Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.</span>
     <span><a href="../README.md">Golden catalog</a></span>
   </div>
 </footer>
 
+<script type="application/json" data-designos-tasks>
+[
+  {
+    "id":"copy-sdk-command",
+    "steps":[
+      {"action":"click","selector":".copy-btn"},
+      {"assert":"announcement","selector":"#copy-announcer","includes":"command"}
+    ]
+  }
+]
+</script>
 <script>
   /* Copy button states: default → disabled-while-writing → success / error → default.
      The demo panel itself is static by design (illustrative, labeled as such). */
@@ -263,6 +281,9 @@ const run = await new Relayer({ apiKey }).analyze({
       var finish = function (label) {
         btn.removeAttribute('aria-busy');
         btn.textContent = label;
+        document.getElementById('copy-announcer').textContent = label === 'Copied ✓'
+          ? 'SDK installation command copied.'
+          : 'Copy unavailable. Select the SDK installation command manually.';
         setTimeout(reset, 2000);
       };
       if (navigator.clipboard) {

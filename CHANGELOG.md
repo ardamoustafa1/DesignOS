@@ -4,7 +4,158 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+### Added — execution and evidence layer
+- **Unified detector registry and edit hooks.** Thirty-six stable rules now carry
+  category, severity, remediation, source module, exception syntax, and failing fixtures.
+  `designos hooks install` exposes observe, warn, block, and deep-on-stop modes for Codex,
+  GitHub Copilot, and Claude-compatible hook manifests without overwriting an existing
+  provider configuration.
+- **Browser-native final gate.** `browser-gate.js` renders five widths, light/dark, full
+  and reduced motion, plus 200%/400% reflow; records keyboard paths, semantic snapshots,
+  console/resource failures, target sizes, focus obstruction, clipping, fixed overlap,
+  transfer/load evidence, screenshots, real pixel diffs, WCAG text-spacing reflow,
+  forced-colors behavior, declared task completion, AX-tree live announcements, and
+  interaction-latency evidence.
+- **Golden regression suite.** Four manifest-backed goldens now retain 88 standard scenario
+  screenshots plus eight supplemental accessibility screenshots, exact expected findings,
+  keyboard coverage, ten declared tasks, performance budgets, and pixel tolerances.
+- **Motion decision engine, runtime, adapters, and laboratory.** Fifteen physics and
+  UI recipes are covered by fixtures and emitted across Vanilla, React, Motion, GSAP,
+  Vue, and Svelte (90 adapters). The lab adds speed controls, pausing, frame stepping,
+  easing and spring plots, transform-origin overlays, runtime telemetry, recording,
+  replay, and full/reduced comparison.
+- **Live Director.** A local inspection UI selects rendered elements, records classified
+  annotations with source lines and screenshot crops, previews restraint/hierarchy/
+  signature directions, and applies accepted variants only through a source-locked,
+  backed-up transaction after before/after browser gates. Rollback verifies hashes.
+- **Design intelligence commands.** `knowledge`, `coverage`, `signature`, `compose`, and
+  `asset-direct` add graph retrieval, coverage accounting, three-direction signature
+  compilation, ten composition primitives, and an asset-direction contract.
+
+### Added — CI and independent-evidence hardening
+- **Required-check workflow.** Pull requests and `main` now expose separate
+  `browser-gate-required` and `golden-pixel-required` status checks. Pages deployment is
+  blocked by the same browser and pixel gates.
+- **Real accessibility evidence.** Standard browser scenarios run pinned `axe-core` and
+  capture Chromium's full accessibility tree. Golden verification rejects missing Axe or
+  AX-tree artifacts.
+- **Commit-bound public ledger.** The deployed evidence page links its exact commit SHA
+  and Actions run and reports browser/golden results without turning them into a WCAG or
+  design-score claim.
+- **Real framework matrix.** Vanilla, React, Motion, GSAP, Vue, and Svelte are bundled
+  from their actual packages, exercised in Playwright under full/reduced motion, and
+  checked for React/Vue/Svelte source-map resolution.
+- **Independent black-box evaluation.** All thirty-six registry capabilities now have an
+  isolated static, browser, Lighthouse, or visual-regression run recorded in
+  `evals/independent/registry-eval.json`.
+- **Lighthouse release gate.** A pinned Node 22 Lighthouse runner blocks category scores
+  below 95, LCP above 2s, CLS above 0.1, or TBT above 200ms. Its exact-version evidence is
+  included in the commit-bound public browser ledger.
+- **Live Director acceptance budgets.** Variant and manual transactions now block on
+  transfer, load, long-task, and layout-shift regressions; React/Vue/Svelte runtime markers
+  and source maps resolve annotations to component source. Variant provenance includes
+  sector, memory, proof policy, and the actual Signature Compiler derivation.
+- **Unified query engine.** `find` runs one BM25 ranking over motion, typography, and
+  knowledge-graph nodes with exact-label and typed-filter boosts.
+
+### Added — the wow layer
+- **`motion/signature-moments.md`** — the gap the validators could not close. `check-motion.js`
+  stops bad animation; nothing produced *exceptional* animation, and a page can pass every
+  rule while being forgotten before the tab closes. Ten interactive techniques with working
+  code, real cost accounting, and an "earned when" rule each: magnetic button, text
+  scramble, cursor spotlight, 3D tilt, split-text reveal, scroll-driven storytelling,
+  odometer, cursor parallax, noise canvas field, liquid/shared-element morph. Governed by a
+  **scarcity law** — two signatures per page, maximum, because memory attaches to one
+  violated expectation inside an otherwise calm frame, and salience is a ratio, not a
+  quantity.
+- **`brain/wow-calibration.md`** — turns "make it legendary" into a decision. Names the four
+  routes to memorable (composition, material, voice, motion) and puts motion *fourth*,
+  because reaching for effects is the reflex and usually the wrong one. Adds a courage
+  ladder (1–10) with absolute sector caps, a five-step decision tree, the page shape that
+  makes a signature land, numeric budget ceilings, and a table for the common case where
+  "make it wow" actually means "make me feel safe".
+- **`goldens/flagship-launch/`** — the first golden at the top of the dial (rung 9). Two
+  signatures only: a scroll-driven six-steps-become-one collapse that *performs* the
+  product's argument instead of describing it, and a magnetic primary CTA. Ships with a
+  companion `lab.html` that deliberately breaks the scarcity law so all ten techniques can
+  be inspected side by side — and says so at the top, because a reference sheet that looks
+  like a golden is a trap. Both pass all five validators.
+- **Ten expressive presets in `designos find`** — `find "wow hero effect"` previously
+  returned nothing useful; the library held only standard-tier recipes. The catalogue is now
+  23 presets across three tiers, each signature citing `signature-moments.md`.
+- **Sound & haptics in `motion/micro-interactions.md`** — the module said "default: none"
+  and stopped, but "never" and "here is how to do it correctly" are different instructions.
+  Four gates (user-initiated, off by default, redundant, sector-licensed), craft rules
+  (<100ms, <−20dBFS, one family, pitch carries meaning), a correct `AudioContext`
+  implementation, and the honest state of `navigator.vibrate` on the web.
+
+### Added
+- **`validators/check-motion.js` — the animation half of the mechanical floor.** Every
+  numeric law in `motion/` was previously enforceable only by a reader who already knew it:
+  a file could be drift-clean, contrast-clean, and still ship `transition: all 400ms
+  ease-in-out` on a hover, which is three violations at once. Sixteen rules, each a
+  mechanization of a line already written in `motion/principles.md`,
+  `micro-interactions.md`, `page-and-scroll.md`, or `performance.md` — `transition: all`,
+  layout/paint properties in a transition, the 300ms interactive ceiling, the 150ms hover
+  ceiling, `ease-in` outside an exit, `linear` on spatial movement, inline spring curves,
+  decorative and unpaused infinite loops, stagger past the 500ms budget, rest-state
+  `will-change`, non-passive scroll listeners, scroll-jacking, effects that start motion
+  without a cleanup, and motion with no `prefers-reduced-motion` policy in scope.
+- **`validators/check-aesthetic-slop.js` — the named defaults, made checkable.**
+  `brain/design-intelligence.md` has always listed the model's own failure modes
+  (centered-everything, gradient abuse, card-itis, emoji-as-icons); naming a failure mode
+  in prose only helps a reader already looking for it. Now a gate. First validator with a
+  severity model: P1/P2 fail the run, P3 taste advisories print and exit `0` (`--strict`
+  promotes them), because "you picked the obvious thing" is a conversation, not a compile
+  error.
+- **`motion/recipes.md`** — the implementation layer under the motion laws. Sixteen
+  copy-paste recipes already wired to the tokens and already compositor-safe, each passing
+  `check-motion.js` as written.
+- **`motion/physics.md`** — gesture mechanics a duration-and-easing system cannot express:
+  the two-parameter spring (duration + bounce, with the conversion to stiffness/damping),
+  1:1 pointer tracking, the rubber-band resistance function, momentum projection
+  (`(v/1000)·d/(1−d)`), the 0.11 px/ms dismissal threshold, and velocity inheritance.
+- **Design dials in `brain/brief-compiler.md`** — `DESIGN_VARIANCE`, `MOTION_INTENSITY`,
+  `VISUAL_DENSITY` (1–10), with an inference table per brief type and explicit bindings to
+  the modules each dial governs. Above `MOTION_INTENSITY 3` a reduced-motion path stops
+  being optional.
+- **`designos find <query>`** — BM25 retrieval over a curated library of motion presets and
+  type pairings (`bin/library-data.js`). The kernel's first directive is "never design from
+  memory alone"; loading a module satisfies that for rules, but concrete artefacts still
+  came from recall. Every entry names the module that governs it, and every type pairing
+  carries its counter-case.
+- **`designos visual --baseline` / `--compare`** — iteration measurement built on the
+  existing Playwright pass. Records a before, renders the after, and reports pixels changed,
+  the changed band, and full-page height shift per viewport, with a diff image per frame.
+  `--max-diff <pct>` turns it into a regression gate. Without Playwright it reports
+  NOT RUN, as before.
+- **The adversarial panel in `workflows/final-gate.md`** — isolated reviewers that receive
+  the artifact and the rubric dimension but not the rationale, told to refute rather than
+  confirm, with a mandatory verbatim **DEGRADED** banner when no panel could run.
+- **Named Defaults section in `PROOF_STANDARD.md`** — the literal ban lists (placeholder
+  identity, filler copy, visual defaults, em-dash cadence) that `check-aesthetic-slop.js`
+  enforces.
+
 ### Fixed
+- **`check-token-contrast.js` now walks the cascade.** Its documented blind spot was
+  inherited color over an ancestor's background — which is the ordinary case, since almost
+  nobody re-declares the background on the element holding the text. It now builds the
+  element tree, matches simple selectors with real specificity ordering, inherits `color`
+  down, walks *up* for the nearest painted surface, and composites translucent layers
+  before judging. Combinators, attribute selectors, and pseudo-classes are skipped rather
+  than guessed. Also fixes a parser bug where a comment above a rule was absorbed into its
+  selector, silently preventing every match.
+- **Seven real WCAG failures in this repo's own artifacts**, all found by the new
+  validators and none visible to any previous gate: the site's `h1` display ramp ended on
+  `#10b981` (2.54:1 on white — failing even the 3:1 large-text bar), the score value and
+  eyebrow labels sat at 2.54:1 and 3.77:1, and muted text in three terminal blocks ran
+  3.46–4.05:1. Fixed at the token layer with `--accent-text` / `--success-text` and
+  corrected `--code-muted` / `--dim` / `--code-comment` values.
+- **Fifteen motion violations in this repo's own artifacts**: five skip links animated
+  `top` instead of `transform`, the website animated `box-shadow` directly (now the
+  `::after` opacity crossfade from `performance.md`), two `transition: all` declarations,
+  two transitions over the 300ms ceiling, and two inline spring curves (now the single
+  `--ease-spring` token).
 - **Exported rules files now resolve module paths.** `export` (all targets — AGENTS.md,
   `.cursorrules`, copilot-instructions, …) rewrites every kernel module reference
   (`foundations/colors.md` → `DesignOS/foundations/colors.md`). Claude Code's `@import` resolved

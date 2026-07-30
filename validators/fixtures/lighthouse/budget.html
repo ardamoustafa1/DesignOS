@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Budget failure fixture</title>
+</head>
+<body>
+  <div onclick="run()">Run</div>
+  <script>
+    const started = performance.now();
+    while (performance.now() - started < 2500) {}
+  </script>
+</body>
+</html>

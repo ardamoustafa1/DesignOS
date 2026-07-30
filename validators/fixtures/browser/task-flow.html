@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Task flow failure fixture</title>
+  <style>:focus-visible { outline: 2px solid CanvasText; } button { min-width: 44px; min-height: 44px; }</style>
+</head>
+<body>
+  <main>
+    <h1>Task flow fixture</h1>
+    <button id="go" type="button">Run</button>
+    <p id="result">Idle</p>
+  </main>
+  <script type="application/json" data-designos-tasks>
+    [{"id":"broken-task","steps":[{"action":"click","selector":"#go"},{"assert":"text","selector":"#result","includes":"Complete"}]}]
+  </script>
+</body>
+</html>

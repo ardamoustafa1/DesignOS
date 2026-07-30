@@ -92,7 +92,12 @@ with a comparison table, dark theme"). Resolve deterministically:
 | Token architecture, theming, white-label | `foundations/design-tokens.md` |
 | Dark mode | `foundations/dark-mode.md`, `foundations/colors.md` |
 | RTL, Arabic/Hebrew, i18n layout, locale formatting | `foundations/rtl-i18n.md` |
-| Animation / motion | `motion/` (all four files) |
+| Animation / motion | `motion/` (principles, micro-interactions, page-and-scroll, performance) |
+| Motion implementation, "how do I code this animation" | `motion/recipes.md` + `designos find <query>` |
+| "Wow", "unforgettable", "legendary", "award-winning", Awwwards-tier | `brain/wow-calibration.md` FIRST, then `motion/signature-moments.md`, `goldens/flagship-launch.md` |
+| Magnetic cursor, scramble text, spotlight, 3D tilt, split reveal, scroll story, odometer, noise field, morph | `motion/signature-moments.md` |
+| Sound, audio feedback, haptics, vibration | `motion/micro-interactions.md` (Sound & haptics), `native/motion-gestures.md` |
+| Drag, swipe, gesture, spring, momentum, rubber-band | `motion/physics.md`, `native/motion-gestures.md` |
 | Navigation / navbar | `components/navigation.md` |
 | Cards, lists, grids of content | `components/cards.md` |
 | Badges, chips, tags, status | `components/badges-chips.md` |
@@ -173,12 +178,15 @@ Minimum viable panel for any shipped page: **ui-designer → accessibility → r
 - **Spacing:** 4px base grid from `foundations/spacing.md` — no magic numbers.
 - **Color:** Tokens from `foundations/colors.md` — never raw hex sprinkled in components.
 - **Dark mode:** Both themes styled deliberately, or one theme committed to explicitly. Never "dark mode by accident."
+- **Motion:** Durations and easings from the token layer. Nothing interactive over 300ms, hovers ≤150ms, only `transform`/`opacity` animated, `prefers-reduced-motion` handled. Enforced by `validators/check-motion.js`.
+- **Signature scarcity:** At most two signature moments per page (one hero-scale), and only at `MOTION_INTENSITY` 6+. Each must name the product truth it expresses. `motion/signature-moments.md`.
+- **No named defaults:** The violet→fuchsia gradient, gradient text, emoji-as-icons, `Acme`/`John Doe`, and category filler copy never ship. Enforced by `validators/check-aesthetic-slop.js`; the full list is in `PROOF_STANDARD.md`.
 
 ---
 
-## 5. The Twelve Questions
+## 5. The Fourteen Questions
 
-Before finalizing any screen, answer all twelve. If any answer is weak, return to the loop.
+Before finalizing any screen, answer all fourteen. If any answer is weak, return to the loop.
 
 1. Where does the eye land first — and is that where it should land?
 2. Is the primary CTA unmistakable within 3 seconds?
@@ -192,6 +200,8 @@ Before finalizing any screen, answer all twelve. If any answer is weak, return t
 10. Can a keyboard-only user complete every task on this screen?
 11. Is every proof claim real enough to satisfy `PROOF_STANDARD.md`?
 12. Did the deterministic Final Gate run, and is the reported score copied from that output?
+13. Are the three dials (variance / motion / density) set, recorded, and consistent with the sector?
+14. If the panel could not run, does the report carry the DEGRADED banner verbatim?
 
 ---
 

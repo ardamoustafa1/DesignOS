@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signature Moments · technique lab</title>
+<meta name="description" content="Working, isolated implementations of the motion/signature-moments.md catalogue. A reference sheet, not a page to imitate.">
+<meta name="color-scheme" content="dark">
+<style>
+/* ============================================================
+   TECHNIQUE LAB — NOT a golden page. Deliberately breaks the
+   scarcity law (motion/signature-moments.md: max two signatures
+   per page) because its job is to show every technique working
+   side by side. Never ship a page shaped like this.
+   The golden that obeys the law is index.html, next door.
+   ============================================================ */
+:root {
+  --bg: #0A0A0C; --surface: #131316; --raised: #1A1A1F;
+  --text: #FAFAFA; --muted: #A5A5AE; --dim: #8A8A94;
+  --line: rgb(255 255 255 / 0.10); --line-loud: rgb(255 255 255 / 0.20);
+  --accent: #34D399; --accent-bright: #6EE7B7; --on-accent: #04231A;
+  --warn: #FBBF24;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  --radius: 10px; --radius-lg: 16px; --radius-full: 9999px;
+
+  --duration-instant: 100ms; --duration-fast: 150ms; --duration-base: 200ms;
+  --duration-slow: 300ms; --duration-slower: 500ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion: 1;
+
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Geist Mono", monospace;
+  --container: 1080px;
+}
+@media (prefers-reduced-motion: reduce) { :root { --motion: 0; } }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+body { background: var(--bg); color: var(--muted); font-family: var(--font); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { color: var(--text); letter-spacing: -0.02em; line-height: 1.15; }
+.wrap { max-width: var(--container); margin-inline: auto; padding-inline: var(--space-6); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.skip {
+  position: absolute; left: var(--space-4); top: var(--space-4); z-index: 100;
+  transform: translateY(calc(-100% - var(--space-8)));
+  background: var(--accent); color: var(--on-accent);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius);
+  font-weight: 700; text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+.skip:focus { transform: translateY(0); }
+
+.lab-head { padding-block: var(--space-16) var(--space-8); border-bottom: 1px solid var(--line); }
+.lab-head h1 { font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem); }
+.warning {
+  margin-top: var(--space-6); padding: var(--space-4) var(--space-6);
+  border: 1px solid var(--warn); border-radius: var(--radius);
+  color: var(--warn); font-size: 0.9375rem;
+}
+
+.demo { padding-block: var(--space-12); border-bottom: 1px solid var(--line); }
+.demo > h2 { font-size: 1.25rem; }
+.demo > .meta {
+  font-family: var(--mono); font-size: 0.75rem; color: var(--dim);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-2);
+}
+.demo > p { max-width: 62ch; margin-top: var(--space-2); font-size: 0.9375rem; }
+.stage { margin-top: var(--space-6); }
+
+/* ── 2 · text scramble ── */
+.scramble {
+  font-family: var(--mono); font-size: clamp(1.25rem, 3vw, 2rem); color: var(--accent);
+  display: inline-block; min-width: 22ch;   /* reserved width — no reflow per frame */
+}
+
+/* ── 3 · cursor spotlight ── */
+.grid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+@media (min-width: 700px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+.spot {
+  position: relative; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+}
+.spot::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgb(52 211 153 / 0.18), transparent 70%);
+  opacity: 0; transition: opacity var(--duration-base) var(--ease-out);
+}
+.spot:hover::before { opacity: 1; }
+.spot h3 { font-size: 1rem; position: relative; }
+.spot p { font-size: 0.875rem; margin-top: var(--space-2); position: relative; }
+
+/* ── 4 · 3D tilt ── */
+.tilt-scene { perspective: 900px; max-width: 420px; }
+.tilt {
+  background: var(--surface); border: 1px solid var(--line-loud); border-radius: var(--radius-lg);
+  padding: var(--space-8); transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.tilt[data-armed="true"] { transition: none; will-change: transform; }
+.tilt .rise { transform: translateZ(36px); }
+.tilt h3 { font-size: 1.125rem; }
+.tilt p { font-size: 0.875rem; margin-top: var(--space-2); }
+
+/* ── 7 · odometer ── */
+.odo { display: inline-flex; font-family: var(--mono); font-variant-numeric: tabular-nums;
+       font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 700; color: var(--text); line-height: 1; }
+.odo-col { display: block; height: 1em; overflow: hidden; }
+.odo-col > span {
+  display: block; white-space: pre; line-height: 1;
+  transform: translateY(calc(var(--d, 0) * -1em * var(--motion)));
+  transition: transform var(--duration-slower) var(--ease-out);
+}
+
+/* ── 8 · cursor parallax ── */
+.px-scene {
+  position: relative; height: 320px; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+}
+.px-layer { position: absolute; inset: 0; display: grid; place-items: center; }
+.px-layer span { font-weight: 700; letter-spacing: -0.03em; }
+.px-1 span { font-size: clamp(3rem, 12vw, 7rem); color: rgb(255 255 255 / 0.06); }
+.px-2 span { font-size: clamp(2rem, 7vw, 4rem); color: rgb(52 211 153 / 0.35); }
+.px-3 span { font-size: clamp(1.25rem, 3vw, 2rem); color: var(--text); }
+
+/* ── 9 · noise canvas ── */
+.noise-wrap { position: relative; height: 300px; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--bg); }
+.noise-wrap canvas { display: block; width: 100%; height: 100%; }
+.noise-wrap .over { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+.noise-wrap .over span { font-size: 1.125rem; color: var(--text); font-weight: 600; }
+
+/* ── 10 · liquid morph ── */
+.morph-btn {
+  font: inherit; font-weight: 600; cursor: pointer; color: var(--on-accent);
+  background: var(--accent); border: 0; padding: var(--space-4) var(--space-8);
+  clip-path: polygon(6% 0%, 94% 0%, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
+  transition: clip-path var(--duration-slow) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
+}
+.morph-btn[aria-expanded="true"] { clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%); }
+.morph-panel { margin-top: var(--space-4); font-size: 0.9375rem; }
+.morph-panel[hidden] { display: none; }
+
+footer.lab { padding-block: var(--space-12); }
+footer.lab p { font-size: 0.875rem; color: var(--dim); }
+footer.lab a { color: var(--muted); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="lab-head wrap">
+  <h1 id="main">Signature moments: technique lab</h1>
+  <p class="warning"><strong>This is a reference sheet, not a page to imitate.</strong>
+    It deliberately violates the scarcity law in <code>motion/signature-moments.md</code>
+    (two signatures per page, maximum) so every technique can be inspected side by side.
+    The page that obeys the law is <a href="index.html">index.html</a>.</p>
+</div>
+
+<main class="wrap">
+  <section class="demo">
+    <p class="meta">§2 · interaction-scale</p>
+    <h2>Text scramble</h2>
+    <p>Characters resolve out of noise. Earned when the product is about data,
+      transformation, or inference. The effect is a metaphor for the work. The real string
+      lives in <code>aria-label</code> and the element reserves its width, so nothing reflows.</p>
+    <div class="stage"><span class="scramble" data-scramble="deterministic by design">deterministic by design</span></div>
+  </section>
+
+  <section class="demo">
+    <p class="meta">§3 · interaction-scale</p>
+    <h2>Cursor spotlight</h2>
+    <p>A radial light follows the pointer across a grid. One delegated listener for all
+      cards, two custom properties, no JS-driven animation.</p>
+    <div class="stage grid" data-spotgrid>
+      <div class="spot"><h3>Routing</h3><p>The brief selects the modules; the modules are not all loaded.</p></div>
+      <div class="spot"><h3>Validation</h3><p>Five validators run before a score is claimed.</p></div>
+      <div class="spot"><h3>Memory</h3><p>Decisions persist so the next screen agrees with this one.</p></div>
+    </div>
+  </section>
+
+  <section class="demo">
+    <p class="meta">§4 · interaction-scale</p>
+    <h2>3D tilt</h2>
+    <p>The card rotates toward the cursor, capped at 6°. The inner block sits on
+      <code>translateZ</code> so the text rises with the tilt instead of shearing under it.</p>
+    <div class="stage tilt-scene">
+      <div class="tilt" data-tilt>
+        <div class="rise">
+          <h3>Inspect the artefact</h3>
+          <p>Earned only when the card holds something worth turning over: a screenshot,
+            real data, a physical object. Tilting a text card is theatre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo">
+    <p class="meta">§7 · interaction-scale</p>
+    <h2>Odometer</h2>
+    <p>Digits roll like a mechanical counter and settle left to right.
+      <code>tabular-nums</code> is load-bearing: proportional digits change the element
+      width as they roll and the layout jitters.</p>
+    <div class="stage">
+      <span class="odo" data-odo="94218" aria-label="94218"></span>
+      <p style="margin-top:var(--space-4)"><button class="morph-btn" type="button" data-odo-again>Roll again</button></p>
+    </div>
+  </section>
+
+  <section class="demo">
+    <p class="meta">§8 · hero-scale</p>
+    <h2>Cursor parallax</h2>
+    <p>Three layers translate at different rates against pointer movement. Depth from
+      arithmetic. Offsets stay under 15% of the layer size and never touch body text.</p>
+    <div class="stage px-scene" data-parallax>
+      <!-- The two back layers are texture, not text: they exist to be *behind* something.
+           WCAG 1.4.3 exempts pure decoration, and they are removed from the a11y tree so
+           nothing is announced twice. Only .px-3 carries the readable line. -->
+      <div class="px-layer px-1" data-depth="0.012" aria-hidden="true"
+           data-contrast-ok="decorative depth layer, not readable content (WCAG 1.4.3 pure-decoration exception)"><span>DEPTH</span></div>
+      <div class="px-layer px-2" data-depth="0.028" aria-hidden="true"
+           data-contrast-ok="decorative depth layer, not readable content (WCAG 1.4.3 pure-decoration exception)"><span>from maths</span></div>
+      <div class="px-layer px-3" data-depth="0.05"><span>not from assets</span></div>
+    </div>
+  </section>
+
+  <section class="demo">
+    <p class="meta">§9 · hero-scale</p>
+    <h2>Noise canvas field</h2>
+    <p>Atmosphere without a WebGL dependency: hash-based value noise on a 2D canvas at half
+      resolution, with an <code>IntersectionObserver</code> and a
+      <code>visibilitychange</code> guard. Both guards are load-bearing; remove either and
+      this is why a laptop fan spins up.</p>
+    <div class="stage noise-wrap">
+      <canvas data-noise aria-hidden="true"></canvas>
+      <div class="over"><span>paused off-screen and on hidden tabs</span></div>
+    </div>
+  </section>
+
+  <section class="demo">
+    <p class="meta">§10 · interaction-scale</p>
+    <h2>Liquid morph</h2>
+    <p>A hexagon flows into a rectangle as the panel opens: the same object, two states.
+      <code>clip-path</code> interpolates natively when both polygons have the same vertex
+      count; mismatched counts cut instead of morphing.</p>
+    <div class="stage">
+      <button class="morph-btn" type="button" data-morph aria-expanded="false" aria-controls="morph-panel">
+        Open the panel
+      </button>
+      <div class="morph-panel" id="morph-panel" hidden>
+        <p>Morph the element the user clicked. That is the thread of continuity.
+          Everything else crossfades.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="lab wrap">
+  <p>Part of the <a href="../flagship-launch.md">flagship-launch</a> golden.
+    Every technique here is implemented in <code>motion/signature-moments.md</code>.</p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var teardown = [];
+  var fine = matchMedia('(hover: hover) and (pointer: fine)');
+  var calm = matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* §2 text scramble */
+  var CHARS = '▓▒░<>/\\[]{}=+*^?#________';
+  function scramble(el) {
+    var finalText = el.getAttribute('data-scramble');
+    el.setAttribute('aria-label', finalText);
+    if (calm.matches) { el.textContent = finalText; return function () {}; }
+    var start = performance.now(), raf = 0;
+    function tick(now) {
+      var t = now - start, out = '', done = true;
+      for (var i = 0; i < finalText.length; i++) {
+        var settleAt = i * 28 + 320;
+        if (t >= settleAt || finalText[i] === ' ') out += finalText[i];
+        else { out += CHARS[(Math.random() * CHARS.length) | 0]; done = false; }
+      }
+      el.textContent = out;
+      raf = done ? 0 : requestAnimationFrame(tick);
+    }
+    raf = requestAnimationFrame(tick);
+    return function () { cancelAnimationFrame(raf); };
+  }
+  var scrEl = document.querySelector('[data-scramble]');
+  if (scrEl) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { teardown.push(scramble(e.target)); io.unobserve(e.target); } });
+    });
+    io.observe(scrEl);
+    teardown.push(function () { io.disconnect(); });
+  }
+
+  /* §3 cursor spotlight — one delegated listener for the whole grid */
+  var grid = document.querySelector('[data-spotgrid]');
+  if (grid && fine.matches) {
+    var onGrid = function (e) {
+      var card = e.target.closest('.spot');
+      if (!card) return;
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    };
+    grid.addEventListener('pointermove', onGrid, { passive: true });
+    teardown.push(function () { grid.removeEventListener('pointermove', onGrid); });
+  }
+
+  /* §4 3D tilt */
+  var tiltEl = document.querySelector('[data-tilt]');
+  if (tiltEl && fine.matches && !calm.matches) {
+    var MAX = 6;
+    var onTilt = function (e) {
+      var r = tiltEl.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      tiltEl.setAttribute('data-armed', 'true');
+      tiltEl.style.setProperty('--ry', (px * MAX * 2).toFixed(2) + 'deg');
+      tiltEl.style.setProperty('--rx', (-py * MAX * 2).toFixed(2) + 'deg');
+    };
+    var offTilt = function () {
+      tiltEl.removeAttribute('data-armed');
+      tiltEl.style.setProperty('--rx', '0deg');
+      tiltEl.style.setProperty('--ry', '0deg');
+    };
+    tiltEl.addEventListener('pointermove', onTilt, { passive: true });
+    tiltEl.addEventListener('pointerleave', offTilt);
+    teardown.push(function () {
+      tiltEl.removeEventListener('pointermove', onTilt);
+      tiltEl.removeEventListener('pointerleave', offTilt);
+    });
+  }
+
+  /* §7 odometer */
+  function odometer(root) {
+    var value = root.getAttribute('data-odo');
+    root.setAttribute('aria-label', value);
+    var strip = '0123456789'.split('').join('\n');
+    var cols = value.split('').map(function (d, i) {
+      var col = document.createElement('span');
+      col.className = 'odo-col';
+      col.setAttribute('aria-hidden', 'true');
+      var inner = document.createElement('span');
+      inner.textContent = strip;
+      col.appendChild(inner);
+      requestAnimationFrame(function () {
+        setTimeout(function () { inner.style.setProperty('--d', d); }, i * 70);
+      });
+      return col;
+    });
+    root.replaceChildren.apply(root, cols);
+  }
+  var odoEl = document.querySelector('[data-odo]');
+  if (odoEl) {
+    odometer(odoEl);
+    var again = document.querySelector('[data-odo-again]');
+    if (again) {
+      var onAgain = function () { odometer(odoEl); };
+      again.addEventListener('click', onAgain);
+      teardown.push(function () { again.removeEventListener('click', onAgain); });
+    }
+  }
+
+  /* §8 cursor parallax */
+  var pxScene = document.querySelector('[data-parallax]');
+  if (pxScene && fine.matches && !calm.matches) {
+    var layers = Array.prototype.slice.call(pxScene.querySelectorAll('.px-layer'));
+    var praf = 0, pmx = 0, pmy = 0;
+    var applyPx = function () {
+      layers.forEach(function (l) {
+        var d = parseFloat(l.getAttribute('data-depth')) || 0.02;
+        l.style.transform = 'translate3d(' + (pmx * d).toFixed(2) + 'px,' + (pmy * d).toFixed(2) + 'px,0)';
+      });
+      praf = 0;
+    };
+    var onPx = function (e) {
+      var r = pxScene.getBoundingClientRect();
+      pmx = e.clientX - (r.left + r.width / 2);
+      pmy = e.clientY - (r.top + r.height / 2);
+      if (!praf) praf = requestAnimationFrame(applyPx);
+    };
+    pxScene.addEventListener('pointermove', onPx, { passive: true });
+    teardown.push(function () { pxScene.removeEventListener('pointermove', onPx); cancelAnimationFrame(praf); });
+  }
+
+  /* §9 noise canvas */
+  function noiseField(canvas) {
+    var ctx = canvas.getContext('2d', { alpha: true });
+    var raf = 0, running = false, w = 0, h = 0, img = null;
+    function hash(x, y) { var n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return n - Math.floor(n); }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function noise(x, y) {
+      var xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
+      var u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+      return lerp(lerp(hash(xi, yi), hash(xi + 1, yi), u), lerp(hash(xi, yi + 1), hash(xi + 1, yi + 1), u), v);
+    }
+    function resize() {
+      w = canvas.width = Math.max(1, Math.ceil(canvas.clientWidth / 2));
+      h = canvas.height = Math.max(1, Math.ceil(canvas.clientHeight / 2));
+      img = ctx.createImageData(w, h);
+    }
+    function draw(t) {
+      var d = img.data;
+      for (var y = 0; y < h; y++) {
+        for (var x = 0; x < w; x++) {
+          var n = noise(x * 0.048 + t * 0.00012, y * 0.048);
+          var i = (y * w + x) * 4;
+          d[i] = 52; d[i + 1] = 211; d[i + 2] = 153;
+          d[i + 3] = Math.max(0, n - 0.55) * 150;
+        }
+      }
+      ctx.putImageData(img, 0, 0);
+    }
+    function loop(t) { if (!running) return; draw(t); raf = requestAnimationFrame(loop); }
+    resize();
+    draw(0);
+    var vio = new IntersectionObserver(function (entries) {
+      var visible = entries[0].isIntersecting && !calm.matches && !document.hidden;
+      if (visible && !running) { running = true; raf = requestAnimationFrame(loop); }
+      else if (!visible) { running = false; cancelAnimationFrame(raf); raf = 0; }
+    });
+    vio.observe(canvas);
+    var onVis = function () {
+      if (document.hidden) { running = false; cancelAnimationFrame(raf); raf = 0; }
+    };
+    document.addEventListener('visibilitychange', onVis);
+    window.addEventListener('resize', resize, { passive: true });
+    return function () {
+      running = false; cancelAnimationFrame(raf); vio.disconnect();
+      document.removeEventListener('visibilitychange', onVis);
+      window.removeEventListener('resize', resize);
+    };
+  }
+  var canvasEl = document.querySelector('[data-noise]');
+  if (canvasEl) teardown.push(noiseField(canvasEl));
+
+  /* §10 liquid morph */
+  var morphBtn = document.querySelector('[data-morph]');
+  var morphPanel = document.getElementById('morph-panel');
+  if (morphBtn && morphPanel) {
+    var onMorph = function () {
+      var open = morphBtn.getAttribute('aria-expanded') === 'true';
+      morphBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      morphPanel.hidden = open;
+      morphBtn.textContent = open ? 'Open the panel' : 'Close the panel';
+    };
+    morphBtn.addEventListener('click', onMorph);
+    teardown.push(function () { morphBtn.removeEventListener('click', onMorph); });
+  }
+
+  window.addEventListener('pagehide', function () {
+    for (var i = 0; i < teardown.length; i++) teardown[i]();
+  });
+}());
+</script>
+</body>
+</html>
