@@ -88,6 +88,44 @@ for (const manifestFile of manifests()) {
     failures++;
     continue;
   }
+  
+  // Temporal Motion Golden integration
+  const temporalBaseline = path.join(evidenceDir, 'temporal-baseline.json');
+  let activeTemporalBaseline = temporalBaseline;
+  let temporalReport = null;
+  let baselineTemporalReport = null;
+  
+  if (manifest.temporalTarget && manifest.temporalSelector) {
+    const tempTarget = path.join(dir, manifest.temporalTarget);
+    if (mode === 'update') {
+      const result = spawnSync(process.execPath, [
+        path.join(ROOT, 'bin/temporal-motion.js'), tempTarget,
+        '--selector', manifest.temporalSelector,
+        '--out', temporalBaseline
+      ], { cwd: ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 32 });
+      if (!fs.existsSync(temporalBaseline)) {
+        console.error(`${path.basename(dir)}: temporal evidence was not produced\n${result.stderr || result.stdout}`);
+        failures++;
+      }
+    } else if (fs.existsSync(temporalBaseline)) {
+      if (!verifyRoot) verifyRoot = fs.mkdtempSync(path.join(os.tmpdir(), `designos-golden-${path.basename(dir)}-`));
+      activeTemporalBaseline = path.join(verifyRoot, 'temporal-baseline.json');
+      const result = spawnSync(process.execPath, [
+        path.join(ROOT, 'bin/temporal-motion.js'), tempTarget,
+        '--selector', manifest.temporalSelector,
+        '--out', activeTemporalBaseline
+      ], { cwd: ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 32 });
+      
+      if (!fs.existsSync(activeTemporalBaseline)) {
+         console.error(`${path.basename(dir)}: temporal verification was not produced\n${result.stderr || result.stdout}`);
+         failures++;
+      } else {
+         baselineTemporalReport = JSON.parse(fs.readFileSync(temporalBaseline, 'utf8'));
+         temporalReport = JSON.parse(fs.readFileSync(activeTemporalBaseline, 'utf8'));
+      }
+    }
+  }
+
   const report = JSON.parse(fs.readFileSync(activeReportFile, 'utf8'));
   const screenshotCount = fs.existsSync(activeScreenshotDir)
     ? fs.readdirSync(activeScreenshotDir).filter(name => name.endsWith('.png')).length : 0;
@@ -134,6 +172,13 @@ for (const manifestFile of manifests()) {
       && report.diffs.every(item => item.status === 'compared')),
     `expected ${expectedScenarios} baseline pixel comparisons`],
   ];
+  
+  if (manifest.temporalTarget && manifest.temporalSelector && temporalReport && baselineTemporalReport) {
+    const { isPerceptuallyEquivalent } = require('./temporal-motion');
+    const isEquiv = isPerceptuallyEquivalent(baselineTemporalReport.full.enter, temporalReport.full.enter, manifest.temporalTolerance || {});
+    assertions.push([isEquiv, 'Temporal motion signature must remain perceptually equivalent to golden baseline']);
+  }
+
   const broken = assertions.filter(([passes]) => !passes);
   if (broken.length) {
     failures += broken.length;
