@@ -3,7 +3,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { chromium } = require('playwright');
 const { serveTarget } = require('./motion/browser-target');
 
 const percentile = (values, quantile) => {
@@ -117,6 +116,7 @@ async function readTraceStream(client, handle) {
 }
 
 async function profileMotion(options) {
+  const { chromium } = require('playwright');
   const served = await serveTarget(options.target, options.cwd);
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({

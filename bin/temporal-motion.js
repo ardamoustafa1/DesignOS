@@ -3,7 +3,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { chromium } = require('playwright');
 const { serveTarget } = require('./motion/browser-target');
 const { percentile } = require('./motion-profiler');
 
@@ -161,6 +160,7 @@ function semanticEqual(left, right) {
 }
 
 async function temporalRegression(options) {
+  const { chromium } = require('playwright');
   const served = await serveTarget(options.target, options.cwd);
   const browser = await chromium.launch({ headless: true });
   try {

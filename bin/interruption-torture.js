@@ -3,7 +3,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { chromium } = require('playwright');
 const { serveTarget } = require('./motion/browser-target');
 const { percentile } = require('./motion-profiler');
 
@@ -164,6 +163,7 @@ const SCENARIOS = Object.freeze([
 ]);
 
 async function interruptionTorture(options) {
+  const { chromium } = require('playwright');
   const served = await serveTarget(options.target, options.cwd);
   const browser = await chromium.launch({ headless: true });
   try {
