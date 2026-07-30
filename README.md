@@ -53,15 +53,15 @@ evidence, and a dependency-declared Node.js CLI.
 | Capability | Verified source count |
 |---|---:|
 | Production dependencies | 3 (`@jridgewell/trace-mapping`, `axe-core`, `playwright`) |
-| Registry rules / providers | 39 / 7 |
+| Registry rules / providers | 40 / 8 |
 | Validated knowledge modules | 72 |
 | Industry packs | 24 |
 | Motion recipes / framework stacks | 15 / 6 |
 | Executable adapter combinations | 90 |
 | Full + reduced-motion browser scenarios | 180 |
-| Knowledge graph nodes | 142 |
-| Golden projects | 4 |
-| Component AST directions / CLI command modules | 3 / 9 |
+| Knowledge graph nodes | 143 |
+| Golden projects | 5 |
+| Component AST directions / CLI command modules | 3 / 11 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
 | Mission 4 leader features | 15 / 15 implemented |
 | Torture scenarios / generated component states | 8 / 16 |
@@ -76,7 +76,7 @@ evidence, and a dependency-declared Node.js CLI.
 | Public claim | Generated truth |
 |---|---:|
 | Version | 2.1.0 |
-| Rules / providers | 39 / 7 |
+| Rules / providers | 40 / 8 |
 | Motion recipes / stacks | 15 / 6 |
 | Adapter combinations / browser fixtures | 90 / 180 |
 | Browser / source-map assertions | 3510 / 3 |

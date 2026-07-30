@@ -62,8 +62,8 @@
     ]
   },
   "capabilities": {
-    "registryRules": 39,
-    "registryProviders": 7,
+    "registryRules": 40,
+    "registryProviders": 8,
     "knowledgeModules": 72,
     "industryPacks": 24,
     "motionRecipes": 15,
@@ -72,9 +72,9 @@
     "reducedMotionBrowserScenarios": 90,
     "browserFixtureScenarios": 180,
     "browserAssertions": 3510,
-    "knowledgeGraphNodes": 142,
-    "goldenProjects": 4,
-    "cliCommandModules": 9,
+    "knowledgeGraphNodes": 143,
+    "goldenProjects": 5,
+    "cliCommandModules": 11,
     "componentAstTransforms": 3,
     "motionEvidenceEngines": 2,
     "leaderProductFeatures": 15,

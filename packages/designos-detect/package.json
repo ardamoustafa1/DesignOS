@@ -1,0 +1,45 @@
+{
+  "name": "designos-detect",
+  "version": "1.0.0",
+  "description": "Standalone, dependency-free static detector for design/UI anti-patterns — 40 rules (tokens, accessibility, motion, aesthetic slop, brand-signature consistency), vendored from DesignOS's validator registry.",
+  "license": "MIT",
+  "author": "Arda Moustafa (https://github.com/ardamoustafa1)",
+  "homepage": "https://github.com/ardamoustafa1/DesignOS/blob/main/packages/designos-detect",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardamoustafa1/DesignOS.git",
+    "directory": "packages/designos-detect"
+  },
+  "bugs": {
+    "url": "https://github.com/ardamoustafa1/DesignOS/issues"
+  },
+  "bin": {
+    "designos-detect": "bin/designos-detect.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md"
+  ],
+  "keywords": [
+    "design",
+    "ui",
+    "accessibility",
+    "motion",
+    "lint",
+    "static-analysis",
+    "design-system",
+    "claude",
+    "ai-agents"
+  ],
+  "scripts": {
+    "vendor": "node scripts/sync-vendor.js",
+    "check:vendor": "node scripts/check-vendor-sync.js",
+    "prepublishOnly": "node scripts/sync-vendor.js && node scripts/check-vendor-sync.js && node test/smoke.js",
+    "test": "node test/smoke.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}

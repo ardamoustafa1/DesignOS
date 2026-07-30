@@ -12,10 +12,12 @@
  * Every command after that (runs the copy `init` placed at ./DesignOS/bin/):
  *   node DesignOS/bin/designos.js agents
  *   node DesignOS/bin/designos.js skills
- *   node DesignOS/bin/designos.js export <target>   cursor · copilot · windsurf · cline · aider · agentsmd · all
+ *   node DesignOS/bin/designos.js export <target>   cursor · copilot · windsurf · cline · aider · agentsmd · gemini · kiro · trae · all
  *   node DesignOS/bin/designos.js audit <dir>
  *   node DesignOS/bin/designos.js detect [dir] [--rule <id>] [--json] [--out ledger.json]
  *   node DesignOS/bin/designos.js motion-gaps [dir] [--limit 7] [--json]   (advisory, never fails)
+ *   node DesignOS/bin/designos.js signature-check [dir] [--memory memory/design.md] [--json]
+ *   node DesignOS/bin/designos.js originality-check <file> [--corpus path.json] [--add] [--json]
  *   node DesignOS/bin/designos.js review <file-or-dir> [--min 95] [--json] [--no-fail] [--fix-prompt]
  *   node DesignOS/bin/designos.js visual <file-or-url> [--out designos-visual-report.md]
  *   node DesignOS/bin/designos.js report <file-or-dir> [--min 95] [--out designos-report.md]
@@ -201,7 +203,10 @@ const EXPORT_TARGETS = {
   windsurf: { file: '.windsurfrules',                      label: 'Windsurf' },
   cline:    { file: '.clinerules',                         label: 'Cline' },
   aider:    { file: 'CONVENTIONS.md',                      label: 'Aider' },
-  agentsmd: { file: 'AGENTS.md',                           label: 'AGENTS.md standard (Codex · Gemini CLI · Amp · Zed · …)' },
+  agentsmd: { file: 'AGENTS.md',                           label: 'AGENTS.md standard (Codex · Amp · Zed · …)' },
+  gemini:   { file: 'GEMINI.md',                           label: 'Gemini CLI' },
+  kiro:     { file: '.kiro/steering/designos.md',          label: 'Kiro' },
+  trae:     { file: '.trae/rules/designos.md',             label: 'Trae' },
 };
 
 // Directories the kernel's routing table and boot sequence reference by relative
@@ -1480,6 +1485,8 @@ switch (cmd) {
   case 'audit': audit(firstPositional(rest)); break;
   case 'detect': require('./cli/commands/detect').execute(firstPositional(rest), rest, commandContext()); break;
   case 'motion-gaps': require('./cli/commands/motion-gaps').execute(firstPositional(rest), rest, commandContext()); break;
+  case 'signature-check': require('./cli/commands/signature-check').execute(firstPositional(rest), rest, commandContext()); break;
+  case 'originality-check': require('./cli/commands/originality-check').execute(firstPositional(rest), rest, commandContext()); break;
   case 'review': review(firstPositional(rest), rest); break;
   case 'visual': visual(firstPositional(rest), rest); break;
   case 'report': report(firstPositional(rest), rest); break;

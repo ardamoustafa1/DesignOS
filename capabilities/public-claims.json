@@ -5,8 +5,8 @@
     "version": "2.1.0"
   },
   "rules": {
-    "count": 39,
-    "providers": 7,
+    "count": 40,
+    "providers": 8,
     "source": "validators/rule-registry.js"
   },
   "motion": {

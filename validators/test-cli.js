@@ -742,6 +742,26 @@ test('golden motion-audit-example: before regresses, after is clean, on this exa
   }
 });
 
+test('golden cross-doc-transitions: both pages share one view-transition-name and stay clean', () => {
+  const dir = path.resolve(__dirname, '..', 'goldens', 'cross-doc-transitions');
+  const index = fs.readFileSync(path.join(dir, 'index.html'), 'utf8');
+  const detail = fs.readFileSync(path.join(dir, 'plan-detail.html'), 'utf8');
+
+  assert.ok(/@view-transition\s*\{\s*navigation:\s*auto;?\s*\}/.test(index), 'index.html must opt into cross-document view transitions');
+  assert.ok(/@view-transition\s*\{\s*navigation:\s*auto;?\s*\}/.test(detail), 'plan-detail.html must opt into cross-document view transitions');
+  assert.ok(/navigation:\s*none/.test(index) && /navigation:\s*none/.test(detail), 'both pages must collapse the transition under prefers-reduced-motion');
+
+  const nameOf = (src) => /view-transition-name:\s*([\w-]+)/.exec(src)?.[1];
+  assert.ok(nameOf(index), 'index.html must name a view-transition element');
+  assert.strictEqual(nameOf(index), nameOf(detail), 'both pages must share the exact same view-transition-name — that identity is the whole mechanism');
+
+  for (const script of ['check-motion.js', 'check-drift.js', 'check-a11y-basics.js', 'check-aesthetic-slop.js', 'check-token-contrast.js', 'check-registry.js']) {
+    const result = JSON.parse(spawnSync(process.execPath,
+      [path.join(__dirname, script), dir, '--json'], { encoding: 'utf8' }).stdout);
+    assert.deepStrictEqual(result.findings, [], `${script} must be clean on goldens/cross-doc-transitions`);
+  }
+});
+
 // ── SUMMARY ───────────────────────────────────────────────────────────────────
 
 console.log(`\n  ${passed} passed, ${failed} failed\n`);

@@ -12,6 +12,7 @@ and design decisions. They are not fake adoption.
 - [Developer Docs](developer-docs.md)
 - [Flagship Launch](flagship-launch.md) — the upper bound of the motion dial (rung 9)
 - [Motion Audit Example](motion-audit-example.md) — a real before/after regression and the exact validator finding that catches it
+- [Cross-Document View Transitions](cross-doc-transitions.md) — real, working `@view-transition` continuity across two full-page navigations, zero JavaScript
 
 ## Golden Acceptance Bar
 

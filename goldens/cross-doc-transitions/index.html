@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waypoint · release plans</title>
+<meta name="description" content="Waypoint: three teams, three release plans, one shared calendar.">
+<style>
+:root {
+  --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --bg: #0b0d0f; --surface: #12161a; --surface-raised: #171c21; --border: #232a2f;
+  --text: #e9e6de; --text-dim: #9aa3a5; --accent: #5fb98a; --on-accent: #06231a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Cross-document View Transitions — motion/page-and-scroll.md.
+   No JavaScript: every same-origin navigation on this site opts in. */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 32px; border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 650; text-decoration: none; }
+.brand .mark {
+  width: 28px; height: 28px; border-radius: 8px; background: var(--accent);
+  display: grid; place-items: center; color: var(--on-accent); font-size: 14px; font-weight: 700;
+  view-transition-name: waypoint-mark;   /* the one named element — carries across pages */
+}
+::view-transition-old(waypoint-mark), ::view-transition-new(waypoint-mark) {
+  animation-duration: var(--duration-base);
+}
+
+main { max-width: 880px; margin: 0 auto; padding: 56px 32px 80px; }
+h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); margin: 0 0 8px; letter-spacing: -0.01em; }
+.dek { color: var(--text-dim); margin: 0 0 40px; max-width: 56ch; }
+
+.plans { display: grid; gap: 16px; }
+.plan-card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px 24px; transition: transform var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+.plan-card:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
+@media (hover: hover) and (pointer: fine) {
+  .plan-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+}
+.plan-card h2 { margin: 0 0 4px; font-size: 1.05rem; }
+.plan-card p { margin: 0; color: var(--text-dim); font-size: 0.9rem; }
+.plan-card .status {
+  display: inline-block; margin-top: 12px; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.03em; text-transform: uppercase; color: var(--accent);
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html"><span class="mark" aria-hidden="true">W</span>Waypoint</a>
+</header>
+<main>
+  <h1>Release plans</h1>
+  <p class="dek">Three teams, three plans, one shared calendar. Click a plan to see its timeline: the mark in the header follows you there.</p>
+  <div class="plans">
+    <a class="plan-card" href="plan-detail.html">
+      <h2>Q3 platform migration</h2>
+      <p>Move billing off the legacy service before the October renewal window.</p>
+      <span class="status">On track</span>
+    </a>
+    <a class="plan-card" href="plan-detail.html">
+      <h2>Mobile release train</h2>
+      <p>Biweekly cadence, six teams, one shared changelog.</p>
+      <span class="status">On track</span>
+    </a>
+    <a class="plan-card" href="plan-detail.html">
+      <h2>Design system v3</h2>
+      <p>Token migration across forty components, staged by product surface.</p>
+      <span class="status">At risk</span>
+    </a>
+  </div>
+</main>
+</body>
+</html>

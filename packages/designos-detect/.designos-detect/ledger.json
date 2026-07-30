@@ -1,0 +1,176 @@
+{
+  "schema": 2,
+  "generatedAt": "2026-07-30T14:37:33.093Z",
+  "providers": [
+    {
+      "provider": "references",
+      "target": "repository",
+      "command": "check-refs.sh",
+      "capabilities": [
+        "internal-reference-integrity"
+      ],
+      "ruleIds": [],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "output": "check-refs: clean"
+    },
+    {
+      "provider": "token-drift",
+      "target": "test/fixtures/clean",
+      "command": "check-drift.js",
+      "capabilities": [
+        "tokens",
+        "spacing",
+        "focus-source"
+      ],
+      "ruleIds": [
+        "source-raw-color",
+        "source-missing-focus"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "output": ""
+    },
+    {
+      "provider": "a11y-basics",
+      "target": "test/fixtures/clean",
+      "command": "check-a11y-basics.js",
+      "capabilities": [
+        "semantics",
+        "accessible-names"
+      ],
+      "ruleIds": [
+        "source-clickable-noncontrol",
+        "source-missing-focus"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "output": ""
+    },
+    {
+      "provider": "token-contrast",
+      "target": "test/fixtures/clean",
+      "command": "check-token-contrast.js",
+      "capabilities": [
+        "computed-token-contrast"
+      ],
+      "ruleIds": [],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "output": ""
+    },
+    {
+      "provider": "motion-source",
+      "target": "test/fixtures/clean",
+      "command": "check-motion.js",
+      "capabilities": [
+        "motion-budget",
+        "motion-performance"
+      ],
+      "ruleIds": [
+        "motion-transition-all",
+        "motion-scale-zero",
+        "motion-hover-without-pointer-query",
+        "motion-keyboard-latency",
+        "motion-unbounded-loop",
+        "motion-scroll-unthrottled",
+        "motion-drag-no-capture",
+        "motion-no-cancellation",
+        "motion-no-visibility-pause",
+        "motion-spring-no-reduction",
+        "motion-reduced-motion-missing",
+        "motion-stagger-budget",
+        "motion-interaction-blocked",
+        "motion-enter-exit-symmetry",
+        "motion-transform-origin",
+        "motion-uninterruptible-transition"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "output": ""
+    },
+    {
+      "provider": "aesthetic-slop",
+      "target": "test/fixtures/clean",
+      "command": "check-aesthetic-slop.js",
+      "capabilities": [
+        "named-defaults",
+        "copy-tells"
+      ],
+      "ruleIds": [
+        "source-named-default",
+        "source-fake-proof"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "output": ""
+    },
+    {
+      "provider": "unified-source",
+      "target": "test/fixtures/clean",
+      "command": "check-registry.js",
+      "capabilities": [
+        "registry-static-contract"
+      ],
+      "ruleIds": [
+        "source-raw-color",
+        "source-clickable-noncontrol",
+        "source-missing-focus",
+        "source-fake-proof",
+        "source-image-dimensions",
+        "source-named-default",
+        "motion-transition-all",
+        "motion-scale-zero",
+        "motion-hover-without-pointer-query",
+        "motion-keyboard-latency",
+        "motion-unbounded-loop",
+        "motion-scroll-unthrottled",
+        "motion-drag-no-capture",
+        "motion-no-cancellation",
+        "motion-no-visibility-pause",
+        "motion-spring-no-reduction",
+        "motion-reduced-motion-missing",
+        "motion-stagger-budget",
+        "motion-interaction-blocked",
+        "motion-enter-exit-symmetry",
+        "motion-transform-origin",
+        "motion-uninterruptible-transition",
+        "signature-drift"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "output": ""
+    },
+    {
+      "provider": "signature-consistency",
+      "target": "test/fixtures/clean",
+      "command": "check-signature-consistency.js",
+      "capabilities": [
+        "brand-signature-lock"
+      ],
+      "ruleIds": [
+        "signature-drift"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "output": ""
+    }
+  ],
+  "findings": [],
+  "passed": true,
+  "summary": {
+    "runs": 8,
+    "passed": 8,
+    "failed": 0,
+    "findingCount": 0,
+    "bySeverity": {}
+  }
+}
