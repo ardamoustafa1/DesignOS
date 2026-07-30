@@ -47,6 +47,7 @@ ol{padding-left:20px;color:var(--muted)}code{color:var(--accent)}
   <button id="origins" aria-pressed="false">Transform origins</button>
   <button id="compare" aria-pressed="false">Full ↔ reduced</button>
   <button id="record" aria-pressed="false">Record</button><button id="replay">Replay</button>
+  <label style="flex:1 1 200px">Timeline <input type="range" id="scrubber" min="0" max="2000" value="0" style="width:100%"></label>
 </header>
 <main>
   <section class="stage" id="stage" aria-label="Instrumented previews">
@@ -83,6 +84,16 @@ ol{padding-left:20px;color:var(--muted)}code{color:var(--accent)}
     <label>Duration <input id="duration" type="number" min=".1" max="2" step=".05" value=".5"></label>
     <label>Bounce <input id="bounce" type="number" min="0" max=".8" step=".05" value=".15"></label>
     <canvas id="spring" width="288" height="140"></canvas>
+    <h2>Motion Analysis & Workbench</h2>
+    <button id="layerPromo" aria-pressed="false" style="width:100%;margin-bottom:8px">Highlight Layer Promotion</button>
+    <div class="metric"><span>Enter/Exit Symmetry</span><strong id="symmetry">—</strong></div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">Trajectory (x, y)</div>
+    <canvas id="trajectory" width="288" height="60" style="height:60px"></canvas>
+    <div style="display:flex;gap:4px;margin-top:4px">
+      <div style="flex:1"><div style="font-size:11px;color:var(--muted)">Velocity</div><canvas id="velocity" width="142" height="60" style="height:60px"></canvas></div>
+      <div style="flex:1"><div style="font-size:11px;color:var(--muted)">Acceleration</div><canvas id="acceleration" width="142" height="60" style="height:60px"></canvas></div>
+    </div>
+    <button id="reconstruct" style="width:100%;margin-top:8px">Reconstruct & Plot Current Animation</button>
     <h2>Interaction recording</h2>
     <ol id="events"><li>No events recorded.</li></ol>
     <h2>Rules</h2>
@@ -137,6 +148,71 @@ function fps(now){rafSamples.push(now);while(rafSamples.length&&rafSamples[0]<no
 function drawCurve(){const values=document.getElementById('curve').value.split(',').map(Number);const canvas=document.getElementById('easing'),ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.strokeStyle='#2c3440';ctx.strokeRect(10,10,268,120);ctx.strokeStyle='#42d392';ctx.beginPath();for(let i=0;i<=100;i++){const t=i/100,u=1-t;const x=10+268*(3*u*u*t*values[0]+3*u*t*t*values[2]+t*t*t);const y=130-120*(3*u*u*t*values[1]+3*u*t*t*values[3]+t*t*t);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke()}
 function drawSpring(){const duration=Number(document.getElementById('duration').value),bounce=Number(document.getElementById('bounce').value),zeta=1-bounce,w=2*Math.PI/duration;const canvas=document.getElementById('spring'),ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.strokeStyle='#2c3440';ctx.strokeRect(10,10,268,120);ctx.strokeStyle='#ffcc66';ctx.beginPath();for(let i=0;i<=200;i++){const t=i/200*duration*2;const y=1-Math.exp(-zeta*w*t)*Math.cos(w*Math.sqrt(Math.max(0,1-zeta*zeta))*t);const x=10+268*i/200,py=130-100*y;i?ctx.lineTo(x,py):ctx.moveTo(x,py)}ctx.stroke()}
 document.getElementById('curve').oninput=drawCurve;document.getElementById('duration').oninput=drawSpring;document.getElementById('bounce').oninput=drawSpring;drawCurve();drawSpring();
+
+// Motion Timeline Workbench additions
+const scrubber = document.getElementById('scrubber');
+scrubber.oninput = () => {
+  paused = true;
+  document.getElementById('pause').textContent = 'Play';
+  const t = Number(scrubber.value);
+  for (const animation of animations()) {
+    animation.pause();
+    animation.currentTime = t;
+  }
+};
+
+document.getElementById('layerPromo').onclick = () => toggle('layerPromo','* { will-change: auto !important; } .dos-animated { outline: 2px dashed #a371f7 !important; background: rgba(163, 113, 247, 0.1) !important; will-change: transform, opacity !important; }');
+
+let trackedPositions = [];
+document.getElementById('reconstruct').onclick = () => {
+  const el = doc().querySelector('.dos-animated');
+  if(!el) return;
+  const anims = el.getAnimations();
+  if(!anims.length) return;
+  const anim = anims[0];
+  anim.pause();
+  
+  const sampleCount = 60;
+  const duration = anim.effect.getComputedTiming().duration || 1000;
+  const dt = duration / sampleCount;
+  
+  let pos = [];
+  for(let i = 0; i <= sampleCount; i++) {
+    anim.currentTime = i * dt;
+    const rect = el.getBoundingClientRect();
+    pos.push({ x: rect.x, y: rect.y, t: i * dt });
+  }
+  anim.currentTime = 0;
+  anim.play();
+  
+  const v = pos.map((p, i) => i === 0 ? 0 : (p.y - pos[i-1].y)/dt);
+  const a = v.map((vel, i) => i === 0 ? 0 : (vel - v[i-1])/dt);
+  
+  const drawLine = (id, data, color) => {
+    const canvas = document.getElementById(id);
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    if(data.length < 2) return;
+    const min = Math.min(...data), max = Math.max(...data);
+    const range = (max - min) || 1;
+    ctx.strokeStyle = color;
+    ctx.beginPath();
+    data.forEach((val, i) => {
+      const x = (i / (data.length - 1)) * canvas.width;
+      const y = canvas.height - ((val - min) / range) * canvas.height;
+      i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+    });
+    ctx.stroke();
+  };
+  
+  drawLine('trajectory', pos.map(p => p.y), '#42d392');
+  drawLine('velocity', v, '#ffcc66');
+  drawLine('acceleration', a, '#ff2d78');
+  
+  const sym = Math.abs(pos[0].y - pos[pos.length-1].y) < 1 ? 'Closed (Symmetric)' : 'Open (Asymmetric)';
+  document.getElementById('symmetry').textContent = sym;
+};
+
 full.addEventListener('load',()=>{markAnimated();bindRecording();observe()});
 </script>
 </body></html>`;

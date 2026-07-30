@@ -1443,6 +1443,11 @@ function liveCommand(target, args) {
   require('./cli/commands/live').execute(target, args, commandContext());
 }
 
+function gestureStudioCommand(args) {
+  const output = require('./gesture-studio').gestureStudio(args, commandContext().cwd);
+  commandContext().ok(`Gesture Studio generated at ${output}`);
+}
+
 function hooksCommand(args) {
   require('./cli/commands/system').hooks(args, commandContext());
 }
@@ -1483,6 +1488,7 @@ switch (cmd) {
   case 'compose':
   case 'asset-direct': intelligence(cmd, rest); break;
   case 'motion-lab': motionLabCommand(firstPositional(rest), rest); break;
+  case 'gesture-studio': gestureStudioCommand(rest); break;
   case 'motion-profile':
   case 'motion-regression':
     require('./cli/commands/motion').execute(cmd, firstPositional(rest), rest, commandContext()); break;
