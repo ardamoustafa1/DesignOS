@@ -10,7 +10,7 @@ const { compile, futureShippedClaims } = require('../scripts/compile-public-clai
 
 const claims = buildPublicClaims();
 assert.strictEqual(claims.package.version, require('../package.json').version);
-assert.strictEqual(claims.rules.count, 38);
+assert.strictEqual(claims.rules.count, 39);
 assert.strictEqual(claims.motion.recipes * claims.motion.stacks, claims.motion.adapterCombinations);
 assert.strictEqual(claims.motion.fixtureScenarios, claims.motion.adapterCombinations * 2);
 assert.strictEqual(claims.motion.browserAssertions, 3510);

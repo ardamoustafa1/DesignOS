@@ -65,3 +65,16 @@
   and CSS Modules; all generated layouts carry the same four-width constraint contract.
 - Native sources share one capability contract across SwiftUI, Compose, Reanimated,
   and Flutter. Device evidence is reported separately from source/type conformance.
+
+## 2026-07-30 — P0 semantic motion, Studio, and claim truth
+
+- Motion is compiled from component, state transition, frequency, modality, measured
+  geometry, intensity, user preference, device power, and semantic importance. The
+  compiler may choose no motion; every positive decision exposes modality parity,
+  symmetry, origin, interruption, reduction, budgets, reasons, and provenance.
+- Live Director is a Studio surface rather than a preview-only CLI. Source-locked AST
+  transactions expose semantic diffs and cannot be accepted until browser,
+  accessibility, motion, and performance gates independently pass.
+- Public capability language is generated from executable sources. Native evidence stays
+  `source-conformance-only` and external evaluation stays false until their registries
+  contain qualifying evidence.

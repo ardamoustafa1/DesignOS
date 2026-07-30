@@ -13,9 +13,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const target = process.argv[2];
+const rawArgs = process.argv.slice(2);
+const asJson = rawArgs.includes('--json');
+const target = rawArgs.find(a => a !== '--json');
 if (!target) {
-  console.error('usage: check-a11y-basics.js <file-or-dir>');
+  console.error('usage: check-a11y-basics.js <file-or-dir> [--json]');
   process.exit(2);
 }
 
@@ -57,6 +59,16 @@ for (const file of walk(path.resolve(target))) {
 
   for (const m of html.matchAll(/tabindex=["']([1-9]\d*)["']/g))
     findings.push(`${rel}:${lineOf(m.index)}  positive-tabindex  tabindex=${m[1]} — reorder DOM instead`);
+}
+
+if (asJson) {
+  const { emitJson, severityResolver } = require('./finding-format');
+  const severityFor = severityResolver({
+    'img-no-alt': 'P1', 'input-no-label': 'P1', 'div-onclick': 'P1',
+    'no-main': 'P2', 'no-h1': 'P2', 'multi-h1': 'P3', 'positive-tabindex': 'P2',
+  });
+  const structured = emitJson(target, findings, severityFor);
+  process.exit(structured.length ? 2 : 0);
 }
 
 if (findings.length) {

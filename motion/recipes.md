@@ -253,6 +253,11 @@ function flip(elements, mutate) {
 Measure, mutate, invert with a transform, play. The layout happens once; the movement is
 pure compositor.
 
+Items 14–15 below are the framework-agnostic version of these two libraries. For
+idiomatic mount/cleanup wiring in a specific framework (`useEffect` vs. `onMounted` vs.
+`onMount` vs. `onCleanup`), use `motion/stacks/{react,vue,svelte,solid}.md` instead of
+adapting the React-shaped examples here by hand.
+
 ## 14 · Framer Motion / `motion` — the same law, a different envelope
 
 ```jsx

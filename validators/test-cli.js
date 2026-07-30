@@ -694,7 +694,7 @@ test('find: the wow layer is retrievable and every signature preset is expressiv
 
   const { MOTION_PRESETS } = require(path.resolve(__dirname, '..', 'bin', 'library-data.js'));
   const signatures = MOTION_PRESETS.filter(p => p.module === 'motion/signature-moments.md');
-  assert.ok(signatures.length >= 10, `the catalogue must carry all ten techniques, found ${signatures.length}`);
+  assert.ok(signatures.length >= 11, `the catalogue must carry all eleven techniques, found ${signatures.length}`);
   for (const s of signatures) {
     assert.strictEqual(s.tier, 'expressive', `${s.id} is a signature and must be expressive tier`);
   }
@@ -717,6 +717,29 @@ test('golden flagship-launch: both artifacts exist and the lab declares itself a
   assert.ok(/not a page to imitate/i.test(lab), 'the lab must disclaim itself');
   assert.ok(lab.indexOf('not a page to imitate') < lab.length / 2, 'the disclaimer must be near the top');
   assert.ok(lab.includes('signature-moments.md'), 'the lab must cite the catalogue it demonstrates');
+});
+
+test('golden motion-audit-example: before regresses, after is clean, on this exact rule only', () => {
+  const dir = path.resolve(__dirname, 'fixtures', 'motion-audit-example');
+  const runJson = (file) => JSON.parse(spawnSync(process.execPath,
+    [path.join(__dirname, 'check-motion.js'), path.join(dir, file), '--json'],
+    { encoding: 'utf8' }).stdout);
+
+  const before = runJson('before.html');
+  assert.strictEqual(before.count, 1, 'before.html must carry exactly the one regression this golden demonstrates');
+  assert.strictEqual(before.findings[0].rule, 'motion-uninterruptible-transition');
+
+  const after = runJson('after.html');
+  assert.deepStrictEqual(after.findings, [], 'after.html must be clean — the fix is a one-line transition clear');
+
+  // the golden isolates one rule — the other static validators must stay clean on both
+  for (const script of ['check-drift.js', 'check-a11y-basics.js', 'check-aesthetic-slop.js', 'check-token-contrast.js']) {
+    for (const file of ['before.html', 'after.html']) {
+      const result = JSON.parse(spawnSync(process.execPath,
+        [path.join(__dirname, script), path.join(dir, file), '--json'], { encoding: 'utf8' }).stdout);
+      assert.deepStrictEqual(result.findings, [], `${script} must be clean on ${file} — this golden isolates motion-uninterruptible-transition only`);
+    }
+  }
 });
 
 // ── SUMMARY ───────────────────────────────────────────────────────────────────

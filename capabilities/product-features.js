@@ -18,6 +18,9 @@ const LEADER_FEATURES = Object.freeze([
   ['mutation-testing', 'Visual and Motion Mutation Testing', ['bin/mutation-testing.js']],
   ['consistency-graph', 'Cross-page Consistency Graph', ['bin/consistency-graph.js']],
   ['native-motion', 'Native Motion Runtime', ['runtime/native/adapters.js', 'bin/native-motion.js']],
+  ['motion-semantics', 'Motion Semantics Compiler', ['runtime/motion/semantics.js', 'validators/test-motion-semantics.js']],
+  ['live-director-studio', 'Live Director Studio', ['bin/live-director.js', 'validators/test-live-component.js']],
+  ['deterministic-claims', 'Deterministic Claim Compiler', ['capabilities/public-claims.js', 'scripts/compile-public-claims.js']],
 ].map(([id, name, sources]) => Object.freeze({
   id,
   name,

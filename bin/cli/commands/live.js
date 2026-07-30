@@ -3,13 +3,17 @@
 const fs = require('fs');
 const path = require('path');
 
+const AXES = new Set(['motion', 'layout', 'density']);
+
 function execute(target, args, context) {
-  if (!target) context.fail(`Usage: ${context.run} live <html-target> [--init-only|--port 4179|--accept a|--reject b|--edits edits.json|--rollback]`);
+  if (!target) context.fail(`Usage: ${context.run} live <html-target> [--init-only|--port 4179|--accept a|--reject b|--edits edits.json|--rollback] [--axis motion|layout|density]`);
   const director = require('../../live-director');
   try {
-    const initialized = director.initSession(target, context.cwd);
+    const axis = context.argValue(args, '--axis', '');
+    if (axis && !AXES.has(axis)) context.fail(`Unknown --axis "${axis}" — use one of: ${[...AXES].join(' · ')}`);
+    const initialized = director.initSession(target, context.cwd, axis || null);
     if (args.includes('--init-only')) {
-      context.ok(`Live session initialized at ${path.relative(context.cwd, initialized.files.root)}`);
+      context.ok(`Live session initialized at ${path.relative(context.cwd, initialized.files.root)}${axis ? ` (axis: ${axis})` : ''}`);
       return;
     }
     if (args.includes('--rollback')) {
@@ -25,15 +29,7 @@ function execute(target, args, context) {
     }
     const rejectId = context.argValue(args, '--reject', '');
     if (rejectId) {
-      const transactions = JSON.parse(fs.readFileSync(initialized.files.transactions, 'utf8'));
-      transactions.push({
-        id: `reject-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-        type: 'variant-reject',
-        variant: rejectId,
-        reason: context.argValue(args, '--reason', ''),
-        createdAt: new Date().toISOString(),
-      });
-      fs.writeFileSync(initialized.files.transactions, JSON.stringify(transactions, null, 2) + '\n');
+      director.recordRejection(target, rejectId, context.argValue(args, '--reason', ''), context.cwd);
       context.ok(`Rejected variant ${rejectId}; decision recorded`);
       return;
     }

@@ -43,6 +43,8 @@ jobs:
         run: npm run test:motion-evidence
       - name: Source-mapped component AST transaction
         run: npm run test:live-component
+      - name: Live Director Studio browser contract
+        run: npm run test:live-studio
       - name: Mission 4 leader engine conformance
         run: npm run test:leader
       - name: Commit-bound browser ledger

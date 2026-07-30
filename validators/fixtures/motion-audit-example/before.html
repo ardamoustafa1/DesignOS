@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notification drawer — before</title>
+<style>
+:root {
+  --duration-slow: 300ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --bg: #0b0d0f; --surface: #12161a; --border: #232a2f; --text: #e9e6de; --focus-ring: #6ea8fe;
+}
+body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); }
+main { padding: 24px; }
+button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.sheet {
+  position: fixed; inset: 0 0 0 auto; width: 320px; height: 100%;
+  background: var(--surface); border-left: 1px solid var(--border); padding: 24px;
+  touch-action: none; transform: translateX(100%);
+  /* BUG: this transition keeps running during the drag below — it is never cleared on
+   * pointerdown, so the sheet lags the finger instead of tracking it 1:1
+   * (motion/physics.md tracking law). This is the exact shape
+   * `motion-uninterruptible-transition` (validators/check-motion.js) exists to catch. */
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+@media (prefers-reduced-motion: reduce) { .sheet { transition-duration: 0.01ms; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Notifications</h1>
+  <button id="open">Open notifications</button>
+  <div class="sheet" id="sheet">
+    <p>Swipe right to dismiss.</p>
+  </div>
+</main>
+<script>
+const sheet = document.getElementById('sheet');
+document.getElementById('open').addEventListener('click', () => { sheet.style.transform = 'translateX(0)'; });
+
+let startX = 0;
+sheet.addEventListener('pointerdown', (e) => {
+  sheet.setPointerCapture(e.pointerId);
+  startX = e.clientX;
+  // BUG: no sheet.style.transition = 'none' here — the CSS transition above keeps
+  // smoothing every pointermove frame instead of the surface tracking the pointer.
+});
+sheet.addEventListener('pointermove', (e) => {
+  const dx = Math.max(0, e.clientX - startX);
+  sheet.style.transform = `translateX(${dx}px)`;
+});
+sheet.addEventListener('pointerup', (e) => {
+  const dx = Math.max(0, e.clientX - startX);
+  sheet.style.transform = dx > 80 ? 'translateX(100%)' : 'translateX(0)';
+});
+</script>
+</body>
+</html>

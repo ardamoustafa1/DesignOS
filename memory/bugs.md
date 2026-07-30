@@ -43,3 +43,12 @@
 - Closed 2026-07-30: Motion Lab omitted average FPS, worst frame, drop ratio, render
   counts, compositor status, input/settle/cancel timings, and cleanup evidence. The CDP
   report and lab UI now expose each field.
+- Closed 2026-07-30: motion decisions omitted component geometry, device/user context,
+  semantic importance, modality parity, origin/symmetry, budgets, and provenance. The
+  semantic compiler now emits the complete contract.
+- Closed 2026-07-30: Live Director exposed preview and CLI-only acceptance without a
+  Studio diff/lock/merge workflow or separately reported acceptance gates. The browser
+  Studio and transaction ledger now carry the full contract.
+- Closed 2026-07-30: public claims were generated only into four Markdown documents;
+  plugin metadata and the public site could drift. One deterministic compiler now owns
+  all seven generated targets.

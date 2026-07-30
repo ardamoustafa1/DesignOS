@@ -15,7 +15,10 @@
   evidence, eval-truth, package-boundary, CLI routing, and generated-doc hardening.
 - `externalEval` intentionally remains false until a qualifying third-party run is
   registered. This is external evidence work, not an internal implementation TODO.
-- No internal implementation item remains from the twelve-feature Mission 4 leader
+- No internal implementation item remains from the fifteen-feature Mission 4 leader
   backlog. Native device-lab evidence (real haptics, VoiceOver/TalkBack, keyboard/insets,
   mid-range Android frame traces) remains an external hardware/toolchain verification
   requirement and must not be represented as completed by source conformance.
+- No open implementation item remains from the Motion Semantics Compiler, Live Director
+  Studio, or Deterministic Claim Compiler P0 scope. Any new public claim source must be
+  registered in `capabilities/public-claims.js` and regenerated through CI.

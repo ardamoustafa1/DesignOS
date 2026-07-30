@@ -13,9 +13,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const [, , target, ...tokenFiles] = process.argv;
+const rawArgs = process.argv.slice(2);
+const asJson = rawArgs.includes('--json');
+const [target, ...tokenFiles] = rawArgs.filter(a => a !== '--json');
 if (!target) {
-  console.error('usage: check-drift.js <src-dir-or-file> [token-file ...]');
+  console.error('usage: check-drift.js <src-dir-or-file> [token-file ...] [--json]');
   process.exit(2);
 }
 const tokenSet = new Set(tokenFiles.map(f => path.resolve(f)));
@@ -94,6 +96,13 @@ for (const file of walk(path.resolve(target))) {
       findings.push(`${loc}  important  !important outside token/reset layer (frontend-engineer.md)`);
     }
   });
+}
+
+if (asJson) {
+  const { emitJson, severityResolver } = require('./finding-format');
+  const severityFor = severityResolver({ 'raw-hex': 'P2', 'off-grid-px': 'P2', 'bare-outline': 'P1', important: 'P3' });
+  const structured = emitJson(target, findings, severityFor);
+  process.exit(structured.length ? 2 : 0);
 }
 
 if (findings.length) {

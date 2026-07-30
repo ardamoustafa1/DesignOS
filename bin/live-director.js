@@ -57,10 +57,37 @@ function projectContext(cwd) {
   };
 }
 
+// One page's motion budget (motion/signature-moments.md: "two signature moments per
+// page, maximum, usually one") mapped onto three variants, cheapest to boldest — so an
+// `--axis motion` request compares restraint against a signature, not three unrelated
+// structural strategies.
+const AXIS_OVERRIDES = Object.freeze({
+  motion: {
+    a: { motion: 'none', axisNote: 'no motion — the rest state alone carries the hierarchy (motion/principles.md default: it does not move)' },
+    b: { motion: 'feedback-only', axisNote: 'state-feedback motion only — hover/press/toggle response, nothing spatial' },
+    c: { motion: 'origin-aware-signature', axisNote: 'one interaction-scale signature moment, gated on the page’s MOTION_INTENSITY (motion/signature-moments.md)' },
+  },
+  layout: {
+    a: { slotOrder: ['copy', 'content', 'proof', 'actions'], responsive: 'stack-below-48rem', axisNote: 'linear stack — copy leads, single reading column at every width' },
+    b: { slotOrder: ['content', 'copy', 'actions', 'proof'], responsive: 'sidebar-above-64rem', axisNote: 'content-led sidebar split above 64rem, stacked below it' },
+    c: { slotOrder: ['proof', 'content', 'copy', 'actions'], responsive: 'bento-above-64rem', axisNote: 'bento-grid composition above 64rem — proof-forward, broken symmetry' },
+  },
+  density: {
+    a: { tokenDiff: { '--designos-direction-gap': '0.5rem', '--designos-direction-measure': '72ch' }, axisNote: 'dense — dashboard-tight spacing scale (components/data-density.md)' },
+    b: { tokenDiff: { '--designos-direction-gap': '1rem', '--designos-direction-measure': '65ch' }, axisNote: 'standard — the default marketing/app spacing scale' },
+    c: { tokenDiff: { '--designos-direction-gap': '2rem', '--designos-direction-measure': '56ch' }, axisNote: 'spacious — editorial breathing room, fewer elements per viewport' },
+  },
+});
+
 /**
  * Generates context-aware variant configurations based on the selected DOM element's
  * classification and the project's sector and core belief.
- * 
+ *
+ * Without an axis, the three variants vary structural strategy (material/audience/belief-
+ * led) — the general-purpose spread. With `annotation.axis` (motion|layout|density) set,
+ * all three instead vary deliberately along that one named axis, cheapest to boldest, so
+ * "give me three motion-only variants" is an actual request this function can answer.
+ *
  * @param {string} cwd - The project root directory.
  * @param {Object} annotation - The annotation metadata describing the UI issue.
  * @returns {Object} Three distinct design variants (a, b, c) with tailored rationales.
@@ -68,6 +95,7 @@ function projectContext(cwd) {
 function contextualVariants(cwd, annotation = {}) {
   const context = projectContext(cwd);
   const issue = annotation.classification || 'Hierarchy weak';
+  const axis = AXIS_OVERRIDES[annotation.axis] ? annotation.axis : null;
   const signature = compileSignature({
     brief: `${context.sector} interface: ${issue}`,
     material: annotation.note || 'the selected product element and its real state',
@@ -78,6 +106,21 @@ function contextualVariants(cwd, annotation = {}) {
     density: 5,
   });
   const signatureDirection = signature.directions.find(item => item.kind === 'belief-led');
+  if (axis) {
+    const overrides = AXIS_OVERRIDES[axis];
+    const strategyLabel = { a: 'restrained', b: 'standard', c: 'bold' };
+    return Object.fromEntries(['a', 'b', 'c'].map(key => {
+      const override = overrides[key];
+      const { axisNote, ...transformOverride } = override;
+      return [key, {
+        ...VARIANT_TRANSFORMS[key],
+        ...transformOverride,
+        rationale: `${context.sector}, axis=${axis} (${strategyLabel[key]}): ${axisNote} — “${issue}” addressed without changing the other two axes.`,
+        transform: { ...VARIANT_TRANSFORMS[key], ...transformOverride },
+        provenance: { ...context, strategy: `${axis}-${strategyLabel[key]}`, axis, issue },
+      }];
+    }));
+  }
   return {
     a: {
       ...VARIANT_TRANSFORMS.a,
@@ -126,7 +169,7 @@ function pathsFor(target, cwd) {
  * @param {string} cwd - The project root directory.
  * @returns {{files: Object, session: Object}} Initialized session paths and state.
  */
-function initSession(target, cwd = process.cwd()) {
+function initSession(target, cwd = process.cwd(), axis = null) {
   const files = pathsFor(target, cwd);
   if (!fs.existsSync(files.source)) throw new Error(`Live target not found: ${target}`);
   const source = fs.readFileSync(files.source, 'utf8');
@@ -146,7 +189,8 @@ function initSession(target, cwd = process.cwd()) {
     selectedSource: existing.selectedSource || null,
     selectedSourceLock: existing.selectedSourceLock || null,
     status: existing.status || 'active',
-    variants: existing.variants || contextualVariants(cwd),
+    axis: existing.axis || axis || null,
+    variants: existing.variants || contextualVariants(cwd, { axis }),
   };
   writeJson(files.session, session);
   return { files, session };
@@ -262,7 +306,9 @@ function annotate(target, annotation, cwd = process.cwd()) {
   session.selectedSource = item.source;
   session.selectedSourceLock = fs.existsSync(item.source.file)
     ? sha(fs.readFileSync(item.source.file, 'utf8')) : null;
-  session.variants = contextualVariants(cwd, item);
+  const axis = annotation.axis || session.axis || null;
+  session.axis = axis;
+  session.variants = contextualVariants(cwd, { ...item, axis });
   session.updatedAt = new Date().toISOString();
   writeJson(files.session, session);
   return item;

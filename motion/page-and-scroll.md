@@ -38,6 +38,49 @@ The professional alternative to parallax theatrics:
 - Loading between routes: top progress bar (2–3px, accent) for >300ms navigations; skeleton of the incoming page beats spinner-void.
 - Scroll restoration: back-button returns to previous scroll position, always. New forward routes start at top with focus moved to h1 (`foundations/accessibility.md`).
 
+### Cross-document View Transitions — full navigations, not just SPA routes
+
+The SPA case above needs `document.startViewTransition()` in JavaScript because the DOM
+swap is manual. A **full page navigation** (a plain `<a href>` to a new HTML document, no
+client-side router) can get the same continuity with zero JavaScript, via the
+`@view-transition` at-rule:
+
+```css
+/* Opt every same-origin navigation on this site into a cross-document transition.
+   No JS, no router — this is a browser-native declaration. */
+@view-transition { navigation: auto; }
+
+/* Shared elements carry a stable name across BOTH documents — the logo, the clicked
+   product card, the page's hero image. The name must match exactly on both pages. */
+.site-logo { view-transition-name: site-logo; }
+
+::view-transition-old(site-logo), ::view-transition-new(site-logo) {
+  animation-duration: var(--duration-base);
+}
+
+/* The rest of the page gets the default cross-fade — do not name every element. */
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+```
+
+**Earned when:** the site is a set of real, separately-loaded documents (a marketing site,
+a docs site, an MPA) and the brief's truth is continuity between pages — a shared header,
+a product image that should visibly persist from grid to detail page. Not earned on an
+SPA that already routes client-side; use the JS API there instead.
+
+**Cost and support are the honest caveats.** This is newer than the SPA API and does not
+yet have the same cross-browser floor — ship it as enhancement, not dependency: a browser
+without support simply navigates normally, with no fallback code required (`@supports` is
+not even necessary; unsupported browsers ignore the at-rule and the `view-transition-name`
+declarations do nothing harmful). Never gate content or navigation behind it.
+
+**Failure mode:** naming more than a small handful of elements `view-transition-name` —
+each named pair is its own transition group, and a page with fifteen of them competes with
+itself exactly like stacking signature moments does (`motion/signature-moments.md`
+scarcity law applies here too: one or two named elements, not the whole layout).
+
 ## Scroll-linked UI (allowed set)
 - Navbar transforms (solid-on-scroll, hide-down/show-up — `components/navigation.md`)
 - Reading progress bar (articles ≥1500 words)

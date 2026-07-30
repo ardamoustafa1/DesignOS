@@ -569,6 +569,129 @@ they cut. Pad the simpler shape with duplicate vertices.
 
 ---
 
+## 11 · Raw WebGL shader field — hero-scale, rarest tier
+
+Everything above this line is deliberately achievable in CSS, Canvas 2D, or the DOM — that
+restraint is most of this file's discipline. This entry exists for the small remainder of
+briefs where the truth genuinely cannot be expressed without a GPU shader: true 3D depth
+under parallax (not a 2D layer trick), a particle count Canvas 2D cannot push at 60fps, or
+a distortion (refraction, chromatic split, fluid displacement) that has no 2D equivalent.
+If `noise-canvas` (§9) can carry the atmosphere, use it — it is cheaper in every dimension
+this entry costs.
+
+**Earned when:** the product's truth is *depth or material* itself (a 3D product
+configurator, a fluid/glass distortion that is the brand's signature, a data field with
+thousands of live points) — never for atmosphere alone, and never as a decoration
+competing with the noise-canvas budget already spent elsewhere on the page.
+
+No dependency — a single fragment shader compiled against raw `WebGL2RenderingContext`,
+the same "no 600KB bundle" discipline `noise-canvas` holds itself to:
+
+```js
+function shaderField(canvas, { accent = [0.06, 0.72, 0.51] } = {}) {
+  const gl = canvas.getContext('webgl2', { alpha: true, antialias: false, powerPreference: 'low-power' });
+  if (!gl) return () => {};   // no WebGL2 → the caller falls back to noise-canvas, never a blank hole
+
+  const vsSource = `#version 300 es
+    in vec2 position; void main() { gl_Position = vec4(position, 0.0, 1.0); }`;
+  const fsSource = `#version 300 es
+    precision mediump float;
+    uniform float uTime; uniform vec2 uResolution; uniform vec3 uAccent;
+    out vec4 fragColor;
+    void main() {
+      vec2 uv = gl_FragCoord.xy / uResolution;
+      float field = sin(uv.x * 6.0 + uTime * 0.4) * cos(uv.y * 6.0 - uTime * 0.3);
+      float alpha = smoothstep(0.7, 1.0, field) * 0.14;   // sparse, like noise-canvas
+      fragColor = vec4(uAccent, alpha);
+    }`;
+
+  function compile(type, source) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      const log = gl.getShaderInfoLog(shader);
+      gl.deleteShader(shader);
+      throw new Error(`Shader compile failed: ${log}`);
+    }
+    return shader;
+  }
+
+  const program = gl.createProgram();
+  gl.attachShader(program, compile(gl.VERTEX_SHADER, vsSource));
+  gl.attachShader(program, compile(gl.FRAGMENT_SHADER, fsSource));
+  gl.linkProgram(program);
+  gl.useProgram(program);
+
+  const quad = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+  const posLoc = gl.getAttribLocation(program, 'position');
+  gl.enableVertexAttribArray(posLoc);
+  gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+  const uTime = gl.getUniformLocation(program, 'uTime');
+  const uResolution = gl.getUniformLocation(program, 'uResolution');
+  const uAccent = gl.getUniformLocation(program, 'uAccent');
+  gl.uniform3fv(uAccent, accent);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+  let raf = 0, running = true;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize() {
+    canvas.width = canvas.clientWidth;   // full resolution is fine — a single quad draw is cheap
+    canvas.height = canvas.clientHeight;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform2f(uResolution, canvas.width, canvas.height);
+  }
+  function draw(t) {
+    gl.uniform1f(uTime, reduce ? 0 : t * 0.001);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    if (!reduce) raf = requestAnimationFrame(draw);
+  }
+  resize();
+  draw(0);   // reduced motion: one static frame, exactly noise-canvas's contract
+
+  // WebGL contexts are a scarcer resource than 2D canvas — a lost context (GPU pressure,
+  // tab backgrounding on some platforms, another WebGL-heavy tab) must not throw or hang.
+  const onLost = (e) => { e.preventDefault(); running = false; cancelAnimationFrame(raf); };
+  canvas.addEventListener('webglcontextlost', onLost);
+
+  const io = new IntersectionObserver(([entry]) => {
+    running = entry.isIntersecting && !reduce;
+    if (running && !raf) raf = requestAnimationFrame(draw); else if (!running) cancelAnimationFrame(raf);
+  });
+  io.observe(canvas);
+  const onVis = () => { if (document.hidden) { running = false; cancelAnimationFrame(raf); } };
+  document.addEventListener('visibilitychange', onVis);
+  addEventListener('resize', resize, { passive: true });
+
+  return () => {
+    running = false; cancelAnimationFrame(raf); io.disconnect();
+    canvas.removeEventListener('webglcontextlost', onLost);
+    document.removeEventListener('visibilitychange', onVis);
+    removeEventListener('resize', resize);
+  };
+}
+```
+
+**Cost:** the most expensive technique in this file, honestly. A GPU context, a shader
+compile at init, and a persistent context held for the component's lifetime. The 4×
+CPU-throttle measurement `noise-canvas` asks for is mandatory here, not advisory — profile
+with `designos motion-profile` before shipping, and on a context-loss event or a failed
+`getContext('webgl2')`, fall back to `noise-canvas` rather than a blank canvas.
+
+**Failure mode:** treating this as the default "premium" background instead of the last
+resort it is. If `noise-canvas` can carry the brief, `noise-canvas` is correct — this entry
+is earned by a specific depth/material/scale truth the 2D techniques cannot express, not
+by a preference for "the fancier one." Never combine with `noise-canvas` on the same page;
+they compete for the same atmosphere budget and the difference is invisible to a user who
+cannot see the API underneath.
+
+---
+
 ## Choosing one
 
 | The product's truth | The signature that expresses it |
@@ -580,6 +703,7 @@ they cut. Pad the simpler shape with duplicate vertices.
 | It is a number that matters | odometer |
 | It is atmosphere, craft, a place | noise canvas |
 | It is a set of options to compare | cursor spotlight across the grid |
+| It is real 3D depth, a shader distortion, or a live particle field 2D canvas can't push | raw WebGL shader field — only when noise canvas genuinely cannot express it |
 
 If two rows fit, the brief is not compiled yet — go back to `brain/brief-compiler.md` and
 name the one behaviour the surface must cause.

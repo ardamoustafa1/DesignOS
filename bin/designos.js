@@ -14,6 +14,8 @@
  *   node DesignOS/bin/designos.js skills
  *   node DesignOS/bin/designos.js export <target>   cursor · copilot · windsurf · cline · aider · agentsmd · all
  *   node DesignOS/bin/designos.js audit <dir>
+ *   node DesignOS/bin/designos.js detect [dir] [--rule <id>] [--json] [--out ledger.json]
+ *   node DesignOS/bin/designos.js motion-gaps [dir] [--limit 7] [--json]   (advisory, never fails)
  *   node DesignOS/bin/designos.js review <file-or-dir> [--min 95] [--json] [--no-fail] [--fix-prompt]
  *   node DesignOS/bin/designos.js visual <file-or-url> [--out designos-visual-report.md]
  *   node DesignOS/bin/designos.js report <file-or-dir> [--min 95] [--out designos-report.md]
@@ -88,6 +90,8 @@ const VALUE_FLAGS = new Set([
   '--reason',
   '--edits',
   '--target',
+  '--rule',
+  '--axis',
 ]);
 
 function argValue(args, name, fallback = '') {
@@ -1474,6 +1478,8 @@ switch (cmd) {
   case 'skills': installSkills(); break;
   case 'export': exportRules(rest.find(a => !a.startsWith('--')) || 'all', flags.force); break;
   case 'audit': audit(firstPositional(rest)); break;
+  case 'detect': require('./cli/commands/detect').execute(firstPositional(rest), rest, commandContext()); break;
+  case 'motion-gaps': require('./cli/commands/motion-gaps').execute(firstPositional(rest), rest, commandContext()); break;
   case 'review': review(firstPositional(rest), rest); break;
   case 'visual': visual(firstPositional(rest), rest); break;
   case 'report': report(firstPositional(rest), rest); break;
