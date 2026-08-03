@@ -12,8 +12,11 @@ for a launch page.
 
 - [`flagship-launch/index.html`](flagship-launch/index.html) — the golden. Obeys every rule.
 - [`flagship-launch/lab.html`](flagship-launch/lab.html) — a technique lab that
-  **deliberately** breaks the scarcity law so all ten catalogue entries can be inspected
+  **deliberately** breaks the scarcity law so all ten CSS/Canvas catalogue entries can be inspected
   side by side. It is a reference sheet, not a page to imitate, and it says so at the top.
+  It does not include `signature-moments.md` §11 (raw WebGL shader field) — that entry
+  needs a live GPU context to mean anything, which a static reference page and a CI
+  environment cannot reliably demonstrate; read its recipe directly instead.
 
 ## Load
 

@@ -271,10 +271,20 @@ for (const file of [...walk(path.resolve(target))]) {
 
 const order = { P1: 0, P2: 1, P3: 2 };
 findings.sort((a, b) => order[a.severity] - order[b.severity]);
-for (const f of findings) console.log(`${f.line}  ${f.severity}  ${f.rule}  ${f.detail}`);
 
 const blocking = findings.filter(f => f.severity !== 'P3');
 const advisory = findings.filter(f => f.severity === 'P3');
+
+if (argv.includes('--json')) {
+  const structured = findings.map(f => {
+    const at = f.line.lastIndexOf(':');
+    return { file: f.line.slice(0, at), line: Number(f.line.slice(at + 1)), rule: f.rule, severity: f.severity, message: f.detail };
+  });
+  console.log(JSON.stringify({ target, findings: structured, count: structured.length }, null, 2));
+  process.exit((strict ? findings.length : blocking.length) ? 2 : 0);
+}
+
+for (const f of findings) console.log(`${f.line}  ${f.severity}  ${f.rule}  ${f.detail}`);
 
 if (findings.length) {
   console.log(`\ncheck-aesthetic-slop: ${blocking.length} violation(s), ${advisory.length} advisory`);

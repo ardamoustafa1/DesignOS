@@ -93,7 +93,8 @@ with a comparison table, dark theme"). Resolve deterministically:
 | Dark mode | `foundations/dark-mode.md`, `foundations/colors.md` |
 | RTL, Arabic/Hebrew, i18n layout, locale formatting | `foundations/rtl-i18n.md` |
 | Animation / motion | `motion/` (principles, micro-interactions, page-and-scroll, performance) |
-| Motion implementation, "how do I code this animation" | `motion/recipes.md` + `designos find <query>` |
+| Motion implementation, "how do I code this animation" | `motion/recipes.md` + `designos find <query>`; for React/Vue/Svelte/Solid mount-and-cleanup wiring, `motion/stacks/<framework>.md` |
+| Brief names a *feeling* not a technique ("the bouncy thing", "make it feel alive") | `motion/vocabulary.md` reverse lookup, then the module it points to |
 | "Wow", "unforgettable", "legendary", "award-winning", Awwwards-tier | `brain/wow-calibration.md` FIRST, then `motion/signature-moments.md`, `goldens/flagship-launch.md` |
 | Magnetic cursor, scramble text, spotlight, 3D tilt, split reveal, scroll story, odometer, noise field, morph | `motion/signature-moments.md` |
 | Sound, audio feedback, haptics, vibration | `motion/micro-interactions.md` (Sound & haptics), `native/motion-gestures.md` |

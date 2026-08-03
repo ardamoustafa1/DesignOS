@@ -8,127 +8,252 @@
 <title>DesignOS — The Design Intelligence Operating System for AI Agents</title>
 <link rel="icon" type="image/png" href="logo-3d.png">
 <link rel="apple-touch-icon" href="logo-3d.png">
-<meta name="description" content="Claude, Fable, Cursor, Copilot — any agent. One prompt in, Stripe-grade UI out. 60+ opinionated modules, a self-scoring review engine, and a memory layer. Open source, MIT.">
+<meta name="description" content="Claude, Cursor, Codex, Gemini — any agent. One prompt in, Stripe-grade UI out. 72 opinionated modules, 18 AI tools, 3 design dials, a self-scoring review engine, memory, and a Design System Generator. Open source, MIT.">
 <link rel="canonical" href="https://ardamoustafa1.github.io/DesignOS/website/">
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ardamoustafa1.github.io/DesignOS/website/">
 <meta property="og:title" content="DesignOS — Design Intelligence for AI Agents">
-<meta property="og:description" content="One prompt in, Stripe-grade UI out. The open-source design OS for coding agents. 60+ modules, 24 industry playbooks, self-scoring engine. MIT.">
+<meta property="og:description" content="One prompt in, Stripe-grade UI out. 72 modules · 18 AI tools · 3 design dials · Design System Generator. MIT.">
 <meta property="og:image" content="https://ardamoustafa1.github.io/DesignOS/press/social-preview.png">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="1024">
-<meta property="og:image:alt" content="DesignOS terminal showing a prompt being processed through boot sequence, module routing, contrast fix, and scored delivery.">
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DesignOS — Design Intelligence for AI Agents">
-<meta name="twitter:description" content="One prompt in, Stripe-grade UI out. Open-source design OS for AI coding agents.">
-<meta name="twitter:image" content="https://ardamoustafa1.github.io/DesignOS/press/social-preview.png">
+<meta name="twitter:description" content="One prompt in, Stripe-grade UI out. 72 modules · 18 AI tools · 3 dials · Design System Generator. MIT.">
 <meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
-   DESIGNOS WEBSITE — designed by the system it documents.
-   Both themes deliberate (foundations/dark-mode.md), tokens only
-   (foundations/design-tokens.md), one signature: the boot-log.
+   DESIGNOS WEBSITE v2.2 — fully redesigned SPA
+   boot seq: foundations/dark-mode.md + design-tokens.md + motion/principles.md
    ============================================================ */
+
 :root {
-  --bg-page: #ffffff; --bg-surface: #f8fafc; --bg-surface-raised: #ffffff;
-  --text-primary: #09090b; --text-secondary: #3f3f46; --text-muted: #71717a;
-  --border-default: rgb(9 9 11 / 0.10); --border-strong: rgb(9 9 11 / 0.22);
-  --accent: #059669; --accent-hover: #047857; --accent-text: #047857; --accent-subtle: rgb(5 150 105 / 0.08);
-  --text-on-accent: #ffffff; --success: #10b981; --success-text: #047857;
-  --btn-primary-bg: #047857; --btn-primary-hover: #065f46; --btn-primary-text: #ffffff;
-  --code-bg: #16161a; --code-text: #d4d4d8; --code-muted: #8b8b95;
-  --code-accent: #34d399; --code-green: #10b981; --code-amber: #fbbf24;
-  --traffic-red: #ff5f56; --traffic-amber: #ffbd2e; --traffic-green: #27c93f;
-  --grad-1: #10b981; --grad-2: #059669; --grad-3: #047857;
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
-  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px;
-  --space-8: 32px; --space-12: 48px; --space-16: 64px; --space-24: 96px; --space-32: 128px;
-  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-full: 9999px;
-  --duration-fast: 150ms; --duration-slow: 300ms; --duration-slower: 500ms;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  /* the ONE spring config, system-wide (motion/principles.md easing law 4) */
+  --bg-page:           #ffffff;
+  --bg-surface:        #f8fafc;
+  --bg-surface-raised: #ffffff;
+  --bg-glass:          rgb(255 255 255 / 0.72);
+  --text-primary:      #09090b;
+  --text-secondary:    #3f3f46;
+  --text-muted:        #71717a;
+  --border-default:    rgb(9 9 11 / 0.10);
+  --border-strong:     rgb(9 9 11 / 0.22);
+  --accent:            #059669;
+  --accent-hover:      #047857;
+  --accent-text:       #047857;
+  --accent-subtle:     rgb(5 150 105 / 0.08);
+  --text-on-accent:    #ffffff;
+  --success:           #10b981;
+  --success-text:      #047857;
+  --btn-primary-bg:    #047857;
+  --btn-primary-hover: #065f46;
+  --btn-primary-text:  #ffffff;
+  --code-bg:           #16161a;
+  --code-text:         #d4d4d8;
+  --code-muted:        #a1a1aa;
+  --code-accent:       #34d399;
+  --code-green:        #10b981;
+  --code-amber:        #fbbf24;
+  --code-blue:         #60a5fa;
+  --code-purple:       #a78bfa;
+  --dial-purple-start: #a78bfa;
+  --dial-purple-end:   #6366f1;
+  --dial-amber-start:  #f59e0b;
+  --dial-amber-end:    #ef4444;
+  --traffic-red:       #ff5f56;
+  --traffic-amber:     #ffbd2e;
+  --traffic-green:     #27c93f;
+  --grad-1:            #10b981;
+  --grad-2:            #059669;
+  --grad-3:            #047857;
+  --glow-color:        rgb(16 185 129 / 0.18);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* spacing — 4px grid */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  --space-24: 96px; --space-32: 128px;
+
+  /* radius */
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* motion — principles.md */
+  --dur-fast:   150ms;
+  --dur-base:   250ms;
+  --dur-slow:   300ms;
+  --dur-slower: 500ms;
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
   --container: 1140px;
 }
+
+/* Dark mode — foundations/dark-mode.md */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg-page: #09090b; --bg-surface: #121214; --bg-surface-raised: #18181b;
+    --bg-glass: rgb(9 9 11 / 0.72);
     --text-primary: #fafafa; --text-secondary: #d4d4d8; --text-muted: #9f9ea6;
     --border-default: rgb(255 255 255 / 0.09); --border-strong: rgb(255 255 255 / 0.18);
-    --accent: #10b981; --accent-hover: #34d399; --accent-text: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
-    --text-on-accent: #09090b; --success: #34d399; --success-text: #34d399;
+    --accent: #10b981; --accent-hover: #34d399; --accent-text: #34d399;
+    --accent-subtle: rgb(16 185 129 / 0.12);
+    --text-on-accent: #09090b;
     --btn-primary-bg: #10b981; --btn-primary-hover: #34d399; --btn-primary-text: #042f1e;
     --code-bg: #101013;
     --grad-1: #a7f3d0; --grad-2: #34d399; --grad-3: #10b981;
+    --glow-color: rgb(52 211 153 / 0.14);
   }
 }
 :root[data-theme="dark"] {
   --bg-page: #09090b; --bg-surface: #121214; --bg-surface-raised: #18181b;
+  --bg-glass: rgb(9 9 11 / 0.72);
   --text-primary: #fafafa; --text-secondary: #d4d4d8; --text-muted: #9f9ea6;
   --border-default: rgb(255 255 255 / 0.09); --border-strong: rgb(255 255 255 / 0.18);
-  --accent: #10b981; --accent-hover: #34d399; --accent-text: #34d399; --accent-subtle: rgb(16 185 129 / 0.12);
-  --text-on-accent: #09090b; --success: #34d399; --success-text: #34d399;
+  --accent: #10b981; --accent-hover: #34d399; --accent-text: #34d399;
+  --accent-subtle: rgb(16 185 129 / 0.12);
+  --text-on-accent: #09090b;
   --btn-primary-bg: #10b981; --btn-primary-hover: #34d399; --btn-primary-text: #042f1e;
   --code-bg: #101013;
   --grad-1: #a7f3d0; --grad-2: #34d399; --grad-3: #10b981;
+  --glow-color: rgb(52 211 153 / 0.14);
 }
+
+/* ── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--bg-page); color: var(--text-secondary); font-family: var(--font-sans); font-size: 1rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  background: var(--bg-page);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* ── Utilities ─────────────────────────────────────────────── */
 .container { max-width: var(--container); margin-inline: auto; padding-inline: var(--space-6); }
 h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 1.15; text-wrap: balance; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 ::selection { background: var(--btn-primary-bg); color: var(--btn-primary-text); }
-.eyebrow { display: block; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: var(--space-4); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--accent-text);
+  padding: 4px 12px; border-radius: var(--radius-full);
+  background: var(--accent-subtle); border: 1px solid rgb(5 150 105 / 0.2);
+  margin-bottom: var(--space-4);
+}
+.eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; }
+.a11y-status { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0; }
 
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); height: 48px; padding-inline: var(--space-6); border-radius: var(--radius-md); border: 1px solid transparent; font: inherit; font-size: 0.9375rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out); }
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--space-2); height: 48px; padding-inline: var(--space-6);
+  border-radius: var(--radius-md); border: 1px solid transparent;
+  font: inherit; font-size: 0.9375rem; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
 .btn:active { transform: translateY(1px); }
-.btn-primary { background: var(--btn-primary-bg); color: var(--btn-primary-text); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.14), 0 8px 24px rgb(16 185 129 / 0.25); font-weight: 700; }
-.btn-primary:hover { background: var(--btn-primary-hover); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.22), 0 12px 32px rgb(16 185 129 / 0.35); }
-/* slop-ok: the ghost button sits on the hero's gradient field, so the blur is the depth
-   cue that separates control from background — not decoration on a flat surface. */
-.btn-ghost { color: var(--text-primary); background: rgb(255 255 255 / 0.04); border-color: var(--border-strong); backdrop-filter: blur(8px); }
-.btn-ghost:hover { background: rgb(255 255 255 / 0.09); border-color: var(--text-primary); }
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.14), 0 8px 24px rgb(16 185 129 / 0.28);
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background: var(--btn-primary-hover);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.22), 0 12px 32px rgb(16 185 129 / 0.38);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  color: var(--text-primary);
+  background: var(--bg-glass);
+  border-color: var(--border-strong);
+}
+.btn-ghost:hover {
+  background: var(--bg-surface-raised);
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
+.btn-sm { height: 36px; font-size: 0.875rem; padding-inline: var(--space-4); }
+.nav-actions .btn { min-height: 44px; }
 
-/* nav */
-.nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg-page) 85%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color var(--duration-fast) var(--ease-out); }
+/* ── Navigation ────────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--bg-page) 85%, transparent);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
 .nav.scrolled { border-bottom-color: var(--border-default); }
-.nav-inner { position:relative; display: flex; align-items: center; min-height: 64px; gap: var(--space-4); }
-.logo { display: flex; align-items: center; gap: var(--space-3); min-width:44px; min-height:44px; font-weight: 800; font-size: 1.45rem; color: var(--text-primary); text-decoration: none; letter-spacing: -0.04em; transition: transform var(--duration-fast) var(--ease-out); }
-.logo:hover { color: var(--text-primary); }
-.logo-img { width: 40px; height: 40px; object-fit: contain; filter: drop-shadow(0 4px 16px rgb(16 185 129 / 0.38)); transition: transform var(--duration-slow) var(--ease-spring), filter var(--duration-slow) var(--ease-out); }
-.logo-text { display: inline-flex; align-items: center; font-weight: 800; letter-spacing: -0.045em; }
-/* --grad-1 (#10b981 = 2.54:1 on white) was removed from this ramp: it failed even the
-   3:1 large-text bar in light mode.
-   slop-ok: wordmark ramp, every stop measured — light #059669 3.77:1 and
-   #047857 5.48:1 on #ffffff; dark #34d399 10.35:1 and #10b981 7.84:1 on #09090b. */
-.logo-os { margin-left: 2px; background: linear-gradient(135deg, var(--grad-2) 0%, var(--grad-3) 55%, var(--btn-primary-hover) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; filter: drop-shadow(0 0 14px rgb(16 185 129 / 0.45)); }
-.nav-links { display: none; gap: var(--space-8); list-style: none; padding: 0; margin-inline: auto; }
-.nav-links a { display: inline-flex; align-items: center; justify-content:center; min-width:44px; min-height: 44px; color: var(--text-secondary); text-decoration: none; font-size: 0.9375rem; font-weight: 500; transition: color var(--duration-fast) var(--ease-out); }
+.nav-inner {
+  display: flex; align-items: center;
+  min-height: 64px; gap: var(--space-4);
+  position: relative;
+}
+.logo {
+  display: flex; align-items: center; gap: var(--space-3);
+  min-width: 44px; min-height: 44px;
+  font-weight: 800; font-size: 1.45rem;
+  color: var(--text-primary); text-decoration: none;
+  letter-spacing: -0.04em;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.logo-img {
+  width: 38px; height: 38px; object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgb(16 185 129 / 0.4));
+  transition: transform var(--dur-slow) var(--ease-spring), filter var(--dur-slow) var(--ease-out);
+}
+.logo:hover .logo-img { transform: rotate(12deg) scale(1.14); filter: drop-shadow(0 6px 20px rgb(16 185 129 / 0.55)); }
+.logo-os {
+  margin-left: 2px;
+  /* slop-ok: wordmark ramp — stops measured: #059669 3.77:1 · #047857 5.48:1 on white */
+  background: linear-gradient(135deg, var(--grad-2) 0%, var(--grad-3) 55%, var(--btn-primary-hover) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+.nav-links {
+  display: none; gap: var(--space-8); list-style: none; padding: 0; margin-inline: auto;
+}
+.nav-links a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px;
+  color: var(--text-secondary); text-decoration: none;
+  font-size: 0.9375rem; font-weight: 500;
+  transition: color var(--dur-fast) var(--ease-out);
+}
 .nav-links a:hover { color: var(--text-primary); }
-.nav-menu-btn { display:inline-flex; align-items:center; justify-content:center; flex:0 0 44px; width:44px; height:44px; border:1px solid var(--border-default); border-radius:var(--radius-full); background:var(--bg-surface-raised); color:var(--text-secondary); cursor:pointer; }
-.nav-menu-btn svg { width:20px; height:20px; }
-@media (max-width:959px) {
-  .nav-links[data-open="true"] { position:absolute; top:calc(100% + var(--space-2)); inset-inline:0; display:grid; gap:var(--space-2); padding:var(--space-3); background:var(--bg-surface-raised); border:1px solid var(--border-default); border-radius:var(--radius-md); box-shadow:0 16px 40px rgb(22 22 26 / .16); }
-  .nav-links[data-open="true"] a { width:100%; padding-inline:var(--space-4); }
+.nav-actions { display: flex; align-items: center; gap: var(--space-3); margin-left: auto; }
+.nav-menu-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 44px; width: 44px; height: 44px;
+  border: 1px solid var(--border-default); border-radius: var(--radius-full);
+  background: var(--bg-surface-raised); color: var(--text-secondary); cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
 }
-.nav .btn { min-height: 44px; padding-inline: var(--space-4); font-size: 0.875rem; margin-left: auto; white-space: nowrap; }
-@media (max-width: 479px) {
-  .container { padding-inline: var(--space-4); }
-  .logo-text { display: none; }
-  .nav .btn { width: 44px; padding-inline: 0; }
-  .nav .btn span { display: none; }
+.nav-menu-btn:hover { color: var(--text-primary); border-color: var(--border-strong); }
+.nav-menu-btn svg { width: 18px; height: 18px; }
+.theme-toggle-btn {
+  display: inline-flex; flex: 0 0 44px; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: var(--radius-full);
+  background: var(--bg-surface-raised); border: 1px solid var(--border-default);
+  color: var(--text-secondary); cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
 }
-@media (min-width: 960px) { .nav-inner { gap: var(--space-8); } .nav-links { display: flex; } .nav .btn { margin-left: 0; } .nav-menu-btn { display:none; } }
-.theme-toggle-btn { display: inline-flex; flex: 0 0 44px; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--bg-surface-raised); border: 1px solid var(--border-default); color: var(--text-secondary); cursor: pointer; transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out); }
-.theme-toggle-btn:hover { color: var(--text-primary); border-color: var(--border-strong); box-shadow: 0 4px 12px var(--accent-subtle); }
-.theme-toggle-btn:active { transform: translateY(0); }
-.theme-toggle-btn svg { width: 16px; height: 16px; transition: transform var(--duration-slow) var(--ease-spring); }
-.a11y-status { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+.theme-toggle-btn:hover { color: var(--text-primary); border-color: var(--border-strong); }
+.theme-toggle-btn svg { width: 16px; height: 16px; transition: transform var(--dur-slow) var(--ease-spring); }
+.theme-toggle-btn:hover svg { transform: rotate(18deg) scale(1.1); }
 .theme-toggle-btn .icon-sun { display: none; }
 .theme-toggle-btn .icon-moon { display: block; }
 :root[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; }
@@ -137,156 +262,475 @@ h1, h2, h3 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 
   :root:not([data-theme="light"]) .theme-toggle-btn .icon-sun { display: block; }
   :root:not([data-theme="light"]) .theme-toggle-btn .icon-moon { display: none; }
 }
-
-
-/* hero */
-.hero { position: relative; padding-block: var(--space-24) var(--space-16); overflow: hidden; }
-@media (min-width: 1024px) { .hero { padding-block: var(--space-32) var(--space-24); } }
-.hero::before { content: ""; position: absolute; top: -120px; right: 15%; width: 520px; height: 520px; border-radius: var(--radius-full); background: radial-gradient(circle, rgb(16 185 129 / 0.08) 0%, transparent 70%); pointer-events: none; filter: blur(40px); }
-.hero-grid { display: grid; gap: var(--space-12); align-items: center; position: relative; z-index: 2; }
-.hero-grid > * { min-width: 0; }
-@media (min-width: 1024px) { .hero-grid { grid-template-columns: 58fr 42fr; } }
-.hero h1 { font-size: clamp(2.15rem, 2.8vw + 1rem, 3.25rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.12; margin-bottom: var(--space-6); }
-/* slop-ok: display line, stops measured. Light: #09090b = 20.1:1, grad-2 #059669 = 3.77:1,
-   grad-3 #047857 = 5.48:1 on #ffffff — all clear the 3:1 large-text bar. The previous ramp
-   ended on --grad-1 (#10b981 = 2.54:1 on white), a real AA failure on the page's own h1. */
-.hero h1 em { font-style: normal; display: block; margin-top: 4px; background: linear-gradient(135deg, var(--text-primary) 0%, var(--grad-2) 55%, var(--grad-3) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 12px rgb(16 185 129 / 0.15)); }
-/* slop-ok: same display line in dark. Stops on #09090b: #ffffff 19.9:1, #d4d4d8 13.46:1,
-   #34d399 10.35:1, #10b981 7.84:1 — the whole ramp clears AA body, not just large text. */
-:root[data-theme="dark"] .hero h1 em { background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 35%, #34d399 75%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgb(16 185 129 / 0.22)); }
-@media (prefers-color-scheme: dark) {
-  /* slop-ok: system-preference mirror of the measured dark ramp above. */
-  :root:not([data-theme="light"]) .hero h1 em { background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 35%, #34d399 75%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgb(16 185 129 / 0.22)); }
+@media (max-width: 959px) {
+  .nav-links[data-open="true"] {
+    position: absolute; top: calc(100% + var(--space-2)); inset-inline: 0; display: grid;
+    gap: var(--space-2); padding: var(--space-3); background: var(--bg-surface-raised);
+    border: 1px solid var(--border-default); border-radius: var(--radius-md);
+    box-shadow: 0 16px 40px rgb(22 22 26 / 0.16);
+  }
+  .nav-links[data-open="true"] a { width: 100%; padding-inline: var(--space-4); }
 }
-.hero-sub { font-size: 1.1875rem; line-height: 1.68; max-width: 44ch; margin-bottom: var(--space-8); color: var(--text-secondary); }
+@media (max-width: 479px) {
+  .container { padding-inline: var(--space-4); }
+  .nav-actions .btn span { display: none; }
+  .nav-actions .btn { width: 44px; padding-inline: 0; }
+}
+@media (min-width: 960px) {
+  .nav-inner { gap: var(--space-8); }
+  .nav-links { display: flex; }
+  .nav-menu-btn { display: none; }
+  .nav-actions { margin-left: 0; }
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding-block: var(--space-24) var(--space-16);
+  overflow: hidden;
+}
+@media (min-width: 1024px) { .hero { padding-block: 120px 96px; } }
+
+/* Ambient glow — motion/visual-effects.md */
+.hero-glow {
+  position: absolute; pointer-events: none; z-index: 0;
+  border-radius: 50%; filter: blur(60px);
+}
+.hero-glow-1 {
+  top: -80px; right: 10%; width: 600px; height: 600px;
+  background: radial-gradient(circle, rgb(16 185 129 / 0.10) 0%, transparent 70%);
+}
+.hero-glow-2 {
+  bottom: 0; left: -5%; width: 400px; height: 400px;
+  background: radial-gradient(circle, rgb(99 102 241 / 0.05) 0%, transparent 70%);
+}
+
+.hero-inner {
+  display: grid; gap: var(--space-12); align-items: center;
+  position: relative; z-index: 2;
+}
+.hero-inner > * { min-width: 0; }
+@media (min-width: 1024px) { .hero-inner { grid-template-columns: 55fr 45fr; } }
+
+.hero-copy { position: relative; }
+.hero-stage {
+  --stage-rx: 0deg;
+  --stage-ry: 0deg;
+  --stage-x: 0px;
+  --stage-y: 0px;
+  position: relative;
+  perspective: 1200px;
+  isolation: isolate;
+}
+.hero-stage::before {
+  content: '';
+  position: absolute;
+  inset: 8% 0 -12%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow-color), transparent 68%);
+  opacity: .8;
+  transform: translate3d(var(--stage-x), var(--stage-y), 0);
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+.hero-stage > .term {
+  transform: rotateX(var(--stage-rx)) rotateY(var(--stage-ry)) translateZ(0);
+  transform-origin: 50% 60%;
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.hero-stage[data-active="true"] > .term {
+  border-color: rgb(52 211 153 / .28);
+  box-shadow: 0 40px 88px rgb(22 22 26 / .24), 0 0 0 1px rgb(52 211 153 / .12), 0 0 72px var(--glow-color);
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 4px 12px; border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface-raised);
+  font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.hero-badge:hover { border-color: var(--border-strong); }
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.hero-badge .tag { background: var(--accent-subtle); color: var(--accent-text); padding: 0 8px; border-radius: var(--radius-full); font-weight: 600; font-size: 0.75rem; }
+
+h1.hero-title {
+  font-size: clamp(2.2rem, 3vw + 1rem, 3.5rem);
+  font-weight: 800; letter-spacing: -0.04em; line-height: 1.1;
+  margin-bottom: var(--space-6);
+}
+.hero-title em {
+  font-style: normal; display: block; margin-top: 8px;
+  color: var(--accent-text);
+  filter: drop-shadow(0 4px 12px rgb(16 185 129 / 0.15));
+}
+
+.hero-sub {
+  font-size: 1.125rem; line-height: 1.72; max-width: 46ch;
+  margin-bottom: var(--space-8); color: var(--text-secondary);
+}
 .hero-cta { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
-.hero-note { width: 100%; font-size: 0.8125rem; color: var(--text-muted); margin-top: var(--space-3); font-family: var(--font-mono); }
+.hero-note {
+  width: 100%; font-size: 0.8125rem; color: var(--text-muted);
+  margin-top: var(--space-3); font-family: var(--font-mono);
+}
+.text-link { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* ── Terminal ──────────────────────────────────────────────── */
+.term {
+  background: var(--code-bg);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  font-family: var(--font-mono); font-size: 0.8125rem;
+  box-shadow: 0 32px 64px rgb(22 22 26 / 0.18), 0 0 0 1px rgb(255 255 255 / 0.04);
+}
+.term-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+  background: rgb(255 255 255 / 0.02);
+}
+.term-bar .term-title {
+  margin: 0 auto; font-size: 0.75rem; color: var(--code-muted); letter-spacing: 0.04em;
+}
+.traffic { width: 12px; height: 12px; border-radius: 50%; cursor: pointer;
+  border: 1px solid rgb(0 0 0 / 0.15); flex-shrink: 0; }
+.traffic-red   { background: var(--traffic-red); } /* drift-ok: macOS platform constant */
+.traffic-amber { background: var(--traffic-amber); } /* drift-ok: macOS platform constant */
+.traffic-green { background: var(--traffic-green); } /* drift-ok: macOS platform constant */
+.traffic:hover { filter: brightness(1.1); }
+.term pre {
+  padding: var(--space-6); line-height: 2;
+  color: var(--code-text); overflow-x: auto;
+}
+.t-muted  { color: var(--code-muted); }
+.t-acc    { color: var(--code-accent); font-weight: 600; }
+.t-ok     { color: var(--code-green); }
+.t-amb    { color: var(--code-amber); }
+.t-blue   { color: var(--code-blue); }
+.t-purple { color: var(--code-purple); }
+
+/* ── Terminal cursor — intentionally still; the terminal itself is the signature. */
+.cursor { display: inline-block; width: 8px; height: 16px; background: var(--code-accent); vertical-align: middle; border-radius: 1px; margin-left: 2px; }
+
+/* ── Stagger reveal animations */
 @media (prefers-reduced-motion: no-preference) {
-  .rise { opacity: 0; transform: translateY(14px); animation: rise var(--duration-slower) var(--ease-out) forwards; }
-  .hero .rise { opacity:1; transform:none; animation:none; }
-  .rise:nth-child(2) { animation-delay: 70ms; } .rise:nth-child(3) { animation-delay: 140ms; }
+  .hero-copy > *, .hero-stage {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero-arrive var(--dur-slower) var(--ease-out) forwards;
+  }
+  .hero-copy > :nth-child(2) { animation-delay: 70ms; }
+  .hero-copy > :nth-child(3) { animation-delay: 140ms; }
+  .hero-copy > :nth-child(4) { animation-delay: 210ms; }
+  .hero-stage { animation-delay: 140ms; }
+  @keyframes hero-arrive { to { opacity: 1; transform: none; } }
+
+  .rise {
+    opacity: 0; transform: translateY(18px);
+    animation: rise var(--dur-slower) var(--ease-out) forwards;
+  }
+  .hero .rise { opacity: 1; transform: none; animation: none; }
+  .rise:nth-child(2) { animation-delay: 60ms; }
+  .rise:nth-child(3) { animation-delay: 120ms; }
+  .rise:nth-child(4) { animation-delay: 180ms; }
   @keyframes rise { to { opacity: 1; transform: none; } }
+
+  /* Scroll-driven reveal — page-and-scroll.md */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity var(--dur-slower) var(--ease-out), transform var(--dur-slower) var(--ease-out);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal:nth-child(2) { transition-delay: 60ms; }
+  .reveal:nth-child(3) { transition-delay: 120ms; }
+  .reveal:nth-child(4) { transition-delay: 180ms; }
+  .reveal:nth-child(5) { transition-delay: 240ms; }
+  .reveal:nth-child(6) { transition-delay: 300ms; }
 }
 
-/* the signature: boot log terminal */
-.term { background: var(--code-bg); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; font-family: var(--font-mono); font-size: 0.8125rem; box-shadow: 0 24px 48px rgb(22 22 26 / 0.12); }
-.term-bar { display: flex; align-items: center; gap: 8px; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-default); }
-.term-bar i { display: inline-block; width: 12px; height: 12px; border-radius: var(--radius-full); cursor: pointer; transition: filter var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out); background-repeat: no-repeat; background-position: center; border: 1px solid rgb(0 0 0 / 0.15); }
-.term-bar i:nth-child(1) { background-color: var(--traffic-red); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d0000' stroke-width='1.5' stroke-linecap='round' d='M1.5 1.5l5 5m0-5l-5 5'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light red is a platform constant, not a theme color */
-.term-bar i:nth-child(2) { background-color: var(--traffic-amber); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath stroke='%234d3300' stroke-width='1.6' stroke-linecap='round' d='M1.2 4h5.6'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light amber is a platform constant, not a theme color */
-.term-bar i:nth-child(3) { background-color: var(--traffic-green); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 8 8'%3E%3Cpath fill='%23004e14' d='M1.5 1h3.5L1 5.5V1.5A.5.5 0 0 1 1.5 1zm5 6H3L7 2.5V6.5a.5.5 0 0 1-.5.5z'/%3E%3C/svg%3E"); } /* drift-ok: macOS traffic-light green is a platform constant, not a theme color */
-.term-bar i:hover { filter: brightness(1.1); }
-
-.term pre { max-width: 100%; padding: var(--space-4) var(--space-6) var(--space-6); line-height: 1.9; color: var(--code-text); overflow-x: auto; }
-.t-muted { color: var(--code-muted); } .t-acc { color: var(--code-accent); }
-.t-ok { color: var(--code-green); } .t-amb { color: var(--code-amber); }
-
-/* sections */
+/* ── Sections ──────────────────────────────────────────────── */
 .section { padding-block: var(--space-24); }
-.section.tint { background: transparent; border-block: 0; }
-.section-head { max-width: 620px; margin-bottom: var(--space-16); }
+.section-head { max-width: 640px; margin-bottom: var(--space-16); }
 .section-head h2 { font-size: clamp(1.75rem, 2.5vw + 0.8rem, 2.5rem); margin-bottom: var(--space-4); }
-.section-head p { font-size: 1.125rem; }
+.section-head p  { font-size: 1.125rem; }
+.divider { height: 1px; background: var(--border-default); }
 
-/* layers bento */
-.layers { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.layer { background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-6); transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out); }
-.layer:hover { border-color: var(--border-strong); }
-.layer .n { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-text); font-weight: 600; }
+/* ── Stats strip ───────────────────────────────────────────── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-8); padding-block: var(--space-16);
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+}
+.stat b {
+  display: block; font-size: 2.75rem; font-weight: 800;
+  color: var(--text-primary); letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums; line-height: 1.05;
+  margin-bottom: var(--space-2);
+}
+.stat span { display: block; font-size: 0.9375rem; font-weight: 500; color: var(--text-secondary); }
+
+/* ── Feature grid (layers) ─────────────────────────────────── */
+.layers { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.layer {
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  position: relative; overflow: hidden;
+}
+.layer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-subtle), transparent);
+  opacity: 0; transition: opacity var(--dur-fast) var(--ease-out);
+}
+.layer:hover { border-color: var(--border-strong); box-shadow: 0 8px 24px rgb(0 0 0 / 0.08); transform: translateY(-2px); }
+.layer:hover::before { opacity: 1; }
+.layer-num { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-text); font-weight: 600; }
 .layer h3 { font-size: 1.0625rem; margin: var(--space-2) 0 var(--space-2); }
-.layer p { font-size: 0.9063rem; }
-.layer .dirs { display: block; margin-top: var(--space-3); font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+.layer p  { font-size: 0.9063rem; }
+.layer-dirs { display: block; margin-top: var(--space-3); font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
 
-/* stats strip */
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: var(--space-8); text-align: left; padding-block: var(--space-12); border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
-.stat { background: transparent; border: 0; border-radius: 0; padding: 0; box-shadow: none; }
-.stat b { display: block; font-size: 2.85rem; font-weight: 700; color: var(--text-primary); background: none; -webkit-text-fill-color: var(--text-primary); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; line-height: 1.05; margin-bottom: var(--space-2); }
-.stat span { display: block; font-size: 0.9375rem; font-weight: 500; color: var(--text-secondary); letter-spacing: -0.01em; text-transform: none; }
+/* ── New features highlight (dials, generator, multi-tool) ─── */
+.features-new { display: grid; gap: var(--space-6); }
+@media (min-width: 768px) { .features-new { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .features-new { grid-template-columns: 1fr 1fr 1fr; } }
 
-/* score table */
+.feature-card {
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative; overflow: hidden;
+  transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.feature-card.featured {
+  border-color: var(--accent-subtle);
+  background: linear-gradient(135deg, var(--bg-surface-raised) 0%, color-mix(in srgb, var(--bg-surface-raised) 85%, var(--accent) 15%) 100%);
+}
+.feature-card:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: 0 16px 40px rgb(0 0 0 / 0.10); }
+.feature-icon {
+  width: 48px; height: 48px; border-radius: var(--radius-md);
+  background: var(--accent-subtle); border: 1px solid var(--border-default);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; margin-bottom: var(--space-4);
+}
+.feature-card h3 { font-size: 1.125rem; margin-bottom: var(--space-2); }
+.feature-card p  { font-size: 0.9375rem; line-height: 1.6; }
+.feature-card .code-snippet {
+  margin-top: var(--space-4); background: var(--code-bg);
+  border: 1px solid rgb(255 255 255 / 0.06);
+  border-radius: var(--radius-md); padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono); font-size: 0.75rem; color: var(--code-accent);
+  overflow-x: auto;
+}
+.feature-card .badge-new {
+  position: absolute; top: var(--space-4); right: var(--space-4);
+  background: var(--btn-primary-bg); color: var(--btn-primary-text);
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 2px 8px; border-radius: var(--radius-full);
+}
+
+/* ── Dial visualizer ───────────────────────────────────────── */
+.dials-demo {
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  font-family: var(--font-mono); font-size: 0.875rem;
+}
+.dials-demo h3 { font-size: 1rem; margin-bottom: var(--space-6); font-family: var(--font-sans); }
+.dial-row {
+  display: flex; align-items: center; gap: var(--space-4); width: 100%;
+  min-height: 44px; margin-bottom: var(--space-2); padding: 0; border: 0;
+  color: inherit; background: transparent; font: inherit; text-align: left;
+  cursor: pointer;
+}
+.dial-row:focus-visible { outline-offset: 6px; }
+.dial-label { width: 120px; font-size: 0.75rem; color: var(--text-muted); flex-shrink: 0; }
+.dial-track { flex: 1; height: 8px; background: var(--bg-surface); border-radius: var(--radius-full); overflow: hidden; }
+.dial-fill {
+  width: 100%; height: 100%; border-radius: var(--radius-full);
+  transform: scaleX(var(--dial-fill)); transform-origin: left center;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.dial-fill-green  { background: linear-gradient(90deg, var(--accent), var(--grad-1)); }
+.dial-fill-purple { background: var(--dial-purple-end); }
+.dial-fill-amber  { background: linear-gradient(90deg, var(--dial-amber-start), var(--dial-amber-end)); }
+.dial-value { width: 40px; text-align: right; font-size: 0.8125rem; color: var(--text-secondary); }
+.dial-interactive { cursor: pointer; }
+.dial-interactive:hover .dial-fill { filter: brightness(1.15); }
+
+/* ── Tools grid ────────────────────────────────────────────── */
+.tools-grid {
+  display: flex; flex-wrap: wrap; gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+.tool-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 4px 12px; border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface-raised);
+  font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary);
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.tool-tag:hover { border-color: var(--border-strong); color: var(--text-primary); transform: translateY(-1px); }
+.tool-tag.new { border-color: var(--accent-subtle); color: var(--accent-text); background: color-mix(in srgb, var(--bg-surface-raised) 85%, var(--accent) 15%); }
+.tool-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.5; }
+
+/* ── Score card ────────────────────────────────────────────── */
 .score-grid { display: grid; gap: var(--space-12); align-items: center; }
 .score-grid > * { min-width: 0; }
 @media (min-width: 1024px) { .score-grid { grid-template-columns: 1fr 1fr; } }
-.score-card { background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; font-size: 0.9063rem; }
-.score-card .row { display: flex; justify-content: space-between; align-items: center; padding: var(--space-3) var(--space-6); border-bottom: 1px solid var(--border-default); }
-.score-card .row:last-child { border-bottom: 0; }
-.score-card b { color: var(--text-primary); font-weight: 500; }
-.score-card .val { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--success-text); font-weight: 600; }
-.score-card .val.gate { color: var(--text-muted); }
-
-/* showcase */
-.shots { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
-@media (min-width: 768px) { .shots { grid-template-columns: repeat(4, 1fr); } }
-/* shadow lives on ::after and crossfades by opacity — animating box-shadow directly is a
-   paint storm (motion/performance.md "Shadow hover: two layered shadows via ::after") */
-.shot { position: relative; display: flex; flex-direction: column; background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out); }
-.shot::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 12px 28px rgb(0 0 0 / 0.22); opacity: 0; pointer-events: none; transition: opacity var(--duration-fast) var(--ease-out); }
-.shot:hover { border-color: var(--border-strong); }
-.shot:hover::after { opacity: 1; }
-.shot .k { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-text); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: var(--space-2); }
-.shot h3 { font-size: 1.125rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; margin: 0 0 var(--space-2); }
-.shot p { font-size: 0.875rem; line-height: 1.5; color: var(--text-muted); margin: 0; }
-
-/* quickstart */
-.quick { max-width: 720px; }
-.quick .term { box-shadow: none; margin-block: var(--space-6); }
-.copy-btn { min-width: 44px; min-height: 44px; margin-left: auto; font: inherit; font-family: var(--font-mono); font-size: 0.75rem; color: var(--code-muted); background: transparent; border: 1px solid rgb(255 255 255 / 0.15); border-radius: var(--radius-sm); padding: 4px 12px; cursor: pointer; }
-.copy-btn:hover { color: var(--code-text); }
-
-/* cta band + footer */
-.cta-band { text-align: center; }
-.cta-band h2 { font-size: clamp(1.75rem, 3vw + 0.8rem, 2.75rem); margin-bottom: var(--space-8); }
-footer { border-top: 1px solid var(--border-default); padding-block: var(--space-16) var(--space-12); }
-.section p > a, footer a { display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; }
-.footer-inner { display: flex; flex-wrap: wrap; gap: var(--space-6); justify-content: space-between; align-items: center; font-size: 0.8125rem; color: var(--text-muted); }
-.footer-inner a { color: var(--text-muted); text-decoration: none; margin-left: var(--space-4); transition: color var(--duration-fast) var(--ease-out); }
-.footer-inner a:hover { color: var(--text-primary); }
-.footer-inner > div { min-width:0; max-width:100%; }
-.footer-inner > div > span { display:block; overflow-wrap:anywhere; }
-.creator-link { color: var(--text-primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
-.creator-link { flex-wrap:wrap; max-width:100%; overflow-wrap:anywhere; }
-.creator-link .handle { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-text); }
-.creator-link:hover { color: var(--accent); border-bottom-color: var(--text-primary); }
-@media (hover: hover) and (pointer: fine) {
-  .btn-primary:hover, .btn-ghost:hover, .theme-toggle-btn:hover, .layer:hover, .shot:hover { transform: translateY(-1px); }
-  .logo:hover { transform: scale(1.02); }
-  .logo:hover .logo-img { transform: rotate(14deg) scale(1.15); }
-  .theme-toggle-btn:hover svg { transform: rotate(20deg) scale(1.1); }
-  .term-bar i:hover { transform: scale(1.08); }
-  .layer:hover, .shot:hover { transform: translateY(-2px); }
+.score-card {
+  background: var(--code-bg);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: var(--radius-xl);
+  overflow: hidden; font-size: 0.9063rem;
+  box-shadow: 0 24px 48px rgb(22 22 26 / 0.14);
 }
+.score-card-header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+  display: flex; align-items: center; gap: var(--space-3);
+  font-family: var(--font-mono); font-size: 0.8125rem; color: var(--code-muted);
+}
+.score-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: var(--space-3) var(--space-6);
+  border-bottom: 1px solid rgb(255 255 255 / 0.04);
+}
+.score-row:last-child { border-bottom: 0; }
+.score-row b { color: var(--code-text); font-weight: 400; }
+.score-val { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--code-green); font-weight: 600; }
+.score-val.gate { color: var(--code-muted); }
+.score-bar { height: 4px; border-radius: 2px; background: rgb(255 255 255 / 0.06); margin-top: 8px; overflow: hidden; }
+.score-bar-fill { height: 100%; border-radius: 2px; background: var(--code-green); }
 
+/* ── Showcase cards ────────────────────────────────────────── */
+.shots { display: grid; gap: var(--space-4); }
+@media (min-width: 640px) { .shots { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .shots { grid-template-columns: repeat(4, 1fr); } }
+.shot {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--bg-surface-raised); border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+  text-decoration: none;
+  transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  overflow: hidden;
+}
+.shot::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  background: linear-gradient(135deg, var(--accent-subtle) 0%, transparent 60%);
+  opacity: 0; transition: opacity var(--dur-fast) var(--ease-out);
+}
+.shot:hover { border-color: var(--border-strong); transform: translateY(-3px); box-shadow: 0 12px 28px rgb(0 0 0 / 0.10); }
+.shot:hover::before { opacity: 1; }
+.shot .k {
+  font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-text);
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+.shot h3 { font-size: 1.0625rem; font-weight: 700; color: var(--text-primary); margin: 0 0 var(--space-2); }
+.shot p  { font-size: 0.875rem; line-height: 1.5; color: var(--text-muted); margin: 0; }
+.shot-arrow {
+  margin-top: auto; padding-top: var(--space-4);
+  font-size: 0.8125rem; color: var(--accent-text); font-weight: 600;
+  display: flex; align-items: center; gap: 4px;
+  transition: gap var(--dur-fast) var(--ease-out);
+}
+.shot:hover .shot-arrow { gap: 8px; }
+
+/* ── Quickstart ────────────────────────────────────────────── */
+.quick { max-width: 740px; }
+.quick .term { margin-block: var(--space-6); }
+.copy-btn {
+  min-width: 44px; min-height: 44px; margin-left: auto;
+  font: inherit; font-family: var(--font-mono); font-size: 0.75rem;
+  color: var(--code-muted); background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.12); border-radius: var(--radius-sm);
+  padding: 4px 12px; cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.copy-btn:hover { color: var(--code-text); background: rgb(255 255 255 / 0.10); }
+
+/* ── CTA band ──────────────────────────────────────────────── */
+.cta-band {
+  text-align: center;
+  padding-block: var(--space-24);
+  position: relative; overflow: hidden;
+}
+.cta-band::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  pointer-events: none; filter: blur(40px);
+}
+.cta-band h2 { font-size: clamp(1.75rem, 3vw + 0.8rem, 2.75rem); margin-bottom: var(--space-8); position: relative; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: center; position: relative; }
+
+/* ── Footer ────────────────────────────────────────────────── */
+footer { border-top: 1px solid var(--border-default); padding-block: var(--space-16) var(--space-12); }
+.footer-inner {
+  display: flex; flex-wrap: wrap; gap: var(--space-6);
+  justify-content: space-between; align-items: flex-start;
+}
+.footer-brand { flex: 1; min-width: 200px; }
+.footer-brand-name { display: flex; align-items: center; gap: var(--space-2); font-weight: 800; font-size: 1.125rem; color: var(--text-primary); margin-bottom: var(--space-2); }
+.footer-tagline { font-size: 0.875rem; color: var(--text-muted); }
+.footer-creator { margin-top: var(--space-3); font-size: 0.8125rem; color: var(--text-muted); }
+.creator-link { color: var(--text-primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; gap: 4px; border-bottom: 1px solid var(--accent); }
+.creator-link:hover { color: var(--accent); }
+.footer-nav { display: flex; flex-direction: column; gap: var(--space-2); }
+.footer-nav a { color: var(--text-muted); text-decoration: none; font-size: 0.875rem; display: inline-flex; align-items: center; min-height: 44px; transition: color var(--dur-fast) var(--ease-out); }
+.footer-nav a:hover { color: var(--text-primary); }
+.footer-copy { width: 100%; padding-top: var(--space-8); border-top: 1px solid var(--border-default); font-size: 0.8125rem; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); }
+
+/* ── Reduced motion ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+@media (max-width: 479px) {
+  .hero-glow { display: none; }
+  .hero-stage::before { inset: 0; }
+  .term pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 }
 </style>
 </head>
 <body>
 <div id="site-announcer" class="a11y-status" role="status" aria-live="polite"></div>
+
+<!-- ── Navigation ─────────────────────────────────────────── -->
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a class="logo" href="#" aria-label="DesignOS home">
       <img src="logo-3d.png" alt="DesignOS Logo" class="logo-img" width="707" height="707">
-      <span class="logo-text">Design<span class="logo-os">OS</span></span>
+      <span>Design<span class="logo-os">OS</span></span>
     </a>
-    <ul class="nav-links" id="primary-navigation">
-      <li><a href="#layers">System</a></li>
-      <li><a href="#engine">Review engine</a></li>
-      <li><a href="suggest.html">Generator</a></li>
+    <ul class="nav-links" id="primary-navigation" role="list">
+      <li><a href="#system">System</a></li>
+      <li><a href="#new-in-v2">What's New</a></li>
+      <li><a href="#engine">Review Engine</a></li>
       <li><a href="#showcase">Showcase</a></li>
       <li><a href="#quickstart">Install</a></li>
     </ul>
-    <div style="display:flex;align-items:center;gap:var(--space-3);margin-left:auto;">
+    <div class="nav-actions">
       <button id="nav-menu-toggle" class="nav-menu-btn" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
       </button>
       <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Switch theme" title="Switch appearance">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2m-4.93-7.07-1.41 1.41M6.34 17.66l-1.41 1.41"></path></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
       </button>
-      <a class="btn btn-primary" href="https://github.com/ardamoustafa1/DesignOS" aria-label="Star DesignOS on GitHub">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      <a class="btn btn-primary btn-sm" href="https://github.com/ardamoustafa1/DesignOS" aria-label="Star DesignOS on GitHub">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         <span>Star on GitHub</span>
       </a>
     </div>
@@ -294,172 +738,400 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1 class="rise">Your AI agent writes flawless code. <em>Now teach it taste.</em></h1>
-        <p class="hero-sub rise"><strong style="color:var(--text-primary);font-weight:800">Design<span class="logo-os">OS</span></strong> is the open-source operating system that gives coding agents design intelligence — 60+ opinionated modules, a self-scoring review engine, and a memory that never forgets a decision.</p>
-        <div class="hero-cta rise">
-          <a class="btn btn-primary" href="#quickstart">Install in one command</a>
-          <a class="btn btn-ghost" href="#showcase">See what it builds →</a>
-          <p class="hero-note">MIT · markdown-native · works with Claude Code, Cursor &amp; any agent</p>
-        </div>
-      </div>
-      <div class="rise" aria-label="DesignOS boot sequence, example">
-        <div class="term">
-          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <pre tabindex="0" aria-label="DesignOS boot sequence transcript"><span class="t-muted">you ›</span> Design a Stripe-level SaaS landing page.
 
-<span class="t-acc">designos</span> boot <span class="t-muted">· kernel v1.2</span>
-<span class="t-ok">✓</span> routed: landing-pages · hero · persuasion
-<span class="t-ok">✓</span> sector: industries/saas.md
-<span class="t-ok">✓</span> memory: brand.md · design.md loaded
-<span class="t-muted">→</span> design loop: research → wireframe → ui …
-<span class="t-amb">▲</span> review: contrast 4.2:1 on muted text — <span class="t-amb">fixing</span>
-<span class="t-ok">✓</span> re-scored: UI 96 · UX 97 · A11y 96 · Perf 97
-<span class="t-ok">✓</span> shipped · decisions → memory/design.md</pre>
-        </div>
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="hero-badge">
+        <span class="dot" aria-hidden="true"></span>
+        v2.2 released
+        <span class="tag">Design System Generator</span>
+      </div>
+      <h1 class="hero-title" id="hero-heading">
+        Your AI agent writes flawless code.
+        <em>Now teach it taste.</em>
+      </h1>
+      <p class="hero-sub">
+        <strong style="color:var(--text-primary);font-weight:800">Design<span class="logo-os">OS</span></strong>
+        is the open-source operating system that gives any coding agent design intelligence —
+        72 opinionated modules, 18 AI tools, 3 design dials, a Design System Generator,
+        and a memory that never forgets a decision.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#quickstart" id="cta-install">Install in one command</a>
+        <a class="btn btn-ghost" href="#new-in-v2" id="cta-new">What's new in v2.2 →</a>
+        <p class="hero-note">MIT · markdown-native · Claude Code, Cursor, Codex, Gemini &amp; 14 more</p>
       </div>
     </div>
-  </section>
-
-  <section class="section tint" aria-label="Numbers">
-    <div class="container stats">
-      <div class="stat"><b>60+</b><span>knowledge modules</span></div>
-      <div class="stat"><b>24</b><span>industry playbooks</span></div>
-      <div class="stat"><b>9</b><span>specialist agents</span></div>
-      <div class="stat"><b>95</b><span>the score threshold</span></div>
-      <div class="stat"><b>1</b><span>command to install</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="layers">
-    <div class="container">
-      <div class="section-head">
-      <!-- slop-ok: section labels double as the page's system-map index; they are
-           navigational taxonomy, not decorative pre-headings. -->
-      <span class="eyebrow">The system</span>
-        <h2>Five layers between a prompt and a shipped screen</h2>
-        <p>Not a prompt pack — an operating system the agent boots into, routing only the modules each task needs.</p>
-      </div>
-      <div class="layers">
-        <div class="layer"><span class="n">01 · KNOWLEDGE</span><h3>Opinionated rules, not vibes</h3><p>Typography scales, spacing grids, 21 component specs, persuasion psychology, motion tokens — every rule with its reason.</p><span class="dirs">foundations/ components/ psychology/ motion/ patterns/ native/</span></div>
-        <div class="layer"><span class="n">02 · LOOPS</span><h3>Process that catches what talent misses</h3><p>Research → wireframe → UI → review → accessibility → performance → SEO → refactor. No stage skipped, ever.</p><span class="dirs">loops/ workflows/ checklists/</span></div>
-        <div class="layer"><span class="n">03 · REVIEW ENGINE</span><h3>An adversarial critic with veto power</h3><p>Six dimensions, hard 95 threshold, instant-fail caps for contrast and fake data. Under 95 goes back — before you ever see it.</p><span class="dirs">scoring/ validators/ evals/</span></div>
-        <div class="layer"><span class="n">04 · MEMORY</span><h3>Decision #40 agrees with decision #4</h3><p>Seven files per project — brand, design, pages, todos, bugs. Every choice recorded with its reason, forever.</p><span class="dirs">memory/</span></div>
-        <div class="layer"><span class="n">05 · INDUSTRY INTELLIGENCE</span><h3>Fintech isn't gaming isn't healthcare</h3><p>24 sector playbooks: buyer psychology, visual language, trust requirements, and what each industry instantly punishes.</p><span class="dirs">industries/</span></div>
-        <div class="layer"><span class="n">+ · AGENT STUDIO</span><h3>Nine specialists, one veto</h3><p>Creative director, UX researcher, a11y specialist, copywriter, reviewer — real Claude Code subagents, one flag away.</p><span class="dirs">agents/</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section tint" id="engine">
-    <div class="container score-grid">
-      <div>
-        <span class="eyebrow">The review engine</span>
-        <h2>Nothing ships on vibes</h2>
-        <p style="font-size:1.125rem; margin-top:var(--space-4)">Every deliverable is graded across six dimensions against a written rubric. Accessibility failures cap the score at 60 — no exceptions, no negotiation. Under threshold, the work returns to the loop with specific objections.</p>
-        <p style="margin-top:var(--space-4)"><a href="https://github.com/ardamoustafa1/DesignOS/blob/main/scoring/rubric.md" style="color:var(--accent-text)">Read the rubric →</a></p>
-      </div>
-      <div class="score-card" aria-label="Example scorecard">
-        <div class="row"><b>UI Craft</b><span class="val">96 / 100</span></div>
-        <div class="row"><b>UX &amp; Flow</b><span class="val">97 / 100</span></div>
-        <div class="row"><b>Accessibility</b><span class="val">96 / 100</span></div>
-        <div class="row"><b>Performance</b><span class="val">97 / 100</span></div>
-        <div class="row"><b>Modernity</b><span class="val">96 / 100</span></div>
-        <div class="row"><b>Conversion</b><span class="val">95 / 100</span></div>
-        <div class="row"><b>Gate</b><span class="val gate">all ≥ 95 → SHIP</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="showcase">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Proof, not promises</span>
-        <h2>Four pages, one token system, zero hand-tuning</h2>
-        <p>A complete fictional product designed by the system — view source on any of them: every value resolves to a token, every decision traces to a module.</p>
-      </div>
-      <div class="shots">
-        <a class="shot" href="../examples/showcase-relay.html"><span class="k">Landing</span><h3>Marketing page</h3><p>Hero craft, honest proof, persuasion at doubt-peaks</p></a>
-        <a class="shot" href="../examples/showcase-relay-dashboard.html"><span class="k">App UI</span><h3>Ops dashboard</h3><p>KPI hierarchy, honest charts, semantic tables</p></a>
-        <a class="shot" href="../examples/showcase-relay-pricing.html"><span class="k">Pricing</span><h3>Pricing page</h3><p>Anchored tiers, reflow-free toggle, honest FAQ</p></a>
-        <a class="shot" href="../examples/showcase-relay-docs.html"><span class="k">Docs</span><h3>Documentation</h3><p>Three-panel shell, clean-copy code blocks</p></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section tint" id="quickstart">
-    <div class="container quick">
-      <span class="eyebrow">Install</span>
-      <h2>One command. Any agent.</h2>
+    <div class="hero-stage" aria-label="DesignOS boot sequence example">
       <div class="term">
-        <div class="term-bar"><i></i><i></i><i></i><button class="copy-btn" type="button" data-copy="npx github:ardamoustafa1/DesignOS init --agents">copy</button></div>
-        <pre tabindex="0" aria-label="DesignOS installation transcript"><span class="t-muted">$</span> npx github:ardamoustafa1/DesignOS init --agents
+        <div class="term-bar" aria-hidden="true">
+          <span class="traffic traffic-red"></span>
+          <span class="traffic traffic-amber"></span>
+          <span class="traffic traffic-green"></span>
+          <span class="term-title">designos — boot</span>
+        </div>
+        <pre tabindex="0" aria-label="DesignOS boot sequence transcript"><span class="t-muted">you › </span>Generate a dark fintech dashboard.
+
+<span class="t-acc">designos</span> <span class="t-muted">generate --brief "dark fintech dashboard" --dial</span>
+<span class="t-ok">✓</span> sector: <span class="t-blue">fintech</span>  ·  surface: <span class="t-blue">dashboard</span>
+<span class="t-ok">✓</span> palette: <span class="t-purple">#1D4ED8</span> · contrast 8.5:1 <span class="t-muted">verified</span>
+<span class="t-ok">✓</span> typography: <span class="t-purple">Neue Haas / Inter</span>
+<span class="t-ok">✓</span> motion budget: <span class="t-blue">MOTION_INTENSITY 7/10</span>
+<span class="t-ok">✓</span> 11 modules loaded · anti-patterns: 6
+
+<span class="t-muted">→</span> design loop: research → wireframe → ui …
+<span class="t-amb">▲</span> review: off-grid spacing 14px — <span class="t-amb">fixing</span>
+<span class="t-ok">✓</span> scored: UI 97 · A11y 96 · Perf 98 · Conv 95
+<span class="t-ok">✓</span> SHIP · decisions → memory/design.md<span class="cursor" aria-hidden="true"></span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ──────────────────────────────────────────────── -->
+<section class="section" style="padding-block: 0" aria-label="Key metrics">
+  <div class="container">
+    <div class="stats">
+      <div class="stat reveal"><b data-designos-claim="rules">40</b><span>deterministic rules</span></div>
+      <div class="stat reveal"><b>72</b><span>knowledge modules</span></div>
+      <div class="stat reveal"><b data-designos-claim="recipes">15</b><span>motion recipes</span></div>
+      <div class="stat reveal"><b data-designos-claim="stacks">6</b><span>framework stacks</span></div>
+      <div class="stat reveal"><b data-designos-claim="fixtures">180</b><span>browser fixtures</span></div>
+      <div class="stat reveal"><b data-designos-claim="assertions">3510</b><span>browser assertions</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── What's New in v2.2 ─────────────────────────────────── -->
+<section class="section" id="new-in-v2" aria-labelledby="new-heading">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">New in v2.2</div>
+      <h2 id="new-heading">Three major upgrades</h2>
+      <p>The features our analysis found missing. Shipped.</p>
+    </div>
+
+    <!-- Design Dials feature card -->
+    <div class="features-new">
+      <div class="feature-card featured reveal">
+        <span class="badge-new">New</span>
+        <div class="feature-icon" aria-hidden="true">🎛️</div>
+        <h3>Design Dials</h3>
+        <p>Three 1–10 dials that parametrically control every agent decision: variance, motion intensity, and visual density. Write once, govern everywhere.</p>
+        <div class="code-snippet" aria-label="Design dials configuration example">
+          <span style="color:var(--code-muted)">// designos.config.js</span><br>
+          DESIGN_VARIANCE:  <span style="color:var(--code-amber)">7</span>  <span style="color:var(--code-muted)">// asymmetric/editorial</span><br>
+          MOTION_INTENSITY: <span style="color:var(--code-amber)">6</span>  <span style="color:var(--code-muted)">// scroll-reveals</span><br>
+          VISUAL_DENSITY:   <span style="color:var(--code-amber)">4</span>  <span style="color:var(--code-muted)">// balanced</span>
+        </div>
+        <!-- Interactive dial visualizer -->
+        <div class="dials-demo" style="margin-top:var(--space-4)" aria-label="Design dials visualizer">
+          <button class="dial-row" type="button" aria-label="Adjust variance dial">
+            <span class="dial-label">VARIANCE</span>
+            <span class="dial-track"><span class="dial-fill dial-fill-green" id="dial-variance" style="--dial-fill:.7"></span></span>
+            <span class="dial-value" id="dial-variance-val">7/10</span>
+          </button>
+          <button class="dial-row" type="button" aria-label="Adjust motion dial">
+            <span class="dial-label">MOTION</span>
+            <span class="dial-track"><span class="dial-fill dial-fill-purple" id="dial-motion" style="--dial-fill:.6"></span></span>
+            <span class="dial-value" id="dial-motion-val">6/10</span>
+          </button>
+          <button class="dial-row" type="button" aria-label="Adjust density dial">
+            <span class="dial-label">DENSITY</span>
+            <span class="dial-track"><span class="dial-fill dial-fill-amber" id="dial-density" style="--dial-fill:.4"></span></span>
+            <span class="dial-value" id="dial-density-val">4/10</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Design System Generator -->
+      <div class="feature-card featured reveal">
+        <span class="badge-new">New</span>
+        <div class="feature-icon" aria-hidden="true">⚡</div>
+        <h3>Design System Generator</h3>
+        <p>One command, one brief — five parallel passes produce a complete, contrast-verified design system with palette, type, motion budget, pattern spine, and checklist.</p>
+        <div class="code-snippet" aria-label="Generate command example">
+          <span style="color:var(--code-muted)">$</span> designos <span style="color:var(--code-accent)">generate</span> \<br>
+          &nbsp;&nbsp;<span style="color:var(--code-muted)">--brief</span> <span style="color:var(--code-amber)">"spa booking app"</span><br>
+          <span style="color:var(--code-green)">✓</span> <span style="color:var(--code-muted)">Sector: travel-hospitality</span><br>
+          <span style="color:var(--code-green)">✓</span> <span style="color:var(--code-muted)">4/4 contrast pairs pass</span><br>
+          <span style="color:var(--code-green)">✓</span> <span style="color:var(--code-muted)">CSS tokens + checklist ready</span>
+        </div>
+      </div>
+
+      <!-- Multi-tool support -->
+      <div class="feature-card reveal">
+        <span class="badge-new">New</span>
+        <div class="feature-icon" aria-hidden="true">🔌</div>
+        <h3>18 AI Tools</h3>
+        <p>Expanded from 6 to 18 supported AI coding tools. One export command installs DesignOS into any agent's rules file.</p>
+        <div class="code-snippet" aria-label="Multi-tool export example">
+          <span style="color:var(--code-muted)">$</span> designos <span style="color:var(--code-accent)">export</span> all<br>
+          <span style="color:var(--code-green)">✓</span> cursor · copilot · windsurf<br>
+          <span style="color:var(--code-green)">✓</span> codex · grok · opencode<br>
+          <span style="color:var(--code-green)">✓</span> vibe · amp · zed <span style="color:var(--code-muted)">+ 9 more</span>
+        </div>
+        <div class="tools-grid" aria-label="Newly supported AI tools">
+          <span class="tool-tag"><span class="dot"></span>Cursor</span>
+          <span class="tool-tag"><span class="dot"></span>Copilot</span>
+          <span class="tool-tag"><span class="dot"></span>Gemini</span>
+          <span class="tool-tag new"><span class="dot"></span>Codex CLI</span>
+          <span class="tool-tag new"><span class="dot"></span>Grok</span>
+          <span class="tool-tag new"><span class="dot"></span>Vibe</span>
+          <span class="tool-tag new"><span class="dot"></span>OpenCode</span>
+          <span class="tool-tag new"><span class="dot"></span>Amp</span>
+          <span class="tool-tag new"><span class="dot"></span>Zed AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── System architecture ─────────────────────────────────── -->
+<section class="section" id="system" aria-labelledby="system-heading">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">The system</div>
+      <h2 id="system-heading">Five layers between a prompt and a shipped screen</h2>
+      <p>Not a prompt pack — an operating system the agent boots into, routing only the modules each task needs.</p>
+    </div>
+    <div class="layers">
+      <div class="layer reveal">
+        <span class="layer-num">01 · KNOWLEDGE</span>
+        <h3>Opinionated rules, not vibes</h3>
+        <p>Typography scales, spacing grids, 24 component specs, persuasion psychology, motion tokens — every rule with its reason.</p>
+        <span class="layer-dirs">foundations/ components/ psychology/ motion/ patterns/ native/</span>
+      </div>
+      <div class="layer reveal">
+        <span class="layer-num">02 · LOOPS</span>
+        <h3>Process that catches what talent misses</h3>
+        <p>Research → wireframe → UI → review → accessibility → performance → SEO → refactor. No stage skipped.</p>
+        <span class="layer-dirs">loops/ workflows/ checklists/</span>
+      </div>
+      <div class="layer reveal">
+        <span class="layer-num">03 · REVIEW ENGINE</span>
+        <h3>An adversarial critic with veto power</h3>
+        <p>Six dimensions, hard 95 threshold, instant-fail caps for contrast and fake data. Under 95 goes back — before you see it.</p>
+        <span class="layer-dirs">scoring/ validators/ evals/</span>
+      </div>
+      <div class="layer reveal">
+        <span class="layer-num">04 · MEMORY</span>
+        <h3>Decision #40 agrees with decision #4</h3>
+        <p>Seven files per project — brand, design, pages, todos, bugs. Every choice recorded with its reason, forever.</p>
+        <span class="layer-dirs">memory/</span>
+      </div>
+      <div class="layer reveal">
+        <span class="layer-num">05 · INDUSTRY INTELLIGENCE</span>
+        <h3>Fintech isn't gaming isn't healthcare</h3>
+        <p>24 sector playbooks: buyer psychology, visual language, trust requirements, and what each industry instantly punishes.</p>
+        <span class="layer-dirs">industries/</span>
+      </div>
+      <div class="layer reveal">
+        <span class="layer-num">+ · AGENT STUDIO</span>
+        <h3>Nine specialists, one veto</h3>
+        <p>Creative director, UX researcher, a11y specialist, copywriter, reviewer — real Claude Code subagents, one flag away.</p>
+        <span class="layer-dirs">agents/</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Review engine ──────────────────────────────────────── -->
+<section class="section" id="engine" aria-labelledby="engine-heading">
+  <div class="container score-grid">
+    <div class="reveal">
+      <h2 id="engine-heading">Nothing ships on vibes</h2>
+      <p style="font-size:1.125rem; margin-top:var(--space-4)">
+        Every deliverable is graded across six dimensions against a written rubric.
+        Accessibility failures cap the score at 60 — no exceptions, no negotiation.
+        Under threshold, the work returns to the loop with specific objections.
+      </p>
+      <p style="margin-top:var(--space-4)">
+        <a class="text-link" href="https://github.com/ardamoustafa1/DesignOS/blob/main/scoring/rubric.md" style="color:var(--accent-text); font-weight:600; text-decoration:none">Read the rubric →</a>
+      </p>
+    </div>
+    <div class="score-card reveal" aria-label="Example scorecard output">
+      <div class="score-card-header">
+        <span class="traffic traffic-red" aria-hidden="true"></span>
+        <span class="traffic traffic-amber" aria-hidden="true"></span>
+        <span class="traffic traffic-green" aria-hidden="true"></span>
+        designos review output.html --min 95
+      </div>
+      <div class="score-row"><b>UI Craft</b><div><div style="display:flex;align-items:center;gap:8px"><span class="score-val">96 / 100</span></div><div class="score-bar"><div class="score-bar-fill" style="width:96%"></div></div></div></div>
+      <div class="score-row"><b>UX &amp; Flow</b><div><span class="score-val">97 / 100</span><div class="score-bar"><div class="score-bar-fill" style="width:97%"></div></div></div></div>
+      <div class="score-row"><b>Accessibility</b><div><span class="score-val">96 / 100</span><div class="score-bar"><div class="score-bar-fill" style="width:96%"></div></div></div></div>
+      <div class="score-row"><b>Performance</b><div><span class="score-val">98 / 100</span><div class="score-bar"><div class="score-bar-fill" style="width:98%"></div></div></div></div>
+      <div class="score-row"><b>Modernity</b><div><span class="score-val">96 / 100</span><div class="score-bar"><div class="score-bar-fill" style="width:96%"></div></div></div></div>
+      <div class="score-row"><b>Conversion</b><div><span class="score-val">95 / 100</span><div class="score-bar"><div class="score-bar-fill" style="width:95%"></div></div></div></div>
+      <div class="score-row"><b>Gate</b><span class="score-val gate">all ≥ 95 → SHIP</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Showcase ───────────────────────────────────────────── -->
+<section class="section" id="showcase" aria-labelledby="showcase-heading">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="showcase-heading">Four pages. One token system. Zero hand-tuning.</h2>
+      <p>A complete fictional product designed by the system — view source on any of them: every value resolves to a token, every decision traces to a module.</p>
+    </div>
+    <div class="shots">
+      <a class="shot reveal" href="../examples/showcase-relay.html">
+        <span class="k">Landing</span>
+        <h3>Marketing page</h3>
+        <p>Hero craft, honest proof, persuasion at doubt-peaks</p>
+        <span class="shot-arrow" aria-hidden="true">View →</span>
+      </a>
+      <a class="shot reveal" href="../examples/showcase-relay-dashboard.html">
+        <span class="k">App UI</span>
+        <h3>Ops dashboard</h3>
+        <p>KPI hierarchy, honest charts, semantic tables</p>
+        <span class="shot-arrow" aria-hidden="true">View →</span>
+      </a>
+      <a class="shot reveal" href="../examples/showcase-relay-pricing.html">
+        <span class="k">Pricing</span>
+        <h3>Pricing page</h3>
+        <p>Anchored tiers, reflow-free toggle, honest FAQ</p>
+        <span class="shot-arrow" aria-hidden="true">View →</span>
+      </a>
+      <a class="shot reveal" href="../examples/showcase-relay-docs.html">
+        <span class="k">Docs</span>
+        <h3>Documentation</h3>
+        <p>Three-panel shell, clean-copy code blocks</p>
+        <span class="shot-arrow" aria-hidden="true">View →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Quickstart ────────────────────────────────────────── -->
+<section class="section" id="quickstart" aria-labelledby="quickstart-heading">
+  <div class="container quick">
+    <h2 id="quickstart-heading">One command. Any agent.</h2>
+    <div class="term">
+      <div class="term-bar">
+        <span class="traffic traffic-red" aria-hidden="true"></span>
+        <span class="traffic traffic-amber" aria-hidden="true"></span>
+        <span class="traffic traffic-green" aria-hidden="true"></span>
+        <button class="copy-btn" type="button" id="copy-install-btn" data-copy="npx github:ardamoustafa1/DesignOS init --agents">copy</button>
+      </div>
+      <pre tabindex="0" aria-label="DesignOS installation command"><span class="t-muted">$</span> npx github:ardamoustafa1/DesignOS init --agents
 <span class="t-ok">✓</span> DesignOS copied to ./DesignOS
 <span class="t-ok">✓</span> CLAUDE.md wired
 <span class="t-ok">✓</span> 9 subagents registered</pre>
-      </div>
-      <p>Then ask for anything — <em style="color:var(--text-primary)">"design a pricing page for a fintech app, dark theme"</em> — and watch it route modules, run the loop, and refuse to hand you anything under 95.</p>
     </div>
-  </section>
+    <p>Then ask for anything — <em style="color:var(--text-primary)">"Generate a design system for a fintech dashboard"</em> or <em style="color:var(--text-primary)">"Design a pricing page, dark theme"</em> — and watch it route modules, run the loop, and refuse to hand you anything under 95.</p>
 
-  <section class="section cta-band">
-    <div class="container">
-      <span class="eyebrow">Open source · MIT</span>
-      <h2>Make your agent dangerous</h2>
-      <a class="btn btn-primary" href="https://github.com/ardamoustafa1/DesignOS">Star DesignOS on GitHub</a>
-      <p class="hero-note" style="margin-top:var(--space-4)">150+ files · 8,600+ lines of design judgment · yours</p>
+    <div style="margin-top:var(--space-8)">
+      <p style="font-size:0.9375rem;font-weight:600;color:var(--text-primary);margin-bottom:var(--space-4)">Try the new commands:</p>
+      <div class="term" style="box-shadow:none">
+        <div class="term-bar">
+          <span class="traffic traffic-red" aria-hidden="true"></span>
+          <span class="traffic traffic-amber" aria-hidden="true"></span>
+          <span class="traffic traffic-green" aria-hidden="true"></span>
+        </div>
+        <pre tabindex="0" aria-label="New v2.2 command examples"><span class="t-muted"># Design System Generator</span>
+<span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">generate</span> --brief "SaaS landing, dark"
+
+<span class="t-muted"># Set design dials</span>
+<span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">dial</span> --motion 8 --variance 6
+
+<span class="t-muted"># Get agent prompt block</span>
+<span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">dial</span> --prompt
+
+<span class="t-muted"># Export to all 18 AI tools</span>
+<span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">export</span> all
+
+<span class="t-muted"># List all supported tools</span>
+<span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">tools</span></pre>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- ── CTA band ───────────────────────────────────────────── -->
+<section class="section cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">Make your agent dangerous</h2>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://github.com/ardamoustafa1/DesignOS" id="cta-github">Star DesignOS on GitHub</a>
+      <a class="btn btn-ghost" href="https://github.com/ardamoustafa1/DesignOS/blob/main/GETTING-STARTED.md" id="cta-docs">Read the docs →</a>
+    </div>
+    <p class="hero-note" style="margin-top:var(--space-6);text-align:center">150+ files · 9,000+ lines of design judgment · yours</p>
+  </div>
+</section>
+
 </main>
 
+<!-- ── Footer ─────────────────────────────────────────────── -->
 <footer>
-  <div class="container footer-inner">
-    <div>
-      <span style="display:inline-flex;align-items:center;gap:8px;"><img src="logo-3d.png" alt="" width="707" height="707" style="width:22px;height:22px;object-fit:contain;"> <strong style="font-weight:800;color:var(--text-primary)">Design<span class="logo-os">OS</span></strong> <span style="color:var(--text-muted)">— built for the age of agents.</span></span>
-      <div style="margin-top:var(--space-2);display:flex;align-items:center;gap:var(--space-2);font-size:0.8125rem;">
-        <span style="color:var(--text-muted)">Architected &amp; Engineered by</span>
-        <a href="https://ardamoustafacv.netlify.app" target="_blank" rel="noopener noreferrer" class="creator-link">Arda Moustafa <span class="handle">(@ardamoustafa)</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">
+          <img src="logo-3d.png" alt="" width="707" height="707" style="width:22px;height:22px;object-fit:contain;" aria-hidden="true">
+          Design<span class="logo-os">OS</span>
+        </div>
+        <p class="footer-tagline">The design intelligence operating system for AI coding agents.</p>
+        <p class="footer-creator">
+          Architected &amp; Engineered by
+          <a href="https://ardamoustafacv.netlify.app" target="_blank" rel="noopener noreferrer" class="creator-link">
+            Arda Moustafa
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </p>
       </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="https://github.com/ardamoustafa1/DesignOS">GitHub</a>
+        <a href="browser-ledger.html">Browser ledger</a>
+        <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/GETTING-STARTED.md">Docs</a>
+        <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/CONTRIBUTING.md">Contribute</a>
+        <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/README.tr.md">Türkçe</a>
+      </nav>
     </div>
-    <nav aria-label="Footer">
-      <a href="https://github.com/ardamoustafa1/DesignOS">GitHub</a>
-      <a href="browser-ledger.html">Browser ledger</a>
-      <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/GETTING-STARTED.md">Docs</a>
-      <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/CONTRIBUTING.md">Contribute</a>
-      <a href="https://ardamoustafacv.netlify.app" target="_blank" rel="noopener noreferrer">Creator CV ↗</a>
-      <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/README.tr.md">Türkçe</a>
-    </nav>
+    <div class="footer-copy">
+      <span>© 2025 DesignOS · MIT License</span>
+      <span style="font-family:var(--font-mono)">v2.2.0</span>
+    </div>
   </div>
 </footer>
 
+<!-- ── Task definitions ────────────────────────────────────── -->
 <script type="application/json" data-designos-tasks>
 [
   {
-    "id":"mobile-navigation",
-    "viewport":{"width":375,"height":812},
-    "steps":[
-      {"action":"click","selector":"#nav-menu-toggle"},
-      {"assert":"attribute","selector":"#nav-menu-toggle","name":"aria-expanded","equals":"true"},
-      {"assert":"visible","selector":"#primary-navigation","equals":true},
-      {"action":"press","key":"Escape"},
-      {"assert":"attribute","selector":"#nav-menu-toggle","name":"aria-expanded","equals":"false"}
+    "id": "mobile-navigation",
+    "viewport": { "width": 375, "height": 812 },
+    "steps": [
+      { "action": "click", "selector": "#nav-menu-toggle" },
+      { "assert": "attribute", "selector": "#nav-menu-toggle", "name": "aria-expanded", "equals": "true" },
+      { "assert": "visible", "selector": "#primary-navigation", "equals": true },
+      { "action": "press", "key": "Escape" },
+      { "assert": "attribute", "selector": "#nav-menu-toggle", "name": "aria-expanded", "equals": "false" }
     ]
   },
   {
-    "id":"copy-install-command",
-    "steps":[
-      {"action":"click","selector":".copy-btn"},
-      {"assert":"announcement","selector":"#site-announcer","includes":"command"}
+    "id": "copy-install-command",
+    "steps": [
+      { "action": "click", "selector": "#copy-install-btn" },
+      { "assert": "announcement", "selector": "#site-announcer", "includes": "command" }
     ]
   }
 ]
 </script>
+
+<!-- ── Scripts ─────────────────────────────────────────────── -->
 <script>
+// ── Nav scroll state ──────────────────────────────────────
 const nav = document.getElementById('nav');
 addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
-const navMenu = document.getElementById('nav-menu-toggle');
+
+// ── Mobile menu ───────────────────────────────────────────
+const navMenu  = document.getElementById('nav-menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 if (navMenu && navLinks) {
   const closeMenu = () => {
@@ -473,21 +1145,26 @@ if (navMenu && navLinks) {
     navMenu.setAttribute('aria-expanded', String(open));
     navMenu.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
   });
-  navLinks.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
-  addEventListener('keydown', event => { if (event.key === 'Escape') { closeMenu(); navMenu.focus(); } });
+  navLinks.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); navMenu.focus(); } });
   matchMedia('(min-width: 960px)').addEventListener('change', closeMenu);
 }
+
+// ── Theme toggle ──────────────────────────────────────────
 const themeBtn = document.getElementById('theme-toggle');
 if (themeBtn) {
   const saved = localStorage.getItem('designos_theme');
   if (saved) document.documentElement.setAttribute('data-theme', saved);
   themeBtn.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const current = document.documentElement.getAttribute('data-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('designos_theme', next);
   });
 }
+
+// ── Copy buttons ──────────────────────────────────────────
 document.querySelectorAll('.copy-btn').forEach(btn => {
   btn.addEventListener('click', async () => {
     let copied = false;
@@ -496,9 +1173,88 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
     document.getElementById('site-announcer').textContent = copied
       ? 'Installation command copied.'
       : 'Copy unavailable. Select the installation command manually.';
-    setTimeout(() => { btn.textContent = 'copy'; }, 1500);
+    setTimeout(() => { btn.textContent = 'copy'; }, 1600);
   });
 });
+
+// ── Scroll-driven reveal ─────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length && 'IntersectionObserver' in window &&
+    !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('visible'));
+}
+
+// ── Interactive dials demo ────────────────────────────────
+// Cycle dial values on click
+const dialData = [
+  { fill: 'dial-variance', val: 'dial-variance-val', values: [30, 50, 70, 90], labels: ['3/10', '5/10', '7/10', '9/10'], i: 2 },
+  { fill: 'dial-motion', val: 'dial-motion-val', values: [20, 40, 60, 80], labels: ['2/10', '4/10', '6/10', '8/10'], i: 2 },
+  { fill: 'dial-density', val: 'dial-density-val', values: [20, 40, 60, 80], labels: ['2/10', '4/10', '6/10', '8/10'], i: 1 },
+];
+dialData.forEach(d => {
+  const fill = document.getElementById(d.fill);
+  const val  = document.getElementById(d.val);
+  if (!fill || !val) return;
+  const row = fill.closest('.dial-row');
+  if (row) {
+    row.addEventListener('click', () => {
+      d.i = (d.i + 1) % d.values.length;
+      fill.style.setProperty('--dial-fill', String(d.values[d.i] / 100));
+      val.textContent = d.labels[d.i];
+      row.setAttribute('aria-label', `Adjust ${d.fill.replace('dial-', '')} dial, current value ${d.labels[d.i]}`);
+    });
+  }
+});
+
+// ── Hero signature: intent-responsive terminal ────────────
+const heroStage = document.querySelector('.hero-stage');
+if (heroStage && matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let stageFrame = 0;
+  let stageX = 0;
+  let stageY = 0;
+  const renderStage = () => {
+    const rect = heroStage.getBoundingClientRect();
+    const nx = Math.max(-1, Math.min(1, (stageX - rect.left) / rect.width * 2 - 1));
+    const ny = Math.max(-1, Math.min(1, (stageY - rect.top) / rect.height * 2 - 1));
+    heroStage.style.setProperty('--stage-rx', `${(-ny * 3.5).toFixed(2)}deg`);
+    heroStage.style.setProperty('--stage-ry', `${(nx * 5).toFixed(2)}deg`);
+    heroStage.style.setProperty('--stage-x', `${(nx * 16).toFixed(1)}px`);
+    heroStage.style.setProperty('--stage-y', `${(ny * 12).toFixed(1)}px`);
+    stageFrame = 0;
+  };
+  heroStage.addEventListener('pointermove', event => {
+    stageX = event.clientX;
+    stageY = event.clientY;
+    if (!stageFrame) stageFrame = requestAnimationFrame(renderStage);
+  }, { passive: true });
+  heroStage.addEventListener('pointerenter', () => heroStage.dataset.active = 'true');
+  heroStage.addEventListener('pointerleave', () => {
+    heroStage.dataset.active = 'false';
+    heroStage.style.setProperty('--stage-rx', '0deg');
+    heroStage.style.setProperty('--stage-ry', '0deg');
+    heroStage.style.setProperty('--stage-x', '0px');
+    heroStage.style.setProperty('--stage-y', '0px');
+    if (stageFrame) cancelAnimationFrame(stageFrame);
+    stageFrame = 0;
+  });
+}
 </script>
+
+<!-- ── Public claims (source-of-truth for stat numbers) ──── -->
+<!-- DESIGNOS_PUBLIC_CLAIMS:START -->
+<script id="designos-public-claims" type="application/json">{"schemaVersion":1,"package":{"name":"designos","version":"2.1.0"},"rules":{"count":40,"providers":8,"source":"validators/rule-registry.js"},"motion":{"recipes":15,"stacks":6,"adapterCombinations":90,"fixtureScenarios":180,"browserAssertions":3510,"sourceMapAssertions":3,"source":"runtime/motion/recipes.js","fixtureSource":"fixtures/frameworks/test-matrix.js"},"dependencies":{"runtime":3,"names":["@jridgewell/trace-mapping","axe-core","playwright"],"source":"package.json"},"evaluation":{"isolatedRuleEval":true,"externalEval":false,"externalEvalRuns":0,"source":"evals/isolated/registry-eval.json + evals/external/registry.json"},"nativeEvidence":{"status":"source-conformance-only","sourceAdapters":4,"verifiedDeviceRuns":0,"source":"runtime/native/adapters.js"},"generatedTargets":["README.md","ARCHITECTURE.md","ROADMAP.md","LIMITATIONS.md",".claude-plugin/plugin.json","website/index.html"]}</script>
+<script>(()=>{const claims=JSON.parse(document.getElementById('designos-public-claims').textContent);const values={rules:claims.rules.count,recipes:claims.motion.recipes,stacks:claims.motion.stacks,fixtures:claims.motion.fixtureScenarios,assertions:claims.motion.browserAssertions};for(const [key,value] of Object.entries(values)){const target=document.querySelector('[data-designos-claim="'+key+'"]');if(target)target.textContent=String(value)}})();</script>
+<!-- DESIGNOS_PUBLIC_CLAIMS:END -->
 </body>
 </html>

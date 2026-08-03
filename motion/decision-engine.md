@@ -1,38 +1,52 @@
 # Motion Decision Engine
 
-## The five gates
+## The semantic contract
 
-`MOTION_INTENSITY` controls the page-wide ceiling. A specific interaction still passes
-five gates before receiving motion:
+`MOTION_INTENSITY` controls the page-wide ceiling. `runtime/motion/semantics.js` then
+compiles each interaction from nine explicit inputs:
 
-1. **Frequency** — `very-high`, `high`, `medium`, `low`, `rare`.
-2. **Purpose** — feedback, orientation, continuity, explanation, or delight.
-3. **Initiator** — keyboard, pointer, touch, or system.
-4. **Interruptibility** — none, reversible, or direct-manipulation.
-5. **Cost** — compositor, paint, layout, or main-thread.
+1. **Component type** — button, popover, accordion, dialog, drawer, toast, sortable,
+   carousel, page, value, progress, or generic.
+2. **State transition** — hover, press, select, open/close, enter/exit,
+   expand/collapse, reorder, drag, dismiss, update, or navigate.
+3. **Frequency** — continuous, very-high, high, medium, low, or rare.
+4. **Input modality** — keyboard, pointer, touch, voice, or programmatic.
+5. **Element geometry** — width, height, travel distance, viewport coverage, anchor,
+   and attached edge.
+6. **Motion intensity** — the project-wide 1–10 ceiling.
+7. **User preference** — full, reduce, or none.
+8. **Device power** — low, medium, or high.
+9. **Semantic importance** — decorative, low, normal, high, or critical.
 
 Run:
 
 ```bash
-designos motion-decide "command palette" \
-  --frequency very-high --purpose orientation --initiator keyboard \
-  --interruptibility reversible --cost compositor --motion 4
+designos motion-decide "account menu" \
+  --component popover --transition open --frequency high \
+  --modality keyboard --geometry 280x180,8 --motion 4 \
+  --preference full --device-power medium --importance high
 ```
 
-## Hard decisions
+## Compiler output
 
-- Very-high-frequency keyboard actions: no entrance; at most 80ms opacity feedback.
-- Direct manipulation: 1:1 tracking; no easing while the pointer is down.
-- Layout/main-thread cost: reject unless no compositor alternative exists and a measured
-  performance budget is attached.
-- Delight requires low/rare frequency and `MOTION_INTENSITY >= 6`.
-- Springs require interruptibility, one product-wide configuration, and a reduced-motion
-  settle path.
-- Exit duration is 70–80% of entry duration.
+The result is a machine-readable decision containing:
 
-The CLI returns a decision, maximum duration, easing family, implementation route,
-reduced-motion path, performance verification and the reason chain. A rejected interaction
-is a successful decision; “nothing moves” is often the premium result.
+- animate or do-not-animate;
+- entry and 75%-duration exit timing after frequency/geometry/device discounts;
+- curve or cancellable spring;
+- transform origin and the geometry reason;
+- exactly reversed enter/exit paths plus a symmetry result;
+- computed-state replacement or pointer-tracking/velocity-handoff interruption;
+- a functionally equivalent reduced-motion contract;
+- separate keyboard, pointer, and touch decisions;
+- compositor, concurrency, main-thread, frame-time, CPU-throttle, and layout budgets;
+- module, rule, and executable recipe provenance;
+- an explanation chain and verification plan.
+
+Decorative motion below intensity 6 and low-importance motion on low-power devices can
+legitimately compile to `do-not-animate`. Very frequent keyboard paths collapse spatial
+travel and cap acknowledgement at 80ms. Direct manipulation remains 1:1 while input is
+down; only the release settles.
 
 ## Anti-patterns
 
@@ -44,9 +58,10 @@ is a successful decision; “nothing moves” is often the premium result.
 
 ## Checklist
 
-- [ ] Frequency, purpose, initiator, interruptibility and cost are explicit.
-- [ ] The decision may legitimately be `reject` or `feedback-only`.
-- [ ] Maximum entry and exit durations are stated.
-- [ ] Implementation and cancellation routes are named.
+- [ ] All nine compiler inputs are explicit or carry documented defaults.
+- [ ] Keyboard, pointer, and touch outputs are present.
+- [ ] The decision may legitimately be `do-not-animate` or `reduced-feedback`.
+- [ ] Entry/exit duration, symmetry, origin, easing, and interruption are stated.
 - [ ] Reduced-motion preserves the task and final state.
-- [ ] 4× CPU, INP and reversal checks are in the verification plan.
+- [ ] Every decision cites modules, the semantic rule, and an executable recipe when one applies.
+- [ ] Performance budgets and required CPU/reversal checks are in the verification plan.

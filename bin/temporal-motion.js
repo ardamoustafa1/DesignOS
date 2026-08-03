@@ -159,6 +159,27 @@ function semanticEqual(left, right) {
   return JSON.stringify(left) === JSON.stringify(right);
 }
 
+function isPerceptuallyEquivalent(baseline, current, tolerance = {}) {
+  const dDur = Math.abs(baseline.metrics.durationMs - current.metrics.durationMs);
+  const dOver = Math.abs(baseline.metrics.overshoot - current.metrics.overshoot);
+  
+  if (dDur > (tolerance.durationMs || 30)) return false;
+  if (dOver > (tolerance.overshoot || 0.05)) return false;
+  
+  const samplePoints = [0, 0.25, 0.5, 0.75, 1];
+  for(const pt of samplePoints) {
+    const bIndex = Math.floor(pt * (baseline.samples.length - 1));
+    const cIndex = Math.floor(pt * (current.samples.length - 1));
+    const b = baseline.samples[bIndex];
+    const c = current.samples[cIndex];
+    
+    if (Math.abs(b.rect.x - c.rect.x) > (tolerance.spatial || 2)) return false;
+    if (Math.abs(b.rect.y - c.rect.y) > (tolerance.spatial || 2)) return false;
+    if (Math.abs(Number(b.opacity) - Number(c.opacity)) > (tolerance.opacity || 0.05)) return false;
+  }
+  return true;
+}
+
 async function temporalRegression(options) {
   const { chromium } = require('playwright');
   const served = await serveTarget(options.target, options.cwd);
@@ -233,4 +254,4 @@ async function main() {
 }
 
 if (require.main === module) main().catch(error => { console.error(error.message); process.exit(1); });
-module.exports = { cubicBezierValue, phaseMetrics, temporalRegression };
+module.exports = { cubicBezierValue, phaseMetrics, temporalRegression, isPerceptuallyEquivalent };

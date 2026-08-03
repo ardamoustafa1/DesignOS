@@ -5,6 +5,51 @@ const fs = require('fs');
 const path = require('path');
 
 const STACKS = Object.freeze(['html', 'react', 'vue', 'svelte', 'tailwind', 'css-modules']);
+
+const COMPONENT_CONTRACTS = {
+  dialog: { tag: 'dialog', role: 'dialog', contracts: { state: ['closed', 'open'], keyboard: { Escape: 'close' }, focus: 'trap', ax: { 'aria-modal': 'true' }, motion: { enter: 'fade-scale-in', exit: 'fade-scale-out' } } },
+  drawer: { tag: 'div', role: 'dialog', contracts: { state: ['closed', 'open'], keyboard: { Escape: 'close' }, focus: 'trap', ax: { 'aria-modal': 'true' }, motion: { enter: 'slide-in-edge', exit: 'slide-out-edge' } } },
+  popover: { tag: 'div', role: 'dialog', contracts: { state: ['closed', 'open'], keyboard: { Escape: 'close' }, focus: 'trap', ax: { 'aria-modal': 'false' }, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  tooltip: { tag: 'div', role: 'tooltip', contracts: { state: ['closed', 'open'], keyboard: { Escape: 'close' }, focus: 'none', ax: {}, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  tabs: { tag: 'div', role: 'tablist', contracts: { state: ['activeTabId'], keyboard: { ArrowLeft: 'prev', ArrowRight: 'next' }, focus: 'roving', ax: { 'aria-orientation': 'horizontal' }, motion: { enter: 'none', exit: 'none' } } },
+  accordion: { tag: 'div', contracts: { state: ['expandedIds'], keyboard: { ArrowDown: 'next', ArrowUp: 'prev' }, focus: 'linear', ax: {}, motion: { enter: 'expand', exit: 'collapse' } } },
+  combobox: { tag: 'div', role: 'combobox', contracts: { state: ['open', 'value', 'inputValue'], keyboard: { ArrowDown: 'nextOption', ArrowUp: 'prevOption', Enter: 'select', Escape: 'close' }, focus: 'input-active-descendant', ax: { 'aria-expanded': 'false', 'aria-haspopup': 'listbox' }, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  'command-palette': { tag: 'dialog', role: 'dialog', contracts: { state: ['open', 'query'], keyboard: { ArrowDown: 'nextOption', ArrowUp: 'prevOption', Enter: 'execute', Escape: 'close' }, focus: 'input-active-descendant', ax: { 'aria-modal': 'true' }, motion: { enter: 'fade-scale-in', exit: 'fade-scale-out' } } },
+  toast: { tag: 'div', role: 'status', contracts: { state: ['visible', 'dismissed'], keyboard: { Escape: 'dismiss' }, focus: 'none', ax: { 'aria-live': 'polite' }, motion: { enter: 'slide-in-bottom', exit: 'slide-out-bottom' } } },
+  carousel: { tag: 'div', role: 'region', label: 'Carousel', contracts: { state: ['currentIndex'], keyboard: { ArrowLeft: 'prev', ArrowRight: 'next' }, focus: 'roving', ax: { 'aria-roledescription': 'carousel' }, motion: { enter: 'slide-x', exit: 'slide-x' } } },
+  'sortable-list': { tag: 'ul', contracts: { state: ['items'], keyboard: { Space: 'lift', ArrowUp: 'moveUp', ArrowDown: 'moveDown' }, focus: 'linear', ax: { 'aria-roledescription': 'sortable' }, motion: { enter: 'reorder', exit: 'reorder' } } },
+  'data-table': { tag: 'table', role: 'grid', contracts: { state: ['sort', 'filter', 'selection'], keyboard: { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right' }, focus: 'grid', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  'date-picker': { tag: 'div', contracts: { state: ['date', 'month', 'year', 'open'], keyboard: { ArrowUp: 'prevWeek', ArrowDown: 'nextWeek', ArrowLeft: 'prevDay', ArrowRight: 'nextDay' }, focus: 'grid', ax: {}, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  'file-upload': { tag: 'div', contracts: { state: ['idle', 'dragging', 'uploading', 'success', 'error'], keyboard: { Enter: 'openDialog' }, focus: 'element', ax: {}, motion: { enter: 'scale', exit: 'scale' } } },
+  stepper: { tag: 'div', contracts: { state: ['currentStep'], keyboard: {}, focus: 'linear', ax: {}, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  'inline-edit': { tag: 'div', contracts: { state: ['reading', 'editing'], keyboard: { Enter: 'save', Escape: 'cancel' }, focus: 'input', ax: {}, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  navigation: { tag: 'nav', role: 'navigation', contracts: { state: ['activeItem'], keyboard: {}, focus: 'linear', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  search: { tag: 'search', role: 'search', contracts: { state: ['query'], keyboard: {}, focus: 'input', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  filter: { tag: 'div', contracts: { state: ['activeFilters'], keyboard: {}, focus: 'linear', ax: {}, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  pagination: { tag: 'nav', role: 'navigation', label: 'Pagination', contracts: { state: ['currentPage', 'totalPages'], keyboard: {}, focus: 'linear', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  badge: { tag: 'span', contracts: { state: [], keyboard: {}, focus: 'none', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  avatar: { tag: 'div', contracts: { state: ['loaded', 'fallback'], keyboard: {}, focus: 'none', ax: {}, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  button: { tag: 'button', contracts: { state: ['idle', 'loading', 'disabled'], keyboard: { Enter: 'press', Space: 'press' }, focus: 'element', ax: {}, motion: { enter: 'scale-press', exit: 'scale-release' } } },
+  checkbox: { tag: 'button', role: 'checkbox', contracts: { state: ['checked', 'unchecked', 'indeterminate'], keyboard: { Space: 'toggle' }, focus: 'element', ax: { 'aria-checked': 'false' }, motion: { enter: 'check', exit: 'uncheck' } } },
+  'radio-group': { tag: 'div', role: 'radiogroup', contracts: { state: ['value'], keyboard: { ArrowDown: 'next', ArrowUp: 'prev' }, focus: 'roving', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  switch: { tag: 'button', role: 'switch', contracts: { state: ['on', 'off'], keyboard: { Space: 'toggle' }, focus: 'element', ax: { 'aria-checked': 'false' }, motion: { enter: 'slide', exit: 'slide' } } },
+  slider: { tag: 'div', role: 'slider', contracts: { state: ['value'], keyboard: { ArrowLeft: 'decrement', ArrowRight: 'increment' }, focus: 'element', ax: { 'aria-valuemin': '0', 'aria-valuemax': '100' }, motion: { enter: 'none', exit: 'none' } } },
+  progress: { tag: 'div', role: 'progressbar', contracts: { state: ['value', 'max'], keyboard: {}, focus: 'none', ax: {}, motion: { enter: 'scale-x', exit: 'none' } } },
+  skeleton: { tag: 'div', contracts: { state: [], keyboard: {}, focus: 'none', ax: { 'aria-hidden': 'true' }, motion: { enter: 'pulse', exit: 'pulse' } } },
+  breadcrumbs: { tag: 'nav', role: 'navigation', label: 'Breadcrumbs', contracts: { state: [], keyboard: {}, focus: 'linear', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  'dropdown-menu': { tag: 'div', role: 'menu', contracts: { state: ['open'], keyboard: { ArrowDown: 'nextItem', ArrowUp: 'prevItem', Escape: 'close' }, focus: 'linear', ax: {}, motion: { enter: 'fade-scale-in', exit: 'fade-scale-out' } } },
+  'context-menu': { tag: 'div', role: 'menu', contracts: { state: ['open'], keyboard: { ArrowDown: 'nextItem', ArrowUp: 'prevItem', Escape: 'close' }, focus: 'linear', ax: {}, motion: { enter: 'fade-scale-in', exit: 'fade-scale-out' } } },
+  menubar: { tag: 'div', role: 'menubar', contracts: { state: ['activeMenu'], keyboard: { ArrowLeft: 'prevMenu', ArrowRight: 'nextMenu' }, focus: 'roving', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  'scroll-area': { tag: 'div', contracts: { state: [], keyboard: {}, focus: 'none', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  separator: { tag: 'hr', role: 'separator', contracts: { state: [], keyboard: {}, focus: 'none', ax: { 'aria-orientation': 'horizontal' }, motion: { enter: 'none', exit: 'none' } } },
+  'hover-card': { tag: 'div', contracts: { state: ['open', 'closed'], keyboard: {}, focus: 'none', ax: {}, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  alert: { tag: 'div', role: 'alert', contracts: { state: [], keyboard: {}, focus: 'none', ax: {}, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+  'alert-dialog': { tag: 'dialog', role: 'alertdialog', contracts: { state: ['open', 'closed'], keyboard: { Escape: 'close' }, focus: 'trap', ax: { 'aria-modal': 'true' }, motion: { enter: 'fade-scale-in', exit: 'fade-scale-out' } } },
+  'aspect-ratio': { tag: 'div', contracts: { state: [], keyboard: {}, focus: 'none', ax: {}, motion: { enter: 'none', exit: 'none' } } },
+  collapsible: { tag: 'div', contracts: { state: ['open', 'closed'], keyboard: { Space: 'toggle', Enter: 'toggle' }, focus: 'element', ax: {}, motion: { enter: 'expand', exit: 'collapse' } } },
+  select: { tag: 'div', role: 'combobox', contracts: { state: ['open', 'value'], keyboard: { ArrowDown: 'nextOption', ArrowUp: 'prevOption', Enter: 'select', Escape: 'close' }, focus: 'input-active-descendant', ax: { 'aria-expanded': 'false', 'aria-haspopup': 'listbox' }, motion: { enter: 'fade-in', exit: 'fade-out' } } },
+};
+
 const PRIMITIVES = Object.freeze({
   hero: { tag: 'section', role: 'region' },
   split: { tag: 'div' },
@@ -16,6 +61,7 @@ const PRIMITIVES = Object.freeze({
   media: { tag: 'figure', label: 'Product media' },
   grid: { tag: 'div' },
   stack: { tag: 'div' },
+  ...COMPONENT_CONTRACTS
 });
 
 function tokenizeDsl(source) {
@@ -65,12 +111,20 @@ function htmlNode(node, options = {}, depth = 0) {
   const primitive = PRIMITIVES[node.name] || { tag: 'div' };
   const indent = '  '.repeat(depth);
   const attrName = options.jsx ? 'className' : 'class';
-  const attrs = [
+  const attrList = [
     `${attrName}="${className(node.name)}"`,
     `data-composition="${node.name}"`,
     primitive.role ? `role="${primitive.role}"` : '',
     primitive.label ? `aria-label="${primitive.label}"` : '',
-  ].filter(Boolean).join(' ');
+  ];
+  
+  if(primitive.contracts?.ax) {
+    for(const [k, v] of Object.entries(primitive.contracts.ax)) {
+      attrList.push(`${k}="${v}"`);
+    }
+  }
+  
+  const attrs = attrList.filter(Boolean).join(' ');
   const content = node.children.length
     ? `\n${node.children.map(child => htmlNode(child, options, depth + 1)).join('\n')}\n${indent}`
     : labelFor(node.name);
@@ -100,10 +154,31 @@ function tailwindNode(node, depth = 0) {
     'interactive-product-model': 'min-w-0 aspect-[16/10] overflow-clip',
     media: 'min-w-0 aspect-[16/10] overflow-clip',
   }[node.name] || 'min-w-0';
+  
+  const attrList = [
+    `class="${classes}"`,
+    `data-composition="${node.name}"`,
+    primitive.role ? `role="${primitive.role}"` : '',
+    primitive.label ? `aria-label="${primitive.label}"` : '',
+  ];
+  if(primitive.contracts?.ax) {
+    for(const [k, v] of Object.entries(primitive.contracts.ax)) {
+      attrList.push(`${k}="${v}"`);
+    }
+  }
+  const attrs = attrList.filter(Boolean).join(' ');
+  
   const content = node.children.length
     ? `\n${node.children.map(child => tailwindNode(child, depth + 1)).join('\n')}\n${indent}`
     : labelFor(node.name);
-  return `${indent}<${primitive.tag} class="${classes}" data-composition="${node.name}">${content}</${primitive.tag}>`;
+  return `${indent}<${primitive.tag} ${attrs}>${content}</${primitive.tag}>`;
+}
+
+function attachContracts(node) {
+  if (PRIMITIVES[node.name]?.contracts) {
+    node.contracts = PRIMITIVES[node.name].contracts;
+  }
+  node.children.forEach(attachContracts);
 }
 
 function compileComposition(source, stack = 'html') {
@@ -115,6 +190,9 @@ function compileComposition(source, stack = 'html') {
     error.findings = findings;
     throw error;
   }
+  
+  attachContracts(ast);
+  
   const markup = stack === 'tailwind' ? tailwindNode(ast)
     : htmlNode(ast, { jsx: ['react', 'css-modules'].includes(stack) });
   const outputs = {
@@ -153,6 +231,13 @@ function main() {
   if (!source) throw new Error('Usage: composition-compiler --dsl "hero(split(copy,media),trust-rail,action-cluster)" [--stack react] [--out file]');
   const result = compileComposition(source, stack);
   const output = value('--out');
+  
+  // Output JSON schema if --json is passed
+  if(args.includes('--json')) {
+    console.log(JSON.stringify(result, null, 2));
+    return;
+  }
+  
   if (output) {
     const absolute = path.resolve(output);
     fs.mkdirSync(path.dirname(absolute), { recursive: true });
@@ -161,6 +246,8 @@ function main() {
       const cssName = stack === 'css-modules' ? 'composition.module.css' : 'composition.css';
       fs.writeFileSync(path.join(path.dirname(absolute), cssName), result.stylesheet + '\n');
     }
+    
+    fs.writeFileSync(path.join(path.dirname(absolute), 'ast.json'), JSON.stringify(result.ast, null, 2) + '\n');
     console.log(`composition-compiler: ${stack} → ${path.relative(process.cwd(), absolute)}`);
   } else process.stdout.write(result.source + '\n');
 }

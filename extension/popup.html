@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DesignOS</title>
+  <style>
+    :root {
+      --bg: #09090b; --surface: #18181b; --text: #fafafa;
+      --accent: #10b981; --border: #3f3f46;
+    }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      width: 280px; padding: 16px; margin: 0;
+    }
+    h1 { font-size: 16px; margin: 0 0 16px 0; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .btn { 
+      background: var(--accent); color: #000; border: none;
+      padding: 8px 12px; border-radius: 6px; cursor: pointer;
+      font-weight: 600; width: 100%; transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .status { font-size: 12px; color: #a1a1aa; margin-top: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>DesignOS Auditor</h1>
+  
+  <div class="toggle-row">
+    <span>Token Drift Inspector</span>
+    <input type="checkbox" id="toggle-inspector">
+  </div>
+  <div class="toggle-row">
+    <span>Motion Profiler (FPS/LoAF)</span>
+    <input type="checkbox" id="toggle-profiler">
+  </div>
+  
+  <button class="btn" id="run-checks">Run 59 Strict Checks</button>
+  
+  <div class="status" id="status-text">Ready</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

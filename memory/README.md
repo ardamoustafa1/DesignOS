@@ -21,7 +21,7 @@ Then fill `client.md` and `brand.md` from the kickoff conversation before any de
 |---|---|---|
 | `client.md` | who the client is, audiences, goals, constraints, the one-reader sentence | kickoff; updated on scope change |
 | `brand.md` | voice, color decisions + reasoning, type choices, logo rules, glossary | kickoff + whenever a brand decision locks |
-| `design.md` | the system: scales, tokens, radius/shadow/motion language, composition decisions, **overrides with reasons** | every session that decides anything |
+| `design.md` | the system: scales, tokens, radius/shadow/motion language, composition decisions, **overrides with reasons**, optional Signature Lock (`node DesignOS/bin/designos.js signature-check`) | every session that decides anything |
 | `pages.md` | page/screen inventory, per-page intent + primary metric, status | when pages are planned/started/shipped |
 | `todo.md` | open work, prioritized; placeholder flags (fake numbers to replace!) | continuously |
 | `bugs.md` | known visual/UX defects with severity + surface | when found (even if not fixing now) |

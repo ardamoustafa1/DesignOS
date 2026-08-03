@@ -15,15 +15,29 @@ const results = [];
 
 function runStatic(rule) {
   const fixture = path.join(ROOT, rule.fixture);
-  const run = spawnSync(process.execPath, [path.join(ROOT, 'validators/check-registry.js'), fixture, '--json'], {
+  let command = path.join(ROOT, 'validators/check-registry.js');
+  const extraArgs = [];
+
+  // A registry rule may be owned by a specialized public provider rather than the
+  // unified source scanner. Keep the black-box evaluation honest by exercising the
+  // same provider that advertises the rule in validators/rule-registry.js.
+  if (rule.id === 'motion-uninterruptible-transition') {
+    command = path.join(ROOT, 'validators/check-motion.js');
+  } else if (rule.id === 'signature-drift') {
+    command = path.join(ROOT, 'validators/check-signature-consistency.js');
+    extraArgs.push('--memory', path.join(ROOT, 'validators/fixtures/signature-lock/memory-design.md'));
+  }
+
+  const run = spawnSync(process.execPath, [command, fixture, ...extraArgs, '--json'], {
     cwd: ROOT, encoding: 'utf8',
   });
   let report = {};
   try { report = JSON.parse(run.stdout); } catch {}
+  const observed = report.findings?.map(item => item.id || item.rule).filter(Boolean) || [];
   return {
     ruleId: rule.id, evaluator: 'isolated-static-black-box', fixture: rule.fixture,
-    passed: Boolean(report.findings?.some(item => item.id === rule.id)),
-    observed: report.findings?.map(item => item.id) || [],
+    passed: observed.includes(rule.id),
+    observed,
   };
 }
 

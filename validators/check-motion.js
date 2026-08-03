@@ -43,13 +43,20 @@ const fs = require('fs');
 const path = require('path');
 
 const argv = process.argv.slice(2);
+const asJson = argv.includes('--json');
 const positional = argv.filter(a => !a.startsWith('--'));
 const target = positional[0];
 const tokenFiles = positional.slice(1);
 if (!target) {
-  console.error('usage: check-motion.js <src-dir-or-file> [token-file ...]');
+  console.error('usage: check-motion.js <src-dir-or-file> [token-file ...] [--json]');
   process.exit(2);
 }
+let RULE_SEVERITY = new Map();
+try {
+  RULE_SEVERITY = new Map(require('./rule-registry').PROVIDERS
+    .find(p => p.id === 'motion-source').ruleIds
+    .map(id => [id, require('./rule-registry').getRule(id).severity]));
+} catch (_) { /* registry optional — falls back to P2 below */ }
 
 function* walk(p) {
   const st = fs.statSync(p);
@@ -513,12 +520,58 @@ for (const file of files) {
     }
   }
 
+  /* ── interruptibility: a dragged surface must never be smoothed by a CSS transition ──
+   * physics.md tracking law: "there is no animation — there is 1:1 correspondence [...]
+   * Any easing, any transition [...] inserts lag between the finger and the pixels."
+   * A file that listens for pointermove/touchmove drag but never clears the transition
+   * on grab (el.style.transition = 'none') will fight the user's hand every frame. */
+  if (/\.(html|jsx?|tsx?|vue|svelte)$/.test(file)) {
+    // Narrow and away from continuous hover-follow effects (magnetic button, tilt,
+    // spotlight) which track the pointer via pointerenter/leave or write a custom
+    // property, never a pointerdown→pointermove drag lifecycle that writes
+    // el.style.transform directly. Only that shape is the tracking-law drag physics.md
+    // describes; requiring all three keeps tilt/spotlight/magnetic recipes finding-free.
+    const hasPointerDown = /addEventListener\(\s*['"`]pointerdown['"`]/.test(clean);
+    const hasPointerMove = /addEventListener\(\s*['"`](pointermove|touchmove)['"`]/.test(clean);
+    const writesTransformDirectly = /\.style\.transform\s*=/.test(clean);
+    if (hasPointerDown && hasPointerMove && writesTransformDirectly) {
+      const clearsTransitionOnGrab = /\.style\.transition\s*=\s*['"`](none)?['"`]/.test(clean)
+        || /setProperty\(\s*['"`]transition['"`]\s*,\s*['"`]none['"`]/.test(clean)
+        || /transition\s*:\s*none\b/.test(clean);
+      if (!clearsTransitionOnGrab) {
+        const seen = new Set();
+        for (const m of clean.matchAll(/transition(?:-property)?\s*:\s*([^;{}]+);?/gi)) {
+          const props = m[1].toLowerCase();
+          if (!/\ball\b|\btransform\b|\btranslate\b/.test(props)) continue;
+          if (seen.has(m.index)) continue;
+          seen.add(m.index);
+          push(m.index, 'motion-uninterruptible-transition',
+            `drags via pointermove/touchmove but this transition ("${m[1].trim().slice(0, 60)}") is never cleared on grab — the dragged surface will lag the finger instead of tracking it 1:1; set el.style.transition = 'none' on pointerdown before writing transform (physics.md tracking law)`);
+        }
+      }
+    }
+  }
+
   /* ── reduced motion: once per file, and only if the file actually moves ── */
   if (motionDeclared && !hasReducedMotion) {
     const anchor = clean.search(/transition\s*:|animation\s*:/);
     push(anchor < 0 ? 0 : anchor, 'motion-no-reduced-motion',
       'file declares motion but no prefers-reduced-motion policy is in scope — this is a DesignOS instant-fail, not a nice-to-have (performance.md). Pass the shared token file as an argument if the policy lives there.');
   }
+}
+
+const LINE_RE = /^(.+?):(\d+)\s{2}([\w-]+)\s{2}([\s\S]*)$/;
+function toStructured(line) {
+  const m = LINE_RE.exec(line);
+  if (!m) return { file: '', line: 0, rule: '', severity: 'P2', message: line };
+  const [, file, ln, rule, message] = m;
+  return { file, line: Number(ln), rule, severity: RULE_SEVERITY.get(rule) || 'P2', message };
+}
+
+if (asJson) {
+  const structured = findings.map(toStructured);
+  console.log(JSON.stringify({ target, findings: structured, count: structured.length }, null, 2));
+  process.exit(structured.length ? 2 : 0);
 }
 
 if (findings.length) {

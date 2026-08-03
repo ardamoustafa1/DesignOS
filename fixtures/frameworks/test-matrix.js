@@ -10,11 +10,12 @@ const { TraceMap, eachMapping } = require('@jridgewell/trace-mapping');
 const live = require('../../bin/live-director');
 const { RECIPES } = require('../../runtime/motion/recipes');
 const { recipeInitialState, recipeState } = require('../../runtime/motion/controller');
+const { STACKS, MOTION_MODES, ASSERTIONS_PER_MODE, SOURCE_MAP_ASSERTIONS } = require('./contracts');
 
 const ROOT = path.resolve(__dirname, '../..');
 const MATRIX = __dirname;
 const DIST = path.join(__dirname, 'dist');
-const stacks = ['vanilla', 'react', 'motion', 'gsap', 'vue', 'svelte'];
+const stacks = STACKS;
 const build = spawnSync(process.execPath, [path.join(__dirname, 'build-matrix.js')], { cwd: ROOT, encoding: 'utf8' });
 if (build.status) {
   process.stderr.write(build.stderr || build.stdout);
@@ -63,7 +64,7 @@ const server = http.createServer((request, response) => {
   let assertions = 0;
   let combinations = 0;
   try {
-    for (const stack of stacks) for (const reducedMotion of ['no-preference', 'reduce']) {
+    for (const stack of stacks) for (const reducedMotion of MOTION_MODES) {
       const context = await browser.newContext({ reducedMotion });
       const page = await context.newPage();
       const errors = [];
@@ -137,7 +138,7 @@ const server = http.createServer((request, response) => {
         });
         if (!adapter.destroyed || adapter.listenerCount !== 0) throw new Error(`${label}: unmount leaked event listeners`);
         if (errors.length) throw new Error(`${label}: ${errors.join('; ')}`);
-        assertions += reducedMotion === 'reduce' ? 19 : 20;
+        assertions += ASSERTIONS_PER_MODE[reducedMotion];
         combinations += 1;
       }
       console.log(`  ✓ ${stack} / ${reducedMotion} / ${RECIPES.length} recipes`);
@@ -147,5 +148,5 @@ const server = http.createServer((request, response) => {
     await browser.close();
     await new Promise(resolve => server.close(resolve));
   }
-  console.log(`framework-matrix: ${combinations} adapter fixtures (${RECIPES.length} recipes × ${stacks.length} stacks × 2 motion modes), ${assertions} browser assertions + 3 source-map resolutions clean`);
+  console.log(`framework-matrix: ${combinations} adapter fixtures (${RECIPES.length} recipes × ${stacks.length} stacks × ${MOTION_MODES.length} motion modes), ${assertions} browser assertions + ${SOURCE_MAP_ASSERTIONS} source-map resolutions clean`);
 })().catch(error => { console.error(error); server.close(); process.exit(1); });

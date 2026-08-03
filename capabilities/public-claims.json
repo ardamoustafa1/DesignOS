@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "name": "designos",
+    "version": "2.1.0"
+  },
+  "rules": {
+    "count": 40,
+    "providers": 8,
+    "source": "validators/rule-registry.js"
+  },
+  "motion": {
+    "recipes": 15,
+    "stacks": 6,
+    "adapterCombinations": 90,
+    "fixtureScenarios": 180,
+    "browserAssertions": 3510,
+    "sourceMapAssertions": 3,
+    "source": "runtime/motion/recipes.js",
+    "fixtureSource": "fixtures/frameworks/test-matrix.js"
+  },
+  "dependencies": {
+    "runtime": 3,
+    "names": [
+      "@jridgewell/trace-mapping",
+      "axe-core",
+      "playwright"
+    ],
+    "source": "package.json"
+  },
+  "evaluation": {
+    "isolatedRuleEval": true,
+    "externalEval": false,
+    "externalEvalRuns": 0,
+    "source": "evals/isolated/registry-eval.json + evals/external/registry.json"
+  },
+  "nativeEvidence": {
+    "status": "source-conformance-only",
+    "sourceAdapters": 4,
+    "verifiedDeviceRuns": 0,
+    "source": "runtime/native/adapters.js"
+  },
+  "generatedTargets": [
+    "README.md",
+    "ARCHITECTURE.md",
+    "ROADMAP.md",
+    "LIMITATIONS.md",
+    ".claude-plugin/plugin.json",
+    "website/index.html"
+  ]
+}

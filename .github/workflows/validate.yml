@@ -20,8 +20,10 @@ jobs:
       - name: Generate dependency/capability ledger and reject committed drift
         run: |
           npm run ledger:update
-          git diff --exit-code -- capabilities/ledger.json README.md ARCHITECTURE.md ROADMAP.md LIMITATIONS.md
+          npm run claims:update
+          git diff --exit-code -- capabilities/ledger.json capabilities/public-claims.json README.md ARCHITECTURE.md ROADMAP.md LIMITATIONS.md .claude-plugin/plugin.json website/index.html
           npm run check:ledger
+          npm run check:claims
       - name: Enforce core npm package boundary
         run: npm run check:package
       - name: Showcase pages pass a11y basics

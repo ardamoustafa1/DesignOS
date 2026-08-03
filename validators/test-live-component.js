@@ -31,6 +31,23 @@ live.annotate(preview, {
   classification: 'Hierarchy weak',
   note: 'Exercise a source-mapped component transaction',
 }, temp);
+const diff = live.variantDiff(preview, 'b', temp);
+assert.strictEqual(diff.framework, 'html');
+assert.strictEqual(diff.diffs.slotStructure.changed, true);
+assert.strictEqual(diff.diffs.copyHierarchy.value, 'proof-headline-support');
+assert.strictEqual(diff.diffs.ctaOrder.value, 'primary-first');
+assert.strictEqual(diff.diffs.motion.changed, true);
+assert.strictEqual(diff.diffs.responsive.changed, true);
+assert.strictEqual(diff.diffs.accessibility.changed, true);
+assert.strictEqual(diff.diffs.performance.changed, true);
+assert.deepStrictEqual(live.setLocks(preview, { route: true, component: true }, temp), {
+  route: true, component: true,
+});
+const studio = live.directorHtml(preview);
+for (const contract of [
+  'data-variant=', '/api/accept', '/api/reject', '/api/rollback', '/api/merge',
+  'Component boundary', 'Semantic diff', 'Route lock', 'Component lock',
+]) assert(studio.includes(contract), `studio missing ${contract}`);
 const transaction = live.acceptVariant(preview, 'b', 'Component AST acceptance fixture', temp);
 assert.strictEqual(transaction.componentNative, true);
 assert.strictEqual(transaction.target, source);
@@ -38,6 +55,10 @@ assert(Object.values(transaction.componentTransform.changes).every(Boolean));
 assert(transaction.componentTransform.impact.accessibility);
 assert(transaction.componentTransform.impact.performance);
 assert(transaction.componentTransform.impact.proofProvenance);
+assert(transaction.acceptanceGates.browser.passed);
+assert(transaction.acceptanceGates.accessibility.passed);
+assert(transaction.acceptanceGates.motion.passed);
+assert(transaction.acceptanceGates.performance.passed);
 const transformed = fs.readFileSync(source, 'utf8');
 assert(transformed.includes('data-slot="copy"'));
 assert(transformed.includes('data-proof-placement="before-copy"'));
@@ -48,6 +69,47 @@ assert(transformed.indexOf('class="primary"') < transformed.indexOf('>Secondary<
 const rollback = live.rollback(preview, temp);
 assert.strictEqual(rollback.id, transaction.id);
 assert.strictEqual(fs.readFileSync(source, 'utf8'), original);
+assert.strictEqual(live.detectFramework('/app/page.tsx'), 'next');
+assert.strictEqual(live.detectFramework('/src/App.vue'), 'vue');
+assert.strictEqual(live.detectFramework('/src/routes/+page.svelte'), 'sveltekit');
+assert.strictEqual(live.detectFramework('/src/pages/index.astro'), 'astro');
+
+for (const [relative, framework] of [
+  ['src/App.jsx', 'react'],
+  ['src/App.vue', 'vue'],
+  ['src/routes/+page.svelte', 'sveltekit'],
+  ['src/pages/index.astro', 'astro'],
+  ['app/page.tsx', 'next'],
+]) {
+  const file = path.join(temp, relative);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, '<section id="mapped">Mapped component</section>');
+  const resolved = live.resolveComponentSource({ source: preview }, original, {
+    selector: '#mapped', sourceMarker: `${relative}:1:1`,
+  });
+  assert.strictEqual(resolved.file, file);
+  assert.strictEqual(live.detectFramework(resolved.file), framework);
+  assert.strictEqual(resolved.confidence, 1);
+}
+
+const plain = path.join(temp, 'plain.html');
+fs.writeFileSync(plain, original);
+live.initSession(plain, temp);
+live.annotate(plain, {
+  selector: '#hero',
+  classification: 'Too generic',
+  note: 'Exercise conflict-safe generated/manual merge',
+}, temp);
+const merged = live.mergeManualWithVariant(plain, 'a', [{
+  search: 'Existing product copy stays intact.',
+  replace: 'Manual copy survives the generated structure.',
+}], 'Merged fixture', temp);
+assert.strictEqual(merged.type, 'variant-manual-merge');
+assert.strictEqual(merged.conflicts.length, 0);
+assert(Object.values(merged.acceptanceGates).every(gate => gate.passed));
+assert(fs.readFileSync(plain, 'utf8').includes('Manual copy survives the generated structure.'));
+live.rollback(plain, temp);
+assert.strictEqual(fs.readFileSync(plain, 'utf8'), original);
 
 fs.rmSync(temp, { recursive: true, force: true });
 console.log('live-component: source-mapped AST transaction, build gate, acceptance and rollback clean');

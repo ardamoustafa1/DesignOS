@@ -12,6 +12,7 @@ const { MUTATIONS } = require('../bin/mutation-testing');
 const { SCENARIOS } = require('../bin/interruption-torture');
 const { STACKS: COMPOSITION_STACKS } = require('../bin/composition-compiler');
 const { SOURCES: NATIVE_SOURCES } = require('../runtime/native/adapters');
+const { matrixCounts } = require('../fixtures/frameworks/contracts');
 
 const ROOT = path.resolve(__dirname, '..');
 const KNOWLEDGE_DIRECTORIES = Object.freeze([
@@ -39,6 +40,7 @@ function buildCapabilityLedger() {
   const committedLedger = fs.existsSync(committedLedgerFile)
     ? JSON.parse(fs.readFileSync(committedLedgerFile, 'utf8')) : null;
   const goldenRoot = path.join(ROOT, 'goldens');
+  const matrix = matrixCounts(RECIPES.length);
   const cliModules = fs.readdirSync(path.join(ROOT, 'bin/cli/commands'))
     .filter(file => file.endsWith('.js')).length;
   return {
@@ -58,6 +60,8 @@ function buildCapabilityLedger() {
       frameworkStacks: STACKS.length,
       executableAdapterCombinations: RECIPES.length * STACKS.length,
       reducedMotionBrowserScenarios: RECIPES.length * STACKS.length,
+      browserFixtureScenarios: matrix.fixtureCount,
+      browserAssertions: matrix.browserAssertions,
       knowledgeGraphNodes: graphNodes().length,
       goldenProjects: fs.existsSync(goldenRoot)
         ? fs.readdirSync(goldenRoot, { withFileTypes: true }).filter(entry => entry.isDirectory()).length
@@ -76,6 +80,9 @@ function buildCapabilityLedger() {
       mutationOperators: MUTATIONS.length,
       crossPageConsistencyGraph: true,
       nativeMotionAdapters: Object.keys(NATIVE_SOURCES).length,
+      motionSemanticCompiler: true,
+      liveDirectorStudio: true,
+      deterministicClaimCompiler: true,
       isolatedRuleEval: true,
       externalEval: external.externalEval,
       externalEvalRuns: external.validRuns,
@@ -103,6 +110,9 @@ function buildCapabilityLedger() {
       mutationTesting: 'bin/mutation-testing.js',
       consistencyGraph: 'bin/consistency-graph.js',
       nativeMotion: 'runtime/native/adapters.js',
+      motionSemantics: 'runtime/motion/semantics.js',
+      liveDirectorStudio: 'bin/live-director.js',
+      publicClaims: 'capabilities/public-claims.js + scripts/compile-public-claims.js',
       evals: 'evals/isolated/registry-eval.json + evals/external/registry.json',
       knowledgeGraph: 'bin/intelligence.js',
     },

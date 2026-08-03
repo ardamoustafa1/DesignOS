@@ -4,6 +4,22 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+### Added — P0 semantic motion, studio and public truth
+- **Motion Semantics Compiler.** Nine inputs now compile to animate/no-animation,
+  frequency- and geometry-adjusted timing, easing/spring, honest transform origin,
+  symmetric enter/exit paths, interruption, reduced-motion equivalence, explicit
+  performance budgets, keyboard/pointer/touch decisions, and module/rule/recipe provenance.
+- **Live Director Studio.** The browser surface now includes hover/select inspection,
+  component boundaries, HTML/React/Vue/Svelte/Astro/Next/SvelteKit source identity,
+  a variant carousel, component/copy/slot/CTA/responsive/motion/a11y/performance diffs,
+  route/component locks, accept/reject/undo, and conflict-safe manual/generated merge.
+  Acceptance independently requires browser, Axe/AX accessibility, motion/reduced-motion,
+  and performance gates.
+- **Deterministic Claim Compiler.** Version, rule, recipe, stack, fixture, browser-assertion,
+  dependency, external-eval, and native-evidence claims generate from executable sources
+  into README, Architecture, Roadmap, Limitations, plugin metadata, the public site, and
+  `capabilities/public-claims.json`; CI rejects drift.
+
 ### Added — execution and evidence layer
 - **Unified detector registry and edit hooks.** Thirty-six stable rules now carry
   category, severity, remediation, source module, exception syntax, and failing fixtures.

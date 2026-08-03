@@ -17,6 +17,16 @@
 }
 ```
 
+## Signature Lock
+<!-- Optional. Once the project has chosen a recurring signature (motion/signature-moments.md),
+     record it here — one motif, not one per page. `node DesignOS/bin/designos.js
+     signature-check <dir>` flags any page carrying evidence of a DIFFERENT signature
+     technique with no documented `signature-override: <reason>` comment. Leave this
+     section out entirely if the project hasn't earned or chosen a recurring signature yet. -->
+- Technique: <one of the eleven ids in validators/signature-fingerprints.js, e.g. magnetic-button>
+- Derivation: <the product truth this expresses — brain/wow-calibration.md style>
+- Locked: <date>
+
 ## Composition decisions
 - Container widths: prose ____ / marketing ____ / wide ____
 - Hero variant chosen + reason:

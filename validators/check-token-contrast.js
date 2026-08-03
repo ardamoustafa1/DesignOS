@@ -39,9 +39,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const [, , target, ...tokenFiles] = process.argv;
+const rawArgs = process.argv.slice(2);
+const asJson = rawArgs.includes('--json');
+const [target, ...tokenFiles] = rawArgs.filter(a => a !== '--json');
 if (!target) {
-  console.error('usage: check-token-contrast.js <src-dir-or-file> [token-file ...]');
+  console.error('usage: check-token-contrast.js <src-dir-or-file> [token-file ...] [--json]');
   process.exit(2);
 }
 
@@ -411,6 +413,16 @@ for (const file of files) {
       findings.push(`${rel}:${line}  contrast-inherited-large-only  ${who} "${snippet}" — ${pair} — fails AA body text (4.5:1); acceptable ONLY if this text is ≥24px or ≥18.66px bold`);
     }
   }
+}
+
+if (asJson) {
+  const { emitJson, severityResolver } = require('./finding-format');
+  const severityFor = severityResolver({
+    'contrast-fail': 'P1', 'contrast-large-only': 'P2',
+    'contrast-inherited-fail': 'P1', 'contrast-inherited-large-only': 'P2',
+  });
+  const structured = emitJson(target, findings, severityFor);
+  process.exit(structured.length ? 2 : 0);
 }
 
 if (findings.length) {

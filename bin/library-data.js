@@ -266,6 +266,17 @@ const MOTION_PRESETS = [
     module: 'motion/signature-moments.md',
   },
   {
+    id: 'webgl-shader-field',
+    name: 'Raw WebGL shader field',
+    tier: 'expressive',
+    tags: ['webgl', 'shader', 'glsl', '3d', 'depth', 'particle', 'gpu', 'fragment', 'distortion', 'wow'],
+    when: 'Real 3D depth, a shader distortion, or a live particle count Canvas 2D cannot push at 60fps. If noise-canvas can carry it, use noise-canvas instead — it is cheaper in every dimension.',
+    tokens: [],
+    code: `const gl = canvas.getContext('webgl2', { alpha: true, powerPreference: 'low-power' });\nif (!gl) return () => {}; // no WebGL2 -> fall back to noise-canvas, never a blank hole\n// single fullscreen-quad fragment shader; both guards load-bearing like noise-canvas:\ncanvas.addEventListener('webglcontextlost', e => { e.preventDefault(); /* stop, don't throw */ });\nnew IntersectionObserver(...); document.addEventListener('visibilitychange', ...);`,
+    doNot: 'The most expensive technique in the catalogue — a persistent GPU context and a shader compile at init. Never the default "premium" background; it is earned by a depth/material truth 2D cannot express, not a preference for the fancier one. Never combine with noise-canvas on the same page. Mandatory 4x CPU-throttle profile before shipping (designos motion-profile), not advisory.',
+    module: 'motion/signature-moments.md',
+  },
+  {
     id: 'reduced-motion-multiplier',
     name: 'Reduced motion, the craft version',
     tier: 'subtle',

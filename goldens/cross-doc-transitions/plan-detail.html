@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q3 platform migration · Waypoint</title>
+<meta name="description" content="Waypoint plan detail: Q3 platform migration timeline, owners, and status.">
+<style>
+:root {
+  --duration-fast: 150ms; --duration-base: 200ms; --duration-slow: 300ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --bg: #0b0d0f; --surface: #12161a; --surface-raised: #171c21; --border: #232a2f;
+  --text: #e9e6de; --text-dim: #9aa3a5; --accent: #5fb98a; --warn: #d3a24d; --on-accent: #06231a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 32px; border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 650; text-decoration: none; }
+.brand .mark {
+  width: 28px; height: 28px; border-radius: 8px; background: var(--accent);
+  display: grid; place-items: center; color: var(--on-accent); font-size: 14px; font-weight: 700;
+  view-transition-name: waypoint-mark;   /* the SAME name as index.html, the thread of continuity */
+}
+::view-transition-old(waypoint-mark), ::view-transition-new(waypoint-mark) {
+  animation-duration: var(--duration-base);
+}
+.back {
+  text-decoration: none; color: var(--text-dim); font-size: 0.9rem;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.back:hover, .back:focus-visible { color: var(--text); }
+
+main { max-width: 720px; margin: 0 auto; padding: 56px 32px 80px; }
+.eyebrow { color: var(--text-dim); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 8px; }
+h1 { font-size: clamp(1.6rem, 3.6vw, 2rem); margin: 0 0 8px; letter-spacing: -0.01em; }
+.meta { display: flex; gap: 20px; flex-wrap: wrap; color: var(--text-dim); font-size: 0.9rem; margin: 0 0 40px; }
+.meta strong { color: var(--text); font-weight: 600; }
+
+ol.timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--border); }
+ol.timeline li { position: relative; padding: 0 0 28px 24px; }
+ol.timeline li::before {
+  content: ""; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--surface-raised); border: 2px solid var(--border);
+}
+ol.timeline li[data-state="done"]::before { background: var(--accent); border-color: var(--accent); }
+ol.timeline li[data-state="active"]::before { background: var(--warn); border-color: var(--warn); }
+ol.timeline li h2 { margin: 0 0 4px; font-size: 1rem; }
+ol.timeline li p { margin: 0; color: var(--text-dim); font-size: 0.9rem; }
+ol.timeline li .when { font-size: 0.8rem; color: var(--text-dim); }
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="plan-detail.html"><span class="mark" aria-hidden="true">W</span>Waypoint</a>
+  <a class="back" href="index.html">&larr; All plans</a>
+</header>
+<main>
+  <p class="eyebrow">Release plan</p>
+  <h1>Q3 platform migration</h1>
+  <p class="meta"><span>Owner: <strong>Payments infra</strong></span><span>Status: <strong>On track</strong></span><span>Target: <strong>Oct 15</strong></span></p>
+  <ol class="timeline">
+    <li data-state="done"><span class="when">Completed · Jul 2</span><h2>Shadow-write billing events</h2><p>Legacy and new pipelines both receive every event; no cutover yet.</p></li>
+    <li data-state="done"><span class="when">Completed · Jul 18</span><h2>Reconcile 30 days of shadow data</h2><p>Discrepancy rate under 0.01% for two consecutive weeks.</p></li>
+    <li data-state="active"><span class="when">In progress · targets Aug 9</span><h2>Cut over read traffic</h2><p>Serve billing reads from the new service behind a kill switch.</p></li>
+    <li data-state="pending"><span class="when">Planned · Sep 1</span><h2>Cut over write traffic</h2><p>Legacy pipeline becomes read-only, then decommissioned after 30 days.</p></li>
+    <li data-state="pending"><span class="when">Planned · Oct 15</span><h2>Decommission legacy service</h2><p>Removed ahead of the October renewal so the old contract lapses cleanly.</p></li>
+  </ol>
+</main>
+</body>
+</html>
