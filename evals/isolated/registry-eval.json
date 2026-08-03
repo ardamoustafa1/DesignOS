@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "generatedAt": "2026-07-30T08:36:22.317Z",
+  "generatedAt": "2026-08-03T07:12:18.012Z",
   "isolatedRuleEval": true,
   "externalEval": false,
   "evaluatorContract": "Each rule is exercised through a child-process black box using only its public fixture and emitted finding ID.",
@@ -201,6 +201,24 @@
       "observed": [
         "motion-reduced-motion-missing",
         "motion-transform-origin"
+      ]
+    },
+    {
+      "ruleId": "motion-uninterruptible-transition",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/registry/uninterruptible-transition.js",
+      "passed": true,
+      "observed": [
+        "motion-uninterruptible-transition"
+      ]
+    },
+    {
+      "ruleId": "signature-drift",
+      "evaluator": "isolated-static-black-box",
+      "fixture": "validators/fixtures/signature-lock/drifts-from-lock.html",
+      "passed": true,
+      "observed": [
+        "signature-drift"
       ]
     },
     {
@@ -406,8 +424,8 @@
     }
   ],
   "summary": {
-    "total": 38,
-    "passed": 38,
+    "total": 40,
+    "passed": 40,
     "failed": 0
   }
 }
