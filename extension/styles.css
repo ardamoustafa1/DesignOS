@@ -1,0 +1,70 @@
+/* DesignOS Content Script Overlay Styles */
+
+/* 1. Token Drift Inspector Overlay */
+#designos-inspector-panel {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(9, 9, 11, 0.95);
+  color: #fafafa;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  z-index: 2147483647;
+  pointer-events: none;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  max-width: 250px;
+}
+
+#designos-inspector-panel em {
+  display: block;
+  margin-top: 8px;
+  color: #10b981;
+  font-style: normal;
+  font-size: 11px;
+}
+
+.designos-warn {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+/* 2. Motion Profiler Overlay */
+#designos-profiler-panel {
+  display: none;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: rgba(9, 9, 11, 0.9);
+  color: #a1a1aa;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  z-index: 2147483647;
+  pointer-events: none;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+#designos-profiler-panel span {
+  color: #fafafa;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* 3. Highlighter */
+.designos-highlight {
+  outline: 2px solid #10b981 !important;
+  outline-offset: -2px !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+  transition: none !important;
+}

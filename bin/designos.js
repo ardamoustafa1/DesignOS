@@ -198,15 +198,26 @@ function installSkills() {
 
 /* ---------- export: rules files for other agents ---------- */
 const EXPORT_TARGETS = {
-  cursor:   { file: '.cursorrules',                        label: 'Cursor' },
-  copilot:  { file: '.github/copilot-instructions.md',     label: 'GitHub Copilot' },
-  windsurf: { file: '.windsurfrules',                      label: 'Windsurf' },
-  cline:    { file: '.clinerules',                         label: 'Cline' },
-  aider:    { file: 'CONVENTIONS.md',                      label: 'Aider' },
-  agentsmd: { file: 'AGENTS.md',                           label: 'AGENTS.md standard (Codex · Amp · Zed · …)' },
-  gemini:   { file: 'GEMINI.md',                           label: 'Gemini CLI' },
-  kiro:     { file: '.kiro/steering/designos.md',          label: 'Kiro' },
-  trae:     { file: '.trae/rules/designos.md',             label: 'Trae' },
+  // ── Core / Already-supported ────────────────────────────────────────
+  cursor:    { file: '.cursorrules',                         label: 'Cursor' },
+  copilot:   { file: '.github/copilot-instructions.md',      label: 'GitHub Copilot' },
+  windsurf:  { file: '.windsurfrules',                       label: 'Windsurf' },
+  cline:     { file: '.clinerules',                          label: 'Cline' },
+  aider:     { file: 'CONVENTIONS.md',                       label: 'Aider' },
+  agentsmd:  { file: 'AGENTS.md',                            label: 'AGENTS.md standard (Codex · Amp · Zed · …)' },
+  gemini:    { file: 'GEMINI.md',                            label: 'Gemini CLI' },
+  kiro:      { file: '.kiro/steering/designos.md',           label: 'Kiro' },
+  trae:      { file: '.trae/rules/designos.md',              label: 'Trae' },
+  // ── New: Extended Multi-Tool Support ────────────────────────────────
+  codex:     { file: '.codex/instructions.md',               label: 'OpenAI Codex CLI' },
+  opencode:  { file: '.opencode/rules/designos.md',          label: 'OpenCode' },
+  grok:      { file: '.grok/rules/designos.md',              label: 'Grok Build (xAI)' },
+  pi:        { file: '.pi/context/designos.md',              label: 'Pi (Inflection AI)' },
+  qoder:     { file: '.qoder/context.md',                    label: 'Qoder' },
+  rovodev:   { file: '.rovo/designos.md',                    label: 'Rovo Dev (Atlassian)' },
+  vibe:      { file: '.vibe/rules/designos.md',              label: 'Vibe Coding' },
+  amp:       { file: '.amp/designos.md',                     label: 'Amp (Sourcegraph)' },
+  zed:       { file: '.zed/designos.md',                     label: 'Zed AI' },
 };
 
 // Directories the kernel's routing table and boot sequence reference by relative
@@ -225,22 +236,52 @@ function rewriteKernelPathsForExport(kernel) {
   return kernel.replace(re, (match) => `DesignOS/${match}`);
 }
 
+// Non-Claude-Code agents vary widely in how strictly they follow a long rules file —
+// some skim, some never open referenced module paths, some never re-check their own
+// score. Claude Code earns trust in this system by actually executing the boot
+// sequence end to end. To close that gap for every other tool, the export bakes the
+// two things that must NOT depend on the target model's discipline directly into the
+// generated file, front and center, instead of leaving them to be discovered deep in
+// a routing table: (1) a blunt compliance preamble, (2) the full deterministic
+// final-gate command block, verbatim, so the mechanical floor holds even if the agent
+// never opens `workflows/final-gate.md` on its own.
+function buildCompliancePreamble(toolLabel) {
+  return [
+    `# READ THIS FILE IN FULL BEFORE ANY DESIGN WORK — ${toolLabel}`,
+    '',
+    'This file is not background flavor text — it is a binding operating contract for',
+    'every design task in this repo, exactly as strict as it would be for Claude Code.',
+    'Three rules that apply regardless of which model or product is reading this:',
+    '',
+    '1. **Do not skip the boot sequence** because it looks implicit or the task looks',
+    '   small. The kernel below defines a trivial-task gate explicitly — use it to',
+    '   decide whether to shortcut, do not invent your own judgment call.',
+    '2. **Do not self-certify a score.** "95+", "100/100", "SHIP", or "zero findings"',
+    '   are claims you are not permitted to make unless you actually ran the commands',
+    '   in the MANDATORY VERIFICATION GATE below and are quoting their real output.',
+    '3. **Do not silently improvise** when a routed module file does not exist in',
+    '   `./DesignOS/`. Say so out loud and ask, the same way the kernel requires below.',
+    '',
+    'If your tool cannot execute shell commands or read repo files, say that explicitly',
+    'in your response instead of pretending the gate ran.',
+    '',
+  ].join('\n');
+}
+
 function exportRules(targetName, force) {
   const kernelPath = path.join(CWD, 'DesignOS', 'CLAUDE.md');
   const srcKernel = fs.existsSync(kernelPath) ? kernelPath : path.join(PKG_ROOT, 'CLAUDE.md');
   if (!fs.existsSync(srcKernel)) fail(`Kernel not found — run "npx github:ardamoustafa1/DesignOS init" first.`);
   const kernel = rewriteKernelPathsForExport(fs.readFileSync(srcKernel, 'utf8'));
 
+  const gatePath = path.join(CWD, 'DesignOS', 'workflows', 'final-gate.md');
+  const srcGate = fs.existsSync(gatePath) ? gatePath : path.join(PKG_ROOT, 'workflows', 'final-gate.md');
+  const gate = fs.existsSync(srcGate) ? rewriteKernelPathsForExport(fs.readFileSync(srcGate, 'utf8')) : '';
+
   const names = targetName === 'all' ? Object.keys(EXPORT_TARGETS) : [targetName];
   if (!names.every(n => EXPORT_TARGETS[n])) {
     fail(`Unknown export target "${targetName}" — use: ${Object.keys(EXPORT_TARGETS).join(' · ')} · all`);
   }
-  const header = [
-    `<!-- Generated by \`${RUN} export\` — DesignOS kernel follows. -->`,
-    '<!-- The module files it routes to live in ./DesignOS/ — keep that folder in the repo. -->',
-    '<!-- Regenerate after upgrading DesignOS. Do not edit by hand; edit DesignOS/CLAUDE.md. -->',
-    '',
-  ].join('\n');
 
   for (const n of names) {
     const t = EXPORT_TARGETS[n];
@@ -249,6 +290,14 @@ function exportRules(targetName, force) {
       warn(`${t.file} exists and is not DesignOS-generated — skipped (re-run with --force to overwrite, or append the kernel by hand)`);
       continue;
     }
+    const header = [
+      `<!-- Generated by \`${RUN} export\` — DesignOS kernel follows. -->`,
+      '<!-- The module files it routes to live in ./DesignOS/ — keep that folder in the repo. -->',
+      '<!-- Regenerate after upgrading DesignOS. Do not edit by hand; edit DesignOS/CLAUDE.md. -->',
+      '',
+      buildCompliancePreamble(t.label),
+      gate ? `## MANDATORY VERIFICATION GATE (run before claiming any score)\n\n${gate}\n\n---\n` : '',
+    ].join('\n');
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.writeFileSync(dest, header + kernel);
     ok(`${t.label} → ${t.file}`);
@@ -1525,7 +1574,55 @@ switch (cmd) {
   case 'case':
     require('./cli/commands/community').execute(cmd, firstPositional(rest), rest, commandContext()); break;
   case 'doctor': doctor(); break;
+  // ── New commands ──────────────────────────────────────────────────
+  case 'dial': require('./cli/commands/dial').execute(rest, commandContext()); break;
+  case 'generate': require('./cli/commands/generate').execute(rest, commandContext()); break;
+  case 'motion-review':
+  case 'motion-opportunities':
+  case 'motion-vocabulary':
+    require('./cli/commands/animation-review').execute(cmd, firstPositional(rest), rest, commandContext()); break;
+  case 'prototype': require('./cli/commands/prototype').execute(rest, commandContext()); break;
+  case 'imagegen-web':
+  case 'imagegen-mobile':
+  case 'imagegen-brandkit':
+    require('./cli/commands/imagegen').execute(cmd, rest, commandContext()); break;
+  case 'motion-live': require('./cli/commands/motion-live').execute(rest, commandContext()); break;
+  case 'visual-diff': require('./cli/commands/visual-diff').execute(rest, commandContext()); break;
+  case 'extract-tokens': require('./cli/commands/extract-tokens').execute(rest, commandContext()); break;
+  case 'fluid-type': require('./cli/commands/fluid-type').execute(rest, commandContext()); break;
+  case 'scroll-animate': require('./cli/commands/scroll-animate').execute(rest, commandContext()); break;
+  case 'signature-compile': require('./cli/commands/signature-compile').execute(rest, commandContext()); break;
+  case 'state-visualize': require('./cli/commands/state-visualize').execute(rest, commandContext()); break;
+  case 'consistency-hook': require('./cli/commands/consistency-hook').execute(rest, commandContext()); break;
+  case 'motion-playground': require('./cli/commands/motion-playground').execute(rest, commandContext()); break;
+  case 'container-tokens': require('./cli/commands/container-tokens').execute(rest, commandContext()); break;
+  case 'contrast-apca': require('./cli/commands/contrast-apca').execute(rest, commandContext()); break;
+  case 'orchestrate': require('./cli/commands/orchestrate').execute(rest, commandContext()); break;
+  case 'ai-review': require('./cli/commands/ai-review').execute(rest, commandContext()); break;
+  case 'tools': listTools(rest); break;
   case 'help':
   case undefined: help(); break;
   default: fail(`Unknown command "${cmd}" — try: ${RUN} help`);
+}
+
+/* ---------- tools: list all supported AI tools ---------- */
+function listTools(args) {
+  const asJson = args.includes('--json');
+  const tools = Object.entries(EXPORT_TARGETS).map(([key, t]) => ({ key, label: t.label, file: t.file }));
+  if (asJson) { console.log(JSON.stringify(tools, null, 2)); return; }
+  console.log('\n  DesignOS supports these AI tools (use with `export <name>`):\n');
+  const groups = [
+    ['Core', ['cursor', 'copilot', 'windsurf', 'cline', 'aider', 'agentsmd', 'gemini', 'kiro', 'trae']],
+    ['Extended', ['codex', 'opencode', 'grok', 'pi', 'qoder', 'rovodev', 'vibe', 'amp', 'zed']],
+  ];
+  for (const [group, keys] of groups) {
+    console.log(`  \x1b[2m── ${group} ──\x1b[0m`);
+    for (const k of keys) {
+      const t = EXPORT_TARGETS[k];
+      if (t) console.log(`  \x1b[36m${k.padEnd(12)}\x1b[0m ${t.label.padEnd(30)} → ${t.file}`);
+    }
+    console.log('');
+  }
+  console.log(`  Export all: node DesignOS/bin/designos.js export all`);
+  console.log(`  Export one: node DesignOS/bin/designos.js export codex\n`);
 }

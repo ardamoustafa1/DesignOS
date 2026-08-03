@@ -37,7 +37,7 @@ evidence, and release gates are executable.
 | Full + reduced-motion browser scenarios | 180 |
 | Knowledge graph nodes | 143 |
 | Golden projects | 5 |
-| Component AST directions / CLI command modules | 3 / 11 |
+| Component AST directions / CLI command modules | 3 / 29 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
 | Mission 4 leader features | 15 / 15 implemented |
 | Torture scenarios / generated component states | 8 / 16 |

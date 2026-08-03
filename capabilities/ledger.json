@@ -74,7 +74,7 @@
     "browserAssertions": 3510,
     "knowledgeGraphNodes": 143,
     "goldenProjects": 5,
-    "cliCommandModules": 11,
+    "cliCommandModules": 29,
     "componentAstTransforms": 3,
     "motionEvidenceEngines": 2,
     "leaderProductFeatures": 15,

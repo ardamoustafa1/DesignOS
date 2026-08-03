@@ -22,3 +22,8 @@
 - No open implementation item remains from the Motion Semantics Compiler, Live Director
   Studio, or Deterministic Claim Compiler P0 scope. Any new public claim source must be
   registered in `capabilities/public-claims.js` and regenerated through CI.
+- Align visible `v2.2` website language with package metadata (`package.json` is `2.1.0`)
+  through an explicit release decision.
+- Replace prototype-grade `motion-playground`, `signature-compile`, and `scroll-animate` paths
+  with source-locked, tested implementations before advertising them as complete product tools.
+- Run an independent design panel and a physical screen-reader listening pass for the public site.

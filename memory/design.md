@@ -78,3 +78,14 @@
 - Public capability language is generated from executable sources. Native evidence stays
   `source-conformance-only` and external evaluation stays false until their registries
   contain qualifying evidence.
+
+## 2026-08-03 — Public-site motion elevation
+
+- dials: variance 5 · motion 7 · density 5
+- rung: 7; one staged hero entrance and one interaction-scale terminal response.
+- Signature vehicle: the boot terminal responds to pointer intent with bounded 3D depth and a
+  translated glow, expressing “intent becomes a governed design decision.”
+- Motion is compositor-only, requestAnimationFrame-batched, gated to fine pointers, and collapses
+  to a complete still state under reduced motion.
+- Rejected: magnetic navigation, custom cursor, perpetual cursor blink, multi-section parallax,
+  and Penta's purple motif.
