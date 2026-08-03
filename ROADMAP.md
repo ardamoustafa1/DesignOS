@@ -19,9 +19,10 @@ Propose additions via a module-proposal issue.
 | Full + reduced-motion browser scenarios | 180 |
 | Knowledge graph nodes | 143 |
 | Golden projects | 5 |
-| Component AST directions / CLI command modules | 3 / 29 |
+| Component AST directions / CLI command modules | 3 / 31 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
-| Mission 4 leader features | 15 / 15 implemented |
+| Mission 4 leader features | 18 / 18 implemented |
+| Inspectable pattern atlas | 15 patterns |
 | Torture scenarios / generated component states | 8 / 16 |
 | Composition compiler stacks / native motion adapters | 6 / 4 |
 | Mutation operators | 9 |
@@ -33,11 +34,12 @@ Propose additions via a module-proposal issue.
 
 | Public claim | Generated truth |
 |---|---:|
-| Version | 2.1.0 |
+| Version | 2.2.0 |
 | Rules / providers | 40 / 8 |
 | Motion recipes / stacks | 15 / 6 |
 | Adapter combinations / browser fixtures | 90 / 180 |
 | Browser / source-map assertions | 3510 / 3 |
+| Pattern atlas / unified improve | 15 / yes |
 | Runtime dependencies | 3 |
 | External eval | not verified |
 | Native evidence | source-conformance-only (0 device runs) |

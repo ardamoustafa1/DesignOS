@@ -49,7 +49,7 @@ for (const type of ['sector', 'surface', 'component', 'platform', 'motion', 'val
 }
 
 for (const [command, required] of [
-  [['motion-decide', 'command palette', '--frequency', 'very-high', '--initiator', 'keyboard'], '"decision": "feedback-only"'],
+  [['motion-decide', 'command palette', '--frequency', 'very-high', '--initiator', 'keyboard'], '"decision": "do-not-animate"'],
   [['knowledge', 'fintech transaction success motion', '--platform', 'ios'], '"nodes"'],
   [['coverage'], '"capabilities"'],
   [['signature', 'developer tool', '--material', 'deployment timeline'], '"material-led"'],

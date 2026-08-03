@@ -175,7 +175,7 @@ function generate(brief, options, ctx) {
   const { cwd, ok, warn, log, fail } = ctx;
   const { SECTORS, SURFACES } = require('../../suggest-data.js');
 
-  // ── 5 parallel passes ───────────────────────────────────────────────────────
+  // ── 5 deterministic passes ──────────────────────────────────────────────────
   const sectorResult  = runSectorPass(brief, { SECTORS });
   const surfaceResult = runSurfacePass(brief, { SURFACES });
   const styleResult   = runStylePass(brief);

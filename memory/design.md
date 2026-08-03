@@ -89,3 +89,19 @@
   to a complete still state under reduced motion.
 - Rejected: magnetic navigation, custom cursor, perpetual cursor blink, multi-section parallax,
   and Penta's purple motif.
+
+## 2026-08-03 — Category-leadership product layer
+
+- DesignOS 2.2 uses `improve` as the truthful primary workflow: inventory, explainable
+  motion decisions, pattern shortlist, deterministic gates, fix order, and explicit
+  evidence gaps share one report; unsupported dimensions remain `NOT ASSESSED`.
+- High-frequency keyboard actions compile to an immediate semantic and visual state with
+  zero animation. The earlier 80ms acknowledgement was superseded because repeated expert
+  input must not accumulate ceremonial latency.
+- The Pattern Atlas is the canonical discovery contract. Every pattern must declare intent,
+  product truth, earned/avoid contexts, pointer/keyboard/touch behavior, reduced-motion
+  equivalence, performance budget, recipe, and governing modules.
+- Simulated review output is forbidden. `ai-review` now produces a provenance-labelled
+  packet for an actual isolated reviewer and never claims that a model was invoked.
+- Motion orchestration compiles a parsed DSL to cancellable WAAPI output with reduced-motion
+  equivalence; hard-coded demonstration timelines are not product features.

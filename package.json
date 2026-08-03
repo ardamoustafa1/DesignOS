@@ -1,6 +1,6 @@
 {
   "name": "designos",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "The Design Intelligence Operating System for AI coding agents — Claude, Cursor, Copilot, Windsurf, Cline, Aider.",
   "author": "Arda Moustafa (https://github.com/ardamoustafa1)",
   "repository": {
@@ -39,6 +39,7 @@
     "capabilities",
     "evals/external/registry.json",
     "evals/isolated/registry-eval.json",
+    "evals/category-leadership/pattern-routing.json",
     "examples",
     "foundations",
     "industries",
@@ -97,7 +98,7 @@
     "openai"
   ],
   "scripts": {
-    "validate": "node validators/check-capability-ledger.js && node scripts/compile-public-claims.js && node validators/run-registry.js --with-refs examples/ website/ goldens/",
+    "validate": "node validators/check-capability-ledger.js && node scripts/compile-public-claims.js && node validators/test-category-leadership.js && node validators/run-registry.js --with-refs examples/ website/ goldens/",
     "validate:strict": "npm run validate && node validators/check-aesthetic-slop.js examples/ --strict && node validators/check-aesthetic-slop.js website/ --strict && node validators/check-aesthetic-slop.js goldens/ --strict",
     "validate:contrast": "node validators/check-token-contrast.js examples/ && node validators/check-token-contrast.js website/ && node validators/check-token-contrast.js goldens/",
     "validate:motion": "node validators/check-motion.js examples/ && node validators/check-motion.js website/ && node validators/check-motion.js goldens/",
@@ -117,7 +118,7 @@
     "test": "node validators/test-cli.js && node validators/check-modules.js && node runtime/motion/test-runtime.js && node validators/test-motion-semantics.js && node validators/test-public-claims.js && node validators/test-product-engines.js && node validators/test-motion-workbench.js && node validators/test-gesture-studio.js && node validators/test-component-grammar.js && node validators/test-torture-simulator.js && node validators/test-design-genome.js && node validators/test-state-space.js && node validators/test-image-to-code.js && node validators/test-ax-timeline.js && node validators/test-native-evidence.js && node validators/test-physics-handoff.js && node validators/test-scroll-timeline.js && node validators/test-flip-morph.js && node validators/test-motion-blur.js && node validators/test-micro-stagger.js && node validators/test-fluid-typography.js && node validators/test-sensory-sync.js && node validators/test-magnetic-physics.js && node validators/test-motion-gaps.js && node validators/test-signature-consistency.js && node validators/test-originality.js && node packages/designos-detect/scripts/check-vendor-sync.js && node packages/designos-detect/test/smoke.js",
     "test:frameworks": "node fixtures/frameworks/test-matrix.js",
     "test:motion-evidence": "node validators/test-motion-evidence.js",
-    "test:leader": "node validators/test-leader-features.js",
+    "test:leader": "node validators/test-leader-features.js && node validators/test-category-leadership.js",
     "test:live-component": "node validators/test-live-component.js",
     "test:live-studio": "node validators/test-live-studio.js",
     "test:isolated": "node bin/isolated-rule-eval.js",

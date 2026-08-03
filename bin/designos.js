@@ -1569,6 +1569,8 @@ switch (cmd) {
   case 'hooks': hooksCommand(rest); break;
   case 'golden': goldenCommand(rest); break;
   case 'suggest': suggest(rest); break;
+  case 'improve': require('./cli/commands/improve').execute(rest, commandContext()); break;
+  case 'atlas': require('./cli/commands/atlas').execute(rest, commandContext()); break;
   case 'starter': starter(firstPositional(rest), rest); break;
   case 'eval':
   case 'case':

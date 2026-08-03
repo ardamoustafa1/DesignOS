@@ -92,7 +92,7 @@ const RULES = [
     fix:  'Remove bounce/elastic. For playful overshoot, use cubic-bezier(0.34, 1.56, 0.64, 1) with a short duration ≤ 250ms.',
     test(src) {
       const findings = [];
-      for (const m of src.matchAll(/\b(ease-bounce|elastic|bounce(?:-in|-out|-in-out)?|cubic-bezier\([^)]*1\.[5-9]|cubic-bezier\([^)]*[2-9]\.\d)/gi)) {
+      for (const m of src.matchAll(/\b(ease-bounce|elastic(?:\.out|\.in|\.inOut)?|bounce(?:-in|-out|-in-out)?)\b/gi)) {
         if (!hasException(src, m.index)) {
           findings.push({ idx: m.index, ctx: lineAt(src, m.index).trim() });
         }
@@ -188,12 +188,13 @@ const RULES = [
           }
         }
       }
-      // Also check @keyframes
-      for (const prop of ['width', 'height', 'margin', 'padding']) {
-        const re = new RegExp(`@keyframes[\\s\\S]*?\\b${prop}\\s*:`, 'gi');
-        for (const m of src.matchAll(re)) {
-          if (!hasException(src, m.index)) {
-            findings.push({ idx: m.index, ctx: `(in @keyframes: ${prop})`, prop });
+      // Also check declarations inside each keyframe body. Keep the match bounded to
+      // the keyframe block so ordinary width/height declarations later in the file do
+      // not become false positives.
+      for (const block of src.matchAll(/@keyframes\s+[\w-]+\s*\{(?:[^{}]|\{[^{}]*\})*\}/gi)) {
+        for (const prop of ['width', 'height', 'margin', 'padding']) {
+          if (new RegExp(`\\b${prop}(?:-[\\w-]+)?\\s*:`, 'i').test(block[0]) && !hasException(src, block.index)) {
+            findings.push({ idx: block.index, ctx: `(in @keyframes: ${prop})`, prop });
           }
         }
       }

@@ -1,34 +1,63 @@
-/**
- * designos ai-review — AI-Powered Design Review Mode
- * Simulates sending screenshots + static checks to an LLM (Claude/GPT) for visual critique.
- */
 'use strict';
-function execute(args, ctx) {
-  const { ok, log, fail, argValue } = ctx;
-  const target = args.filter(a => !a.startsWith('--'))[0];
-  const model = argValue(args, '--model', 'claude-3.5-sonnet');
-  
-  if (!target) fail('Usage: designos ai-review <src/> --ai --model claude-opus');
 
-  console.log('\\n  \\x1b[1mDesignOS AI-Powered Review Mode\\x1b[0m\\n');
-  console.log(\`  Target: \${target}\`);
-  console.log(\`  Model:  \${model}\\n\`);
+const fs = require('fs');
+const path = require('path');
+const { buildLeaderReport } = require('../../leader-workflow');
 
-  log('Running static checks (motion-review, contrast-apca, consistency-hook)...');
-  log('Capturing UI screenshots via headless browser...');
-  log(\`Sending payload to \${model} for multimodal analysis...\\n\`);
-
-  setTimeout(() => {
-    console.log('  \\x1b[35m🤖 AI Critique (Simulated):\\x1b[0m');
-    console.log('  The UI looks premium and follows modern SaaS patterns. However, I noticed two issues:');
-    console.log('  1. The hero headline is a bit dense. Consider increasing letter-spacing slightly for display fonts.');
-    console.log('  2. The primary CTA button uses a solid shadow which conflicts with the dark theme. Switch to a subtle border (rgb(255 255 255 / 0.12)).');
-    console.log('\\n  \\x1b[32mStatic Check Overlay:\\x1b[0m');
-    console.log('  - Contrast: Pass');
-    console.log('  - Motion: 1 P2 warning (ease-in-out on hover)');
-    
-    console.log('');
-    ok('Review complete. AI feedback provided.');
-  }, 1500);
+function buildReviewPacket({ target, brief, reviewer, context }) {
+  const report = buildLeaderReport({
+    target,
+    cwd: context.cwd,
+    root: context.pkgRoot,
+    brief,
+    motionIntensity: Number(context.motionIntensity) || 5,
+    deep: context.deep,
+  });
+  return {
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    reviewer: reviewer || null,
+    status: 'READY_FOR_EXTERNAL_REVIEW',
+    provenance: 'DesignOS assembled this packet; no model was called and no independent verdict is claimed.',
+    target,
+    brief: brief || null,
+    instructions: [
+      'Refute rather than confirm the implementation.',
+      'Return findings with file, line, severity, affected user and reproduction steps.',
+      'Score only dimensions supported by attached evidence; leave the rest NOT ASSESSED.',
+      'Do not accept source-only checks as visual, accessibility-tree or performance proof.',
+    ],
+    sourceAssessment: report,
+    requiredResponse: {
+      dimensions: ['UI Craft', 'UX & Flow', 'Accessibility', 'Performance', 'Modernity', 'Conversion or task completion', 'Brand Fit & Distinctiveness'],
+      fields: ['scoreOrNotAssessed', 'findings', 'blocking', 'evidenceUsed', 'evidenceMissing'],
+    },
+  };
 }
-module.exports = { execute };
+
+function execute(args, context) {
+  const target = context.positionals(args)[0];
+  if (!target) context.fail(`Usage: ${context.run} ai-review <target> --brief "<brief>" [--reviewer <model-or-human>] [--deep]`);
+  const packet = buildReviewPacket({
+    target,
+    brief: context.argValue(args, '--brief', ''),
+    reviewer: context.argValue(args, '--reviewer', context.argValue(args, '--model', '')),
+    context: {
+      cwd: context.cwd,
+      pkgRoot: context.pkgRoot,
+      motionIntensity: context.argValue(args, '--motion', '5'),
+      deep: args.includes('--deep'),
+    },
+  });
+  if (args.includes('--json')) {
+    console.log(JSON.stringify(packet, null, 2));
+    return;
+  }
+  const out = path.resolve(context.cwd, context.argValue(args, '--out', '.designos/review-packet.json'));
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, `${JSON.stringify(packet, null, 2)}\n`);
+  context.ok(`External review packet written to ${path.relative(context.cwd, out)}`);
+  context.log('No AI or human reviewer was invoked. The packet is ready for an isolated reviewer.');
+}
+
+module.exports = { buildReviewPacket, execute };

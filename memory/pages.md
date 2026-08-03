@@ -13,3 +13,8 @@
 - `website/index.html` (2026-08-03) — motion elevation implemented; strict validation clean;
   browser gate clean across 22 scenarios; Lighthouse lab 100/100/100/100 with LCP 656.99ms,
   CLS 0.00002035, and TBT 0ms. Final design score remains NOT ASSESSED pending independent review.
+- `website/index.html` (2026-08-03, v2.2 leadership update) — public fake score/SHIP theater
+  removed; five-upgrade composition now exposes Pattern Atlas and the unified Improve workflow;
+  emoji feature icons replaced with system SVGs. Browser gate passed 22/22 scenarios,
+  22 screenshots, five keyboard paths, and two declared tasks. Final design score remains
+  NOT ASSESSED pending an isolated panel.

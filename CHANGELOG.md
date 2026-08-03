@@ -4,6 +4,18 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+### Added — category leadership workflow
+- **Unified `improve` workflow.** One command inventories a target, runs explainable
+  motion decisions, ranks inspectable patterns, orders blocking findings, optionally runs
+  deep deterministic gates, and writes machine-readable plus human-readable reports without
+  pretending source checks are a final design score.
+- **Inspectable Pattern Atlas.** Fifteen motion patterns expose intent, earned/avoid
+  conditions, product truth, pointer/keyboard/touch behavior, reduced-motion equivalence,
+  performance budgets, recipes, and governing modules through `designos atlas`.
+- **Frequency-aware no-motion decisions.** High-frequency keyboard actions resolve to
+  an immediate semantic state instead of an 80ms animation. Every compiled decision includes
+  a recommendation, reasons, rejected techniques, provenance, and confidence.
+
 ### Added — P0 semantic motion, studio and public truth
 - **Motion Semantics Compiler.** Nine inputs now compile to animate/no-animation,
   frequency- and geometry-adjusted timing, easing/spring, honest transform origin,

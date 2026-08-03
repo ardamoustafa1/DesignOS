@@ -21,6 +21,9 @@ const LEADER_FEATURES = Object.freeze([
   ['motion-semantics', 'Motion Semantics Compiler', ['runtime/motion/semantics.js', 'validators/test-motion-semantics.js']],
   ['live-director-studio', 'Live Director Studio', ['bin/live-director.js', 'validators/test-live-component.js']],
   ['deterministic-claims', 'Deterministic Claim Compiler', ['capabilities/public-claims.js', 'scripts/compile-public-claims.js']],
+  ['pattern-atlas', 'Inspectable Motion Pattern Atlas', ['runtime/pattern-atlas.js', 'bin/cli/commands/atlas.js']],
+  ['explainable-motion', 'Explainable Frequency-Aware Motion Decisions', ['runtime/motion/semantics.js', 'validators/test-category-leadership.js']],
+  ['leader-workflow', 'Unified Improve Workflow', ['bin/leader-workflow.js', 'bin/cli/commands/improve.js']],
 ].map(([id, name, sources]) => Object.freeze({
   id,
   name,

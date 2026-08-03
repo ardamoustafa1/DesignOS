@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "package": {
     "name": "designos",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "node": ">=18"
   },
   "dependencies": {
@@ -74,11 +74,11 @@
     "browserAssertions": 3510,
     "knowledgeGraphNodes": 143,
     "goldenProjects": 5,
-    "cliCommandModules": 29,
+    "cliCommandModules": 31,
     "componentAstTransforms": 3,
     "motionEvidenceEngines": 2,
-    "leaderProductFeatures": 15,
-    "leaderProductFeaturesImplemented": 15,
+    "leaderProductFeatures": 18,
+    "leaderProductFeaturesImplemented": 18,
     "motionStateGraphCompiler": true,
     "interruptionTortureScenarios": 8,
     "designGenomeScanner": true,
@@ -91,6 +91,9 @@
     "motionSemanticCompiler": true,
     "liveDirectorStudio": true,
     "deterministicClaimCompiler": true,
+    "patternAtlasItems": 15,
+    "explainableMotionDecisions": true,
+    "unifiedImproveWorkflow": true,
     "isolatedRuleEval": true,
     "externalEval": false,
     "externalEvalRuns": 0
@@ -126,6 +129,8 @@
     "motionSemantics": "runtime/motion/semantics.js",
     "liveDirectorStudio": "bin/live-director.js",
     "publicClaims": "capabilities/public-claims.js + scripts/compile-public-claims.js",
+    "patternAtlas": "runtime/pattern-atlas.js",
+    "improveWorkflow": "bin/leader-workflow.js",
     "evals": "evals/isolated/registry-eval.json + evals/external/registry.json",
     "knowledgeGraph": "bin/intelligence.js"
   }

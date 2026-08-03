@@ -125,7 +125,13 @@ function modalityDecision(modality, context) {
   const { transition, frequency, duration, preference } = context;
   if (preference !== 'full') return { animate: preference !== 'none', durationMs: preference === 'none' ? 0 : Math.min(80, duration), spatialTravel: false };
   if (modality === 'keyboard' && ['high', 'very-high', 'continuous'].includes(frequency)) {
-    return { animate: true, durationMs: Math.min(80, duration), spatialTravel: false };
+    return {
+      animate: false,
+      durationMs: 0,
+      spatialTravel: false,
+      feedback: 'instant semantic and visual state',
+      reason: 'high-frequency keyboard actions must not queue or delay motion',
+    };
   }
   if (['touch', 'pointer'].includes(modality) && transition.direct) {
     return { animate: true, durationMs: 0, spatialTravel: true, tracking: '1:1' };
@@ -177,8 +183,9 @@ function compileMotionSemantics(input = {}) {
     decision = 'reduced-feedback';
     reasons.push('reduced-motion preference preserves state feedback without spatial travel');
   } else if (modality === 'keyboard' && ['high', 'very-high', 'continuous'].includes(frequencyName)) {
-    decision = 'feedback-only';
-    reasons.push('frequent keyboard interaction removes spatial travel and caps acknowledgement at 80ms');
+    animate = false;
+    decision = 'do-not-animate';
+    reasons.push('high-frequency keyboard interaction changes state immediately; motion would turn repetition into latency');
   } else if (transition.direct) {
     decision = 'track-then-settle';
     reasons.push('direct manipulation tracks input 1:1 before a cancellable settle');
@@ -220,6 +227,19 @@ function compileMotionSemantics(input = {}) {
     modalityDecision(name, { transition, frequency: frequencyName, duration: durationMs, preference }),
   ]));
 
+  const rejectedTechniques = [
+    !animate ? 'spatial transition' : null,
+    frequencyName === 'continuous' ? 'fixed-duration keyframes' : null,
+    ['high', 'very-high', 'continuous'].includes(frequencyName) ? 'ceremonial entrance' : null,
+    preference !== 'full' ? 'parallax, scale and momentum' : null,
+    devicePower === 'low' ? 'blur, filter and multi-layer compositing' : null,
+    transition.direct ? 'non-interruptible timeline' : null,
+  ].filter(Boolean);
+
+  const recommendation = animate
+    ? `${decision}: ${durationMs}ms ${easing.type === 'spring' ? 'interruptible spring' : 'tokenized ease-out'}; origin ${origin.value}`
+    : `instant state change: preserve ${transition.feedback ? 'feedback' : 'orientation'} without spatial motion`;
+
   return {
     schemaVersion: 1,
     inputs: {
@@ -229,6 +249,7 @@ function compileMotionSemantics(input = {}) {
     },
     decision,
     animate,
+    recommendation,
     timing: { durationMs, exitDurationMs, frequencyDiscount: frequency.factor },
     dynamics: { easing, transformOrigin: origin.value, originReason: origin.reason },
     path: { enter: entrancePath, exit: exitPath, symmetric },
@@ -250,6 +271,13 @@ function compileMotionSemantics(input = {}) {
       ...(recipeId ? [{ type: 'recipe', id: recipeId, source: 'runtime/motion/recipes.js' }] : []),
     ],
     reasons,
+    rejectedTechniques,
+    explanation: {
+      summary: recommendation,
+      why: reasons,
+      whyNot: rejectedTechniques,
+      confidence: componentType in COMPONENTS && transitionName in TRANSITIONS && frequencyName in FREQUENCY ? 'high' : 'medium',
+    },
     verification: [
       'keyboard/pointer/touch modality parity',
       'enter/exit path symmetry',

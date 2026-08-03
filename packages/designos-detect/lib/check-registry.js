@@ -53,7 +53,7 @@ function inspect(file) {
     }
     for (const match of source.matchAll(/<[^>]*data-trigger=["']keyboard["'][^>]*>/gi)) {
       const durations = [...match[0].matchAll(/(\d+)ms/gi)].map(item => Number(item[1]));
-      if (durations.some(duration => duration > 80) && !excepted(source, match.index, 'motion-ok:')) add('motion-keyboard-latency', match);
+      if (durations.some(duration => duration > 0) && !excepted(source, match.index, 'motion-ok:')) add('motion-keyboard-latency', match);
     }
   }
 
