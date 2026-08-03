@@ -13,6 +13,7 @@ const { SCENARIOS } = require('../bin/interruption-torture');
 const { STACKS: COMPOSITION_STACKS } = require('../bin/composition-compiler');
 const { SOURCES: NATIVE_SOURCES } = require('../runtime/native/adapters');
 const { matrixCounts } = require('../fixtures/frameworks/contracts');
+const { PATTERNS } = require('../runtime/pattern-atlas');
 
 const ROOT = path.resolve(__dirname, '..');
 const KNOWLEDGE_DIRECTORIES = Object.freeze([
@@ -83,6 +84,9 @@ function buildCapabilityLedger() {
       motionSemanticCompiler: true,
       liveDirectorStudio: true,
       deterministicClaimCompiler: true,
+      patternAtlasItems: PATTERNS.length,
+      explainableMotionDecisions: true,
+      unifiedImproveWorkflow: true,
       isolatedRuleEval: true,
       externalEval: external.externalEval,
       externalEvalRuns: external.validRuns,
@@ -113,6 +117,8 @@ function buildCapabilityLedger() {
       motionSemantics: 'runtime/motion/semantics.js',
       liveDirectorStudio: 'bin/live-director.js',
       publicClaims: 'capabilities/public-claims.js + scripts/compile-public-claims.js',
+      patternAtlas: 'runtime/pattern-atlas.js',
+      improveWorkflow: 'bin/leader-workflow.js',
       evals: 'evals/isolated/registry-eval.json + evals/external/registry.json',
       knowledgeGraph: 'bin/intelligence.js',
     },

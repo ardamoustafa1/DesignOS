@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "protocol": "Each intent query must retrieve the expected pattern within the first five results. This measures atlas routing, not visual quality.",
+  "cases": [
+    { "query": "popover menu trigger", "expected": "origin-aware-popover" },
+    { "query": "same object detail navigation", "expected": "shared-element-transition" },
+    { "query": "accordion reveal reverse", "expected": "interruptible-accordion" },
+    { "query": "swipe dismiss velocity", "expected": "swipe-to-dismiss" },
+    { "query": "drag reorder position", "expected": "drag-reorder" },
+    { "query": "interrupt spring velocity", "expected": "spring-reversal" },
+    { "query": "layout move same objects", "expected": "flip-layout-transition" },
+    { "query": "scroll reading progress", "expected": "scroll-linked-progress" },
+    { "query": "numeric value change", "expected": "odometer" },
+    { "query": "primary CTA pointer intent", "expected": "magnetic-intent" },
+    { "query": "inspection cards pointer", "expected": "cursor-spotlight" },
+    { "query": "security decrypt text", "expected": "text-scramble" },
+    { "query": "before after hero reveal", "expected": "split-reveal" },
+    { "query": "workflow sticky scroll states", "expected": "sticky-product-tour" },
+    { "query": "destructive hold confirm", "expected": "hold-to-confirm" }
+  ]
+}

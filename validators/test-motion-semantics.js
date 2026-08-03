@@ -26,10 +26,14 @@ const keyboard = compileMotionSemantics({
   componentType: 'menu', stateTransition: 'open', frequency: 'very-high',
   inputModality: 'keyboard', userPreference: 'full',
 });
-assert(keyboard.modalities.keyboard.durationMs <= 80);
-assert.strictEqual(keyboard.decision, 'feedback-only');
+assert.strictEqual(keyboard.animate, false);
+assert.strictEqual(keyboard.timing.durationMs, 0);
+assert.strictEqual(keyboard.modalities.keyboard.durationMs, 0);
+assert.strictEqual(keyboard.decision, 'do-not-animate');
 assert.strictEqual(keyboard.modalities.keyboard.spatialTravel, false);
 assert.strictEqual(keyboard.modalities.pointer.spatialTravel, true);
+assert(keyboard.explanation.why.some(reason => reason.includes('latency')));
+assert(keyboard.rejectedTechniques.includes('ceremonial entrance'));
 
 const drag = compileMotionSemantics({
   componentType: 'sortable', stateTransition: 'drag', frequency: 'continuous',

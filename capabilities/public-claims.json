@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "package": {
     "name": "designos",
-    "version": "2.1.0"
+    "version": "2.2.0"
   },
   "rules": {
     "count": 40,
@@ -18,6 +18,12 @@
     "sourceMapAssertions": 3,
     "source": "runtime/motion/recipes.js",
     "fixtureSource": "fixtures/frameworks/test-matrix.js"
+  },
+  "discovery": {
+    "patternAtlasItems": 15,
+    "explainableMotionDecisions": true,
+    "unifiedImproveWorkflow": true,
+    "source": "runtime/pattern-atlas.js"
   },
   "dependencies": {
     "runtime": 3,

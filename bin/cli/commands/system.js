@@ -94,6 +94,7 @@ function help(context) {
     npx github:ardamoustafa1/DesignOS init [--agents] [--skills] [--force]
 
   Core:
+    ${context.run} improve <target> --brief "<product/surface>" [--deep]
     ${context.run} audit <target>
     ${context.run} review <target> [--fix-prompt]
     ${context.run} visual <target>
@@ -104,8 +105,11 @@ function help(context) {
     ${context.run} suggest <brief>
     ${context.run} starter <name>
 
-  Intelligence: knowledge · coverage · motion-decide · motion-recipe · signature · compose · asset-direct
+  Discover: atlas [query] [--category <type>] [--motion 1-10] · knowledge · coverage
+
+  Intelligence: motion-decide · motion-recipe · signature · compose · asset-direct
   Motion: motion-lab [--profile] · motion-profile · motion-regression --selector <css>
+          motion-playground [--out playground.html] · scroll-animate · signature-compile
   Direction: live <html> (component AST variants, gates, transactions, rollback)
   Product engines:
     adapter-conformance · motion-graph · motion-torture · genome

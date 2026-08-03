@@ -35,6 +35,12 @@ function buildPublicClaims() {
       source: ledger.sources.motion,
       fixtureSource: ledger.sources.browserConformance,
     },
+    discovery: {
+      patternAtlasItems: ledger.capabilities.patternAtlasItems,
+      explainableMotionDecisions: ledger.capabilities.explainableMotionDecisions,
+      unifiedImproveWorkflow: ledger.capabilities.unifiedImproveWorkflow,
+      source: ledger.sources.patternAtlas,
+    },
     dependencies: {
       runtime: ledger.dependencies.productionCount,
       names: ledger.dependencies.production.map(item => item.name),

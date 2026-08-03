@@ -13,7 +13,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/ardamoustafa1/DesignOS?style=flat&color=10b981)](https://github.com/ardamoustafa1/DesignOS/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)](CHANGELOG.md)
 [![Live proof](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)
 [![Validate](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
@@ -22,7 +22,7 @@
 [![Industry packs](https://img.shields.io/badge/industry_packs-24-8b5cf6.svg)](industries/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-10b981.svg)](CONTRIBUTING.md)
 
-<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.1.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
+<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.2.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
 
 [**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Live generator](website/suggest.html) · [Architecture](ARCHITECTURE.md) · [Enterprise guide](ENTERPRISE.md) · [Governance](GOVERNANCE.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
@@ -61,9 +61,10 @@ evidence, and a dependency-declared Node.js CLI.
 | Full + reduced-motion browser scenarios | 180 |
 | Knowledge graph nodes | 143 |
 | Golden projects | 5 |
-| Component AST directions / CLI command modules | 3 / 29 |
+| Component AST directions / CLI command modules | 3 / 31 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
-| Mission 4 leader features | 15 / 15 implemented |
+| Mission 4 leader features | 18 / 18 implemented |
+| Inspectable pattern atlas | 15 patterns |
 | Torture scenarios / generated component states | 8 / 16 |
 | Composition compiler stacks / native motion adapters | 6 / 4 |
 | Mutation operators | 9 |
@@ -75,11 +76,12 @@ evidence, and a dependency-declared Node.js CLI.
 
 | Public claim | Generated truth |
 |---|---:|
-| Version | 2.1.0 |
+| Version | 2.2.0 |
 | Rules / providers | 40 / 8 |
 | Motion recipes / stacks | 15 / 6 |
 | Adapter combinations / browser fixtures | 90 / 180 |
 | Browser / source-map assertions | 3510 / 3 |
+| Pattern atlas / unified improve | 15 / yes |
 | Runtime dependencies | 3 |
 | External eval | not verified |
 | Native evidence | source-conformance-only (0 device runs) |
@@ -443,6 +445,8 @@ Every command runs from your project root after installation.
 
 | Command | Purpose | Writes files? |
 |---|---|---:|
+| `improve <target> --brief <brief> [--deep]` | One entry point for inventory, explainable motion decisions, pattern selection, deterministic source gates, evidence gaps, and fix order | Yes unless `--json` |
+| `atlas <query>` | Search inspectable motion patterns by intent, category, intensity, modality, product truth, reduced-motion behavior, and performance budget | No |
 | `doctor` | Verify kernel, CLI, integrations, skills, and memory | No |
 | `export <agent>` | Generate the selected agent's rules file | Yes |
 | `brief` | Produce a structured, agent-ready design brief | Optional |
@@ -455,6 +459,9 @@ Every command runs from your project root after installation.
 | `live <target>` | Open Live Director Studio with DOM hover/select, source/component boundaries, semantic variant diffs, route/component locks, manual merge, four required acceptance gates, reject, accept, and undo | Optional |
 | `motion-decide <interaction>` | Compile motion from component, transition, frequency, modality, geometry, intensity, preference, device power, and semantic importance | No |
 | `motion-recipe <recipe> --stack <stack>` | Emit a ledger-backed executable recipe adapter for Vanilla, React, Motion, GSAP, Vue, or Svelte | No |
+| `signature-compile <recipe> --stack <stack>` | Generate dependency-free, cancellable signature behavior for Vanilla, React, Vue, or Svelte; supports magnetic intent, spotlight, and tilt | Optional |
+| `scroll-animate <target> --recipe <recipe>` | Write progressive-enhancement Scroll Timeline CSS beside a target without mutating its source | Yes |
+| `motion-playground [--out file]` | Run a localhost-only accessible timing editor, or export it as a standalone HTML file | Optional |
 | `motion-lab <target>` | Generate the timing/easing/replay lab; `--profile` attaches a real CDP trace report | Yes |
 | `motion-profile <target>` | Record dropped frames, long animation frames, main-thread blocking, style/layout/paint/composite cost, layers, attribution, and frame percentiles | Yes |
 | `motion-regression <target> --selector <css>` | Capture full/reduced frame sequences, trajectories, easing, enter/exit, origin, overshoot, settle, and interruption evidence | Yes |
@@ -480,6 +487,8 @@ Every command runs from your project root after installation.
 | `case <slug>` | Scaffold a case study and showcase entry | Yes |
 
 ```bash
+node DesignOS/bin/designos.js improve src/ --brief "developer analytics dashboard" --motion 5 --deep
+node DesignOS/bin/designos.js atlas "gesture velocity touch" --motion 7
 node DesignOS/bin/designos.js doctor
 node DesignOS/bin/designos.js export all
 node DesignOS/bin/designos.js brief --interactive
@@ -491,6 +500,9 @@ node DesignOS/bin/designos.js hooks install --mode warn --target index.html
 node DesignOS/bin/designos.js live index.html
 node DesignOS/bin/designos.js motion-decide "account menu" --component popover --transition open --frequency high --modality keyboard --geometry 280x180,8 --motion 4 --preference full --device-power medium --importance high
 node DesignOS/bin/designos.js motion-recipe momentum-projection --stack react
+node DesignOS/bin/designos.js signature-compile magnetic-intent --stack react --selector ".primary-cta" --out src/usePrimaryIntent.jsx
+node DesignOS/bin/designos.js scroll-animate index.html --recipe section-reveal --selector "[data-scroll-animate]"
+node DesignOS/bin/designos.js motion-playground --out .designos/motion-playground.html
 node DesignOS/bin/designos.js motion-lab index.html
 node DesignOS/bin/designos.js motion-lab index.html --profile --selector ".hero-model"
 node DesignOS/bin/designos.js motion-profile index.html --selector ".hero-model"
@@ -518,14 +530,16 @@ Run `node DesignOS/bin/designos.js help` for flags and usage. Node.js 18+ is req
 Browser-native evidence uses the pinned Playwright dependency and a locally installed
 Chromium (`npx playwright install chromium`).
 
-## Mission 4 executable product engines
+## Executable product engines
 
-The twelve leader features are executable capabilities, not roadmap prose. The canonical
+The leader features are executable capabilities, not roadmap prose. The canonical
 inventory is `capabilities/product-features.js`, and `npm run test:leader` exercises their
 shared contracts. Adapter conformance and the state-graph compiler govern behavior;
 CDP/temporal tracing and the torture lab supply motion evidence; genome, responsive,
 state-matrix, mutation, and consistency engines audit system-level quality; composition
-and native generators produce inspectable implementation artifacts.
+and native generators produce inspectable implementation artifacts. The Pattern Atlas
+makes motion discoverable without reducing it to visual effects, while `improve` combines
+the relevant decisions and evidence gaps into one truthful entry point.
 
 Generated screenshots, platform baselines, eval runs, and framework build output are not
 shipped in the core npm archive. Build the matching evidence companion with

@@ -44,9 +44,9 @@ The result is a machine-readable decision containing:
 - an explanation chain and verification plan.
 
 Decorative motion below intensity 6 and low-importance motion on low-power devices can
-legitimately compile to `do-not-animate`. Very frequent keyboard paths collapse spatial
-travel and cap acknowledgement at 80ms. Direct manipulation remains 1:1 while input is
-down; only the release settles.
+legitimately compile to `do-not-animate`. Very frequent keyboard paths change semantic and
+visual state immediately with no animation; repeated expert input must never queue ceremony.
+Direct manipulation remains 1:1 while input is down; only the release settles.
 
 ## Anti-patterns
 

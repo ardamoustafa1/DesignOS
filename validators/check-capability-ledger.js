@@ -30,6 +30,7 @@ function markdown(ledger) {
 | Component AST directions / CLI command modules | ${capabilities.componentAstTransforms} / ${capabilities.cliCommandModules} |
 | Motion evidence engines | ${capabilities.motionEvidenceEngines} (CDP profile + temporal regression) |
 | Mission 4 leader features | ${capabilities.leaderProductFeaturesImplemented} / ${capabilities.leaderProductFeatures} implemented |
+| Inspectable pattern atlas | ${capabilities.patternAtlasItems} patterns |
 | Torture scenarios / generated component states | ${capabilities.interruptionTortureScenarios} / ${capabilities.generatedComponentStates} |
 | Composition compiler stacks / native motion adapters | ${capabilities.compositionCompilerStacks} / ${capabilities.nativeMotionAdapters} |
 | Mutation operators | ${capabilities.mutationOperators} |

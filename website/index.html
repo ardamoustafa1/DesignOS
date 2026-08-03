@@ -785,8 +785,8 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
 
 <span class="t-muted">→</span> design loop: research → wireframe → ui …
 <span class="t-amb">▲</span> review: off-grid spacing 14px — <span class="t-amb">fixing</span>
-<span class="t-ok">✓</span> scored: UI 97 · A11y 96 · Perf 98 · Conv 95
-<span class="t-ok">✓</span> SHIP · decisions → memory/design.md<span class="cursor" aria-hidden="true"></span></pre>
+<span class="t-ok">✓</span> static gate: 0 findings · browser evidence attached
+<span class="t-ok">✓</span> final design score: <span class="t-muted">NOT ASSESSED until panel review</span><span class="cursor" aria-hidden="true"></span></pre>
       </div>
     </div>
   </div>
@@ -811,7 +811,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">New in v2.2</div>
-      <h2 id="new-heading">Three major upgrades</h2>
+      <h2 id="new-heading">Five major upgrades</h2>
       <p>The features our analysis found missing. Shipped.</p>
     </div>
 
@@ -819,7 +819,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
     <div class="features-new">
       <div class="feature-card featured reveal">
         <span class="badge-new">New</span>
-        <div class="feature-icon" aria-hidden="true">🎛️</div>
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M9 4v6M15 14v6"></path><circle cx="9" cy="7" r="2"></circle><circle cx="15" cy="17" r="2"></circle></svg>
         <h3>Design Dials</h3>
         <p>Three 1–10 dials that parametrically control every agent decision: variance, motion intensity, and visual density. Write once, govern everywhere.</p>
         <div class="code-snippet" aria-label="Design dials configuration example">
@@ -851,9 +851,9 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
       <!-- Design System Generator -->
       <div class="feature-card featured reveal">
         <span class="badge-new">New</span>
-        <div class="feature-icon" aria-hidden="true">⚡</div>
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m13 2-8 12h7l-1 8 8-12h-7l1-8Z"></path></svg>
         <h3>Design System Generator</h3>
-        <p>One command, one brief — five parallel passes produce a complete, contrast-verified design system with palette, type, motion budget, pattern spine, and checklist.</p>
+        <p>One command, one brief — five coordinated deterministic passes produce a contrast-verified system with palette, type, motion budget, pattern spine, and checklist.</p>
         <div class="code-snippet" aria-label="Generate command example">
           <span style="color:var(--code-muted)">$</span> designos <span style="color:var(--code-accent)">generate</span> \<br>
           &nbsp;&nbsp;<span style="color:var(--code-muted)">--brief</span> <span style="color:var(--code-amber)">"spa booking app"</span><br>
@@ -866,7 +866,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
       <!-- Multi-tool support -->
       <div class="feature-card reveal">
         <span class="badge-new">New</span>
-        <div class="feature-icon" aria-hidden="true">🔌</div>
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 8V3M15 8V3M7 8h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5V8ZM12 16v5"></path></svg>
         <h3>18 AI Tools</h3>
         <p>Expanded from 6 to 18 supported AI coding tools. One export command installs DesignOS into any agent's rules file.</p>
         <div class="code-snippet" aria-label="Multi-tool export example">
@@ -885,6 +885,32 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
           <span class="tool-tag new"><span class="dot"></span>OpenCode</span>
           <span class="tool-tag new"><span class="dot"></span>Amp</span>
           <span class="tool-tag new"><span class="dot"></span>Zed AI</span>
+        </div>
+      </div>
+
+      <div class="feature-card featured reveal">
+        <span class="badge-new">New</span>
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16M4 12h10M4 19h7"></path><circle cx="18" cy="12" r="2"></circle><circle cx="15" cy="19" r="2"></circle></svg>
+        <h3>Pattern Atlas</h3>
+        <p>Search motion by intent, not visual fashion. Every pattern names its product truth, earned and rejected contexts, modality parity, reduced-motion equivalent, and performance budget.</p>
+        <div class="code-snippet" aria-label="Pattern Atlas example">
+          <span style="color:var(--code-muted)">$</span> designos <span style="color:var(--code-accent)">atlas</span> "gesture velocity"<br>
+          <span style="color:var(--code-green)">✓</span> swipe-to-dismiss · touch 1:1<br>
+          <span style="color:var(--code-green)">✓</span> spring-reversal · interruptible<br>
+          <span style="color:var(--code-muted)">→</span> reduced: instant state + focus restore
+        </div>
+      </div>
+
+      <div class="feature-card featured reveal">
+        <span class="badge-new">New</span>
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v16H4zM8 9h8M8 13h5M8 17h3"></path><path d="m15 15 1.5 1.5L20 13"></path></svg>
+        <h3>One-command Improve</h3>
+        <p>One truthful entry point inventories the target, explains motion decisions, ranks patterns, runs optional deep gates, and leaves unsupported dimensions NOT ASSESSED.</p>
+        <div class="code-snippet" aria-label="Improve workflow example">
+          <span style="color:var(--code-muted)">$</span> designos <span style="color:var(--code-accent)">improve</span> src/ <br>
+          &nbsp;&nbsp;<span style="color:var(--code-muted)">--brief</span> <span style="color:var(--code-amber)">"developer dashboard"</span> <span style="color:var(--code-muted)">--deep</span><br>
+          <span style="color:var(--code-green)">✓</span> fix order + evidence gaps<br>
+          <span style="color:var(--code-green)">✓</span> human and JSON reports
         </div>
       </div>
     </div>
@@ -1024,7 +1050,7 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
 <span class="t-ok">✓</span> CLAUDE.md wired
 <span class="t-ok">✓</span> 9 subagents registered</pre>
     </div>
-    <p>Then ask for anything — <em style="color:var(--text-primary)">"Generate a design system for a fintech dashboard"</em> or <em style="color:var(--text-primary)">"Design a pricing page, dark theme"</em> — and watch it route modules, run the loop, and refuse to hand you anything under 95.</p>
+    <p>Then ask for anything — <em style="color:var(--text-primary)">"Generate a design system for a fintech dashboard"</em> or <em style="color:var(--text-primary)">"Design a pricing page, dark theme"</em> — and watch it route modules, run the loop, attach evidence, and leave unverified dimensions explicitly unassessed.</p>
 
     <div style="margin-top:var(--space-8)">
       <p style="font-size:0.9375rem;font-weight:600;color:var(--text-primary);margin-bottom:var(--space-4)">Try the new commands:</p>
@@ -1036,6 +1062,12 @@ footer { border-top: 1px solid var(--border-default); padding-block: var(--space
         </div>
         <pre tabindex="0" aria-label="New v2.2 command examples"><span class="t-muted"># Design System Generator</span>
 <span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">generate</span> --brief "SaaS landing, dark"
+
+<span class="t-muted"># One-command improvement report</span>
+<span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">improve</span> src/ --brief "developer dashboard" --deep
+
+<span class="t-muted"># Search motion by intent</span>
+<span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">atlas</span> "gesture velocity" --motion 7
 
 <span class="t-muted"># Set design dials</span>
 <span class="t-muted">$</span> node DesignOS/bin/designos.js <span class="t-acc">dial</span> --motion 8 --variance 6
@@ -1253,7 +1285,7 @@ if (heroStage && matchMedia('(hover: hover) and (pointer: fine)').matches &&
 
 <!-- ── Public claims (source-of-truth for stat numbers) ──── -->
 <!-- DESIGNOS_PUBLIC_CLAIMS:START -->
-<script id="designos-public-claims" type="application/json">{"schemaVersion":1,"package":{"name":"designos","version":"2.1.0"},"rules":{"count":40,"providers":8,"source":"validators/rule-registry.js"},"motion":{"recipes":15,"stacks":6,"adapterCombinations":90,"fixtureScenarios":180,"browserAssertions":3510,"sourceMapAssertions":3,"source":"runtime/motion/recipes.js","fixtureSource":"fixtures/frameworks/test-matrix.js"},"dependencies":{"runtime":3,"names":["@jridgewell/trace-mapping","axe-core","playwright"],"source":"package.json"},"evaluation":{"isolatedRuleEval":true,"externalEval":false,"externalEvalRuns":0,"source":"evals/isolated/registry-eval.json + evals/external/registry.json"},"nativeEvidence":{"status":"source-conformance-only","sourceAdapters":4,"verifiedDeviceRuns":0,"source":"runtime/native/adapters.js"},"generatedTargets":["README.md","ARCHITECTURE.md","ROADMAP.md","LIMITATIONS.md",".claude-plugin/plugin.json","website/index.html"]}</script>
+<script id="designos-public-claims" type="application/json">{"schemaVersion":1,"package":{"name":"designos","version":"2.2.0"},"rules":{"count":40,"providers":8,"source":"validators/rule-registry.js"},"motion":{"recipes":15,"stacks":6,"adapterCombinations":90,"fixtureScenarios":180,"browserAssertions":3510,"sourceMapAssertions":3,"source":"runtime/motion/recipes.js","fixtureSource":"fixtures/frameworks/test-matrix.js"},"discovery":{"patternAtlasItems":15,"explainableMotionDecisions":true,"unifiedImproveWorkflow":true,"source":"runtime/pattern-atlas.js"},"dependencies":{"runtime":3,"names":["@jridgewell/trace-mapping","axe-core","playwright"],"source":"package.json"},"evaluation":{"isolatedRuleEval":true,"externalEval":false,"externalEvalRuns":0,"source":"evals/isolated/registry-eval.json + evals/external/registry.json"},"nativeEvidence":{"status":"source-conformance-only","sourceAdapters":4,"verifiedDeviceRuns":0,"source":"runtime/native/adapters.js"},"generatedTargets":["README.md","ARCHITECTURE.md","ROADMAP.md","LIMITATIONS.md",".claude-plugin/plugin.json","website/index.html"]}</script>
 <script>(()=>{const claims=JSON.parse(document.getElementById('designos-public-claims').textContent);const values={rules:claims.rules.count,recipes:claims.motion.recipes,stacks:claims.motion.stacks,fixtures:claims.motion.fixtureScenarios,assertions:claims.motion.browserAssertions};for(const [key,value] of Object.entries(values)){const target=document.querySelector('[data-designos-claim="'+key+'"]');if(target)target.textContent=String(value)}})();</script>
 <!-- DESIGNOS_PUBLIC_CLAIMS:END -->
 </body>

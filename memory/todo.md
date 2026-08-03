@@ -22,8 +22,15 @@
 - No open implementation item remains from the Motion Semantics Compiler, Live Director
   Studio, or Deterministic Claim Compiler P0 scope. Any new public claim source must be
   registered in `capabilities/public-claims.js` and regenerated through CI.
-- Align visible `v2.2` website language with package metadata (`package.json` is `2.1.0`)
-  through an explicit release decision.
-- Replace prototype-grade `motion-playground`, `signature-compile`, and `scroll-animate` paths
-  with source-locked, tested implementations before advertising them as complete product tools.
+- ~~Align visible `v2.2` website language with package metadata.~~ Resolved 2026-08-03:
+  package, lockfile, generated claims, plugin metadata, docs, and visible site now use 2.2.0.
+- ~~Replace prototype-grade `motion-playground`, `signature-compile`, and `scroll-animate`
+  paths with source-locked, tested implementations.~~ Resolved 2026-08-03: the playground
+  is an accessible functional editor with static export; signature compilation supports
+  dependency-free Vanilla/React/Vue/Svelte output with cleanup and reduced motion; scroll
+  recipes generate fail-closed, target-adjacent progressive-enhancement CSS.
 - Run an independent design panel and a physical screen-reader listening pass for the public site.
+- Extend Pattern Atlas from source-backed discovery to an interactive browser surface with
+  per-pattern live full/reduced playback and WebKit/Firefox temporal evidence.
+- Add verified physical iOS/Android device runs before changing native evidence from
+  `source-conformance-only`.

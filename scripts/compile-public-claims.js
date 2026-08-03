@@ -31,6 +31,7 @@ function markdown(claims) {
 | Motion recipes / stacks | ${claims.motion.recipes} / ${claims.motion.stacks} |
 | Adapter combinations / browser fixtures | ${claims.motion.adapterCombinations} / ${claims.motion.fixtureScenarios} |
 | Browser / source-map assertions | ${claims.motion.browserAssertions} / ${claims.motion.sourceMapAssertions} |
+| Pattern atlas / unified improve | ${claims.discovery.patternAtlasItems} / ${claims.discovery.unifiedImproveWorkflow ? 'yes' : 'no'} |
 | Runtime dependencies | ${claims.dependencies.runtime} |
 | External eval | ${claims.evaluation.externalEval ? `verified (${claims.evaluation.externalEvalRuns})` : 'not verified'} |
 | Native evidence | ${claims.nativeEvidence.status} (${claims.nativeEvidence.verifiedDeviceRuns} device runs) |
