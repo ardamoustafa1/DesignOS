@@ -459,6 +459,9 @@ Every command runs from your project root after installation.
 | `live <target>` | Open Live Director Studio with DOM hover/select, source/component boundaries, semantic variant diffs, route/component locks, manual merge, four required acceptance gates, reject, accept, and undo | Optional |
 | `motion-decide <interaction>` | Compile motion from component, transition, frequency, modality, geometry, intensity, preference, device power, and semantic importance | No |
 | `motion-recipe <recipe> --stack <stack>` | Emit a ledger-backed executable recipe adapter for Vanilla, React, Motion, GSAP, Vue, or Svelte | No |
+| `signature-compile <recipe> --stack <stack>` | Generate dependency-free, cancellable signature behavior for Vanilla, React, Vue, or Svelte; supports magnetic intent, spotlight, and tilt | Optional |
+| `scroll-animate <target> --recipe <recipe>` | Write progressive-enhancement Scroll Timeline CSS beside a target without mutating its source | Yes |
+| `motion-playground [--out file]` | Run a localhost-only accessible timing editor, or export it as a standalone HTML file | Optional |
 | `motion-lab <target>` | Generate the timing/easing/replay lab; `--profile` attaches a real CDP trace report | Yes |
 | `motion-profile <target>` | Record dropped frames, long animation frames, main-thread blocking, style/layout/paint/composite cost, layers, attribution, and frame percentiles | Yes |
 | `motion-regression <target> --selector <css>` | Capture full/reduced frame sequences, trajectories, easing, enter/exit, origin, overshoot, settle, and interruption evidence | Yes |
@@ -497,6 +500,9 @@ node DesignOS/bin/designos.js hooks install --mode warn --target index.html
 node DesignOS/bin/designos.js live index.html
 node DesignOS/bin/designos.js motion-decide "account menu" --component popover --transition open --frequency high --modality keyboard --geometry 280x180,8 --motion 4 --preference full --device-power medium --importance high
 node DesignOS/bin/designos.js motion-recipe momentum-projection --stack react
+node DesignOS/bin/designos.js signature-compile magnetic-intent --stack react --selector ".primary-cta" --out src/usePrimaryIntent.jsx
+node DesignOS/bin/designos.js scroll-animate index.html --recipe section-reveal --selector "[data-scroll-animate]"
+node DesignOS/bin/designos.js motion-playground --out .designos/motion-playground.html
 node DesignOS/bin/designos.js motion-lab index.html
 node DesignOS/bin/designos.js motion-lab index.html --profile --selector ".hero-model"
 node DesignOS/bin/designos.js motion-profile index.html --selector ".hero-model"

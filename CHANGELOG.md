@@ -4,6 +4,14 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+### Changed — portable motion authoring
+- Replaced the placeholder motion playground with a keyboard-accessible timing editor,
+  real replay/copy behavior, reduced-motion feedback, localhost-only serving, and static export.
+- Rebuilt `signature-compile` as a dependency-free Vanilla/React/Vue/Svelte compiler with
+  fine-pointer gating, animation-frame batching, cleanup, reset, and reduced-motion behavior.
+- Rebuilt `scroll-animate` as a fail-closed companion stylesheet generator. Unknown recipes
+  now error instead of silently producing the wrong animation; user source is never mutated.
+
 ### Added — category leadership workflow
 - **Unified `improve` workflow.** One command inventories a target, runs explainable
   motion decisions, ranks inspectable patterns, orders blocking findings, optionally runs

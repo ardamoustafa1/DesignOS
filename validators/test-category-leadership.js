@@ -11,6 +11,9 @@ const { buildLeaderReport, markdown } = require('../bin/leader-workflow');
 const { parseDsl, compileOrchestration } = require('../bin/cli/commands/orchestrate');
 const { buildReviewPacket } = require('../bin/cli/commands/ai-review');
 const { analyzeFile } = require('../bin/cli/commands/animation-review');
+const { compileSignature } = require('../bin/cli/commands/signature-compile');
+const { compileScrollRecipe } = require('../bin/cli/commands/scroll-animate');
+const { playgroundHtml } = require('../bin/cli/commands/motion-playground');
 
 const ROOT = path.resolve(__dirname, '..');
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-category-leader-'));
@@ -58,6 +61,20 @@ assert(orchestration.includes('prefers-reduced-motion'));
 assert(orchestration.includes('cancel:'));
 assert(!orchestration.includes('elastic.out'));
 
+for (const stack of ['vanilla', 'react', 'vue', 'svelte']) {
+  const signature = compileSignature({ recipe: 'magnetic-intent', stack, selector: '.target' });
+  assert(signature.includes('prefers-reduced-motion'), `${stack} signature must respect reduced motion`);
+  assert(signature.includes('removeEventListener'), `${stack} signature must clean up listeners`);
+  assert(!signature.includes('gsap'), `${stack} signature must not require an undeclared motion dependency`);
+}
+const scrollCss = compileScrollRecipe('section-reveal', '[data-scroll-animate]');
+assert(scrollCss.includes('@supports (animation-timeline:scroll())'));
+assert(scrollCss.includes('prefers-reduced-motion:reduce'));
+const playground = playgroundHtml();
+assert(playground.includes('aria-live="polite"'));
+assert(playground.includes('prefers-reduced-motion:reduce'));
+assert(!playground.includes('UI placeholder'));
+
 const reviewPacket = buildReviewPacket({
   target: fixture,
   brief: 'developer command menu',
@@ -89,6 +106,18 @@ result = spawnSync(process.execPath, [path.join(ROOT, 'bin/designos.js'), 'impro
 });
 assert.strictEqual(result.status, 0, result.stderr || result.stdout);
 assert.strictEqual(JSON.parse(result.stdout).finalDesignScore, 'NOT ASSESSED');
+
+const generatedCss = path.join(temp, 'generated-scroll.css');
+result = spawnSync(process.execPath, [path.join(ROOT, 'bin/designos.js'), 'scroll-animate', fixture, '--recipe', 'section-reveal', '--out', generatedCss], {
+  cwd: temp, encoding: 'utf8', timeout: 30000,
+});
+assert.strictEqual(result.status, 0, result.stderr || result.stdout);
+assert(fs.existsSync(generatedCss));
+
+result = spawnSync(process.execPath, [path.join(ROOT, 'bin/designos.js'), 'signature-compile', 'unknown-recipe'], {
+  cwd: temp, encoding: 'utf8', timeout: 30000,
+});
+assert.notStrictEqual(result.status, 0, 'unknown recipes must fail closed');
 
 fs.rmSync(temp, { recursive: true, force: true });
 console.log(`category-leadership: ${PATTERNS.length} inspectable patterns, ${routing.cases.length}/${routing.cases.length} routing cases, explainable no-motion decisions and unified improve workflow clean`);

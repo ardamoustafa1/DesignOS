@@ -94,6 +94,11 @@ const VALUE_FLAGS = new Set([
   '--target',
   '--rule',
   '--axis',
+  '--recipe',
+  '--selector',
+  '--duration',
+  '--threshold',
+  '--variants',
 ]);
 
 function argValue(args, name, fallback = '') {

@@ -105,3 +105,14 @@
   packet for an actual isolated reviewer and never claims that a model was invoked.
 - Motion orchestration compiles a parsed DSL to cancellable WAAPI output with reduced-motion
   equivalence; hard-coded demonstration timelines are not product features.
+
+## 2026-08-03 — Portable motion tooling
+
+- Public motion generators fail closed on unknown recipes and stacks; silent fallback is
+  forbidden because it can ship a technically valid but semantically wrong interaction.
+- Signature output has no undeclared runtime dependency and shares cleanup, fine-pointer,
+  requestAnimationFrame, blur/reset, and reduced-motion behavior across Vanilla, React,
+  Vue, and Svelte.
+- Scroll recipes write a companion stylesheet rather than mutating user source. Native
+  scroll timelines are progressive enhancement; the no-support and reduced-motion states
+  keep content visible and complete.

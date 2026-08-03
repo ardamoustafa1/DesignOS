@@ -109,6 +109,7 @@ function help(context) {
 
   Intelligence: motion-decide · motion-recipe · signature · compose · asset-direct
   Motion: motion-lab [--profile] · motion-profile · motion-regression --selector <css>
+          motion-playground [--out playground.html] · scroll-animate · signature-compile
   Direction: live <html> (component AST variants, gates, transactions, rollback)
   Product engines:
     adapter-conformance · motion-graph · motion-torture · genome
