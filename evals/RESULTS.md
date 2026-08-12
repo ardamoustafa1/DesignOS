@@ -50,7 +50,7 @@ blind runs and is **NOT INCLUDED** in this table; run it yourself and PR the num
   a nav, hero, features, social proof, and CTAs. What it lacks is exactly what the
   validators count: token discipline, semantic structure, and contrast law.
 - 43→0 and 6→0 are the **floor**, not the ceiling: scripts can't score hierarchy,
-  honesty, or taste. Those live in the judge arm and the six-dimension review —
+  honesty, or taste. Those live in the judge arm and the seven-dimension review —
   which is the point: DesignOS clears the floor mechanically so attention goes to
   judgment.
 - **Caveat, stated plainly:** both fixtures were authored in the DesignOS repository.

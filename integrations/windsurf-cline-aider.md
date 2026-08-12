@@ -42,13 +42,14 @@ node DesignOS/bin/designos.js export aider
 Aider reads `CONVENTIONS.md` from the project root. Start a session:
 
 ```bash
-aider --conventions CONVENTIONS.md
+aider --read CONVENTIONS.md
 ```
 
 Or add to your `.aider.conf.yml`:
 
 ```yaml
-conventions: CONVENTIONS.md
+read:
+  - CONVENTIONS.md
 ```
 
 ---

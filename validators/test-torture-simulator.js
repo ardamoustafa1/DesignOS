@@ -20,6 +20,14 @@ function testTortureSimulator() {
   </body>`);
   
   const result = spawnSync('node', ['bin/responsive-constraint.js', dummyHtml, '--torture', '--no-fail'], { encoding: 'utf8' });
+  if (result.status !== 0) {
+    fs.unlinkSync(dummyHtml);
+    const output = (result.stderr || result.stdout || '').trim();
+    if (/Playwright browser binaries are not installed/.test(output)) {
+      throw new Error(`test-torture-simulator: ${output}`);
+    }
+    throw new Error(`test-torture-simulator: bin/responsive-constraint.js failed:\n${output}`);
+  }
   const reportPath = path.resolve('.designos/responsive-constraints.json');
   const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
   

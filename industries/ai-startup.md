@@ -35,5 +35,13 @@ Orb/brain/neural-mesh hero art · "Powered by AI" as the value prop (what does i
 fake typing demos of canned text presented as live · benchmark charts with unlabeled axes ·
 sparkle-emoji buttons everywhere · claiming AGI-adjacent anything.
 
+## Checklist
+- [ ] Demo shown is real model output, not canned/staged text presented as live
+- [ ] Capability boundaries stated explicitly ("great at X, not built for Y")
+- [ ] Data-handling one-liner present at every input field
+- [ ] No orb/brain/neural-mesh hero art or purple-blue gradient mesh
+- [ ] Streaming/typing animation used only for real output, with instant-complete + reduced-motion fallback
+- [ ] Named-customer proof present, not just logo walls
+
 ## References
 Anthropic/OpenAI product pages (capability-forward restraint), Linear (precision), Vercel (dev trust), Perplexity (demo-first consumer AI).

@@ -35,5 +35,13 @@ kills trust) · fake urgency on homes · autoplay drone-video heroes with sound 
 lightboxes trapping keyboard/back-button · lead forms demanding phone number before showing
 anything.
 
+## Checklist
+- [ ] Listing prices are always shown (no "contact for price" outside true luxury)
+- [ ] Staged/rendered photos are declared as such on new builds
+- [ ] Full fee transparency (commissions, dues) is stated
+- [ ] No fake urgency ("12 people viewed today" pulsing)
+- [ ] Contact forms don't demand a phone number before showing listing details
+- [ ] Listing card photos use consistent aspect ratios across the grid
+
 ## References
 Airbnb (search + photo doctrine), Zillow (data-layer depth), Sotheby's Realty (luxury restraint), local-market leaders for legal/format conventions.

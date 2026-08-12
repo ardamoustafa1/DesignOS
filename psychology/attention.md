@@ -4,6 +4,10 @@ Design is attention engineering. You don't get to decide *whether* users scan â€
 *what the scan finds*.
 
 ## Scanning patterns (and when each applies)
+These are heuristics from eye-tracking studies (the original F-pattern work dates to 2006),
+not universal laws â€” actual scan paths vary by content and layout. Use them as a starting
+hypothesis to design toward, then verify with real eye-tracking or click-heatmap data where
+it matters.
 
 ### F-pattern
 Text-heavy pages (articles, search results, docs): two horizontal sweeps near the top,

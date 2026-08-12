@@ -671,6 +671,22 @@ That package is unrelated. Review any changes it made, then reinstall with
 
 </details>
 
+<details>
+<summary><b>`npm test` fails with ENOENT from a Playwright/Chromium path</b></summary>
+
+`npm install` runs a `postinstall` step that fetches Chromium automatically. If it was
+skipped (offline install, `--ignore-scripts`, or `DESIGNOS_SKIP_PLAYWRIGHT_INSTALL` set),
+run it manually:
+
+```bash
+npx playwright install chromium
+```
+
+Browser-driven commands (`responsive-solve`, the torture-simulator test, `visual`/`report`
+evidence) all depend on this binary, not just the `playwright` npm package.
+
+</details>
+
 For a longer onboarding and diagnostic guide, read [Getting Started](GETTING-STARTED.md).
 
 ---

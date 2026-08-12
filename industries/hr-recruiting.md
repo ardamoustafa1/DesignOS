@@ -70,6 +70,15 @@ Re-type-your-CV forms · black-hole applications (no state, no timeline, no clos
 marketed cheerfully (candidate-tracking pixels, "engagement scoring" of humans) ·
 diversity imagery ≠ diversity data · 40-field ATS iframes wearing your brand.
 
+## Checklist
+- [ ] Application flow is completable in ≤5 minutes with save-and-resume
+- [ ] CV-parse results are editable, not submitted blind
+- [ ] Application status is visible end-to-end (received → review → interview → decision)
+- [ ] Rejections are timely, humane, and not a generic form letter
+- [ ] Salary/compensation transparency present where required or expected
+- [ ] AI-screening use is disclosed to candidates with a human-review path
+- [ ] Recruiter-side bulk actions (e.g. bulk-reject) have an undo window, and evaluations default to structured rubric scorecards over free-text vibes-comments
+
 ## References
 Greenhouse (structured-hiring doctrine), Ashby (modern operator craft), Lever (pipeline
 UX), Otta/candidate-first boards (the candidate-experience bar), GOV.UK forms (mercy

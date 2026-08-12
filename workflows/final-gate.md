@@ -11,7 +11,7 @@ for every applicable rubric dimension; unchecked rows remain **NOT ASSESSED**.
 If the local CLI exists, run it before delivery:
 
 ```bash
-node DesignOS/bin/designos.js audit  <dir> [token-file]      # all five validators
+node DesignOS/bin/designos.js audit  <dir> [token-file]      # all eight registered validator providers
 node DesignOS/bin/designos.js review <target> --min 95
 node DesignOS/bin/designos.js elevate <target> --no-fail
 node DesignOS/bin/designos.js visual <target> --no-fail
@@ -19,7 +19,9 @@ node DesignOS/bin/designos.js report <target> --min 95 --no-fail
 ```
 
 `audit` runs token drift, a11y basics, contrast (same-rule **and** inherited cascade),
-motion, and aesthetic slop. A clean `review` with a skipped `audit` is not a cleared floor —
+motion, aesthetic slop, internal-reference integrity, the unified static-rule registry,
+and signature consistency (`validators/rule-registry.js` is the source of truth for this
+list). A clean `review` with a skipped `audit` is not a cleared floor —
 `review` is a regex pass over source, while the validators resolve tokens, walk the element
 tree, and compute ratios.
 

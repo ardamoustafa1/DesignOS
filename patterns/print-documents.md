@@ -60,6 +60,8 @@ For content pages worth printing (articles, docs, tickets, confirmations):
 @media print {
   nav, footer, .no-print { display: none; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+  /* Raw hex, not tokens — print physics is absolute (ink on paper), the one
+     context `foundations/colors.md`'s token rule doesn't apply to. */
   body { color: #000; background: #fff; font-size: 11pt; }
 }
 ```

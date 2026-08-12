@@ -8,11 +8,12 @@ the evidence attached to it.
 | Dimension | Score | Evidence | Required fix |
 |---|---:|---|---|
 | UI Craft | 96 | tokenized spacing, clear hierarchy, no raw color drift | none |
-| UX Flow | 92 | core flow works, but empty state lacks sample-data path | add first-use empty state |
+| UX & Flow | 92 | core flow works, but empty state lacks sample-data path | add first-use empty state |
 | Accessibility | 98 | keyboard path, focus ring, contrast checked | none |
 | Performance | 95 | no layout shift, images sized | verify Lighthouse before ship |
 | Modernity | 96 | restrained app-shell density | none |
 | Conversion | 90 | CTA clear, but proof claim unsourced | remove or source proof |
+| Brand Fit & Distinctiveness | 95 | signature moment ties to the product's core action, not generic | none |
 
 Good because it names evidence and fixes. It does not hide weak dimensions inside an
 average.
@@ -22,7 +23,7 @@ average.
 | Dimension | Score | Evidence |
 |---|---:|---|
 | UI Craft | 95 | looks good |
-| UX Flow | 95 | easy |
+| UX & Flow | 95 | easy |
 | Accessibility | 95 | should be fine |
 
 Bad because the numbers are decorative. No reviewer can reproduce them.
@@ -32,7 +33,7 @@ Bad because the numbers are decorative. No reviewer can reproduce them.
 ### Under-threshold dimension
 
 ```text
-UX Flow: 88/100.
+UX & Flow: 88/100.
 Reason: the filtered-empty table state has no clear-filters recovery path.
 Fix: add "No results for X" copy, active filter chips, and one clear action.
 Module: components/states.md
@@ -58,7 +59,7 @@ Module: foundations/accessibility.md
 
 ## Anti-patterns
 
-- Averaging six dimensions into one flattering number while hiding a failure.
+- Averaging seven dimensions into one flattering number while hiding a failure.
 - Giving 95 because the output is visually attractive.
 - Scoring accessibility from a screenshot.
 - Listing fixes without naming the dimension they affect.

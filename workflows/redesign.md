@@ -5,7 +5,7 @@ Trigger: "redesign X", "modernize our site", "this page underperforms".
 
 ## 1. Autopsy before surgery
 Run the Review Loop (`loops/review-loop.md`) on the existing work FIRST:
-- Six-dimension scores establish the baseline (the redesign must beat these numbers —
+- Seven-dimension scores establish the baseline (the redesign must beat these numbers —
   that's the definition of success).
 - Reverse-engineer the implicit system into `memory/design.md` (legacy documentation gift).
 - Critically: list what WORKS — recognized patterns users have muscle-memory for,

@@ -24,7 +24,7 @@ Mobile      bottom sheet: full-width, radius-top 16px, drag handle, slide-up 250
 ```
 
 ### Anatomy
-- **Header:** title 18–20px 600 (states the task: "Invite teammates", not "Modal"); close X top-right 40px target.
+- **Header:** title 18–20px 600 (states the task: "Invite teammates", not "Modal"); close X top-right, ~20px glyph with a 44×44px hit target via padding.
 - **Body:** one task only. If a modal needs tabs, it wanted to be a page.
 - **Footer:** actions right-aligned (LTR): ghost Cancel + primary Confirm; destructive confirms get danger-styled primary + the consequence spelled out.
 

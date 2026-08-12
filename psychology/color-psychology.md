@@ -32,7 +32,7 @@ Apply these as *priors*, adjusted by sector (`industries/`) and audience culture
 - **The accent teaches interactivity:** within minutes users learn "this hue = clickable". Guard the lesson — never spend the accent decoratively (`foundations/colors.md`).
 - **Semantic consistency is safety:** green=success, amber=caution, red=destructive/error — deviating breaks learned reflexes precisely when stakes are highest.
 - **Emotional thermostat:** error pages and destructive confirms should *cool* (neutral surfaces, one red element), not alarm-paint the whole screen. Panic causes mistakes.
-- **Color as quantity is a lie detector:** heatmaps/charts need perceptually uniform ramps (`dataviz` discipline) — rainbow ramps misrepresent data.
+- **Color as quantity is a lie detector:** heatmaps/charts need perceptually uniform ramps (`components/charts.md` discipline) — rainbow ramps misrepresent data.
 
 ## Choosing a brand accent (the DesignOS procedure)
 1. List the sector's trust prior (table above) and the top 3 competitors' hues.

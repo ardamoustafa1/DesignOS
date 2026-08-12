@@ -14,17 +14,17 @@ mediocre color/layout still reads as professional; get it wrong and nothing save
 
 Base 16px (never smaller for body). Ratio 1.25 (marketing) or 1.2 (dense apps):
 
-| Token | 1.25 scale | Use |
-|---|---|---|
-| text-xs | 12px | badges, legal, table meta |
-| text-sm | 14px | UI labels, secondary text, dense app body |
-| text-base | 16px | app body |
-| text-lg | 18–20px | marketing body, leads |
-| text-xl | 25px | h3 / card titles |
-| text-2xl | 31px | h2 mobile / h3 desktop |
-| text-3xl | 39px | section headings (h2) |
-| text-4xl | 49px | hero mobile |
-| text-5xl+ | 61–76px+ | hero desktop display |
+| Token | 1.25 scale (marketing) | 1.2 scale (dense apps) | Use |
+|---|---|---|---|
+| text-xs | 12px | 12px | badges, legal, table meta |
+| text-sm | 14px | 13px | UI labels, secondary text, dense app body |
+| text-base | 16px | 16px | app body |
+| text-lg | 20px | 19px | marketing body, leads |
+| text-xl | 25px | 23px | h3 / card titles |
+| text-2xl | 31px | 28px | h2 mobile / h3 desktop |
+| text-3xl | 39px | 33px | section headings (h2) |
+| text-4xl | 49px | 40px | hero mobile |
+| text-5xl+ | 61–76px+ | 48px+ | hero desktop display |
 
 Responsive: use `clamp()` — e.g. hero `clamp(2.5rem, 5vw + 1rem, 4.5rem)`. Headings drop 1–2
 scale steps on mobile; body never shrinks below 16px.

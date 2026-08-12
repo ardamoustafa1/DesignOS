@@ -65,6 +65,14 @@ spec tables as images · CAD behind lead-gen walls with 12 fields (gate lightly:
 email at most — every field costs design-ins) · stock industrial imagery · RFQ forms
 into the void (no confirmation, no SLA) · hiding stock/lead-time until the quote.
 
+## Checklist
+- [ ] Product specs exist as searchable HTML tables, not PDF-only
+- [ ] CAD downloads (STEP/IGES) are gated by at most an email, never a 12-field form
+- [ ] Parametric/spec-range search exists on the catalog
+- [ ] Stock/lead-time shown per variant before the quote step, not hidden
+- [ ] RFQ submissions get a stated, honored response-time promise
+- [ ] No generic "innovative solutions for tomorrow's challenges" copy
+
 ## References
 McMaster-Carr (the catalog-UX gold standard — genuinely the sector's Stripe: study its
 speed, density, findability), Misumi (parametric configurators), Xometry (instant-quote

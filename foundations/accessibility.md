@@ -41,7 +41,7 @@ Target: **WCAG 2.2 AA everywhere, AAA where free.**
 - Test narrative: can you understand the page hearing only the accessibility tree?
 
 ## Color & perception
-- Never color-only meaning: pair with icon/label/pattern (chart lines: vary dash/marker too — `dataviz` discipline).
+- Never color-only meaning: pair with icon/label/pattern (chart lines: vary dash/marker too — `components/charts.md` discipline).
 - Check both themes; dark mode contrast fails differently (muted text on raised surfaces is the usual casualty).
 - Text over images: measure against the lightest/darkest pixel under the text, not the average.
 

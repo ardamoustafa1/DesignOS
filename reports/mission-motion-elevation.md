@@ -38,8 +38,10 @@ prototype-grade CLI items are explicitly listed below rather than represented as
 
 ### Remaining product gaps
 
-- `motion-playground` still labels its curve editor as a placeholder and lacks a real curve canvas,
-  replay control, and export state.
+- ~~`motion-playground` still labels its curve editor as a placeholder and lacks a real curve canvas,
+  replay control, and export state.~~ **Resolved since this report.** `motion-playground` now ships
+  a working duration/easing/replay/copy UI with no placeholder text; `validators/test-category-leadership.js`
+  asserts `!playground.includes('UI placeholder')`.
 - `signature-compile` only supports one React/GSAP demonstration path.
 - `scroll-animate` prints snippets but does not apply a source-locked transaction or verify the
   fallback and reduced-motion paths.

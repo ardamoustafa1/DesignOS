@@ -42,7 +42,7 @@ design for their specific skepticism; a page serving all three serves none
 Named team beats anon for anything touching custody (anon-credible only in pure-protocol
 culture, and even there: track record) · audits linked not claimed · regulatory posture
 stated per market · risk disclosures designed-in, not fine-print buried
-(`industries/fintech.md` disclaimer layer) · NO yield promises without mechanism +
+(`industries/legal.md` disclaimer layer) · NO yield promises without mechanism +
 risk framing (regulatorily radioactive and ethically instant-fail).
 
 ## Motion character
@@ -57,6 +57,14 @@ badges · countdown token sales pressure · "not financial advice" as a joke whi
 whole page is financial advice · wallet-drainer-lookalike UX (surprise signature
 requests, unlabeled approvals — design AGAINST the scam patterns users fear: every
 signature request explains itself).
+
+## Checklist
+- [ ] Security/audit page names real audit firms with linked reports and dates
+- [ ] Every wallet transaction state (pending/confirmed/failed) is designed with explorer links
+- [ ] Gas costs are shown before the user signs, not after
+- [ ] No moon/rocket/laser-eyes imagery or "number go up" casino framing
+- [ ] APY/yield claims never appear without mechanism and risk framing in comparable type size
+- [ ] TVL/volume stats link to on-chain verification (Etherscan etc.) when claimed
 
 ## References
 Uniswap/Base (post-2021 restraint), Etherscan (utilitarian trust), Fireblocks/Coinbase

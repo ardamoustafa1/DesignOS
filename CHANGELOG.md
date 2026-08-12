@@ -4,6 +4,25 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+## [2.2.0] — 2026-08-12
+
+### Added — motion module hardening
+- Fixed a doc/validator mismatch: `motion-hover-without-pointer-query` (`validators/check-registry.js`)
+  cites `motion/micro-interactions.md` as its governing rule, but the file never actually stated
+  the `@media (hover: hover) and (pointer: fine)` gating rule for spatial hover effects. Added it.
+- `motion/principles.md`: replaced the soft "frequency discount" law with a hard frequency-gating
+  table (100+/day → zero animation, tens/day → strip to minimum, occasional → standard, rare →
+  delight budget), and added a general **Interruptibility** principle — CSS transitions retarget
+  from wherever an element currently is, `@keyframes` restarts from `0%` — for any re-triggerable
+  UI (toasts, dropdowns, tooltips), not just gesture handoff (which `physics.md` already covered).
+- `motion/recipes.md`: added `@starting-style` (JS-free entrance for `display: none` elements),
+  `clip-path: inset()` as a general reveal/wipe/before-after-slider primitive, and a short
+  `filter: blur()` crossfade-masking technique for structurally mismatched state swaps. Renumbered
+  the reduced-motion recipe to §19 and fixed its cross-reference in `motion/vocabulary.md`.
+- `motion/vocabulary.md`: added reverse-lookup rows for all of the above.
+- Verified: full `npm test` (63 tests), `npm run validate`, `validate:strict/motion/contrast`,
+  `test:goldens`, `test:isolated` (40/40), and `check:links` all still pass clean — no regressions.
+
 ### Changed — portable motion authoring
 - Replaced the placeholder motion playground with a keyboard-accessible timing editor,
   real replay/copy behavior, reduced-motion feedback, localhost-only serving, and static export.
@@ -83,7 +102,7 @@ All notable changes to DesignOS.
   checked for React/Vue/Svelte source-map resolution.
 - **Independent black-box evaluation.** All thirty-six registry capabilities now have an
   isolated static, browser, Lighthouse, or visual-regression run recorded in
-  `evals/independent/registry-eval.json`.
+  `evals/isolated/registry-eval.json`.
 - **Lighthouse release gate.** A pinned Node 22 Lighthouse runner blocks category scores
   below 95, LCP above 2s, CLS above 0.1, or TBT above 200ms. Its exact-version evidence is
   included in the commit-bound public browser ledger.

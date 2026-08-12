@@ -37,5 +37,13 @@ Feature-noun headlines ("Workflow Automation Platform") over outcome claims · f
 mockups with lorem metrics · 6 equal feature cards · gradient-mesh sameness ("every SaaS 2024") ·
 hiding pricing on a self-serve product.
 
+## Checklist
+- [ ] Product screenshots are real, framed, and retina — not abstract illustration standing in for the UI
+- [ ] Pricing is public and self-serve, not hidden behind "contact us"
+- [ ] Security/trust page exists with SOC2/GDPR/DPA content for procurement
+- [ ] Headlines state outcomes, not feature nouns ("Workflow Automation Platform")
+- [ ] No fake dashboard mockups with lorem-ipsum metrics
+- [ ] Site itself hits Lighthouse 95+ — the speed doubles as the product demo
+
 ## References
 Stripe (trust craft), Linear (speed/momentum), Notion (approachability), Vercel (dev credibility) — `brain/reference-library.md`.

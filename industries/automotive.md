@@ -65,6 +65,14 @@ range figures without conditions · scroll-jacked 19-section stories on mobile �
 dealer sites drowning the car in badge-spam and popup chat · stock-photo interiors
 for a specific used listing.
 
+## Checklist
+- [ ] Spec numbers carry test-condition footnotes (WLTP/EPA stated)
+- [ ] Configurator running total is always visible, financing toggle honest
+- [ ] Configurator preserves the build on back navigation
+- [ ] Range/performance figures never shown without stated conditions
+- [ ] Hero video/scroll story has a static fallback and guards LCP
+- [ ] No autoplay audio (engine-roar or otherwise)
+
 ## References
 Porsche/Polestar (configurator + restraint ceiling), Tesla (EV-direct conventions +
 cautionary opacity tales), Rivian (warm-technical EV voice), Apple product pages

@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "generatedAt": "2026-08-03T07:56:25.081Z",
+  "generatedAt": "2026-08-03T10:55:37.185Z",
   "isolatedRuleEval": true,
   "externalEval": false,
   "evaluatorContract": "Each rule is exercised through a child-process black box using only its public fixture and emitted finding ID.",

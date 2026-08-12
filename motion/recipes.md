@@ -308,7 +308,80 @@ return () => ctx.revert();   // the cleanup is not optional
 other curve fights the user's finger. Everywhere else, `linear` on spatial movement is a
 `check-motion.js` finding.
 
-## 16 · Reduced motion — the craft version
+## 16 · `@starting-style` — JS-free entrance for anything that starts `display: none`
+
+An element switching from `display: none` (or newly added to the DOM) can't transition —
+there's no "from" state to interpolate. The old fix was a JS-driven two-frame dance
+(`el.style.display = 'block'` then `requestAnimationFrame` to add the open class). The
+`@starting-style` at-rule declares the "from" state natively:
+
+```css
+.toast {
+  display: none;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out),
+              display var(--duration-base) allow-discrete;
+}
+.toast[data-open="false"] { display: none; }
+.toast[data-open="true"]  { display: block; }
+
+@starting-style {
+  .toast[data-open="true"] { opacity: 0; transform: translateY(8px); }
+}
+```
+
+`display: ... allow-discrete` keeps the element in the render tree for the transition's
+duration instead of vanishing instantly; `@starting-style` supplies the entrance values with
+zero JavaScript and zero flash-of-unstyled-content. Ship a plain `display: none` toggle as
+the fallback for browsers that don't support it — nothing breaks, the element just appears
+without the fade.
+
+## 17 · `clip-path: inset()` — the general-purpose reveal primitive
+
+One shape function covers wipes, tab underlines that grow from a direction, image reveals,
+and before/after comparison sliders — all compositor-only, no clipping mask asset required:
+
+```css
+.reveal {
+  clip-path: inset(0 100% 0 0);   /* fully hidden from the right edge */
+  transition: clip-path var(--duration-slow) var(--ease-out);
+}
+.reveal.is-in { clip-path: inset(0 0 0 0); }
+```
+
+Read the four values as top/right/bottom/left insets — animating any one of them wipes from
+that edge. A before/after slider is the same primitive driven by pointer position instead of
+a class:
+
+```js
+slider.addEventListener('pointermove', (e) => {
+  const pct = (e.clientX - slider.getBoundingClientRect().left) / slider.offsetWidth * 100;
+  afterLayer.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+});
+```
+
+## 18 · Masking an imperfect crossfade
+
+Two states that don't line up cleanly — text reflowing to a different line count, an icon
+swapping for one with a different visual weight — leave a visible seam no amount of easing
+tuning fixes, because the seam is structural, not temporal. A short blur over the crossfade
+hides it:
+
+```css
+.swap {
+  transition: opacity var(--duration-fast) var(--ease-out),
+              filter   var(--duration-fast) var(--ease-out);
+}
+.swap.is-leaving { opacity: 0; filter: blur(4px); }
+```
+
+Keep the blur radius under ~8px (`performance.md`: `filter` is compositor-cheap only at
+small areas) and treat it as a last resort for a genuine mismatch — reaching for it to cover
+sloppy timing instead of fixing the timing is the anti-pattern version of this recipe.
+
+## 19 · Reduced motion — the craft version
 
 The blanket kill-switch is the floor:
 

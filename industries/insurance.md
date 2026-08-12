@@ -21,7 +21,7 @@ The quote funnel is where insurtech disrupted incumbents — speed-to-number IS 
 
 ## Page priorities & patterns
 1. **The quote funnel** (`components/steppers-wizards.md` at full depth): minimal-field
-   steps, instant estimate as early as honest ("from ₺X/mo — refines as we learn more"),
+   steps, instant estimate as early as honest ("from $X/mo — refines as we learn more"),
    progress honesty, save-and-resume (quotes are comparison-shopped across sessions),
    the "why we ask" note on every personal question (`psychology/trust.md`
    point-of-disclosure).
@@ -58,6 +58,15 @@ Fear-marketing imagery · quote funnels demanding phone/email before ANY number 
 ambush = instant bounce) · exclusions in 7pt · dark-pattern auto-renewal · claims flows
 buried three menus deep · chipper copy on claim denials (`psychology/emotional-design.md`
 personality-off surfaces) · fake urgency on policies.
+
+## Checklist
+- [ ] Quote funnel shows an instant estimate before demanding phone/email
+- [ ] Every personal question in the funnel carries a "why we ask" note
+- [ ] Coverage exclusions are stated plainly and visibly, not hidden in fine print
+- [ ] Claims flow has an obvious "File a claim" entry point from everywhere
+- [ ] Claims status is transparent with dates (received → assessed → decision → paid)
+- [ ] No fear-marketing imagery (crashes/disasters) in purchase flows
+- [ ] Renewal pricing is transparent and doesn't silently penalize loyal customers versus new-customer quotes
 
 ## References
 Lemonade (consumer warmth + claims-speed story), Wise/Monzo (fintech clarity transferable),

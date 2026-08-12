@@ -175,7 +175,16 @@ async function inspectWidth(page, width, options) {
 
 async function solveResponsiveConstraints(options) {
   const served = await serveTarget(options.target, options.cwd);
-  const browser = await chromium.launch({ headless: true });
+  let browser;
+  try {
+    browser = await chromium.launch({ headless: true });
+  } catch (error) {
+    await served.close();
+    if (/Executable doesn't exist|ENOENT/.test(error.message || '')) {
+      throw new Error('Playwright browser binaries are not installed. Run "npx playwright install chromium" and retry.');
+    }
+    throw error;
+  }
   try {
     const page = await browser.newPage();
     await page.goto(served.url, { waitUntil: 'networkidle' });

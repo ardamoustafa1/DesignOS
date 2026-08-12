@@ -40,5 +40,13 @@ Fake enrollment counters/countdown discounts (Udemy-style perpetual "90% off" tr
 distrust) · locked syllabus ("buy to see what you'll learn") · progress bars that lie ·
 infantilizing adult learners · certificate mills aesthetics (gold seals, comic ribbons).
 
+## Checklist
+- [ ] "Resume where you left off" is the primary element on the learning dashboard
+- [ ] Progress bars reflect real, honest percentages
+- [ ] Syllabus/lesson list is visible before purchase, not locked behind paywall
+- [ ] Captions and transcripts exist on all video content
+- [ ] No fake enrollment counters or perpetual "90% off" countdown discounts
+- [ ] Streak/gamification mechanics never shame — mercy mechanics (streak freeze) present
+
 ## References
 Duolingo (motivation mechanics), Coursera (institutional credibility), Maven (cohort premium), Khan Academy (learner-first clarity, a11y).

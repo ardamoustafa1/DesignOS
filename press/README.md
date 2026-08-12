@@ -9,7 +9,7 @@ Everything needed to write about DesignOS — per our own doctrine
 > agents — Claude, Cursor, Copilot, and any agent that reads rules files. It packages
 > 60+ opinionated design modules, 24 industry playbooks, a nine-agent review studio,
 > and a self-scoring engine with a hard quality threshold: work scoring under 95/100
-> on any of six dimensions goes back for another pass before the user ever sees it.
+> on any of seven dimensions goes back for another pass before the user ever sees it.
 > DesignOS is MIT-licensed, dependency-free, and installs with one command.
 
 **One-liner:** *One prompt in, Stripe-grade UI out — the open-source design brain for

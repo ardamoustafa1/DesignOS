@@ -33,13 +33,22 @@ footage: when video plays, chrome freezes.
 
 ## Platform/tool variant (Discord/Steam-class)
 Community energy in marketing + ruthless product clarity in-app: dense friend lists/libraries
-follow `components/` doctrine with the brand's expressive skin; dark-first; latency = credibility.
+follow `components/tables.md` and `components/dashboard.md` density doctrine with the brand's expressive skin; dark-first; latency = credibility.
 
 ## Anti-patterns
 Template-swap sites where the game's soul is absent · autoplay WITH sound · "epic/immersive/
 stunning" adjective soup · fake in-game screenshots (bullshots) · countdowns to countdowns ·
 requiring login to see system requirements · seizure-adjacent strobe sections (WCAG hard line —
 `foundations/accessibility.md`).
+
+## Checklist
+- [ ] Gameplay footage is labeled honestly as "in-engine" vs "cinematic"
+- [ ] No autoplay video with sound
+- [ ] Frame rate holds 60fps or the effect is cut — no visible drops in showcased motion
+- [ ] Reduced-motion fallback exists for particle/parallax-heavy sections
+- [ ] Early-access roadmap visually distinguishes delivered vs planned
+- [ ] No seizure-adjacent strobe effects anywhere on the site
+- [ ] Discord/Steam-class platform surfaces (friend lists, libraries) stay dark-first and dense per component doctrine, not a diluted copy of the marketing site's expressive skin
 
 ## References
 Studio sites: Supergiant (Hades — art-first restraint), Mojang (brand-world consistency); platforms: Discord (energy+clarity), Steam (density that works); Apple Arcade pages (editorial polish on game content).

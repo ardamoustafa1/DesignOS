@@ -8,7 +8,7 @@ the agent which modules to load, what to build first, and how to verify the resu
 ```bash
 node DesignOS/bin/designos.js starter landing-page my-launch
 node DesignOS/bin/designos.js starter react-dashboard ops-console
-node DesignOS/bin/designos.js starter next-saas acme-saas
+node DesignOS/bin/designos.js starter next-saas northwind-saas
 ```
 
 Each scaffold copies the starter files plus `tokens.css` and `tokens.json`.

@@ -15,7 +15,7 @@ brand. Split guidance below where they differ.
 ## Visual language
 - **Color:** dark-first native for both (terminals, dashboards, ops rooms); layered dark
   neutrals + data-viz accent discipline — chart palettes ARE the brand palette (design them
-  as one system, `foundations/colors.md` + `dataviz` doctrine). Analytics may run light for
+  as one system, `foundations/colors.md` + `components/charts.md` doctrine). Analytics may run light for
   business-user products (marketing/product analytics).
 - **Type:** grotesque + heavy mono usage (metrics, code, configs, logs — all real);
   tabular-nums universally; numbers get display-type treatment (a big honest "99.98%" is the
@@ -64,6 +64,15 @@ Fake dashboards with impossible data · "blazing fast" without numbers · uptime
 status-page links · pricing pages that require a calculator PhD · dark-theme charts with
 unreadable gridlines (`foundations/colors.md` dark discipline) · animated network-globe heroes
 eating the CPU the copy claims to save.
+
+## Checklist
+- [ ] Status page linked from footer with a live "all systems operational" state
+- [ ] Chart/dashboard data looks plausible (realistic noise), not a suspiciously perfect curve
+- [ ] Usage-based pricing shows a cap/estimate mechanism, not just a bare calculator
+- [ ] Uptime/SLA claims link to a real status page or incident history
+- [ ] Deploy/build logs are mono, timestamped, searchable, with actionable failure states
+- [ ] The site itself passes the strictest performance tier — it's the credibility proof
+- [ ] Analytics: cookie/data-ownership posture stated in plain language, and the "no data yet" empty state actively teaches instrumentation rather than just saying nothing's there
 
 ## References
 Vercel (deploy-story ceiling + monochrome authority), Datadog (density at scale), Plausible/Fathom (privacy-first analytics positioning), Grafana (ops-viz conventions), Cloudflare (infra marketing + status honesty), Netlify (docs-marketing integration).

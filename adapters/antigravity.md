@@ -45,7 +45,7 @@ Load the relevant modules, especially:
 
 Create the result as pricing.html.
 Run the design loop, include loading/error/empty/success states where applicable,
-score all six dimensions, and redo anything under 95.
+score all seven dimensions, and redo anything under 95.
 
 Important: do not invent customers, logos, testimonials, certifications, awards,
 usage counts, or compliance claims. Fictional brands must be labelled fictional.

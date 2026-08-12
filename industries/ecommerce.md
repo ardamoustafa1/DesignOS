@@ -36,5 +36,13 @@ Forced account walls · costs revealed at step 4 · fake countdowns/stock · car
 hiding the catalog · quick-view modals that do everything the PDP does (pick one) ·
 "people are viewing this" theater · newsletter popup at second one.
 
+## Checklist
+- [ ] Shipping cost/time shown before checkout, not revealed at step 4
+- [ ] Cart shows an estimated total (with shipping/tax) as early as possible
+- [ ] Checkout is guest-first with account creation offered after purchase
+- [ ] Reviews show honest distribution, not a suspicious unblemished 5.0
+- [ ] No fake countdowns, fake stock scarcity, or "people are viewing this" theater
+- [ ] Express pay options (Apple/Google Pay) appear above manual card entry
+
 ## References
 Shopify's own store patterns (checkout doctrine), Apple Store (premium PDP), Zalando/ASOS (fashion PLP filtering), Amazon (density + trust mechanics — copy selectively).

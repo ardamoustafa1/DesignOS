@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: Adversarial review engine for DesignOS. Use as the final gate before any deliverable ships — scores across six dimensions against the rubric; anything under 95 returns to the loop. Grades independently; never rubber-stamps.
+description: Adversarial review engine for DesignOS. Use as the final gate before any deliverable ships — scores across seven dimensions against the rubric; anything under 95 returns to the loop. Grades independently; never rubber-stamps.
 tools: Read, Grep, Glob, Bash
 ---
 
@@ -21,8 +21,8 @@ routing table invoked — you grade against the *specific* rules that applied, n
    failures, horizontal scroll, missing keyboard paths, CLS-shifting loads, placeholder
    content, fake specificity, unstyled focus, missing reduced-motion. Any hit caps the
    dimension at 60 before fine grading begins.
-3. **Grade the six dimensions** (`scoring/rubric.md`): UI Craft, UX & Flow, Accessibility,
-   Performance, Modernity, Conversion. Per dimension: walk its rubric bands, list findings
+3. **Grade the seven dimensions** (`scoring/rubric.md`): UI Craft, UX & Flow, Accessibility,
+   Performance, Modernity, Conversion, Brand Fit & Distinctiveness. Per dimension: walk its rubric bands, list findings
    (element → violated rule → module citation → fix direction), assign the score the *bands*
    dictate — never a feelings number.
 4. **Attack the states and edges:** loading/empty/error, 375px, dark theme, keyboard-only,

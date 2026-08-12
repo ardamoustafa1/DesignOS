@@ -80,9 +80,10 @@ random-easing web sin (`motion/principles.md`).
 
 ## Anti-patterns
 Drag-triggered (not drag-tracked) dismissals · non-interruptible hero transitions ·
-gesture-only features · haptic confetti · fighting system edge gestures · 500ms
-screen transitions (native tolerance is ~250–350ms MAX for full-screen moves) ·
-Lottie loops running on every idle screen (battery + attention).
+gesture-only features · haptic confetti · fighting system edge gestures · 500ms+
+screen transitions (native tolerance tops out at the 400ms emphasized token above —
+see the spec table; don't invent a slower one) · Lottie loops running on every idle
+screen (battery + attention).
 
 ## Checklist
 - [ ] All dismissibles: 1:1 tracking, velocity-aware thresholds, rubber-banding

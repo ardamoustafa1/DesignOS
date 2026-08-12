@@ -26,12 +26,10 @@ Spark   optional 40px-high sparkline, no axes
 ```
 3–5 per row. The delta's *good direction* depends on the metric (▼ churn is green) — encode semantics, not sign.
 
-### Charts (with the `dataviz` discipline)
-- Chart type by question: trend→line, composition→stacked bar (not pie beyond 3 slices), comparison→bar, distribution→histogram, relationship→scatter.
-- Series colors from a designed categorical ramp; ≤6 series then group "other".
-- Axes: muted 12px, gridlines y-only at 6–8% opacity, no chart borders, no 3D ever.
-- Tooltips: shared-x crosshair for time series; value + delta + date; 150ms fade.
-- Legends: only when >1 series; direct-label lines when ≤3.
+### Charts → `components/charts.md`
+Full chart-type selection, tooltip, legend, and interaction spec lives there — this
+widget just embeds it. Series colors from a designed categorical ramp; ≤6 series then
+group "other".
 
 ### Tables → `components/tables.md`
 ### Activity feeds

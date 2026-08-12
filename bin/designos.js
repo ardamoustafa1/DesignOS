@@ -322,7 +322,7 @@ function audit(target) {
     path.join(vdir, 'run-registry.js'), dir, '--json-out', ledger,
   ], { stdio: 'inherit', cwd: CWD });
   if (result.status !== 0) fail('Registry-driven validator providers reported findings — the mechanical floor is not clear.');
-  ok('audit clean — the mechanical floor holds. The six-dimension review still applies above it.');
+  ok('audit clean — the mechanical floor holds. The seven-dimension review still applies above it.');
 }
 
 /* ---------- starter: copy real starter files into a project ---------- */

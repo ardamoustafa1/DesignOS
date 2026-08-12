@@ -32,7 +32,10 @@ If any beat is missing the interaction feels broken; if any beat is long it feel
 - Tooltip: 500ms hover *delay* (intent filter), then 100ms fade-in; instant between adjacent tooltips (warm state); never animate position.
 
 ### Data & numbers
-- Value changes: count-up/down 300–400ms ease-out for milestone reveals; live-updating metrics just crossfade (counting constantly = casino).
+- Value changes: count-up/down 300ms ease-out for milestone reveals (the 300ms interactive
+  ceiling holds — `motion/principles.md` law 2; a milestone reveal is not a signature moment,
+  don't borrow the 400ms+ budget reserved for those); live-updating metrics just crossfade
+  (counting constantly = casino).
 - Changed-cell highlight: background pulse 1×, 400ms fade-out (`psychology/attention.md` change blindness).
 - Chart updates: morph 250ms ease-in-out; entering series fade in; never re-run entrance choreography on data refresh.
 
@@ -47,6 +50,20 @@ If any beat is missing the interaction feels broken; if any beat is long it feel
 ## Hover philosophy
 - Hover is *preview*, not content: it may emphasize, reveal affordances (row actions), or hint (image zoom 1.03) — it must never be the only path to information or actions (touch exists; `components/cards.md`).
 - Hover-in 100–120ms, hover-out slightly faster; no hover effects that shift layout.
+- **Gate every spatial hover effect behind a fine-pointer query.** Touchscreens fire `:hover`
+  on tap and never fire `:hover`-out until the next tap elsewhere — an ungated hover-zoom or
+  hover-reveal gets stuck "on" after a touch, or never fires at all depending on the browser.
+  Wrap the rule, not just the transition:
+  ```css
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover img { transform: scale(1.03); }
+  }
+  ```
+  Non-spatial hovers (a plain color/opacity shift with no movement) are lower-risk and may
+  skip the query if the stuck-on state is harmless — but anything that moves, scales, or
+  reveals new controls gets the query. `validators/check-motion.js` enforces this as
+  `motion-hover-without-pointer-query`; see `motion/signature-moments.md` for the same gate
+  applied to pointer-tracking effects (magnetic buttons, tilt, spotlight).
 
 ## Cursor & pointer craft
 - `cursor: pointer` on all interactive elements (and *only* interactive — pointer on a plain card that does nothing is a lie).

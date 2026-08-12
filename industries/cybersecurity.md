@@ -41,5 +41,13 @@ FUD headlines with breach-cost statistics as the hero · fake live attack maps �
 100% secure" claims (legally and technically radioactive) · dark theme with 8 neon accents
 (threat-disco) · security theater badges that don't resolve to real attestations.
 
+## Checklist
+- [ ] No hoodie-hacker, padlock, glowing-shield, or "attack pew-pew" map imagery unless it's real live product data
+- [ ] Public trust center exists (SOC2/ISO/pentest summaries, disclosure policy, security.txt)
+- [ ] Framework mappings (MITRE ATT&CK, NIST, CIS) used accurately, not decoratively
+- [ ] Numeric claims ("blocks X of Y") carry stated methodology
+- [ ] No "unhackable / 100% secure" language anywhere
+- [ ] Empty/no-threat states read as vigilant calm, not "nothing works"
+
 ## References
 Cloudflare (technical marketing ceiling), Tailscale (docs-as-marketing, honest voice), CrowdStrike (enterprise gravitas), Vercel (dark-UI craft transferable here).

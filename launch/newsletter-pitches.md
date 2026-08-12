@@ -19,7 +19,7 @@ Subject: `Open-source DesignOS for coding agents`
 
 DesignOS is a zero-runtime-dependency design operating layer for AI coding agents. It
 turns UI generation into an inspectable process: route the relevant design modules,
-load project memory, run a review loop, score six dimensions, and redo work under the
+load project memory, run a review loop, score seven dimensions, and redo work under the
 quality gate.
 
 The repo includes a live showcase, before/after demo, validators, and an honest eval

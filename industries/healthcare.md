@@ -40,5 +40,13 @@ Urgency/scarcity mechanics anywhere near care decisions · cutesy microcopy abou
 dark patterns in insurance/billing flows (this sector's lawsuits are famous) · unverifiable
 outcome claims ("cure", "guaranteed") · burying costs until after intake.
 
+## Checklist
+- [ ] Emergency escape hatch ("call 112/911") visible on all symptom/triage surfaces
+- [ ] No real-looking PHI in any demo, screenshot, or marketing screen (synthetic data only)
+- [ ] Reading level for patient-facing content targets ~6th–8th grade
+- [ ] Medical claims carry linked, dated citations
+- [ ] No urgency/scarcity mechanics near care decisions
+- [ ] No unverifiable outcome claims ("cure", "guaranteed")
+
 ## References
 Zocdoc (booking UX), Oscar Health (humanized insurance), One Medical (calm premium care), NHS.uk (the plain-language clinical gold standard — genuinely study it).

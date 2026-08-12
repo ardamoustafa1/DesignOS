@@ -10,17 +10,17 @@ cleanup instead of a generic teardown function.
 import { motion, useReducedMotion } from 'motion/react';
 
 const EASE = [0.16, 1, 0.3, 1];        // --ease-out
-const enter = {
-  initial: { opacity: 0, y: 8 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 4 },
-  transition: { duration: 0.2, ease: EASE },   // --duration-base
-};
 
 function Toast({ children }) {
   const reduce = useReducedMotion();
+  const enterDuration = reduce ? 0.1 : 0.2;    // --duration-base
+  const exitDuration = reduce ? 0.1 : 0.15;    // exit ~75% of entrance (motion/principles.md law 3)
   return (
-    <motion.div {...enter} transition={reduce ? { duration: 0.1 } : enter.transition}>
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0, transition: { duration: enterDuration, ease: EASE } }}
+      exit={{ opacity: 0, y: 4, transition: { duration: exitDuration, ease: EASE } }}
+    >
       {children}
     </motion.div>
   );

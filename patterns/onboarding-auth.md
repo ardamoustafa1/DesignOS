@@ -26,7 +26,7 @@ the user and their aha-moment must pay rent.
 
 ### Password reset
 - Request: one field, always claim success ("If that email exists, we sent a link") — no enumeration.
-- Reset: new rules stated, both-fields-no ("confirm password" is dead — one field + show toggle), auto-login after success + toast.
+- Reset: new rules stated, no confirm-password field ("confirm password" is dead — one field + show toggle), auto-login after success + toast.
 
 ## Onboarding
 

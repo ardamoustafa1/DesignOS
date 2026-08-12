@@ -58,6 +58,14 @@ with sound · infinite-scroll article-to-article hijacking the back button · "a
 web" chumbox rows (instant credibility amputation) · timestamps hidden to make old news
 look fresh · CLS from lazy ad slots · corrections made silently.
 
+## Checklist
+- [ ] Front page shows clear editorial hierarchy (one dominant lead, not a grid of equal cards)
+- [ ] Headlines are honest, not curiosity-gap bait
+- [ ] Article timestamps show both published AND updated times, corrections transparent
+- [ ] Ad slots are fixed-size (no CLS) and sponsored content is unmistakably labeled
+- [ ] Paywall moment is designed clearly (what you get, price, one CTA), not a mid-paragraph curtain
+- [ ] No autoplay video with sound or "around the web" chumbox rows
+
 ## References
 The Guardian (digital-native system craft + open design system), NYT (typography +
 data-viz ceiling), Axios (structured-brevity innovation), local honest broadsheets for

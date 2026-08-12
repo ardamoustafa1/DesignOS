@@ -3,7 +3,9 @@
 Dark mode is not inverted light mode; it's a different lighting environment with its own
 physics. "Dark mode by accident" (auto-inverted, unaudited) scores worse than no dark
 mode — the kernel demands both themes deliberate or one explicitly declared out
-(`CLAUDE.md` standards). This module is the physics.
+(`CLAUDE.md` standards). This module is the physics — canonical source for the specific
+values; `foundations/colors.md`'s "Dark theme construction" section is a condensed
+pointer to these same numbers and must be kept in sync, not re-derived independently.
 
 ## Surface architecture (light's shadow is dark's lightness)
 ```
