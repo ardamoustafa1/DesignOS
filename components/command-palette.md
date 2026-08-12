@@ -3,6 +3,11 @@
 A command palette is expert navigation, action search, and power-user acceleration in
 one surface. It is not a decorative modal with a search field.
 
+See also `components/search-command.md` for the field-level search UX (debounce,
+ranking, grouping, empty-state recovery) shared between inline search and this palette —
+this file is the deep-dive on the dedicated ⌘K surface: keyboard contract, result-type
+table, and confirmation rules for destructive commands.
+
 ## When To Use
 
 Use a command palette when the product has:
@@ -19,7 +24,7 @@ Do not add one to a simple landing page or tiny CRUD app. Complexity must earn i
 
 ```text
 Trigger        cmd/ctrl+k button, search affordance, or global shortcut
-Dialog         centered or top-biased, 560-720px wide desktop
+Dialog         centered or top-biased, 560-640px wide desktop
 Input          autofocus, clear label, placeholder names scope
 Results        grouped by type: pages, actions, records, docs
 Active item    strong focus, visible keyboard state
@@ -42,7 +47,7 @@ desktop command modal into 375px.
 | Type | Example | Action |
 |---|---|---|
 | Page | "Billing settings" | navigate |
-| Record | "Acme Inc" | open object |
+| Record | "Northwind Traders" | open object |
 | Command | "Invite teammate" | run flow |
 | Help | "API keys docs" | open docs |
 

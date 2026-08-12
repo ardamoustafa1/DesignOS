@@ -80,6 +80,6 @@ Exit codes: `0` clean, `1` findings (CI-friendly). Output format: one finding pe
 
 Static checks can't judge hierarchy, taste, or honesty — a page can pass every validator
 and still score 70. Validators clear the mechanical floor (`brain/quality-bar.md`
-instant-fail sweep, automated); the six-dimension review still runs above them.
+instant-fail sweep, automated); the seven-dimension review still runs above them.
 Conversely: a validator finding is never overridden by taste — fix it or record the
 exception in `memory/design.md` with a reason.

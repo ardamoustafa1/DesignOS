@@ -26,7 +26,7 @@ const path = require('path');
 
 const MODULE_DIRS = [
   'foundations', 'components', 'patterns', 'psychology',
-  'motion', 'native',
+  'motion', 'native', 'industries',
 ];
 
 // Files to skip — structural docs, not knowledge modules

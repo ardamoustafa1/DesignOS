@@ -5,7 +5,7 @@ or as the recurring health check on a living project. Where the Design Loop *pro
 the Review Loop *interrogates what exists*.
 
 ```
-INVENTORY → CONTRACT CHECK → INSTANT-FAIL SWEEP → SIX-DIMENSION AUDIT
+INVENTORY → CONTRACT CHECK → INSTANT-FAIL SWEEP → SEVEN-DIMENSION AUDIT
      → FINDINGS REPORT → (fixes) → RE-VERIFY changed surfaces only
 ```
 
@@ -36,7 +36,7 @@ node DesignOS/bin/designos.js review <target> --json --no-fail
 
 Use that output as the deterministic finding list. Do not replace it with model judgment.
 
-### 4. Six-dimension audit
+### 4. Seven-dimension audit
 `agents/reviewer.md` protocol against `scoring/rubric.md`, with the edge-attack doctrine:
 states, 375px, dark theme, keyboard, reduced-motion, zoom. Specialists spawn where depth
 demands: `accessibility` for stage-5-grade audit, `frontend-engineer` for implementation/

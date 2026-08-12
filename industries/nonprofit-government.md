@@ -69,6 +69,15 @@ Pity-prop imagery · donation popups ambushing first-time readers · overhead-sh
 homepages of press releases · PDF-only civic information · CAPTCHA walls before benefit
 applications · session-expired form wipes (civic cruelty, and common).
 
+## Checklist
+- [ ] Donate flow uses honest impact anchors ("$50 = X"), never inflated math
+- [ ] Recurring-donation option is offered but never pre-checked
+- [ ] Financials/annual report findable in ≤2 clicks, not PDF-dumped
+- [ ] Civic homepage is a task-first service directory, not an org chart or photo-op carousel
+- [ ] Forms support save-and-resume with no session-expired data loss
+- [ ] No pity-prop imagery of people served
+- [ ] Civic services: application/request status is tracked and shown (received → reviewing → decision), and language switching is persistent architecture, not an afterthought widget
+
 ## References
 GOV.UK (the civic design bible — genuinely study it), charity: water (donor-experience
 ceiling), USA.gov/USWDS (component systems for government), Wikimedia (donation-flow

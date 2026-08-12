@@ -54,5 +54,13 @@ experiences" copy soup · NDA-everything grids ("trust me" doesn't screenshot) �
 6-page site · contact forms with 9 fields · dead blog with 2 posts from 2022 (delete it) ·
 imitating the currently-viral portfolio (juries and clients have seen it 50 times this month).
 
+## Checklist
+- [ ] Work grid shows real projects with client + one-line role, no placeholder/lorem content
+- [ ] Case studies show real numbers/results, not just "we made it beautiful"
+- [ ] Most recent work is current (not a 2019-latest portfolio)
+- [ ] No skill-bar percentages ("85% Photoshop")
+- [ ] No stock imagery anywhere
+- [ ] Contact is friction-free (visible email, not form-only) with stated response expectations
+
 ## References
 Current Awwwards/SOTD winners for the ceiling (study, don't copy), studio benchmarks: Instrument, Pentagram (case-study depth), Locomotive (motion craft), individual portfolios of respected seniors in the relevant discipline.

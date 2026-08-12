@@ -1,7 +1,8 @@
 # Product Tours
 
 Most product tours are ignored. Good onboarding teaches at the moment of need and
-gets out of the way.
+gets out of the way. Covers post-signup activation specifically — for the signup/login
+flow itself, see `patterns/onboarding-auth.md`.
 
 ## Tour Types
 
@@ -9,7 +10,7 @@ gets out of the way.
 |---|---|---|
 | First-run checklist | broad onboarding | 4-6 value milestones |
 | Contextual hint | one new feature | small callout near action |
-| Guided setup | required configuration | stepper with saved progress |
+| Guided setup | required configuration | stepper with saved progress (`components/steppers-wizards.md`) |
 | Release tour | major redesign | dismissible what's-new summary |
 
 Avoid the classic 9-tooltip parade. It teaches nothing because users have no context.
@@ -30,7 +31,8 @@ Bad checklist items are chores:
 - Complete profile
 - Follow us
 
-The first item should already be complete when possible. Goal-gradient is real.
+The first item should already be complete when possible. Goal-gradient is real
+(`psychology/cognition.md`).
 
 ## Contextual Hints
 
@@ -41,7 +43,8 @@ Use hints when:
 - the hint can be dismissed
 - repeated exposure is capped
 
-Never cover the thing the user needs to click.
+Never cover the thing the user needs to click. Anatomy and dismissal mechanics:
+`components/tooltips-popovers.md`.
 
 ## Progress And Skip
 
@@ -49,7 +52,8 @@ Never cover the thing the user needs to click.
 - Every non-legal step can be skipped.
 - Skipped items move to a recoverable checklist.
 - Back preserves state.
-- Completion should lead to the next valuable action, not a dead celebration modal.
+- Completion should lead to the next valuable action, not a dead celebration modal —
+  the peak-end rule means this closing moment is what's remembered (`psychology/cognition.md`).
 
 ## Metrics To Watch
 

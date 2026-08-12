@@ -20,7 +20,7 @@ Background:  transparent over hero → solid/blur on scroll (see behavior)
 ```
 
 ### Scroll behavior (pick deliberately)
-- **Solid sticky:** always visible, `background: color-mix(bg 80%, transparent)` + `backdrop-filter: blur(12px)` + hairline bottom border appearing after 8px scroll. The modern default.
+- **Solid sticky:** always visible, `background: color-mix(in srgb, var(--bg) 80%, transparent)` + `backdrop-filter: blur(12px)` + hairline bottom border appearing after 8px scroll. The modern default.
 - **Hide-on-down, show-on-up:** for content-heavy pages; transition 200ms; never hide while a dropdown is open.
 - Height may compress 8px on scroll — animate `height`, not padding jumps.
 

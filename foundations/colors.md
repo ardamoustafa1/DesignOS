@@ -29,6 +29,9 @@
 | neutral-900 | headings | #18181B |
 
 ### Dark theme construction
+Condensed token reference — `foundations/dark-mode.md` is the canonical, fuller treatment
+(elevation ladder, halation, weight optics); if these values change, update both files
+together, they must never drift apart.
 - Base surface `#0A0A0B`–`#111113`, **not** `#000`.
 - Elevation = lighter surface (+3–5% lightness per level), not shadows.
 - Borders: `rgba(255,255,255,0.08)` — structure without lines shouting.
@@ -54,7 +57,10 @@ Components use only this layer. Theme switch = swapping token values, nothing el
 - Two accents on one screen: only if one is strictly decorative and never interactive.
 
 ## Gradients
-- Maximum one gradient *moment* per page (hero mesh, text highlight, or card glow — pick one).
+- Maximum one gradient *moment* per page (hero mesh or card glow — pick one). Gradient
+  text (`background-clip: text` + gradient fill) is banned outright, not one of the
+  choices — see `PROOF_STANDARD.md` and `validators/check-aesthetic-slop.js` rule
+  `slop-gradient-text`.
 - Never on primary buttons (kills state affordance), never behind body text.
 - Analogous hues only (blue→violet ✓, orange→teal ✗). 15–30° hue spread.
 - The "AI-startup purple-blue mesh" is saturated as a cliché — if the sector file allows a gradient,

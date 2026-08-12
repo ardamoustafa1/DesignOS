@@ -32,6 +32,8 @@ and design decisions. They are not fake adoption.
 - [`cybersecurity-pricing/index.html`](cybersecurity-pricing/index.html)
 - [`fintech-dashboard/index.html`](fintech-dashboard/index.html)
 - [`ai-copilot-landing/index.html`](ai-copilot-landing/index.html)
+- [`flagship-launch/index.html`](flagship-launch/index.html)
+- [`cross-doc-transitions/index.html`](cross-doc-transitions/index.html)
 
 ## Checklist
 

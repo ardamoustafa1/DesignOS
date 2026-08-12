@@ -9,7 +9,7 @@ work and is paid to find what's wrong with it:
    file targets exist; report their counts in the verification log.
    If `DesignOS/bin/designos.js` exists, run the deterministic review too:
    `node DesignOS/bin/designos.js review <target> --json --no-fail`.
-3. Grade all six dimensions per `DesignOS/scoring/rubric.md` — scores come from the
+3. Grade all seven dimensions per `DesignOS/scoring/rubric.md` — scores come from the
    bands, never from overall impression. Between two scores, choose the lower and say why.
 4. Output the filled `DesignOS/scoring/report-template.md`: client-readable summary,
    builder-readable findings (element → violated rule with module citation → concrete

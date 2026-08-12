@@ -3,7 +3,30 @@
 const fs = require('fs');
 const path = require('path');
 
+function doctorSelf(context) {
+  // Running from inside the DesignOS source repo itself (cwd === pkgRoot) — there is no
+  // nested ./DesignOS install to look for; check the source tree's own structure instead.
+  let problems = 0;
+  const check = (condition, okMessage, failMessage, critical = true) => {
+    if (condition) context.ok(okMessage);
+    else {
+      (critical ? context.fail : context.warn)(failMessage);
+      if (!critical) problems += 1;
+    }
+  };
+  context.ok('running inside the DesignOS source repo (self-check mode)');
+  check(fs.existsSync(path.join(context.cwd, 'CLAUDE.md')), 'kernel (CLAUDE.md) present', 'kernel missing at repo root', false);
+  check(fs.existsSync(path.join(context.cwd, 'bin/designos.js')), 'local CLI present at bin/designos.js', 'bin/designos.js missing', false);
+  const pwPath = path.join(context.cwd, 'node_modules/playwright');
+  if (fs.existsSync(pwPath)) context.ok('playwright dependency installed');
+  else { context.warn('playwright not installed — run "npm install"'); problems += 1; }
+  const manifest = path.join(context.pkgRoot, 'package.json');
+  const version = fs.existsSync(manifest) ? JSON.parse(fs.readFileSync(manifest, 'utf8')).version : '(unknown)';
+  context.log(`\n  DesignOS ${version} (source repo) · ${problems === 0 ? '\x1b[32mall systems go\x1b[0m' : `\x1b[33m${problems} advisory item(s)\x1b[0m`}`);
+}
+
 function doctor(context) {
+  if (context.cwd === context.pkgRoot) return doctorSelf(context);
   let problems = 0;
   const check = (condition, okMessage, failMessage, critical = true) => {
     if (condition) context.ok(okMessage);

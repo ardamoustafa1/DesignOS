@@ -57,6 +57,14 @@ countdown urgency anywhere · testimonial walls in regulated jurisdictions · fe
 where clients expect ranges (consumer practices increasingly publish; opacity reads as
 ambush) · legal tech demoing with real-looking case data.
 
+## Checklist
+- [ ] Attorney-advertising / no-attorney-client-relationship disclaimers present but visually quiet
+- [ ] Intake forms explicitly instruct against submitting confidential case details
+- [ ] Case results carry required outcome disclaimers
+- [ ] No gavel/scales-of-justice/handshake stock imagery
+- [ ] Credentials (bar admissions, court admissions) are stated and verifiable
+- [ ] No unverified "aggressive advocates fighting for YOU" style copy inflation
+
 ## References
 Top-tier firm sites (Cravath/Wachtell restraint — dated but instructive), modern
 boutiques, legal tech: Clio (approachable pro), Harvey/Ironclad (credible AI-legal),

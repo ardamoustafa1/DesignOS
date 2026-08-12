@@ -37,8 +37,10 @@ Spine:  the WHY (origin/mission in ≤3 short paragraphs, specific, zero mission
   interview process steps with timeline (candidates rank this above perks), salary ranges
   where law or courage permits (increasingly the norm and a differentiator).
 - Job detail pages: role mission → what you'll do (first-90-days flavored) → requirements
-  split MUST vs NICE (over-long must-lists filter out great candidates, disproportionately
-  women — 5 musts max) → team context → process → apply (`components/forms.md`: ≤5 fields
+  split MUST vs NICE (long must-lists filter out qualified candidates who under-apply
+  against strict checklists — treat the widely-cited "women apply only if 100%-qualified"
+  framing as directional, not a sourced statistic; 5 musts max regardless) → team context
+  → process → apply (`components/forms.md`: ≤5 fields
   + CV/LinkedIn; a 40-field ATS iframe is a 70% abandonment machine — at minimum restyle it).
 
 ## Contact

@@ -27,7 +27,7 @@ Two solid accent buttons side by side = no hierarchy = both lose. "Get started" 
 default → hover → active → focus-visible → disabled → loading
 ```
 - **Hover:** background shift (~8% darken light / lighten dark) + optional 1px translate-y-up or subtle shadow raise. Transition 120–150ms ease-out. Cursor: pointer.
-- **Active:** darker still + translate-y back to 0 / scale(0.98) — the press must *feel* mechanical.
+- **Active:** darker still + `translateY(1px) scale(0.99)` (past the hover raise, back toward the surface) — the press must *feel* mechanical.
 - **Focus-visible:** 2px ring, 2px offset, brand-colored (`foundations/accessibility.md`).
 - **Disabled:** reduced opacity (~50%) + `cursor: not-allowed`; keep label readable; prefer *enabled with validation feedback* over disabled submit buttons where feasible.
 - **Loading:** spinner (16px) replaces or precedes label, label switches to progressive verb ("Saving…"), width locked to pre-loading width (no jump), `aria-busy="true"`, double-submit prevented.
@@ -49,7 +49,9 @@ No spring wobbles on buttons; they're tools, not toys. Reserve springs for playf
 - Reduce anxiety at the point of click: microcopy under the CTA ("No credit card · 2-min setup"), 12–13px muted.
 
 ## Icon-only buttons
-- 40×40 (36 minimum in dense toolbars), `aria-label` required, tooltip on hover+focus (500ms delay), radius consistent with system.
+- Visible box 40×40 (36 minimum in dense, mouse-only toolbars); on any touch surface the
+  hit target must still meet the 44×44px floor via padding even when the visible box is
+  smaller. `aria-label` required, tooltip on hover+focus (500ms delay), radius consistent with system.
 
 ## Button groups
 - Related actions: 8–12px gap; primary rightmost in LTR dialogs (platform convention), or leftmost in inline forms — pick one convention per product and never mix.

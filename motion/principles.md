@@ -26,7 +26,17 @@ Define once, use everywhere. Motion tokens are as binding as color tokens:
 1. **Smaller = faster.** A checkbox (100ms) vs. a modal (250ms) vs. a page transition (300ms). Duration scales with distance traveled and area changed.
 2. **Nothing interactive over 300ms.** Past 300ms, feedback becomes latency. 400ms+ is reserved for once-per-visit signature moments.
 3. **Exits faster than entrances** (~75% of the entrance duration). Users asked it to leave; don't make them watch it go.
-4. **Frequency discount:** the more often an animation plays, the shorter it must be. Daily-use app transitions trend toward 0; marketing moments can afford ceremony.
+4. **Frequency discount:** the more often an animation plays, the shorter it must be. Daily-use app transitions trend toward 0; marketing moments can afford ceremony. As a hard gate, not a vibe:
+
+| Trigger frequency | License |
+|---|---|
+| 100+ times/day (⌘K toggle, keyboard nav, list scrubbing) | No animation. Instant. Every millisecond is paid back a hundred times. |
+| Tens of times/day (hover states, row nav, tab switches) | Strip to the minimum — a single property, ≤120ms, or nothing |
+| Occasional (modal open, drawer, toast, settings save) | Standard token-layer animation applies in full |
+| Rare / once-per-visit (onboarding step, empty-state illustration, milestone) | Delight budget — this is where a spring or a signature moment is earned |
+
+"It looks nice" does not survive contact with frequency. A command palette animated at
+250ms feels premium in a demo and becomes 250ms of friction by the tenth open that hour.
 
 ## Easing laws
 - **Ease-out is the default.** Fast start = instant response feel; gentle landing = polish.
@@ -39,6 +49,33 @@ Define once, use everywhere. Motion tokens are as binding as color tokens:
 - **One thing at a time:** simultaneous unrelated animations compete (`psychology/attention.md` — motion is the heaviest attention lever). Sequence: outgoing → incoming.
 - **Origin honesty:** things enter from where they conceptually live (dropdown from its trigger, drawer from its edge, modal from center-scale or slight-below). Never from random directions.
 - **Continuity over teleportation:** when an element persists across states (card → detail), move it; when it doesn't, crossfade. FLIP technique for layout moves.
+
+## Interruptibility
+
+`physics.md` covers this for gestures under a finger; the same law applies to any element a
+user can re-trigger faster than its own animation finishes — a toast that can be dismissed
+mid-slide, a dropdown re-opened before its close finishes, a tooltip that follows a fast
+mouse across three targets in one second.
+
+**CSS transitions retarget from wherever the element currently is. `@keyframes` restarts
+from its `0%` state.** This is the entire reason to default to `transition` for anything
+state-driven (open/closed, hover, selected) and reserve `@keyframes` for motion that has no
+mid-flight state to interrupt (a spinner, a shimmer, a one-shot celebration).
+
+```css
+/* Correct: re-triggering .open/.closed mid-transition retargets smoothly from the
+   current computed value — no jump, no restart. */
+.toast { transform: translateY(120%); transition: transform var(--duration-base) var(--ease-out); }
+.toast.open { transform: translateY(0); }
+
+/* Wrong for anything re-triggerable: a keyframe restarts at 0% even if the element
+   was already 80% of the way through the previous run — the reversal jumps. */
+@keyframes slide-in { from { transform: translateY(120%); } to { transform: translateY(0); } }
+```
+
+A component that fails this in practice: open it, then close it, then open it again fast.
+If it stutters, jumps, or briefly shows the wrong state, it is not interruptible — fix the
+mechanism (transition, not keyframes) rather than adding a debounce that just hides the seam.
 
 ## What animates (whitelist)
 ```

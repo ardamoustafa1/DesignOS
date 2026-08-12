@@ -23,7 +23,7 @@ function Toast(props) {
       onExit={(el, done) => {
         const a = el.animate(
           [{ opacity: 1 }, { opacity: 0 }],
-          { duration: 100, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' },  // --duration-fast: exits faster
+          { duration: 150, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' },  // exit ~75% of the 200ms entrance (motion/principles.md law 3)
         );
         a.finished.then(done);
       }}

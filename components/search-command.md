@@ -34,7 +34,10 @@ Debounce   150–300ms as-you-type · show spinner IN the field (trailing) after
   for cold starts.
 
 ## Command palette (⌘K)
-The modern product's keyboard heart (Linear/Raycast standard — `brain/reference-library.md`):
+The modern product's keyboard heart (Linear/Raycast standard — `brain/reference-library.md`).
+For the full anatomy — keyboard contract, result-type table, destructive-command
+confirmation — see `components/command-palette.md`; this section covers only the
+in-page overlay basics:
 ```
 Overlay    centered top-third · 560–640px wide · radius-lg · shadow tier-3 · scrim light
 Input      borderless, 16–18px, autofocused · placeholder "Type a command or search…"

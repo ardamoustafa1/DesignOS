@@ -13,7 +13,7 @@ feedback, not longer design debates.
 
 2. Inspect screenshots at 375, 768, 1024, and 1440.
 3. Check the state matrix from `components/states.md`.
-4. Score the six dimensions in `scoring/rubric.md`.
+4. Score the seven dimensions in `scoring/rubric.md`.
 5. Leave comments as specific fixes, not taste adjectives.
 
 ## Comment Format

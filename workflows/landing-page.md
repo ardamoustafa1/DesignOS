@@ -34,7 +34,7 @@ it's always conversion-critical. Notes specific to landing pages:
 
 ## 5. Deliver
 Output Contract complete: the page (production HTML/CSS/JS or the project's stack — all
-states, four breakpoints, both-or-declared themes), scorecard ≥95 all six, rationale,
+states, four breakpoints, both-or-declared themes), scorecard ≥95 all seven, rationale,
 memory writes (`pages.md` row with intent+metric, `todo.md` placeholder flags).
 
 ## Post-launch loop (offer it)

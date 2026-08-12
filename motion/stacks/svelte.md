@@ -14,7 +14,7 @@ built-in transitions for enter/exit, `onMount`'s cleanup return for anything imp
 {#if open}
   <div class="toast"
        in:fly={{ y: 8, duration: 200, easing: t => 1 - Math.pow(1 - t, 3) }}
-       out:fade={{ duration: 100 }}>
+       out:fade={{ duration: 150 }}>
     <slot />
   </div>
 {/if}

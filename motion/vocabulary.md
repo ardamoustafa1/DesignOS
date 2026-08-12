@@ -45,12 +45,17 @@ primitives that aren't full signature-moment entries in that database.
 | "one big unforgettable moment" | hero-scale signature moment (max one, occasionally two) | `motion/signature-moments.md` "The scarcity law", `brain/wow-calibration.md` |
 | "how bold can we go with this" | the courage ladder, 1–10, sector-capped | `brain/wow-calibration.md` §2 |
 | "don't overdo the animation" | the two-signature scarcity law | `motion/signature-moments.md` "The scarcity law" |
-| "it should feel calmer for people who get motion-sick" | `prefers-reduced-motion`, movement collapses not content | `motion/principles.md`, `motion/recipes.md` §16 |
+| "it should feel calmer for people who get motion-sick" | `prefers-reduced-motion`, movement collapses not content | `motion/principles.md`, `motion/recipes.md` §19 |
 | "the page shouldn't jump around while it loads" | CLS discipline — reserve space before animating in | `motion/recipes.md` §5 note, `checklists/performance.md` |
 | "don't let it hijack my scroll wheel" | scroll-jacking ban | `motion/page-and-scroll.md`; enforced as `motion-scroll-jacking` |
 | "it keeps running even when I've scrolled away" | off-screen/hidden-tab pause | `motion/performance.md`; enforced as `motion-infinite-unpaused` / `motion-no-visibility-pause` |
 | "why does the sidebar animation feel slow/laggy" | `transition: all` or a non-compositor property (`width`, `top`, `margin`) | `motion/performance.md` compositor rule; enforced as `motion-transition-all` / `motion-noncomposited` |
 | "keyboard shortcuts shouldn't have a fade-in" | frequency discount — high-frequency UI gets zero or near-zero motion | `motion/principles.md` duration law 4, `motion/decision-engine.md` |
+| "it stutters/jumps if I close and reopen it fast" | interruptibility — use `transition`, not `@keyframes`, for anything re-triggerable | `motion/principles.md` "Interruptibility" |
+| "how do I fade something in without JS when it's display:none" | `@starting-style` + `display: ... allow-discrete` | `motion/recipes.md` §16 |
+| "a wipe/reveal/before-after-slider effect" | `clip-path: inset()` as the general reveal primitive | `motion/recipes.md` §17 |
+| "the crossfade between two states looks glitchy or misaligned" | short `filter: blur()` masks a structural mismatch a crossfade can't smooth | `motion/recipes.md` §18 |
+| "should this even animate, it's used constantly" | frequency-gating table — 100+/day gets zero animation | `motion/principles.md` duration law 4 |
 
 ## Using this table
 

@@ -59,6 +59,14 @@ HDR-nuked photos · fee ambush at step 4 · fake urgency pulsing · autoplay dro
 with sound · map pins that don't match list hover · burying cancellation terms ·
 "from $99" prices no date combination produces.
 
+## Checklist
+- [ ] Total price (all fees included) shown before any commitment step
+- [ ] Cancellation terms appear at the booking button, not just in a linked policy
+- [ ] Reviews show real dates and traveler-type context
+- [ ] Photos match the real property/experience (no HDR-nuked fantasy shots)
+- [ ] Urgency mechanics ("2 rooms left") used only when real and shown calmly
+- [ ] No countdown timers on hotel-room or seat-style availability
+
 ## References
 Airbnb (search + photo + review doctrine — `brain/reference-library.md`), Booking
 (conversion mechanics to study AND the pressure-theater cautionary tale), Aman/Belmond

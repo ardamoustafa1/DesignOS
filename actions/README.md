@@ -9,7 +9,7 @@ chosen directory and reports:
 - semantic/a11y tells
 - fake proof or unverifiable social proof
 - token drift risk
-- six-dimension gate score
+- seven-dimension gate score
 
 It does not call a model. That is deliberate for v1: CI should be deterministic,
 cheap, and safe by default. A future v2 can layer a model-judged rubric pass on top.

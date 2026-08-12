@@ -10,12 +10,18 @@ Decision time grows with the number and complexity of options.
 - The paradox-of-choice moment to watch: templates/plans/integrations galleries — add curation ("Popular", "Recommended for you") or search, never a raw wall of 200 equal tiles.
 
 ## Decision fatigue
-Every choice depletes the next one. Sequence flows so that:
+Treat as a design heuristic, not settled neuroscience — the strict "ego depletion" model
+behind it failed large-scale replication attempts. The practical guidance still holds
+regardless of mechanism: choices made later in a flow get less careful attention than
+early ones, so sequence flows to protect the decisions that matter most:
 - Early steps are trivial (email → name), commitment grows with investment (`psychology/persuasion.md` commitment).
 - One decision per screen in wizards; combined mega-decisions ("choose plan + seats + billing cycle + add-ons") split apart.
 - Defaults carry the tired user: the no-thought path must be a *good* path.
 
-## Miller's Law — chunking (7±2, realistically 4)
+## Chunking heuristic (often cited as "Miller's Law," 7±2, realistically 4)
+Miller's original 1956 finding was about absolute judgment of unidimensional stimuli, not
+UI navigation capacity — treat "4" as a practical chunking target earned from experience,
+not a literal cognitive limit.
 - Group everything: form fields into sections, features into 3s, nav into labeled clusters, phone/card numbers into visual chunks (`components/forms.md` masking).
 - Lists >5 items need grouping, ranking, or progressive reveal.
 

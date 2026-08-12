@@ -36,5 +36,13 @@ Playful copy near money actions ("Oops! Your transfer failed 😅") · balance a
 loading (show skeleton, never $0.00 flash) · urgency mechanics on financial decisions ·
 crypto-bro aesthetics for regulated products · fee surprises at the last step.
 
+## Checklist
+- [ ] Every money figure uses tabular-nums with consistent, context-correct precision
+- [ ] Negative values use −, color, AND parentheses — never color alone
+- [ ] Security page states specifics (encryption, custody, insurance, audits)
+- [ ] Full fee-transparency table exists with no asterisk mazes
+- [ ] No playful copy near failed-transaction or money-loss states
+- [ ] Balances never flash $0.00 during loading — skeleton states used instead
+
 ## References
 Stripe (the sector's craft ceiling), Mercury (SMB banking done modern), Wise (fee transparency as brand), Robinhood (consumer clarity — and cautionary tales in gamification).

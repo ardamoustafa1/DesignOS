@@ -68,7 +68,7 @@ This is `components/tables.md` discipline applied to attention.
 - "Clear all" as the only management tool (that's a landfill, not an inbox)
 - Notifications with no deep link (told something happened, can't go there)
 - Unread state lost on panel-open (read-on-sight model punishes glancing)
-- Celebration/marketing events in the needs-you channel ("We shipped a new feature! 🎉"
+- Celebration/marketing events in the needs-you channel ("We shipped a new feature!"
   belongs in the changelog — `patterns/changelog.md`)
 - Push permission requested on first page load (earn it at a moment of relevant value)
 

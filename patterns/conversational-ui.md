@@ -50,7 +50,9 @@ History    searchable (search-command.md), conversations named (auto-titled, edi
   (sending, deleting, buying) gets a preview-and-confirm block rendered as real UI
   (`components/modals.md` consequence doctrine) — never buried in prose ("I've gone
   ahead and…" is the genre's dark pattern).
-- Feedback loop: per-response rating (👍/👎 + optional why) styled quietly; correction
+- Feedback loop: per-response rating (thumbs-up/thumbs-down icon pair — SVG, not emoji
+  glyphs, per `PROOF_STANDARD.md`'s emoji-as-iconography ban — + optional why) styled
+  quietly; correction
   ("edit my message" / "regenerate") always available — dead-end responses violate the
   no-dead-ends law.
 
@@ -76,7 +78,7 @@ Fake typing delays on canned content · chat as the ONLY path to core features �
 uncited authoritative-sounding claims · action-taking announced in past tense ·
 infinite personality, zero capability honesty (`psychology/emotional-design.md`
 condescension mode) · suggestion chips that don't match real capability · walls of
-un-headed generated prose · the 👍👎 that visibly changes nothing.
+un-headed generated prose · the rating control that visibly changes nothing when clicked.
 
 ## Checklist
 - [ ] Conversation-shape gate passed; hybrid execution via real components

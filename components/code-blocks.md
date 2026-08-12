@@ -26,7 +26,8 @@ Line nums   docs/tutorials: yes, muted, unselectable (user copies code, not numb
   diff notation (`+`/`-` with subtle green/red tints — colorblind-safe: keep the symbols).
 
 ## The copy button (the most important button in dev marketing)
-- Top-right, visible always (not hover-only — touch, and discoverability), 32px target.
+- Top-right, visible always (not hover-only — touch, and discoverability), 32px visible
+  size with a 44×44px hit target via padding (touch-target floor).
 - Click → icon swaps to ✓ + "Copied" 1.5s (`motion/micro-interactions.md` canonical).
 - Copies the CODE only: no line numbers, no `$` prompts, no output lines — test this;
   a pasted `$ npm install` fails and the user blames the product.

@@ -30,7 +30,9 @@ try {
 
 const files = new Set((report.files || []).map((entry) => entry.path));
 const forbidden = [
-  /^goldens\//,
+  // goldens/*.md briefs ship (CLAUDE.md's routing table reads them); the generated
+  // per-golden evidence subdirectories (screenshots, html, browser-gate.json) do not.
+  /^goldens\/[^/]+\//,
   /^fixtures\/frameworks\/.*\/dist\//,
   /^evals\/runs\//,
   /^evals\/independent\//,

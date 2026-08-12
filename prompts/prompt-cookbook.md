@@ -57,7 +57,7 @@ Acceptance evidence: <states, breakpoints, keyboard, a11y, performance, business
 > bulk actions. Declare your defaults and include the token block.
 
 **Audit what exists:**
-> Run the review loop on <page/path>. Full six-dimension report; don't fix anything yet — findings and fix plan first.
+> Run the review loop on <page/path>. Full seven-dimension report; don't fix anything yet — findings and fix plan first.
 
 **Redesign:**
 > Our pricing page underperforms (2.1% → we need 4%). Run the redesign workflow — autopsy first,

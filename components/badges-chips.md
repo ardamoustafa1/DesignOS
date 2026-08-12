@@ -43,7 +43,8 @@ Colors      tinted background (semantic -subtle token) + strong text + optional 
   perpetually.
 
 ## Chips (interactive)
-- Anatomy: optional leading icon/avatar → label → remove ✕ (its own 24px hit target,
+- Anatomy: optional leading icon/avatar → label → remove ✕ (16–18px visible glyph,
+  44×44px hit target via padding — `foundations/spacing.md` touch-target floor,
   `aria-label="Remove <label>"`).
 - Keyboard: chip focusable; Backspace/Delete removes when focused; input-adjacent chips
   (recipient fields) integrate with the input's caret flow.

@@ -60,6 +60,14 @@ ETAs that slip silently · map theater (fake precision, decorative globes —
 normal · timezone-ambiguous timestamps on international shipments · carrier-jargon
 statuses surfaced raw to consumers ("OFD SORT FACILITY EXCEPTION").
 
+## Checklist
+- [ ] Tracking page shows a status headline first, then a real timestamped event timeline
+- [ ] Delays are stated honestly with a new ETA, never silently absorbed
+- [ ] Tracking page requires no login wall
+- [ ] Status badges use a fixed vocabulary with amber/red used only semantically
+- [ ] Timestamps on international shipments state their timezone
+- [ ] No "live" map claims built on stale (hours-old) position data
+
 ## References
 Flexport (B2B logistics craft ceiling), consumer parcel leaders' tracking pages (study
 the timeline conventions), Samsara (fleet ops density), Shopify's post-purchase tracking

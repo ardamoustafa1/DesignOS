@@ -21,7 +21,11 @@ The strongest B2B lever. Specificity is the active ingredient.
 - Forbidden: countdown timers that reset, "2 rooms left" fabrications, evergreen "sales".
 - B2B rarely benefits from urgency theater — momentum ("2,400 signups this month") is the credible substitute.
 
-## Loss aversion (losses loom ~2× gains)
+## Loss aversion (losses loom larger than equivalent gains)
+The classic ~2× coefficient (Kahneman/Tversky) is a rough historical estimate, not a
+fixed constant — later work shows the ratio varies widely by context and sometimes
+disappears. Use the *direction* (losing something felt as owned hurts more than an
+equivalent unrealized gain), not the specific multiplier, to guide framing:
 - Frame retention/upgrade around what's *kept*: "Don't lose your 14-day streak", "Your 3 team dashboards remain active on Pro".
 - Trial-end UX: show what they built during trial (their data, their configs) — abandoning becomes a felt loss.
 - Free tier design: let users create real value first; the upgrade wall should protect their *existing* work, never hold it hostage (export always available — hostage-taking is a dark pattern).

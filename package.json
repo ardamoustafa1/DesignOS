@@ -42,6 +42,7 @@
     "evals/category-leadership/pattern-routing.json",
     "examples",
     "foundations",
+    "goldens/*.md",
     "industries",
     "integrations",
     "loops",
@@ -98,7 +99,8 @@
     "openai"
   ],
   "scripts": {
-    "validate": "node validators/check-capability-ledger.js && node scripts/compile-public-claims.js && node validators/test-category-leadership.js && node validators/run-registry.js --with-refs examples/ website/ goldens/",
+    "postinstall": "node scripts/postinstall-playwright.js",
+    "validate":"node validators/check-capability-ledger.js && node scripts/compile-public-claims.js && node validators/test-category-leadership.js && node validators/run-registry.js --with-refs examples/ website/ goldens/",
     "validate:strict": "npm run validate && node validators/check-aesthetic-slop.js examples/ --strict && node validators/check-aesthetic-slop.js website/ --strict && node validators/check-aesthetic-slop.js goldens/ --strict",
     "validate:contrast": "node validators/check-token-contrast.js examples/ && node validators/check-token-contrast.js website/ && node validators/check-token-contrast.js goldens/",
     "validate:motion": "node validators/check-motion.js examples/ && node validators/check-motion.js website/ && node validators/check-motion.js goldens/",

@@ -60,6 +60,14 @@ Fee ambush at step 4 · countdown timers on non-deadlines · lineup in an image 
 unzoomable) · autoplay with sound · hype site with no date/venue above the fold · seat
 maps that hide obstructed views · post-purchase silence until event day · fake queues.
 
+## Checklist
+- [ ] Ticket price shown all-in (fees included) before the final purchase step
+- [ ] Refund/transfer terms appear at the purchase button, not buried in policy pages
+- [ ] Countdown timers used only for real event dates, never manufactured urgency
+- [ ] Lineup/schedule is real text (searchable/zoomable), not an image
+- [ ] Seat maps show accurate view-from-seat where applicable
+- [ ] No fake "selling fast" claims when real availability contradicts it
+
 ## References
 Dice (fee-honest ticketing UX), major festival sites each season (Coachella-class hype
 craft), conference benchmarks (Config, Next.js Conf — dev-event polish), Ticketmaster

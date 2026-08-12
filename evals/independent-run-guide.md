@@ -73,7 +73,7 @@ Report both objective and judgment-based measures:
 - `validators/check-a11y-basics.js`
 - `validators/check-drift.js`
 - `designos review <target> --json`
-- six-dimension rubric from `scoring/rubric.md`
+- seven-dimension rubric from `scoring/rubric.md`
 - screenshots at desktop and mobile widths
 
 Do not average away a hard failure. If accessibility scores 60 because of a WCAG issue,

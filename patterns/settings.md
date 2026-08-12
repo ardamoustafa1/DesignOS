@@ -48,7 +48,7 @@ Never mix instant and explicit inside one visual card — users can't tell what'
   then $29/mo from Aug 1") — surprise charges are churn letters.
 - **Cancellation is findable and honest:** a real button, a short exit survey (skippable),
   clear end-of-access date, data-export offer (`psychology/persuasion.md` — hostage-taking
-  is a dark pattern; peak-end rule: the exit IS the lasting memory).
+  is a dark pattern; `psychology/cognition.md` peak-end rule: the exit IS the lasting memory).
 
 ## The danger zone
 - Visually quarantined at the bottom of Advanced: bordered section (danger-subtle tint),

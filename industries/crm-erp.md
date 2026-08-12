@@ -59,5 +59,13 @@ hiding per-seat price entirely while claiming SMB-friendliness · in-product: mo
 flows, unsaved-work loss, 12-equal-item sidebars (`components/navigation.md`), retiring
 muscle-memory layouts without migration paths.
 
+## Checklist
+- [ ] Marketing pages are self-contained/excerptable (screenshot-into-slide-deck ready)
+- [ ] Density toggle (comfortable/compact) exists as a first-class product feature
+- [ ] Tables support saved views, bulk actions, inline edit, persisted column customization
+- [ ] Forms autosave with a visible indicator
+- [ ] A dedicated migration/switching-from-competitor page exists
+- [ ] No dashboard screenshots showing obviously fake perfect data
+
 ## References
 Salesforce (category conventions to speak fluently — and complexity lessons), HubSpot (SMB-friendly enterprise), Attio/Linear (the modern-operator bar), Odoo (module breadth patterns), Stripe Dashboard (operational craft ceiling).

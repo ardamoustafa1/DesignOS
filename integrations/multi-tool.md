@@ -80,7 +80,7 @@ The kernel contains:
 ## AGENTS.md Standard
 
 The `agentsmd` target (`export agentsmd`) writes an `AGENTS.md` file that the
-[AGENTS.md standard](https://agentsmd.com) defines. This is recognized by:
+[AGENTS.md standard](https://agents.md) defines. This is recognized by:
 Codex CLI, Amp (Sourcegraph), Zed AI, and any tool following the emerging standard.
 
 For maximum coverage across multiple tools, export both:

@@ -60,11 +60,12 @@ Document 5-10 decisions that mattered:
 | Dimension | Score | Evidence |
 |---|---:|---|
 | UI Craft | | |
-| UX Flow | | |
+| UX & Flow | | |
 | Accessibility | | |
 | Performance | | |
 | Modernity | | |
 | Conversion | | |
+| Brand Fit & Distinctiveness | | |
 
 Attach `designos review` output if source files are available.
 

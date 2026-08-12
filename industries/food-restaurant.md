@@ -60,6 +60,14 @@ PDF menus · autoplay music (still happening; still firing customers) · splash 
 searchable = credibility zero) · hours in an image · Instagram-embed AS the site
 (feeds die, links rot) · parallax storytelling between a hungry human and the menu.
 
+## Checklist
+- [ ] Open-now status, address, and primary action (Book/Order) all appear above the fold
+- [ ] Menu is HTML (never PDF-only), with dietary and allergen marks
+- [ ] Hours match the Google Business Profile exactly (no site-vs-Maps contradiction)
+- [ ] No autoplay background music
+- [ ] No stock food photography (reverse-image-searchable)
+- [ ] Reservation flow doesn't block access to the menu
+
 ## References
 Local heroes over chains for craft: current SOTD restaurant sites for the editorial
 ceiling · Sweetgreen (ordering UX), Resy/OpenTable ecosystems (booking conventions),
