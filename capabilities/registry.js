@@ -35,6 +35,7 @@ function countMarkdown(directory) {
 function buildCapabilityLedger() {
   const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
   const production = Object.entries(pkg.dependencies || {}).map(([name, range]) => ({ name, range }));
+  const optional = Object.entries(pkg.optionalDependencies || {}).map(([name, range]) => ({ name, range }));
   const development = Object.entries(pkg.devDependencies || {}).map(([name, range]) => ({ name, range }));
   const external = verifyExternalRegistry(path.join(ROOT, 'evals/external/registry.json'));
   const committedLedgerFile = path.join(ROOT, 'capabilities/ledger.json');
@@ -49,6 +50,7 @@ function buildCapabilityLedger() {
     package: { name: pkg.name, version: pkg.version, node: pkg.engines?.node || null },
     dependencies: {
       productionCount: production.length, production,
+      optionalCount: optional.length, optional,
       developmentCount: development.length, development,
     },
     capabilities: {

@@ -10,7 +10,8 @@ Propose additions via a module-proposal issue.
 
 | Capability | Verified source count |
 |---|---:|
-| Production dependencies | 3 (`@jridgewell/trace-mapping`, `axe-core`, `playwright`) |
+| Required dependencies | 2 (`@jridgewell/trace-mapping`, `axe-core`) |
+| Optional dependencies (browser/evidence features) | 1 (`playwright`) |
 | Registry rules / providers | 40 / 8 |
 | Validated knowledge modules | 72 |
 | Industry packs | 24 |
@@ -40,7 +41,7 @@ Propose additions via a module-proposal issue.
 | Adapter combinations / browser fixtures | 90 / 180 |
 | Browser / source-map assertions | 3510 / 3 |
 | Pattern atlas / unified improve | 15 / yes |
-| Runtime dependencies | 3 |
+| Runtime dependencies | 2 required + 1 optional |
 | External eval | not verified |
 | Native evidence | source-conformance-only (0 device runs) |
 <!-- DESIGNOS_PUBLIC_CLAIMS:END -->
@@ -126,11 +127,9 @@ Propose additions via a module-proposal issue.
 - `LAUNCH.md` distribution playbook; 中文 + Español READMEs
 
 ## Building
-- Enable Pages in repo Settings (Source → GitHub Actions) so `pages.yml` goes live — workflow ready, **one-time Settings click required**
 - A recorded live-session GIF/video to sit alongside `press/demo.svg` on launch channels
 - External third-party eval runs submitted with organization, blind protocol, immutable
   evidence, and rule-level results under `evals/external/`
-- GitHub Discussions — enable in repo Settings → Features → Discussions; add Q&A, Show and Tell, Ideas
 
 ## Planned
 - **Published eval results across major models** — the deltas as a living table in

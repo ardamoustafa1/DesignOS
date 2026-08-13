@@ -47,6 +47,14 @@ jobs:
 
       - run: npm ci
 
+      # The runner's default Xcode can lag the Swift tools version some SPM-based RN
+      # pods require (seen in practice: "package 'apple' is using Swift tools version
+      # 6.2.0 but the installed version is 6.1.0"). Pin the latest stable Xcode instead
+      # of trusting the image default.
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
       - name: Prebuild native iOS project
         run: npx expo prebuild --platform ios --clean
         env:
@@ -141,6 +149,10 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
+      # reactivecircus/android-emulator-runner's `script:` does NOT inherit this job's
+      # `defaults.run.working-directory` (that only applies to plain `run:` steps) — it
+      # executes from the repo root, so every path below is written explicitly from
+      # there rather than assuming the starter/mobile-app default.
       - name: Boot emulator, build, install, launch, screenshot
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -150,15 +162,17 @@ jobs:
           profile: pixel_7
           disable-animations: true
           script: |
-            cd android && ./gradlew assembleRelease -x lint && cd ..
-            apk="android/app/build/outputs/apk/release/app-release.apk"
+            set -e
+            cd starter/mobile-app/android && ./gradlew assembleRelease -x lint && cd ../../..
+            apk="starter/mobile-app/android/app/build/outputs/apk/release/app-release.apk"
             adb install -r "$apk"
             adb shell am start -n com.designos.mobilestarter/.MainActivity
             sleep 6
-            mkdir -p ../../native-smoke-evidence
-            adb exec-out screencap -p > ../../native-smoke-evidence/android-launch.png
+            mkdir -p native-smoke-evidence
+            adb exec-out screencap -p > native-smoke-evidence/android-launch.png
             if ! adb shell pidof com.designos.mobilestarter > /dev/null; then
               echo "::error::App is not running after launch — it likely crashed on boot."
+              adb logcat -d '*:E' | tail -n 200 > native-smoke-evidence/android-logcat-errors.txt
               exit 1
             fi
 
@@ -168,3 +182,4 @@ jobs:
           name: native-smoke-android-${{ github.sha }}
           path: native-smoke-evidence/
           retention-days: 30
+          if-no-files-found: ignore

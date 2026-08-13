@@ -37,6 +37,16 @@ const screenshotDir = path.resolve(process.cwd(), value('--screenshots', 'design
 const maxDiff = Number(value('--max-diff', 'NaN'));
 const baselineDir = value('--baseline-dir', '');
 const quick = args.includes('--quick');
+const browserName = value('--browser', 'chromium');
+if (!['chromium', 'firefox', 'webkit'].includes(browserName)) {
+  console.error(`Usage: --browser must be one of chromium, firefox, webkit (got "${browserName}")`);
+  process.exit(2);
+}
+// The Chrome DevTools Protocol (full AX-tree dump, live-announcement cross-check) is
+// Chromium-only — Playwright exposes no CDP-equivalent session on Firefox/WebKit. Those
+// engines still get the full DOM/axe-core/screenshot pass; the CDP-only checks degrade to
+// "not collected" rather than crashing the run.
+const supportsCDP = browserName === 'chromium';
 const viewports = quick ? [{ name: 'fixture-375', width: 375, height: 812 }] : [
   { name: 'reflow-320', width: 320, height: 800 },
   { name: 'mobile-375', width: 375, height: 812 },
@@ -323,37 +333,44 @@ async function runDeclaredTasks(browser, targetUrl, findings) {
             else if (step.assert === 'announcement') {
               const live = ['status', 'alert'].includes(result.observed.role)
                 || ['polite', 'assertive'].includes(result.observed.ariaLive);
-              const cdp = await context.newCDPSession(page);
-              await cdp.send('Accessibility.enable');
-              const ax = await cdp.send('Accessibility.getFullAXTree');
-              const expected = String(step.includes || '').toLowerCase();
-              const children = new Map();
-              for (const node of ax.nodes) {
-                if (!children.has(node.parentId)) children.set(node.parentId, []);
-                children.get(node.parentId).push(node);
-              }
-              const subtreeText = root => {
-                const queue = [root];
-                const names = [];
-                while (queue.length) {
-                  const node = queue.shift();
-                  if (node.name?.value) names.push(node.name.value);
-                  queue.push(...(children.get(node.nodeId) || []));
+              if (supportsCDP) {
+                const cdp = await context.newCDPSession(page);
+                await cdp.send('Accessibility.enable');
+                const ax = await cdp.send('Accessibility.getFullAXTree');
+                const expected = String(step.includes || '').toLowerCase();
+                const children = new Map();
+                for (const node of ax.nodes) {
+                  if (!children.has(node.parentId)) children.set(node.parentId, []);
+                  children.get(node.parentId).push(node);
                 }
-                return names.join(' ').trim();
-              };
-              const announcementNode = ax.nodes.find(node => {
-                const role = String(node.role?.value || '').toLowerCase();
-                return ['status', 'alert'].includes(role)
-                  && subtreeText(node).toLowerCase().includes(expected);
-              });
-              result.axAnnouncement = announcementNode ? {
-                role: announcementNode.role?.value || null,
-                name: subtreeText(announcementNode),
-                ignored: Boolean(announcementNode.ignored),
-              } : null;
-              result.passed = live && result.observed.text.includes(step.includes || '')
-                && Boolean(result.axAnnouncement) && !result.axAnnouncement.ignored;
+                const subtreeText = root => {
+                  const queue = [root];
+                  const names = [];
+                  while (queue.length) {
+                    const node = queue.shift();
+                    if (node.name?.value) names.push(node.name.value);
+                    queue.push(...(children.get(node.nodeId) || []));
+                  }
+                  return names.join(' ').trim();
+                };
+                const announcementNode = ax.nodes.find(node => {
+                  const role = String(node.role?.value || '').toLowerCase();
+                  return ['status', 'alert'].includes(role)
+                    && subtreeText(node).toLowerCase().includes(expected);
+                });
+                result.axAnnouncement = announcementNode ? {
+                  role: announcementNode.role?.value || null,
+                  name: subtreeText(announcementNode),
+                  ignored: Boolean(announcementNode.ignored),
+                } : null;
+                result.passed = live && result.observed.text.includes(step.includes || '')
+                  && Boolean(result.axAnnouncement) && !result.axAnnouncement.ignored;
+              } else {
+                // No CDP AX tree on this engine — fall back to the DOM-level live-region
+                // contract (role/aria-live + text) without the platform-AX cross-check.
+                result.axAnnouncement = null;
+                result.passed = live && result.observed.text.includes(step.includes || '');
+              }
               if (!result.passed) findings.push(finding('dom-live-announcement', {
                 engine: 'dom', scenario: `task-${task.id}`,
                 message: `task-${task.id}: ${step.selector} did not expose “${step.includes || ''}” through a live announcement contract.`,
@@ -517,7 +534,7 @@ async function compareScreenshots(browser, baseline, current, diffFile) {
 
 async function run() {
   fs.mkdirSync(screenshotDir, { recursive: true });
-  const browser = await playwright.chromium.launch({ headless: true });
+  const browser = await playwright[browserName].launch({ headless: true });
   const results = [];
   const findings = [];
   try {
@@ -533,17 +550,33 @@ async function run() {
           const page = await context.newPage();
           await page.addInitScript(() => {
             window.__designosPerformance = { longTaskMs: 0, layoutShift: 0 };
+            // Firefox/WebKit don't support the longtask/layout-shift entry types (Chromium-only
+            // APIs) — feature-detect before observing so unsupported types don't get registered
+            // at all. Registering anyway doesn't throw; it logs an "unsupported entryTypes"
+            // console warning on Firefox, which the gate would otherwise misreport as a page bug.
+            const supported = typeof PerformanceObserver !== 'undefined' && PerformanceObserver.supportedEntryTypes
+              ? PerformanceObserver.supportedEntryTypes : [];
             try {
-              new PerformanceObserver(list => {
-                for (const entry of list.getEntries()) window.__designosPerformance.longTaskMs += entry.duration;
-              }).observe({ type: 'longtask', buffered: true });
-              new PerformanceObserver(list => {
-                for (const entry of list.getEntries()) if (!entry.hadRecentInput) window.__designosPerformance.layoutShift += entry.value;
-              }).observe({ type: 'layout-shift', buffered: true });
+              if (supported.includes('longtask')) {
+                new PerformanceObserver(list => {
+                  for (const entry of list.getEntries()) window.__designosPerformance.longTaskMs += entry.duration;
+                }).observe({ type: 'longtask', buffered: true });
+              }
+              if (supported.includes('layout-shift')) {
+                new PerformanceObserver(list => {
+                  for (const entry of list.getEntries()) if (!entry.hadRecentInput) window.__designosPerformance.layoutShift += entry.value;
+                }).observe({ type: 'layout-shift', buffered: true });
+              }
             } catch {}
           });
           const runtime = [];
           page.on('console', message => {
+            // Chromium's own network stack echoes every failed resource load to the
+            // console with this exact generic text (no URL attached) — it never carries
+            // information beyond what the paired requestfailed/response event already
+            // provides (including third-party-host classification), so recording it here
+            // too would double-count the same failure and bypass that classification.
+            if (/^Failed to load resource: the server responded with a status of \d+/.test(message.text())) return;
             if (['error', 'warning'].includes(message.type())) runtime.push({ type: message.type(), text: message.text() });
           });
           page.on('pageerror', error => runtime.push({ type: 'pageerror', text: error.message }));
@@ -568,22 +601,26 @@ async function run() {
               passes: report.passes?.length || 0,
             };
           });
-          const cdp = await context.newCDPSession(page);
-          await cdp.send('Accessibility.enable');
-          const ax = await cdp.send('Accessibility.getFullAXTree');
-          result.accessibilityTree = ax.nodes.map(node => ({
-            nodeId: node.nodeId,
-            parentId: node.parentId,
-            role: node.role?.value || null,
-            name: node.name?.value || null,
-            ignored: Boolean(node.ignored),
-            properties: (node.properties || []).reduce((acc, property) => {
-              if (['disabled', 'expanded', 'focused', 'level', 'checked', 'selected'].includes(property.name)) {
-                acc[property.name] = property.value?.value;
-              }
-              return acc;
-            }, {}),
-          }));
+          if (supportsCDP) {
+            const cdp = await context.newCDPSession(page);
+            await cdp.send('Accessibility.enable');
+            const ax = await cdp.send('Accessibility.getFullAXTree');
+            result.accessibilityTree = ax.nodes.map(node => ({
+              nodeId: node.nodeId,
+              parentId: node.parentId,
+              role: node.role?.value || null,
+              name: node.name?.value || null,
+              ignored: Boolean(node.ignored),
+              properties: (node.properties || []).reduce((acc, property) => {
+                if (['disabled', 'expanded', 'focused', 'level', 'checked', 'selected'].includes(property.name)) {
+                  acc[property.name] = property.value?.value;
+                }
+                return acc;
+              }, {}),
+            }));
+          } else {
+            result.accessibilityTree = null; // not collected — see supportsCDP note above
+          }
           if (theme === 'light' && motion === 'full') {
             result.keyboard = await inspectKeyboard(page, scenario);
             for (const stop of result.keyboard.stops) {

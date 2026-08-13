@@ -26,10 +26,13 @@
     "source": "runtime/pattern-atlas.js"
   },
   "dependencies": {
-    "runtime": 3,
+    "runtime": 2,
     "names": [
       "@jridgewell/trace-mapping",
-      "axe-core",
+      "axe-core"
+    ],
+    "optional": 1,
+    "optionalNames": [
       "playwright"
     ],
     "source": "package.json"

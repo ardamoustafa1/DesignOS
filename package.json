@@ -16,7 +16,9 @@
   },
   "dependencies": {
     "@jridgewell/trace-mapping": "^0.3.31",
-    "axe-core": "^4.10.3",
+    "axe-core": "^4.10.3"
+  },
+  "optionalDependencies": {
     "playwright": "^1.59.1"
   },
   "devDependencies": {

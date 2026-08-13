@@ -32,7 +32,7 @@ function markdown(claims) {
 | Adapter combinations / browser fixtures | ${claims.motion.adapterCombinations} / ${claims.motion.fixtureScenarios} |
 | Browser / source-map assertions | ${claims.motion.browserAssertions} / ${claims.motion.sourceMapAssertions} |
 | Pattern atlas / unified improve | ${claims.discovery.patternAtlasItems} / ${claims.discovery.unifiedImproveWorkflow ? 'yes' : 'no'} |
-| Runtime dependencies | ${claims.dependencies.runtime} |
+| Runtime dependencies | ${claims.dependencies.runtime} required + ${claims.dependencies.optional} optional |
 | External eval | ${claims.evaluation.externalEval ? `verified (${claims.evaluation.externalEvalRuns})` : 'not verified'} |
 | Native evidence | ${claims.nativeEvidence.status} (${claims.nativeEvidence.verifiedDeviceRuns} device runs) |
 ${END}`;
@@ -64,7 +64,7 @@ function expectedPlugin(claims) {
   const file = path.join(ROOT, '.claude-plugin/plugin.json');
   const plugin = JSON.parse(fs.readFileSync(file, 'utf8'));
   plugin.version = claims.package.version;
-  plugin.description = `DesignOS ${claims.package.version}: ${claims.rules.count} deterministic rules, ${claims.motion.recipes} motion recipes across ${claims.motion.stacks} stacks, ${claims.motion.fixtureScenarios} browser fixtures, ${claims.dependencies.runtime} runtime dependencies; external eval ${claims.evaluation.externalEval ? 'verified' : 'not yet verified'}, native evidence ${claims.nativeEvidence.status}.`;
+  plugin.description = `DesignOS ${claims.package.version}: ${claims.rules.count} deterministic rules, ${claims.motion.recipes} motion recipes across ${claims.motion.stacks} stacks, ${claims.motion.fixtureScenarios} browser fixtures, ${claims.dependencies.runtime} required + ${claims.dependencies.optional} optional dependencies; external eval ${claims.evaluation.externalEval ? 'verified' : 'not yet verified'}, native evidence ${claims.nativeEvidence.status}.`;
   return stableJson(plugin);
 }
 
