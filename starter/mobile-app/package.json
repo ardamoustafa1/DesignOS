@@ -22,5 +22,9 @@
     "@types/react": "~19.2.2",
     "patch-package": "^8.0.1",
     "typescript": "~6.0.3"
+  },
+  "overrides": {
+    "image-size": "^2.0.2",
+    "uuid": "^11.1.1"
   }
 }

@@ -133,6 +133,7 @@
     "update:goldens": "node bin/golden-suite.js --update",
     "pack:evidence": "node scripts/build-evidence-package.js",
     "check:links": "node validators/check-links.js --fast",
+  "check:mobile-audit": "node scripts/mobile-audit-gate.js",
     "review": "node bin/designos.js review",
     "visual": "node bin/designos.js visual",
     "report": "node bin/designos.js report",
