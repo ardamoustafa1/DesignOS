@@ -571,13 +571,20 @@ async function run() {
           });
           const runtime = [];
           page.on('console', message => {
-            // Chromium's own network stack echoes every failed resource load to the
-            // console with this exact generic text (no URL attached) — it never carries
-            // information beyond what the paired requestfailed/response event already
-            // provides (including third-party-host classification), so recording it here
-            // too would double-count the same failure and bypass that classification.
-            if (/^Failed to load resource: the server responded with a status of \d+/.test(message.text())) return;
-            if (['error', 'warning'].includes(message.type())) runtime.push({ type: message.type(), text: message.text() });
+            const text = message.text();
+            // Every engine echoes failed resource/font loads to the console in its own
+            // words (Chromium: "Failed to load resource: the server responded with a
+            // status of ..."; Firefox: "downloadable font: download failed (... source:
+            // <url>)"; WebKit has its own phrasing too) — none of it carries information
+            // beyond what the paired requestfailed/response event already provides
+            // (including third-party-host classification), so recording it here too would
+            // double-count the same failure under a different message per engine and
+            // bypass that classification. Match by URL when the message embeds one
+            // (Firefox/WebKit); fall back to Chromium's known no-URL phrasing otherwise.
+            const urls = text.match(/https?:\/\/[^\s")]+/g) || [];
+            if (urls.some(url => THIRD_PARTY_NETWORK_HOSTS.has(hostnameOf(url)))) return;
+            if (!urls.length && /^Failed to load resource: the server responded with a status of \d+/.test(text)) return;
+            if (['error', 'warning'].includes(message.type())) runtime.push({ type: message.type(), text });
           });
           page.on('pageerror', error => runtime.push({ type: 'pageerror', text: error.message }));
           page.on('requestfailed', request => runtime.push({ type: 'requestfailed', url: request.url(), text: `${request.url()} — ${request.failure()?.errorText || 'failed'}` }));

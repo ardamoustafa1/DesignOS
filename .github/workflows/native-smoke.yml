@@ -47,13 +47,16 @@ jobs:
 
       - run: npm ci
 
-      # The runner's default Xcode can lag the Swift tools version some SPM-based RN
-      # pods require (seen in practice: "package 'apple' is using Swift tools version
-      # 6.2.0 but the installed version is 6.1.0"). Pin the latest stable Xcode instead
-      # of trusting the image default.
+      # Neither extreme works here: the runner's default Xcode lagged the Swift tools
+      # version an SPM-based RN pod needs ("package 'apple' is using Swift tools version
+      # 6.2.0 but the installed version is 6.1.0"), while `xcode-version: latest-stable`
+      # overcorrected into a Swift compiler strict enough to trip a real ambiguous-type
+      # diagnostic inside expo-modules-jsi's own vendored source (not ours to fix).
+      # Pin to 26.4 specifically — verified to build this exact locked dependency tree
+      # (package-lock.json) successfully end-to-end, install through launch, locally.
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          xcode-version: "26.4"
 
       - name: Prebuild native iOS project
         run: npx expo prebuild --platform ios --clean
