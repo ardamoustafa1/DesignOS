@@ -47,6 +47,17 @@ const viewports = quick ? [{ name: 'fixture-375', width: 375, height: 812 }] : [
 const themes = quick || args.includes('--single-theme') ? ['light'] : ['light', 'dark'];
 const motions = quick || args.includes('--single-motion') ? ['full'] : ['full', 'reduced'];
 
+// Third-party CDNs the gate does not control the uptime of (e.g. font hosts). A transient
+// failure here reflects CI network jitter, not a regression in the code under test — it
+// must not flip a deterministic quality gate. Failures are still recorded in the raw
+// `runtime` evidence for debugging; they just don't become a blocking finding.
+// Add a host here only for origins the page intentionally depends on and cannot self-host.
+const THIRD_PARTY_NETWORK_HOSTS = new Set([
+  'fonts.googleapis.com',
+  'fonts.gstatic.com',
+]);
+const hostnameOf = url => { try { return new URL(url).hostname; } catch { return null; } };
+
 const selectorFor = element => {
   if (element.id) return `#${CSS.escape(element.id)}`;
   const testId = element.getAttribute('data-testid');
@@ -536,9 +547,9 @@ async function run() {
             if (['error', 'warning'].includes(message.type())) runtime.push({ type: message.type(), text: message.text() });
           });
           page.on('pageerror', error => runtime.push({ type: 'pageerror', text: error.message }));
-          page.on('requestfailed', request => runtime.push({ type: 'requestfailed', text: `${request.url()} — ${request.failure()?.errorText || 'failed'}` }));
+          page.on('requestfailed', request => runtime.push({ type: 'requestfailed', url: request.url(), text: `${request.url()} — ${request.failure()?.errorText || 'failed'}` }));
           page.on('response', response => {
-            if (response.status() >= 400) runtime.push({ type: 'response', text: `${response.status()} ${response.url()}` });
+            if (response.status() >= 400) runtime.push({ type: 'response', url: response.url(), text: `${response.status()} ${response.url()}` });
           });
           await page.goto(target, { waitUntil: 'networkidle', timeout: 30000 });
           await page.evaluate(() => document.fonts?.ready);
@@ -617,9 +628,13 @@ async function run() {
               },
             }));
           }
-          for (const item of runtime) findings.push(finding(
-            ['requestfailed', 'response'].includes(item.type) ? 'runtime-broken-resource' : 'runtime-console-error',
-            { engine: 'dom', scenario, message: `${scenario}: ${item.text}` }));
+          for (const item of runtime) {
+            const isNetworkEvent = ['requestfailed', 'response'].includes(item.type);
+            if (isNetworkEvent && THIRD_PARTY_NETWORK_HOSTS.has(hostnameOf(item.url))) continue;
+            findings.push(finding(
+              isNetworkEvent ? 'runtime-broken-resource' : 'runtime-console-error',
+              { engine: 'dom', scenario, message: `${scenario}: ${item.text}` }));
+          }
           await context.close();
         }
       }

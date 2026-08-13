@@ -1,0 +1,170 @@
+# First real device/emulator evidence for the native side (previously 0 device runs —
+# see LIMITATIONS.md and capabilities/public-claims.json "Native evidence" line).
+#
+# Scope, honestly stated: this is a BOOT-AND-RENDER smoke test against
+# starter/mobile-app (a minimal, pinned Expo app) — it proves the app builds for each
+# platform and launches without crashing on a real simulator/emulator. It does NOT yet
+# assert frame pacing, haptics, Dynamic Type, or TalkBack/VoiceOver — those remain the
+# platform-lab evidence LIMITATIONS.md already discloses as outstanding. Treat this as
+# tier one of native evidence, not the full claim.
+#
+# Runs a RELEASE build deliberately: Debug builds try to load JS from a Metro dev
+# server, which the CI runner doesn't run — Release embeds the JS bundle, so the smoke
+# test verifies what actually ships, not a dev-time dependency.
+name: Native smoke test
+
+on:
+  pull_request:
+    paths:
+      - "starter/mobile-app/**"
+      - ".github/workflows/native-smoke.yml"
+  push:
+    branches: [main]
+    paths:
+      - "starter/mobile-app/**"
+      - ".github/workflows/native-smoke.yml"
+  workflow_dispatch:
+
+env:
+  CI: 1
+
+jobs:
+  ios-simulator-smoke:
+    name: iOS Simulator boot-and-render
+    runs-on: macos-15
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: starter/mobile-app
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: starter/mobile-app/package-lock.json
+
+      - run: npm ci
+
+      - name: Prebuild native iOS project
+        run: npx expo prebuild --platform ios --clean
+        env:
+          LANG: en_US.UTF-8
+          LC_ALL: en_US.UTF-8
+
+      - name: Cache CocoaPods
+        uses: actions/cache@v4
+        with:
+          path: starter/mobile-app/ios/Pods
+          key: pods-${{ runner.os }}-${{ hashFiles('starter/mobile-app/ios/Podfile.lock') }}
+
+      - name: Select an available iOS Simulator runtime
+        id: sim
+        run: |
+          device_line="$(xcrun simctl list devices available | grep -m1 -E 'iPhone (1[5-9]|[2-9][0-9])')"
+          udid="$(echo "$device_line" | grep -oE '[0-9A-F-]{36}')"
+          name="$(echo "$device_line" | sed -E 's/ \(.*//' | xargs)"
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+
+      - name: Build for iOS Simulator (Release — embedded JS bundle, no Metro dependency)
+        run: |
+          xcodebuild \
+            -workspace ios/DesignOSMobileStarter.xcworkspace \
+            -scheme DesignOSMobileStarter \
+            -configuration Release \
+            -destination "id=${{ steps.sim.outputs.udid }}" \
+            -derivedDataPath ios/build \
+            build
+
+      - name: Boot simulator, install, launch, screenshot
+        run: |
+          udid="${{ steps.sim.outputs.udid }}"
+          app="ios/build/Build/Products/Release-iphonesimulator/DesignOSMobileStarter.app"
+          xcrun simctl boot "$udid"
+          xcrun simctl bootstatus "$udid" -b
+          xcrun simctl install "$udid" "$app"
+          xcrun simctl launch "$udid" com.designos.mobilestarter
+          sleep 5
+          mkdir -p ../../native-smoke-evidence
+          xcrun simctl io "$udid" screenshot ../../native-smoke-evidence/ios-launch.png
+          if ! xcrun simctl spawn "$udid" launchctl list | grep -q com.designos.mobilestarter; then
+            echo "::error::App is not running after launch — it likely crashed on boot."
+            exit 1
+          fi
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: native-smoke-ios-${{ github.sha }}
+          path: native-smoke-evidence/
+          retention-days: 30
+
+  android-emulator-smoke:
+    name: Android Emulator boot-and-render
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: starter/mobile-app
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: starter/mobile-app/package-lock.json
+
+      - run: npm ci
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Prebuild native Android project
+        run: npx expo prebuild --platform android --clean
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('starter/mobile-app/android/**/*.gradle*') }}
+
+      - name: Enable KVM (hardware acceleration for the emulator)
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Boot emulator, build, install, launch, screenshot
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: pixel_7
+          disable-animations: true
+          script: |
+            cd android && ./gradlew assembleRelease -x lint && cd ..
+            apk="android/app/build/outputs/apk/release/app-release.apk"
+            adb install -r "$apk"
+            adb shell am start -n com.designos.mobilestarter/.MainActivity
+            sleep 6
+            mkdir -p ../../native-smoke-evidence
+            adb exec-out screencap -p > ../../native-smoke-evidence/android-launch.png
+            if ! adb shell pidof com.designos.mobilestarter > /dev/null; then
+              echo "::error::App is not running after launch — it likely crashed on boot."
+              exit 1
+            fi
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: native-smoke-android-${{ github.sha }}
+          path: native-smoke-evidence/
+          retention-days: 30

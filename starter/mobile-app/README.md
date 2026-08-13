@@ -2,6 +2,11 @@
 
 Use this for React Native, Flutter, native iOS, native Android, and mobile-first web.
 
+This is also a real, pinned, buildable Expo app — `.github/workflows/native-smoke.yml`
+prebuilds and boots it on an iOS Simulator and an Android Emulator on every change here,
+as the project's first real device/emulator evidence (previously source-conformance-only,
+see `LIMITATIONS.md`). Run it yourself with `npm install && npm run ios` / `npm run android`.
+
 ## First Brief
 
 ```text
