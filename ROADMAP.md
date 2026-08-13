@@ -43,7 +43,7 @@ Propose additions via a module-proposal issue.
 | Pattern atlas / unified improve | 15 / yes |
 | Runtime dependencies | 2 required + 1 optional |
 | External eval | not verified |
-| Native evidence | source-conformance-only across all 4 platforms (react-native, swiftui, compose, flutter) — 0 CI device/simulator runs |
+| Native evidence | 1/4 platform(s) beyond source-conformance: react-native (simulator-smoke); swiftui, compose, flutter remain source-conformance-only |
 <!-- DESIGNOS_PUBLIC_CLAIMS:END -->
 
 ## Shipped (v2.1 hardening)
