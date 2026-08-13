@@ -30,6 +30,25 @@ jobs:
         run: npm run validate
       - name: Unit and product-engine tests
         run: npm test
+      # This job's own npm-audit/validate/test steps are the *light* gate. The heavy one
+      # — browser matrix, Lighthouse, golden-pixel regression, Firefox/WebKit smoke — runs
+      # in a separate workflow (browser-gate.yml) only on push/PR to main, not on tag
+      # push. Without this check, tagging any commit (including one that never went
+      # through that gate, or went through it and failed) would still publish a release.
+      # Require the tagged SHA to already carry a green "Required browser evidence" run.
+      - name: Tagged commit has a passing Required browser evidence run
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sha="${{ github.sha }}"
+          checks="$(gh api "repos/${{ github.repository }}/commits/$sha/check-runs" --paginate --jq '.check_runs[] | "\(.name)=\(.conclusion)"')"
+          for required in browser-gate-required golden-pixel-required; do
+            status="$(echo "$checks" | awk -F= -v name="$required" '$1==name{print $2; exit}')"
+            if [ "$status" != "success" ]; then
+              echo "::error::Tagged commit $sha does not have a successful '$required' check (found: '${status:-none}'). Tag a commit that has passed the Required browser evidence workflow on main."
+              exit 1
+            fi
+          done
       - name: Tag matches package.json version
         run: |
           tag_version="${GITHUB_REF_NAME#v}"

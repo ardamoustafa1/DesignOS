@@ -34,7 +34,7 @@ function markdown(claims) {
 | Pattern atlas / unified improve | ${claims.discovery.patternAtlasItems} / ${claims.discovery.unifiedImproveWorkflow ? 'yes' : 'no'} |
 | Runtime dependencies | ${claims.dependencies.runtime} required + ${claims.dependencies.optional} optional |
 | External eval | ${claims.evaluation.externalEval ? `verified (${claims.evaluation.externalEvalRuns})` : 'not verified'} |
-| Native evidence | ${claims.nativeEvidence.status} (${claims.nativeEvidence.verifiedDeviceRuns} device runs) |
+| Native evidence | ${claims.nativeEvidence.summary} |
 ${END}`;
 }
 
@@ -64,7 +64,8 @@ function expectedPlugin(claims) {
   const file = path.join(ROOT, '.claude-plugin/plugin.json');
   const plugin = JSON.parse(fs.readFileSync(file, 'utf8'));
   plugin.version = claims.package.version;
-  plugin.description = `DesignOS ${claims.package.version}: ${claims.rules.count} deterministic rules, ${claims.motion.recipes} motion recipes across ${claims.motion.stacks} stacks, ${claims.motion.fixtureScenarios} browser fixtures, ${claims.dependencies.runtime} required + ${claims.dependencies.optional} optional dependencies; external eval ${claims.evaluation.externalEval ? 'verified' : 'not yet verified'}, native evidence ${claims.nativeEvidence.status}.`;
+  const nativeAdvanced = Object.values(claims.nativeEvidence.platforms).filter(tier => tier !== 'source-conformance').length;
+  plugin.description = `DesignOS ${claims.package.version}: ${claims.rules.count} deterministic rules, ${claims.motion.recipes} motion recipes across ${claims.motion.stacks} stacks, ${claims.motion.fixtureScenarios} browser fixtures, ${claims.dependencies.runtime} required + ${claims.dependencies.optional} optional dependencies; external eval ${claims.evaluation.externalEval ? 'verified' : 'not yet verified'}, native evidence ${nativeAdvanced}/${Object.keys(claims.nativeEvidence.platforms).length} platforms beyond source-conformance.`;
   return stableJson(plugin);
 }
 

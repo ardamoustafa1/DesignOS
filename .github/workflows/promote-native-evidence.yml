@@ -1,0 +1,78 @@
+# Promotes native-smoke.yml's result into evals/native-device/registry.json as a
+# reviewed PR — never a direct commit to main. This is the only writer of that file;
+# capabilities/native-evidence.js reads it to compute the generated "native evidence"
+# claim. Runs only after a passing native-smoke.yml run ON MAIN (not on PR runs, which
+# could target unmerged/unreviewed code) — so the evidence this promotes is always tied
+# to a real, already-reviewed commit.
+name: Promote native evidence
+
+on:
+  workflow_run:
+    workflows: ["Native smoke test"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  promote:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Record react-native simulator-smoke evidence
+        run: |
+          node scripts/promote-native-evidence.js \
+            --sha "${{ github.event.workflow_run.head_sha }}" \
+            --platform react-native \
+            --tier simulator-smoke \
+            --run-id "${{ github.event.workflow_run.id }}" \
+            --run-url "${{ github.event.workflow_run.html_url }}" \
+            --notes "iOS Simulator + Android Emulator boot/install/launch/screenshot against starter/mobile-app. Does not assert frame pacing, haptics, Dynamic Type, or TalkBack/VoiceOver."
+
+      - name: Regenerate generated-claims docs from the updated registry
+        run: npm run claims:update
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: peter-evans/create-pull-request@v7
+        if: steps.diff.outputs.changed == 'true'
+        with:
+          commit-message: "Promote react-native simulator-smoke evidence (${{ github.event.workflow_run.head_sha }})"
+          branch: evidence/native-${{ github.event.workflow_run.id }}
+          title: "Native evidence: react-native reaches simulator-smoke"
+          body: |
+            Automated evidence promotion — not a manual claim.
+
+            [Native smoke test run ${{ github.event.workflow_run.id }}](${{ github.event.workflow_run.html_url }})
+            passed on `${{ github.event.workflow_run.head_sha }}`: iOS Simulator and Android
+            Emulator both built, installed, launched, and screenshotted
+            `starter/mobile-app` without crashing.
+
+            This promotes `react-native` from `source-conformance` to `simulator-smoke`
+            in `evals/native-device/registry.json` — the other three platforms
+            (`swiftui`, `compose`, `flutter`) are unaffected, and `simulator-smoke` itself
+            does not claim frame pacing, haptics, Dynamic Type, or TalkBack/VoiceOver
+            evidence. See `capabilities/native-evidence.js` for the full tier model.
+
+            Review the diff, then merge to make the claim live.
+          labels: evidence,native
