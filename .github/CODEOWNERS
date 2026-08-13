@@ -1,0 +1,6 @@
+# Default owner for everything not matched below. GitHub only uses this file to suggest
+# reviewers / mark review status — it does not by itself require an approval (see repo
+# branch protection for that). Kept simple while this is a single-maintainer project;
+# add path-scoped rules here as external contributors take ownership of specific areas
+# (a sector file, a native platform, etc.) — see CONTRIBUTING.md for how that happens.
+* @ardamoustafa1

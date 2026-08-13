@@ -7,11 +7,16 @@
 #   https://ardamoustafa1.github.io/DesignOS/examples/        ← showcase gallery
 #   https://ardamoustafa1.github.io/DesignOS/website/before-after.html ← before/after demo
 #
-# Deploy gates on the "Required browser evidence" workflow instead of re-running
-# browser-gate/lighthouse/goldens a second time here — that duplicated ~8 minutes of
-# Playwright/Lighthouse work on every push and, worse, gave the exact same commit two
-# independent chances to hit CI network flakiness (e.g. the Google Fonts CDN) and
-# disagree with itself on the finding count. One gate, one result, reused here.
+# Normal path (push to main): deploy gates on the "Required browser evidence" workflow
+# instead of re-running browser-gate/lighthouse/goldens a second time here — that
+# duplicated ~8 minutes of Playwright/Lighthouse work on every push and, worse, gave the
+# exact same commit two independent chances to hit CI network flakiness and disagree
+# with itself on the finding count. One gate, one result, reused here.
+#
+# Manual path (workflow_dispatch): calls that exact same "Required browser evidence"
+# workflow as a reusable job instead of a lighter standalone fallback — a manual deploy
+# must clear the same browser matrix, Lighthouse, golden-pixel, and Firefox/WebKit bar
+# as a normal push, not a shortcut of it.
 name: Deploy Pages
 on:
   workflow_run:
@@ -28,53 +33,58 @@ concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
+  gate:
+    name: Full quality gate (workflow_dispatch path only — workflow_run already passed it)
+    if: github.event_name == 'workflow_dispatch'
+    uses: ./.github/workflows/browser-gate.yml
+
   deploy:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    needs: [gate]
+    if: |
+      always() &&
+      (
+        (github.event_name == 'workflow_dispatch' && needs.gate.result == 'success') ||
+        (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+      )
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
-      - name: Reuse the required gate's browser evidence
+      # Both paths reuse an already-produced browser-ledger artifact rather than
+      # generating a fresh one: for workflow_run, it's the upstream run's; for
+      # workflow_dispatch, it's the `gate` job's — same artifact-name convention
+      # (`browser-ledger-<sha>`) either way since both come from the same
+      # browser-gate.yml `browser-gate-required` job.
+      - name: Reuse the required gate's browser evidence (workflow_run)
         if: github.event_name == 'workflow_run'
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
           name: browser-ledger-${{ github.event.workflow_run.head_sha }}
           path: browser-evidence
 
-      - name: Publish the reused browser ledger onto the site
-        if: github.event_name == 'workflow_run'
-        run: cp browser-evidence/browser-ledger.json website/browser-ledger.json
-
-      # workflow_dispatch has no upstream gate run to reuse evidence from — run the gate
-      # directly so a manual deploy still ships a real (not stale) ledger.
-      - uses: actions/setup-node@v7
+      - name: Reuse this run's own gate evidence (workflow_dispatch)
         if: github.event_name == 'workflow_dispatch'
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
         with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-        if: github.event_name == 'workflow_dispatch'
-      - run: npx playwright install --with-deps chromium
-        if: github.event_name == 'workflow_dispatch'
-      - name: Manual dispatch — generate browser ledger directly (no upstream run to reuse)
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          node bin/browser-gate.js website/index.html --out browser-evidence/browser-gate.json --screenshots browser-evidence/screenshots
-          node bin/browser-ledger.js --browser browser-evidence/browser-gate.json --out website/browser-ledger.json
+          name: browser-ledger-${{ github.sha }}
+          path: browser-evidence
+
+      - name: Publish the reused browser ledger onto the site
+        run: cp browser-evidence/browser-ledger.json website/browser-ledger.json
 
       # Bypass Jekyll so files starting with _ are served as-is
       - name: Create .nojekyll
         run: touch .nojekyll
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: .
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

@@ -62,8 +62,19 @@ function extractLinks(file) {
   return found;
 }
 
-// HEAD request with redirect follow (max 3 hops)
-function checkUrl(rawUrl) {
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+// A single dropped connection or slow-DNS blip shouldn't read as a dead link — retry
+// transient failure classes (timeout/connection-error) once with a short backoff before
+// reporting dead. Real 4xx/5xx responses are not retried; those are genuine findings.
+async function checkUrl(rawUrl) {
+  const first = await checkUrlOnce(rawUrl);
+  if (first.ok || !['timeout', 'connection-error'].includes(first.status)) return first;
+  await sleep(500);
+  return checkUrlOnce(rawUrl);
+}
+
+function checkUrlOnce(rawUrl) {
   return new Promise((resolve) => {
     let parsed;
     try { parsed = new URL(rawUrl); } catch { return resolve({ ok: false, status: 'invalid-url' }); }
