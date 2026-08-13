@@ -43,7 +43,7 @@ Propose additions via a module-proposal issue.
 | Pattern atlas / unified improve | 15 / yes |
 | Runtime dependencies | 2 required + 1 optional |
 | External eval | not verified |
-| Native evidence | source-conformance-only (0 device runs) |
+| Native evidence | source-conformance-only across all 4 platforms (react-native, swiftui, compose, flutter) — 0 CI device/simulator runs |
 <!-- DESIGNOS_PUBLIC_CLAIMS:END -->
 
 ## Shipped (v2.1 hardening)

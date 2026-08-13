@@ -46,7 +46,7 @@ output would be the least credible thing it could do
 | Pattern atlas / unified improve | 15 / yes |
 | Runtime dependencies | 2 required + 1 optional |
 | External eval | not verified |
-| Native evidence | source-conformance-only (0 device runs) |
+| Native evidence | source-conformance-only across all 4 platforms (react-native, swiftui, compose, flutter) — 0 CI device/simulator runs |
 <!-- DESIGNOS_PUBLIC_CLAIMS:END -->
 
 ## 1. The eval results are a maintainer self-test, not independent proof
@@ -94,13 +94,23 @@ external evaluation. `externalEval` remains `false` in the capability registry u
 third-party run satisfies the evaluator, blind-protocol, immutable-evidence, and
 rule-result contract in `evals/external/registry.json`.
 
-Native adapter conformance currently combines shared physics execution, capability
-contract checks, iOS Swift type-checking and Flutter analysis when those SDKs are present,
-plus portable Swift/Dart/TSX parsing fallbacks. It does not claim
-device-level frame, haptic, keyboard, Dynamic Type, or TalkBack/VoiceOver proof; those
-remain platform-lab evidence and must be attached before a production app calls a native
-adapter device-verified. Jetpack Compose receives structural/source-contract validation
-when a Kotlin/Android toolchain is unavailable.
+Native evidence is tracked per platform and per tier
+(`capabilities/native-evidence.js`: `source-conformance` → `simulator-smoke` →
+`platform-verified` → `real-device-verified`), not as one blanket claim — a single
+passing CI run on one stack must never silently promote the other three. The claim
+above is generated straight from `evals/native-device/registry.json`, which starts
+empty and is only ever appended to by `.github/workflows/promote-native-evidence.yml`
+opening a reviewed PR after `native-smoke.yml` passes on `main` — never hand-edited.
+`.github/workflows/native-smoke.yml` builds, installs, launches, and screenshots
+`starter/mobile-app` (the `react-native` stack) on both an iOS Simulator and an Android
+Emulator; once that evidence is promoted it earns `react-native` the `simulator-smoke`
+tier specifically, not "device-verified" generally. `swiftui`, `compose`, and `flutter`
+have no CI of any kind yet — they remain `source-conformance`: shared physics
+execution, capability contract checks, iOS Swift type-checking and Flutter analysis
+when those SDKs are present, plus portable Swift/Dart/TSX parsing fallbacks. Even at
+its best, `simulator-smoke` does not claim device-level frame, haptic, keyboard,
+Dynamic Type, or TalkBack/VoiceOver proof; that's `platform-verified` and
+`real-device-verified` territory, and no platform has reached either yet.
 
 ## 5. Translations are unreviewed
 

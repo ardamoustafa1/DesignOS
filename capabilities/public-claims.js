@@ -4,16 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const { ROOT, buildCapabilityLedger } = require('./registry');
 const { matrixCounts } = require('../fixtures/frameworks/contracts');
+const { NATIVE_EVIDENCE_TIERS, computeNativeEvidence } = require('./native-evidence');
 
 function buildPublicClaims() {
   const ledger = buildCapabilityLedger();
   const matrix = matrixCounts(ledger.capabilities.motionRecipes);
   const nativeRegistry = path.join(ROOT, 'evals/native-device/registry.json');
-  let nativeDeviceRuns = 0;
-  if (fs.existsSync(nativeRegistry)) {
-    const registry = JSON.parse(fs.readFileSync(nativeRegistry, 'utf8'));
-    nativeDeviceRuns = (registry.runs || []).filter(run => run.verified === true).length;
-  }
+  const nativeEvidence = computeNativeEvidence(nativeRegistry);
   return {
     schemaVersion: 1,
     package: {
@@ -55,9 +52,10 @@ function buildPublicClaims() {
       source: ledger.sources.evals,
     },
     nativeEvidence: {
-      status: nativeDeviceRuns > 0 ? 'device-verified' : 'source-conformance-only',
+      tiers: NATIVE_EVIDENCE_TIERS,
+      platforms: nativeEvidence.platforms,
+      summary: nativeEvidence.summary,
       sourceAdapters: ledger.capabilities.nativeMotionAdapters,
-      verifiedDeviceRuns: nativeDeviceRuns,
       source: ledger.sources.nativeMotion,
     },
     generatedTargets: [

@@ -16,7 +16,12 @@ assert.strictEqual(claims.motion.fixtureScenarios, claims.motion.adapterCombinat
 assert.strictEqual(claims.motion.browserAssertions, 3510);
 assert.strictEqual(claims.dependencies.runtime, Object.keys(require('../package.json').dependencies).length);
 assert.strictEqual(claims.evaluation.externalEval, false);
-assert.strictEqual(claims.nativeEvidence.status, 'source-conformance-only');
+assert.deepStrictEqual(
+  claims.nativeEvidence.platforms,
+  { 'react-native': 'source-conformance', swiftui: 'source-conformance', compose: 'source-conformance', flutter: 'source-conformance' },
+  'evals/native-device/registry.json should be empty on a clean checkout — if this fails because it genuinely has verified runs now, update this assertion to match, don\'t just delete it',
+);
+assert.ok(claims.nativeEvidence.summary.includes('source-conformance-only across all 4 platforms'));
 assert.deepStrictEqual(futureShippedClaims(claims), []);
 
 for (const [relative, expected] of compile().expected) {
