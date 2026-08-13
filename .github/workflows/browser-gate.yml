@@ -11,6 +11,10 @@ on:
         required: false
         default: false
         type: boolean
+  # Lets pages.yml's manual-dispatch deploy path run this exact same gate instead of a
+  # lighter standalone fallback — a manual Pages deploy must clear the same browser
+  # matrix, Lighthouse, golden-pixel, and Firefox/WebKit bar as a normal main push.
+  workflow_call:
 
 jobs:
   browser-gate:
@@ -18,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 22
           cache: npm
@@ -49,7 +53,7 @@ jobs:
         run: npm run test:leader
       - name: Commit-bound browser ledger
         run: node bin/browser-ledger.js --browser browser-evidence/browser-gate.json --out browser-evidence/browser-ledger.json
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: always()
         with:
           name: browser-ledger-${{ github.sha }}
@@ -69,8 +73,8 @@ jobs:
       matrix:
         browser: [firefox, webkit]
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 22
           cache: npm
@@ -78,7 +82,7 @@ jobs:
       - run: npx playwright install --with-deps ${{ matrix.browser }}
       - name: Website critical-path smoke on ${{ matrix.browser }}
         run: node bin/browser-gate.js website/index.html --quick --browser ${{ matrix.browser }} --out browser-evidence/${{ matrix.browser }}-gate.json --screenshots browser-evidence/${{ matrix.browser }}-screenshots
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: always()
         with:
           name: cross-browser-smoke-${{ matrix.browser }}-${{ github.sha }}
@@ -90,8 +94,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 22
           cache: npm
@@ -104,7 +108,7 @@ jobs:
         run: npm run test:goldens
       - name: Upload generated Linux golden baselines
         if: github.event_name == 'workflow_dispatch' && inputs.update_linux_goldens
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: linux-golden-baselines-${{ github.sha }}
           path: goldens/*/evidence/
