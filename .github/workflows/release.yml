@@ -20,6 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          # Full history + tags, needed to diff starter/mobile-app against the previous
+          # release tag below (a shallow checkout only has this one commit).
+          fetch-depth: 0
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 22
@@ -47,6 +51,38 @@ jobs:
             status="$(echo "$checks" | awk -F= -v name="$required" '$1==name{print $2; exit}')"
             if [ "$status" != "success" ]; then
               echo "::error::Tagged commit $sha does not have a successful '$required' check (found: '${status:-none}'). Tag a commit that has passed the Required browser evidence workflow on main."
+              exit 1
+            fi
+          done
+      - name: Mobile app dependencies
+        working-directory: starter/mobile-app
+        run: npm ci
+      # Re-runs the audit gate directly at release time rather than trusting a
+      # historical check-run, so it works the same way regardless of whether
+      # native-smoke.yml's path filter matched the tagged commit.
+      - name: Mobile dependency security gate
+        run: node scripts/mobile-audit-gate.js
+      # native-smoke.yml only runs when starter/mobile-app (or its own workflow file)
+      # changes, so unlike browser-gate-required above, its checks won't exist on every
+      # tagged SHA — only require them when the mobile app actually changed since the
+      # last release tag; otherwise the previous release's device evidence still holds.
+      - name: Tagged commit has passing native-smoke evidence, if starter/mobile-app changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sha="${{ github.sha }}"
+          prev_tag="$(git tag --sort=-creatordate --merged "$sha" | grep -v "^${GITHUB_REF_NAME}$" | head -1 || true)"
+          if [ -z "$prev_tag" ]; then
+            echo "No previous release tag found — treating this as the first release, native-smoke evidence required."
+          elif git diff --quiet "$prev_tag" "$sha" -- starter/mobile-app .github/workflows/native-smoke.yml; then
+            echo "starter/mobile-app unchanged since $prev_tag — native-smoke evidence from that release still applies, skipping."
+            exit 0
+          fi
+          checks="$(gh api "repos/${{ github.repository }}/commits/$sha/check-runs" --paginate --jq '.check_runs[] | "\(.name)=\(.conclusion)"')"
+          for required in "iOS Simulator boot-and-render" "Android Emulator boot-and-render"; do
+            status="$(echo "$checks" | awk -F= -v name="$required" '$1==name{print $2; exit}')"
+            if [ "$status" != "success" ]; then
+              echo "::error::starter/mobile-app changed since ${prev_tag:-the beginning of history} but tagged commit $sha does not have a successful '$required' check (found: '${status:-none}'). Push the mobile app change to main first so native-smoke.yml runs, then tag."
               exit 1
             fi
           done
