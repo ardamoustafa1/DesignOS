@@ -47,17 +47,18 @@ jobs:
 
       - run: npm ci
 
-      # Neither extreme works here: the runner's default Xcode (16.4) lags the Swift
-      # tools version an SPM-based RN pod needs ("package 'apple' is using Swift tools
-      # version 6.2.0 but the installed version is 6.1.0"), while `latest-stable`
-      # (26.3 on this image — see actions/runner-images macos-15 manifest) overcorrects
-      # into a Swift compiler strict enough to trip a real ambiguous-type diagnostic
-      # inside expo-modules-jsi's own vendored source (not ours to fix). 26.0.1 is the
-      # oldest release in the 26.x line still on this image — satisfies the 6.2
-      # requirement while carrying the fewest later-patch diagnostic tightenings.
+      # The runner's default Xcode (16.4) lags the Swift tools version an SPM-based RN
+      # pod needs ("package 'apple' is using Swift tools version 6.2.0 but the installed
+      # version is 6.1.0"). 26.3 (this image's `latest-stable` — see actions/runner-images
+      # macos-15 manifest) satisfies that, but its Swift compiler trips one real
+      # ambiguous-type diagnostic inside expo-modules-jsi's own vendored source; the
+      # older 26.0.1 build has a *worse*, different set of compile errors in the same
+      # package, so 26.3 is the better base. The one 26.3-specific diagnostic is now
+      # patched via patch-package (starter/mobile-app/patches/) rather than chased with
+      # another Xcode pin.
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: "26.0.1"
+          xcode-version: "26.3"
 
       - name: Prebuild native iOS project
         run: npx expo prebuild --platform ios --clean
@@ -165,20 +166,20 @@ jobs:
           arch: x86_64
           profile: pixel_7
           disable-animations: true
+          # Each line of this `script:` block runs as its own independent shell process
+          # (confirmed: a "268/268 tasks" successful gradle build was followed by an
+          # `adb install` on an EMPTY path because the `apk="..."` assignment one line
+          # above didn't survive into the next line's process) — so nothing here can
+          # depend on a variable or `cd` set by a previous line. Every statement that
+          # needs shared state is chained with && on one line; everything else uses the
+          # literal path inline instead of a variable.
           script: |
-            set -e
-            cd starter/mobile-app/android && ./gradlew assembleRelease -x lint && cd ../../..
-            apk="starter/mobile-app/android/app/build/outputs/apk/release/app-release.apk"
-            adb install -r "$apk"
+            cd starter/mobile-app/android && ./gradlew assembleRelease -x lint && cd ../../.. && adb install -r starter/mobile-app/android/app/build/outputs/apk/release/app-release.apk
             adb shell am start -n com.designos.mobilestarter/.MainActivity
             sleep 6
             mkdir -p native-smoke-evidence
             adb exec-out screencap -p > native-smoke-evidence/android-launch.png
-            if ! adb shell pidof com.designos.mobilestarter > /dev/null; then
-              echo "::error::App is not running after launch — it likely crashed on boot."
-              adb logcat -d '*:E' | tail -n 200 > native-smoke-evidence/android-logcat-errors.txt
-              exit 1
-            fi
+            adb shell pidof com.designos.mobilestarter > /dev/null || (echo "::error::App is not running after launch — it likely crashed on boot." && adb logcat -d '*:E' | tail -n 200 > native-smoke-evidence/android-logcat-errors.txt && exit 1)
 
       - uses: actions/upload-artifact@v7
         if: always()
