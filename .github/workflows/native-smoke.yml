@@ -18,11 +18,13 @@ on:
     paths:
       - "starter/mobile-app/**"
       - ".github/workflows/native-smoke.yml"
+      - "scripts/mobile-audit-gate.js"
   push:
     branches: [main]
     paths:
       - "starter/mobile-app/**"
       - ".github/workflows/native-smoke.yml"
+      - "scripts/mobile-audit-gate.js"
   workflow_dispatch:
 
 env:

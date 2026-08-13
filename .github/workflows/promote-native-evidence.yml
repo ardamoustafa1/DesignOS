@@ -57,6 +57,15 @@ jobs:
       - uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
         if: steps.diff.outputs.changed == 'true'
         with:
+          # The default GITHUB_TOKEN is deliberately excluded from triggering other
+          # workflows (GitHub's loop-prevention), so a PR opened with it never gets a
+          # pull_request run of validate.yml/browser-gate.yml/native-smoke.yml —
+          # exactly the review-and-CI-checked promotion this workflow's header promises.
+          # EVIDENCE_PR_TOKEN must be a fine-grained PAT (repo: contents write, pull
+          # requests write) or GitHub App installation token from an account with
+          # write access, added as a repo secret. Falls back to GITHUB_TOKEN (PR still
+          # opens, just without triggered checks) if that secret isn't configured yet.
+          token: ${{ secrets.EVIDENCE_PR_TOKEN || secrets.GITHUB_TOKEN }}
           base: main
           commit-message: "Promote react-native simulator-smoke evidence (${{ github.event.workflow_run.head_sha }})"
           branch: evidence/native-${{ github.event.workflow_run.id }}

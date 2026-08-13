@@ -16,6 +16,15 @@ jobs:
       - run: npm ci
       - name: Dependency security gate (high/critical blocks; moderate/low advisory only)
         run: npm audit --audit-level=high
+      - name: Mobile app dependencies
+        working-directory: starter/mobile-app
+        run: npm ci
+      # Runs unconditionally (this workflow has no path filter) rather than relying on
+      # native-smoke.yml's paths list, so an edit to scripts/mobile-audit-gate.js itself,
+      # or a lockfile change made outside starter/mobile-app's own paths, still gets
+      # checked on every PR/push instead of depending on a maintained path list.
+      - name: Mobile dependency security gate
+        run: node scripts/mobile-audit-gate.js
       - name: Cross-references resolve
         run: ./validators/check-refs.sh
       - name: External links are alive (retries transient failures once before failing)
