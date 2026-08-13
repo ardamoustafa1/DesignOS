@@ -3,7 +3,13 @@
 
 const fs = require('fs');
 const path = require('path');
-const { chromium } = require('playwright');
+let chromium;
+try {
+  ({ chromium } = require('playwright'));
+} catch {
+  console.error('BROWSER_GATE_UNAVAILABLE: Playwright is required for this command. Run npx playwright install chromium (playwright is an optional dependency — npm install --omit=optional skips it).');
+  process.exit(2);
+}
 const { compileComposition } = require('./composition-compiler');
 
 // Stage 1: OCR & Region Segmentation (Mocked for CLI/Local env)

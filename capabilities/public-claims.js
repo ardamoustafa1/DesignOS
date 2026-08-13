@@ -44,6 +44,8 @@ function buildPublicClaims() {
     dependencies: {
       runtime: ledger.dependencies.productionCount,
       names: ledger.dependencies.production.map(item => item.name),
+      optional: ledger.dependencies.optionalCount,
+      optionalNames: ledger.dependencies.optional.map(item => item.name),
       source: ledger.sources.dependencies,
     },
     evaluation: {

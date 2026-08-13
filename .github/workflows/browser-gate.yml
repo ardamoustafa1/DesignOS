@@ -56,6 +56,35 @@ jobs:
           path: browser-evidence/
           retention-days: 90
 
+  # Chromium runs the full 22-scenario matrix above. This job checks the same site's
+  # critical path (not the full matrix — that's not the point of a cross-browser smoke
+  # test) actually renders on the other two engines too, since a "UI/design quality"
+  # gate that only ever looks through Chromium's eyes doesn't back that claim up.
+  cross-browser-smoke:
+    name: cross-browser-smoke (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [firefox, webkit]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Website critical-path smoke on ${{ matrix.browser }}
+        run: node bin/browser-gate.js website/index.html --quick --browser ${{ matrix.browser }} --out browser-evidence/${{ matrix.browser }}-gate.json --screenshots browser-evidence/${{ matrix.browser }}-screenshots
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: cross-browser-smoke-${{ matrix.browser }}-${{ github.sha }}
+          path: browser-evidence/
+          retention-days: 30
+
   golden-pixel:
     name: golden-pixel-required
     runs-on: ubuntu-latest

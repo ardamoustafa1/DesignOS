@@ -13,12 +13,14 @@ const WRITE = process.argv.includes('--write');
 function markdown(ledger) {
   const { dependencies, capabilities } = ledger;
   const dependencyNames = dependencies.production.map(item => `\`${item.name}\``).join(', ');
+  const optionalNames = dependencies.optional.map(item => `\`${item.name}\``).join(', ');
   return `${START}
 > Generated from executable sources by \`npm run ledger:update\`. Do not edit this block manually.
 
 | Capability | Verified source count |
 |---|---:|
-| Production dependencies | ${dependencies.productionCount} (${dependencyNames || 'none'}) |
+| Required dependencies | ${dependencies.productionCount} (${dependencyNames || 'none'}) |
+| Optional dependencies (browser/evidence features) | ${dependencies.optionalCount} (${optionalNames || 'none'}) |
 | Registry rules / providers | ${capabilities.registryRules} / ${capabilities.registryProviders} |
 | Validated knowledge modules | ${capabilities.knowledgeModules} |
 | Industry packs | ${capabilities.industryPacks} |
@@ -86,7 +88,7 @@ function main() {
 }
 
 function dependenciesSummary(ledger) {
-  return `${ledger.dependencies.productionCount} production dependencies, ${ledger.capabilities.executableAdapterCombinations} executable adapters`;
+  return `${ledger.dependencies.productionCount} required + ${ledger.dependencies.optionalCount} optional dependencies, ${ledger.capabilities.executableAdapterCombinations} executable adapters`;
 }
 
 main();

@@ -1,0 +1,5 @@
+{
+  "schema": 1,
+  "description": "Commit-bound record of real iOS Simulator / Android Emulator runs from .github/workflows/native-smoke.yml. capabilities/public-claims.js counts entries with verified:true — a run only flips the public 'native evidence' claim from source-conformance-only to device-verified once it is actually recorded here from a real, passing CI run. Do not hand-author verified:true entries; that would be exactly the fabricated-proof pattern PROOF_STANDARD.md and LIMITATIONS.md exist to prevent.",
+  "runs": []
+}

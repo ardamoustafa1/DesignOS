@@ -1,0 +1,83 @@
+# Release pipeline: pushing a `v*` tag validates the repo, then publishes a GitHub
+# Release with notes auto-extracted from the matching CHANGELOG.md section — no manual
+# copy-paste. "designos" is not published to the npm registry (the bare name belongs to
+# an unrelated package — see bin/designos.js); the GitHub Release + tag *is* the artifact,
+# consumed via `npx github:ardamoustafa1/DesignOS init`.
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    name: Validate before publishing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Dependency security gate
+        run: npm audit --audit-level=high
+      - name: Full validation suite
+        run: npm run validate
+      - name: Unit and product-engine tests
+        run: npm test
+      - name: Tag matches package.json version
+        run: |
+          tag_version="${GITHUB_REF_NAME#v}"
+          pkg_version="$(node -p "require('./package.json').version")"
+          if [ "$tag_version" != "$pkg_version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $pkg_version"
+            exit 1
+          fi
+
+  release:
+    name: Publish GitHub Release
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Extract this version's CHANGELOG section
+        id: notes
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          awk -v ver="## [$version]" '
+            $0 ~ "^## \\[" { if (found) exit; if (index($0, ver) == 1) { found=1; next } }
+            found { print }
+          ' CHANGELOG.md > /tmp/release-notes.md
+          if [ ! -s /tmp/release-notes.md ]; then
+            echo "::error::No CHANGELOG.md section found for ## [$version] — add one before tagging."
+            exit 1
+          fi
+          {
+            echo "Install / update:"
+            echo '```bash'
+            echo "npx github:ardamoustafa1/DesignOS init --agents --skills"
+            echo '```'
+            echo
+            echo "Full history: [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md)"
+            echo
+            echo "---"
+            echo
+            cat /tmp/release-notes.md
+          } > /tmp/release-body.md
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file /tmp/release-body.md \
+            --verify-tag

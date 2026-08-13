@@ -6,7 +6,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "productionCount": 3,
+    "productionCount": 2,
     "production": [
       {
         "name": "@jridgewell/trace-mapping",
@@ -15,7 +15,10 @@
       {
         "name": "axe-core",
         "range": "^4.10.3"
-      },
+      }
+    ],
+    "optionalCount": 1,
+    "optional": [
       {
         "name": "playwright",
         "range": "^1.59.1"

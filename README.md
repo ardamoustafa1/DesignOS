@@ -52,7 +52,8 @@ evidence, and a dependency-declared Node.js CLI.
 
 | Capability | Verified source count |
 |---|---:|
-| Production dependencies | 3 (`@jridgewell/trace-mapping`, `axe-core`, `playwright`) |
+| Required dependencies | 2 (`@jridgewell/trace-mapping`, `axe-core`) |
+| Optional dependencies (browser/evidence features) | 1 (`playwright`) |
 | Registry rules / providers | 40 / 8 |
 | Validated knowledge modules | 72 |
 | Industry packs | 24 |
@@ -82,7 +83,7 @@ evidence, and a dependency-declared Node.js CLI.
 | Adapter combinations / browser fixtures | 90 / 180 |
 | Browser / source-map assertions | 3510 / 3 |
 | Pattern atlas / unified improve | 15 / yes |
-| Runtime dependencies | 3 |
+| Runtime dependencies | 2 required + 1 optional |
 | External eval | not verified |
 | Native evidence | source-conformance-only (0 device runs) |
 <!-- DESIGNOS_PUBLIC_CLAIMS:END -->
@@ -529,6 +530,15 @@ node DesignOS/bin/designos.js case acme-pricing --project "Acme Pricing" --url h
 Run `node DesignOS/bin/designos.js help` for flags and usage. Node.js 18+ is required.
 Browser-native evidence uses the pinned Playwright dependency and a locally installed
 Chromium (`npx playwright install chromium`).
+
+**Lightweight install (rules/agent-export only, no browser engine):** Playwright is an
+`optionalDependency` — if you only want module routing, `export`, and `doctor`, skip it
+with `npm install --omit=optional` (postinstall then skips the Chromium download too).
+Source-only commands (`review`, `report`, `audit`, `export`, `doctor`) keep working as-is.
+Hard-browser commands (`responsive-solve` and a few motion/native evidence engines) print
+a clear `BROWSER_GATE_UNAVAILABLE` message and exit instead of running; `visual` degrades
+gracefully and labels its output NOT RUN rather than failing. Add Playwright back later
+with `npm install playwright && npx playwright install chromium`.
 
 ## Executable product engines
 
