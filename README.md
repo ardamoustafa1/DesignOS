@@ -214,10 +214,12 @@ The knowledge system is shared; the connection step differs by tool.
 | Agent | After `init` | What it creates | Capability |
 |---|---|---|---|
 | Claude Code | Nothing else required | `CLAUDE.md`, specialist agents, slash commands | Full kernel + native subagents/commands |
-| Codex, Gemini CLI, Amp, Zed, Jules | `export agentsmd` | `AGENTS.md` | Kernel through the agents.md convention |
-| Cursor | `export cursor` | `.cursorrules` | Kernel rules in project context |
+| Codex CLI | `export codex` | `AGENTS.md` (confirmed auto-load path) | Kernel through the agents.md convention |
+| Google Antigravity | `export antigravity` | `AGENTS.md` + `.agent/rules/designos.md` | Kernel through the agents.md convention |
+| Gemini CLI, Amp, Zed, Jules | `export agentsmd` | `AGENTS.md` | Kernel through the agents.md convention |
+| Cursor | `export cursor` | `.cursorrules` + `.cursor/rules/designos.mdc` | Kernel rules, always-on |
 | GitHub Copilot | `export copilot` | `.github/copilot-instructions.md` | Repository instructions |
-| Windsurf | `export windsurf` | `.windsurfrules` | Workspace rules |
+| Windsurf / Devin Desktop | `export windsurf` | `.windsurfrules` + `.windsurf/rules/designos.md` | Workspace rules |
 | Cline | `export cline` | `.clinerules` | Project rules |
 | Aider | `export aider` | `CONVENTIONS.md` | Repository conventions |
 

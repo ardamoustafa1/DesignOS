@@ -53,7 +53,7 @@ DesignOS adheres to a strict "measured, not vibed" honesty doctrine:
    - Catches raw hex leaks, contrast failures below WCAG 2.2 AA, and off-grid spacing.
 
 2. **Stage 2: Agent System Prompt Standardization**
-   - Run `node DesignOS/bin/designos.js export all` to provision `.cursorrules`, `.github/copilot-instructions.md`, or `CLAUDE.md` across engineering teams.
+   - Run `node DesignOS/bin/designos.js export all` to provision rules files for every tool engineering teams use — Cursor, Copilot, Windsurf/Devin Desktop, Codex CLI, Antigravity, and 13 more (see `integrations/multi-tool.md`) — from the one kernel.
 
 3. **Stage 3: Corporate Brand Layer Integration**
    - Override the base tokens in `foundations/design-tokens.md` with your enterprise design tokens so all AI-generated code natively conforms to internal brand standards.

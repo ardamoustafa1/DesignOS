@@ -17,15 +17,17 @@ node DesignOS/bin/designos.js export all      # or: cursor · copilot · windsur
 npm registry, not this project. `init` copies the CLI to `DesignOS/bin/`; invoke it
 from there for every command after the first install.
 
-| Agent | Rules file generated | Modules loading | Subagents | Slash commands |
+| Agent | Rules file(s) generated | Modules loading | Subagents | Slash commands |
 |---|---|---|---|---|
 | **Claude Code** | native `@DesignOS/CLAUDE.md` import (via `init`) | on-demand (routing table) | ✓ real (`node DesignOS/bin/designos.js agents`) | ✓ (`node DesignOS/bin/designos.js skills`) |
-| **Cursor** | `.cursorrules` | agent reads `DesignOS/` files on request | persona-adopted | Cursor rules-triggered |
+| **Cursor** | `.cursorrules` (legacy) + `.cursor/rules/designos.mdc` (current, `alwaysApply: true`) | agent reads `DesignOS/` files on request | persona-adopted | Cursor rules-triggered |
 | **GitHub Copilot** | `.github/copilot-instructions.md` | same | persona-adopted | — |
-| **Windsurf** | `.windsurfrules` | same | persona-adopted | — |
+| **Windsurf / Devin Desktop** | `.windsurfrules` (legacy) + `.windsurf/rules/designos.md` (current) | same | persona-adopted | — |
 | **Cline** | `.clinerules` | same | persona-adopted | — |
 | **Aider** | `CONVENTIONS.md` | same | persona-adopted | — |
-| **AGENTS.md standard** (Codex CLI, Gemini CLI, Amp, Zed, Jules, …) | `AGENTS.md` (`export agentsmd`) | same | persona-adopted | — |
+| **OpenAI Codex CLI** | `AGENTS.md` (`export codex` — confirmed auto-load path, not the old `.codex/` guess) | same | persona-adopted | — |
+| **Google Antigravity** | `AGENTS.md` + `.agent/rules/designos.md` (`export antigravity`) | same | persona-adopted | — |
+| **AGENTS.md standard** (Gemini CLI, Amp, Zed, Jules, …) | `AGENTS.md` (`export agentsmd`) | same | persona-adopted | — |
 | **Any other** | paste `DesignOS/CLAUDE.md` into its rules slot | same | persona-adopted | — |
 
 The DesignOS repo itself also ships a root-level `AGENTS.md` — a byte-identical mirror

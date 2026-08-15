@@ -9,6 +9,7 @@ Run these in the terminal inside your project:
 
 ```bash
 npx github:ardamoustafa1/DesignOS init --agents --skills
+node DesignOS/bin/designos.js export antigravity
 node DesignOS/bin/designos.js doctor
 ```
 
@@ -17,6 +18,12 @@ If `DesignOS/` already exists, use:
 ```bash
 npx github:ardamoustafa1/DesignOS init --agents --skills --force
 ```
+
+`export antigravity` writes the full DesignOS kernel to `AGENTS.md` (project root) and
+`.agent/rules/designos.md` — both paths Antigravity auto-loads for every agent spawned in
+the workspace. That removes most of the need for the `@DesignOS/CLAUDE.md` reference
+below; keep it in the first prompt of a session anyway, since it costs nothing and
+guards against a session that starts before the rules file is picked up.
 
 ## What Goes Where
 
@@ -103,7 +110,7 @@ agrees with the direction.
 ## Checklist
 
 - [ ] `doctor` is clean or only has explained advisory items
-- [ ] Antigravity prompt names `@DesignOS/CLAUDE.md`
+- [ ] `AGENTS.md` exists at the project root (`export antigravity` writes it — Antigravity auto-loads it, so this is a floor, not something to paste every prompt)
 - [ ] `PROOF_STANDARD.md` is explicitly loaded for marketing/pricing work
 - [ ] `designos review` passes at 95+
 - [ ] Any repair prompt from `--fix-prompt` is pasted back into Antigravity

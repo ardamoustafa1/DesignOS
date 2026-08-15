@@ -201,20 +201,44 @@ function installSkills() {
   ok(`Installed ${n} slash commands in .claude/commands/ (/design-review, /design-score, ...)`);
 }
 
-/* ---------- export: rules files for other agents ---------- */
+/* ---------- export: rules files for other agents ----------
+ * Every target gets the byte-identical kernel + gate Claude Code reads natively — content
+ * parity was never the gap. The gap was file-path staleness: several of these entries
+ * pointed at a location the real tool does not actually auto-load, so the export silently
+ * produced a file nobody read while claiming parity with Claude Code. Verified 2026-08:
+ *   - Cursor deprecated unconditional `.cursorrules` in 0.43 (still read, but the current,
+ *     going-forward mechanism is a scoped `.cursor/rules/*.mdc` file with frontmatter).
+ *   - Codex CLI auto-discovers root `AGENTS.md`, not a `.codex/` directory — the old
+ *     `.codex/instructions.md`-only target was very likely never read by real Codex CLI.
+ *   - Google Antigravity auto-loads root `AGENTS.md` for every spawned agent, and also
+ *     supports a native `.agent/rules/` directory — it had no export target at all before.
+ *   - Windsurf rebranded to Devin Desktop (June 2026); `.windsurfrules` still works, but
+ *     `.windsurf/rules/` is the maintained location and `.devin/rules/` is next.
+ * `files` accepts a plain path string, or `{ path, frontmatter }` when a target's native
+ * format requires YAML frontmatter (e.g. Cursor's `.mdc` "always apply" declaration) ahead
+ * of the standard compliance header. Multiple targets may share a path (several tools
+ * converged on root `AGENTS.md`); the writer below dedupes so that file is written once.
+ */
 const EXPORT_TARGETS = {
   // ── Core / Already-supported ────────────────────────────────────────
-  cursor:    { file: '.cursorrules',                         label: 'Cursor' },
-  copilot:   { file: '.github/copilot-instructions.md',      label: 'GitHub Copilot' },
-  windsurf:  { file: '.windsurfrules',                       label: 'Windsurf' },
-  cline:     { file: '.clinerules',                          label: 'Cline' },
-  aider:     { file: 'CONVENTIONS.md',                       label: 'Aider' },
-  agentsmd:  { file: 'AGENTS.md',                            label: 'AGENTS.md standard (Codex · Amp · Zed · …)' },
-  gemini:    { file: 'GEMINI.md',                            label: 'Gemini CLI' },
-  kiro:      { file: '.kiro/steering/designos.md',           label: 'Kiro' },
-  trae:      { file: '.trae/rules/designos.md',              label: 'Trae' },
+  cursor:    { label: 'Cursor', files: [
+    '.cursorrules', // legacy, deprecated but still read unconditionally
+    { path: '.cursor/rules/designos.mdc', frontmatter: 'description: DesignOS operating kernel — binding for every design task, not just matched files\nalwaysApply: true\n' },
+  ] },
+  copilot:   { label: 'GitHub Copilot',                       files: ['.github/copilot-instructions.md'] },
+  windsurf:  { label: 'Windsurf / Devin Desktop',              files: ['.windsurfrules', '.windsurf/rules/designos.md'] },
+  cline:     { label: 'Cline',                                 files: ['.clinerules'] },
+  aider:     { label: 'Aider',                                 files: ['CONVENTIONS.md'] },
+  agentsmd:  { label: 'AGENTS.md standard (Codex · Antigravity · Amp · Zed · Devin · …)', files: ['AGENTS.md'] },
+  gemini:    { label: 'Gemini CLI',                            files: ['GEMINI.md'] },
+  kiro:      { label: 'Kiro',                                  files: ['.kiro/steering/designos.md'] },
+  trae:      { label: 'Trae',                                  files: ['.trae/rules/designos.md'] },
   // ── New: Extended Multi-Tool Support ────────────────────────────────
-  codex:     { file: '.codex/instructions.md',               label: 'OpenAI Codex CLI' },
+  // AGENTS.md is Codex CLI's confirmed auto-load path (per OpenAI's own docs); the
+  // `.codex/` file rides along as a defensive extra in case a given Codex build also
+  // checks it, but it is not the thing to rely on.
+  codex:       { label: 'OpenAI Codex CLI',                    files: ['AGENTS.md', '.codex/instructions.md'] },
+  antigravity: { label: 'Google Antigravity',                  files: ['AGENTS.md', '.agent/rules/designos.md'] },
   opencode:  { file: '.opencode/rules/designos.md',          label: 'OpenCode' },
   grok:      { file: '.grok/rules/designos.md',              label: 'Grok Build (xAI)' },
   pi:        { file: '.pi/context/designos.md',              label: 'Pi (Inflection AI)' },
@@ -224,6 +248,14 @@ const EXPORT_TARGETS = {
   amp:       { file: '.amp/designos.md',                     label: 'Amp (Sourcegraph)' },
   zed:       { file: '.zed/designos.md',                     label: 'Zed AI' },
 };
+
+/** Normalize a target to `{ label, files: Array<{ path, frontmatter? }> }` regardless of
+ *  whether it was declared with the old singular `file` or the new `files` shape. */
+function normalizeExportTarget(t) {
+  const raw = t.files || [t.file];
+  const files = raw.map(entry => (typeof entry === 'string' ? { path: entry } : entry));
+  return { label: t.label, files };
+}
 
 // Directories the kernel's routing table and boot sequence reference by relative
 // path (`foundations/x.md`, `brain/x.md`, ...). Non-Claude-Code rules files don't get
@@ -288,24 +320,42 @@ function exportRules(targetName, force) {
     fail(`Unknown export target "${targetName}" — use: ${Object.keys(EXPORT_TARGETS).join(' · ')} · all`);
   }
 
+  // Several targets converged on the same real path (root AGENTS.md, chiefly) — write each
+  // unique path exactly once, but credit every tool label that resolves to it, so `export
+  // all` doesn't silently overwrite AGENTS.md three times or print three redundant lines.
+  const writesByPath = new Map(); // absPath -> { path, frontmatter, labels: string[] }
   for (const n of names) {
-    const t = EXPORT_TARGETS[n];
-    const dest = path.join(CWD, t.file);
-    if (fs.existsSync(dest) && !fs.readFileSync(dest, 'utf8').includes('Generated by') && !force) {
-      warn(`${t.file} exists and is not DesignOS-generated — skipped (re-run with --force to overwrite, or append the kernel by hand)`);
+    const { label, files } = normalizeExportTarget(EXPORT_TARGETS[n]);
+    for (const f of files) {
+      const abs = path.join(CWD, f.path);
+      if (!writesByPath.has(abs)) writesByPath.set(abs, { path: f.path, frontmatter: f.frontmatter, labels: [] });
+      writesByPath.get(abs).labels.push(label);
+    }
+  }
+
+  for (const [dest, w] of writesByPath) {
+    // A single read-and-catch-ENOENT instead of existsSync()-then-readFileSync(): two
+    // separate filesystem calls ahead of the eventual write is the check-then-act shape
+    // CodeQL's js/file-system-race flags, and collapsing to one call also just avoids
+    // stat'ing the file twice for no reason.
+    let existing = null;
+    try { existing = fs.readFileSync(dest, 'utf8'); } catch (_) { /* does not exist yet */ }
+    if (existing !== null && !existing.includes('Generated by') && !force) {
+      warn(`${w.path} exists and is not DesignOS-generated — skipped (re-run with --force to overwrite, or append the kernel by hand)`);
       continue;
     }
+    const frontmatter = w.frontmatter ? `---\n${w.frontmatter}---\n\n` : '';
     const header = [
       `<!-- Generated by \`${RUN} export\` — DesignOS kernel follows. -->`,
       '<!-- The module files it routes to live in ./DesignOS/ — keep that folder in the repo. -->',
       '<!-- Regenerate after upgrading DesignOS. Do not edit by hand; edit DesignOS/CLAUDE.md. -->',
       '',
-      buildCompliancePreamble(t.label),
+      buildCompliancePreamble(w.labels.join(' / ')),
       gate ? `## MANDATORY VERIFICATION GATE (run before claiming any score)\n\n${gate}\n\n---\n` : '',
     ].join('\n');
     fs.mkdirSync(path.dirname(dest), { recursive: true });
-    fs.writeFileSync(dest, header + kernel);
-    ok(`${t.label} → ${t.file}`);
+    fs.writeFileSync(dest, frontmatter + header + kernel);
+    ok(`${w.path} ← ${w.labels.join(', ')}`);
   }
   log('\n  Note: these agents read the rules file but load DesignOS modules from ./DesignOS/.');
 }
@@ -1616,18 +1666,23 @@ switch (cmd) {
 /* ---------- tools: list all supported AI tools ---------- */
 function listTools(args) {
   const asJson = args.includes('--json');
-  const tools = Object.entries(EXPORT_TARGETS).map(([key, t]) => ({ key, label: t.label, file: t.file }));
+  const tools = Object.entries(EXPORT_TARGETS).map(([key, t]) => {
+    const { label, files } = normalizeExportTarget(t);
+    return { key, label, files: files.map(f => f.path) };
+  });
   if (asJson) { console.log(JSON.stringify(tools, null, 2)); return; }
   console.log('\n  DesignOS supports these AI tools (use with `export <name>`):\n');
   const groups = [
     ['Core', ['cursor', 'copilot', 'windsurf', 'cline', 'aider', 'agentsmd', 'gemini', 'kiro', 'trae']],
-    ['Extended', ['codex', 'opencode', 'grok', 'pi', 'qoder', 'rovodev', 'vibe', 'amp', 'zed']],
+    ['Extended', ['codex', 'antigravity', 'opencode', 'grok', 'pi', 'qoder', 'rovodev', 'vibe', 'amp', 'zed']],
   ];
   for (const [group, keys] of groups) {
     console.log(`  \x1b[2m── ${group} ──\x1b[0m`);
     for (const k of keys) {
       const t = EXPORT_TARGETS[k];
-      if (t) console.log(`  \x1b[36m${k.padEnd(12)}\x1b[0m ${t.label.padEnd(30)} → ${t.file}`);
+      if (!t) continue;
+      const { label, files } = normalizeExportTarget(t);
+      console.log(`  \x1b[36m${k.padEnd(12)}\x1b[0m ${label.padEnd(46)} → ${files.map(f => f.path).join(', ')}`);
     }
     console.log('');
   }

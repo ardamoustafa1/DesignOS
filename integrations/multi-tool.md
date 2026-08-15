@@ -1,30 +1,36 @@
 # Extended Multi-Tool Integration Guide
 
-DesignOS v2.2+ supports **18 AI coding tools** — 9 original + 9 new extended targets.
+DesignOS supports **19 AI coding tools**. Content parity across all of them was never
+the issue — every target has always received the byte-identical kernel Claude Code reads
+natively. The issue was file-path staleness: several entries pointed at a location the
+real tool doesn't actually auto-load, so the export produced a file nobody read while
+looking like it worked. The table below is the corrected, source-verified set (2026-08);
+where a tool now gets two files, both are written and both carry the same kernel.
 
 ---
 
 ## Supported Tools
 
-### Core Tools (original)
+### Core Tools
 
-| Tool | Export command | Rules file |
+| Tool | Export command | Rules file(s) |
 |---|---|---|
 | **Claude Code** | (built-in via `CLAUDE.md`) | `CLAUDE.md` |
-| **Cursor** | `export cursor` | `.cursorrules` |
+| **Cursor** | `export cursor` | `.cursorrules` (legacy, still read) + `.cursor/rules/designos.mdc` (current, `alwaysApply: true`) |
 | **GitHub Copilot** | `export copilot` | `.github/copilot-instructions.md` |
-| **Windsurf** | `export windsurf` | `.windsurfrules` |
+| **Windsurf / Devin Desktop** | `export windsurf` | `.windsurfrules` (legacy) + `.windsurf/rules/designos.md` (current) |
 | **Cline** | `export cline` | `.clinerules` |
 | **Aider** | `export aider` | `CONVENTIONS.md` |
 | **Gemini CLI** | `export gemini` | `GEMINI.md` |
 | **Kiro** | `export kiro` | `.kiro/steering/designos.md` |
 | **Trae** | `export trae` | `.trae/rules/designos.md` |
 
-### Extended Tools (new in v2.2)
+### Extended Tools
 
-| Tool | Export command | Rules file |
+| Tool | Export command | Rules file(s) |
 |---|---|---|
-| **OpenAI Codex CLI** | `export codex` | `.codex/instructions.md` |
+| **OpenAI Codex CLI** | `export codex` | `AGENTS.md` (confirmed auto-load path) + `.codex/instructions.md` (defensive extra) |
+| **Google Antigravity** | `export antigravity` | `AGENTS.md` (confirmed auto-load path) + `.agent/rules/designos.md` (native format) |
 | **OpenCode** | `export opencode` | `.opencode/rules/designos.md` |
 | **Grok Build (xAI)** | `export grok` | `.grok/rules/designos.md` |
 | **Pi (Inflection AI)** | `export pi` | `.pi/context/designos.md` |
@@ -80,11 +86,12 @@ The kernel contains:
 ## AGENTS.md Standard
 
 The `agentsmd` target (`export agentsmd`) writes an `AGENTS.md` file that the
-[AGENTS.md standard](https://agents.md) defines. This is recognized by:
-Codex CLI, Amp (Sourcegraph), Zed AI, and any tool following the emerging standard.
+[AGENTS.md standard](https://agents.md) defines. This is confirmed to be auto-discovered
+by: Codex CLI, Google Antigravity, and any tool following the emerging cross-tool
+convention.
 
-For maximum coverage across multiple tools, export both:
-```bash
-node DesignOS/bin/designos.js export agentsmd
-node DesignOS/bin/designos.js export codex
-```
+`agentsmd`, `codex`, and `antigravity` all resolve to the same `AGENTS.md` at the repo
+root — they are different names for overlapping work, kept separate only because a user
+searching for "codex" or "antigravity" should find a matching command. Running any one of
+them (or `export all`) writes `AGENTS.md` once; the export writer dedupes shared paths
+across targets in a single invocation.
