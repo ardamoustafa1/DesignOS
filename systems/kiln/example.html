@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiln — component fixture</title>
+<meta name="description" content="The baked component fixture for the Kiln design system: type scale, palette, elevation stack, controls, index rows, table, and statement band, in both themes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+/* ═══════════════════════════════════════════════════════════════════════════════════════
+   KILN — component fixture. Every value here resolves to a token in tokens.css; this file
+   declares no colour, no radius, and no easing of its own. That is the point: it is the
+   proof that the system is complete enough to build from, and the target the conformance
+   checker runs against in CI.
+
+     node validators/check-system-conformance.js systems/kiln/example.html --system kiln
+   ═══════════════════════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background:
+    radial-gradient(ellipse 1100px 620px at 12% -8%, var(--kiln-ember-wash), transparent 68%),
+    linear-gradient(180deg, var(--kiln-ground-hi) 0%, var(--kiln-ground) 42%, var(--kiln-ground-lo) 100%);
+  background-attachment: fixed;
+  color: var(--kiln-ink-2);
+  font-family: var(--kiln-text);
+  font-size: 1rem;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* texture — always on, never visible */
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: 90;
+  pointer-events: none;
+  opacity: var(--kiln-grain-opacity);
+  mix-blend-mode: overlay;
+  background-image: var(--kiln-grain);
+}
+
+h1, h2, h3 {
+  font-family: var(--kiln-display);
+  color: var(--kiln-ink);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.028em;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--kiln-ember-lift);
+  outline-offset: 3px;
+  border-radius: var(--kiln-r-sm);
+  box-shadow: 0 0 0 6px var(--kiln-ember-wash);
+}
+::selection { background: var(--kiln-ember); color: var(--kiln-on-ember); }
+
+.base   { max-width: var(--kiln-w-base);   margin-inline: auto; padding-inline: var(--kiln-s5); }
+.narrow { max-width: var(--kiln-w-narrow); margin-inline: auto; padding-inline: var(--kiln-s5); }
+
+.mono {
+  font-family: var(--kiln-mono);
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--kiln-ink-3);
+  font-feature-settings: "tnum" 1;
+}
+
+section { padding-block: var(--kiln-s9); }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--kiln-s5); flex-wrap: wrap; margin-bottom: var(--kiln-s7); }
+.sec-head h2 { font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem); }
+
+/* ── arrival · mask rise, index-driven ────────────────────────────────────────────── */
+.mask { display: block; overflow: hidden; }
+.mask > i {
+  display: inline-block; font-style: normal;
+  /* motion-ok: arrival beat — once per visit, inside the motion/arrival.md §5 ceilings */
+  animation: kiln-rise 620ms var(--kiln-ease) calc(var(--i, 0) * var(--kiln-arrive-step)) both;
+}
+@keyframes kiln-rise { from { transform: translateY(calc(105% * var(--kiln-motion))); } }
+[data-arrive] {
+  animation: kiln-fade var(--kiln-t-arrive) var(--kiln-ease) calc(var(--i, 0) * var(--kiln-arrive-step)) both;
+}
+@keyframes kiln-fade { from { opacity: 0; transform: translateY(calc(12px * var(--kiln-motion))); } }
+@media (prefers-reduced-motion: reduce) {
+  .mask > i, [data-arrive] { animation: none; opacity: 1; transform: none; }
+}
+
+/* ── header ───────────────────────────────────────────────────────────────────────── */
+.site { position: sticky; top: 0; z-index: 60; border-bottom: 1px solid var(--kiln-ring); backdrop-filter: blur(14px) saturate(1.35); }
+@supports not (backdrop-filter: blur(1px)) { .site { background: var(--kiln-ground); } }
+.site-in { display: flex; align-items: center; gap: var(--kiln-s5); height: 68px; }
+.mark { font-family: var(--kiln-display); color: var(--kiln-ink); font-size: 1.0625rem; letter-spacing: -.02em; }
+.mark b { font-weight: 600; }
+.theme-toggle {
+  margin-left: auto;
+  min-height: 44px; padding-inline: var(--kiln-s4);
+  background: none; border: 0; cursor: pointer;
+  font-family: var(--kiln-mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--kiln-ink-2);
+  border-radius: var(--kiln-r-sm);
+  box-shadow: inset 0 0 0 1px var(--kiln-ring-loud);
+  transition: color var(--kiln-t-fast) var(--kiln-ease);
+}
+.theme-toggle:hover { color: var(--kiln-ink); }
+
+/* ── 1 · type ─────────────────────────────────────────────────────────────────────── */
+.hero { padding-block: var(--kiln-s10) var(--kiln-s9); }
+.hero h1 {
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  letter-spacing: -0.042em;
+  font-weight: 400;
+  max-width: 16ch;
+}
+.hero p { margin-top: var(--kiln-s5); max-width: 54ch; font-size: 1.125rem; }
+
+.scale { display: grid; gap: var(--kiln-s5); margin-top: var(--kiln-s8); }
+.scale div { display: flex; align-items: baseline; gap: var(--kiln-s5); flex-wrap: wrap; }
+.scale span:first-child { flex: 0 0 9rem; }
+.s-statement { font-family: var(--kiln-display); font-size: 3.25rem; color: var(--kiln-ink); letter-spacing: -.035em; font-variation-settings: "opsz" 144, "SOFT" 40; font-weight: 400; line-height: 1.05; }
+.s-h2 { font-family: var(--kiln-display); font-size: 2rem; color: var(--kiln-ink); letter-spacing: -.024em; font-variation-settings: "opsz" 96, "SOFT" 30; }
+.s-body { font-size: 1rem; }
+.s-mono { font-family: var(--kiln-mono); font-size: .8125rem; color: var(--kiln-ink-3); }
+
+/* ── 2 · palette ──────────────────────────────────────────────────────────────────── */
+.palette { background: var(--kiln-surface); border-block: 1px solid var(--kiln-ring); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--kiln-s4); }
+.sw { padding: var(--kiln-s4); border-radius: var(--kiln-r-md); border: 1px solid var(--kiln-ring); box-shadow: inset 0 1px 0 var(--kiln-edge-lit); }
+.sw span { display: block; }
+.sw-ground { background: var(--kiln-ground); }
+.sw-surface { background: var(--kiln-surface); }
+.sw-raised { background: var(--kiln-raised); }
+.sw-ember { background: var(--kiln-ember); }
+.sw-ember .mono { color: var(--kiln-on-ember); }
+.sw-wash { background: var(--kiln-ember-wash); }
+.sw-inverse { background: var(--kiln-inverse); }
+.sw-inverse .mono { color: var(--kiln-on-inverse); }
+
+/* ── 3 · elevation ────────────────────────────────────────────────────────────────── */
+.elevation { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--kiln-s6); }
+.card {
+  padding: var(--kiln-s5);
+  background: var(--kiln-surface);
+  border: 1px solid var(--kiln-ring);
+  border-radius: var(--kiln-r-lg);
+  box-shadow: var(--kiln-elev-1);
+}
+.card h3 { font-size: 1.125rem; margin-bottom: var(--kiln-s2); font-variation-settings: "opsz" 24, "SOFT" 0; }
+.card p { font-size: .9375rem; }
+.card-2 { background: var(--kiln-raised); box-shadow: var(--kiln-elev-2); }
+.card-3 { background: var(--kiln-raised); box-shadow: var(--kiln-elev-3); }
+
+/* ── 4 · controls ─────────────────────────────────────────────────────────────────── */
+.controls { background: var(--kiln-surface); border-block: 1px solid var(--kiln-ring); }
+.btn-row { display: flex; flex-wrap: wrap; gap: var(--kiln-s3); align-items: center; }
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; gap: var(--kiln-s2);
+  min-height: 48px; padding-inline: var(--kiln-s5);
+  border-radius: var(--kiln-r-md);
+  font: inherit; font-size: .9375rem; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: 0;
+  transition: background-color var(--kiln-t-fast) var(--kiln-ease),
+              transform var(--kiln-t-fast) var(--kiln-ease),
+              color var(--kiln-t-fast) var(--kiln-ease);
+}
+.btn::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity var(--kiln-t-fast) var(--kiln-ease); }
+.btn-primary { background: var(--kiln-ember); color: var(--kiln-on-ember); box-shadow: var(--kiln-elev-1); }
+.btn-primary:hover { background: var(--kiln-ember-lift); }
+.btn-ghost { color: var(--kiln-ink); box-shadow: inset 0 0 0 1px var(--kiln-ring-loud); }
+.btn-ghost::after { box-shadow: inset 0 0 0 1px var(--kiln-ink-3); }
+.btn-ghost:hover::after { opacity: 1; }
+/* the 1px lift is spatial, so it is gated to a fine pointer — on touch it would fire on
+   tap and read as a stutter (motion/micro-interactions.md hover philosophy) */
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover, .btn-ghost:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+}
+
+/* ── 5 · index rows ───────────────────────────────────────────────────────────────── */
+.rows { border-top: 1px solid var(--kiln-ring); }
+.row {
+  position: relative;
+  display: grid; grid-template-columns: 4.5rem minmax(0, 1fr) 8rem;
+  gap: var(--kiln-s5); align-items: baseline;
+  padding-block: var(--kiln-s5);
+  border-bottom: 1px solid var(--kiln-ring);
+  text-decoration: none; color: inherit;
+}
+.row::before {
+  content: ""; position: absolute; inset: 0 calc(-1 * var(--kiln-s5));
+  border-radius: var(--kiln-r-md);
+  background: linear-gradient(90deg, var(--kiln-ember-wash), transparent 55%);
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--kiln-t-base) var(--kiln-ease);
+}
+.row:hover::before, .row:focus-visible::before { opacity: 1; }
+.row-num { font-family: var(--kiln-mono); font-size: .8125rem; color: var(--kiln-ink-3); font-feature-settings: "tnum" 1; transition: color var(--kiln-t-base) var(--kiln-ease); }
+.row:hover .row-num { color: var(--kiln-ember); }
+.row-title { font-family: var(--kiln-display); font-size: 1.375rem; color: var(--kiln-ink); font-weight: 400; letter-spacing: -.024em; font-variation-settings: "opsz" 96, "SOFT" 30; }
+.row-meta { font-family: var(--kiln-mono); font-size: .8125rem; color: var(--kiln-ink-3); text-align: right; font-feature-settings: "tnum" 1; }
+@media (max-width: 720px) { .row { grid-template-columns: 3rem 1fr; } .row-meta { grid-column: 2; text-align: left; } }
+
+/* ── 6 · table ────────────────────────────────────────────────────────────────────── */
+.data { background: var(--kiln-surface); border-block: 1px solid var(--kiln-ring); }
+table { width: 100%; border-collapse: collapse; }
+th {
+  text-align: left; font-weight: 500; color: var(--kiln-ink-3);
+  font-family: var(--kiln-mono); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase;
+  padding-bottom: var(--kiln-s3); border-bottom: 1px solid var(--kiln-ring);
+}
+td { padding-block: var(--kiln-s4); border-bottom: 1px solid var(--kiln-ring); font-size: .9375rem; }
+td:first-child { font-family: var(--kiln-mono); color: var(--kiln-ink-3); font-feature-settings: "tnum" 1; }
+td b { color: var(--kiln-ink); font-weight: 500; }
+
+/* ── 7 · statement · the single inverse band ──────────────────────────────────────── */
+.statement { background: var(--kiln-inverse); color: var(--kiln-on-inverse); }
+.statement blockquote {
+  font-family: var(--kiln-display);
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  line-height: 1.08; letter-spacing: -.035em; font-weight: 400;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
+  color: var(--kiln-on-inverse);
+  text-wrap: balance;
+}
+.statement figcaption { margin-top: var(--kiln-s5); color: var(--kiln-on-inverse); opacity: .62; }
+
+.site-foot { border-top: 1px solid var(--kiln-ring); padding-block: var(--kiln-s6); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="site-in base">
+    <div class="mark"><b>Kiln</b> — component fixture</div>
+    <button class="theme-toggle" type="button" id="theme" aria-pressed="false">Light theme</button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero base">
+    <p class="mono" data-arrive style="--i:0">Design system · editorial · technical</p>
+    <h1><span class="mask"><i style="--i:1">Fired clay,</i></span><span class="mask"><i style="--i:2">not printed paper.</i></span></h1>
+    <p data-arrive style="--i:3">
+      Every value on this page resolves to a token in <code class="mono">tokens.css</code>.
+      The fixture declares no colour, no radius, and no easing of its own — which is what
+      makes it checkable.
+    </p>
+
+    <div class="scale" data-arrive style="--i:4">
+      <div><span class="mono">Statement · SOFT 40</span><span class="s-statement">Warmth is a decision</span></div>
+      <div><span class="mono">Heading · SOFT 30</span><span class="s-h2">Section heading</span></div>
+      <div><span class="mono">Body · Inter Tight</span><span class="s-body">Body copy sits at 16px and 1.62 line-height, measured to 65 characters.</span></div>
+      <div><span class="mono">Data · JetBrains</span><span class="s-mono">2019 — 2026 · 04 records · +0.06em</span></div>
+    </div>
+  </section>
+
+  <section class="palette">
+    <div class="base">
+      <div class="sec-head"><h2>Palette</h2><span class="mono">Pure black and white are forbidden</span></div>
+      <div class="swatches">
+        <div class="sw sw-ground"><span class="mono">ground</span></div>
+        <div class="sw sw-surface"><span class="mono">surface · elev 1</span></div>
+        <div class="sw sw-raised"><span class="mono">raised · elev 2</span></div>
+        <div class="sw sw-ember"><span class="mono">ember</span></div>
+        <div class="sw sw-wash"><span class="mono">ember wash</span></div>
+        <div class="sw sw-inverse"><span class="mono">inverse</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="base">
+    <div class="sec-head"><h2>Elevation</h2><span class="mono">Occlusion + key + lit edge</span></div>
+    <div class="elevation">
+      <div class="card"><h3>Level 1</h3><p>Cards, facts, table surfaces. The resting depth for most content.</p></div>
+      <div class="card card-2"><h3>Level 2</h3><p>The flagship card, and sticky bars once they detach.</p></div>
+      <div class="card card-3"><h3>Level 3</h3><p>Overlays, modals, and the index preview plate.</p></div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <div class="base">
+      <div class="sec-head"><h2>Controls</h2><span class="mono">Ember budget · 3 solid fills max</span></div>
+      <div class="btn-row">
+        <button class="btn btn-primary" type="button">Primary action</button>
+        <button class="btn btn-ghost" type="button">Ghost action</button>
+        <a class="btn btn-ghost" href="#index">Link styled as control</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="base" id="index">
+    <div class="sec-head"><h2>Index rows</h2><span class="mono">The default list shape</span></div>
+    <div class="rows">
+      <a class="row" href="#index"><span class="row-num">01</span><span class="row-title">A numbered row, not a card</span><span class="row-meta">2026</span></a>
+      <a class="row" href="#index"><span class="row-num">02</span><span class="row-title">Display face carries the title</span><span class="row-meta">2025</span></a>
+      <a class="row" href="#index"><span class="row-num">03</span><span class="row-title">Mono carries every figure</span><span class="row-meta">2024</span></a>
+    </div>
+  </section>
+
+  <section class="data">
+    <div class="base">
+      <div class="sec-head"><h2>Tabular data</h2><span class="mono">tnum on every figure</span></div>
+      <table>
+        <thead><tr><th scope="col">Token</th><th scope="col">Role</th><th scope="col">Notes</th></tr></thead>
+        <tbody>
+          <tr><td>--kiln-elev-1</td><td><b>Resting depth</b></td><td>Occlusion, key shadow, and lit edge in one value.</td></tr>
+          <tr><td>--kiln-ember</td><td><b>The one accent</b></td><td>Solid on at most three elements per document.</td></tr>
+          <tr><td>--kiln-grain</td><td><b>Texture</b></td><td>Always on, 3.5% on dark and 2.2% on light.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="statement">
+    <figure class="narrow">
+      <blockquote>A system you cannot check is a suggestion.</blockquote>
+      <figcaption class="mono">Kiln · conformance contract</figcaption>
+    </figure>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <p class="base mono">DesignOS · systems/kiln · run check-system-conformance.js against this file</p>
+</footer>
+
+<script>
+/* Theme toggle — Kiln ships a rebuilt light theme, not a token swap, so the fixture has to
+   be inspectable in both. Sets data-kiln-theme, which wins over prefers-color-scheme in
+   tokens.css in both directions. */
+(function () {
+  var button = document.getElementById('theme');
+  var root = document.documentElement;
+  button.addEventListener('click', function () {
+    var next = root.getAttribute('data-kiln-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-kiln-theme', next);
+    button.setAttribute('aria-pressed', String(next === 'light'));
+    button.textContent = next === 'light' ? 'Dark theme' : 'Light theme';
+  });
+})();
+</script>
+
+</body>
+</html>

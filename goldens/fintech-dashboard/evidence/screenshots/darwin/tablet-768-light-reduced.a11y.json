@@ -1204,7 +1204,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000075",
+      "nodeId": "-1000000074",
       "parentId": "213",
       "role": "InlineTextBox",
       "name": "Every state change, attributed — the compliance surface is a feature, not a report",
@@ -1212,7 +1212,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000076",
+      "nodeId": "-1000000075",
       "parentId": "214",
       "role": "InlineTextBox",
       "name": "M. Okafor",
@@ -1220,7 +1220,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000077",
+      "nodeId": "-1000000076",
       "parentId": "215",
       "role": "InlineTextBox",
       "name": "approved payment batch #2214 ($64,200, 12 vendors)",
@@ -1228,7 +1228,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000078",
+      "nodeId": "-1000000077",
       "parentId": "216",
       "role": "InlineTextBox",
       "name": "09:41 UTC",
@@ -1236,7 +1236,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000079",
+      "nodeId": "-1000000078",
       "parentId": "217",
       "role": "InlineTextBox",
       "name": "System",
@@ -1244,7 +1244,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000080",
+      "nodeId": "-1000000079",
       "parentId": "218",
       "role": "InlineTextBox",
       "name": "flagged duplicate invoice candidate on Payroll · EU (rule R-114)",
@@ -1252,7 +1252,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000081",
+      "nodeId": "-1000000080",
       "parentId": "219",
       "role": "InlineTextBox",
       "name": "08:56 UTC",
@@ -1260,7 +1260,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000082",
+      "nodeId": "-1000000081",
       "parentId": "220",
       "role": "InlineTextBox",
       "name": "L. Vance",
@@ -1268,7 +1268,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000083",
+      "nodeId": "-1000000082",
       "parentId": "221",
       "role": "InlineTextBox",
       "name": "edited matching rule R-114: tolerance $50 → $25",
@@ -1276,7 +1276,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000084",
+      "nodeId": "-1000000083",
       "parentId": "222",
       "role": "InlineTextBox",
       "name": "08:31 UTC",
@@ -1284,7 +1284,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000085",
+      "nodeId": "-1000000084",
       "parentId": "223",
       "role": "InlineTextBox",
       "name": "System",
@@ -1292,7 +1292,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000086",
+      "nodeId": "-1000000085",
       "parentId": "224",
       "role": "InlineTextBox",
       "name": "imported 1,204 transactions from First Meridian feed",
@@ -1300,7 +1300,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000087",
+      "nodeId": "-1000000086",
       "parentId": "225",
       "role": "InlineTextBox",
       "name": "08:00 UTC",
@@ -1371,7 +1371,7 @@
       "nodeId": "-1000000097",
       "parentId": "233",
       "role": "InlineTextBox",
-      "name": "TreasuryOS is a fictional brand built as a DesignOS golden example. No compliance certifications are claimed anywhere on ",
+      "name": "TreasuryOS is a fictional brand built as a DesignOS golden example. No compliance certifications are claimed anywhere on this ",
       "ignored": false,
       "properties": {}
     },
@@ -1379,7 +1379,7 @@
       "nodeId": "-1000000098",
       "parentId": "233",
       "role": "InlineTextBox",
-      "name": "this screen — a real product would link real attestations here instead of badges.",
+      "name": "screen — a real product would link real attestations here instead of badges.",
       "ignored": false,
       "properties": {}
     },
@@ -1744,7 +1744,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000074",
+      "nodeId": "-1000000073",
       "parentId": "212",
       "role": "InlineTextBox",
       "name": "Audit trail",
@@ -1752,7 +1752,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000088",
+      "nodeId": "-1000000087",
       "parentId": "226",
       "role": "InlineTextBox",
       "name": "Connections",
@@ -2192,7 +2192,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000089",
+      "nodeId": "-1000000088",
       "parentId": "227",
       "role": "InlineTextBox",
       "name": "Meridian Bank (EU) feed unreachable",
@@ -2200,10 +2200,18 @@
       "properties": {}
     },
     {
+      "nodeId": "-1000000089",
+      "parentId": "228",
+      "role": "InlineTextBox",
+      "name": "Last successful sync 06:40 UTC. Balances from this ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000090",
       "parentId": "228",
       "role": "InlineTextBox",
-      "name": "Last successful sync 06:40 UTC. Balances from this bank ",
+      "name": "bank are marked stale above — nothing is silently ",
       "ignored": false,
       "properties": {}
     },
@@ -2211,7 +2219,7 @@
       "nodeId": "-1000000091",
       "parentId": "228",
       "role": "InlineTextBox",
-      "name": "are marked stale above — nothing is silently current.",
+      "name": "current.",
       "ignored": false,
       "properties": {}
     },
@@ -2456,7 +2464,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000061",
+      "nodeId": "-1000000060",
       "parentId": "200",
       "role": "InlineTextBox",
       "name": "1 exception",
@@ -2464,7 +2472,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000062",
+      "nodeId": "-1000000061",
       "parentId": "201",
       "role": "InlineTextBox",
       "name": "$96,450",
@@ -2472,7 +2480,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000063",
+      "nodeId": "-1000000062",
       "parentId": "202",
       "role": "InlineTextBox",
       "name": "$2,150",
@@ -2480,7 +2488,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000064",
+      "nodeId": "-1000000063",
       "parentId": "203",
       "role": "InlineTextBox",
       "name": "Finance ",
@@ -2488,7 +2496,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000065",
+      "nodeId": "-1000000064",
       "parentId": "203",
       "role": "InlineTextBox",
       "name": "Ops",
@@ -2496,7 +2504,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000066",
+      "nodeId": "-1000000065",
       "parentId": "204",
       "role": "InlineTextBox",
       "name": "11 min ago",
@@ -2512,7 +2520,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000069",
+      "nodeId": "-1000000068",
       "parentId": "207",
       "role": "InlineTextBox",
       "name": "Matched",
@@ -2520,7 +2528,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000070",
+      "nodeId": "-1000000069",
       "parentId": "208",
       "role": "InlineTextBox",
       "name": "$3,101,020",
@@ -2528,7 +2536,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000071",
+      "nodeId": "-1000000070",
       "parentId": "209",
       "role": "InlineTextBox",
       "name": "0",
@@ -2536,7 +2544,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000072",
+      "nodeId": "-1000000071",
       "parentId": "210",
       "role": "InlineTextBox",
       "name": "Treasury",
@@ -2544,7 +2552,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000073",
+      "nodeId": "-1000000072",
       "parentId": "211",
       "role": "InlineTextBox",
       "name": "09:00 UTC",
@@ -2643,20 +2651,12 @@
       "nodeId": "-1000000059",
       "parentId": "198",
       "role": "InlineTextBox",
-      "name": "Vendor payouts · ",
+      "name": "Vendor payouts · US",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000060",
-      "parentId": "198",
-      "role": "InlineTextBox",
-      "name": "US",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000067",
+      "nodeId": "-1000000066",
       "parentId": "205",
       "role": "InlineTextBox",
       "name": "Reserve · US · ",
@@ -2664,7 +2664,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000068",
+      "nodeId": "-1000000067",
       "parentId": "205",
       "role": "InlineTextBox",
       "name": "Treasury MMF",

@@ -43,6 +43,43 @@ scale steps on mobile; body never shrinks below 16px.
 | Friendly consumer | Rounded grotesque (Nunito Sans class) sparingly | neutral sans | approachable |
 | Data-heavy | any above + **tabular-nums mono for numbers** (JetBrains Mono, Geist Mono) | | precise |
 
+## Type identity (the choice that decides whether the page has a voice)
+
+The pairing table above lists *safe* families. Safe is why so much output looks alike: a
+neutral grotesque at 600 weight is the visual equivalent of a system default, and
+`ui-sans-serif, system-ui` is worse — it renders as a different font on every OS, so the
+brand has no typographic identity at all. **A shipped page names its typefaces.**
+
+Three decisions, in this order:
+
+1. **Pick the display face for its opinion, not its neutrality.** The headline is 5–8 words
+   at 48–80px; it is the only place on the page where a typeface can say anything. A
+   high-contrast serif, a tight grotesque with real character, a variable face with an
+   optical-size axis — the choice is the brand argument. Neutral is a valid answer only
+   when neutrality *is* the positioning (infrastructure, enterprise, security).
+2. **Pick the text face for reading, and let it disappear.** Different from the display
+   face is normal and good; three families is not (`Principles` §1 counts display + text
+   as the two).
+3. **Give numbers their own treatment** — tabular mono or the text face's `tnum` — wherever
+   figures carry meaning.
+
+At display sizes, the face is not enough — the *optical settings* are the craft:
+
+| Size band | Tracking | Weight | Optical size |
+|---|---|---|---|
+| 14–20px (UI, body) | 0 | 400–500 | `opsz` at the size |
+| 24–40px (h3/h2) | −0.01em to −0.02em | 500–600 | `opsz` at the size |
+| 48–80px (hero) | −0.025em to −0.04em | 500–700 (mass from size, not weight) | `opsz` high — display cuts have thinner hairlines and tighter joins |
+| 100px+ (statement) | −0.04em to −0.05em | 400–500 | display cut mandatory; text cuts look muddy huge |
+
+- **Variable fonts are the default in 2026.** One file, `font-variation-settings` for
+  `wght`/`opsz`/`wdth`, and animatable axes — one `wght` transition is a whole signature
+  vocabulary (`motion/arrival.md`, weight settle).
+- **Self-host or preload.** `<link rel="preload" as="font" crossorigin>` + `font-display: swap`
+  + a `size-adjust`/`ascent-override` metric-matched fallback. A hero that reflows on font
+  swap fails CLS, which is an instant-fail in `brain/quality-bar.md`.
+- **Two weights beat five.** Load 400 + 600, or a variable file's range — not eight statics.
+
 ## Craft details (the 95-point tier)
 - `font-feature-settings`: enable `tnum` for tables/metrics; `ss01`+ where the family improves.
 - Hanging punctuation feel: pull oversized quotes/bullets into the margin optically.
@@ -70,9 +107,15 @@ The eyebrow-heading-lead triple solves 80% of section design. Don't fight it.
 - ALL CAPS body text; caps anywhere without tracking added
 - Font-size hierarchy with 2px steps (18/20/22/24…) — steps must be *visibly* different
 - Faux bold/italic from missing weights
+- Shipping `system-ui`/`ui-sans-serif` as the *brand* face — an unnamed typeface is an
+  unowned identity, and it renders differently on every platform
+- Display headlines set with body optical settings (0 tracking, text cut) — the "big body
+  text" look that reads as a document, not a design
 
 ## Checklist
-- [ ] ≤2 families, ≤3 weights loaded, `font-display: swap`
+- [ ] Display face chosen for its opinion and named; not the system stack
+- [ ] Display sizes carry negative tracking and a display/optical cut
+- [ ] ≤2 families, ≤3 weights loaded, `font-display: swap`, metric-matched fallback
 - [ ] All sizes from the scale; hero uses clamp()
 - [ ] Body ≥16px, line-height 1.6–1.7, measure ≤75ch
 - [ ] Display tracking negative; caps labels tracked +

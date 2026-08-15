@@ -1480,7 +1480,7 @@
       "nodeId": "-1000000007",
       "parentId": "218",
       "role": "InlineTextBox",
-      "name": "Per-analyst seats plus flat endpoint tiers. Alert volume never changes your bill. Noisy ",
+      "name": "Per-analyst seats plus flat endpoint tiers. Alert volume never changes your ",
       "ignored": false,
       "properties": {}
     },
@@ -1488,7 +1488,7 @@
       "nodeId": "-1000000008",
       "parentId": "218",
       "role": "InlineTextBox",
-      "name": "weeks are our problem, not your budget's.",
+      "name": "bill. Noisy weeks are our problem, not your budget's.",
       "ignored": false,
       "properties": {}
     },
@@ -1496,7 +1496,7 @@
       "nodeId": "-1000000009",
       "parentId": "219",
       "role": "InlineTextBox",
-      "name": "Example pricing page for DesignOS evaluation. The brand is fictional; customer proof and certification ",
+      "name": "Example pricing page for DesignOS evaluation. The brand is fictional; customer proof and certification claims ",
       "ignored": false,
       "properties": {}
     },
@@ -1504,7 +1504,7 @@
       "nodeId": "-1000000010",
       "parentId": "219",
       "role": "InlineTextBox",
-      "name": "claims are intentionally omitted rather than invented (PROOF_STANDARD.md).",
+      "name": "are intentionally omitted rather than invented (PROOF_STANDARD.md).",
       "ignored": false,
       "properties": {}
     },
@@ -2262,7 +2262,7 @@
       "nodeId": "-1000000030",
       "parentId": "239",
       "role": "InlineTextBox",
-      "name": "Includes 1,000 endpoints. Extra endpoints $0.30/mo each. Seat = a named analyst who triages; read-only viewers ",
+      "name": "Includes 1,000 endpoints. Extra endpoints $0.30/mo each. Seat = a named analyst who triages; read-only viewers are ",
       "ignored": false,
       "properties": {}
     },
@@ -2270,7 +2270,7 @@
       "nodeId": "-1000000031",
       "parentId": "239",
       "role": "InlineTextBox",
-      "name": "are free.",
+      "name": "free.",
       "ignored": false,
       "properties": {}
     },
@@ -2750,7 +2750,7 @@
       "nodeId": "-1000000107",
       "parentId": "305",
       "role": "InlineTextBox",
-      "name": "Compliance shows up as exportable case timelines and evidence bundles. We name no certifications ",
+      "name": "Compliance shows up as exportable case timelines and evidence bundles. We name no certifications here ",
       "ignored": false,
       "properties": {}
     },
@@ -2758,7 +2758,7 @@
       "nodeId": "-1000000108",
       "parentId": "305",
       "role": "InlineTextBox",
-      "name": "here because unsourced badges are how this sector lies.",
+      "name": "because unsourced badges are how this sector lies.",
       "ignored": false,
       "properties": {}
     },

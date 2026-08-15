@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rich fixture — the ceiling met</title>
+<style>
+/* The same page shape with the Ceiling Contract satisfied: a named face, a light model,
+   a three-level elevation stack with lit edges, texture, varied rhythm, an arrival. */
+:root {
+  /* LIGHT MODEL — position above-left, cool temperature, 0.06 key / 0.30 occlusion,
+     hero bright → footer 40% dimmer. */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-text: "Inter", "Helvetica Neue", sans-serif;
+  --bg: #0e0d0c;
+  --surface: #171512;
+  --raised: #1e1b17;
+  --border: rgb(255 255 255 / 0.07);
+  --text: #f2ede6;
+  --shadow-rgb: 20 12 6;
+
+  --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / .28),
+              0 8px 24px -6px rgb(var(--shadow-rgb) / .22),
+              inset 0 1px 0 rgb(255 255 255 / .07);
+  --shadow-2: 0 2px 4px rgb(var(--shadow-rgb) / .32),
+              0 18px 48px -12px rgb(var(--shadow-rgb) / .30),
+              inset 0 1px 0 rgb(255 255 255 / .09);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+body {
+  background:
+    radial-gradient(ellipse 800px 500px at 20% -10%, rgb(255 160 90 / .10), transparent 70%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-text);
+}
+h1, h2 { font-family: var(--font-display); letter-spacing: -0.03em; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.wrap-narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.hero h1 { font-size: clamp(2.75rem, 5vw + 1rem, 5rem); }
+
+.line { display: block; overflow: hidden; }
+.line > i {
+  display: inline-block; font-style: normal;
+  animation: mask-rise 620ms var(--ease-out) both;
+}
+@keyframes mask-rise { from { transform: translateY(100%); } }
+@media (prefers-reduced-motion: reduce) { .line > i { animation: none; } }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-1);
+}
+.card-flagship { background: var(--raised); border-radius: 14px; box-shadow: var(--shadow-2); }
+.grain {
+  position: fixed; inset: 0; pointer-events: none; opacity: .03;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<main>
+  <section class="hero wrap"><h1 class="line"><i>A headline that rises</i></h1></section>
+  <section class="proof wrap-narrow"><p>One row of evidence.</p></section>
+  <section class="feature wrap"><div class="card-flagship">The flagship cell</div></section>
+  <section class="detail wrap-narrow"><div class="card">A supporting card</div></section>
+  <section class="report wrap">
+    <table><thead><tr><th>Metric</th><th>Value</th></tr></thead>
+      <tbody><tr><td>Rows</td><td>1</td></tr></tbody></table>
+  </section>
+</main>
+</body>
+</html>

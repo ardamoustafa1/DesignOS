@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "kiln",
+  "note": "Machine-readable conformance contract. The palette is NOT listed here — it is derived from tokens.css at check time, so this file can never drift from the source of truth. Enforced by validators/check-system-conformance.js.",
+
+  "tokenPrefix": "--kiln-",
+  "requiredTokens": [
+    "--kiln-display",
+    "--kiln-text",
+    "--kiln-mono",
+    "--kiln-ground",
+    "--kiln-surface",
+    "--kiln-raised",
+    "--kiln-ink",
+    "--kiln-ink-2",
+    "--kiln-ink-3",
+    "--kiln-ember",
+    "--kiln-on-ember",
+    "--kiln-ring",
+    "--kiln-edge-lit",
+    "--kiln-shadow-rgb",
+    "--kiln-elev-1",
+    "--kiln-elev-2",
+    "--kiln-elev-3",
+    "--kiln-grain",
+    "--kiln-ease"
+  ],
+
+  "forbiddenColors": {
+    "values": ["#000", "#000000", "#fff", "#ffffff"],
+    "reason": "Kiln is fired clay, not print. The darkest value is --kiln-ground-lo and the lightest is --kiln-ink; pure black and pure white break the warm cast the whole system depends on."
+  },
+
+  "typefaces": {
+    "display": "Fraunces",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono",
+    "reason": "Three faces, three jobs. A fourth family, or a generic first entry, dissolves the system's voice."
+  },
+
+  "radiusScale": ["6px", "10px", "18px", "9999px"],
+  "spacingBase": 4,
+  "containerWidths": ["680px", "1120px", "1340px"],
+  "minDistinctContainers": 2,
+
+  "easings": [
+    "cubic-bezier(0.16, 1, 0.3, 1)",
+    "cubic-bezier(0.65, 0, 0.35, 1)",
+    "linear"
+  ],
+
+  "elevation": {
+    "tokens": ["--kiln-elev-1", "--kiln-elev-2", "--kiln-elev-3"],
+    "allowAdHoc": false,
+    "reason": "Elevation is a four-property stack, not a blur. Any surface that needs depth uses one of the three levels; an inline box-shadow means a fourth, undeclared level exists."
+  },
+
+  "accent": {
+    "token": "--kiln-ember",
+    "maxSolidFills": 3,
+    "reason": "The ember is the only saturated thing in Kiln. Beyond about three solid-filled elements in one document it stops marking the primary action and becomes the page's colour scheme."
+  },
+
+  "texture": {
+    "required": true,
+    "signals": ["--kiln-grain", "feTurbulence"],
+    "reason": "Grain is not decoration here — it is what keeps large warm fills from banding and reading as flat vector."
+  }
+}

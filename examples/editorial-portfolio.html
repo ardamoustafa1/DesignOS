@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ada Yılmaz — Ürün Tasarımcısı & Frontend Geliştirici</title>
+<meta name="description" content="Ada Yılmaz — iklim ve fintech ürünleri için arayüz tasarlayan ve geliştiren tasarımcı. Seçilmiş işler, deneyim ve iletişim.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════════════════════════════
+   EXAMPLE: EDITORIAL PORTFOLIO — the Ceiling Contract (CLAUDE.md §4.5) made concrete.
+   It exists as the counterpart to a page that passes every DesignOS floor and still reads
+   as generated. Every ceiling requirement is annotated where it is met.
+
+   Content is a FICTIONAL SAMPLE PERSONA. Every metric below is invented for the example
+   and is labelled as such in the page itself — PROOF_STANDARD.md forbids unlabelled
+   specificity, and a reference build is the last place to break that rule.
+
+   dials    variance 8 / motion 6 / density 4   (industries/portfolio-agency.md — rung 8)
+   signature  ONE, hero-scale: the work index preview plate. The material IS the work, so
+              the index shows it rather than describing it (brain/wow-calibration.md §3.2).
+   rejected   magnetic CTA (nothing here is about speed), text scramble (no data-transform
+              story), scroll story (the index already carries the argument).
+   ══════════════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── LIGHT MODEL (foundations/materiality.md §1) ────────────────────────────────────
+     position:    above and left      (x −8%, y −100%)
+     temperature: warm  #FFD2A6       — this is paper and ink, not glass
+     intensity:   0.055 key · 0.32 occlusion
+     falloff:     hero bright → footer ~40% dimmer                                      */
+
+  /* type — named faces, never the system stack (foundations/typography.md §Type identity) */
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --text-face: "Inter Tight", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* ground — warm near-black, never #000 (foundations/colors.md) */
+  --bg:          #100D0A;
+  --bg-deep:     #0C0A07;
+  --bg-warm:     #17120D;
+  --surface:     #1B1611;
+  --raised:      #221C15;
+  --inverse:     #F3EDE4;
+  --on-inverse:  #17120D;
+
+  --text:        #F5EFE7;
+  --text-2:      #B3A797;
+  --text-3:      #8A7E70;
+
+  --accent:      #E8703A;
+  --accent-lift: #FF8A55;
+  --accent-ink:  #1A0F08;
+  --accent-wash: rgb(232 112 58 / 0.14);
+  --ok:          #7BD88F;
+
+  /* edges: a ring and two lit lines, not one flat border (materiality.md §3) */
+  --ring:        rgb(255 244 230 / 0.075);
+  --ring-loud:   rgb(255 244 230 / 0.16);
+  --edge-lit:    rgb(255 246 235 / 0.08);
+  --edge-shade:  rgb(0 0 0 / 0.28);
+
+  /* elevation: occlusion + key + lit edge, shadow tinted with the page hue (§2) */
+  --shadow-rgb: 24 12 4;
+  --elev-1: 0 1px 2px rgb(var(--shadow-rgb) / .30),
+            0 8px 24px -8px rgb(var(--shadow-rgb) / .26),
+            inset 0 1px 0 var(--edge-lit);
+  --elev-2: 0 2px 5px rgb(var(--shadow-rgb) / .34),
+            0 20px 50px -14px rgb(var(--shadow-rgb) / .36),
+            inset 0 1px 0 rgb(255 246 235 / .10);
+  --elev-3: 0 4px 10px rgb(var(--shadow-rgb) / .40),
+            0 44px 96px -24px rgb(var(--shadow-rgb) / .52),
+            inset 0 1px 0 rgb(255 246 235 / .12);
+
+  /* artwork tokens — the four index plates, each a two-stop wash over the surface */
+  --plate-1a: #2A1D12; --plate-1b: #16110C;
+  --plate-2a: #14231C; --plate-2b: #0F1712;
+  --plate-3a: #201A2A; --plate-3b: #131019;
+  --plate-4a: #2A2418; --plate-4b: #171410;
+  --ink-soft: #6A5F52;
+
+  --r-sm: 6px; --r-md: 10px; --r-lg: 18px; --r-pill: 9999px;
+
+  --s1: 4px;  --s2: 8px;   --s3: 12px;  --s4: 16px;  --s5: 24px;
+  --s6: 32px; --s7: 48px;  --s8: 64px;  --s9: 96px;  --s10: 128px;
+
+  --t-fast: 130ms; --t-base: 200ms; --t-slow: 300ms; --t-arrive: 620ms;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* three container widths — a page with one width is a column (layout.md §rhythm) */
+  --w-wide:    1340px;
+  --w-base:    1120px;
+  --w-narrow:  680px;
+
+  --motion: 1;   /* reduced-motion multiplier: distance collapses, meaning survives */
+}
+@media (prefers-reduced-motion: reduce) { :root { --motion: 0; } }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  /* fill gradation: no large area is one flat colour (materiality.md §5) */
+  background:
+    radial-gradient(ellipse 1100px 620px at 12% -8%, rgb(232 112 58 / .10), transparent 68%),
+    linear-gradient(180deg, var(--bg-warm) 0%, var(--bg) 42%, var(--bg-deep) 100%);
+  background-attachment: fixed;
+  color: var(--text-2);
+  font-family: var(--text-face);
+  font-size: 1rem;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* grain: the layer that separates "rendered" from "designed" (materiality.md §5) */
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: 90;
+  pointer-events: none;
+  opacity: .035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.028em;          /* display optics — never body tracking at scale */
+  font-variation-settings: "opsz" 120, "SOFT" 20;
+  text-wrap: balance;
+}
+
+a { color: inherit; text-underline-offset: 4px; }
+
+:focus-visible {
+  outline: 2px solid var(--accent-lift);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+  box-shadow: 0 0 0 6px var(--accent-wash);   /* the focus ring belongs to the material */
+}
+
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+.wide   { max-width: var(--w-wide);   margin-inline: auto; padding-inline: var(--s5); }
+.base   { max-width: var(--w-base);   margin-inline: auto; padding-inline: var(--s5); }
+.narrow { max-width: var(--w-narrow); margin-inline: auto; padding-inline: var(--s5); }
+
+.mono {
+  font-family: var(--mono);
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-feature-settings: "tnum" 1;
+}
+
+.skip {
+  position: absolute; left: var(--s4); top: var(--s4); z-index: 100;
+  transform: translateY(-200%);
+  background: var(--accent); color: var(--accent-ink);
+  padding: var(--s3) var(--s4); border-radius: var(--r-md);
+  font-weight: 600; text-decoration: none;
+  transition: transform var(--t-fast) var(--ease);
+}
+.skip:focus { transform: translateY(0); }
+
+/* ══ ARRIVAL — index-driven, four beats, ≤1200ms (motion/arrival.md) ══════════════════
+   Beat 0 is the ground: background, header rule, and layout are final at first paint.
+   Nothing here animates a container, and the h1 is revealed by a MASK, never by opacity —
+   fading the LCP element would delay LCP by the full duration.                         */
+[data-arrive] {
+  animation: arrive var(--t-arrive) var(--ease) calc(var(--i, 0) * 90ms) both;
+}
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(calc(12px * var(--motion))); }
+}
+.mask { display: block; overflow: hidden; }
+.mask > i {
+  display: inline-block; font-style: normal;
+  /* motion-ok: arrival beat 1 — plays once per visit, inside the 700ms per-element and
+     1200ms total ceilings in motion/arrival.md §5. Not an interaction. */
+  animation: mask-rise 700ms var(--ease) calc(var(--i, 0) * 90ms) both;
+}
+@keyframes mask-rise {
+  from { transform: translateY(calc(105% * var(--motion))); opacity: var(--motion, 1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-arrive], .mask > i { animation: none; opacity: 1; transform: none; }
+}
+
+/* ══ HEADER ══════════════════════════════════════════════════════════════════════════ */
+.site {
+  position: sticky; top: 0; z-index: 60;
+  background: rgb(16 13 10 / .72);
+  backdrop-filter: blur(14px) saturate(1.35);
+  border-bottom: 1px solid var(--ring);
+}
+@supports not (backdrop-filter: blur(1px)) { .site { background: var(--bg); } }
+.site-in { display: flex; align-items: center; gap: var(--s5); height: 68px; }
+.mark { font-family: var(--display); font-size: 1.0625rem; color: var(--text); letter-spacing: -.02em; }
+.mark b { font-weight: 600; }
+.mark span { color: var(--accent); }
+.site nav { margin-left: auto; display: flex; gap: var(--s2); }
+.site nav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding-inline: var(--s3);
+  color: var(--text-2); text-decoration: none;
+  font-size: .875rem; font-weight: 500;
+  border-radius: var(--r-sm);
+  transition: color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease);
+}
+.site nav a:hover { color: var(--text); background: rgb(255 244 230 / .05); }
+@media (max-width: 720px) { .site nav a:not(.nav-cta) { display: none; } }
+.nav-cta { color: var(--text); box-shadow: inset 0 0 0 1px var(--ring-loud); }
+.nav-cta:hover { box-shadow: inset 0 0 0 1px var(--accent); color: var(--accent-lift); }
+
+/* ══ SECTION 1 · HERO — full-bleed · editorial stack · breathing · page ══════════════ */
+.hero { padding-block: clamp(var(--s9), 14vh, 168px) var(--s9); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: var(--s2);
+  color: var(--accent); margin-bottom: var(--s5);
+}
+.eyebrow::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 4px var(--accent-wash);
+}
+.hero h1 {
+  font-size: clamp(2.9rem, 7.2vw, 6.25rem);
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  letter-spacing: -0.042em;              /* 100px+ band → −0.04em to −0.05em */
+  font-weight: 400;                      /* mass comes from size, not weight */
+  max-width: 15ch;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+.hero-lead {
+  margin-top: var(--s6);
+  max-width: 52ch;
+  font-size: clamp(1.0625rem, .55vw + .95rem, 1.25rem);
+  color: var(--text-2);
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s7); }
+
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; gap: var(--s2);
+  min-height: 48px; padding-inline: var(--s5);
+  border-radius: var(--r-md);
+  font-size: .9375rem; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: 0;
+  /* box-shadow is deliberately absent from this list — animating it is a paint-path
+     transition (motion/performance.md). The ring below crossfades via opacity instead. */
+  transition: background-color var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease),
+              color var(--t-fast) var(--ease);
+}
+.btn::after {
+  content: ""; position: absolute; inset: 0;
+  border-radius: inherit; pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--t-fast) var(--ease);
+}
+.btn-primary {
+  background: var(--accent); color: var(--accent-ink);
+  box-shadow: 0 1px 2px rgb(var(--shadow-rgb) / .4),
+              0 12px 30px -10px rgb(232 112 58 / .45),
+              inset 0 1px 0 rgb(255 255 255 / .22);
+}
+.btn-primary:hover { background: var(--accent-lift); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+.btn-ghost { color: var(--text); box-shadow: inset 0 0 0 1px var(--ring-loud); }
+.btn-ghost::after { box-shadow: inset 0 0 0 1px var(--text-3); }
+.btn-ghost:hover { transform: translateY(-1px); }
+.btn-ghost:hover::after { opacity: 1; }
+
+/* ══ SECTION 2 · STATUS — contained · single row · dense · bordered ══════════════════ */
+.status {
+  border-block: 1px solid var(--ring);
+  background: rgb(255 244 230 / .015);
+}
+.status-in {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: var(--s3) var(--s7);
+  padding-block: var(--s4);
+  color: var(--text-3);
+}
+.status-in b { color: var(--text-2); font-weight: 500; }
+.live { display: inline-flex; align-items: center; gap: var(--s2); color: var(--text-2); }
+.live::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ok); box-shadow: 0 0 0 3px rgb(123 216 143 / .18);
+}
+
+/* ══ SECTION 3 · INDEX — wide · list rows · normal · raised ══════════════════════════
+   THE SIGNATURE (hero-scale). The work is the material, so the index shows it: hovering a
+   row raises a preview plate that tracks the pointer. Desktop-and-fine-pointer only; touch
+   and reduced-motion get the same content as a static inline plate, never a dead zone.  */
+.index { padding-block: var(--s9); background: rgb(255 244 230 / .012); border-bottom: 1px solid var(--ring); }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s5); flex-wrap: wrap; margin-bottom: var(--s7); }
+.sec-head h2 { font-size: clamp(1.75rem, 2.4vw + 1rem, 2.75rem); }
+.sec-head .mono { color: var(--text-3); }
+
+.rows { border-top: 1px solid var(--ring); }
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr) minmax(0, 22ch) 8rem;
+  gap: var(--s5);
+  align-items: baseline;
+  padding-block: var(--s6);
+  border-bottom: 1px solid var(--ring);
+  text-decoration: none; color: inherit;
+  transition: background-color var(--t-base) var(--ease);
+}
+.row::before {
+  content: ""; position: absolute; inset: 0 -24px;
+  border-radius: var(--r-md);
+  background: linear-gradient(90deg, var(--accent-wash), transparent 55%);
+  opacity: 0;
+  transition: opacity var(--t-base) var(--ease);
+  pointer-events: none;
+}
+.row:hover::before, .row:focus-visible::before { opacity: 1; }
+.row-num {
+  font-family: var(--mono); font-size: .8125rem; color: var(--text-3);
+  font-feature-settings: "tnum" 1;
+  transition: color var(--t-base) var(--ease);
+}
+.row:hover .row-num { color: var(--accent); }
+.row-title {
+  font-family: var(--display); font-size: clamp(1.375rem, 1.6vw + .8rem, 2rem);
+  color: var(--text); font-weight: 400; letter-spacing: -.024em;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+}
+.row-note { color: var(--text-3); font-size: .9375rem; line-height: 1.5; }
+.row-year { font-family: var(--mono); font-size: .8125rem; color: var(--text-3); text-align: right; font-feature-settings: "tnum" 1; }
+
+/* the plate — three elevation levels exist on this page, and this is the one at 3 */
+.plate {
+  position: fixed; top: 0; left: 0; z-index: 40;
+  width: 340px; aspect-ratio: 4 / 3;
+  border-radius: var(--r-lg);
+  box-shadow: var(--elev-3);
+  border: 1px solid var(--ring-loud);
+  opacity: 0; visibility: hidden;
+  transform: translate3d(-999px, -999px, 0);
+  /* transform is deliberately NOT transitioned: the plate tracks the pointer 1:1, and any
+     easing between the finger and the pixels is lag (motion/physics.md tracking law). It
+     would also make the first open fly in from off-screen. Only opacity fades. */
+  transition: opacity var(--t-base) var(--ease);
+  /* motion-ok: decorative preview layer — it is never an interaction target, so it is
+     pointer-transparent by design (components/visual-effects.md deployment law). The row
+     underneath stays the focusable, clickable control. */
+  pointer-events: none;
+  overflow: hidden;
+}
+.plate[data-open="true"] { opacity: 1; visibility: visible; }
+.plate-face { position: absolute; inset: 0; opacity: 0; transition: opacity var(--t-fast) linear; }
+.plate-face[data-active="true"] { opacity: 1; }
+.plate-face span {
+  position: absolute; left: var(--s4); bottom: var(--s3);
+  font-family: var(--mono); font-size: .6875rem; letter-spacing: .08em;
+  text-transform: uppercase; color: rgb(255 244 230 / .62);
+}
+.f1 { background: linear-gradient(150deg, var(--plate-1a), var(--plate-1b) 62%), var(--surface); }
+.f2 { background: linear-gradient(150deg, var(--plate-2a), var(--plate-2b) 62%), var(--surface); }
+.f3 { background: linear-gradient(150deg, var(--plate-3a), var(--plate-3b) 62%), var(--surface); }
+.f4 { background: linear-gradient(150deg, var(--plate-4a), var(--plate-4b) 62%), var(--surface); }
+.plate-face::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgb(255 244 230 / .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 244 230 / .05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  /* the craft is the fade — a full-strength grid is graph paper */
+  mask-image: radial-gradient(ellipse at 30% 15%, black 22%, transparent 72%);
+}
+
+/* touch / coarse pointer / reduced motion → inline plates, no follow */
+.row-thumb {
+  display: none;
+  grid-column: 1 / -1;
+  height: 128px; margin-top: var(--s4);
+  border-radius: var(--r-md);
+  border: 1px solid var(--ring);
+  box-shadow: var(--elev-1);
+}
+@media (hover: none), (pointer: coarse) {
+  .row { grid-template-columns: 3rem 1fr; }
+  .row-note, .row-year { grid-column: 2; }
+  .row-thumb { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .row-thumb { display: block; }
+  .plate { display: none; }
+}
+@media (max-width: 860px) {
+  .row { grid-template-columns: 3rem 1fr; gap: var(--s3); }
+  .row-note, .row-year { grid-column: 2; text-align: left; }
+}
+
+/* ══ SECTION 4 · APPROACH — narrow · prose with marginalia · breathing · page ════════ */
+.approach { padding-block: var(--s10); }
+.approach h2 { font-size: clamp(1.75rem, 2.4vw + 1rem, 2.75rem); margin-bottom: var(--s6); }
+.approach p { max-width: 62ch; margin-bottom: var(--s4); font-size: 1.0625rem; line-height: 1.74; }
+.approach p strong { color: var(--text); font-weight: 500; }
+.note {
+  margin-top: var(--s6); padding-left: var(--s5);
+  border-left: 2px solid var(--accent);
+  color: var(--text-3); font-size: .9375rem; max-width: 52ch;
+}
+
+/* ══ SECTION 5 · RECORD — contained · table · dense · raised ═════════════════════════ */
+.record { padding-block: var(--s9); background: var(--surface); border-block: 1px solid var(--ring); }
+.record table { width: 100%; border-collapse: collapse; }
+.record caption { text-align: left; color: var(--text-3); padding-bottom: var(--s5); }
+.record th {
+  text-align: left; font-weight: 500; color: var(--text-3);
+  font-family: var(--mono); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase;
+  padding-bottom: var(--s3); border-bottom: 1px solid var(--ring);
+}
+.record td { padding-block: var(--s5); border-bottom: 1px solid var(--ring); vertical-align: top; font-size: .9375rem; }
+.record td:first-child { font-family: var(--mono); color: var(--text-3); white-space: nowrap; padding-right: var(--s5); font-feature-settings: "tnum" 1; }
+.record .role { color: var(--text); font-weight: 500; display: block; margin-bottom: 2px; }
+.record .org { color: var(--accent); }
+@media (max-width: 720px) {
+  .record thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .record td { display: block; border: 0; padding-block: var(--s1); }
+  .record tr { display: block; padding-block: var(--s5); border-bottom: 1px solid var(--ring); }
+}
+
+/* ══ SECTION 6 · STATEMENT — narrow · one large statement · breathing · inverted ═════
+   The scale-contrast moment: 5× body, almost nothing around it (layout.md §rhythm).   */
+.statement { background: var(--inverse); color: var(--on-inverse); padding-block: var(--s10); }
+.statement blockquote {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.6vw, 3.75rem);
+  line-height: 1.08; letter-spacing: -.035em; font-weight: 400;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
+  color: var(--on-inverse);
+  text-wrap: balance;
+}
+.statement figcaption { margin-top: var(--s5); color: var(--ink-soft); }
+
+/* ══ SECTION 7 · CONTACT — contained · split · breathing · page ══════════════════════ */
+.contact { padding-block: var(--s10); }
+.contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--s8); align-items: start; }
+.contact h2 { font-size: clamp(2rem, 3.4vw, 3.25rem); max-width: 16ch; }
+.mailto {
+  display: inline-block; margin-top: var(--s5);
+  font-family: var(--mono); font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid var(--accent-wash); padding-bottom: var(--s1);
+  transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.mailto:hover { color: var(--accent-lift); border-bottom-color: var(--accent-lift); }
+.facts { display: grid; gap: var(--s4); }
+.fact {
+  padding: var(--s4) var(--s5);
+  background: var(--raised);
+  border: 1px solid var(--ring);
+  border-radius: var(--r-md);          /* inner = outer − padding is honoured on nesting */
+  box-shadow: var(--elev-1);
+}
+.fact dt { color: var(--text-2); font-family: var(--mono); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: var(--s1); }
+.fact dd { color: var(--text); font-size: .9375rem; }
+.social { display: flex; flex-wrap: wrap; gap: var(--s5); margin-top: var(--s6); }
+.social a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: var(--text-2); text-decoration: none; font-size: .9375rem; font-weight: 500;
+  transition: color var(--t-fast) var(--ease);
+}
+.social a:hover { color: var(--accent); }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: var(--s7); } }
+
+/* ══ FOOTER ═════════════════════════════════════════════════════════════════════════ */
+.site-foot { border-top: 1px solid var(--ring); padding-block: var(--s6); }
+.site-foot .base { display: flex; justify-content: space-between; gap: var(--s4); flex-wrap: wrap; color: var(--text-3); }
+.disclaimer { color: var(--text-3); font-size: .75rem; max-width: 62ch; }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">İçeriğe geç</a>
+
+<header class="site">
+  <div class="site-in base">
+    <div class="mark"><b>Ada</b> Yılmaz<span>.</span></div>
+    <nav aria-label="Ana gezinme">
+      <a href="#index">İşler</a>
+      <a href="#approach">Yaklaşım</a>
+      <a href="#record">Deneyim</a>
+      <a class="nav-cta" href="#contact">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1 · HERO ─ full-bleed · editorial stack · breathing · page ─────────────────── -->
+  <section class="hero">
+    <div class="base">
+      <p class="eyebrow mono" data-arrive style="--i:0">Ürün tasarımı &amp; frontend</p>
+      <h1>
+        <span class="mask"><i style="--i:1">İklim ve fintech için</i></span>
+        <span class="mask"><i style="--i:2"><em>net</em> arayüzler</i></span>
+        <span class="mask"><i style="--i:3">tasarlıyorum.</i></span>
+      </h1>
+      <p class="hero-lead" data-arrive style="--i:4">
+        Yedi yıldır erken aşama ekipler için tasarım sistemleri kuruyor, kavramı üretime
+        taşıyor ve yolun sonuna kadar kendim kodluyorum. İstanbul merkezli, uzaktan.
+      </p>
+      <div class="hero-actions" data-arrive style="--i:5">
+        <a class="btn btn-primary" href="#index">İşlere bak</a>
+        <a class="btn btn-ghost" href="#contact">Bir proje konuş</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · STATUS ─ contained · single row · dense · bordered ─────────────────────── -->
+  <section class="status" aria-label="Çalışma durumu">
+    <div class="status-in base mono" data-arrive style="--i:6">
+      <span class="live">Mart 2026 için müsait</span>
+      <span><b>Yanıt</b> ~24 saat</span>
+      <span><b>Konum</b> İstanbul · UTC+3</span>
+      <span><b>Biçim</b> Sözleşmeli · uzaktan</span>
+    </div>
+  </section>
+
+  <!-- 3 · INDEX ─ wide · list rows · normal · raised · THE SIGNATURE ─────────────── -->
+  <section class="index" id="index">
+    <div class="wide">
+      <div class="sec-head">
+        <h2>Seçilmiş işler</h2>
+        <span class="mono">Dört kayıt · 2019—2026</span>
+      </div>
+
+      <div class="rows" id="rows">
+        <a class="row" href="#index" data-face="1">
+          <span class="row-num">01</span>
+          <span class="row-title">Kurumsal yatırımcılar için portföy paneli</span>
+          <span class="row-note">Uçtan uca tasarım ve frontend. Onboarding akışı altı ekrandan ikiye indi.</span>
+          <span class="row-year">2024</span>
+          <span class="row-thumb f1" aria-hidden="true"></span>
+        </a>
+        <a class="row" href="#index" data-face="2">
+          <span class="row-num">02</span>
+          <span class="row-title">Karbon takip mobil uygulaması</span>
+          <span class="row-note">Tasarım sistemi ve React Native arayüz katmanı, iki platform tek dil.</span>
+          <span class="row-year">2023</span>
+          <span class="row-thumb f2" aria-hidden="true"></span>
+        </a>
+        <a class="row" href="#index" data-face="3">
+          <span class="row-num">03</span>
+          <span class="row-title">Hasta randevu ve triaj akışı</span>
+          <span class="row-note">Araştırma, akış tasarımı ve WCAG 2.2 AA doğrulanmış bileşen kütüphanesi.</span>
+          <span class="row-year">2021</span>
+          <span class="row-thumb f3" aria-hidden="true"></span>
+        </a>
+        <a class="row" href="#index" data-face="4">
+          <span class="row-num">04</span>
+          <span class="row-title">Açık kaynak token boru hattı</span>
+          <span class="row-note">Figma değişkenleri ile kod token'larını tek yönde eşitleyen küçük bir araç.</span>
+          <span class="row-year">2019</span>
+          <span class="row-thumb f4" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · APPROACH ─ narrow · prose + marginalia · breathing · page ──────────────── -->
+  <section class="approach" id="approach">
+    <div class="narrow">
+      <h2>Nasıl çalışıyorum</h2>
+      <p>
+        <strong>Arayüz güzel görünmeden önce doğru çalışmalı.</strong> Bir ekrana bakarken ilk
+        sorduğum şey ne kadar modern durduğu değil; kullanıcının oradaki işi kaç adımda
+        bitirdiği oluyor. Adım sayısı düşmüyorsa tasarım henüz bitmemiştir.
+      </p>
+      <p>
+        Tasarım sistemlerini dokümantasyon olarak değil, üretim aracı olarak kuruyorum:
+        token'lar koda tek yönde akar, bileşenler durum matrisiyle birlikte teslim edilir,
+        erişilebilirlik teslim sonrası eklenen bir katman değildir.
+      </p>
+      <p>
+        Ölçtüğüm şey görsel beğeni değil, ekibin o sistemle ne kadar hızlı yeni ekran
+        çıkarabildiği. İyi bir sistem, tasarımcı odada olmasa da doğru kararı kolay,
+        yanlış kararı zor yapar.
+      </p>
+      <p class="note">
+        Genelde iki modda çalışırım: sıfırdan bire ürün kurulumu, ya da mevcut bir ürünün
+        tasarım sistemini üretim kalitesine çıkarma. İkisinin ortası olan “biraz düzeltelim”
+        işleri kimseye fayda etmiyor.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5 · RECORD ─ contained · table · dense · raised ────────────────────────────── -->
+  <section class="record" id="record">
+    <div class="base">
+      <table>
+        <caption class="mono">Deneyim kaydı</caption>
+        <thead>
+          <tr><th scope="col">Dönem</th><th scope="col">Rol</th><th scope="col">Kapsam</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2022 — bugün</td>
+            <td><span class="role">Kurucu ortak, ürün tasarımı</span><span class="org">Atölye Stüdyo</span></td>
+            <td>Erken aşama ekipler için tasarım ve geliştirme stüdyosu. Sıfırdan bire ürün ve tasarım sistemi teslimatı.</td>
+          </tr>
+          <tr>
+            <td>2020 — 2022</td>
+            <td><span class="role">Kıdemli ürün tasarımcısı</span><span class="org">Northwind Kapital</span></td>
+            <td>Kurumsal yatırım platformunun tasarım ekibini kurdu ve sistemi üç ürün ekibine yaydı.</td>
+          </tr>
+          <tr>
+            <td>2018 — 2020</td>
+            <td><span class="role">Ürün tasarımcısı</span><span class="org">Liman Sağlık</span></td>
+            <td>Hasta karşılama ve randevu ürünlerinde araştırma, akış tasarımı ve frontend geliştirme.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 6 · STATEMENT ─ narrow · one large statement · breathing · inverted ────────── -->
+  <section class="statement">
+    <figure class="narrow">
+      <blockquote>Bir arayüzün işi etkilemek değil, aradan çekilmektir.</blockquote>
+      <figcaption class="mono">Çalışma ilkesi · 2019'dan beri</figcaption>
+    </figure>
+  </section>
+
+  <!-- 7 · CONTACT ─ contained · split · breathing · page ─────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="base contact-grid">
+      <div>
+        <h2>Bir proje mi var? Konuşalım.</h2>
+        <a class="mailto" href="mailto:merhaba@adayilmaz.com">merhaba@adayilmaz.com</a>
+        <div class="social">
+          <a href="#contact">LinkedIn</a>
+          <a href="#contact">GitHub</a>
+          <a href="#contact">Dribbble</a>
+          <a href="#contact">CV (PDF)</a>
+        </div>
+      </div>
+      <dl class="facts">
+        <div class="fact"><dt>Müsaitlik</dt><dd>Mart 2026 · iki proje kapasitesi</dd></div>
+        <div class="fact"><dt>Çalışma biçimi</dt><dd>Uzaktan · Avrupa saat dilimleriyle örtüşen</dd></div>
+        <div class="fact"><dt>Tipik kapsam</dt><dd>6–12 hafta · tasarım + frontend birlikte</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="base">
+    <span class="mono">© 2026 Ada Yılmaz</span>
+    <span class="mono">DesignOS · editorial-portfolio</span>
+  </div>
+  <p class="base disclaimer" style="margin-top:var(--s4)">
+    Kurgusal örnek. Bu sayfadaki kişi, işler ve tarihler DesignOS referans yapısı için
+    uydurulmuştur; gerçek bir müşteri sonucu ya da doğrulanabilir bir metrik iddia edilmez.
+  </p>
+</footer>
+
+<!-- the signature's plate lives outside main: decorative, aria-hidden, pointer-events:none -->
+<div class="plate" id="plate" aria-hidden="true">
+  <div class="plate-face f1" data-face="1"><span>portföy paneli · 2024</span></div>
+  <div class="plate-face f2" data-face="2"><span>karbon takip · 2023</span></div>
+  <div class="plate-face f3" data-face="3"><span>triaj akışı · 2021</span></div>
+  <div class="plate-face f4" data-face="4"><span>token boru hattı · 2019</span></div>
+</div>
+
+<script>
+/* The signature, and the only JavaScript on the page (~0.7KB).
+   Gated three ways — fine pointer, hover capability, and reduced-motion — because the
+   touch and reduced-motion paths already show the same artwork inline. rAF-throttled,
+   transform-only, and will-change is armed on enter and dropped on leave so no layer is
+   permanently promoted (motion/performance.md). */
+(function () {
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!fine.matches || calm.matches) return;
+
+  var plate = document.getElementById('plate');
+  var rows  = document.getElementById('rows');
+  if (!plate || !rows) return;
+
+  var faces = plate.querySelectorAll('.plate-face');
+  var x = 0, y = 0, frame = 0;
+
+  function paint() {
+    frame = 0;
+    /* offset right of the pointer and vertically centred on it, so the plate reads as
+       held beside the row rather than dropped on top of the title the user is reading */
+    plate.style.transform = 'translate3d(' + (x + 36) + 'px,' + (y - 128) + 'px,0)';
+  }
+  function onMove(e) {
+    x = e.clientX; y = e.clientY;
+    if (!frame) frame = requestAnimationFrame(paint);
+  }
+
+  /* one controller owns every listener the follow loop installs, so a single abort()
+     tears the whole thing down — no orphaned pointermove surviving a close */
+  var follow = null;
+
+  function open(row) {
+    var id = row.getAttribute('data-face');
+    faces.forEach(function (f) { f.setAttribute('data-active', String(f.getAttribute('data-face') === id)); });
+    plate.setAttribute('data-open', 'true');
+    plate.style.willChange = 'transform';   // armed only while the loop runs
+    if (follow) follow.abort();
+    follow = new AbortController();
+    window.addEventListener('pointermove', onMove, { passive: true, signal: follow.signal });
+  }
+  function close() {
+    plate.setAttribute('data-open', 'false');
+    plate.style.willChange = '';            // never leave a layer permanently promoted
+    if (frame) { cancelAnimationFrame(frame); frame = 0; }
+    if (follow) { follow.abort(); follow = null; }
+  }
+
+  rows.addEventListener('pointerenter', function (e) {
+    var row = e.target.closest ? e.target.closest('.row') : null;
+    if (row) { x = e.clientX; y = e.clientY; paint(); open(row); }
+  }, true);
+  rows.addEventListener('pointerleave', function (e) {
+    if (e.target.closest && e.target.closest('.row')) close();
+  }, true);
+  rows.addEventListener('focusout', close);
+  window.addEventListener('blur', close);
+  /* a hidden tab must not come back with a plate frozen mid-follow */
+  document.addEventListener('visibilitychange', function () { if (document.hidden) close(); });
+})();
+</script>
+
+</body>
+</html>

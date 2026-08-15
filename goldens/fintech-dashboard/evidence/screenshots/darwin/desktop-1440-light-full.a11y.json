@@ -1368,7 +1368,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000089",
+      "nodeId": "-1000000090",
       "parentId": "233",
       "role": "InlineTextBox",
       "name": "TreasuryOS is a fictional brand built as a DesignOS golden example. No compliance certifications are claimed anywhere on this screen — a real product would link real attestations here instead of badges.",
@@ -2195,7 +2195,7 @@
       "nodeId": "-1000000082",
       "parentId": "228",
       "role": "InlineTextBox",
-      "name": "Last successful sync 06:40 UTC. Balances from this bank ",
+      "name": "Last successful sync 06:40 UTC. Balances from this ",
       "ignored": false,
       "properties": {}
     },
@@ -2203,12 +2203,20 @@
       "nodeId": "-1000000083",
       "parentId": "228",
       "role": "InlineTextBox",
-      "name": "are marked stale above — nothing is silently current.",
+      "name": "bank are marked stale above — nothing is silently ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000084",
+      "parentId": "228",
+      "role": "InlineTextBox",
+      "name": "current.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000085",
       "parentId": "229",
       "role": "InlineTextBox",
       "name": "Retry connection",
@@ -2216,7 +2224,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000085",
+      "nodeId": "-1000000086",
       "parentId": "230",
       "role": "InlineTextBox",
       "name": "No FX hedges configured",
@@ -2224,7 +2232,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000086",
+      "nodeId": "-1000000087",
       "parentId": "231",
       "role": "InlineTextBox",
       "name": "When you add a hedge, its exposure and maturity will ",
@@ -2232,7 +2240,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000087",
+      "nodeId": "-1000000088",
       "parentId": "231",
       "role": "InlineTextBox",
       "name": "appear here alongside cash.",
@@ -2240,7 +2248,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000088",
+      "nodeId": "-1000000089",
       "parentId": "232",
       "role": "InlineTextBox",
       "name": "Add first hedge",

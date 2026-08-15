@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Drift fixture — claims Kiln, obeys nothing</title>
+<style>
+/* This fixture exists to fail. It is what "we used the design system" looks like four
+   screens after the system was pasted into the prompt: the token names survive, and every
+   contract they encode has quietly been replaced by whatever the model reached for. */
+:root {
+  --brand: #7C3AED;              /* off-palette: not a Kiln value */
+  --shadow: 0 4px 12px #000;     /* forbidden colour, and an ad-hoc elevation level */
+}
+body {
+  background: #100D0A;
+  color: #B3A797;
+  font-family: system-ui, -apple-system, sans-serif;   /* typeface drift */
+}
+.wrap { max-width: 1200px; margin: 0 auto; }           /* off-scale, and the only width */
+.card {
+  background: var(--kiln-surface);
+  border-radius: 14px;                                  /* off the 6/10/18 scale */
+  box-shadow: 0 4px 12px rgb(12 9 7 / .4);              /* ad-hoc elevation */
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);   /* off-system easing */
+}
+.cta      { background: var(--kiln-ember); }
+.badge    { background: var(--kiln-ember); }
+.banner   { background: var(--kiln-ember); }
+.footer-a { background: var(--kiln-ember); }           /* four solid fills — budget is 3 */
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Claims Kiln</h1>
+  <div class="card">No grain, no tokens, no contract.</div>
+  <button class="cta" type="button">Act</button>
+</main>
+</body>
+</html>

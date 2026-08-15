@@ -58,8 +58,15 @@ function inspect(file) {
   }
 
   if (/\.(?:css|scss|sass|less)$/i.test(file)) {
-    for (const match of source.matchAll(/#[0-9a-f]{3,8}\b/gi)) {
-      const before = source.slice(0, match.index);
+    /* Comments are documentation, not cascade. This rule runs against a comment-blanked
+       copy — length-preserving, so `match.index` still maps to the real line and every
+       other rule in this file keeps the offsets it had. Both halves matter: a hex inside a
+       comment was reported as drift, and a `:root` *mentioned* in a comment was taken for
+       the real one, which put every token after it "outside" the token layer.
+       check-drift.js already blanks comments before the same rule. */
+    const cssSource = source.replace(/\/\*[\s\S]*?\*\//g, m => m.replace(/[^\n]/g, ' '));
+    for (const match of cssSource.matchAll(/#[0-9a-f]{3,8}\b/gi)) {
+      const before = cssSource.slice(0, match.index);
       const rootIndex = before.lastIndexOf(':root');
       const openIndex = before.lastIndexOf('{');
       const closeIndex = before.lastIndexOf('}');

@@ -18,6 +18,8 @@
    ============================================================ */
 :root {
   --bg:        #0A0A0C;
+  --bg-hi:     #0E0E12;   /* focal region, top of the falloff */
+  --bg-lo:     #070709;   /* page end, ~40% dimmer */
   --surface:   #131316;
   --raised:    #1A1A1F;
   --text:      #FAFAFA;
@@ -43,9 +45,40 @@
   /* the reduced-motion multiplier — distances collapse, opacity survives */
   --motion: 1;
 
-  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: ui-monospace, "SF Mono", "Geist Mono", monospace;
+  /* Named faces, not the system stack (foundations/typography.md § Type identity).
+     A golden must render identically offline, so it does not fetch webfonts — the stack
+     names real faces and degrades through them rather than starting at system-ui, which
+     resolves to a different typeface on every OS. A shipping product self-hosts and
+     preloads instead; that guidance is in the module, not achievable in a golden. */
+  --font: "Geist", "SF Pro Text", "Segoe UI Variable", "Helvetica Neue", sans-serif;
+  --display: "Space Grotesk", "Geist", "SF Pro Display", sans-serif;
+  --mono: "Geist Mono", "SF Mono", "JetBrains Mono", monospace;
   --container: 1080px;
+  --container-narrow: 720px;
+
+  /* ---------- LIGHT MODEL (foundations/materiality.md §1) ----------
+     position     above and slightly left (x -8%, y -100%)
+     temperature  cool #B8C4E8 — this is glass and metal, not paper
+     intensity    0.06 key · 0.30 occlusion
+     falloff      hero bright → footer ~40% dimmer                      */
+  --light-temp: #B8C4E8;
+  --shadow-rgb: 4 6 12;          /* the ground pushed dark, never 0 0 0 */
+  --edge-lit: rgb(255 255 255 / 0.07);
+
+  /* elevation is a stack: occlusion + key shadow + lit edge (materiality.md §2).
+     Dark grounds raise with LIGHT, so the edge carries most of the work here. */
+  --elev-1: 0 1px 2px rgb(var(--shadow-rgb) / .40),
+            0 8px 24px -8px rgb(var(--shadow-rgb) / .34),
+            inset 0 1px 0 var(--edge-lit);
+  --elev-2: 0 2px 5px rgb(var(--shadow-rgb) / .46),
+            0 20px 50px -14px rgb(var(--shadow-rgb) / .44),
+            inset 0 1px 0 rgb(255 255 255 / 0.09);
+  --elev-3: 0 4px 10px rgb(var(--shadow-rgb) / .52),
+            0 44px 96px -24px rgb(var(--shadow-rgb) / .60),
+            inset 0 1px 0 rgb(255 255 255 / 0.11);
+
+  --grain-opacity: 0.032;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 @media (prefers-reduced-motion: reduce) { :root { --motion: 0; } }
 
@@ -54,11 +87,23 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
-  background: var(--bg); color: var(--muted);
+  /* fill gradation + falloff — the hero region is lit, the footer is not */
+  background:
+    radial-gradient(ellipse 1000px 560px at 18% -8%, rgb(52 211 153 / .07), transparent 68%),
+    linear-gradient(180deg, var(--bg-hi) 0%, var(--bg) 40%, var(--bg-lo) 100%);
+  background-attachment: fixed;
+  color: var(--muted);
   font-family: var(--font); font-size: 1rem; line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3 { color: var(--text); letter-spacing: -0.03em; line-height: 1.08; text-wrap: balance; }
+/* texture: always on, never visible (materiality.md §5) */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 90;
+  pointer-events: none; opacity: var(--grain-opacity);
+  mix-blend-mode: overlay; background-image: var(--grain);
+}
+
+h1, h2, h3 { font-family: var(--display); color: var(--text); letter-spacing: -0.03em; line-height: 1.08; text-wrap: balance; }
 .wrap { max-width: var(--container); margin-inline: auto; padding-inline: var(--space-6); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 ::selection { background: var(--accent); color: var(--on-accent); }
@@ -88,7 +133,7 @@ header.site { border-bottom: 1px solid var(--line); }
 
 /* ---------- hero: split-text entrance (composition, not a signature) ---------- */
 .hero { padding-block: var(--space-32) var(--space-24); }
-.hero h1 { font-size: clamp(2.5rem, 6.5vw + 0.5rem, 5rem); font-weight: 700; }
+.hero h1 { font-size: clamp(2.5rem, 6.5vw + 0.5rem, 5rem); font-weight: 700; letter-spacing: -0.04em; }
 .line { display: block; overflow: hidden; }
 .line > i {
   display: inline-block; font-style: normal;
@@ -139,8 +184,10 @@ header.site { border-bottom: 1px solid var(--line); }
 
 .pair { display: grid; gap: var(--space-8); grid-template-columns: 1fr; margin-top: var(--space-12); }
 @media (min-width: 768px) { .pair { grid-template-columns: 1fr 1fr; } }
-.pane { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-6); }
+.pane { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--elev-1); }
 .pane h3 { font-size: 1rem; margin-bottom: var(--space-4); }
+/* one element above level 1, or the elevation system has no hierarchy (materiality.md §2) */
+.pane.pane-after { background: var(--raised); box-shadow: var(--elev-2); }
 .pane ol, .pane ul { margin: 0; padding-left: var(--space-6); font-size: 0.9375rem; }
 .pane li { margin-block: var(--space-2); }
 .pane li.gone { color: var(--dim); text-decoration: line-through; }
@@ -152,7 +199,7 @@ header.site { border-bottom: 1px solid var(--line); }
   position: sticky; top: 0; height: 100vh;
   display: grid; place-items: center; overflow: hidden;
 }
-.story-inner { width: 100%; max-width: var(--container); padding-inline: var(--space-6); }
+.story-inner { width: 100%; max-width: var(--container-narrow); padding-inline: var(--space-6); }
 .story-count {
   font-family: var(--mono); font-size: clamp(4rem, 18vw, 12rem); font-weight: 700;
   color: var(--text); line-height: 1; letter-spacing: -0.06em;
@@ -186,7 +233,7 @@ header.site { border-bottom: 1px solid var(--line); }
 /* ---------- proof ---------- */
 .facts { display: grid; gap: var(--space-4); grid-template-columns: 1fr; margin-top: var(--space-12); }
 @media (min-width: 640px) { .facts { grid-template-columns: repeat(3, 1fr); } }
-.fact { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-6); }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--elev-1); }
 .fact dt { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); }
 .fact .fact-value { margin: var(--space-2) 0 0; font-size: 1.75rem; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
 .fact .fact-detail { margin: var(--space-2) 0 0; font-size: 0.875rem; font-weight: 400; color: var(--muted); }
@@ -246,7 +293,7 @@ footer.site a { color: var(--muted); }
           <li>Announce in the channel</li>
         </ol>
       </div>
-      <div class="pane">
+      <div class="pane pane-after">
         <h3>After</h3>
         <ul>
           <li class="gone">Tag the version</li>

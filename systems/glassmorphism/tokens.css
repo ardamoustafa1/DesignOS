@@ -1,0 +1,105 @@
+/* design-systems/glassmorphism/tokens.css
+ * Structured token bindings for Glassmorphism.
+ * glass interface language with translucent panels, airy borders, and luminous cyan-violet action.
+ */
+
+:root {
+  --bg: #eef6ff;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-warm: rgba(238, 246, 255, 0.72);
+  --fg: #102033;
+  --fg-2: #34465f;
+  --muted: #60708a;
+  --meta: #4f8cff;
+  --border: rgba(255, 255, 255, 0.64);
+  --border-soft: rgba(255, 255, 255, 0.38);
+  --accent: #4f8cff;
+  --accent-on: #ffffff;
+  --accent-hover: color-mix(in oklab, var(--accent), black 8%);
+  --accent-active: color-mix(in oklab, var(--accent), black 14%);
+  --success: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, monospace;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 36px;
+  --text-3xl: 54px;
+  --text-4xl: 76px;
+  --leading-body: 1.55;
+  --leading-tight: 1.04;
+  --tracking-display: -0.025em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --section-y-desktop: 104px;
+  --section-y-tablet: 72px;
+  --section-y-phone: 52px;
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+  --radius-pill: 9999px;
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 24px 80px rgba(79, 140, 255, 0.18);
+  --focus-ring: 0 0 0 4px rgba(79, 140, 255, 0.28);
+  --motion-fast: 180ms;
+  --motion-base: 280ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --container-max: 1180px;
+  --container-gutter-desktop: 36px;
+  --container-gutter-tablet: 24px;
+  --container-gutter-phone: 16px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════
+   DESIGNOS CEILING EXTENSION — added on import, not present upstream.
+
+   The upstream token schema stops at --elev-flat and --elev-ring: a two-value elevation
+   with no light source, no tinted shadow, no lit edge, no texture. Everything below is
+   derived from THIS package's own palette so the craft layer belongs to the brand rather
+   than being bolted on (CLAUDE.md §4.5, foundations/materiality.md).
+
+   LIGHT MODEL for glassmorphism
+     ground      #eef6ff → read as light
+     position    above and slightly left (x -8%, y -100%)
+     temperature --ds-light-temp
+     strategy    raise with SHADOW — the cast shadow does the work
+   ══════════════════════════════════════════════════════════════════════════════════════ */
+:root {
+  --ds-light-temp: #B8C4E8;
+  --ds-shadow-rgb: 35 39 44;
+  --ds-edge-lit: rgb(255 255 255 / 0.70);
+  --ds-ring: rgb(0 0 0 / 0.10);
+
+  --ds-elev-1: 0 1px 2px rgb(var(--ds-shadow-rgb) / 0.1),
+               0 8px 24px -8px rgb(var(--ds-shadow-rgb) / 0.14),
+               inset 0 1px 0 var(--ds-edge-lit);
+  --ds-elev-2: 0 2px 5px rgb(var(--ds-shadow-rgb) / 0.12),
+               0 20px 50px -14px rgb(var(--ds-shadow-rgb) / 0.18),
+               inset 0 1px 0 var(--ds-edge-lit);
+  --ds-elev-3: 0 4px 10px rgb(var(--ds-shadow-rgb) / 0.14),
+               0 44px 96px -24px rgb(var(--ds-shadow-rgb) / 0.24),
+               inset 0 1px 0 var(--ds-edge-lit);
+
+  --ds-grain-opacity: 0.022;
+  --ds-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  --ds-t-fast: 130ms;
+  --ds-t-base: 200ms;
+  --ds-t-slow: 300ms;
+  --ds-t-arrive: 620ms;
+  --ds-arrive-step: 90ms;
+}
+@media (prefers-reduced-motion: reduce) { :root { --ds-motion: 0; } }
+:root { --ds-motion: 1; }

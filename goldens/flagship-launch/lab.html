@@ -30,7 +30,11 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --motion: 1;
 
-  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Named faces, not the system stack (foundations/typography.md § Type identity).
+   Goldens must render identically offline, so they name real faces and degrade
+   through them rather than starting at system-ui, which resolves to a different
+   typeface on every OS. Shipping products self-host and preload instead. */
+  --font: "Geist", "SF Pro Text", "Segoe UI Variable", "Helvetica Neue", sans-serif;
   --mono: ui-monospace, "SF Mono", "Geist Mono", monospace;
   --container: 1080px;
 }
@@ -106,7 +110,7 @@ h1, h2, h3 { color: var(--text); letter-spacing: -0.02em; line-height: 1.15; }
 .tilt p { font-size: 0.875rem; margin-top: var(--space-2); }
 
 /* ── 7 · odometer ── */
-.odo { display: inline-flex; font-family: var(--mono); font-variant-numeric: tabular-nums;
+.odo { display: inline-flex; font-family: var(--mono); font-variant-numeric: tabular-nums; letter-spacing: -0.03em;
        font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 700; color: var(--text); line-height: 1; }
 .odo-col { display: block; height: 1em; overflow: hidden; }
 .odo-col > span {

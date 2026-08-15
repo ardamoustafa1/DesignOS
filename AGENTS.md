@@ -41,6 +41,9 @@ For everything else:
 3. COMPILE brain/brief-compiler.md          → turn the request into a testable contract
 4. ROUTE  via the table below               → load only relevant modules
 5. LOAD   industries/<sector>.md            → sector conventions, if known
+5b. LOAD  systems/<slug>/SYSTEM.md + tokens.css → the design-system contract, if one is
+          chosen (`designos system list`). A system decides the values; the modules decide
+          the reasoning. Choosing none is a valid answer — say so and derive the values.
 6. LOAD   memory/ project files             → client, brand, prior decisions
 7. RUN    loops/design-loop.md              → produce the work
 8. SCORE  scoring/rubric.md                 → self-review, iterate under 95
@@ -73,6 +76,8 @@ with a comparison table, dark theme"). Resolve deterministically:
 | Landing page, marketing site | `patterns/landing-pages.md`, `components/hero.md`, `psychology/` (attention, persuasion, trust), `components/footer.md` |
 | Hero section | `components/hero.md`, `psychology/attention.md`, `foundations/typography.md` |
 | Glow, gradients, grain, glass, "wow" effects | `components/visual-effects.md`, `brain/originality.md`, `motion/performance.md` |
+| "Feels flat / cheap / like a wireframe", depth, elevation, shadows, surfaces, texture | `foundations/materiality.md`, `foundations/dark-mode.md`, `foundations/colors.md` |
+| Page load, first impression, entrance animation, "how it should appear" | `motion/arrival.md`, `components/hero.md`, `motion/principles.md` |
 | Buttons / CTA | `components/buttons.md`, `psychology/persuasion.md` |
 | Forms, auth, signup | `components/forms.md`, `patterns/onboarding-auth.md`, `psychology/cognition.md` |
 | Multi-step flows, wizards, checkout steps | `components/steppers-wizards.md`, `components/forms.md` |
@@ -90,6 +95,7 @@ with a comparison table, dark theme"). Resolve deterministically:
 | Type decisions | `foundations/typography.md` |
 | Spacing / layout | `foundations/spacing.md`, `foundations/layout.md`, `foundations/grids.md` |
 | Token architecture, theming, white-label | `foundations/design-tokens.md` |
+| "Use a design system", brand contract, house style, "keep it consistent across pages" | `systems/README.md`, then `systems/<slug>/SYSTEM.md` + `tokens.css` |
 | Dark mode | `foundations/dark-mode.md`, `foundations/colors.md` |
 | RTL, Arabic/Hebrew, i18n layout, locale formatting | `foundations/rtl-i18n.md` |
 | Animation / motion | `motion/` (principles, micro-interactions, page-and-scroll, performance) |
@@ -113,7 +119,7 @@ with a comparison table, dark theme"). Resolve deterministically:
 | Empty / loading / error UI | `components/states.md`, `components/loading-skeletons.md` |
 | Accessibility question | `foundations/accessibility.md`, `checklists/accessibility.md` |
 | SEO | `checklists/seo.md`, agent `agents/seo.md` |
-| "Make it feel premium / modern / top-tier" | `workflows/premium-redesign.md`, `brain/taste-ladder.md`, `brain/quality-bar.md`, `brain/reference-library.md`, `brain/trend-radar.md`, `components/visual-effects.md` |
+| "Make it feel premium / modern / top-tier" | `foundations/materiality.md`, `motion/arrival.md`, `workflows/premium-redesign.md`, `brain/taste-ladder.md`, `brain/quality-bar.md`, `brain/reference-library.md`, `components/visual-effects.md` |
 | "Make it distinctive / not generic" | `brain/originality.md`, `brain/reference-library.md`, `references/README.md` |
 | "Stripe-level", "Linear-like", "Apple-like", "Vercel docs" | relevant `references/*.md` pack + `brain/originality.md` |
 | Trust, credibility concerns | `psychology/trust.md`, `psychology/persuasion.md`, `PROOF_STANDARD.md` |
@@ -185,9 +191,66 @@ Minimum viable panel for any shipped page: **ui-designer → accessibility → r
 
 ---
 
-## 5. The Fourteen Questions
+## 4.5 The Ceiling Contract
 
-Before finalizing any screen, answer all fourteen. If any answer is weak, return to the loop.
+Everything in §4 is a **floor** — rules phrased as *never*. A page can satisfy all of them
+and still be flat, forgettable, and obviously generated, because passing a ban list is not
+the same as making something. This section is the **ceiling**: things that must be *present*,
+not absent. It is binding on every shipped surface above the trivial gate.
+
+A page that meets §4 and misses §4.5 scores at most **89** on UI Craft and Distinctiveness
+(`scoring/rubric.md`) — "clean but swappable." Seven requirements:
+
+1. **Named typefaces.** The display face is chosen and named, with display-scale optical
+   settings (negative tracking, display cut, `opsz` where available). `system-ui` /
+   `ui-sans-serif` as the brand face is a finding, not a choice. → `foundations/typography.md`
+2. **A declared light model and a real elevation stack.** One light source, shadows tinted
+   with the page hue, lit edges opposite the shadow, three elevation levels with at least one
+   element above level 1. A single `--shadow` token is a flat page.
+   → `foundations/materiality.md`
+3. **Texture on large fills.** Grain and fill gradation on any surface above ~40vh. Flat
+   fills are the most synthetic thing on a screen. → `foundations/materiality.md`
+4. **Section rhythm.** At least four distinct section compositions, no shape repeated in
+   adjacent sections, at least two container widths and two grounds, and one genuinely large
+   statement moment. Eyebrow → h2 → four equal cards → `border-top`, repeated, is the
+   signature of generated work. → `foundations/layout.md`
+5. **A composed arrival.** A beat-structured entrance with one chosen reveal vocabulary,
+   index-driven, LCP-safe, reduced-motion-safe. Not on app, settings, or checkout surfaces.
+   → `motion/arrival.md`
+6. **Optical corrections.** At least three applied and named in the rationale — optical
+   centring, cap-height alignment, icon weight matching, radius nesting, overshoot.
+   → `foundations/materiality.md`
+7. **One memorable moment — material or motion, never both required.** `brain/wow-
+   calibration.md` §1 names four routes to memorable: composition, material, voice, motion,
+   ranked in that order, with motion explicitly fourth. Composition is requirement 4 above;
+   voice cannot be graded mechanically. This requirement asks for the other two, and closing
+   *either one* satisfies it: an inspectable artifact (a real screenshot, table, code sample,
+   report, or chart the visitor can read) OR evidence of one licensed signature technique
+   (`motion/signature-moments.md`, `components/visual-effects.md`). A page with neither is
+   the "correct but forgettable" failure the module opens with. → `brain/wow-calibration.md`,
+   `brain/taste-ladder.md` Level 95
+
+**Restraint is not plainness.** The restraint doctrine in `brain/wow-calibration.md` and
+`components/visual-effects.md` governs *effects and signature moments* — one hero effect,
+at most two signatures. It never licenses an unlit, untextured, system-font page. The calm
+sections that make a signature land must themselves be materially rich; calm means *quiet*,
+not *empty*. Reading "motion is the fourth option" as "ship a static document" is the most
+common misread of this kernel.
+
+Run `node validators/check-craft-ceiling.js <target>` before scoring. It mechanizes what it
+can (typefaces, shadow systems, texture, arrival, rhythm signals) and stays silent on what
+it cannot — a clean run means no known flatness tell was found, never "this is premium."
+
+**When a design system is in play** (`systems/`), also run
+`node validators/check-system-conformance.js <target> --system <slug>`. The ceiling asks
+"is this material?"; conformance asks "does this still belong to the system it claims?" —
+the drift a prompt-injected system always develops by the fourth screen.
+
+---
+
+## 5. The Sixteen Questions
+
+Before finalizing any screen, answer all sixteen. If any answer is weak, return to the loop.
 
 1. Where does the eye land first — and is that where it should land?
 2. Is the primary CTA unmistakable within 3 seconds?
@@ -203,6 +266,10 @@ Before finalizing any screen, answer all fourteen. If any answer is weak, return
 12. Did the deterministic Final Gate run, and is the reported score copied from that output?
 13. Are the three dials (variance / motion / density) set, recorded, and consistent with the sector?
 14. If the panel could not run, does the report carry the DEGRADED banner verbatim?
+15. With every effect, image, and animation stripped, does what remains still read as
+    *material* — lit edges, tinted shadows, real texture — rather than a coloured wireframe?
+16. Could this page's type, light, and section rhythm be lifted onto a competitor's product
+    unchanged? If yes, it is not finished (`brain/originality.md` swap test).
 
 ---
 
