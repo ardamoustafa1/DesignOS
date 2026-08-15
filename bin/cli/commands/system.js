@@ -147,17 +147,19 @@ function hooks(args, context) {
   }
   if (action !== 'install') context.fail(`Unknown hooks action "${action}". Use hooks install or hooks status.`);
   fs.mkdirSync(path.dirname(configPath), { recursive: true });
-  const config = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath, 'utf8')) : {};
+  // Single read-and-catch-ENOENT, not existsSync()-then-readFileSync() — see the note on
+  // installGitHook below (js/file-system-race).
+  let config = {};
+  try { config = JSON.parse(fs.readFileSync(configPath, 'utf8')); } catch (_) { /* first run */ }
   config.hook = { ...(config.hook || {}), mode, target: context.argValue(args, '--target', config.hook?.target || '') };
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2) + '\n');
   for (const [name, manifest] of Object.entries(manifests)) {
     fs.mkdirSync(path.dirname(manifest.file), { recursive: true });
-    if (fs.existsSync(manifest.file)) {
-      const existing = JSON.parse(fs.readFileSync(manifest.file, 'utf8'));
-      if (existing.hooks && JSON.stringify(existing.hooks) !== JSON.stringify(manifest.value.hooks)) {
-        context.warn(`${name}: existing hook manifest preserved; merge manually (${path.relative(context.cwd, manifest.file)})`);
-        continue;
-      }
+    let existingManifest = null;
+    try { existingManifest = JSON.parse(fs.readFileSync(manifest.file, 'utf8')); } catch (_) { /* does not exist yet, or unparsable — either way, safe to (re)write below */ }
+    if (existingManifest && existingManifest.hooks && JSON.stringify(existingManifest.hooks) !== JSON.stringify(manifest.value.hooks)) {
+      context.warn(`${name}: existing hook manifest preserved; merge manually (${path.relative(context.cwd, manifest.file)})`);
+      continue;
     }
     fs.writeFileSync(manifest.file, JSON.stringify(manifest.value, null, 2) + '\n');
     context.ok(`${name} hook installed (${manifest.confidence})`);
@@ -227,7 +229,11 @@ function installGitHook(context, mode, args) {
     'exit 0',
     '',
   ].join('\n');
-  if (fs.existsSync(dest) && !fs.readFileSync(dest, 'utf8').includes('DESIGNOS_GIT_HOOK')) {
+  // Single read-and-catch-ENOENT instead of existsSync()-then-readFileSync(): see the
+  // matching fix in bin/designos.js's exportRules() for why (js/file-system-race).
+  let existingHook = null;
+  try { existingHook = fs.readFileSync(dest, 'utf8'); } catch (_) { /* does not exist yet */ }
+  if (existingHook !== null && !existingHook.includes('DESIGNOS_GIT_HOOK')) {
     context.warn(`git: ${path.relative(context.cwd, dest)} exists and is not DesignOS-generated — merge manually (mode: ${mode})`);
     return;
   }
