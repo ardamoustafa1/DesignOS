@@ -1307,7 +1307,7 @@
       "nodeId": "-1000000010",
       "parentId": "133",
       "role": "InlineTextBox",
-      "name": "The copilot that shows ",
+      "name": "The copilot that ",
       "ignored": false,
       "properties": {}
     },
@@ -1315,7 +1315,7 @@
       "nodeId": "-1000000011",
       "parentId": "133",
       "role": "InlineTextBox",
-      "name": "its sources before you ",
+      "name": "shows its sources ",
       "ignored": false,
       "properties": {}
     },
@@ -1323,15 +1323,15 @@
       "nodeId": "-1000000012",
       "parentId": "133",
       "role": "InlineTextBox",
-      "name": "trust its summary.",
+      "name": "before you trust ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000013",
-      "parentId": "134",
+      "parentId": "133",
       "role": "InlineTextBox",
-      "name": "Relayer reads your CRM notes and billing events, drafts ",
+      "name": "its summary.",
       "ignored": false,
       "properties": {}
     },
@@ -1339,7 +1339,7 @@
       "nodeId": "-1000000014",
       "parentId": "134",
       "role": "InlineTextBox",
-      "name": "the renewal-risk analysis your team does by hand, and ",
+      "name": "Relayer reads your CRM notes and billing events, drafts ",
       "ignored": false,
       "properties": {}
     },
@@ -1347,7 +1347,7 @@
       "nodeId": "-1000000015",
       "parentId": "134",
       "role": "InlineTextBox",
-      "name": "links every claim to the record it came from. It never ",
+      "name": "the renewal-risk analysis your team does by hand, and ",
       "ignored": false,
       "properties": {}
     },
@@ -1355,12 +1355,20 @@
       "nodeId": "-1000000016",
       "parentId": "134",
       "role": "InlineTextBox",
-      "name": "contacts a customer on its own.",
+      "name": "links every claim to the record it came from. It never ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000017",
+      "parentId": "134",
+      "role": "InlineTextBox",
+      "name": "contacts a customer on its own.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000018",
       "parentId": "135",
       "role": "InlineTextBox",
       "name": "Start free",
@@ -1368,7 +1376,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000018",
+      "nodeId": "-1000000019",
       "parentId": "136",
       "role": "InlineTextBox",
       "name": "See a real run ↓",
@@ -1376,7 +1384,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000019",
+      "nodeId": "-1000000020",
       "parentId": "137",
       "role": "InlineTextBox",
       "name": "Free on your own CRM data · No card · Output stays yours",
@@ -1384,18 +1392,10 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000020",
-      "parentId": "138",
-      "role": "InlineTextBox",
-      "name": "Example landing page for DesignOS evaluation. Brand fictional; the ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
       "nodeId": "-1000000021",
       "parentId": "138",
       "role": "InlineTextBox",
-      "name": "demo below is a designed illustration of the product mechanic, not a ",
+      "name": "Example landing page for DesignOS evaluation. Brand fictional; the demo ",
       "ignored": false,
       "properties": {}
     },
@@ -1403,12 +1403,20 @@
       "nodeId": "-1000000022",
       "parentId": "138",
       "role": "InlineTextBox",
-      "name": "recorded live run.",
+      "name": "below is a designed illustration of the product mechanic, not a recorded ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000023",
+      "parentId": "138",
+      "role": "InlineTextBox",
+      "name": "live run.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000024",
       "parentId": "139",
       "role": "InlineTextBox",
       "name": "Copilot run: renewal risks",
@@ -1416,7 +1424,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000024",
+      "nodeId": "-1000000025",
       "parentId": "140",
       "role": "InlineTextBox",
       "name": "completed in 9s",
@@ -1854,7 +1862,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000025",
+      "nodeId": "-1000000026",
       "parentId": "141",
       "role": "InlineTextBox",
       "name": "YOUR INPUT",
@@ -1862,18 +1870,10 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000026",
-      "parentId": "142",
-      "role": "InlineTextBox",
-      "name": "\"Summarize open renewal risks for enterprise accounts this ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
       "nodeId": "-1000000027",
       "parentId": "142",
       "role": "InlineTextBox",
-      "name": "quarter.\"",
+      "name": "\"Summarize open renewal risks for enterprise accounts this quarter.\"",
       "ignored": false,
       "properties": {}
     },
@@ -2105,7 +2105,7 @@
       "nodeId": "-1000000064",
       "parentId": "169",
       "role": "InlineTextBox",
-      "name": "invoice behind it. Low-confidence ",
+      "name": "invoice behind it. Low-confidence findings ",
       "ignored": false,
       "properties": {}
     },
@@ -2113,7 +2113,7 @@
       "nodeId": "-1000000065",
       "parentId": "169",
       "role": "InlineTextBox",
-      "name": "findings are labeled and demoted to ",
+      "name": "are labeled and demoted to \"worth ",
       "ignored": false,
       "properties": {}
     },
@@ -2121,7 +2121,7 @@
       "nodeId": "-1000000066",
       "parentId": "169",
       "role": "InlineTextBox",
-      "name": "\"worth checking,\" not stated as fact.",
+      "name": "checking,\" not stated as fact.",
       "ignored": false,
       "properties": {}
     },
@@ -2545,7 +2545,7 @@
       "nodeId": "-1000000074",
       "parentId": "174",
       "role": "InlineTextBox",
-      "name": "Renewal-risk and account-health summaries across hundreds ",
+      "name": "Renewal-risk and account-health summaries across hundreds of ",
       "ignored": false,
       "properties": {}
     },
@@ -2553,7 +2553,7 @@
       "nodeId": "-1000000075",
       "parentId": "174",
       "role": "InlineTextBox",
-      "name": "of accounts",
+      "name": "accounts",
       "ignored": false,
       "properties": {}
     },
@@ -2649,7 +2649,7 @@
       "nodeId": "-1000000088",
       "parentId": "183",
       "role": "InlineTextBox",
-      "name": "Send anything externally without a named human approving ",
+      "name": "Send anything externally without a named human approving that ",
       "ignored": false,
       "properties": {}
     },
@@ -2657,7 +2657,7 @@
       "nodeId": "-1000000089",
       "parentId": "183",
       "role": "InlineTextBox",
-      "name": "that send",
+      "name": "send",
       "ignored": false,
       "properties": {}
     },

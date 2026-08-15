@@ -15,7 +15,11 @@
       --ok:#166534; --warn:#92400E;
       --code-bg:#16161A; --code-text:#D4D4D8;
       --radius:8px; --radius-lg:12px;
-      font-family:ui-sans-serif, system-ui, sans-serif;
+      /* Named faces, not the system stack (foundations/typography.md § Type identity).
+   Goldens must render identically offline, so they name real faces and degrade
+   through them rather than starting at system-ui, which resolves to a different
+   typeface on every OS. Shipping products self-host and preload instead. */
+  font-family: "Geist", "SF Pro Text", "Segoe UI Variable", "Helvetica Neue", sans-serif;
     }
     * { box-sizing:border-box; margin:0; }
     body { background:var(--bg); color:var(--muted); font-size:16px; line-height:1.65; }

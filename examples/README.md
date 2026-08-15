@@ -17,6 +17,26 @@ The decision paper-trail for the landing page — including the two review failu
 loop caught before delivery — is in
 [saas-landing-walkthrough.md](saas-landing-walkthrough.md).
 
+## The ceiling reference
+
+| Page | Demonstrates | Key modules |
+|---|---|---|
+| [editorial-portfolio.html](editorial-portfolio.html) | The Ceiling Contract (`CLAUDE.md` §4.5) built out in full | `foundations/materiality.md`, `motion/arrival.md`, `foundations/layout.md` § Section rhythm, `foundations/typography.md` § Type identity |
+
+The four Relay pages above satisfy every DesignOS **floor**. This one exists because
+passing a ban list is not the same as making something: it is the same class of page built
+against the ceiling instead. Named display face with display-scale optics, a declared light
+model driving a three-level elevation stack, grain and fill gradation on every large
+surface, seven sections that never repeat a shape, and a beat-structured arrival that never
+touches the LCP element. It is a fictional persona and says so on the page.
+
+Diff it against a page that only meets the floor:
+
+```bash
+node validators/check-craft-ceiling.js validators/fixtures/ceiling/flat.html
+node validators/check-craft-ceiling.js examples/editorial-portfolio.html
+```
+
 ## What to look for
 
 - **Token discipline:** view-source any page — every value resolves to the same `:root`

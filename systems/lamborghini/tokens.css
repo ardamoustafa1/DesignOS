@@ -1,0 +1,106 @@
+/* design-systems/lamborghini/tokens.css
+ *
+ * Structured token bindings for Lamborghini.
+ * sharp black-gold performance interface with angular premium energy.
+ */
+
+:root {
+  --bg: #050505;
+  --surface: #141414;
+  --surface-warm: #211b0b;
+  --fg: #f8f4e6;
+  --fg-2: #d8ceb0;
+  --muted: #9b927d;
+  --meta: #d4af37;
+  --border: #3a321d;
+  --border-soft: #282315;
+  --accent: #d4af37;
+  --accent-on: #050505;
+  --accent-hover: color-mix(in oklab, var(--accent), black 8%);
+  --accent-active: color-mix(in oklab, var(--accent), black 14%);
+  --success: #39a852;
+  --warn: #f7c948;
+  --danger: #e63946;
+  --font-display: "Lamborghini", "Eurostile", Arial, sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, monospace;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 26px;
+  --text-2xl: 42px;
+  --text-3xl: 64px;
+  --text-4xl: 90px;
+  --leading-body: 1.48;
+  --leading-tight: 0.96;
+  --tracking-display: -0.025em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --section-y-desktop: 112px;
+  --section-y-tablet: 80px;
+  --section-y-phone: 56px;
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 9999px;
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 28px 84px rgba(0, 0, 0, 0.54);
+  --focus-ring: 0 0 0 4px rgba(212, 175, 55, 0.32);
+  --motion-fast: 120ms;
+  --motion-base: 210ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --container-max: 1240px;
+  --container-gutter-desktop: 40px;
+  --container-gutter-tablet: 28px;
+  --container-gutter-phone: 18px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════
+   DESIGNOS CEILING EXTENSION — added on import, not present upstream.
+
+   The upstream token schema stops at --elev-flat and --elev-ring: a two-value elevation
+   with no light source, no tinted shadow, no lit edge, no texture. Everything below is
+   derived from THIS package's own palette so the craft layer belongs to the brand rather
+   than being bolted on (CLAUDE.md §4.5, foundations/materiality.md).
+
+   LIGHT MODEL for lamborghini
+     ground      #050505 → read as dark
+     position    above and slightly left (x -8%, y -100%)
+     temperature --ds-light-temp
+     strategy    raise with LIGHT — the lit edge does the work
+   ══════════════════════════════════════════════════════════════════════════════════════ */
+:root {
+  --ds-light-temp: #FFD2A6;
+  --ds-shadow-rgb: 1 1 1;
+  --ds-edge-lit: rgb(255 255 255 / 0.075);
+  --ds-ring: rgb(255 255 255 / 0.09);
+
+  --ds-elev-1: 0 1px 2px rgb(var(--ds-shadow-rgb) / 0.3),
+               0 8px 24px -8px rgb(var(--ds-shadow-rgb) / 0.26),
+               inset 0 1px 0 var(--ds-edge-lit);
+  --ds-elev-2: 0 2px 5px rgb(var(--ds-shadow-rgb) / 0.34),
+               0 20px 50px -14px rgb(var(--ds-shadow-rgb) / 0.32),
+               inset 0 1px 0 var(--ds-edge-lit);
+  --ds-elev-3: 0 4px 10px rgb(var(--ds-shadow-rgb) / 0.4),
+               0 44px 96px -24px rgb(var(--ds-shadow-rgb) / 0.46),
+               inset 0 1px 0 var(--ds-edge-lit);
+
+  --ds-grain-opacity: 0.035;
+  --ds-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  --ds-t-fast: 130ms;
+  --ds-t-base: 200ms;
+  --ds-t-slow: 300ms;
+  --ds-t-arrive: 620ms;
+  --ds-arrive-step: 90ms;
+}
+@media (prefers-reduced-motion: reduce) { :root { --ds-motion: 0; } }
+:root { --ds-motion: 1; }

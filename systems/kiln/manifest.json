@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "designos-system/v1",
+  "id": "kiln",
+  "name": "Kiln",
+  "category": "Editorial · Technical",
+  "description": "Fired-clay editorial system: warm near-black ground, one ember accent on a strict budget, a variable serif whose softness rises with size, three lit elevation levels, grain on every large fill. Dark-first with a rebuilt light theme.",
+  "suits": [
+    "developer tools with an editorial voice",
+    "studios, portfolios, research products",
+    "changelogs, documentation meant to be read",
+    "long-form marketing where warmth is an asset"
+  ],
+  "avoid": [
+    "dense operational UI (trading terminals, admin tables at 12px rows)",
+    "briefs that explicitly want the cool blue-black SaaS dialect",
+    "multi-brand surfaces that cannot commit to one accent"
+  ],
+  "files": {
+    "design": "SYSTEM.md",
+    "tokens": "tokens.css",
+    "lint": "lint.json",
+    "example": "example.html"
+  },
+  "dials": {
+    "variance": 8,
+    "motion": 6,
+    "density": 4
+  },
+  "signature": {
+    "canonical": "index preview plate",
+    "truth": "the work is the material, so the index shows the artefact rather than describing it",
+    "max": 1
+  },
+  "ceiling": {
+    "typefaces": "named",
+    "lightModel": "declared",
+    "elevationLevels": 3,
+    "texture": "always on",
+    "arrival": "mask rise, index-driven",
+    "sectionCompositions": 4
+  },
+  "source": {
+    "type": "original",
+    "origin": "Authored for DesignOS. Not derived from, and deliberately not an imitation of, any shipping product's design language (brain/originality.md swap test)."
+  },
+  "conformance": "node validators/check-system-conformance.js <target> --system kiln"
+}

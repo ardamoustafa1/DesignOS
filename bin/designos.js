@@ -1581,6 +1581,7 @@ switch (cmd) {
   case 'case':
     require('./cli/commands/community').execute(cmd, firstPositional(rest), rest, commandContext()); break;
   case 'doctor': doctor(); break;
+  case 'system': require('./cli/commands/design-system').execute(firstPositional(rest), rest, commandContext()); break;
   // ── New commands ──────────────────────────────────────────────────
   case 'dial': require('./cli/commands/dial').execute(rest, commandContext()); break;
   case 'generate': require('./cli/commands/generate').execute(rest, commandContext()); break;

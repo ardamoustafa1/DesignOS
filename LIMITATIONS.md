@@ -16,14 +16,14 @@ output would be the least credible thing it could do
 | Required dependencies | 2 (`@jridgewell/trace-mapping`, `axe-core`) |
 | Optional dependencies (browser/evidence features) | 1 (`playwright`) |
 | Registry rules / providers | 40 / 8 |
-| Validated knowledge modules | 72 |
+| Validated knowledge modules | 74 |
 | Industry packs | 24 |
 | Motion recipes / framework stacks | 15 / 6 |
 | Executable adapter combinations | 90 |
 | Full + reduced-motion browser scenarios | 180 |
-| Knowledge graph nodes | 143 |
+| Knowledge graph nodes | 145 |
 | Golden projects | 5 |
-| Component AST directions / CLI command modules | 3 / 31 |
+| Component AST directions / CLI command modules | 3 / 32 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
 | Mission 4 leader features | 18 / 18 implemented |
 | Inspectable pattern atlas | 15 patterns |
@@ -127,6 +127,96 @@ reference resolves to a real file) but not exhaustively tested for *completeness
 whether every realistic brief actually finds the module it needs. Finding #2 in the field
 report (modules missing cross-references to a newly-added file) is the exact failure mode
 to expect more of: a module can exist and still be effectively invisible to routing.
+
+## 7. The reference artifacts meet the Ceiling Contract; the advisories are open
+
+`CLAUDE.md` §4.5 originally landed after the artifacts were built, and the sweep found 16
+violations. Those are closed. `npm run audit:ceiling` now reports:
+
+| Target | Violations | Advisories |
+|---|---:|---:|
+| `goldens/` | 0 | 12 |
+| `website/` | 0 | 6 |
+| `examples/` | 0 | 10 |
+| `systems/` | 0 | 0 |
+
+What closing them involved, and what it did not: the goldens gained named typefaces, a
+declared light model, a three-level tinted elevation stack, grain, and a second container
+width; `website/` had seven pure-black shadows tinted, with the deliberate anti-pattern
+exhibit in `before-after.html` opted out with a stated reason rather than "fixed". Golden
+pixel-diff evidence was regenerated (`npm run update:goldens`) and the suite verifies clean.
+
+**§4.5 now has a seventh requirement: one memorable moment**, closing either the material
+route (an inspectable artifact — table, code block, chart, framed screenshot) or the motion
+route (evidence of a licensed signature technique), never both, and never mandating motion
+specifically — `brain/wow-calibration.md` §1 ranks motion fourth of four routes, after
+composition, material, and voice, and a checker that forced motion on every page would
+contradict the module it is meant to enforce. `ceiling-no-memorable-moment` reuses
+`validators/signature-fingerprints.js`'s eleven named techniques plus three broader
+mechanism patterns (border-beam, pointer-follow, sticky scroll-rail) so a hand-rolled
+signature is recognized by its shape, not by matching motion/signature-moments.md's sample
+function names verbatim. Verified independently in both directions:
+`examples/rehearsal-devtool.html` (material-only, a real `<table>`, no JS signature) and
+`examples/editorial-portfolio.html` (motion-only, a pointer-follow plate, no table) both stay
+clean — the rule accepts either route alone by design, asserted in
+`validators/test-craft-ceiling.js`.
+
+**The 28 remaining advisories are real and open.** Mostly `ceiling-no-arrival`,
+`ceiling-uniform-rhythm`, and `ceiling-single-container` on surfaces that genuinely have
+none — the flat documentation pages under `website/` and the dashboard and docs goldens,
+where an arrival is arguably wrong anyway (`motion/arrival.md` forbids it on app surfaces) —
+plus a handful of new `ceiling-no-memorable-moment` hits (`examples/index.html`, a listing
+page; `examples/showcase-relay-pricing.html`, which has no comparison table). Each needs a
+per-surface judgment, not a sweep, which is why `npm run validate:ceiling` gates on
+violations and prints advisories rather than failing on them.
+
+Three fixes in this pass were to the checker, not the artifacts, and all three were false
+negatives that would have let real flatness through: `--shadow-rgb: 4 6 12` parsed as a
+single-layer cast shadow (reporting the flattest possible verdict on files whose elevation
+is correct); `#100D0A` did not match `rgb(16 13 10 / .72)` as the same palette entry; and
+`process.exit()` immediately after a large `--json` write truncated the payload past the
+64KB pipe buffer in three validators (`check-system-integrity`, `check-system-conformance`,
+`check-craft-ceiling`) — silent corruption for anything piping their output.
+
+## 8. 151 of the 152 design systems are imported, and 62% of them contradict themselves
+
+`systems/` ships 153 packages. Exactly **one** (`kiln`) was authored for DesignOS. The rest
+are imported from nexu-io/open-design's catalog and upgraded on import — see `systems/NOTICE`
+for the licence and the modification list.
+
+**The measured defect.** `npm run audit:systems` diffs the colours each package names in its
+prose against the values in its own `tokens.css`:
+
+```
+150 packages judged · 140 over the 20% threshold
+1203/1925 colours named in prose (62%) do not exist in the token layer
+```
+
+Twenty-five packages disagree with themselves completely. `atelier-zero`'s prose specifies
+warm ivory paper `#efe7d2` with a coral accent `#ed6f5c`, under the sentence "All values are
+tokens. Do not invent new hex" — above a token file that reads pure white with a black
+accent. An agent handed the prose and an agent handed the tokens build different pages, and
+neither is wrong by its own lights. `kiln` is at 0%; four packages are.
+
+This is inherited, not introduced — the importer copies prose and tokens faithfully and does
+not reconcile them, because which half is stale is the package author's call and not a
+checker's. `systems/README.md` states the rule (tokens win). The checker exists so the
+disagreement is at least visible; it does not fix it, and until a package is reconciled by
+hand its prose should be read as commentary rather than contract.
+
+**What the catalog still does not buy:**
+
+1. **Field evidence.** Nobody has built a real product with any of these packages. The
+   `accent.maxSolidFills` budgets in generated `lint.json` files are the importer's
+   conservative defaults, marked untested in each file. This is limitation #3 repeating
+   itself with nicer folders.
+2. **Composition.** Two of the seven Ceiling Contract requirements — section rhythm and
+   optical corrections — are page decisions, not token values, and cannot be imported. A
+   conforming token layer does not make a page premium; the generated fixtures demonstrate
+   the token layer only, deliberately.
+3. **Originality.** A package derived from a real company's public design language produces
+   competent imitation, which is what `brain/originality.md` spends its whole length arguing
+   against. The swap test fails by construction on most of the catalog.
 
 ## What would change these ratings
 

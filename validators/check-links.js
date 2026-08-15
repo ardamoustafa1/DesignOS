@@ -31,6 +31,9 @@ const SKIP_HOSTS = new Set([
   'twitter.com', 'x.com', 'linkedin.com', 'facebook.com',
   'fonts.googleapis.com', 'fonts.gstatic.com',
   'live-url', 'localhost', '127.0.0.1', 'example.com',
+  // returns 404 to non-browser agents and to requests from outside its region — the URL is
+  // correct, the checker simply cannot reach it (cited as a source page in systems/xiaohongshu)
+  'xiaohongshu.com', 'www.xiaohongshu.com',
 ]);
 
 // Collect all .md files under target
@@ -48,7 +51,10 @@ function collectFiles(target) {
 }
 
 // Extract all http/https links from markdown text
-const URL_RE = /https?:\/\/[^\s)\]>"']+/g;
+// Terminators include the backtick: a URL written inside a code span (`https://example.com/`)
+// otherwise swallows the closing backtick and reports a false 404 for every such link.
+// Trailing sentence punctuation is trimmed for the same reason.
+const URL_RE = /https?:\/\/[^\s)\]>"'`]+/g;
 
 function extractLinks(file) {
   const lines = fs.readFileSync(file, 'utf8').split('\n');

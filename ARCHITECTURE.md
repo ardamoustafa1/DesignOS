@@ -31,14 +31,14 @@ evidence, and release gates are executable.
 | Required dependencies | 2 (`@jridgewell/trace-mapping`, `axe-core`) |
 | Optional dependencies (browser/evidence features) | 1 (`playwright`) |
 | Registry rules / providers | 40 / 8 |
-| Validated knowledge modules | 72 |
+| Validated knowledge modules | 74 |
 | Industry packs | 24 |
 | Motion recipes / framework stacks | 15 / 6 |
 | Executable adapter combinations | 90 |
 | Full + reduced-motion browser scenarios | 180 |
-| Knowledge graph nodes | 143 |
+| Knowledge graph nodes | 145 |
 | Golden projects | 5 |
-| Component AST directions / CLI command modules | 3 / 31 |
+| Component AST directions / CLI command modules | 3 / 32 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
 | Mission 4 leader features | 18 / 18 implemented |
 | Inspectable pattern atlas | 15 patterns |
@@ -83,6 +83,10 @@ README, or architecture count change must be regenerated intentionally with
 ├──────────────────────────────────────────────────────────────────┤
 │ KNOWLEDGE     foundations/ · components/ · patterns/ · motion/   │
 │               psychology/ · industries/ · native/                 │
+├──────────────────────────────────────────────────────────────────┤
+│ SYSTEMS       systems/<slug>/                                     │
+│               SYSTEM.md · tokens.css · lint.json · example.html   │
+│               the values, and a contract that can be verified     │
 ├──────────────────────────────────────────────────────────────────┤
 │ MOTION        runtime/motion/ · fixtures/frameworks/             │
 │               recipe state · controller lifecycle · six adapters  │

@@ -67,7 +67,7 @@ The kernel contains:
 - The full routing table (50+ surface → module mappings)
 - The 10-step boot sequence
 - Non-negotiable standards (WCAG 2.2 AA, Lighthouse ≥95, 4px grid, etc.)
-- The Fourteen Questions pre-delivery checklist
+- The Sixteen Questions pre-delivery checklist
 - The Output Contract
 
 > **Note:** The generated rules file is a snapshot. Re-export after every DesignOS upgrade:

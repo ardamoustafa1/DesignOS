@@ -14,7 +14,11 @@
 }
 * { box-sizing: border-box; }
 body {
-  margin: 0; font-family: ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+  margin: 0; /* Named faces, not the system stack (foundations/typography.md § Type identity).
+   Goldens must render identically offline, so they name real faces and degrade
+   through them rather than starting at system-ui, which resolves to a different
+   typeface on every OS. Shipping products self-host and preload instead. */
+  font-family: "Geist", "SF Pro Text", "Segoe UI Variable", "Helvetica Neue", sans-serif;
   background: var(--bg); color: var(--text); line-height: 1.5;
 }
 a { color: inherit; }

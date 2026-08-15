@@ -4,6 +4,245 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+### Added — §4.5 requirement 7: one memorable moment (material or motion, never both)
+
+`brain/wow-calibration.md` names four routes to memorable — composition, material, voice,
+motion — and ranks motion fourth: "before opening the catalogue, answer: could composition,
+material, or voice carry this?" The Ceiling Contract covered composition (requirement 4) but
+had no requirement for the other measurable routes, so a page could satisfy every other item
+and still be inert and generic — no artifact, no signature, nothing to remember.
+
+- **`CLAUDE.md` / `AGENTS.md` §4.5, requirement 7.** Closes on EITHER route: an inspectable
+  material artifact (a real table, code block, chart, or framed screenshot) OR evidence of
+  one licensed signature technique. Never both, and never motion specifically — voice is the
+  fourth route and is correctly left unchecked because a regex cannot judge copy quality.
+- **`validators/check-craft-ceiling.js` — `ceiling-no-memorable-moment` (P3).** Material
+  detection: `<table>`, a substantial `<pre>`/`<code>` block, an inline `<svg>` with real
+  chart markup, or a "framed screenshot" selector (shadow + radius, name matching
+  `shot|screenshot|frame|artifact|report|plate|preview`). Motion detection: reuses
+  `validators/signature-fingerprints.js`'s eleven named techniques, plus three broader
+  mechanism patterns matched by shape rather than by motion/signature-moments.md's sample
+  function names — `@property --angle` + conic-gradient (border beam), pointermove + a
+  `.style.transform` write + `will-change` toggle (pointer-follow — magnetic/spotlight/tilt
+  share this shape), and a `position: sticky` stage inside a rail ≥150vh (scroll story).
+- **Verified in both directions**, not just "clean run" — `validators/test-craft-ceiling.js`
+  asserts a material-only fixture and a motion-only fixture both pass, so the rule cannot
+  regress into silently requiring both routes. `examples/rehearsal-devtool.html`
+  (material-led, no JS signature) and `examples/editorial-portfolio.html` (a pointer-follow
+  plate, no table) are the real-world proof: both stay clean.
+- Sweep: `systems/` stays at 0 violations / 0 advisories (every generated fixture has a
+  table). `goldens/`, `website/`, `examples/` gain zero new violations and a handful of new
+  advisories on surfaces that genuinely have neither route yet — logged honestly in
+  `LIMITATIONS.md` §7 rather than papered over with a placeholder table.
+
+### Fixed — the reference artifacts now meet the Ceiling Contract
+
+The 16 §4.5 violations logged as `LIMITATIONS.md` #7 are closed, and the two checker bugs
+found while closing them mattered more than the artifacts did.
+
+- **`goldens/`: 8 violations → 0.** Every golden shipped `ui-sans-serif` as its brand face.
+  All seven pages now name real faces and degrade through them; `flagship-launch` also
+  gained a declared light model, a three-level tinted elevation stack with lit edges, grain,
+  fill gradation with hero→footer falloff, one surface above elevation 1, display tracking
+  on the hero, and a second container width. Pixel-diff evidence regenerated with
+  `npm run update:goldens`; `npm run test:goldens` verifies clean.
+- **`website/`: 8 violations → 0.** Seven pure-black cast shadows tinted to the site's own
+  ink hue. The deliberate anti-pattern exhibit in `before-after.html` is opted out with a
+  stated reason rather than "fixed" — its Arial stack and black glow are the specimens on
+  display.
+- **Two checker false negatives fixed.** `--shadow-rgb: 4 6 12` parsed as a single-layer
+  cast shadow, so `ceiling-flat-elevation` reported the flattest possible verdict on files
+  whose elevation was correct; and `#100D0A` did not match `rgb(16 13 10 / .72)` as one
+  palette entry, so `system-offpalette-color` fired on legitimate use of the ground at
+  alpha. Both would have hidden real failures behind noise.
+- **Large piped JSON was truncated.** `check-system-integrity`, `check-system-conformance`,
+  and `check-craft-ceiling` called `process.exit()` immediately after writing their `--json`
+  report; past the 64KB pipe buffer that truncates the payload mid-string. All three now set
+  `process.exitCode` and return.
+
+### Added — `validators/check-system-integrity.js`
+
+`check-system-conformance.js` asks whether a page obeys its system. This asks whether the
+system is coherent at all, which turns out to be the prior question — and the answer for an
+imported catalog is mostly no.
+
+```
+npm run audit:systems
+150 packages judged · 140 over the 20% threshold
+1203/1925 colours named in prose (62%) do not exist in the token layer
+```
+
+Twenty-five packages disagree with themselves completely. `atelier-zero` specifies warm
+ivory paper `#efe7d2` and a coral accent `#ed6f5c` under the sentence "All values are
+tokens. Do not invent new hex", above a token file that reads pure white with a black
+accent. Two rules: `system-prose-token-drift` (a named colour exists nowhere in the tokens)
+and `system-prose-ground-drift` (prose and tokens disagree about the ground, the one value
+everything else derives from). Fixtures separate agrees / contradicts / ground-drift /
+too-thin; `kiln` measures 0%. Wired into `npm test`.
+
+### Added — oklch support in the importer
+
+`oklch()` grounds are converted to sRGB exactly (verified against the canonical red and
+both achromatic endpoints), so the light-model derivation no longer skips packages that
+declare colour in oklch. `cloudflare-kumo` imports; the catalog is 152/152.
+
+
+### Added — a 152-package system catalog, imported and upgraded
+
+`systems/` went from one package to 152: `kiln` (authored) plus 151 imported from
+nexu-io/open-design's catalog (Apache-2.0).
+
+- **`scripts/import-design-systems.js`** — the importer, and the reason this is not a copy.
+  Every upstream package shares one token schema whose elevation is `--elev-flat` +
+  `--elev-ring`: no light source, no tinted shadow, no lit edge, no texture, no arrival —
+  a flat page by the standard in `CLAUDE.md` §4.5. For each package the importer derives,
+  **from that package's own palette**, a light model, a three-level elevation stack whose
+  shadow hue is the package's own ground (never black alpha), a lit-edge value chosen by
+  whether the ground reads light or dark, grain at the opacity that ground can carry, and
+  arrival timing using the upstream easing. It then generates `lint.json` and a component
+  fixture, so each package is *checkable* rather than only readable.
+- **`scripts/templates/system-example.html`** — the generated fixture. Declares no colour,
+  radius, spacing step, or easing of its own; resolves entirely against `tokens.css`.
+- **`systems/NOTICE`** — upstream project, licence, imported commit, and the full list of
+  modifications, as the upstream licence requires. Also states the trademark position for
+  the packages named after real companies. The importer refuses to run without licence text
+  to carry, and refuses copyleft outright.
+- **`designos system list`** now groups by category and takes `--category`, `--grep`, and
+  `--verbose`; an unfiltered dump of 152 packages is unreadable.
+- Every package passes `check-system-conformance.js` against its own contract **and**
+  `check-craft-ceiling.js` with zero findings. `validators/test-system-conformance.js`
+  asserts both for every directory under `systems/` on each `npm test`, and was verified to
+  fail when a single package is made to drift.
+- `cloudflare-kumo` is skipped: its ground is `oklch()` and the light-model derivation needs
+  an sRGB hex. The importer reports the skip rather than guessing.
+
+Honest scope in `LIMITATIONS.md` §8: breadth is now at parity, field evidence is not — no
+product has been built with any of these, the generated accent budgets are untested
+defaults, and an imported brand system produces competent imitation, which is what
+`brain/originality.md` argues against. Two of the seven ceiling requirements (section
+rhythm, optical corrections) are composition decisions and cannot be imported at all.
+
+### Fixed — three more validator bugs, all surfaced by importing 152 stylesheets
+
+Running the gates over a catalog an order of magnitude larger than the repo had before is
+the cheapest fuzzing available, and it found bugs that would have fired on anyone's code:
+
+- **`check-craft-ceiling.js` judged token layers as pages.** A stylesheet that only defines
+  custom properties has no surfaces, so reporting "every shadow in this file is
+  single-layer" on it was noise — 144 false advisories across the catalog. A file whose
+  declarations are ≥90% custom properties is now treated as a token layer and skips the
+  page-level depth rules; the value rules (black shadows, system fonts, display tracking)
+  still apply, because those are wrong wherever they appear.
+- **`check-links.js` swallowed the closing backtick of a URL in a code span.** Any
+  `` `https://example.com/` `` reported a false 404. The URL pattern now terminates at a
+  backtick. `xiaohongshu.com` is added to the skip list — it answers 404 to non-browser
+  agents, which is what that list is for.
+- **`check-refs.sh` false-positived on link labels**, which is why the importer now emits
+  upstream paths as unbackticked markdown link labels rather than code spans.
+
+### Fixed — `check-registry.js` treated comments as cascade
+
+Found by importing 152 stylesheets. The `source-raw-color` rule scanned raw text, so a
+`:root` *mentioned in a comment* was taken for the real one and every token after it was
+reported as living outside the token layer (4 P1s in one imported package). The rule now
+runs against a length-preserving comment-blanked copy, which also subsumes the earlier fix
+for hexes inside comments. Vendored copy re-synced.
+
+### Added — design-system packages with a conformance contract
+
+DesignOS could tell an agent how to *think* about type, light, and hierarchy, and had no
+way to tell it what *this product's* amber is, what its radius scale is, or how many solid
+accent fills a page may carry. The nearest thing — `memory/packs/premium-saas.md` — was
+seven bullet points. Reasoning without a system produces a competent median, which is the
+same complaint the Ceiling Contract addressed from the other direction.
+
+The tools that already solve this ship brand contracts and inject them into a prompt. That
+has one failure mode and it is always the same: the first screen obeys the system and the
+fourth has drifted, because nothing was measuring. So packages here carry a gate.
+
+- **`systems/` — the package format.** `manifest.json` (discovery, dials, signature,
+  `suits`/`avoid`), `SYSTEM.md` (the prose contract, opening with the light model),
+  `tokens.css` (single source of truth), `lint.json` (policy: required tokens, budgets,
+  scales — deliberately **no colours**), `example.html` (baked component fixture). Spec and
+  honest catalog state in [`systems/README.md`](systems/README.md).
+- **`systems/kiln/` — the first package.** Fired-clay editorial system: warm near-black
+  ground, one ember accent capped at three solid fills per document, Fraunces with a `SOFT`
+  axis that rises with size, three lit elevation levels, grain always on, and a light theme
+  that rebuilds the elevation strategy rather than swapping tokens (the ember darkens from
+  `#E8703A` to `#B33F14` because `#E8703A` measures 2.65:1 on paper).
+- **`validators/check-system-conformance.js`** — eleven rules answering "does this page
+  still belong to the system it claims?": off-palette colour, forbidden values, typeface
+  drift, radius off-scale, container off-scale, easing off-system, ad-hoc elevation, accent
+  overuse, missing texture, missing tokens. **The palette is derived from `tokens.css` at
+  check time**, never duplicated into `lint.json`, so the contract cannot drift from the
+  values. `var()` references are resolved, so a page written correctly in tokens is still
+  checked rather than skipped.
+- **`validators/test-system-conformance.js`** — asserts each rule individually against a
+  drift fixture, asserts package structure, and asserts that **every package's own
+  `example.html` conforms to its own system**.
+- **`designos system list | show <slug> | tokens <slug> | check <target> --system <slug>`**
+  — `show` prints the whole contract to stdout, so any agent in any CLI consumes it by pipe
+  or paste. No daemon, no account, no key, nothing leaving the machine.
+- Kernel: boot step 5b loads a system when one is chosen, a routing row for design-system
+  requests, and §4.5 now names conformance alongside the ceiling check.
+
+### Fixed — `check-craft-ceiling.js` false positives on correct code
+
+Both found by running the new checker against a token-driven page, which is what the
+ceiling asks for in the first place:
+
+- `box-shadow: var(--elev-2)` was counted as a single-layer shadow, so keeping elevation in
+  a token layer reported the page as flat. `var()` values are now unresolvable rather than
+  flat, and only *cast* shadows (non-inset, non-zero blur) are judged — a focus ring and an
+  inset highlight are edges, not failed elevation.
+- `@media (max-width: 720px)` was counted as a container width, so a page with correct
+  responsive breakpoints and token-based containers was told it had only one width.
+
+### Added — the Ceiling Contract
+
+DesignOS enforced floors almost exclusively: contrast that must pass, tokens that must
+exist, named defaults that must never ship. A page could satisfy every rule in the kernel
+and still read as flat, unlit, system-font, four-identical-card-sections generated work —
+which is precisely the complaint the rules were supposed to prevent. Passing a ban list is
+not the same as making something.
+
+- **`CLAUDE.md` / `AGENTS.md` §4.5 — The Ceiling Contract.** Six requirements phrased as
+  *must be present*, not *must be absent*: named typefaces, a declared light model with a
+  real elevation stack, texture on large fills, section rhythm, a composed arrival, and
+  optical corrections. A page meeting §4 and missing §4.5 caps at 89 on UI Craft and
+  Distinctiveness. It also states the thing the restraint doctrine kept being misread as:
+  **restraint governs effects and signature moments, and never licenses a plain page.**
+  The Fourteen Questions became the Sixteen Questions (materiality survives effect-stripping;
+  type, light, and rhythm survive the swap test).
+- **`foundations/materiality.md`** — new. The layer between "correct" and "expensive":
+  declaring one light source, elevation as a four-property stack (occlusion, key shadow, lit
+  edge, surface tint) with hue-tinted shadows, two-tone edges, radius nesting, grain and fill
+  gradation, and the six optical corrections. Includes the four-step materiality pass.
+- **`motion/arrival.md`** — new. The first 1200ms, which `principles.md` ("default: it does
+  not move") and `page-and-scroll.md` (above-the-fold excluded from reveals) left uncovered
+  between them. Four-beat structure, five reveal vocabularies, index-driven sequencing, and
+  the three failure states an arrival must survive. The LCP element never fades in.
+- **`foundations/typography.md` § Type identity** — display face chosen for its opinion,
+  display-scale optical settings by size band, variable-font axes. `system-ui` /
+  `ui-sans-serif` as a brand face is now a named anti-pattern.
+- **`foundations/layout.md` § Section rhythm** — no composition repeats in adjacent
+  sections, ≥4 per page, ≥2 container widths and ≥2 grounds, one large statement moment.
+- **`validators/check-craft-ceiling.js`** — new validator with `validators/test-craft-ceiling.js`
+  and two fixtures. Ten rules split P2 (a ceiling rule is contradicted) / P3 (a ceiling
+  requirement is absent, advisory unless `--strict`). Wired as `npm run validate:ceiling`
+  and into `npm test`.
+- **`examples/editorial-portfolio.html`** — the ceiling built out end to end, clean under
+  every validator including the new one.
+
+### Known gap
+
+The existing reference artifacts were swept with the new validator and most of them fail
+it: `goldens/` 8 violations / 13 advisories, `website/` 8 / 7, `examples/` 0 / 8. Full
+table and reasoning in `LIMITATIONS.md` §7. `npm run validate:ceiling` gates on the two
+artifacts that conform; `npm run audit:ceiling` reports the gap without failing the build.
+The goldens set the imitation bar, so they are the next thing to rebuild — their pixel-diff
+evidence has to be regenerated with the artwork, which is a separate pass.
+
 ## [2.2.0] — 2026-08-12
 
 ### Added — motion module hardening

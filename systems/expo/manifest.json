@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "designos-system/v1",
+  "id": "expo",
+  "name": "Expo",
+  "category": "Developer Tools",
+  "description": "Bundled Open Design package for Expo, derived from curated DESIGN.md, tokens.css, and components.html fixtures.",
+  "suits": [],
+  "avoid": [],
+  "files": {
+    "design": "SYSTEM.md",
+    "tokens": "tokens.css",
+    "lint": "lint.json",
+    "example": "example.html"
+  },
+  "ceiling": {
+    "typefaces": "from upstream --font-* tokens",
+    "lightModel": "derived on import",
+    "elevationLevels": 3,
+    "texture": "added on import",
+    "arrival": "tokens provided; composition is the page's job",
+    "sectionCompositions": "not derivable — page responsibility"
+  },
+  "source": {
+    "type": "imported",
+    "upstream": "https://github.com/nexu-io/open-design",
+    "commit": "f9c07517b74ace4fe38b55d8534018267fc300f5",
+    "licence": "Apache-2.0",
+    "modifications": [
+      "added the DesignOS ceiling extension to tokens.css (light model, three-level tinted elevation stack, lit edge, grain, arrival timing) derived from this package's own palette",
+      "generated lint.json as a machine-checkable conformance contract",
+      "generated example.html as a component fixture",
+      "prepended a DesignOS supplement to SYSTEM.md; the upstream prose follows verbatim under \"Upstream contract\""
+    ],
+    "notice": "../NOTICE"
+  },
+  "conformance": "node validators/check-system-conformance.js <target> --system expo"
+}

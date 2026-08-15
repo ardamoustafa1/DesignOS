@@ -74,12 +74,15 @@ h1, h2 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 1.15
 @media (prefers-color-scheme: dark) { .chip.good { background: rgb(74 222 128 / 0.12); } }
 
 .pin { position: absolute; z-index: 5; transform: translate(-50%, -50%); }
-.pin button { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; background: var(--danger); color: var(--text-on-danger); font: 700 0.6875rem var(--font-mono); cursor: pointer; box-shadow: 0 2px 8px rgb(0 0 0 / 0.3); }
-.pin .note { position: absolute; top: 32px; left: 50%; transform: translateX(-50%); width: 260px; background: var(--bg-surface-raised); color: var(--text-secondary); border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-size: 0.8125rem; line-height: 1.5; box-shadow: 0 8px 24px rgb(0 0 0 / 0.18); display: none; text-align: left; }
+.pin button { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; background: var(--danger); color: var(--text-on-danger); font: 700 0.6875rem var(--font-mono); cursor: pointer; box-shadow: 0 2px 8px rgb(22 22 26 / 0.34); }
+.pin .note { position: absolute; top: 32px; left: 50%; transform: translateX(-50%); width: 260px; background: var(--bg-surface-raised); color: var(--text-secondary); border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-size: 0.8125rem; line-height: 1.5; box-shadow: 0 8px 24px rgb(22 22 26 / 0.18); display: none; text-align: left; }
 .pin .note b { color: var(--danger); display: block; font-family: var(--font-mono); font-size: 0.6875rem; margin-bottom: 2px; }
 .pin.open .note { display: block; }
 
-/* ====== THE BAD PAGE (deliberately, precisely wrong) ====== */
+/* ====== THE BAD PAGE (deliberately, precisely wrong) ======
+   ceiling-ok: this block IS the anti-pattern exhibit — the Arial stack, the pure-black
+   glow, and the rainbow cards are the specimens being shown, not choices being made.
+   Fixing them would delete the comparison the page exists to make. */
 .bad-page { background: #ffffff; color: #999; font-family: Arial, Helvetica, sans-serif; text-align: center; position: relative; /* contrast-ok: deliberate anti-pattern demo — low contrast IS the exhibit */ }
 .bad-nav { display: flex; justify-content: center; gap: 14px; padding: 10px; flex-wrap: wrap; font-size: 13px; background: linear-gradient(90deg, #7b2ff7, #f107a3); color: #fff; }
 .bad-nav span { text-decoration: underline; cursor: pointer; }
@@ -90,6 +93,7 @@ h1, h2 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 1.15
 .bad-ctas .b { padding: 8px 14px; border-radius: 24px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; border: 0; background: linear-gradient(90deg, #ff512f, #dd2476); color: #fff; }
 .bad-ctas .b.alt { background: linear-gradient(90deg, #11998e, #38ef7d); }
 .bad-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 6px; padding: 18px 8px; }
+/* ceiling-ok: the pure-black glow is one of the specimens on exhibit here */
 .bad-card { border: 2px solid #ddd; border-radius: 4px; padding: 8px 6px; box-shadow: 0 0 10px #000; }
 .bad-card .em { font-size: 22px; }
 .bad-card h3 { font-size: 12px; color: #aaa; text-transform: uppercase; margin: 4px 0; }
@@ -134,6 +138,8 @@ h1, h2 { color: var(--text-primary); letter-spacing: -0.025em; line-height: 1.15
 <main>
   <div class="container top">
     <span class="eyebrow">The demo</span>
+    <!-- ceiling-ok: the live bad/good page toggle below IS the inspectable artifact — a
+         rendered before/after comparison, not a static table, but the same material route -->
     <h1>Same brief. Same model. One difference.</h1>
     <p>Both pages answer the identical prompt. The left one is what agents ship by default — every flaw tagged with its <a href="https://github.com/ardamoustafa1/DesignOS/blob/main/museum/README.md">Anti-Pattern Museum</a> exhibit number (tap the pins). The right one went through the DesignOS loop.</p>
     <span class="brief">"Design a landing page for Relay, an incident-management tool for on-call teams."</span>

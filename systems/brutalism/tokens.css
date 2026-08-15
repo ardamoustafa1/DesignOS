@@ -1,0 +1,106 @@
+/* design-systems/brutalism/tokens.css
+ * Structured token bindings for Brutalism.
+ * brutalist UI with hard black lines, loud yellow action, and intentionally raw layout structure.
+ */
+
+:root {
+  --bg: #f5f1e8;
+  --surface: #ffffff;
+  --surface-warm: #ffef5a;
+  --fg: #000000;
+  --fg-2: #222222;
+  --muted: #555555;
+  --meta: #000000;
+  --border: #000000;
+  --border-soft: #000000;
+  --accent: #ffef5a;
+  --accent-on: #000000;
+  --accent-hover: color-mix(in oklab, var(--accent), black 8%);
+  --accent-active: color-mix(in oklab, var(--accent), black 14%);
+  --success: #00b050;
+  --warn: #ff8c00;
+  --danger: #ff2b2b;
+  --font-display: Arial Black, Impact, sans-serif;
+  /* ceiling-ok: "Arial" is this brand's own stack upstream, recorded faithfully — see SYSTEM.md provenance. Substituting a named face here would misreport the brand. */
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", ui-monospace, monospace;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 17px;
+  --text-lg: 20px;
+  --text-xl: 28px;
+  --text-2xl: 42px;
+  --text-3xl: 64px;
+  --text-4xl: 88px;
+  --leading-body: 1.35;
+  --leading-tight: 0.98;
+  --tracking-display: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --section-y-desktop: 88px;
+  --section-y-tablet: 64px;
+  --section-y-phone: 44px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-pill: 9999px;
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 8px 8px 0 #000000;
+  --focus-ring: 0 0 0 4px #000000, 0 0 0 8px #ffef5a;
+  --motion-fast: 90ms;
+  --motion-base: 140ms;
+  --ease-standard: steps(2, end);
+  --container-max: 1160px;
+  --container-gutter-desktop: 36px;
+  --container-gutter-tablet: 24px;
+  --container-gutter-phone: 16px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════
+   DESIGNOS CEILING EXTENSION — added on import, not present upstream.
+
+   The upstream token schema stops at --elev-flat and --elev-ring: a two-value elevation
+   with no light source, no tinted shadow, no lit edge, no texture. Everything below is
+   derived from THIS package's own palette so the craft layer belongs to the brand rather
+   than being bolted on (CLAUDE.md §4.5, foundations/materiality.md).
+
+   LIGHT MODEL for brutalism
+     ground      #f5f1e8 → read as light
+     position    above and slightly left (x -8%, y -100%)
+     temperature --ds-light-temp
+     strategy    raise with SHADOW — the cast shadow does the work
+   ══════════════════════════════════════════════════════════════════════════════════════ */
+:root {
+  --ds-light-temp: #FFD2A6;
+  --ds-shadow-rgb: 42 40 35;
+  --ds-edge-lit: rgb(255 255 255 / 0.70);
+  --ds-ring: rgb(0 0 0 / 0.10);
+
+  --ds-elev-1: 0 1px 2px rgb(var(--ds-shadow-rgb) / 0.1),
+               0 8px 24px -8px rgb(var(--ds-shadow-rgb) / 0.14),
+               inset 0 1px 0 var(--ds-edge-lit);
+  --ds-elev-2: 0 2px 5px rgb(var(--ds-shadow-rgb) / 0.12),
+               0 20px 50px -14px rgb(var(--ds-shadow-rgb) / 0.18),
+               inset 0 1px 0 var(--ds-edge-lit);
+  --ds-elev-3: 0 4px 10px rgb(var(--ds-shadow-rgb) / 0.14),
+               0 44px 96px -24px rgb(var(--ds-shadow-rgb) / 0.24),
+               inset 0 1px 0 var(--ds-edge-lit);
+
+  --ds-grain-opacity: 0.022;
+  --ds-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  --ds-t-fast: 130ms;
+  --ds-t-base: 200ms;
+  --ds-t-slow: 300ms;
+  --ds-t-arrive: 620ms;
+  --ds-arrive-step: 90ms;
+}
+@media (prefers-reduced-motion: reduce) { :root { --ds-motion: 0; } }
+:root { --ds-motion: 1; }

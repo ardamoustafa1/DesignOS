@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════════════════════════════════════════
+   KILN — canonical compiled tokens. Single source of truth for the package.
+   Every other file in systems/kiln/ (SYSTEM.md, lint.json, example.html) describes,
+   constrains, or demonstrates what is defined here. If a value changes, it changes here
+   first and `node validators/check-system-conformance.js` re-derives from this file.
+
+   LIGHT MODEL (foundations/materiality.md §1) — binding on every surface in this system.
+   Declared as tokens below rather than described in prose, so the light model is
+   machine-readable and cannot drift from the shadows derived off it:
+     position     above and slightly left   (x −8%, y −100%)
+     temperature  --kiln-light-temp         warm — fired clay, not glass
+     intensity    0.055 key · 0.32 occlusion
+     falloff      --kiln-ground-hi → --kiln-ground → --kiln-ground-lo (~40% dimmer)
+   ═══════════════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  color-scheme: dark light;
+
+  /* the light model, as values */
+  --kiln-light-temp: #FFD2A6;
+  --kiln-light-x: -8%;
+  --kiln-light-y: -100%;
+  --kiln-light-key: 0.055;
+  --kiln-light-occlusion: 0.32;
+
+  /* ── type ──────────────────────────────────────────────────────────────────────────
+     Three faces, three jobs, no overlap. The display face is variable and its SOFT axis
+     is Kiln's typographic signature: softness rises with size (0 at body, 40 at
+     statement scale), so large type reads warmer rather than merely bigger.            */
+  --kiln-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --kiln-text: "Inter Tight", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --kiln-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* ── palette · dark (default) ──────────────────────────────────────────────────────
+     Pure black and pure white are forbidden values in this system.                    */
+  --kiln-ground:     #100D0A;   /* page floor          */
+  --kiln-ground-lo:  #0C0A07;   /* falloff, page end   */
+  --kiln-ground-hi:  #17120D;   /* focal region, top   */
+  --kiln-surface:    #1B1611;   /* elevation 1         */
+  --kiln-raised:     #221C15;   /* elevation 2         */
+  --kiln-inverse:    #F3EDE4;   /* inverted band       */
+  --kiln-on-inverse: #17120D;
+  /* secondary text on the inverse band. Added after building a real page with Kiln found
+     the gap: the band inverts the ground, so neither --kiln-ink-2 nor the light theme's
+     ramp applies to it, and the page was left inventing a value. */
+  --kiln-on-inverse-2: #4A4038;
+
+  --kiln-ink:     #F5EFE7;      /* headings, primary   */
+  --kiln-ink-2:   #B3A797;      /* body                */
+  --kiln-ink-3:   #8A7E70;      /* metadata, mono      */
+
+  --kiln-ember:      #E8703A;   /* the one accent      */
+  --kiln-ember-lift: #FF8A55;   /* hover only          */
+  --kiln-on-ember:   #1A0F08;
+  --kiln-ember-wash: rgb(232 112 58 / 0.14);
+  --kiln-ok:         #7BD88F;
+
+  /* ── edges · a ring and two lit lines, never a lone border ─────────────────────── */
+  --kiln-ring:       rgb(255 244 230 / 0.075);
+  --kiln-ring-loud:  rgb(255 244 230 / 0.16);
+  --kiln-edge-lit:   rgb(255 246 235 / 0.08);
+  --kiln-edge-shade: rgb(0 0 0 / 0.28);
+
+  /* ── elevation · occlusion + key + lit edge, shadow tinted with the ground hue ──── */
+  --kiln-shadow-rgb: 24 12 4;
+  --kiln-elev-1: 0 1px 2px rgb(var(--kiln-shadow-rgb) / .30),
+                 0 8px 24px -8px rgb(var(--kiln-shadow-rgb) / .26),
+                 inset 0 1px 0 var(--kiln-edge-lit);
+  --kiln-elev-2: 0 2px 5px rgb(var(--kiln-shadow-rgb) / .34),
+                 0 20px 50px -14px rgb(var(--kiln-shadow-rgb) / .36),
+                 inset 0 1px 0 rgb(255 246 235 / .10);
+  --kiln-elev-3: 0 4px 10px rgb(var(--kiln-shadow-rgb) / .40),
+                 0 44px 96px -24px rgb(var(--kiln-shadow-rgb) / .52),
+                 inset 0 1px 0 rgb(255 246 235 / .12);
+
+  /* ── texture · always on, never visible ────────────────────────────────────────── */
+  --kiln-grain-opacity: 0.035;
+  --kiln-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* ── geometry ──────────────────────────────────────────────────────────────────── */
+  --kiln-r-sm: 6px;
+  --kiln-r-md: 10px;
+  --kiln-r-lg: 18px;
+  --kiln-r-pill: 9999px;
+
+  --kiln-s1: 4px;   --kiln-s2: 8px;   --kiln-s3: 12px;  --kiln-s4: 16px;  --kiln-s5: 24px;
+  --kiln-s6: 32px;  --kiln-s7: 48px;  --kiln-s8: 64px;  --kiln-s9: 96px;  --kiln-s10: 128px;
+
+  /* ── containers · three widths, because one width is a column, not a composition ── */
+  --kiln-w-wide:   1340px;
+  --kiln-w-base:   1120px;
+  --kiln-w-narrow: 680px;
+
+  /* ── motion ────────────────────────────────────────────────────────────────────── */
+  --kiln-t-fast: 130ms;
+  --kiln-t-base: 200ms;
+  --kiln-t-slow: 300ms;
+  --kiln-t-arrive: 620ms;
+  --kiln-arrive-step: 90ms;
+  --kiln-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --kiln-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --kiln-motion: 1;   /* reduced-motion multiplier — distance collapses, meaning survives */
+}
+
+/* ── palette · light ────────────────────────────────────────────────────────────────
+   Not a token swap. Light themes raise with SHADOW where dark themes raise with LIGHT,
+   so the elevation stack is rebuilt rather than re-tinted, and the accent is darkened
+   to hold 4.5:1 on paper (foundations/materiality.md §2, foundations/colors.md).      */
+@media (prefers-color-scheme: light) {
+  :root:not([data-kiln-theme="dark"]) {
+    --kiln-ground:     #F3EDE4;
+    --kiln-ground-lo:  #E9E1D4;
+    --kiln-ground-hi:  #FAF6EF;
+    --kiln-surface:    #FAF6EF;
+    --kiln-raised:     #FFFDF9;
+    --kiln-inverse:    #171310;
+    --kiln-on-inverse: #F5EFE7;
+    --kiln-on-inverse-2: #B3A797;
+
+    --kiln-ink:     #171310;
+    --kiln-ink-2:   #5C5245;
+    --kiln-ink-3:   #6F6558;
+
+    --kiln-ember:      #B33F14;
+    --kiln-ember-lift: #8F3210;
+    --kiln-on-ember:   #FFF7F1;
+    --kiln-ember-wash: rgb(179 63 20 / 0.10);
+    --kiln-ok:         #2F7A45;
+
+    --kiln-ring:       rgb(23 19 16 / 0.10);
+    --kiln-ring-loud:  rgb(23 19 16 / 0.22);
+    --kiln-edge-lit:   rgb(255 255 255 / 0.70);
+    --kiln-edge-shade: rgb(23 19 16 / 0.06);
+
+    --kiln-shadow-rgb: 74 52 32;
+    --kiln-elev-1: 0 1px 2px rgb(var(--kiln-shadow-rgb) / .10),
+                   0 8px 20px -8px rgb(var(--kiln-shadow-rgb) / .14),
+                   inset 0 1px 0 var(--kiln-edge-lit);
+    --kiln-elev-2: 0 2px 4px rgb(var(--kiln-shadow-rgb) / .12),
+                   0 18px 40px -12px rgb(var(--kiln-shadow-rgb) / .18),
+                   inset 0 1px 0 var(--kiln-edge-lit);
+    --kiln-elev-3: 0 4px 8px rgb(var(--kiln-shadow-rgb) / .14),
+                   0 40px 80px -20px rgb(var(--kiln-shadow-rgb) / .24),
+                   inset 0 1px 0 var(--kiln-edge-lit);
+
+    --kiln-grain-opacity: 0.022;
+  }
+}
+
+/* explicit override wins in both directions */
+:root[data-kiln-theme="light"] {
+  --kiln-ground:     #F3EDE4;
+  --kiln-ground-lo:  #E9E1D4;
+  --kiln-ground-hi:  #FAF6EF;
+  --kiln-surface:    #FAF6EF;
+  --kiln-raised:     #FFFDF9;
+  --kiln-inverse:    #171310;
+  --kiln-on-inverse: #F5EFE7;
+  --kiln-on-inverse-2: #B3A797;
+
+  --kiln-ink:     #171310;
+  --kiln-ink-2:   #5C5245;
+  --kiln-ink-3:   #6F6558;
+
+  --kiln-ember:      #B33F14;
+  --kiln-ember-lift: #8F3210;
+  --kiln-on-ember:   #FFF7F1;
+  --kiln-ember-wash: rgb(179 63 20 / 0.10);
+  --kiln-ok:         #2F7A45;
+
+  --kiln-ring:       rgb(23 19 16 / 0.10);
+  --kiln-ring-loud:  rgb(23 19 16 / 0.22);
+  --kiln-edge-lit:   rgb(255 255 255 / 0.70);
+  --kiln-edge-shade: rgb(23 19 16 / 0.06);
+
+  --kiln-shadow-rgb: 74 52 32;
+  --kiln-elev-1: 0 1px 2px rgb(var(--kiln-shadow-rgb) / .10),
+                 0 8px 20px -8px rgb(var(--kiln-shadow-rgb) / .14),
+                 inset 0 1px 0 var(--kiln-edge-lit);
+  --kiln-elev-2: 0 2px 4px rgb(var(--kiln-shadow-rgb) / .12),
+                 0 18px 40px -12px rgb(var(--kiln-shadow-rgb) / .18),
+                 inset 0 1px 0 var(--kiln-edge-lit);
+  --kiln-elev-3: 0 4px 8px rgb(var(--kiln-shadow-rgb) / .14),
+                 0 40px 80px -20px rgb(var(--kiln-shadow-rgb) / .24),
+                 inset 0 1px 0 var(--kiln-edge-lit);
+
+  --kiln-grain-opacity: 0.022;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --kiln-motion: 0; }
+}

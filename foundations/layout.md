@@ -27,6 +27,45 @@ Side padding: 16–24px mobile, 32px tablet, 48px+ desktop. Content never touche
 - **Sidebar shell:** 240–280px nav + fluid content. The app default (`components/dashboard.md`).
 - **Holy-grail marketing page:** nav / hero / logos / features / proof / pricing-or-CTA / FAQ / footer. Deviate by intent, not by accident (`patterns/landing-pages.md`).
 
+## Section rhythm (the difference between a page and a list)
+
+Pick the right composition per section and a page still fails if *every* section is the same
+shape. The default output — eyebrow, centred h2, three-or-four equal cards, `border-top`,
+repeat — is the "uniform card rhythm" anti-pattern in `brain/taste-ladder.md`, and it is the
+single most reliable tell of generated work.
+
+**The rule: no composition repeats twice in a row, and no page uses fewer than four.**
+
+Rhythm has four axes; vary at least two between adjacent sections:
+
+| Axis | Values to alternate |
+|---|---|
+| Width | contained (1140) · narrow (720) · wide (1400) · full-bleed |
+| Structure | split · stack · grid · single artefact · table · quote/statement |
+| Density | breathing (128px block padding) · normal (96) · dense (64, for data) |
+| Ground | page background · raised surface · inverted (dark band in a light page) · bordered |
+
+A worked rhythm for a marketing page — read the shape column top to bottom and notice that
+no two neighbours match:
+
+```
+hero        full-bleed   · split          · breathing · page
+proof strip contained    · single row     · dense     · bordered
+how-it-works wide        · sticky demo    · breathing · raised
+argument    narrow       · editorial text · normal    · page
+data        contained    · table          · dense     · raised
+objection   narrow       · statement      · breathing · inverted
+CTA         contained    · centred        · breathing · page
+```
+
+**Separators earn their place.** A `border-top` on every section is a rhythm substitute, not
+a rhythm. Change of ground colour, a change of width, or a deliberate overlap separates
+sections better than a hairline — keep the hairline for where a *hard* break is meant.
+
+**Scale contrast is a rhythm tool.** If the largest type on the page is 2.5× the body and
+everything between is evenly spaced, the page has a ramp, not a hierarchy. One section
+should be allowed a genuinely large statement (4–6× body) with almost nothing around it.
+
 ## Visual weight & balance
 - Weight sources: size, darkness/saturation, density, isolation. A small dark logo can balance a large light illustration.
 - Every viewport-height slice of the page should have a dominant element. Two rivals = split attention = neither wins.
@@ -52,9 +91,14 @@ Side padding: 16–24px mobile, 32px tablet, 48px+ desktop. Content never touche
 - Cards of equal visual weight for content of unequal importance
 - Sections that are each exactly 100vh ("slideshow disease")
 - Screenshot floating with no frame, shadow, or background association
+- Every section built from the same eyebrow → h2 → card-grid → `border-top` block
+- One container width for the entire page (no wide, narrow, or full-bleed moment anywhere)
 
 ## Checklist
 - [ ] Eye path stated; layout enforces it
+- [ ] ≥4 distinct section compositions; no shape repeats in adjacent sections
+- [ ] ≥2 container widths and ≥2 grounds used across the page
+- [ ] One section carries a genuinely large statement (4–6× body size)
 - [ ] All elements on a container/grid; zero orphan alignments
 - [ ] One dominant element per viewport slice
 - [ ] Fold complete at 1440 and 390 widths
