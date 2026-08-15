@@ -222,6 +222,63 @@ test('AGENTS.md kernel mirror is byte-identical to CLAUDE.md', () => {
     'AGENTS.md has drifted from CLAUDE.md — it is a mirror for agents.md-standard tools; copy CLAUDE.md over it');
 });
 
+function makeExportFixture() {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-export-'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  fs.cpSync(path.resolve(__dirname, '..', 'bin'), path.join(tmp, 'DesignOS', 'bin'), { recursive: true });
+  fs.copyFileSync(path.resolve(__dirname, '..', 'CLAUDE.md'), path.join(tmp, 'DesignOS', 'CLAUDE.md'));
+  fs.mkdirSync(path.join(tmp, 'DesignOS', 'workflows'), { recursive: true });
+  fs.copyFileSync(
+    path.resolve(__dirname, '..', 'workflows', 'final-gate.md'),
+    path.join(tmp, 'DesignOS', 'workflows', 'final-gate.md'),
+  );
+  return tmp;
+}
+
+test('export codex: writes root AGENTS.md, not just the unconfirmed .codex/ path', () => {
+  // Codex CLI's documented, confirmed auto-load mechanism is root AGENTS.md — a target
+  // that wrote ONLY .codex/instructions.md would very likely produce a file Codex never
+  // reads while claiming Claude-Code parity. This locks the fix in place.
+  const tmp = makeExportFixture();
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'export', 'codex'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.ok(fs.existsSync(path.join(tmp, 'AGENTS.md')), 'export codex must write root AGENTS.md');
+  assert.ok(fs.existsSync(path.join(tmp, '.codex', 'instructions.md')), 'export codex must still write the defensive .codex/ path');
+});
+
+test('export antigravity: writes root AGENTS.md and the native .agent/rules/ path', () => {
+  const tmp = makeExportFixture();
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'export', 'antigravity'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.ok(fs.existsSync(path.join(tmp, 'AGENTS.md')), 'export antigravity must write root AGENTS.md');
+  assert.ok(fs.existsSync(path.join(tmp, '.agent', 'rules', 'designos.md')), 'export antigravity must write .agent/rules/designos.md');
+});
+
+test('export cursor: writes both the legacy and current rules formats', () => {
+  const tmp = makeExportFixture();
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'export', 'cursor'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.ok(fs.existsSync(path.join(tmp, '.cursorrules')), 'export cursor must still write legacy .cursorrules');
+  const mdcPath = path.join(tmp, '.cursor', 'rules', 'designos.mdc');
+  assert.ok(fs.existsSync(mdcPath), 'export cursor must write the current .cursor/rules/designos.mdc format');
+  const mdc = fs.readFileSync(mdcPath, 'utf8');
+  assert.ok(mdc.startsWith('---\n'), '.mdc frontmatter must be the literal first bytes of the file');
+  assert.ok(/alwaysApply:\s*true/.test(mdc.split('---\n')[1] || ''),
+    '.mdc must declare alwaysApply: true or Cursor treats it as file-pattern-scoped, not unconditional');
+});
+
+test('export all: targets sharing a real path (AGENTS.md) write it once, crediting every tool', () => {
+  const tmp = makeExportFixture();
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'export', 'all'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const agents = fs.readFileSync(path.join(tmp, 'AGENTS.md'), 'utf8');
+  // One copy of the kernel, not three concatenated ones
+  assert.strictEqual(agents.match(/The Ceiling Contract/g)?.length, 1,
+    'AGENTS.md must contain exactly one copy of the kernel even though agentsmd/codex/antigravity all target it');
+  assert.ok(/AGENTS\.md ← .*Codex/i.test(result.stdout) || /Codex.*AGENTS\.md/i.test(result.stdout)
+    || result.stdout.includes('OpenAI Codex CLI'), 'stdout should credit Codex on the shared AGENTS.md write');
+});
+
 test('bin/designos.js export targets include the AGENTS.md standard', () => {
   const binPath = path.resolve(__dirname, '..', 'bin', 'designos.js');
   const src = fs.readFileSync(binPath, 'utf8');

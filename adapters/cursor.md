@@ -7,8 +7,9 @@ npx github:ardamoustafa1/DesignOS init
 node DesignOS/bin/designos.js export cursor
 ```
 
-This creates `.cursorrules` from the DesignOS kernel while keeping the module library in
-`./DesignOS/`.
+This writes both `.cursorrules` (legacy, still read) and `.cursor/rules/designos.mdc`
+(current format, `alwaysApply: true`) from the DesignOS kernel while keeping the module
+library in `./DesignOS/`.
 
 ## Recommended Workflow
 

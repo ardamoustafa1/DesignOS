@@ -4,16 +4,21 @@ These three tools all use the same rules-file mechanism. The only difference is 
 
 ---
 
-## Windsurf
+## Windsurf / Devin Desktop
 
-**Rules file:** `.windsurfrules`
+Cognition rebranded Windsurf to Devin Desktop in June 2026 — windsurf.com now redirects
+to devin.ai. Existing rules mechanisms weren't broken by the rename, but the maintained
+location moved.
+
+**Rules files:** `.windsurfrules` (legacy, still read exactly as before) and
+`.windsurf/rules/designos.md` (current, maintained location)
 
 ```bash
 npx github:ardamoustafa1/DesignOS init
 node DesignOS/bin/designos.js export windsurf
 ```
 
-Windsurf reads `.windsurfrules` from the project root automatically. After export, open any design task — you should see module routing in the agent's reasoning.
+Both files are read automatically from the project root. After export, open any design task — you should see module routing in the agent's reasoning.
 
 ---
 
