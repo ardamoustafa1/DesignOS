@@ -459,7 +459,7 @@ Every command runs from your project root after installation.
 | `audit <target>` | Run the registry-owned static provider suite and write its validator ledger | Yes |
 | `review <target>` | Report static design risks; optionally create a fix prompt | No |
 | `visual <target>` | Create screenshot/static visual QA evidence | Yes |
-| `hooks install/status` | Install or inspect observe/warn/block/deep-on-stop edit gates | Yes |
+| `hooks install/status` | Install editor-hook manifests (Claude, Cursor, Codex, Antigravity, Copilot cloud) plus `--git` for a pre-commit gate that blocks regardless of which tool wrote the diff — see [hooks/README.md](hooks/README.md) for which layer actually enforces | Yes |
 | `live <target>` | Open Live Director Studio with DOM hover/select, source/component boundaries, semantic variant diffs, route/component locks, manual merge, four required acceptance gates, reject, accept, and undo | Optional |
 | `motion-decide <interaction>` | Compile motion from component, transition, frequency, modality, geometry, intensity, preference, device power, and semantic importance | No |
 | `motion-recipe <recipe> --stack <stack>` | Emit a ledger-backed executable recipe adapter for Vanilla, React, Motion, GSAP, Vue, or Svelte | No |
@@ -501,6 +501,7 @@ node DesignOS/bin/designos.js audit src/
 node DesignOS/bin/designos.js review src/ --fix-prompt --no-fail
 node DesignOS/bin/designos.js visual index.html --no-fail
 node DesignOS/bin/designos.js hooks install --mode warn --target index.html
+node DesignOS/bin/designos.js hooks install --git   # the layer that actually blocks a commit, any tool
 node DesignOS/bin/designos.js live index.html
 node DesignOS/bin/designos.js motion-decide "account menu" --component popover --transition open --frequency high --modality keyboard --geometry 280x180,8 --motion 4 --preference full --device-power medium --importance high
 node DesignOS/bin/designos.js motion-recipe momentum-projection --stack react
