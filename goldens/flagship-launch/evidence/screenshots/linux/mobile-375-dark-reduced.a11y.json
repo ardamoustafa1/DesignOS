@@ -81,12 +81,834 @@
       "orientationType": "landscape-primary"
     },
     "violations": [],
-    "incomplete": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.8pt (17px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<div class=\"mark\">Cadence<span>.</span></div>",
+            "target": [
+              ".mark"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "11.3pt (15px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a href=\"#how\">How it works</a>",
+            "target": [
+              "nav > a[href$=\"#how\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "11.3pt (15px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a href=\"#facts\">Numbers</a>",
+            "target": [
+              "nav > a[href$=\"#facts\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "30.0pt (40px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<i style=\"animation-delay:0ms\">Six release steps.</i>",
+            "target": [
+              ".line:nth-child(1) > i"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "30.0pt (40px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<i style=\"animation-delay:80ms\">One command.</i>",
+            "target": [
+              ".line:nth-child(2) > i"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"lead\">Cadence tags the version, writes the changelog, builds, signs, publishes,\n      and announces. You run one line and watch it happen.</p>",
+            "target": [
+              ".lead"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "11.3pt (15px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a class=\"btn btn-ghost\" href=\"#facts\">See the numbers</a>",
+            "target": [
+              ".btn-ghost"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"mono-note\">$ cadence ship --tag v2.4.0</p>",
+            "target": [
+              ".mono-note"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"kicker\">The problem</span>",
+            "target": [
+              "#how > .kicker"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "21.0pt (28px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h2>Every release is the same six steps, done by hand, at the worst possible hour.</h2>",
+            "target": [
+              "#how > h2"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"body\">They are not hard steps. They are steps that must all happen, in order,\n      without one being forgotten. That is a machine's job, and it has been a person's job\n      for a decade.</p>",
+            "target": [
+              "#how > .body"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "50.6pt (67.5px)",
+                  "fontWeight": "bold",
+                  "messageKey": "shortTextContent",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element content is too short to determine if it is actual text content"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"story-count\" data-count=\"\" aria-hidden=\"true\">6</p>",
+            "target": [
+              ".story-count"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"story-label\" data-label=\"\">manual steps, every single release.</p>",
+            "target": [
+              ".story-label"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"step\" data-step=\"0\" data-folded=\"false\" data-final=\"false\">tag</span>",
+            "target": [
+              "span[data-step=\"0\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"step\" data-step=\"1\" data-folded=\"false\" data-final=\"false\">changelog</span>",
+            "target": [
+              "span[data-step=\"1\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"step\" data-step=\"2\" data-folded=\"false\" data-final=\"false\">build</span>",
+            "target": [
+              "span[data-step=\"2\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"step\" data-step=\"3\" data-folded=\"false\" data-final=\"false\">sign</span>",
+            "target": [
+              "span[data-step=\"3\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"step\" data-step=\"4\" data-folded=\"false\" data-final=\"false\">publish</span>",
+            "target": [
+              "span[data-step=\"4\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"step\" data-step=\"5\" data-folded=\"false\" data-final=\"false\">announce</span>",
+            "target": [
+              "span[data-step=\"5\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"kicker\">Measured</span>",
+            "target": [
+              "#facts > .kicker"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "21.0pt (28px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h2>What the collapse actually saved.</h2>",
+            "target": [
+              "#facts > h2"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"body\">Numbers from the Cadence team's own releases over one quarter. This is a\n      fictional product built as a DesignOS golden, so these are illustrative, not audited.</p>",
+            "target": [
+              "#facts > .body"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "10.5pt (14px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p><strong>Cadence is a fictional product</strong>, built as a DesignOS golden example.\n      No customers, logos, or compliance claims appear on this page, because none exist.\n      Source and rationale: <a href=\"../flagship-launch.md\">flagship-launch.md</a></p>",
+            "target": [
+              "footer > .wrap > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "10.5pt (14px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<strong>Cadence is a fictional product</strong>",
+            "target": [
+              "p > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "10.5pt (14px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a href=\"../flagship-launch.md\">flagship-launch.md</a>",
+            "target": [
+              "a[href$=\"flagship-launch.md\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          }
+        ]
+      }
+    ],
     "passes": 21
   },
   "accessibilityTree": [
     {
-      "nodeId": "2",
+      "nodeId": "3",
       "role": "RootWebArea",
       "name": "Cadence — six release steps, one command",
       "ignored": false,
@@ -95,16 +917,8 @@
       }
     },
     {
-      "nodeId": "5",
-      "parentId": "2",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
-      "nodeId": "14",
-      "parentId": "5",
+      "nodeId": "6",
+      "parentId": "3",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -112,111 +926,119 @@
     },
     {
       "nodeId": "15",
-      "parentId": "14",
+      "parentId": "6",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "16",
+      "parentId": "15",
       "role": "link",
       "name": "Skip to content",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "16",
-      "parentId": "14",
+      "nodeId": "17",
+      "parentId": "15",
       "role": "banner",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "23",
-      "parentId": "14",
+      "nodeId": "24",
+      "parentId": "15",
       "role": "main",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "90",
-      "parentId": "14",
+      "nodeId": "91",
+      "parentId": "15",
       "role": "contentinfo",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "97",
-      "parentId": "15",
+      "nodeId": "98",
+      "parentId": "16",
       "role": "StaticText",
       "name": "Skip to content",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "17",
-      "parentId": "16",
+      "nodeId": "18",
+      "parentId": "17",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "18",
-      "parentId": "17",
+      "nodeId": "19",
+      "parentId": "18",
       "role": "generic",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "20",
-      "parentId": "17",
+      "nodeId": "21",
+      "parentId": "18",
       "role": "navigation",
       "name": "Primary",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "4",
-      "parentId": "23",
+      "nodeId": "25",
+      "parentId": "24",
       "role": "generic",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "34",
-      "parentId": "23",
+      "nodeId": "5",
+      "parentId": "24",
       "role": "generic",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "58",
-      "parentId": "23",
+      "nodeId": "59",
+      "parentId": "24",
       "role": "region",
       "name": "How six steps become one",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "73",
-      "parentId": "23",
+      "nodeId": "74",
+      "parentId": "24",
       "role": "generic",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "91",
-      "parentId": "90",
+      "nodeId": "92",
+      "parentId": "91",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "92",
-      "parentId": "91",
+      "nodeId": "93",
+      "parentId": "92",
       "role": "paragraph",
       "name": null,
       "ignored": false,
@@ -224,47 +1046,47 @@
     },
     {
       "nodeId": "-1000000002",
-      "parentId": "97",
+      "parentId": "98",
       "role": "InlineTextBox",
       "name": "Skip to content",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "98",
-      "parentId": "18",
+      "nodeId": "99",
+      "parentId": "19",
       "role": "StaticText",
       "name": "Cadence",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "99",
-      "parentId": "18",
+      "nodeId": "100",
+      "parentId": "19",
       "role": "StaticText",
       "name": ".",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "21",
-      "parentId": "20",
+      "nodeId": "22",
+      "parentId": "21",
       "role": "link",
       "name": "How it works",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "22",
-      "parentId": "20",
+      "nodeId": "23",
+      "parentId": "21",
       "role": "link",
       "name": "Numbers",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "24",
-      "parentId": "4",
+      "nodeId": "26",
+      "parentId": "25",
       "role": "heading",
       "name": "Six release steps. One command.",
       "ignored": false,
@@ -273,72 +1095,72 @@
       }
     },
     {
-      "nodeId": "3",
-      "parentId": "4",
+      "nodeId": "4",
+      "parentId": "25",
       "role": "paragraph",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "29",
-      "parentId": "4",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
-      "nodeId": "30",
-      "parentId": "29",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
       "nodeId": "31",
-      "parentId": "30",
+      "parentId": "25",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "32",
+      "parentId": "31",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "33",
+      "parentId": "32",
       "role": "link",
       "name": "Watch it collapse",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "32",
-      "parentId": "29",
+      "nodeId": "34",
+      "parentId": "31",
       "role": "link",
       "name": "See the numbers",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "33",
-      "parentId": "4",
+      "nodeId": "35",
+      "parentId": "25",
       "role": "paragraph",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "35",
-      "parentId": "34",
+      "nodeId": "36",
+      "parentId": "5",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "108",
-      "parentId": "35",
+      "nodeId": "109",
+      "parentId": "36",
       "role": "StaticText",
       "name": "THE PROBLEM",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "36",
-      "parentId": "34",
+      "nodeId": "37",
+      "parentId": "5",
       "role": "heading",
       "name": "Every release is the same six steps, done by hand, at the worst possible hour.",
       "ignored": false,
@@ -347,24 +1169,16 @@
       }
     },
     {
-      "nodeId": "37",
-      "parentId": "34",
+      "nodeId": "38",
+      "parentId": "5",
       "role": "paragraph",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "38",
-      "parentId": "34",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
       "nodeId": "39",
-      "parentId": "38",
+      "parentId": "5",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -373,6 +1187,14 @@
     {
       "nodeId": "40",
       "parentId": "39",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "41",
+      "parentId": "40",
       "role": "heading",
       "name": "Before",
       "ignored": false,
@@ -381,24 +1203,24 @@
       }
     },
     {
-      "nodeId": "41",
-      "parentId": "39",
+      "nodeId": "42",
+      "parentId": "40",
       "role": "list",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "48",
-      "parentId": "38",
+      "nodeId": "49",
+      "parentId": "39",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "49",
-      "parentId": "48",
+      "nodeId": "50",
+      "parentId": "49",
       "role": "heading",
       "name": "After",
       "ignored": false,
@@ -407,16 +1229,16 @@
       }
     },
     {
-      "nodeId": "50",
-      "parentId": "48",
+      "nodeId": "51",
+      "parentId": "49",
       "role": "list",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "59",
-      "parentId": "58",
+      "nodeId": "60",
+      "parentId": "59",
       "role": "heading",
       "name": "How six steps become one",
       "ignored": false,
@@ -425,16 +1247,8 @@
       }
     },
     {
-      "nodeId": "60",
-      "parentId": "58",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
       "nodeId": "61",
-      "parentId": "60",
+      "parentId": "59",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -449,32 +1263,40 @@
       "properties": {}
     },
     {
-      "nodeId": "64",
+      "nodeId": "63",
       "parentId": "62",
-      "role": "paragraph",
-      "name": null,
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "74",
-      "parentId": "73",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "146",
+      "nodeId": "65",
+      "parentId": "63",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "75",
       "parentId": "74",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "147",
+      "parentId": "75",
       "role": "StaticText",
       "name": "MEASURED",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "75",
-      "parentId": "73",
+      "nodeId": "76",
+      "parentId": "74",
       "role": "heading",
       "name": "What the collapse actually saved.",
       "ignored": false,
@@ -483,40 +1305,40 @@
       }
     },
     {
-      "nodeId": "76",
-      "parentId": "73",
+      "nodeId": "77",
+      "parentId": "74",
       "role": "paragraph",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "77",
-      "parentId": "73",
+      "nodeId": "78",
+      "parentId": "74",
       "role": "DescriptionList",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "93",
-      "parentId": "92",
+      "nodeId": "94",
+      "parentId": "93",
       "role": "strong",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "159",
-      "parentId": "92",
+      "nodeId": "160",
+      "parentId": "93",
       "role": "StaticText",
       "name": ", built as a DesignOS golden example. No customers, logos, or compliance claims appear on this page, because none exist. Source and rationale: ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "94",
-      "parentId": "92",
+      "nodeId": "95",
+      "parentId": "93",
       "role": "link",
       "name": "flagship-launch.md",
       "ignored": false,
@@ -524,7 +1346,7 @@
     },
     {
       "nodeId": "-1000000003",
-      "parentId": "98",
+      "parentId": "99",
       "role": "InlineTextBox",
       "name": "Cadence",
       "ignored": false,
@@ -532,17 +1354,9 @@
     },
     {
       "nodeId": "-1000000004",
-      "parentId": "99",
+      "parentId": "100",
       "role": "InlineTextBox",
       "name": ".",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "100",
-      "parentId": "21",
-      "role": "StaticText",
-      "name": "How it works",
       "ignored": false,
       "properties": {}
     },
@@ -550,29 +1364,21 @@
       "nodeId": "101",
       "parentId": "22",
       "role": "StaticText",
+      "name": "How it works",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "102",
+      "parentId": "23",
+      "role": "StaticText",
       "name": "Numbers",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "25",
-      "parentId": "24",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
-      "nodeId": "26",
-      "parentId": "25",
-      "role": "generic",
-      "name": null,
-      "ignored": false,
-      "properties": {}
-    },
-    {
       "nodeId": "27",
-      "parentId": "24",
+      "parentId": "26",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -587,50 +1393,58 @@
       "properties": {}
     },
     {
-      "nodeId": "104",
-      "parentId": "3",
+      "nodeId": "29",
+      "parentId": "26",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "30",
+      "parentId": "29",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "105",
+      "parentId": "4",
       "role": "StaticText",
       "name": "Cadence tags the version, writes the changelog, builds, signs, publishes, and announces. You run one line and watch it happen.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "105",
-      "parentId": "31",
+      "nodeId": "106",
+      "parentId": "33",
       "role": "StaticText",
       "name": "Watch it collapse",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "106",
-      "parentId": "32",
+      "nodeId": "107",
+      "parentId": "34",
       "role": "StaticText",
       "name": "See the numbers",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "107",
-      "parentId": "33",
+      "nodeId": "108",
+      "parentId": "35",
       "role": "StaticText",
       "name": "$ cadence ship --tag v2.4.0",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000017",
-      "parentId": "108",
+      "nodeId": "-1000000016",
+      "parentId": "109",
       "role": "InlineTextBox",
       "name": "THE PROBLEM",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "109",
-      "parentId": "36",
-      "role": "StaticText",
-      "name": "Every release is the same six steps, done by hand, at the worst possible hour.",
       "ignored": false,
       "properties": {}
     },
@@ -638,31 +1452,29 @@
       "nodeId": "110",
       "parentId": "37",
       "role": "StaticText",
-      "name": "They are not hard steps. They are steps that must all happen, in order, without one being forgotten. That is a machine's job, and it has been a person's job for a decade.",
+      "name": "Every release is the same six steps, done by hand, at the worst possible hour.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "111",
-      "parentId": "40",
+      "parentId": "38",
+      "role": "StaticText",
+      "name": "They are not hard steps. They are steps that must all happen, in order, without one being forgotten. That is a machine's job, and it has been a person's job for a decade.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "112",
+      "parentId": "41",
       "role": "StaticText",
       "name": "Before",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "42",
-      "parentId": "41",
-      "role": "listitem",
-      "name": null,
-      "ignored": false,
-      "properties": {
-        "level": 1
-      }
-    },
-    {
       "nodeId": "43",
-      "parentId": "41",
+      "parentId": "42",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -672,7 +1484,7 @@
     },
     {
       "nodeId": "44",
-      "parentId": "41",
+      "parentId": "42",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -682,7 +1494,7 @@
     },
     {
       "nodeId": "45",
-      "parentId": "41",
+      "parentId": "42",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -692,7 +1504,7 @@
     },
     {
       "nodeId": "46",
-      "parentId": "41",
+      "parentId": "42",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -702,7 +1514,7 @@
     },
     {
       "nodeId": "47",
-      "parentId": "41",
+      "parentId": "42",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -711,26 +1523,26 @@
       }
     },
     {
-      "nodeId": "124",
-      "parentId": "49",
+      "nodeId": "48",
+      "parentId": "42",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "125",
+      "parentId": "50",
       "role": "StaticText",
       "name": "After",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "51",
-      "parentId": "50",
-      "role": "listitem",
-      "name": null,
-      "ignored": false,
-      "properties": {
-        "level": 1
-      }
-    },
-    {
       "nodeId": "52",
-      "parentId": "50",
+      "parentId": "51",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -740,7 +1552,7 @@
     },
     {
       "nodeId": "53",
-      "parentId": "50",
+      "parentId": "51",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -750,7 +1562,7 @@
     },
     {
       "nodeId": "54",
-      "parentId": "50",
+      "parentId": "51",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -760,7 +1572,7 @@
     },
     {
       "nodeId": "55",
-      "parentId": "50",
+      "parentId": "51",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -770,7 +1582,7 @@
     },
     {
       "nodeId": "56",
-      "parentId": "50",
+      "parentId": "51",
       "role": "listitem",
       "name": null,
       "ignored": false,
@@ -779,34 +1591,36 @@
       }
     },
     {
-      "nodeId": "137",
-      "parentId": "59",
+      "nodeId": "57",
+      "parentId": "51",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "138",
+      "parentId": "60",
       "role": "StaticText",
       "name": "How six steps become one",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "139",
-      "parentId": "64",
+      "nodeId": "140",
+      "parentId": "65",
       "role": "StaticText",
       "name": "manual steps, every single release.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000059",
-      "parentId": "146",
+      "nodeId": "-1000000057",
+      "parentId": "147",
       "role": "InlineTextBox",
       "name": "MEASURED",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "147",
-      "parentId": "75",
-      "role": "StaticText",
-      "name": "What the collapse actually saved.",
       "ignored": false,
       "properties": {}
     },
@@ -814,37 +1628,37 @@
       "nodeId": "148",
       "parentId": "76",
       "role": "StaticText",
+      "name": "What the collapse actually saved.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "149",
+      "parentId": "77",
+      "role": "StaticText",
       "name": "Numbers from the Cadence team's own releases over one quarter. This is a fictional product built as a DesignOS golden, so these are illustrative, not audited.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "78",
-      "parentId": "77",
+      "nodeId": "79",
+      "parentId": "78",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "79",
-      "parentId": "78",
+      "nodeId": "80",
+      "parentId": "79",
       "role": "term",
       "name": "MEDIAN RELEASE TIME",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "80",
-      "parentId": "78",
-      "role": "definition",
-      "name": null,
-      "ignored": false,
-      "properties": {}
-    },
-    {
       "nodeId": "81",
-      "parentId": "78",
+      "parentId": "79",
       "role": "definition",
       "name": null,
       "ignored": false,
@@ -852,31 +1666,31 @@
     },
     {
       "nodeId": "82",
-      "parentId": "77",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
-      "nodeId": "83",
-      "parentId": "82",
-      "role": "term",
-      "name": "STEPS A HUMAN PERFORMS",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "84",
-      "parentId": "82",
+      "parentId": "79",
       "role": "definition",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
+      "nodeId": "83",
+      "parentId": "78",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "84",
+      "parentId": "83",
+      "role": "term",
+      "name": "STEPS A HUMAN PERFORMS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "85",
-      "parentId": "82",
+      "parentId": "83",
       "role": "definition",
       "name": null,
       "ignored": false,
@@ -884,87 +1698,87 @@
     },
     {
       "nodeId": "86",
-      "parentId": "77",
+      "parentId": "83",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "87",
+      "parentId": "78",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "87",
-      "parentId": "86",
+      "nodeId": "88",
+      "parentId": "87",
       "role": "term",
       "name": "RELEASES MISSING A CHANGELOG",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "88",
-      "parentId": "86",
-      "role": "definition",
-      "name": null,
-      "ignored": false,
-      "properties": {}
-    },
-    {
       "nodeId": "89",
-      "parentId": "86",
+      "parentId": "87",
       "role": "definition",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "158",
-      "parentId": "93",
+      "nodeId": "90",
+      "parentId": "87",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "159",
+      "parentId": "94",
       "role": "StaticText",
       "name": "Cadence is a fictional product",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000080",
-      "parentId": "159",
+      "nodeId": "-1000000077",
+      "parentId": "160",
       "role": "InlineTextBox",
       "name": ", built as a ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000081",
-      "parentId": "159",
+      "nodeId": "-1000000078",
+      "parentId": "160",
       "role": "InlineTextBox",
-      "name": "DesignOS golden example. No customers, ",
+      "name": "DesignOS golden example. No customers, logos, or ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000082",
-      "parentId": "159",
+      "nodeId": "-1000000079",
+      "parentId": "160",
       "role": "InlineTextBox",
-      "name": "logos, or compliance claims appear on this ",
+      "name": "compliance claims appear on this page, because ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000083",
-      "parentId": "159",
+      "nodeId": "-1000000080",
+      "parentId": "160",
       "role": "InlineTextBox",
-      "name": "page, because none exist. Source and ",
+      "name": "none exist. Source and rationale: ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000084",
-      "parentId": "159",
-      "role": "InlineTextBox",
-      "name": "rationale: ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "160",
-      "parentId": "94",
+      "nodeId": "161",
+      "parentId": "95",
       "role": "StaticText",
       "name": "flagship-launch.md",
       "ignored": false,
@@ -972,7 +1786,7 @@
     },
     {
       "nodeId": "-1000000005",
-      "parentId": "100",
+      "parentId": "101",
       "role": "InlineTextBox",
       "name": "How it works",
       "ignored": false,
@@ -980,17 +1794,9 @@
     },
     {
       "nodeId": "-1000000006",
-      "parentId": "101",
+      "parentId": "102",
       "role": "InlineTextBox",
       "name": "Numbers",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "102",
-      "parentId": "26",
-      "role": "StaticText",
-      "name": "Six release steps.",
       "ignored": false,
       "properties": {}
     },
@@ -998,455 +1804,439 @@
       "nodeId": "103",
       "parentId": "28",
       "role": "StaticText",
+      "name": "Six release steps.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "104",
+      "parentId": "30",
+      "role": "StaticText",
       "name": "One command.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000010",
-      "parentId": "104",
+      "nodeId": "-1000000009",
+      "parentId": "105",
       "role": "InlineTextBox",
-      "name": "Cadence tags the version, writes ",
+      "name": "Cadence tags the version, writes the ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000010",
+      "parentId": "105",
+      "role": "InlineTextBox",
+      "name": "changelog, builds, signs, publishes, and ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000011",
-      "parentId": "104",
+      "parentId": "105",
       "role": "InlineTextBox",
-      "name": "the changelog, builds, signs, ",
+      "name": "announces. You run one line and watch ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000012",
-      "parentId": "104",
+      "parentId": "105",
       "role": "InlineTextBox",
-      "name": "publishes, and announces. You run ",
+      "name": "it happen.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000013",
-      "parentId": "104",
-      "role": "InlineTextBox",
-      "name": "one line and watch it happen.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000014",
-      "parentId": "105",
+      "parentId": "106",
       "role": "InlineTextBox",
       "name": "Watch it collapse",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000015",
-      "parentId": "106",
+      "nodeId": "-1000000014",
+      "parentId": "107",
       "role": "InlineTextBox",
       "name": "See the numbers",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000016",
-      "parentId": "107",
+      "nodeId": "-1000000015",
+      "parentId": "108",
       "role": "InlineTextBox",
       "name": "$ cadence ship --tag v2.4.0",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000018",
-      "parentId": "109",
+      "nodeId": "-1000000017",
+      "parentId": "110",
       "role": "InlineTextBox",
       "name": "Every release is ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000019",
-      "parentId": "109",
+      "nodeId": "-1000000018",
+      "parentId": "110",
       "role": "InlineTextBox",
       "name": "the same six steps, ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000020",
-      "parentId": "109",
+      "nodeId": "-1000000019",
+      "parentId": "110",
       "role": "InlineTextBox",
       "name": "done by hand, at the ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000021",
-      "parentId": "109",
+      "nodeId": "-1000000020",
+      "parentId": "110",
       "role": "InlineTextBox",
       "name": "worst possible hour.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000022",
-      "parentId": "110",
+      "nodeId": "-1000000021",
+      "parentId": "111",
       "role": "InlineTextBox",
-      "name": "They are not hard steps. They are steps ",
+      "name": "They are not hard steps. They are steps that ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000022",
+      "parentId": "111",
+      "role": "InlineTextBox",
+      "name": "must all happen, in order, without one being ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000023",
-      "parentId": "110",
+      "parentId": "111",
       "role": "InlineTextBox",
-      "name": "that must all happen, in order, without ",
+      "name": "forgotten. That is a machine's job, and it has ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000024",
-      "parentId": "110",
+      "parentId": "111",
       "role": "InlineTextBox",
-      "name": "one being forgotten. That is a machine's ",
+      "name": "been a person's job for a decade.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000025",
-      "parentId": "110",
-      "role": "InlineTextBox",
-      "name": "job, and it has been a person's job for a ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000026",
-      "parentId": "110",
-      "role": "InlineTextBox",
-      "name": "decade.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000027",
-      "parentId": "111",
+      "parentId": "112",
       "role": "InlineTextBox",
       "name": "Before",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "112",
-      "parentId": "42",
+      "nodeId": "113",
+      "parentId": "43",
       "role": "ListMarker",
       "name": "1. ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "113",
-      "parentId": "42",
+      "nodeId": "114",
+      "parentId": "43",
       "role": "StaticText",
       "name": "Tag the version",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "114",
-      "parentId": "43",
+      "nodeId": "115",
+      "parentId": "44",
       "role": "ListMarker",
       "name": "2. ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "115",
-      "parentId": "43",
+      "nodeId": "116",
+      "parentId": "44",
       "role": "StaticText",
       "name": "Write the changelog",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "116",
-      "parentId": "44",
+      "nodeId": "117",
+      "parentId": "45",
       "role": "ListMarker",
       "name": "3. ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "117",
-      "parentId": "44",
+      "nodeId": "118",
+      "parentId": "45",
       "role": "StaticText",
       "name": "Run the build",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "118",
-      "parentId": "45",
+      "nodeId": "119",
+      "parentId": "46",
       "role": "ListMarker",
       "name": "4. ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "119",
-      "parentId": "45",
+      "nodeId": "120",
+      "parentId": "46",
       "role": "StaticText",
       "name": "Sign the artifact",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "120",
-      "parentId": "46",
+      "nodeId": "121",
+      "parentId": "47",
       "role": "ListMarker",
       "name": "5. ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "121",
-      "parentId": "46",
+      "nodeId": "122",
+      "parentId": "47",
       "role": "StaticText",
       "name": "Publish to the registry",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "122",
-      "parentId": "47",
+      "nodeId": "123",
+      "parentId": "48",
       "role": "ListMarker",
       "name": "6. ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "123",
-      "parentId": "47",
+      "nodeId": "124",
+      "parentId": "48",
       "role": "StaticText",
       "name": "Announce in the channel",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000040",
-      "parentId": "124",
+      "nodeId": "-1000000038",
+      "parentId": "125",
       "role": "InlineTextBox",
       "name": "After",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "125",
-      "parentId": "51",
+      "nodeId": "126",
+      "parentId": "52",
       "role": "ListMarker",
       "name": "• ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "126",
-      "parentId": "51",
-      "role": "StaticText",
-      "name": "Tag the version",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "127",
       "parentId": "52",
-      "role": "ListMarker",
-      "name": "• ",
+      "role": "StaticText",
+      "name": "Tag the version",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "128",
-      "parentId": "52",
-      "role": "StaticText",
-      "name": "Write the changelog",
+      "parentId": "53",
+      "role": "ListMarker",
+      "name": "• ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "129",
       "parentId": "53",
-      "role": "ListMarker",
-      "name": "• ",
+      "role": "StaticText",
+      "name": "Write the changelog",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "130",
-      "parentId": "53",
-      "role": "StaticText",
-      "name": "Run the build",
+      "parentId": "54",
+      "role": "ListMarker",
+      "name": "• ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "131",
       "parentId": "54",
-      "role": "ListMarker",
-      "name": "• ",
+      "role": "StaticText",
+      "name": "Run the build",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "132",
-      "parentId": "54",
-      "role": "StaticText",
-      "name": "Sign the artifact",
+      "parentId": "55",
+      "role": "ListMarker",
+      "name": "• ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "133",
       "parentId": "55",
-      "role": "ListMarker",
-      "name": "• ",
+      "role": "StaticText",
+      "name": "Sign the artifact",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "134",
-      "parentId": "55",
-      "role": "StaticText",
-      "name": "Publish to the registry",
+      "parentId": "56",
+      "role": "ListMarker",
+      "name": "• ",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "135",
       "parentId": "56",
+      "role": "StaticText",
+      "name": "Publish to the registry",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "136",
+      "parentId": "57",
       "role": "ListMarker",
       "name": "• ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "57",
-      "parentId": "56",
+      "nodeId": "58",
+      "parentId": "57",
       "role": "strong",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000053",
-      "parentId": "137",
+      "nodeId": "-1000000051",
+      "parentId": "138",
       "role": "InlineTextBox",
       "name": "How ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000054",
-      "parentId": "137",
+      "nodeId": "-1000000052",
+      "parentId": "138",
       "role": "InlineTextBox",
       "name": "six ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000055",
-      "parentId": "137",
+      "nodeId": "-1000000053",
+      "parentId": "138",
       "role": "InlineTextBox",
       "name": "steps ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000056",
-      "parentId": "137",
+      "nodeId": "-1000000054",
+      "parentId": "138",
       "role": "InlineTextBox",
       "name": "become ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000057",
-      "parentId": "137",
+      "nodeId": "-1000000055",
+      "parentId": "138",
       "role": "InlineTextBox",
       "name": "one",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000058",
-      "parentId": "139",
+      "nodeId": "-1000000056",
+      "parentId": "140",
       "role": "InlineTextBox",
       "name": "manual steps, every single release.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000060",
-      "parentId": "147",
+      "nodeId": "-1000000058",
+      "parentId": "148",
       "role": "InlineTextBox",
       "name": "What the collapse ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000061",
-      "parentId": "147",
+      "nodeId": "-1000000059",
+      "parentId": "148",
       "role": "InlineTextBox",
       "name": "actually saved.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000062",
-      "parentId": "148",
+      "nodeId": "-1000000060",
+      "parentId": "149",
       "role": "InlineTextBox",
       "name": "Numbers from the Cadence team's own ",
       "ignored": false,
       "properties": {}
     },
     {
+      "nodeId": "-1000000061",
+      "parentId": "149",
+      "role": "InlineTextBox",
+      "name": "releases over one quarter. This is a fictional ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000062",
+      "parentId": "149",
+      "role": "InlineTextBox",
+      "name": "product built as a DesignOS golden, so these ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000063",
-      "parentId": "148",
+      "parentId": "149",
       "role": "InlineTextBox",
-      "name": "releases over one quarter. This is a ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000064",
-      "parentId": "148",
-      "role": "InlineTextBox",
-      "name": "fictional product built as a DesignOS ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000065",
-      "parentId": "148",
-      "role": "InlineTextBox",
-      "name": "golden, so these are illustrative, not ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000066",
-      "parentId": "148",
-      "role": "InlineTextBox",
-      "name": "audited.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "149",
-      "parentId": "79",
-      "role": "StaticText",
-      "name": "MEDIAN RELEASE TIME",
+      "name": "are illustrative, not audited.",
       "ignored": false,
       "properties": {}
     },
@@ -1454,7 +2244,7 @@
       "nodeId": "150",
       "parentId": "80",
       "role": "StaticText",
-      "name": "4m 12s",
+      "name": "MEDIAN RELEASE TIME",
       "ignored": false,
       "properties": {}
     },
@@ -1462,15 +2252,15 @@
       "nodeId": "151",
       "parentId": "81",
       "role": "StaticText",
-      "name": "Down from 38 minutes of hands-on work spread across an afternoon.",
+      "name": "4m 12s",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "152",
-      "parentId": "83",
+      "parentId": "82",
       "role": "StaticText",
-      "name": "STEPS A HUMAN PERFORMS",
+      "name": "Down from 38 minutes of hands-on work spread across an afternoon.",
       "ignored": false,
       "properties": {}
     },
@@ -1478,7 +2268,7 @@
       "nodeId": "153",
       "parentId": "84",
       "role": "StaticText",
-      "name": "1",
+      "name": "STEPS A HUMAN PERFORMS",
       "ignored": false,
       "properties": {}
     },
@@ -1486,15 +2276,15 @@
       "nodeId": "154",
       "parentId": "85",
       "role": "StaticText",
-      "name": "The command. Everything after it is the machine's responsibility.",
+      "name": "1",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "155",
-      "parentId": "87",
+      "parentId": "86",
       "role": "StaticText",
-      "name": "RELEASES MISSING A CHANGELOG",
+      "name": "The command. Everything after it is the machine's responsibility.",
       "ignored": false,
       "properties": {}
     },
@@ -1502,7 +2292,7 @@
       "nodeId": "156",
       "parentId": "88",
       "role": "StaticText",
-      "name": "0",
+      "name": "RELEASES MISSING A CHANGELOG",
       "ignored": false,
       "properties": {}
     },
@@ -1510,21 +2300,29 @@
       "nodeId": "157",
       "parentId": "89",
       "role": "StaticText",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "158",
+      "parentId": "90",
+      "role": "StaticText",
       "name": "It cannot be forgotten if it is not a separate step.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000079",
-      "parentId": "158",
+      "nodeId": "-1000000076",
+      "parentId": "159",
       "role": "InlineTextBox",
       "name": "Cadence is a fictional product",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000085",
-      "parentId": "160",
+      "nodeId": "-1000000081",
+      "parentId": "161",
       "role": "InlineTextBox",
       "name": "flagship-launch.md",
       "ignored": false,
@@ -1532,31 +2330,39 @@
     },
     {
       "nodeId": "-1000000007",
-      "parentId": "102",
+      "parentId": "103",
       "role": "InlineTextBox",
-      "name": "Six release ",
+      "name": "Six release steps.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000008",
-      "parentId": "102",
-      "role": "InlineTextBox",
-      "name": "steps.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000009",
-      "parentId": "103",
+      "parentId": "104",
       "role": "InlineTextBox",
       "name": "One command.",
       "ignored": false,
       "properties": {}
     },
     {
+      "nodeId": "-1000000026",
+      "parentId": "113",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000027",
+      "parentId": "114",
+      "role": "InlineTextBox",
+      "name": "Tag the version",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000028",
-      "parentId": "112",
+      "parentId": "115",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1564,15 +2370,15 @@
     },
     {
       "nodeId": "-1000000029",
-      "parentId": "113",
+      "parentId": "116",
       "role": "InlineTextBox",
-      "name": "Tag the version",
+      "name": "Write the changelog",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000030",
-      "parentId": "114",
+      "parentId": "117",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1580,15 +2386,15 @@
     },
     {
       "nodeId": "-1000000031",
-      "parentId": "115",
+      "parentId": "118",
       "role": "InlineTextBox",
-      "name": "Write the changelog",
+      "name": "Run the build",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000032",
-      "parentId": "116",
+      "parentId": "119",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1596,15 +2402,15 @@
     },
     {
       "nodeId": "-1000000033",
-      "parentId": "117",
+      "parentId": "120",
       "role": "InlineTextBox",
-      "name": "Run the build",
+      "name": "Sign the artifact",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000034",
-      "parentId": "118",
+      "parentId": "121",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1612,15 +2418,15 @@
     },
     {
       "nodeId": "-1000000035",
-      "parentId": "119",
+      "parentId": "122",
       "role": "InlineTextBox",
-      "name": "Sign the artifact",
+      "name": "Publish to the registry",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000036",
-      "parentId": "120",
+      "parentId": "123",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1628,31 +2434,31 @@
     },
     {
       "nodeId": "-1000000037",
-      "parentId": "121",
-      "role": "InlineTextBox",
-      "name": "Publish to the registry",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000038",
-      "parentId": "122",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000039",
-      "parentId": "123",
+      "parentId": "124",
       "role": "InlineTextBox",
       "name": "Announce in the channel",
       "ignored": false,
       "properties": {}
     },
     {
+      "nodeId": "-1000000039",
+      "parentId": "126",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000040",
+      "parentId": "127",
+      "role": "InlineTextBox",
+      "name": "Tag the version",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000041",
-      "parentId": "125",
+      "parentId": "128",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1660,15 +2466,15 @@
     },
     {
       "nodeId": "-1000000042",
-      "parentId": "126",
+      "parentId": "129",
       "role": "InlineTextBox",
-      "name": "Tag the version",
+      "name": "Write the changelog",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000043",
-      "parentId": "127",
+      "parentId": "130",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1676,15 +2482,15 @@
     },
     {
       "nodeId": "-1000000044",
-      "parentId": "128",
+      "parentId": "131",
       "role": "InlineTextBox",
-      "name": "Write the changelog",
+      "name": "Run the build",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000045",
-      "parentId": "129",
+      "parentId": "132",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1692,15 +2498,15 @@
     },
     {
       "nodeId": "-1000000046",
-      "parentId": "130",
+      "parentId": "133",
       "role": "InlineTextBox",
-      "name": "Run the build",
+      "name": "Sign the artifact",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000047",
-      "parentId": "131",
+      "parentId": "134",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -1708,143 +2514,127 @@
     },
     {
       "nodeId": "-1000000048",
-      "parentId": "132",
-      "role": "InlineTextBox",
-      "name": "Sign the artifact",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000049",
-      "parentId": "133",
-      "role": "none",
-      "name": null,
-      "ignored": true,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000050",
-      "parentId": "134",
+      "parentId": "135",
       "role": "InlineTextBox",
       "name": "Publish to the registry",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000051",
-      "parentId": "135",
+      "nodeId": "-1000000049",
+      "parentId": "136",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "136",
-      "parentId": "57",
+      "nodeId": "137",
+      "parentId": "58",
       "role": "StaticText",
       "name": "cadence ship",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000067",
-      "parentId": "149",
+      "nodeId": "-1000000064",
+      "parentId": "150",
       "role": "InlineTextBox",
       "name": "MEDIAN RELEASE TIME",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000068",
-      "parentId": "150",
+      "nodeId": "-1000000065",
+      "parentId": "151",
       "role": "InlineTextBox",
       "name": "4m 12s",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000069",
-      "parentId": "151",
-      "role": "InlineTextBox",
-      "name": "Down from 38 minutes of hands-on ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000070",
-      "parentId": "151",
-      "role": "InlineTextBox",
-      "name": "work spread across an afternoon.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000071",
+      "nodeId": "-1000000066",
       "parentId": "152",
+      "role": "InlineTextBox",
+      "name": "Down from 38 minutes of hands-on work ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000067",
+      "parentId": "152",
+      "role": "InlineTextBox",
+      "name": "spread across an afternoon.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000068",
+      "parentId": "153",
       "role": "InlineTextBox",
       "name": "STEPS A HUMAN PERFORMS",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000072",
-      "parentId": "153",
+      "nodeId": "-1000000069",
+      "parentId": "154",
       "role": "InlineTextBox",
       "name": "1",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000073",
-      "parentId": "154",
-      "role": "InlineTextBox",
-      "name": "The command. Everything after it is ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000074",
-      "parentId": "154",
-      "role": "InlineTextBox",
-      "name": "the machine's responsibility.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000075",
+      "nodeId": "-1000000070",
       "parentId": "155",
+      "role": "InlineTextBox",
+      "name": "The command. Everything after it is the ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000071",
+      "parentId": "155",
+      "role": "InlineTextBox",
+      "name": "machine's responsibility.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000072",
+      "parentId": "156",
       "role": "InlineTextBox",
       "name": "RELEASES MISSING A CHANGELOG",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000076",
-      "parentId": "156",
+      "nodeId": "-1000000073",
+      "parentId": "157",
       "role": "InlineTextBox",
       "name": "0",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000077",
-      "parentId": "157",
+      "nodeId": "-1000000074",
+      "parentId": "158",
       "role": "InlineTextBox",
-      "name": "It cannot be forgotten if it is not a ",
+      "name": "It cannot be forgotten if it is not a separate ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000078",
-      "parentId": "157",
+      "nodeId": "-1000000075",
+      "parentId": "158",
       "role": "InlineTextBox",
-      "name": "separate step.",
+      "name": "step.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000052",
-      "parentId": "136",
+      "nodeId": "-1000000050",
+      "parentId": "137",
       "role": "InlineTextBox",
       "name": "cadence ship",
       "ignored": false,

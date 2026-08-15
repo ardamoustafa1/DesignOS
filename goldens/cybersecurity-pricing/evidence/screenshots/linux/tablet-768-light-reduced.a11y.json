@@ -539,7 +539,7 @@
       "properties": {}
     },
     {
-      "nodeId": "3",
+      "nodeId": "35",
       "parentId": "34",
       "role": "none",
       "name": null,
@@ -547,23 +547,23 @@
       "properties": {}
     },
     {
-      "nodeId": "35",
-      "parentId": "3",
+      "nodeId": "36",
+      "parentId": "35",
       "role": "group",
       "name": "Billing period",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "38",
-      "parentId": "3",
+      "nodeId": "39",
+      "parentId": "35",
       "role": "status",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "39",
+      "nodeId": "40",
       "parentId": "34",
       "role": "none",
       "name": null,
@@ -571,8 +571,8 @@
       "properties": {}
     },
     {
-      "nodeId": "40",
-      "parentId": "39",
+      "nodeId": "3",
+      "parentId": "40",
       "role": "article",
       "name": null,
       "ignored": false,
@@ -580,7 +580,7 @@
     },
     {
       "nodeId": "53",
-      "parentId": "39",
+      "parentId": "40",
       "role": "article",
       "name": null,
       "ignored": false,
@@ -588,7 +588,7 @@
     },
     {
       "nodeId": "70",
-      "parentId": "39",
+      "parentId": "40",
       "role": "article",
       "name": null,
       "ignored": false,
@@ -787,7 +787,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000135",
+      "nodeId": "-1000000130",
       "parentId": "322",
       "role": "InlineTextBox",
       "name": "SentinelCore is a fictional brand built as a DesignOS golden example.",
@@ -803,7 +803,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000137",
+      "nodeId": "-1000000132",
       "parentId": "324",
       "role": "InlineTextBox",
       "name": " · ",
@@ -867,16 +867,16 @@
       "properties": {}
     },
     {
-      "nodeId": "36",
-      "parentId": "35",
+      "nodeId": "37",
+      "parentId": "36",
       "role": "button",
       "name": "Monthly",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "37",
-      "parentId": "35",
+      "nodeId": "38",
+      "parentId": "36",
       "role": "button",
       "name": "Annual",
       "ignored": false,
@@ -884,7 +884,7 @@
     },
     {
       "nodeId": "222",
-      "parentId": "38",
+      "parentId": "39",
       "role": "StaticText",
       "name": "Annual = 2 months free (prices below reflect it)",
       "ignored": false,
@@ -892,7 +892,7 @@
     },
     {
       "nodeId": "41",
-      "parentId": "40",
+      "parentId": "3",
       "role": "heading",
       "name": "Starter",
       "ignored": false,
@@ -902,7 +902,7 @@
     },
     {
       "nodeId": "42",
-      "parentId": "40",
+      "parentId": "3",
       "role": "paragraph",
       "name": null,
       "ignored": false,
@@ -910,7 +910,7 @@
     },
     {
       "nodeId": "43",
-      "parentId": "40",
+      "parentId": "3",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -950,7 +950,7 @@
     },
     {
       "nodeId": "46",
-      "parentId": "40",
+      "parentId": "3",
       "role": "paragraph",
       "name": null,
       "ignored": false,
@@ -958,23 +958,23 @@
     },
     {
       "nodeId": "47",
-      "parentId": "40",
+      "parentId": "3",
       "role": "list",
       "name": null,
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "4",
-      "parentId": "40",
+      "nodeId": "52",
+      "parentId": "3",
       "role": "link",
       "name": "Start 14-day trial",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "52",
-      "parentId": "40",
+      "nodeId": "4",
+      "parentId": "3",
       "role": "paragraph",
       "name": null,
       "ignored": false,
@@ -1437,7 +1437,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000136",
+      "nodeId": "-1000000131",
       "parentId": "323",
       "role": "InlineTextBox",
       "name": "Golden catalog",
@@ -1445,7 +1445,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000138",
+      "nodeId": "-1000000133",
       "parentId": "325",
       "role": "InlineTextBox",
       "name": "Contact",
@@ -1472,20 +1472,12 @@
       "nodeId": "-1000000006",
       "parentId": "217",
       "role": "InlineTextBox",
-      "name": "EDR pricing without ",
+      "name": "EDR pricing without ingestion traps.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000007",
-      "parentId": "217",
-      "role": "InlineTextBox",
-      "name": "ingestion traps.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000008",
       "parentId": "218",
       "role": "InlineTextBox",
       "name": "Per-analyst seats plus flat endpoint tiers. Alert volume never changes your ",
@@ -1493,7 +1485,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000009",
+      "nodeId": "-1000000008",
       "parentId": "218",
       "role": "InlineTextBox",
       "name": "bill. Noisy weeks are our problem, not your budget's.",
@@ -1501,24 +1493,24 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000010",
+      "nodeId": "-1000000009",
       "parentId": "219",
       "role": "InlineTextBox",
-      "name": "Example pricing page for DesignOS evaluation. The brand is fictional; customer proof and ",
+      "name": "Example pricing page for DesignOS evaluation. The brand is fictional; customer proof and certification claims ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000011",
+      "nodeId": "-1000000010",
       "parentId": "219",
       "role": "InlineTextBox",
-      "name": "certification claims are intentionally omitted rather than invented (PROOF_STANDARD.md).",
+      "name": "are intentionally omitted rather than invented (PROOF_STANDARD.md).",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "220",
-      "parentId": "36",
+      "parentId": "37",
       "role": "StaticText",
       "name": "Monthly",
       "ignored": false,
@@ -1526,14 +1518,14 @@
     },
     {
       "nodeId": "221",
-      "parentId": "37",
+      "parentId": "38",
       "role": "StaticText",
       "name": "Annual",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000014",
+      "nodeId": "-1000000013",
       "parentId": "222",
       "role": "InlineTextBox",
       "name": "Annual = 2 months free (prices below reflect it)",
@@ -1557,7 +1549,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000017",
+      "nodeId": "-1000000016",
       "parentId": "225",
       "role": "InlineTextBox",
       "name": "$29",
@@ -1565,7 +1557,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000018",
+      "nodeId": "-1000000017",
       "parentId": "226",
       "role": "InlineTextBox",
       "name": "per analyst / month",
@@ -1622,7 +1614,7 @@
     },
     {
       "nodeId": "232",
-      "parentId": "4",
+      "parentId": "52",
       "role": "StaticText",
       "name": "Start 14-day trial",
       "ignored": false,
@@ -1630,14 +1622,14 @@
     },
     {
       "nodeId": "233",
-      "parentId": "52",
+      "parentId": "4",
       "role": "StaticText",
       "name": "No card required · Full features in trial",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000026",
+      "nodeId": "-1000000025",
       "parentId": "234",
       "role": "InlineTextBox",
       "name": "MOST TEAMS LAND HERE",
@@ -1661,7 +1653,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000029",
+      "nodeId": "-1000000028",
       "parentId": "237",
       "role": "InlineTextBox",
       "name": "$79",
@@ -1669,7 +1661,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000030",
+      "nodeId": "-1000000029",
       "parentId": "238",
       "role": "InlineTextBox",
       "name": "per analyst / month",
@@ -1777,7 +1769,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000043",
+      "nodeId": "-1000000041",
       "parentId": "250",
       "role": "InlineTextBox",
       "name": "Custom",
@@ -1859,7 +1851,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000053",
+      "nodeId": "-1000000050",
       "parentId": "259",
       "role": "InlineTextBox",
       "name": "What changes between plans",
@@ -1867,18 +1859,10 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000054",
+      "nodeId": "-1000000051",
       "parentId": "260",
       "role": "InlineTextBox",
-      "name": "The differences, complete. If a row you care about is missing, that's a bug. Tell ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000055",
-      "parentId": "260",
-      "role": "InlineTextBox",
-      "name": "us.",
+      "name": "The differences, complete. If a row you care about is missing, that's a bug. Tell us.",
       "ignored": false,
       "properties": {}
     },
@@ -1971,7 +1955,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000100",
+      "nodeId": "-1000000096",
       "parentId": "298",
       "role": "InlineTextBox",
       "name": "Built for how security actually buys",
@@ -1979,18 +1963,18 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000101",
+      "nodeId": "-1000000097",
       "parentId": "299",
       "role": "InlineTextBox",
-      "name": "Architecture proof replaces testimonial theater. The claims below are ",
+      "name": "Architecture proof replaces testimonial theater. The claims below are inspectable in the ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000102",
+      "nodeId": "-1000000098",
       "parentId": "299",
       "role": "InlineTextBox",
-      "name": "inspectable in the trial, not asserted by a logo wall.",
+      "name": "trial, not asserted by a logo wall.",
       "ignored": false,
       "properties": {}
     },
@@ -2043,18 +2027,10 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000112",
+      "nodeId": "-1000000108",
       "parentId": "306",
       "role": "InlineTextBox",
-      "name": "Procurement questions, ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000113",
-      "parentId": "306",
-      "role": "InlineTextBox",
-      "name": "answered before the call",
+      "name": "Procurement questions, answered before the call",
       "ignored": false,
       "properties": {}
     },
@@ -2155,7 +2131,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000132",
+      "nodeId": "-1000000127",
       "parentId": "319",
       "role": "InlineTextBox",
       "name": "Coverage you can budget for.",
@@ -2163,7 +2139,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000133",
+      "nodeId": "-1000000128",
       "parentId": "320",
       "role": "InlineTextBox",
       "name": "Start 14-day trial",
@@ -2171,7 +2147,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000134",
+      "nodeId": "-1000000129",
       "parentId": "321",
       "role": "InlineTextBox",
       "name": "No card · Full Pro features · Your data exportable throughout",
@@ -2179,7 +2155,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000012",
+      "nodeId": "-1000000011",
       "parentId": "220",
       "role": "InlineTextBox",
       "name": "Monthly",
@@ -2187,7 +2163,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000013",
+      "nodeId": "-1000000012",
       "parentId": "221",
       "role": "InlineTextBox",
       "name": "Annual",
@@ -2195,7 +2171,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000015",
+      "nodeId": "-1000000014",
       "parentId": "223",
       "role": "InlineTextBox",
       "name": "Starter",
@@ -2203,7 +2179,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000016",
+      "nodeId": "-1000000015",
       "parentId": "224",
       "role": "InlineTextBox",
       "name": "Small teams standing up their first real endpoint coverage.",
@@ -2211,7 +2187,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000019",
+      "nodeId": "-1000000018",
       "parentId": "227",
       "role": "InlineTextBox",
       "name": "Includes 250 endpoints. Extra endpoints are $0.40/mo each, flat and not usage-metered.",
@@ -2251,7 +2227,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000024",
+      "nodeId": "-1000000023",
       "parentId": "232",
       "role": "InlineTextBox",
       "name": "Start 14-day trial",
@@ -2259,7 +2235,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000025",
+      "nodeId": "-1000000024",
       "parentId": "233",
       "role": "InlineTextBox",
       "name": "No card required · Full features in trial",
@@ -2267,7 +2243,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000027",
+      "nodeId": "-1000000026",
       "parentId": "235",
       "role": "InlineTextBox",
       "name": "Pro",
@@ -2275,7 +2251,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000028",
+      "nodeId": "-1000000027",
       "parentId": "236",
       "role": "InlineTextBox",
       "name": "SOC teams that triage daily and answer to auditors quarterly.",
@@ -2283,18 +2259,10 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000031",
+      "nodeId": "-1000000030",
       "parentId": "239",
       "role": "InlineTextBox",
-      "name": "Includes 1,000 endpoints. Extra endpoints $0.30/mo each. Seat = a named analyst who triages; read-only ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000032",
-      "parentId": "239",
-      "role": "InlineTextBox",
-      "name": "viewers are free.",
+      "name": "Includes 1,000 endpoints. Extra endpoints $0.30/mo each. Seat = a named analyst who triages; read-only viewers are free.",
       "ignored": false,
       "properties": {}
     },
@@ -2347,7 +2315,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000039",
+      "nodeId": "-1000000037",
       "parentId": "246",
       "role": "InlineTextBox",
       "name": "Start 14-day trial",
@@ -2355,7 +2323,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000040",
+      "nodeId": "-1000000038",
       "parentId": "247",
       "role": "InlineTextBox",
       "name": "No card required · Keep your rules if you downgrade",
@@ -2363,7 +2331,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000041",
+      "nodeId": "-1000000039",
       "parentId": "248",
       "role": "InlineTextBox",
       "name": "Enterprise",
@@ -2371,7 +2339,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000042",
+      "nodeId": "-1000000040",
       "parentId": "249",
       "role": "InlineTextBox",
       "name": "Private deployment, custom retention, procurement requirements.",
@@ -2379,18 +2347,10 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000044",
+      "nodeId": "-1000000042",
       "parentId": "251",
       "role": "InlineTextBox",
-      "name": "Priced on endpoints + deployment model, in writing, before any commitment. No \"call us\" price anchoring ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000045",
-      "parentId": "251",
-      "role": "InlineTextBox",
-      "name": "games.",
+      "name": "Priced on endpoints + deployment model, in writing, before any commitment. No \"call us\" price anchoring games.",
       "ignored": false,
       "properties": {}
     },
@@ -2435,7 +2395,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000051",
+      "nodeId": "-1000000048",
       "parentId": "257",
       "role": "InlineTextBox",
       "name": "Talk to an engineer",
@@ -2443,7 +2403,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000052",
+      "nodeId": "-1000000049",
       "parentId": "258",
       "role": "InlineTextBox",
       "name": "30-minute technical call · no deck, live product",
@@ -2723,7 +2683,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000103",
+      "nodeId": "-1000000099",
       "parentId": "300",
       "role": "InlineTextBox",
       "name": "On-device clustering",
@@ -2731,23 +2691,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000104",
+      "nodeId": "-1000000100",
       "parentId": "301",
       "role": "InlineTextBox",
-      "name": "Alerts are correlated on the endpoint before shipping, so SIEM ingestion doesn't balloon with ",
+      "name": "Alerts are correlated on the endpoint before shipping, so SIEM ingestion doesn't balloon with our noise. ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000105",
+      "nodeId": "-1000000101",
       "parentId": "301",
       "role": "InlineTextBox",
-      "name": "our noise. Verify it in the trial's volume report.",
+      "name": "Verify it in the trial's volume report.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000106",
+      "nodeId": "-1000000102",
       "parentId": "302",
       "role": "InlineTextBox",
       "name": "Predictable unit economics",
@@ -2755,23 +2715,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000107",
+      "nodeId": "-1000000103",
       "parentId": "303",
       "role": "InlineTextBox",
-      "name": "The bill scales with analysts and endpoints, two numbers you control. It never scales with log ",
+      "name": "The bill scales with analysts and endpoints, two numbers you control. It never scales with log volume, which ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000108",
+      "nodeId": "-1000000104",
       "parentId": "303",
       "role": "InlineTextBox",
-      "name": "volume, which you don't.",
+      "name": "you don't.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000109",
+      "nodeId": "-1000000105",
       "parentId": "304",
       "role": "InlineTextBox",
       "name": "Evidence as workflow",
@@ -2779,23 +2739,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000110",
+      "nodeId": "-1000000106",
       "parentId": "305",
       "role": "InlineTextBox",
-      "name": "Compliance shows up as exportable case timelines and evidence bundles. We name no ",
+      "name": "Compliance shows up as exportable case timelines and evidence bundles. We name no certifications here ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000111",
+      "nodeId": "-1000000107",
       "parentId": "305",
       "role": "InlineTextBox",
-      "name": "certifications here because unsourced badges are how this sector lies.",
+      "name": "because unsourced badges are how this sector lies.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000114",
+      "nodeId": "-1000000109",
       "parentId": "307",
       "role": "InlineTextBox",
       "name": "What exactly counts as a \"seat\"?",
@@ -2803,7 +2763,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000115",
+      "nodeId": "-1000000110",
       "parentId": "308",
       "role": "StaticText",
       "name": "+",
@@ -2811,15 +2771,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000116",
-      "parentId": "-1000000115",
+      "nodeId": "-1000000111",
+      "parentId": "-1000000110",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000117",
+      "nodeId": "-1000000112",
       "parentId": "309",
       "role": "InlineTextBox",
       "name": "What happens when the trial ends?",
@@ -2827,7 +2787,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000118",
+      "nodeId": "-1000000113",
       "parentId": "310",
       "role": "StaticText",
       "name": "+",
@@ -2835,15 +2795,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000119",
-      "parentId": "-1000000118",
+      "nodeId": "-1000000114",
+      "parentId": "-1000000113",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000120",
+      "nodeId": "-1000000115",
       "parentId": "311",
       "role": "InlineTextBox",
       "name": "Can we run a proof-of-value on real endpoints?",
@@ -2851,7 +2811,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000121",
+      "nodeId": "-1000000116",
       "parentId": "312",
       "role": "StaticText",
       "name": "+",
@@ -2859,15 +2819,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000122",
-      "parentId": "-1000000121",
+      "nodeId": "-1000000117",
+      "parentId": "-1000000116",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000123",
+      "nodeId": "-1000000118",
       "parentId": "313",
       "role": "InlineTextBox",
       "name": "How does annual billing and true-up work?",
@@ -2875,7 +2835,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000124",
+      "nodeId": "-1000000119",
       "parentId": "314",
       "role": "StaticText",
       "name": "+",
@@ -2883,15 +2843,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000125",
-      "parentId": "-1000000124",
+      "nodeId": "-1000000120",
+      "parentId": "-1000000119",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000126",
+      "nodeId": "-1000000121",
       "parentId": "315",
       "role": "InlineTextBox",
       "name": "Security review, DPA, and questionnaires?",
@@ -2899,7 +2859,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000127",
+      "nodeId": "-1000000122",
       "parentId": "316",
       "role": "StaticText",
       "name": "+",
@@ -2907,15 +2867,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000128",
-      "parentId": "-1000000127",
+      "nodeId": "-1000000123",
+      "parentId": "-1000000122",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000129",
+      "nodeId": "-1000000124",
       "parentId": "317",
       "role": "InlineTextBox",
       "name": "How do we leave?",
@@ -2923,7 +2883,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000130",
+      "nodeId": "-1000000125",
       "parentId": "318",
       "role": "StaticText",
       "name": "+",
@@ -2931,15 +2891,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000131",
-      "parentId": "-1000000130",
+      "nodeId": "-1000000126",
+      "parentId": "-1000000125",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000020",
+      "nodeId": "-1000000019",
       "parentId": "228",
       "role": "InlineTextBox",
       "name": "Endpoint telemetry & detection rules",
@@ -2947,7 +2907,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000021",
+      "nodeId": "-1000000020",
       "parentId": "229",
       "role": "InlineTextBox",
       "name": "Rule templates, weekly tuning digest",
@@ -2955,7 +2915,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000022",
+      "nodeId": "-1000000021",
       "parentId": "230",
       "role": "InlineTextBox",
       "name": "30-day hot retention",
@@ -2963,7 +2923,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000023",
+      "nodeId": "-1000000022",
       "parentId": "231",
       "role": "InlineTextBox",
       "name": "Email support, next business day",
@@ -2971,7 +2931,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000033",
+      "nodeId": "-1000000031",
       "parentId": "240",
       "role": "InlineTextBox",
       "name": "Everything in Starter",
@@ -2979,7 +2939,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000034",
+      "nodeId": "-1000000032",
       "parentId": "241",
       "role": "InlineTextBox",
       "name": "MITRE ATT&CK mapping workflow",
@@ -2987,7 +2947,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000035",
+      "nodeId": "-1000000033",
       "parentId": "242",
       "role": "InlineTextBox",
       "name": "Guided triage queues & case timelines",
@@ -2995,7 +2955,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000036",
+      "nodeId": "-1000000034",
       "parentId": "243",
       "role": "InlineTextBox",
       "name": "Audit export (evidence bundles)",
@@ -3003,7 +2963,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000037",
+      "nodeId": "-1000000035",
       "parentId": "244",
       "role": "InlineTextBox",
       "name": "90-day hot retention · 1-year cold",
@@ -3011,7 +2971,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000038",
+      "nodeId": "-1000000036",
       "parentId": "245",
       "role": "InlineTextBox",
       "name": "Support in 4 business hours",
@@ -3019,7 +2979,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000046",
+      "nodeId": "-1000000043",
       "parentId": "252",
       "role": "InlineTextBox",
       "name": "Everything in Pro",
@@ -3027,7 +2987,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000047",
+      "nodeId": "-1000000044",
       "parentId": "253",
       "role": "InlineTextBox",
       "name": "Private/self-hosted deployment",
@@ -3035,7 +2995,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000048",
+      "nodeId": "-1000000045",
       "parentId": "254",
       "role": "InlineTextBox",
       "name": "Custom retention & residency",
@@ -3043,7 +3003,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000049",
+      "nodeId": "-1000000046",
       "parentId": "255",
       "role": "InlineTextBox",
       "name": "Security review & procurement support",
@@ -3051,7 +3011,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000050",
+      "nodeId": "-1000000047",
       "parentId": "256",
       "role": "InlineTextBox",
       "name": "Named support engineer",
@@ -3059,7 +3019,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000056",
+      "nodeId": "-1000000052",
       "parentId": "261",
       "role": "InlineTextBox",
       "name": "Feature ",
@@ -3067,7 +3027,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000057",
+      "nodeId": "-1000000053",
       "parentId": "261",
       "role": "InlineTextBox",
       "name": "comparison ",
@@ -3075,7 +3035,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000058",
+      "nodeId": "-1000000054",
       "parentId": "261",
       "role": "InlineTextBox",
       "name": "across ",
@@ -3083,7 +3043,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000059",
+      "nodeId": "-1000000055",
       "parentId": "261",
       "role": "InlineTextBox",
       "name": "Starter, ",
@@ -3091,7 +3051,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000060",
+      "nodeId": "-1000000056",
       "parentId": "261",
       "role": "InlineTextBox",
       "name": "Pro, ",
@@ -3099,7 +3059,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000061",
+      "nodeId": "-1000000057",
       "parentId": "261",
       "role": "InlineTextBox",
       "name": "and ",
@@ -3107,7 +3067,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000062",
+      "nodeId": "-1000000058",
       "parentId": "261",
       "role": "InlineTextBox",
       "name": "Enterprise ",
@@ -3115,7 +3075,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000063",
+      "nodeId": "-1000000059",
       "parentId": "261",
       "role": "InlineTextBox",
       "name": "plans",
@@ -3411,48 +3371,48 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000116",
-      "parentId": "-1000000115",
+      "nodeId": "-1000000111",
+      "parentId": "-1000000110",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000119",
-      "parentId": "-1000000118",
+      "nodeId": "-1000000114",
+      "parentId": "-1000000113",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000122",
-      "parentId": "-1000000121",
+      "nodeId": "-1000000117",
+      "parentId": "-1000000116",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000125",
-      "parentId": "-1000000124",
+      "nodeId": "-1000000120",
+      "parentId": "-1000000119",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000128",
-      "parentId": "-1000000127",
+      "nodeId": "-1000000123",
+      "parentId": "-1000000122",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000131",
-      "parentId": "-1000000130",
+      "nodeId": "-1000000126",
+      "parentId": "-1000000125",
       "role": "InlineTextBox",
       "name": "+",
       "ignored": false,
@@ -3491,7 +3451,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000068",
+      "nodeId": "-1000000064",
       "parentId": "266",
       "role": "InlineTextBox",
       "name": "Included endpoints",
@@ -3499,7 +3459,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000069",
+      "nodeId": "-1000000065",
       "parentId": "267",
       "role": "InlineTextBox",
       "name": "250",
@@ -3507,7 +3467,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000070",
+      "nodeId": "-1000000066",
       "parentId": "268",
       "role": "InlineTextBox",
       "name": "1,000",
@@ -3515,7 +3475,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000071",
+      "nodeId": "-1000000067",
       "parentId": "269",
       "role": "InlineTextBox",
       "name": "Custom",
@@ -3523,7 +3483,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000072",
+      "nodeId": "-1000000068",
       "parentId": "270",
       "role": "InlineTextBox",
       "name": "Extra endpoint / month",
@@ -3531,7 +3491,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000073",
+      "nodeId": "-1000000069",
       "parentId": "271",
       "role": "InlineTextBox",
       "name": "$0.40",
@@ -3539,7 +3499,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000074",
+      "nodeId": "-1000000070",
       "parentId": "272",
       "role": "InlineTextBox",
       "name": "$0.30",
@@ -3547,7 +3507,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000075",
+      "nodeId": "-1000000071",
       "parentId": "273",
       "role": "InlineTextBox",
       "name": "Volume",
@@ -3555,7 +3515,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000076",
+      "nodeId": "-1000000072",
       "parentId": "274",
       "role": "InlineTextBox",
       "name": "Hot retention",
@@ -3563,7 +3523,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000077",
+      "nodeId": "-1000000073",
       "parentId": "275",
       "role": "InlineTextBox",
       "name": "30 days",
@@ -3571,7 +3531,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000078",
+      "nodeId": "-1000000074",
       "parentId": "276",
       "role": "InlineTextBox",
       "name": "90 days",
@@ -3579,7 +3539,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000079",
+      "nodeId": "-1000000075",
       "parentId": "277",
       "role": "InlineTextBox",
       "name": "Custom",
@@ -3587,7 +3547,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000080",
+      "nodeId": "-1000000076",
       "parentId": "278",
       "role": "InlineTextBox",
       "name": "MITRE mapping workflow",
@@ -3595,7 +3555,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000081",
+      "nodeId": "-1000000077",
       "parentId": "279",
       "role": "InlineTextBox",
       "name": "No",
@@ -3603,7 +3563,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000082",
+      "nodeId": "-1000000078",
       "parentId": "280",
       "role": "InlineTextBox",
       "name": "✓",
@@ -3611,7 +3571,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000083",
+      "nodeId": "-1000000079",
       "parentId": "281",
       "role": "InlineTextBox",
       "name": "✓",
@@ -3619,7 +3579,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000084",
+      "nodeId": "-1000000080",
       "parentId": "282",
       "role": "InlineTextBox",
       "name": "Guided triage queues",
@@ -3627,7 +3587,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000085",
+      "nodeId": "-1000000081",
       "parentId": "283",
       "role": "InlineTextBox",
       "name": "No",
@@ -3635,7 +3595,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000086",
+      "nodeId": "-1000000082",
       "parentId": "284",
       "role": "InlineTextBox",
       "name": "✓",
@@ -3643,7 +3603,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000087",
+      "nodeId": "-1000000083",
       "parentId": "285",
       "role": "InlineTextBox",
       "name": "✓",
@@ -3651,7 +3611,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000088",
+      "nodeId": "-1000000084",
       "parentId": "286",
       "role": "InlineTextBox",
       "name": "Audit evidence export",
@@ -3659,7 +3619,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000089",
+      "nodeId": "-1000000085",
       "parentId": "287",
       "role": "InlineTextBox",
       "name": "No",
@@ -3667,7 +3627,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000090",
+      "nodeId": "-1000000086",
       "parentId": "288",
       "role": "InlineTextBox",
       "name": "✓",
@@ -3675,7 +3635,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000091",
+      "nodeId": "-1000000087",
       "parentId": "289",
       "role": "InlineTextBox",
       "name": "✓",
@@ -3683,7 +3643,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000092",
+      "nodeId": "-1000000088",
       "parentId": "290",
       "role": "InlineTextBox",
       "name": "Private deployment",
@@ -3691,7 +3651,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000093",
+      "nodeId": "-1000000089",
       "parentId": "291",
       "role": "InlineTextBox",
       "name": "No",
@@ -3699,7 +3659,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000094",
+      "nodeId": "-1000000090",
       "parentId": "292",
       "role": "InlineTextBox",
       "name": "No",
@@ -3707,7 +3667,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000095",
+      "nodeId": "-1000000091",
       "parentId": "293",
       "role": "InlineTextBox",
       "name": "✓",
@@ -3715,7 +3675,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000096",
+      "nodeId": "-1000000092",
       "parentId": "294",
       "role": "InlineTextBox",
       "name": "Support response",
@@ -3723,7 +3683,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000097",
+      "nodeId": "-1000000093",
       "parentId": "295",
       "role": "InlineTextBox",
       "name": "Next business day",
@@ -3731,7 +3691,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000098",
+      "nodeId": "-1000000094",
       "parentId": "296",
       "role": "InlineTextBox",
       "name": "4 business hours",
@@ -3739,7 +3699,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000099",
+      "nodeId": "-1000000095",
       "parentId": "297",
       "role": "InlineTextBox",
       "name": "Named engineer",
@@ -3747,7 +3707,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000064",
+      "nodeId": "-1000000060",
       "parentId": "262",
       "role": "InlineTextBox",
       "name": "Capability",
@@ -3755,7 +3715,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000065",
+      "nodeId": "-1000000061",
       "parentId": "263",
       "role": "InlineTextBox",
       "name": "Starter",
@@ -3763,7 +3723,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000066",
+      "nodeId": "-1000000062",
       "parentId": "264",
       "role": "InlineTextBox",
       "name": "Pro",
@@ -3771,7 +3731,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000067",
+      "nodeId": "-1000000063",
       "parentId": "265",
       "role": "InlineTextBox",
       "name": "Enterprise",

@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "target": "file:///Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/index.html",
-  "generatedAt": "2026-08-14T14:08:57.945Z",
+  "target": "file:///home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/index.html",
+  "generatedAt": "2026-08-15T09:13:43.911Z",
   "viewports": [
     {
       "name": "reflow-320",
@@ -47,7 +47,7 @@
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 5011,
+        "scrollHeight": 5003,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -165,8 +165,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 18.199999999254942,
-        "load": 28.400000002235174,
+        "domContentLoaded": 13.69999999999709,
+        "load": 19.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -176,7 +176,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 320,
           "windowHeight": 800,
           "orientationAngle": 0,
@@ -785,7 +785,7 @@
           "nodeId": "-1000000162",
           "parentId": "199",
           "role": "InlineTextBox",
-          "name": "golden example. No customer logos are ",
+          "name": "golden example. No customer logos are shown ",
           "ignored": false,
           "properties": {}
         },
@@ -793,7 +793,7 @@
           "nodeId": "-1000000163",
           "parentId": "199",
           "role": "InlineTextBox",
-          "name": "shown because none exist.",
+          "name": "because none exist.",
           "ignored": false,
           "properties": {}
         },
@@ -1947,7 +1947,7 @@
           "nodeId": "-1000000159",
           "parentId": "198",
           "role": "InlineTextBox",
-          "name": "Connects read-only · Disconnect wipes our copy ",
+          "name": "Connects read-only · Disconnect wipes our copy in ",
           "ignored": false,
           "properties": {}
         },
@@ -1955,7 +1955,7 @@
           "nodeId": "-1000000160",
           "parentId": "198",
           "role": "InlineTextBox",
-          "name": "in 24h",
+          "name": "24h",
           "ignored": false,
           "properties": {}
         },
@@ -1995,7 +1995,7 @@
           "nodeId": "-1000000035",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "CRM notes + billing events, read-",
+          "name": "CRM notes + billing events, read-only. ",
           "ignored": false,
           "properties": {}
         },
@@ -2003,7 +2003,7 @@
           "nodeId": "-1000000036",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "only. Sending email or editing records ",
+          "name": "Sending email or editing records ",
           "ignored": false,
           "properties": {}
         },
@@ -2155,7 +2155,7 @@
           "nodeId": "-1000000066",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "asks a clarifying question instead ",
+          "name": "asks a clarifying question instead of ",
           "ignored": false,
           "properties": {}
         },
@@ -2163,7 +2163,7 @@
           "nodeId": "-1000000067",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "of guessing.",
+          "name": "guessing.",
           "ignored": false,
           "properties": {}
         },
@@ -2243,7 +2243,7 @@
           "nodeId": "-1000000079",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "confidence findings are labeled ",
+          "name": "confidence findings are labeled and ",
           "ignored": false,
           "properties": {}
         },
@@ -2251,7 +2251,7 @@
           "nodeId": "-1000000080",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "and demoted to \"worth checking,\" ",
+          "name": "demoted to \"worth checking,\" not ",
           "ignored": false,
           "properties": {}
         },
@@ -2259,7 +2259,7 @@
           "nodeId": "-1000000081",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "not stated as fact.",
+          "name": "stated as fact.",
           "ignored": false,
           "properties": {}
         },
@@ -3065,9 +3065,9 @@
             "rect": {
               "left": 16,
               "top": 16,
-              "right": 158,
+              "right": 157,
               "bottom": 63,
-              "width": 142,
+              "width": 141,
               "height": 47
             },
             "visibleIndicator": true,
@@ -3093,11 +3093,11 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(2)",
             "name": "Start free",
             "rect": {
-              "left": 197,
+              "left": 198,
               "top": 16,
               "right": 296,
               "bottom": 60,
-              "width": 99,
+              "width": 98,
               "height": 44
             },
             "visibleIndicator": true,
@@ -3138,7 +3138,7 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(1) > span.sources > a",
             "name": "4 sources",
             "rect": {
-              "left": 151,
+              "left": 150,
               "top": 378,
               "right": 207,
               "bottom": 422,
@@ -3155,7 +3155,7 @@
             "rect": {
               "left": 136,
               "top": 378,
-              "right": 191,
+              "right": 192,
               "bottom": 422,
               "width": 56,
               "height": 44
@@ -3168,7 +3168,7 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(3) > span.sources > a",
             "name": "3 sources",
             "rect": {
-              "left": 119,
+              "left": 118,
               "top": 378,
               "right": 174,
               "bottom": 422,
@@ -3215,9 +3215,9 @@
             "rect": {
               "left": 24,
               "top": 378,
-              "right": 182,
+              "right": 181,
               "bottom": 422,
-              "width": 158,
+              "width": 157,
               "height": 44
             },
             "visibleIndicator": true,
@@ -3232,7 +3232,7 @@
               "top": 443,
               "right": 213,
               "bottom": 487,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -3245,9 +3245,9 @@
             "rect": {
               "left": 24,
               "top": 724,
-              "right": 113,
+              "right": 111,
               "bottom": 768,
-              "width": 89,
+              "width": 87,
               "height": 44
             },
             "visibleIndicator": true,
@@ -3258,14 +3258,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/reflow-320-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/reflow-320-light-full.png"
     },
     {
       "scenario": "reflow-320-light-reduced",
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 5011,
+        "scrollHeight": 5003,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -3383,8 +3383,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 2.899999998509884,
-        "load": 23.5,
+        "domContentLoaded": 9.900000000008731,
+        "load": 13.80000000000291,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -3394,7 +3394,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 320,
           "windowHeight": 800,
           "orientationAngle": 0,
@@ -4003,7 +4003,7 @@
           "nodeId": "-1000000162",
           "parentId": "199",
           "role": "InlineTextBox",
-          "name": "golden example. No customer logos are ",
+          "name": "golden example. No customer logos are shown ",
           "ignored": false,
           "properties": {}
         },
@@ -4011,7 +4011,7 @@
           "nodeId": "-1000000163",
           "parentId": "199",
           "role": "InlineTextBox",
-          "name": "shown because none exist.",
+          "name": "because none exist.",
           "ignored": false,
           "properties": {}
         },
@@ -5165,7 +5165,7 @@
           "nodeId": "-1000000159",
           "parentId": "198",
           "role": "InlineTextBox",
-          "name": "Connects read-only · Disconnect wipes our copy ",
+          "name": "Connects read-only · Disconnect wipes our copy in ",
           "ignored": false,
           "properties": {}
         },
@@ -5173,7 +5173,7 @@
           "nodeId": "-1000000160",
           "parentId": "198",
           "role": "InlineTextBox",
-          "name": "in 24h",
+          "name": "24h",
           "ignored": false,
           "properties": {}
         },
@@ -5213,7 +5213,7 @@
           "nodeId": "-1000000035",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "CRM notes + billing events, read-",
+          "name": "CRM notes + billing events, read-only. ",
           "ignored": false,
           "properties": {}
         },
@@ -5221,7 +5221,7 @@
           "nodeId": "-1000000036",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "only. Sending email or editing records ",
+          "name": "Sending email or editing records ",
           "ignored": false,
           "properties": {}
         },
@@ -5373,7 +5373,7 @@
           "nodeId": "-1000000066",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "asks a clarifying question instead ",
+          "name": "asks a clarifying question instead of ",
           "ignored": false,
           "properties": {}
         },
@@ -5381,7 +5381,7 @@
           "nodeId": "-1000000067",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "of guessing.",
+          "name": "guessing.",
           "ignored": false,
           "properties": {}
         },
@@ -5461,7 +5461,7 @@
           "nodeId": "-1000000079",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "confidence findings are labeled ",
+          "name": "confidence findings are labeled and ",
           "ignored": false,
           "properties": {}
         },
@@ -5469,7 +5469,7 @@
           "nodeId": "-1000000080",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "and demoted to \"worth checking,\" ",
+          "name": "demoted to \"worth checking,\" not ",
           "ignored": false,
           "properties": {}
         },
@@ -5477,7 +5477,7 @@
           "nodeId": "-1000000081",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "not stated as fact.",
+          "name": "stated as fact.",
           "ignored": false,
           "properties": {}
         },
@@ -6275,14 +6275,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/reflow-320-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/reflow-320-light-reduced.png"
     },
     {
       "scenario": "reflow-320-dark-full",
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 5011,
+        "scrollHeight": 5003,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -6400,8 +6400,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 5,
-        "load": 9.5,
+        "domContentLoaded": 9.19999999999709,
+        "load": 12.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -6411,7 +6411,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 320,
           "windowHeight": 800,
           "orientationAngle": 0,
@@ -7020,7 +7020,7 @@
           "nodeId": "-1000000162",
           "parentId": "199",
           "role": "InlineTextBox",
-          "name": "golden example. No customer logos are ",
+          "name": "golden example. No customer logos are shown ",
           "ignored": false,
           "properties": {}
         },
@@ -7028,7 +7028,7 @@
           "nodeId": "-1000000163",
           "parentId": "199",
           "role": "InlineTextBox",
-          "name": "shown because none exist.",
+          "name": "because none exist.",
           "ignored": false,
           "properties": {}
         },
@@ -8182,7 +8182,7 @@
           "nodeId": "-1000000159",
           "parentId": "198",
           "role": "InlineTextBox",
-          "name": "Connects read-only · Disconnect wipes our copy ",
+          "name": "Connects read-only · Disconnect wipes our copy in ",
           "ignored": false,
           "properties": {}
         },
@@ -8190,7 +8190,7 @@
           "nodeId": "-1000000160",
           "parentId": "198",
           "role": "InlineTextBox",
-          "name": "in 24h",
+          "name": "24h",
           "ignored": false,
           "properties": {}
         },
@@ -8230,7 +8230,7 @@
           "nodeId": "-1000000035",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "CRM notes + billing events, read-",
+          "name": "CRM notes + billing events, read-only. ",
           "ignored": false,
           "properties": {}
         },
@@ -8238,7 +8238,7 @@
           "nodeId": "-1000000036",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "only. Sending email or editing records ",
+          "name": "Sending email or editing records ",
           "ignored": false,
           "properties": {}
         },
@@ -8390,7 +8390,7 @@
           "nodeId": "-1000000066",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "asks a clarifying question instead ",
+          "name": "asks a clarifying question instead of ",
           "ignored": false,
           "properties": {}
         },
@@ -8398,7 +8398,7 @@
           "nodeId": "-1000000067",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "of guessing.",
+          "name": "guessing.",
           "ignored": false,
           "properties": {}
         },
@@ -8478,7 +8478,7 @@
           "nodeId": "-1000000079",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "confidence findings are labeled ",
+          "name": "confidence findings are labeled and ",
           "ignored": false,
           "properties": {}
         },
@@ -8486,7 +8486,7 @@
           "nodeId": "-1000000080",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "and demoted to \"worth checking,\" ",
+          "name": "demoted to \"worth checking,\" not ",
           "ignored": false,
           "properties": {}
         },
@@ -8494,7 +8494,7 @@
           "nodeId": "-1000000081",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "not stated as fact.",
+          "name": "stated as fact.",
           "ignored": false,
           "properties": {}
         },
@@ -9292,14 +9292,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/reflow-320-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/reflow-320-dark-full.png"
     },
     {
       "scenario": "reflow-320-dark-reduced",
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 5011,
+        "scrollHeight": 5003,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -9417,8 +9417,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.399999998509884,
-        "load": 8,
+        "domContentLoaded": 9.299999999988358,
+        "load": 12.89999999999418,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -9428,7 +9428,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 320,
           "windowHeight": 800,
           "orientationAngle": 0,
@@ -10037,7 +10037,7 @@
           "nodeId": "-1000000162",
           "parentId": "199",
           "role": "InlineTextBox",
-          "name": "golden example. No customer logos are ",
+          "name": "golden example. No customer logos are shown ",
           "ignored": false,
           "properties": {}
         },
@@ -10045,7 +10045,7 @@
           "nodeId": "-1000000163",
           "parentId": "199",
           "role": "InlineTextBox",
-          "name": "shown because none exist.",
+          "name": "because none exist.",
           "ignored": false,
           "properties": {}
         },
@@ -11199,7 +11199,7 @@
           "nodeId": "-1000000159",
           "parentId": "198",
           "role": "InlineTextBox",
-          "name": "Connects read-only · Disconnect wipes our copy ",
+          "name": "Connects read-only · Disconnect wipes our copy in ",
           "ignored": false,
           "properties": {}
         },
@@ -11207,7 +11207,7 @@
           "nodeId": "-1000000160",
           "parentId": "198",
           "role": "InlineTextBox",
-          "name": "in 24h",
+          "name": "24h",
           "ignored": false,
           "properties": {}
         },
@@ -11247,7 +11247,7 @@
           "nodeId": "-1000000035",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "CRM notes + billing events, read-",
+          "name": "CRM notes + billing events, read-only. ",
           "ignored": false,
           "properties": {}
         },
@@ -11255,7 +11255,7 @@
           "nodeId": "-1000000036",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "only. Sending email or editing records ",
+          "name": "Sending email or editing records ",
           "ignored": false,
           "properties": {}
         },
@@ -11407,7 +11407,7 @@
           "nodeId": "-1000000066",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "asks a clarifying question instead ",
+          "name": "asks a clarifying question instead of ",
           "ignored": false,
           "properties": {}
         },
@@ -11415,7 +11415,7 @@
           "nodeId": "-1000000067",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "of guessing.",
+          "name": "guessing.",
           "ignored": false,
           "properties": {}
         },
@@ -11495,7 +11495,7 @@
           "nodeId": "-1000000079",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "confidence findings are labeled ",
+          "name": "confidence findings are labeled and ",
           "ignored": false,
           "properties": {}
         },
@@ -11503,7 +11503,7 @@
           "nodeId": "-1000000080",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "and demoted to \"worth checking,\" ",
+          "name": "demoted to \"worth checking,\" not ",
           "ignored": false,
           "properties": {}
         },
@@ -11511,7 +11511,7 @@
           "nodeId": "-1000000081",
           "parentId": "166",
           "role": "InlineTextBox",
-          "name": "not stated as fact.",
+          "name": "stated as fact.",
           "ignored": false,
           "properties": {}
         },
@@ -12309,14 +12309,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/reflow-320-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/reflow-320-dark-reduced.png"
     },
     {
       "scenario": "mobile-375-light-full",
       "document": {
         "scrollWidth": 375,
         "clientWidth": 375,
-        "scrollHeight": 4626,
+        "scrollHeight": 4618,
         "viewportHeight": 812
       },
       "overflow": [],
@@ -12434,8 +12434,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 4.300000000745058,
-        "load": 9,
+        "domContentLoaded": 10.69999999999709,
+        "load": 15.30000000000291,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -12445,7 +12445,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 375,
           "windowHeight": 812,
           "orientationAngle": 0,
@@ -13666,7 +13666,7 @@
           "nodeId": "-1000000021",
           "parentId": "135",
           "role": "InlineTextBox",
-          "name": "illustration of the product mechanic, not a ",
+          "name": "illustration of the product mechanic, not a recorded ",
           "ignored": false,
           "properties": {}
         },
@@ -13674,7 +13674,7 @@
           "nodeId": "-1000000022",
           "parentId": "135",
           "role": "InlineTextBox",
-          "name": "recorded live run.",
+          "name": "live run.",
           "ignored": false,
           "properties": {}
         },
@@ -14200,7 +14200,7 @@
           "nodeId": "-1000000029",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "CRM notes + billing events, read-only. ",
+          "name": "CRM notes + billing events, read-only. Sending ",
           "ignored": false,
           "properties": {}
         },
@@ -14208,7 +14208,7 @@
           "nodeId": "-1000000030",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "Sending email or editing records requires your ",
+          "name": "email or editing records requires your approval, ",
           "ignored": false,
           "properties": {}
         },
@@ -14216,7 +14216,7 @@
           "nodeId": "-1000000031",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "approval, every time.",
+          "name": "every time.",
           "ignored": false,
           "properties": {}
         },
@@ -15198,9 +15198,9 @@
             "rect": {
               "left": 16,
               "top": 16,
-              "right": 158,
+              "right": 157,
               "bottom": 63,
-              "width": 142,
+              "width": 141,
               "height": 47
             },
             "visibleIndicator": true,
@@ -15226,11 +15226,11 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(2)",
             "name": "Start free",
             "rect": {
-              "left": 252,
+              "left": 253,
               "top": 16,
               "right": 351,
               "bottom": 60,
-              "width": 99,
+              "width": 98,
               "height": 44
             },
             "visibleIndicator": true,
@@ -15271,9 +15271,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(1) > span.sources > a",
             "name": "4 sources",
             "rect": {
-              "left": 110,
+              "left": 108,
               "top": 384,
-              "right": 165,
+              "right": 164,
               "bottom": 428,
               "width": 56,
               "height": 44
@@ -15286,9 +15286,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(2) > span.sources > a",
             "name": "2 sources",
             "rect": {
-              "left": 101,
+              "left": 102,
               "top": 384,
-              "right": 157,
+              "right": 158,
               "bottom": 428,
               "width": 56,
               "height": 44
@@ -15346,11 +15346,11 @@
             "selector": "body > main > section.block:nth-of-type(4) > p.integrate-note > a",
             "name": "Read the security model →",
             "rect": {
-              "left": 110,
+              "left": 107,
               "top": 384,
-              "right": 268,
+              "right": 264,
               "bottom": 428,
-              "width": 158,
+              "width": 157,
               "height": 44
             },
             "visibleIndicator": true,
@@ -15361,11 +15361,11 @@
             "selector": "html > body > main > section.final:nth-of-type(5) > a.btn",
             "name": "Start free",
             "rect": {
-              "left": 134,
+              "left": 135,
               "top": 474,
-              "right": 241,
+              "right": 240,
               "bottom": 518,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -15378,9 +15378,9 @@
             "rect": {
               "left": 24,
               "top": 736,
-              "right": 113,
+              "right": 111,
               "bottom": 780,
-              "width": 89,
+              "width": 87,
               "height": 44
             },
             "visibleIndicator": true,
@@ -15391,14 +15391,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/mobile-375-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/mobile-375-light-full.png"
     },
     {
       "scenario": "mobile-375-light-reduced",
       "document": {
         "scrollWidth": 375,
         "clientWidth": 375,
-        "scrollHeight": 4626,
+        "scrollHeight": 4618,
         "viewportHeight": 812
       },
       "overflow": [],
@@ -15516,8 +15516,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.300000000745058,
-        "load": 8.100000001490116,
+        "domContentLoaded": 10,
+        "load": 13.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -15527,7 +15527,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 375,
           "windowHeight": 812,
           "orientationAngle": 0,
@@ -16748,7 +16748,7 @@
           "nodeId": "-1000000021",
           "parentId": "135",
           "role": "InlineTextBox",
-          "name": "illustration of the product mechanic, not a ",
+          "name": "illustration of the product mechanic, not a recorded ",
           "ignored": false,
           "properties": {}
         },
@@ -16756,7 +16756,7 @@
           "nodeId": "-1000000022",
           "parentId": "135",
           "role": "InlineTextBox",
-          "name": "recorded live run.",
+          "name": "live run.",
           "ignored": false,
           "properties": {}
         },
@@ -17282,7 +17282,7 @@
           "nodeId": "-1000000029",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "CRM notes + billing events, read-only. ",
+          "name": "CRM notes + billing events, read-only. Sending ",
           "ignored": false,
           "properties": {}
         },
@@ -17290,7 +17290,7 @@
           "nodeId": "-1000000030",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "Sending email or editing records requires your ",
+          "name": "email or editing records requires your approval, ",
           "ignored": false,
           "properties": {}
         },
@@ -17298,7 +17298,7 @@
           "nodeId": "-1000000031",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "approval, every time.",
+          "name": "every time.",
           "ignored": false,
           "properties": {}
         },
@@ -18272,14 +18272,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/mobile-375-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/mobile-375-light-reduced.png"
     },
     {
       "scenario": "mobile-375-dark-full",
       "document": {
         "scrollWidth": 375,
         "clientWidth": 375,
-        "scrollHeight": 4626,
+        "scrollHeight": 4618,
         "viewportHeight": 812
       },
       "overflow": [],
@@ -18397,8 +18397,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.399999998509884,
-        "load": 8,
+        "domContentLoaded": 11.30000000000291,
+        "load": 17.30000000000291,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -18408,7 +18408,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 375,
           "windowHeight": 812,
           "orientationAngle": 0,
@@ -19629,7 +19629,7 @@
           "nodeId": "-1000000021",
           "parentId": "135",
           "role": "InlineTextBox",
-          "name": "illustration of the product mechanic, not a ",
+          "name": "illustration of the product mechanic, not a recorded ",
           "ignored": false,
           "properties": {}
         },
@@ -19637,7 +19637,7 @@
           "nodeId": "-1000000022",
           "parentId": "135",
           "role": "InlineTextBox",
-          "name": "recorded live run.",
+          "name": "live run.",
           "ignored": false,
           "properties": {}
         },
@@ -20163,7 +20163,7 @@
           "nodeId": "-1000000029",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "CRM notes + billing events, read-only. ",
+          "name": "CRM notes + billing events, read-only. Sending ",
           "ignored": false,
           "properties": {}
         },
@@ -20171,7 +20171,7 @@
           "nodeId": "-1000000030",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "Sending email or editing records requires your ",
+          "name": "email or editing records requires your approval, ",
           "ignored": false,
           "properties": {}
         },
@@ -20179,7 +20179,7 @@
           "nodeId": "-1000000031",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "approval, every time.",
+          "name": "every time.",
           "ignored": false,
           "properties": {}
         },
@@ -21153,14 +21153,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/mobile-375-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/mobile-375-dark-full.png"
     },
     {
       "scenario": "mobile-375-dark-reduced",
       "document": {
         "scrollWidth": 375,
         "clientWidth": 375,
-        "scrollHeight": 4626,
+        "scrollHeight": 4618,
         "viewportHeight": 812
       },
       "overflow": [],
@@ -21278,8 +21278,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3,
-        "load": 7.799999997019768,
+        "domContentLoaded": 11.5,
+        "load": 15.30000000000291,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -21289,7 +21289,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 375,
           "windowHeight": 812,
           "orientationAngle": 0,
@@ -22510,7 +22510,7 @@
           "nodeId": "-1000000021",
           "parentId": "135",
           "role": "InlineTextBox",
-          "name": "illustration of the product mechanic, not a ",
+          "name": "illustration of the product mechanic, not a recorded ",
           "ignored": false,
           "properties": {}
         },
@@ -22518,7 +22518,7 @@
           "nodeId": "-1000000022",
           "parentId": "135",
           "role": "InlineTextBox",
-          "name": "recorded live run.",
+          "name": "live run.",
           "ignored": false,
           "properties": {}
         },
@@ -23044,7 +23044,7 @@
           "nodeId": "-1000000029",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "CRM notes + billing events, read-only. ",
+          "name": "CRM notes + billing events, read-only. Sending ",
           "ignored": false,
           "properties": {}
         },
@@ -23052,7 +23052,7 @@
           "nodeId": "-1000000030",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "Sending email or editing records requires your ",
+          "name": "email or editing records requires your approval, ",
           "ignored": false,
           "properties": {}
         },
@@ -23060,7 +23060,7 @@
           "nodeId": "-1000000031",
           "parentId": "141",
           "role": "InlineTextBox",
-          "name": "approval, every time.",
+          "name": "every time.",
           "ignored": false,
           "properties": {}
         },
@@ -24034,14 +24034,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/mobile-375-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/mobile-375-dark-reduced.png"
     },
     {
       "scenario": "tablet-768-light-full",
       "document": {
         "scrollWidth": 768,
         "clientWidth": 768,
-        "scrollHeight": 3680,
+        "scrollHeight": 3672,
         "viewportHeight": 1024
       },
       "overflow": [],
@@ -24164,8 +24164,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.100000001490116,
-        "load": 7.900000002235174,
+        "domContentLoaded": 9.599999999991269,
+        "load": 12.89999999999418,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -24175,7 +24175,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 768,
           "windowHeight": 1024,
           "orientationAngle": 0,
@@ -24789,7 +24789,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000110",
+          "nodeId": "-1000000109",
           "parentId": "199",
           "role": "InlineTextBox",
           "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -25273,7 +25273,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000111",
+          "nodeId": "-1000000110",
           "parentId": "200",
           "role": "InlineTextBox",
           "name": "Golden catalog",
@@ -25738,15 +25738,7 @@
           "nodeId": "-1000000104",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting ",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000105",
-          "parentId": "194",
-          "role": "InlineTextBox",
-          "name": "copilot. ",
+          "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
           "ignored": false,
           "properties": {}
         },
@@ -25759,7 +25751,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000107",
+          "nodeId": "-1000000106",
           "parentId": "196",
           "role": "InlineTextBox",
           "name": "See your own accounts through it.",
@@ -25767,7 +25759,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000108",
+          "nodeId": "-1000000107",
           "parentId": "197",
           "role": "InlineTextBox",
           "name": "Start free",
@@ -25775,7 +25767,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000109",
+          "nodeId": "-1000000108",
           "parentId": "198",
           "role": "InlineTextBox",
           "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -25930,7 +25922,7 @@
           "nodeId": "-1000000043",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot ",
+          "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot asks ",
           "ignored": false,
           "properties": {}
         },
@@ -25938,7 +25930,7 @@
           "nodeId": "-1000000044",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "asks a clarifying question instead of guessing.",
+          "name": "a clarifying question instead of guessing.",
           "ignored": false,
           "properties": {}
         },
@@ -26263,7 +26255,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000106",
+          "nodeId": "-1000000105",
           "parentId": "195",
           "role": "InlineTextBox",
           "name": "Read the security model →",
@@ -26656,9 +26648,9 @@
             "rect": {
               "left": 16,
               "top": 16,
-              "right": 158,
+              "right": 157,
               "bottom": 63,
-              "width": 142,
+              "width": 141,
               "height": 47
             },
             "visibleIndicator": true,
@@ -26684,9 +26676,9 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(1)",
             "name": "View docs",
             "rect": {
-              "left": 514,
+              "left": 515,
               "top": 16,
-              "right": 629,
+              "right": 630,
               "bottom": 60,
               "width": 115,
               "height": 44
@@ -26699,11 +26691,11 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(2)",
             "name": "Start free",
             "rect": {
-              "left": 637,
+              "left": 638,
               "top": 16,
               "right": 744,
               "bottom": 60,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -26744,9 +26736,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(1) > span.sources > a",
             "name": "4 sources",
             "rect": {
-              "left": 362,
+              "left": 357,
               "top": 490,
-              "right": 418,
+              "right": 414,
               "bottom": 534,
               "width": 56,
               "height": 44
@@ -26759,9 +26751,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(2) > span.sources > a",
             "name": "2 sources",
             "rect": {
-              "left": 354,
+              "left": 352,
               "top": 490,
-              "right": 409,
+              "right": 408,
               "bottom": 534,
               "width": 56,
               "height": 44
@@ -26774,9 +26766,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(3) > span.sources > a",
             "name": "3 sources",
             "rect": {
-              "left": 321,
+              "left": 318,
               "top": 490,
-              "right": 376,
+              "right": 374,
               "bottom": 534,
               "width": 56,
               "height": 44
@@ -26819,11 +26811,11 @@
             "selector": "body > main > section.block:nth-of-type(4) > p.integrate-note > a",
             "name": "Read the security model →",
             "rect": {
-              "left": 71,
+              "left": 24,
               "top": 507,
-              "right": 229,
+              "right": 181,
               "bottom": 551,
-              "width": 158,
+              "width": 157,
               "height": 44
             },
             "visibleIndicator": true,
@@ -26838,7 +26830,7 @@
               "top": 730,
               "right": 437,
               "bottom": 774,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -26851,9 +26843,9 @@
             "rect": {
               "left": 24,
               "top": 948,
-              "right": 113,
+              "right": 111,
               "bottom": 992,
-              "width": 89,
+              "width": 87,
               "height": 44
             },
             "visibleIndicator": true,
@@ -26864,14 +26856,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/tablet-768-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/tablet-768-light-full.png"
     },
     {
       "scenario": "tablet-768-light-reduced",
       "document": {
         "scrollWidth": 768,
         "clientWidth": 768,
-        "scrollHeight": 3680,
+        "scrollHeight": 3672,
         "viewportHeight": 1024
       },
       "overflow": [],
@@ -26994,8 +26986,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.199999999254942,
-        "load": 7.600000001490116,
+        "domContentLoaded": 9.400000000008731,
+        "load": 13.19999999999709,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -27005,7 +26997,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 768,
           "windowHeight": 1024,
           "orientationAngle": 0,
@@ -27619,7 +27611,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000110",
+          "nodeId": "-1000000109",
           "parentId": "199",
           "role": "InlineTextBox",
           "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -28103,7 +28095,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000111",
+          "nodeId": "-1000000110",
           "parentId": "200",
           "role": "InlineTextBox",
           "name": "Golden catalog",
@@ -28568,15 +28560,7 @@
           "nodeId": "-1000000104",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting ",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000105",
-          "parentId": "194",
-          "role": "InlineTextBox",
-          "name": "copilot. ",
+          "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
           "ignored": false,
           "properties": {}
         },
@@ -28589,7 +28573,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000107",
+          "nodeId": "-1000000106",
           "parentId": "196",
           "role": "InlineTextBox",
           "name": "See your own accounts through it.",
@@ -28597,7 +28581,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000108",
+          "nodeId": "-1000000107",
           "parentId": "197",
           "role": "InlineTextBox",
           "name": "Start free",
@@ -28605,7 +28589,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000109",
+          "nodeId": "-1000000108",
           "parentId": "198",
           "role": "InlineTextBox",
           "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -28760,7 +28744,7 @@
           "nodeId": "-1000000043",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot ",
+          "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot asks ",
           "ignored": false,
           "properties": {}
         },
@@ -28768,7 +28752,7 @@
           "nodeId": "-1000000044",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "asks a clarifying question instead of guessing.",
+          "name": "a clarifying question instead of guessing.",
           "ignored": false,
           "properties": {}
         },
@@ -29093,7 +29077,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000106",
+          "nodeId": "-1000000105",
           "parentId": "195",
           "role": "InlineTextBox",
           "name": "Read the security model →",
@@ -29478,14 +29462,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/tablet-768-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/tablet-768-light-reduced.png"
     },
     {
       "scenario": "tablet-768-dark-full",
       "document": {
         "scrollWidth": 768,
         "clientWidth": 768,
-        "scrollHeight": 3680,
+        "scrollHeight": 3672,
         "viewportHeight": 1024
       },
       "overflow": [],
@@ -29608,8 +29592,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.100000001490116,
-        "load": 7.5,
+        "domContentLoaded": 8.80000000000291,
+        "load": 12.30000000000291,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -29619,7 +29603,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 768,
           "windowHeight": 1024,
           "orientationAngle": 0,
@@ -30233,7 +30217,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000110",
+          "nodeId": "-1000000109",
           "parentId": "199",
           "role": "InlineTextBox",
           "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -30717,7 +30701,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000111",
+          "nodeId": "-1000000110",
           "parentId": "200",
           "role": "InlineTextBox",
           "name": "Golden catalog",
@@ -31182,15 +31166,7 @@
           "nodeId": "-1000000104",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting ",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000105",
-          "parentId": "194",
-          "role": "InlineTextBox",
-          "name": "copilot. ",
+          "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
           "ignored": false,
           "properties": {}
         },
@@ -31203,7 +31179,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000107",
+          "nodeId": "-1000000106",
           "parentId": "196",
           "role": "InlineTextBox",
           "name": "See your own accounts through it.",
@@ -31211,7 +31187,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000108",
+          "nodeId": "-1000000107",
           "parentId": "197",
           "role": "InlineTextBox",
           "name": "Start free",
@@ -31219,7 +31195,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000109",
+          "nodeId": "-1000000108",
           "parentId": "198",
           "role": "InlineTextBox",
           "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -31374,7 +31350,7 @@
           "nodeId": "-1000000043",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot ",
+          "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot asks ",
           "ignored": false,
           "properties": {}
         },
@@ -31382,7 +31358,7 @@
           "nodeId": "-1000000044",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "asks a clarifying question instead of guessing.",
+          "name": "a clarifying question instead of guessing.",
           "ignored": false,
           "properties": {}
         },
@@ -31707,7 +31683,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000106",
+          "nodeId": "-1000000105",
           "parentId": "195",
           "role": "InlineTextBox",
           "name": "Read the security model →",
@@ -32092,14 +32068,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/tablet-768-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/tablet-768-dark-full.png"
     },
     {
       "scenario": "tablet-768-dark-reduced",
       "document": {
         "scrollWidth": 768,
         "clientWidth": 768,
-        "scrollHeight": 3680,
+        "scrollHeight": 3672,
         "viewportHeight": 1024
       },
       "overflow": [],
@@ -32222,8 +32198,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.199999999254942,
-        "load": 8.100000001490116,
+        "domContentLoaded": 9,
+        "load": 12.69999999999709,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -32233,7 +32209,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 768,
           "windowHeight": 1024,
           "orientationAngle": 0,
@@ -32847,7 +32823,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000110",
+          "nodeId": "-1000000109",
           "parentId": "199",
           "role": "InlineTextBox",
           "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -33331,7 +33307,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000111",
+          "nodeId": "-1000000110",
           "parentId": "200",
           "role": "InlineTextBox",
           "name": "Golden catalog",
@@ -33796,15 +33772,7 @@
           "nodeId": "-1000000104",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting ",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000105",
-          "parentId": "194",
-          "role": "InlineTextBox",
-          "name": "copilot. ",
+          "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
           "ignored": false,
           "properties": {}
         },
@@ -33817,7 +33785,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000107",
+          "nodeId": "-1000000106",
           "parentId": "196",
           "role": "InlineTextBox",
           "name": "See your own accounts through it.",
@@ -33825,7 +33793,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000108",
+          "nodeId": "-1000000107",
           "parentId": "197",
           "role": "InlineTextBox",
           "name": "Start free",
@@ -33833,7 +33801,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000109",
+          "nodeId": "-1000000108",
           "parentId": "198",
           "role": "InlineTextBox",
           "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -33988,7 +33956,7 @@
           "nodeId": "-1000000043",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot ",
+          "name": "Ask plain-language questions over the accounts you own. When the request is ambiguous, the copilot asks ",
           "ignored": false,
           "properties": {}
         },
@@ -33996,7 +33964,7 @@
           "nodeId": "-1000000044",
           "parentId": "160",
           "role": "InlineTextBox",
-          "name": "asks a clarifying question instead of guessing.",
+          "name": "a clarifying question instead of guessing.",
           "ignored": false,
           "properties": {}
         },
@@ -34321,7 +34289,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000106",
+          "nodeId": "-1000000105",
           "parentId": "195",
           "role": "InlineTextBox",
           "name": "Read the security model →",
@@ -34706,14 +34674,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/tablet-768-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/tablet-768-dark-reduced.png"
     },
     {
       "scenario": "laptop-1024-light-full",
       "document": {
         "scrollWidth": 1024,
         "clientWidth": 1024,
-        "scrollHeight": 2926,
+        "scrollHeight": 2922,
         "viewportHeight": 900
       },
       "overflow": [],
@@ -34851,8 +34819,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.2000000029802322,
-        "load": 7.700000002980232,
+        "domContentLoaded": 11.400000000008731,
+        "load": 16.40000000000873,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -34862,7 +34830,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1024,
           "windowHeight": 900,
           "orientationAngle": 0,
@@ -37415,7 +37383,7 @@
           "nodeId": "-1000000092",
           "parentId": "185",
           "role": "InlineTextBox",
-          "name": "Forecast revenue. That's your model's job; we surface inputs, ",
+          "name": "Forecast revenue. That's your model's job; we surface inputs, not ",
           "ignored": false,
           "properties": {}
         },
@@ -37423,7 +37391,7 @@
           "nodeId": "-1000000093",
           "parentId": "185",
           "role": "InlineTextBox",
-          "name": "not prophecy",
+          "name": "prophecy",
           "ignored": false,
           "properties": {}
         },
@@ -37589,9 +37557,9 @@
             "rect": {
               "left": 16,
               "top": 16,
-              "right": 158,
+              "right": 157,
               "bottom": 63,
-              "width": 142,
+              "width": 141,
               "height": 47
             },
             "visibleIndicator": true,
@@ -37619,9 +37587,9 @@
             "rect": {
               "left": 115,
               "top": 16,
-              "right": 199,
+              "right": 194,
               "bottom": 60,
-              "width": 84,
+              "width": 79,
               "height": 44
             },
             "visibleIndicator": true,
@@ -37632,9 +37600,9 @@
             "selector": "div.wrap > nav > ul > li:nth-of-type(2) > a",
             "name": "Limits",
             "rect": {
-              "left": 223,
+              "left": 218,
               "top": 16,
-              "right": 267,
+              "right": 262,
               "bottom": 60,
               "width": 44,
               "height": 44
@@ -37647,11 +37615,11 @@
             "selector": "div.wrap > nav > ul > li:nth-of-type(3) > a",
             "name": "Integrate",
             "rect": {
-              "left": 291,
+              "left": 286,
               "top": 16,
-              "right": 349,
+              "right": 342,
               "bottom": 60,
-              "width": 58,
+              "width": 55,
               "height": 44
             },
             "visibleIndicator": true,
@@ -37662,9 +37630,9 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(1)",
             "name": "View docs",
             "rect": {
-              "left": 770,
+              "left": 771,
               "top": 16,
-              "right": 885,
+              "right": 886,
               "bottom": 60,
               "width": 115,
               "height": 44
@@ -37677,11 +37645,11 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(2)",
             "name": "Start free",
             "rect": {
-              "left": 893,
+              "left": 894,
               "top": 16,
               "right": 1000,
               "bottom": 60,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -37694,9 +37662,9 @@
             "rect": {
               "left": 24,
               "top": 428,
-              "right": 131,
+              "right": 130,
               "bottom": 472,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -37707,11 +37675,11 @@
             "selector": "main > section.hero:nth-of-type(1) > div:nth-of-type(1) > div.cta-row > a.btn:nth-of-type(2)",
             "name": "See a real run ↓",
             "rect": {
-              "left": 143,
+              "left": 142,
               "top": 428,
-              "right": 298,
+              "right": 294,
               "bottom": 472,
-              "width": 155,
+              "width": 152,
               "height": 44
             },
             "visibleIndicator": true,
@@ -37722,9 +37690,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(1) > span.sources > a",
             "name": "4 sources",
             "rect": {
-              "left": 874,
+              "left": 869,
               "top": 428,
-              "right": 930,
+              "right": 926,
               "bottom": 472,
               "width": 56,
               "height": 44
@@ -37737,9 +37705,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(2) > span.sources > a",
             "name": "2 sources",
             "rect": {
-              "left": 866,
+              "left": 864,
               "top": 428,
-              "right": 921,
+              "right": 920,
               "bottom": 472,
               "width": 56,
               "height": 44
@@ -37752,9 +37720,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(3) > span.sources > a",
             "name": "3 sources",
             "rect": {
-              "left": 833,
+              "left": 830,
               "top": 428,
-              "right": 888,
+              "right": 886,
               "bottom": 472,
               "width": 56,
               "height": 44
@@ -37797,11 +37765,11 @@
             "selector": "body > main > section.block:nth-of-type(4) > p.integrate-note > a",
             "name": "Read the security model →",
             "rect": {
-              "left": 750,
+              "left": 742,
               "top": 428,
-              "right": 908,
+              "right": 899,
               "bottom": 472,
-              "width": 158,
+              "width": 157,
               "height": 44
             },
             "visibleIndicator": true,
@@ -37816,7 +37784,7 @@
               "top": 639,
               "right": 565,
               "bottom": 683,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -37827,11 +37795,11 @@
             "selector": "body > footer.site > div.wrap > span:nth-of-type(2) > a",
             "name": "Golden catalog",
             "rect": {
-              "left": 911,
+              "left": 913,
               "top": 824,
               "right": 1000,
               "bottom": 868,
-              "width": 89,
+              "width": 87,
               "height": 44
             },
             "visibleIndicator": true,
@@ -37842,14 +37810,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/laptop-1024-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/laptop-1024-light-full.png"
     },
     {
       "scenario": "laptop-1024-light-reduced",
       "document": {
         "scrollWidth": 1024,
         "clientWidth": 1024,
-        "scrollHeight": 2926,
+        "scrollHeight": 2922,
         "viewportHeight": 900
       },
       "overflow": [],
@@ -37987,8 +37955,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.2999999970197678,
-        "load": 7.899999998509884,
+        "domContentLoaded": 10.19999999999709,
+        "load": 14,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -37998,7 +37966,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1024,
           "windowHeight": 900,
           "orientationAngle": 0,
@@ -40551,7 +40519,7 @@
           "nodeId": "-1000000092",
           "parentId": "185",
           "role": "InlineTextBox",
-          "name": "Forecast revenue. That's your model's job; we surface inputs, ",
+          "name": "Forecast revenue. That's your model's job; we surface inputs, not ",
           "ignored": false,
           "properties": {}
         },
@@ -40559,7 +40527,7 @@
           "nodeId": "-1000000093",
           "parentId": "185",
           "role": "InlineTextBox",
-          "name": "not prophecy",
+          "name": "prophecy",
           "ignored": false,
           "properties": {}
         },
@@ -40717,14 +40685,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/laptop-1024-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/laptop-1024-light-reduced.png"
     },
     {
       "scenario": "laptop-1024-dark-full",
       "document": {
         "scrollWidth": 1024,
         "clientWidth": 1024,
-        "scrollHeight": 2926,
+        "scrollHeight": 2922,
         "viewportHeight": 900
       },
       "overflow": [],
@@ -40862,8 +40830,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 2.899999998509884,
-        "load": 7.300000000745058,
+        "domContentLoaded": 8.599999999991269,
+        "load": 13.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -40873,7 +40841,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1024,
           "windowHeight": 900,
           "orientationAngle": 0,
@@ -43426,7 +43394,7 @@
           "nodeId": "-1000000092",
           "parentId": "185",
           "role": "InlineTextBox",
-          "name": "Forecast revenue. That's your model's job; we surface inputs, ",
+          "name": "Forecast revenue. That's your model's job; we surface inputs, not ",
           "ignored": false,
           "properties": {}
         },
@@ -43434,7 +43402,7 @@
           "nodeId": "-1000000093",
           "parentId": "185",
           "role": "InlineTextBox",
-          "name": "not prophecy",
+          "name": "prophecy",
           "ignored": false,
           "properties": {}
         },
@@ -43592,14 +43560,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/laptop-1024-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/laptop-1024-dark-full.png"
     },
     {
       "scenario": "laptop-1024-dark-reduced",
       "document": {
         "scrollWidth": 1024,
         "clientWidth": 1024,
-        "scrollHeight": 2926,
+        "scrollHeight": 2922,
         "viewportHeight": 900
       },
       "overflow": [],
@@ -43737,8 +43705,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.199999999254942,
-        "load": 7.699999999254942,
+        "domContentLoaded": 9.30000000000291,
+        "load": 13.10000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -43748,7 +43716,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1024,
           "windowHeight": 900,
           "orientationAngle": 0,
@@ -46301,7 +46269,7 @@
           "nodeId": "-1000000092",
           "parentId": "185",
           "role": "InlineTextBox",
-          "name": "Forecast revenue. That's your model's job; we surface inputs, ",
+          "name": "Forecast revenue. That's your model's job; we surface inputs, not ",
           "ignored": false,
           "properties": {}
         },
@@ -46309,7 +46277,7 @@
           "nodeId": "-1000000093",
           "parentId": "185",
           "role": "InlineTextBox",
-          "name": "not prophecy",
+          "name": "prophecy",
           "ignored": false,
           "properties": {}
         },
@@ -46467,14 +46435,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/laptop-1024-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/laptop-1024-dark-reduced.png"
     },
     {
       "scenario": "desktop-1440-light-full",
       "document": {
         "scrollWidth": 1440,
         "clientWidth": 1440,
-        "scrollHeight": 2888,
+        "scrollHeight": 2884,
         "viewportHeight": 1000
       },
       "overflow": [],
@@ -46612,8 +46580,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.199999999254942,
-        "load": 7.800000000745058,
+        "domContentLoaded": 10.10000000000582,
+        "load": 13.80000000000291,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -46623,7 +46591,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1440,
           "windowHeight": 1000,
           "orientationAngle": 0,
@@ -47253,7 +47221,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000123",
+          "nodeId": "-1000000122",
           "parentId": "202",
           "role": "InlineTextBox",
           "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -47687,7 +47655,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000099",
+          "nodeId": "-1000000098",
           "parentId": "192",
           "role": "InlineTextBox",
           "name": "terminal",
@@ -47767,7 +47735,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000124",
+          "nodeId": "-1000000123",
           "parentId": "203",
           "role": "InlineTextBox",
           "name": "Golden catalog",
@@ -48101,7 +48069,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000065",
+          "nodeId": "-1000000064",
           "parentId": "170",
           "role": "InlineTextBox",
           "name": "Great at some things. ",
@@ -48109,7 +48077,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000066",
+          "nodeId": "-1000000065",
           "parentId": "170",
           "role": "InlineTextBox",
           "name": "Deliberately not built for others.",
@@ -48117,7 +48085,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000067",
+          "nodeId": "-1000000066",
           "parentId": "171",
           "role": "InlineTextBox",
           "name": "Stated limits are the fastest way to earn trust in a sector that oversells. Here are ours, ",
@@ -48125,7 +48093,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000068",
+          "nodeId": "-1000000067",
           "parentId": "171",
           "role": "InlineTextBox",
           "name": "plainly.",
@@ -48229,7 +48197,7 @@
           }
         },
         {
-          "nodeId": "-1000000096",
+          "nodeId": "-1000000095",
           "parentId": "190",
           "role": "InlineTextBox",
           "name": "In your stack before the meeting ends",
@@ -48237,7 +48205,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000097",
+          "nodeId": "-1000000096",
           "parentId": "191",
           "role": "InlineTextBox",
           "name": "OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are documented ",
@@ -48245,7 +48213,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000098",
+          "nodeId": "-1000000097",
           "parentId": "191",
           "role": "InlineTextBox",
           "name": "end to end.",
@@ -48253,7 +48221,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000100",
+          "nodeId": "-1000000099",
           "parentId": "193",
           "role": "InlineTextBox",
           "name": "Copy",
@@ -48269,7 +48237,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000116",
+          "nodeId": "-1000000115",
           "parentId": "195",
           "role": "InlineTextBox",
           "name": "The ",
@@ -48285,7 +48253,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000118",
+          "nodeId": "-1000000117",
           "parentId": "197",
           "role": "InlineTextBox",
           "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
@@ -48301,7 +48269,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000120",
+          "nodeId": "-1000000119",
           "parentId": "199",
           "role": "InlineTextBox",
           "name": "See your own accounts through it.",
@@ -48309,7 +48277,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000121",
+          "nodeId": "-1000000120",
           "parentId": "200",
           "role": "InlineTextBox",
           "name": "Start free",
@@ -48317,7 +48285,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000122",
+          "nodeId": "-1000000121",
           "parentId": "201",
           "role": "InlineTextBox",
           "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -48584,7 +48552,7 @@
           "nodeId": "-1000000062",
           "parentId": "169",
           "role": "InlineTextBox",
-          "name": "behind it. Low-confidence findings are labeled ",
+          "name": "behind it. Low-confidence findings are labeled and ",
           "ignored": false,
           "properties": {}
         },
@@ -48592,20 +48560,12 @@
           "nodeId": "-1000000063",
           "parentId": "169",
           "role": "InlineTextBox",
-          "name": "and demoted to \"worth checking,\" not stated as ",
+          "name": "demoted to \"worth checking,\" not stated as fact.",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000064",
-          "parentId": "169",
-          "role": "InlineTextBox",
-          "name": "fact.",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000069",
+          "nodeId": "-1000000068",
           "parentId": "172",
           "role": "InlineTextBox",
           "name": "What it does well",
@@ -48677,7 +48637,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000082",
+          "nodeId": "-1000000081",
           "parentId": "181",
           "role": "InlineTextBox",
           "name": "What it refuses to do",
@@ -48749,10 +48709,18 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000101",
+          "nodeId": "-1000000100",
           "parentId": "194",
           "role": "InlineTextBox",
           "name": "npm install @relayer/sdk",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "-1000000101",
+          "parentId": "194",
+          "role": "InlineTextBox",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -48768,7 +48736,7 @@
           "nodeId": "-1000000103",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "import { Relayer } from \"@relayer/sdk\";",
           "ignored": false,
           "properties": {}
         },
@@ -48776,7 +48744,7 @@
           "nodeId": "-1000000104",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "import { Relayer } from \"@relayer/sdk\";",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -48792,7 +48760,7 @@
           "nodeId": "-1000000106",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "const run = await new Relayer({ apiKey }).analyze({",
           "ignored": false,
           "properties": {}
         },
@@ -48800,7 +48768,7 @@
           "nodeId": "-1000000107",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "const run = await new Relayer({ apiKey }).analyze({",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -48808,7 +48776,7 @@
           "nodeId": "-1000000108",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  scope: \"renewals:q3-enterprise\",",
           "ignored": false,
           "properties": {}
         },
@@ -48816,7 +48784,7 @@
           "nodeId": "-1000000109",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  scope: \"renewals:q3-enterprise\",",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -48824,7 +48792,7 @@
           "nodeId": "-1000000110",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
           "ignored": false,
           "properties": {}
         },
@@ -48832,7 +48800,7 @@
           "nodeId": "-1000000111",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -48840,7 +48808,7 @@
           "nodeId": "-1000000112",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  actions: \"propose\"                          // never \"auto\"",
           "ignored": false,
           "properties": {}
         },
@@ -48848,7 +48816,7 @@
           "nodeId": "-1000000113",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  actions: \"propose\"                          // never \"auto\"",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -48856,20 +48824,12 @@
           "nodeId": "-1000000114",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000115",
-          "parentId": "194",
-          "role": "InlineTextBox",
           "name": "});",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000117",
+          "nodeId": "-1000000116",
           "parentId": "196",
           "role": "InlineTextBox",
           "name": "actions: \"propose\"",
@@ -48877,7 +48837,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000119",
+          "nodeId": "-1000000118",
           "parentId": "198",
           "role": "InlineTextBox",
           "name": "Read the security model →",
@@ -49005,7 +48965,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000070",
+          "nodeId": "-1000000069",
           "parentId": "173",
           "role": "StaticText",
           "name": "✓",
@@ -49013,15 +48973,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000071",
-          "parentId": "-1000000070",
+          "nodeId": "-1000000070",
+          "parentId": "-1000000069",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000072",
+          "nodeId": "-1000000071",
           "parentId": "174",
           "role": "InlineTextBox",
           "name": "Renewal-risk and account-health summaries across hundreds of accounts",
@@ -49029,7 +48989,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000073",
+          "nodeId": "-1000000072",
           "parentId": "175",
           "role": "StaticText",
           "name": "✓",
@@ -49037,15 +48997,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000074",
-          "parentId": "-1000000073",
+          "nodeId": "-1000000073",
+          "parentId": "-1000000072",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000075",
+          "nodeId": "-1000000074",
           "parentId": "176",
           "role": "InlineTextBox",
           "name": "Draft follow-ups grounded in the actual conversation history",
@@ -49053,7 +49013,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000076",
+          "nodeId": "-1000000075",
           "parentId": "177",
           "role": "StaticText",
           "name": "✓",
@@ -49061,15 +49021,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000077",
-          "parentId": "-1000000076",
+          "nodeId": "-1000000076",
+          "parentId": "-1000000075",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000078",
+          "nodeId": "-1000000077",
           "parentId": "178",
           "role": "InlineTextBox",
           "name": "\"What changed since I last looked\" digests per account list",
@@ -49077,7 +49037,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000079",
+          "nodeId": "-1000000078",
           "parentId": "179",
           "role": "StaticText",
           "name": "✓",
@@ -49085,15 +49045,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000080",
-          "parentId": "-1000000079",
+          "nodeId": "-1000000079",
+          "parentId": "-1000000078",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000081",
+          "nodeId": "-1000000080",
           "parentId": "180",
           "role": "InlineTextBox",
           "name": "Flagging contradictions between notes and billing reality",
@@ -49101,7 +49061,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000083",
+          "nodeId": "-1000000082",
           "parentId": "182",
           "role": "StaticText",
           "name": "✕",
@@ -49109,15 +49069,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000084",
-          "parentId": "-1000000083",
+          "nodeId": "-1000000083",
+          "parentId": "-1000000082",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000085",
+          "nodeId": "-1000000084",
           "parentId": "183",
           "role": "InlineTextBox",
           "name": "Send anything externally without a named human approving that send",
@@ -49125,7 +49085,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000086",
+          "nodeId": "-1000000085",
           "parentId": "184",
           "role": "StaticText",
           "name": "✕",
@@ -49133,15 +49093,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000087",
-          "parentId": "-1000000086",
+          "nodeId": "-1000000086",
+          "parentId": "-1000000085",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000088",
+          "nodeId": "-1000000087",
           "parentId": "185",
           "role": "InlineTextBox",
           "name": "Forecast revenue. That's your model's job; we surface inputs, not prophecy",
@@ -49149,7 +49109,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000089",
+          "nodeId": "-1000000088",
           "parentId": "186",
           "role": "StaticText",
           "name": "✕",
@@ -49157,15 +49117,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000090",
-          "parentId": "-1000000089",
+          "nodeId": "-1000000089",
+          "parentId": "-1000000088",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000091",
+          "nodeId": "-1000000090",
           "parentId": "187",
           "role": "InlineTextBox",
           "name": "Answer from data you haven't connected (it says \"not connected,\" not a ",
@@ -49173,7 +49133,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000092",
+          "nodeId": "-1000000091",
           "parentId": "187",
           "role": "InlineTextBox",
           "name": "guess)",
@@ -49181,7 +49141,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000093",
+          "nodeId": "-1000000092",
           "parentId": "188",
           "role": "StaticText",
           "name": "✕",
@@ -49189,15 +49149,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000094",
-          "parentId": "-1000000093",
+          "nodeId": "-1000000093",
+          "parentId": "-1000000092",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000095",
+          "nodeId": "-1000000094",
           "parentId": "189",
           "role": "InlineTextBox",
           "name": "Train on your data. Analysis is inference-only, per contract, at every tier",
@@ -49229,64 +49189,64 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000071",
-          "parentId": "-1000000070",
+          "nodeId": "-1000000070",
+          "parentId": "-1000000069",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000074",
-          "parentId": "-1000000073",
+          "nodeId": "-1000000073",
+          "parentId": "-1000000072",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000077",
-          "parentId": "-1000000076",
+          "nodeId": "-1000000076",
+          "parentId": "-1000000075",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000080",
-          "parentId": "-1000000079",
+          "nodeId": "-1000000079",
+          "parentId": "-1000000078",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000084",
-          "parentId": "-1000000083",
+          "nodeId": "-1000000083",
+          "parentId": "-1000000082",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000087",
-          "parentId": "-1000000086",
+          "nodeId": "-1000000086",
+          "parentId": "-1000000085",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000090",
-          "parentId": "-1000000089",
+          "nodeId": "-1000000089",
+          "parentId": "-1000000088",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000094",
-          "parentId": "-1000000093",
+          "nodeId": "-1000000093",
+          "parentId": "-1000000092",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
@@ -49302,9 +49262,9 @@
             "rect": {
               "left": 16,
               "top": 16,
-              "right": 158,
+              "right": 157,
               "bottom": 63,
-              "width": 142,
+              "width": 141,
               "height": 47
             },
             "visibleIndicator": true,
@@ -49332,9 +49292,9 @@
             "rect": {
               "left": 251,
               "top": 16,
-              "right": 335,
+              "right": 330,
               "bottom": 60,
-              "width": 84,
+              "width": 79,
               "height": 44
             },
             "visibleIndicator": true,
@@ -49345,9 +49305,9 @@
             "selector": "div.wrap > nav > ul > li:nth-of-type(2) > a",
             "name": "Limits",
             "rect": {
-              "left": 359,
+              "left": 354,
               "top": 16,
-              "right": 403,
+              "right": 398,
               "bottom": 60,
               "width": 44,
               "height": 44
@@ -49360,11 +49320,11 @@
             "selector": "div.wrap > nav > ul > li:nth-of-type(3) > a",
             "name": "Integrate",
             "rect": {
-              "left": 427,
+              "left": 422,
               "top": 16,
-              "right": 485,
+              "right": 478,
               "bottom": 60,
-              "width": 58,
+              "width": 55,
               "height": 44
             },
             "visibleIndicator": true,
@@ -49375,9 +49335,9 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(1)",
             "name": "View docs",
             "rect": {
-              "left": 1050,
+              "left": 1051,
               "top": 16,
-              "right": 1165,
+              "right": 1166,
               "bottom": 60,
               "width": 115,
               "height": 44
@@ -49390,11 +49350,11 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(2)",
             "name": "Start free",
             "rect": {
-              "left": 1173,
+              "left": 1174,
               "top": 16,
               "right": 1280,
               "bottom": 60,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -49407,9 +49367,9 @@
             "rect": {
               "left": 160,
               "top": 478,
-              "right": 267,
+              "right": 266,
               "bottom": 522,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -49420,11 +49380,11 @@
             "selector": "main > section.hero:nth-of-type(1) > div:nth-of-type(1) > div.cta-row > a.btn:nth-of-type(2)",
             "name": "See a real run ↓",
             "rect": {
-              "left": 279,
+              "left": 278,
               "top": 478,
-              "right": 434,
+              "right": 430,
               "bottom": 522,
-              "width": 155,
+              "width": 152,
               "height": 44
             },
             "visibleIndicator": true,
@@ -49435,9 +49395,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(1) > span.sources > a",
             "name": "4 sources",
             "rect": {
-              "left": 1082,
+              "left": 1077,
               "top": 478,
-              "right": 1138,
+              "right": 1134,
               "bottom": 522,
               "width": 56,
               "height": 44
@@ -49450,9 +49410,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(2) > span.sources > a",
             "name": "2 sources",
             "rect": {
-              "left": 1074,
+              "left": 1072,
               "top": 478,
-              "right": 1129,
+              "right": 1128,
               "bottom": 522,
               "width": 56,
               "height": 44
@@ -49465,9 +49425,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(3) > span.sources > a",
             "name": "3 sources",
             "rect": {
-              "left": 1041,
+              "left": 1038,
               "top": 478,
-              "right": 1096,
+              "right": 1094,
               "bottom": 522,
               "width": 56,
               "height": 44
@@ -49510,11 +49470,11 @@
             "selector": "body > main > section.block:nth-of-type(4) > p.integrate-note > a",
             "name": "Read the security model →",
             "rect": {
-              "left": 886,
+              "left": 878,
               "top": 508,
-              "right": 1044,
+              "right": 1035,
               "bottom": 552,
-              "width": 158,
+              "width": 157,
               "height": 44
             },
             "visibleIndicator": true,
@@ -49529,7 +49489,7 @@
               "top": 739,
               "right": 773,
               "bottom": 783,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -49540,11 +49500,11 @@
             "selector": "body > footer.site > div.wrap > span:nth-of-type(2) > a",
             "name": "Golden catalog",
             "rect": {
-              "left": 1191,
+              "left": 1193,
               "top": 924,
               "right": 1280,
               "bottom": 968,
-              "width": 89,
+              "width": 87,
               "height": 44
             },
             "visibleIndicator": true,
@@ -49555,14 +49515,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/desktop-1440-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/desktop-1440-light-full.png"
     },
     {
       "scenario": "desktop-1440-light-reduced",
       "document": {
         "scrollWidth": 1440,
         "clientWidth": 1440,
-        "scrollHeight": 2888,
+        "scrollHeight": 2884,
         "viewportHeight": 1000
       },
       "overflow": [],
@@ -49700,8 +49660,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.100000001490116,
-        "load": 7.5,
+        "domContentLoaded": 8.599999999991269,
+        "load": 12.599999999991269,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -49711,7 +49671,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1440,
           "windowHeight": 1000,
           "orientationAngle": 0,
@@ -50341,7 +50301,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000123",
+          "nodeId": "-1000000122",
           "parentId": "202",
           "role": "InlineTextBox",
           "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -50775,7 +50735,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000099",
+          "nodeId": "-1000000098",
           "parentId": "192",
           "role": "InlineTextBox",
           "name": "terminal",
@@ -50855,7 +50815,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000124",
+          "nodeId": "-1000000123",
           "parentId": "203",
           "role": "InlineTextBox",
           "name": "Golden catalog",
@@ -51189,7 +51149,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000065",
+          "nodeId": "-1000000064",
           "parentId": "170",
           "role": "InlineTextBox",
           "name": "Great at some things. ",
@@ -51197,7 +51157,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000066",
+          "nodeId": "-1000000065",
           "parentId": "170",
           "role": "InlineTextBox",
           "name": "Deliberately not built for others.",
@@ -51205,7 +51165,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000067",
+          "nodeId": "-1000000066",
           "parentId": "171",
           "role": "InlineTextBox",
           "name": "Stated limits are the fastest way to earn trust in a sector that oversells. Here are ours, ",
@@ -51213,7 +51173,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000068",
+          "nodeId": "-1000000067",
           "parentId": "171",
           "role": "InlineTextBox",
           "name": "plainly.",
@@ -51317,7 +51277,7 @@
           }
         },
         {
-          "nodeId": "-1000000096",
+          "nodeId": "-1000000095",
           "parentId": "190",
           "role": "InlineTextBox",
           "name": "In your stack before the meeting ends",
@@ -51325,7 +51285,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000097",
+          "nodeId": "-1000000096",
           "parentId": "191",
           "role": "InlineTextBox",
           "name": "OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are documented ",
@@ -51333,7 +51293,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000098",
+          "nodeId": "-1000000097",
           "parentId": "191",
           "role": "InlineTextBox",
           "name": "end to end.",
@@ -51341,7 +51301,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000100",
+          "nodeId": "-1000000099",
           "parentId": "193",
           "role": "InlineTextBox",
           "name": "Copy",
@@ -51357,7 +51317,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000116",
+          "nodeId": "-1000000115",
           "parentId": "195",
           "role": "InlineTextBox",
           "name": "The ",
@@ -51373,7 +51333,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000118",
+          "nodeId": "-1000000117",
           "parentId": "197",
           "role": "InlineTextBox",
           "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
@@ -51389,7 +51349,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000120",
+          "nodeId": "-1000000119",
           "parentId": "199",
           "role": "InlineTextBox",
           "name": "See your own accounts through it.",
@@ -51397,7 +51357,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000121",
+          "nodeId": "-1000000120",
           "parentId": "200",
           "role": "InlineTextBox",
           "name": "Start free",
@@ -51405,7 +51365,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000122",
+          "nodeId": "-1000000121",
           "parentId": "201",
           "role": "InlineTextBox",
           "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -51672,7 +51632,7 @@
           "nodeId": "-1000000062",
           "parentId": "169",
           "role": "InlineTextBox",
-          "name": "behind it. Low-confidence findings are labeled ",
+          "name": "behind it. Low-confidence findings are labeled and ",
           "ignored": false,
           "properties": {}
         },
@@ -51680,20 +51640,12 @@
           "nodeId": "-1000000063",
           "parentId": "169",
           "role": "InlineTextBox",
-          "name": "and demoted to \"worth checking,\" not stated as ",
+          "name": "demoted to \"worth checking,\" not stated as fact.",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000064",
-          "parentId": "169",
-          "role": "InlineTextBox",
-          "name": "fact.",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000069",
+          "nodeId": "-1000000068",
           "parentId": "172",
           "role": "InlineTextBox",
           "name": "What it does well",
@@ -51765,7 +51717,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000082",
+          "nodeId": "-1000000081",
           "parentId": "181",
           "role": "InlineTextBox",
           "name": "What it refuses to do",
@@ -51837,10 +51789,18 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000101",
+          "nodeId": "-1000000100",
           "parentId": "194",
           "role": "InlineTextBox",
           "name": "npm install @relayer/sdk",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "-1000000101",
+          "parentId": "194",
+          "role": "InlineTextBox",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -51856,7 +51816,7 @@
           "nodeId": "-1000000103",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "import { Relayer } from \"@relayer/sdk\";",
           "ignored": false,
           "properties": {}
         },
@@ -51864,7 +51824,7 @@
           "nodeId": "-1000000104",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "import { Relayer } from \"@relayer/sdk\";",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -51880,7 +51840,7 @@
           "nodeId": "-1000000106",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "const run = await new Relayer({ apiKey }).analyze({",
           "ignored": false,
           "properties": {}
         },
@@ -51888,7 +51848,7 @@
           "nodeId": "-1000000107",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "const run = await new Relayer({ apiKey }).analyze({",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -51896,7 +51856,7 @@
           "nodeId": "-1000000108",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  scope: \"renewals:q3-enterprise\",",
           "ignored": false,
           "properties": {}
         },
@@ -51904,7 +51864,7 @@
           "nodeId": "-1000000109",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  scope: \"renewals:q3-enterprise\",",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -51912,7 +51872,7 @@
           "nodeId": "-1000000110",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
           "ignored": false,
           "properties": {}
         },
@@ -51920,7 +51880,7 @@
           "nodeId": "-1000000111",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -51928,7 +51888,7 @@
           "nodeId": "-1000000112",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  actions: \"propose\"                          // never \"auto\"",
           "ignored": false,
           "properties": {}
         },
@@ -51936,7 +51896,7 @@
           "nodeId": "-1000000113",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  actions: \"propose\"                          // never \"auto\"",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -51944,20 +51904,12 @@
           "nodeId": "-1000000114",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000115",
-          "parentId": "194",
-          "role": "InlineTextBox",
           "name": "});",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000117",
+          "nodeId": "-1000000116",
           "parentId": "196",
           "role": "InlineTextBox",
           "name": "actions: \"propose\"",
@@ -51965,7 +51917,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000119",
+          "nodeId": "-1000000118",
           "parentId": "198",
           "role": "InlineTextBox",
           "name": "Read the security model →",
@@ -52093,7 +52045,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000070",
+          "nodeId": "-1000000069",
           "parentId": "173",
           "role": "StaticText",
           "name": "✓",
@@ -52101,15 +52053,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000071",
-          "parentId": "-1000000070",
+          "nodeId": "-1000000070",
+          "parentId": "-1000000069",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000072",
+          "nodeId": "-1000000071",
           "parentId": "174",
           "role": "InlineTextBox",
           "name": "Renewal-risk and account-health summaries across hundreds of accounts",
@@ -52117,7 +52069,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000073",
+          "nodeId": "-1000000072",
           "parentId": "175",
           "role": "StaticText",
           "name": "✓",
@@ -52125,15 +52077,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000074",
-          "parentId": "-1000000073",
+          "nodeId": "-1000000073",
+          "parentId": "-1000000072",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000075",
+          "nodeId": "-1000000074",
           "parentId": "176",
           "role": "InlineTextBox",
           "name": "Draft follow-ups grounded in the actual conversation history",
@@ -52141,7 +52093,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000076",
+          "nodeId": "-1000000075",
           "parentId": "177",
           "role": "StaticText",
           "name": "✓",
@@ -52149,15 +52101,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000077",
-          "parentId": "-1000000076",
+          "nodeId": "-1000000076",
+          "parentId": "-1000000075",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000078",
+          "nodeId": "-1000000077",
           "parentId": "178",
           "role": "InlineTextBox",
           "name": "\"What changed since I last looked\" digests per account list",
@@ -52165,7 +52117,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000079",
+          "nodeId": "-1000000078",
           "parentId": "179",
           "role": "StaticText",
           "name": "✓",
@@ -52173,15 +52125,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000080",
-          "parentId": "-1000000079",
+          "nodeId": "-1000000079",
+          "parentId": "-1000000078",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000081",
+          "nodeId": "-1000000080",
           "parentId": "180",
           "role": "InlineTextBox",
           "name": "Flagging contradictions between notes and billing reality",
@@ -52189,7 +52141,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000083",
+          "nodeId": "-1000000082",
           "parentId": "182",
           "role": "StaticText",
           "name": "✕",
@@ -52197,15 +52149,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000084",
-          "parentId": "-1000000083",
+          "nodeId": "-1000000083",
+          "parentId": "-1000000082",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000085",
+          "nodeId": "-1000000084",
           "parentId": "183",
           "role": "InlineTextBox",
           "name": "Send anything externally without a named human approving that send",
@@ -52213,7 +52165,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000086",
+          "nodeId": "-1000000085",
           "parentId": "184",
           "role": "StaticText",
           "name": "✕",
@@ -52221,15 +52173,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000087",
-          "parentId": "-1000000086",
+          "nodeId": "-1000000086",
+          "parentId": "-1000000085",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000088",
+          "nodeId": "-1000000087",
           "parentId": "185",
           "role": "InlineTextBox",
           "name": "Forecast revenue. That's your model's job; we surface inputs, not prophecy",
@@ -52237,7 +52189,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000089",
+          "nodeId": "-1000000088",
           "parentId": "186",
           "role": "StaticText",
           "name": "✕",
@@ -52245,15 +52197,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000090",
-          "parentId": "-1000000089",
+          "nodeId": "-1000000089",
+          "parentId": "-1000000088",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000091",
+          "nodeId": "-1000000090",
           "parentId": "187",
           "role": "InlineTextBox",
           "name": "Answer from data you haven't connected (it says \"not connected,\" not a ",
@@ -52261,7 +52213,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000092",
+          "nodeId": "-1000000091",
           "parentId": "187",
           "role": "InlineTextBox",
           "name": "guess)",
@@ -52269,7 +52221,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000093",
+          "nodeId": "-1000000092",
           "parentId": "188",
           "role": "StaticText",
           "name": "✕",
@@ -52277,15 +52229,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000094",
-          "parentId": "-1000000093",
+          "nodeId": "-1000000093",
+          "parentId": "-1000000092",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000095",
+          "nodeId": "-1000000094",
           "parentId": "189",
           "role": "InlineTextBox",
           "name": "Train on your data. Analysis is inference-only, per contract, at every tier",
@@ -52317,64 +52269,64 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000071",
-          "parentId": "-1000000070",
+          "nodeId": "-1000000070",
+          "parentId": "-1000000069",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000074",
-          "parentId": "-1000000073",
+          "nodeId": "-1000000073",
+          "parentId": "-1000000072",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000077",
-          "parentId": "-1000000076",
+          "nodeId": "-1000000076",
+          "parentId": "-1000000075",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000080",
-          "parentId": "-1000000079",
+          "nodeId": "-1000000079",
+          "parentId": "-1000000078",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000084",
-          "parentId": "-1000000083",
+          "nodeId": "-1000000083",
+          "parentId": "-1000000082",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000087",
-          "parentId": "-1000000086",
+          "nodeId": "-1000000086",
+          "parentId": "-1000000085",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000090",
-          "parentId": "-1000000089",
+          "nodeId": "-1000000089",
+          "parentId": "-1000000088",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000094",
-          "parentId": "-1000000093",
+          "nodeId": "-1000000093",
+          "parentId": "-1000000092",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
@@ -52382,14 +52334,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/desktop-1440-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/desktop-1440-light-reduced.png"
     },
     {
       "scenario": "desktop-1440-dark-full",
       "document": {
         "scrollWidth": 1440,
         "clientWidth": 1440,
-        "scrollHeight": 2888,
+        "scrollHeight": 2884,
         "viewportHeight": 1000
       },
       "overflow": [],
@@ -52527,8 +52479,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3,
-        "load": 7.699999999254942,
+        "domContentLoaded": 10.10000000000582,
+        "load": 13.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -52538,7 +52490,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1440,
           "windowHeight": 1000,
           "orientationAngle": 0,
@@ -53168,7 +53120,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000123",
+          "nodeId": "-1000000122",
           "parentId": "202",
           "role": "InlineTextBox",
           "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -53602,7 +53554,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000099",
+          "nodeId": "-1000000098",
           "parentId": "192",
           "role": "InlineTextBox",
           "name": "terminal",
@@ -53682,7 +53634,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000124",
+          "nodeId": "-1000000123",
           "parentId": "203",
           "role": "InlineTextBox",
           "name": "Golden catalog",
@@ -54016,7 +53968,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000065",
+          "nodeId": "-1000000064",
           "parentId": "170",
           "role": "InlineTextBox",
           "name": "Great at some things. ",
@@ -54024,7 +53976,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000066",
+          "nodeId": "-1000000065",
           "parentId": "170",
           "role": "InlineTextBox",
           "name": "Deliberately not built for others.",
@@ -54032,7 +53984,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000067",
+          "nodeId": "-1000000066",
           "parentId": "171",
           "role": "InlineTextBox",
           "name": "Stated limits are the fastest way to earn trust in a sector that oversells. Here are ours, ",
@@ -54040,7 +53992,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000068",
+          "nodeId": "-1000000067",
           "parentId": "171",
           "role": "InlineTextBox",
           "name": "plainly.",
@@ -54144,7 +54096,7 @@
           }
         },
         {
-          "nodeId": "-1000000096",
+          "nodeId": "-1000000095",
           "parentId": "190",
           "role": "InlineTextBox",
           "name": "In your stack before the meeting ends",
@@ -54152,7 +54104,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000097",
+          "nodeId": "-1000000096",
           "parentId": "191",
           "role": "InlineTextBox",
           "name": "OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are documented ",
@@ -54160,7 +54112,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000098",
+          "nodeId": "-1000000097",
           "parentId": "191",
           "role": "InlineTextBox",
           "name": "end to end.",
@@ -54168,7 +54120,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000100",
+          "nodeId": "-1000000099",
           "parentId": "193",
           "role": "InlineTextBox",
           "name": "Copy",
@@ -54184,7 +54136,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000116",
+          "nodeId": "-1000000115",
           "parentId": "195",
           "role": "InlineTextBox",
           "name": "The ",
@@ -54200,7 +54152,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000118",
+          "nodeId": "-1000000117",
           "parentId": "197",
           "role": "InlineTextBox",
           "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
@@ -54216,7 +54168,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000120",
+          "nodeId": "-1000000119",
           "parentId": "199",
           "role": "InlineTextBox",
           "name": "See your own accounts through it.",
@@ -54224,7 +54176,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000121",
+          "nodeId": "-1000000120",
           "parentId": "200",
           "role": "InlineTextBox",
           "name": "Start free",
@@ -54232,7 +54184,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000122",
+          "nodeId": "-1000000121",
           "parentId": "201",
           "role": "InlineTextBox",
           "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -54499,7 +54451,7 @@
           "nodeId": "-1000000062",
           "parentId": "169",
           "role": "InlineTextBox",
-          "name": "behind it. Low-confidence findings are labeled ",
+          "name": "behind it. Low-confidence findings are labeled and ",
           "ignored": false,
           "properties": {}
         },
@@ -54507,20 +54459,12 @@
           "nodeId": "-1000000063",
           "parentId": "169",
           "role": "InlineTextBox",
-          "name": "and demoted to \"worth checking,\" not stated as ",
+          "name": "demoted to \"worth checking,\" not stated as fact.",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000064",
-          "parentId": "169",
-          "role": "InlineTextBox",
-          "name": "fact.",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000069",
+          "nodeId": "-1000000068",
           "parentId": "172",
           "role": "InlineTextBox",
           "name": "What it does well",
@@ -54592,7 +54536,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000082",
+          "nodeId": "-1000000081",
           "parentId": "181",
           "role": "InlineTextBox",
           "name": "What it refuses to do",
@@ -54664,10 +54608,18 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000101",
+          "nodeId": "-1000000100",
           "parentId": "194",
           "role": "InlineTextBox",
           "name": "npm install @relayer/sdk",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "-1000000101",
+          "parentId": "194",
+          "role": "InlineTextBox",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -54683,7 +54635,7 @@
           "nodeId": "-1000000103",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "import { Relayer } from \"@relayer/sdk\";",
           "ignored": false,
           "properties": {}
         },
@@ -54691,7 +54643,7 @@
           "nodeId": "-1000000104",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "import { Relayer } from \"@relayer/sdk\";",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -54707,7 +54659,7 @@
           "nodeId": "-1000000106",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "const run = await new Relayer({ apiKey }).analyze({",
           "ignored": false,
           "properties": {}
         },
@@ -54715,7 +54667,7 @@
           "nodeId": "-1000000107",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "const run = await new Relayer({ apiKey }).analyze({",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -54723,7 +54675,7 @@
           "nodeId": "-1000000108",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  scope: \"renewals:q3-enterprise\",",
           "ignored": false,
           "properties": {}
         },
@@ -54731,7 +54683,7 @@
           "nodeId": "-1000000109",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  scope: \"renewals:q3-enterprise\",",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -54739,7 +54691,7 @@
           "nodeId": "-1000000110",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
           "ignored": false,
           "properties": {}
         },
@@ -54747,7 +54699,7 @@
           "nodeId": "-1000000111",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -54755,7 +54707,7 @@
           "nodeId": "-1000000112",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  actions: \"propose\"                          // never \"auto\"",
           "ignored": false,
           "properties": {}
         },
@@ -54763,7 +54715,7 @@
           "nodeId": "-1000000113",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  actions: \"propose\"                          // never \"auto\"",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -54771,20 +54723,12 @@
           "nodeId": "-1000000114",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000115",
-          "parentId": "194",
-          "role": "InlineTextBox",
           "name": "});",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000117",
+          "nodeId": "-1000000116",
           "parentId": "196",
           "role": "InlineTextBox",
           "name": "actions: \"propose\"",
@@ -54792,7 +54736,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000119",
+          "nodeId": "-1000000118",
           "parentId": "198",
           "role": "InlineTextBox",
           "name": "Read the security model →",
@@ -54920,7 +54864,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000070",
+          "nodeId": "-1000000069",
           "parentId": "173",
           "role": "StaticText",
           "name": "✓",
@@ -54928,15 +54872,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000071",
-          "parentId": "-1000000070",
+          "nodeId": "-1000000070",
+          "parentId": "-1000000069",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000072",
+          "nodeId": "-1000000071",
           "parentId": "174",
           "role": "InlineTextBox",
           "name": "Renewal-risk and account-health summaries across hundreds of accounts",
@@ -54944,7 +54888,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000073",
+          "nodeId": "-1000000072",
           "parentId": "175",
           "role": "StaticText",
           "name": "✓",
@@ -54952,15 +54896,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000074",
-          "parentId": "-1000000073",
+          "nodeId": "-1000000073",
+          "parentId": "-1000000072",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000075",
+          "nodeId": "-1000000074",
           "parentId": "176",
           "role": "InlineTextBox",
           "name": "Draft follow-ups grounded in the actual conversation history",
@@ -54968,7 +54912,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000076",
+          "nodeId": "-1000000075",
           "parentId": "177",
           "role": "StaticText",
           "name": "✓",
@@ -54976,15 +54920,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000077",
-          "parentId": "-1000000076",
+          "nodeId": "-1000000076",
+          "parentId": "-1000000075",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000078",
+          "nodeId": "-1000000077",
           "parentId": "178",
           "role": "InlineTextBox",
           "name": "\"What changed since I last looked\" digests per account list",
@@ -54992,7 +54936,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000079",
+          "nodeId": "-1000000078",
           "parentId": "179",
           "role": "StaticText",
           "name": "✓",
@@ -55000,15 +54944,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000080",
-          "parentId": "-1000000079",
+          "nodeId": "-1000000079",
+          "parentId": "-1000000078",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000081",
+          "nodeId": "-1000000080",
           "parentId": "180",
           "role": "InlineTextBox",
           "name": "Flagging contradictions between notes and billing reality",
@@ -55016,7 +54960,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000083",
+          "nodeId": "-1000000082",
           "parentId": "182",
           "role": "StaticText",
           "name": "✕",
@@ -55024,15 +54968,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000084",
-          "parentId": "-1000000083",
+          "nodeId": "-1000000083",
+          "parentId": "-1000000082",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000085",
+          "nodeId": "-1000000084",
           "parentId": "183",
           "role": "InlineTextBox",
           "name": "Send anything externally without a named human approving that send",
@@ -55040,7 +54984,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000086",
+          "nodeId": "-1000000085",
           "parentId": "184",
           "role": "StaticText",
           "name": "✕",
@@ -55048,15 +54992,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000087",
-          "parentId": "-1000000086",
+          "nodeId": "-1000000086",
+          "parentId": "-1000000085",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000088",
+          "nodeId": "-1000000087",
           "parentId": "185",
           "role": "InlineTextBox",
           "name": "Forecast revenue. That's your model's job; we surface inputs, not prophecy",
@@ -55064,7 +55008,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000089",
+          "nodeId": "-1000000088",
           "parentId": "186",
           "role": "StaticText",
           "name": "✕",
@@ -55072,15 +55016,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000090",
-          "parentId": "-1000000089",
+          "nodeId": "-1000000089",
+          "parentId": "-1000000088",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000091",
+          "nodeId": "-1000000090",
           "parentId": "187",
           "role": "InlineTextBox",
           "name": "Answer from data you haven't connected (it says \"not connected,\" not a ",
@@ -55088,7 +55032,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000092",
+          "nodeId": "-1000000091",
           "parentId": "187",
           "role": "InlineTextBox",
           "name": "guess)",
@@ -55096,7 +55040,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000093",
+          "nodeId": "-1000000092",
           "parentId": "188",
           "role": "StaticText",
           "name": "✕",
@@ -55104,15 +55048,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000094",
-          "parentId": "-1000000093",
+          "nodeId": "-1000000093",
+          "parentId": "-1000000092",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000095",
+          "nodeId": "-1000000094",
           "parentId": "189",
           "role": "InlineTextBox",
           "name": "Train on your data. Analysis is inference-only, per contract, at every tier",
@@ -55144,64 +55088,64 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000071",
-          "parentId": "-1000000070",
+          "nodeId": "-1000000070",
+          "parentId": "-1000000069",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000074",
-          "parentId": "-1000000073",
+          "nodeId": "-1000000073",
+          "parentId": "-1000000072",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000077",
-          "parentId": "-1000000076",
+          "nodeId": "-1000000076",
+          "parentId": "-1000000075",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000080",
-          "parentId": "-1000000079",
+          "nodeId": "-1000000079",
+          "parentId": "-1000000078",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000084",
-          "parentId": "-1000000083",
+          "nodeId": "-1000000083",
+          "parentId": "-1000000082",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000087",
-          "parentId": "-1000000086",
+          "nodeId": "-1000000086",
+          "parentId": "-1000000085",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000090",
-          "parentId": "-1000000089",
+          "nodeId": "-1000000089",
+          "parentId": "-1000000088",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000094",
-          "parentId": "-1000000093",
+          "nodeId": "-1000000093",
+          "parentId": "-1000000092",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
@@ -55209,14 +55153,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/desktop-1440-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/desktop-1440-dark-full.png"
     },
     {
       "scenario": "desktop-1440-dark-reduced",
       "document": {
         "scrollWidth": 1440,
         "clientWidth": 1440,
-        "scrollHeight": 2888,
+        "scrollHeight": 2884,
         "viewportHeight": 1000
       },
       "overflow": [],
@@ -55354,8 +55298,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.5,
-        "load": 7.900000002235174,
+        "domContentLoaded": 8.5,
+        "load": 12.299999999988358,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -55365,7 +55309,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1440,
           "windowHeight": 1000,
           "orientationAngle": 0,
@@ -55995,7 +55939,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000123",
+          "nodeId": "-1000000122",
           "parentId": "202",
           "role": "InlineTextBox",
           "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -56429,7 +56373,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000099",
+          "nodeId": "-1000000098",
           "parentId": "192",
           "role": "InlineTextBox",
           "name": "terminal",
@@ -56509,7 +56453,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000124",
+          "nodeId": "-1000000123",
           "parentId": "203",
           "role": "InlineTextBox",
           "name": "Golden catalog",
@@ -56843,7 +56787,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000065",
+          "nodeId": "-1000000064",
           "parentId": "170",
           "role": "InlineTextBox",
           "name": "Great at some things. ",
@@ -56851,7 +56795,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000066",
+          "nodeId": "-1000000065",
           "parentId": "170",
           "role": "InlineTextBox",
           "name": "Deliberately not built for others.",
@@ -56859,7 +56803,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000067",
+          "nodeId": "-1000000066",
           "parentId": "171",
           "role": "InlineTextBox",
           "name": "Stated limits are the fastest way to earn trust in a sector that oversells. Here are ours, ",
@@ -56867,7 +56811,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000068",
+          "nodeId": "-1000000067",
           "parentId": "171",
           "role": "InlineTextBox",
           "name": "plainly.",
@@ -56971,7 +56915,7 @@
           }
         },
         {
-          "nodeId": "-1000000096",
+          "nodeId": "-1000000095",
           "parentId": "190",
           "role": "InlineTextBox",
           "name": "In your stack before the meeting ends",
@@ -56979,7 +56923,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000097",
+          "nodeId": "-1000000096",
           "parentId": "191",
           "role": "InlineTextBox",
           "name": "OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are documented ",
@@ -56987,7 +56931,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000098",
+          "nodeId": "-1000000097",
           "parentId": "191",
           "role": "InlineTextBox",
           "name": "end to end.",
@@ -56995,7 +56939,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000100",
+          "nodeId": "-1000000099",
           "parentId": "193",
           "role": "InlineTextBox",
           "name": "Copy",
@@ -57011,7 +56955,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000116",
+          "nodeId": "-1000000115",
           "parentId": "195",
           "role": "InlineTextBox",
           "name": "The ",
@@ -57027,7 +56971,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000118",
+          "nodeId": "-1000000117",
           "parentId": "197",
           "role": "InlineTextBox",
           "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
@@ -57043,7 +56987,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000120",
+          "nodeId": "-1000000119",
           "parentId": "199",
           "role": "InlineTextBox",
           "name": "See your own accounts through it.",
@@ -57051,7 +56995,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000121",
+          "nodeId": "-1000000120",
           "parentId": "200",
           "role": "InlineTextBox",
           "name": "Start free",
@@ -57059,7 +57003,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000122",
+          "nodeId": "-1000000121",
           "parentId": "201",
           "role": "InlineTextBox",
           "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -57326,7 +57270,7 @@
           "nodeId": "-1000000062",
           "parentId": "169",
           "role": "InlineTextBox",
-          "name": "behind it. Low-confidence findings are labeled ",
+          "name": "behind it. Low-confidence findings are labeled and ",
           "ignored": false,
           "properties": {}
         },
@@ -57334,20 +57278,12 @@
           "nodeId": "-1000000063",
           "parentId": "169",
           "role": "InlineTextBox",
-          "name": "and demoted to \"worth checking,\" not stated as ",
+          "name": "demoted to \"worth checking,\" not stated as fact.",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000064",
-          "parentId": "169",
-          "role": "InlineTextBox",
-          "name": "fact.",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000069",
+          "nodeId": "-1000000068",
           "parentId": "172",
           "role": "InlineTextBox",
           "name": "What it does well",
@@ -57419,7 +57355,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000082",
+          "nodeId": "-1000000081",
           "parentId": "181",
           "role": "InlineTextBox",
           "name": "What it refuses to do",
@@ -57491,10 +57427,18 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000101",
+          "nodeId": "-1000000100",
           "parentId": "194",
           "role": "InlineTextBox",
           "name": "npm install @relayer/sdk",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "-1000000101",
+          "parentId": "194",
+          "role": "InlineTextBox",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -57510,7 +57454,7 @@
           "nodeId": "-1000000103",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "import { Relayer } from \"@relayer/sdk\";",
           "ignored": false,
           "properties": {}
         },
@@ -57518,7 +57462,7 @@
           "nodeId": "-1000000104",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "import { Relayer } from \"@relayer/sdk\";",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -57534,7 +57478,7 @@
           "nodeId": "-1000000106",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "const run = await new Relayer({ apiKey }).analyze({",
           "ignored": false,
           "properties": {}
         },
@@ -57542,7 +57486,7 @@
           "nodeId": "-1000000107",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "const run = await new Relayer({ apiKey }).analyze({",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -57550,7 +57494,7 @@
           "nodeId": "-1000000108",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  scope: \"renewals:q3-enterprise\",",
           "ignored": false,
           "properties": {}
         },
@@ -57558,7 +57502,7 @@
           "nodeId": "-1000000109",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  scope: \"renewals:q3-enterprise\",",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -57566,7 +57510,7 @@
           "nodeId": "-1000000110",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
           "ignored": false,
           "properties": {}
         },
@@ -57574,7 +57518,7 @@
           "nodeId": "-1000000111",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -57582,7 +57526,7 @@
           "nodeId": "-1000000112",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
+          "name": "  actions: \"propose\"                          // never \"auto\"",
           "ignored": false,
           "properties": {}
         },
@@ -57590,7 +57534,7 @@
           "nodeId": "-1000000113",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "  actions: \"propose\"                          // never \"auto\"",
+          "name": "\n",
           "ignored": false,
           "properties": {}
         },
@@ -57598,20 +57542,12 @@
           "nodeId": "-1000000114",
           "parentId": "194",
           "role": "InlineTextBox",
-          "name": "\n",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "-1000000115",
-          "parentId": "194",
-          "role": "InlineTextBox",
           "name": "});",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000117",
+          "nodeId": "-1000000116",
           "parentId": "196",
           "role": "InlineTextBox",
           "name": "actions: \"propose\"",
@@ -57619,7 +57555,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000119",
+          "nodeId": "-1000000118",
           "parentId": "198",
           "role": "InlineTextBox",
           "name": "Read the security model →",
@@ -57747,7 +57683,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000070",
+          "nodeId": "-1000000069",
           "parentId": "173",
           "role": "StaticText",
           "name": "✓",
@@ -57755,15 +57691,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000071",
-          "parentId": "-1000000070",
+          "nodeId": "-1000000070",
+          "parentId": "-1000000069",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000072",
+          "nodeId": "-1000000071",
           "parentId": "174",
           "role": "InlineTextBox",
           "name": "Renewal-risk and account-health summaries across hundreds of accounts",
@@ -57771,7 +57707,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000073",
+          "nodeId": "-1000000072",
           "parentId": "175",
           "role": "StaticText",
           "name": "✓",
@@ -57779,15 +57715,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000074",
-          "parentId": "-1000000073",
+          "nodeId": "-1000000073",
+          "parentId": "-1000000072",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000075",
+          "nodeId": "-1000000074",
           "parentId": "176",
           "role": "InlineTextBox",
           "name": "Draft follow-ups grounded in the actual conversation history",
@@ -57795,7 +57731,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000076",
+          "nodeId": "-1000000075",
           "parentId": "177",
           "role": "StaticText",
           "name": "✓",
@@ -57803,15 +57739,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000077",
-          "parentId": "-1000000076",
+          "nodeId": "-1000000076",
+          "parentId": "-1000000075",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000078",
+          "nodeId": "-1000000077",
           "parentId": "178",
           "role": "InlineTextBox",
           "name": "\"What changed since I last looked\" digests per account list",
@@ -57819,7 +57755,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000079",
+          "nodeId": "-1000000078",
           "parentId": "179",
           "role": "StaticText",
           "name": "✓",
@@ -57827,15 +57763,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000080",
-          "parentId": "-1000000079",
+          "nodeId": "-1000000079",
+          "parentId": "-1000000078",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000081",
+          "nodeId": "-1000000080",
           "parentId": "180",
           "role": "InlineTextBox",
           "name": "Flagging contradictions between notes and billing reality",
@@ -57843,7 +57779,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000083",
+          "nodeId": "-1000000082",
           "parentId": "182",
           "role": "StaticText",
           "name": "✕",
@@ -57851,15 +57787,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000084",
-          "parentId": "-1000000083",
+          "nodeId": "-1000000083",
+          "parentId": "-1000000082",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000085",
+          "nodeId": "-1000000084",
           "parentId": "183",
           "role": "InlineTextBox",
           "name": "Send anything externally without a named human approving that send",
@@ -57867,7 +57803,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000086",
+          "nodeId": "-1000000085",
           "parentId": "184",
           "role": "StaticText",
           "name": "✕",
@@ -57875,15 +57811,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000087",
-          "parentId": "-1000000086",
+          "nodeId": "-1000000086",
+          "parentId": "-1000000085",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000088",
+          "nodeId": "-1000000087",
           "parentId": "185",
           "role": "InlineTextBox",
           "name": "Forecast revenue. That's your model's job; we surface inputs, not prophecy",
@@ -57891,7 +57827,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000089",
+          "nodeId": "-1000000088",
           "parentId": "186",
           "role": "StaticText",
           "name": "✕",
@@ -57899,15 +57835,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000090",
-          "parentId": "-1000000089",
+          "nodeId": "-1000000089",
+          "parentId": "-1000000088",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000091",
+          "nodeId": "-1000000090",
           "parentId": "187",
           "role": "InlineTextBox",
           "name": "Answer from data you haven't connected (it says \"not connected,\" not a ",
@@ -57915,7 +57851,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000092",
+          "nodeId": "-1000000091",
           "parentId": "187",
           "role": "InlineTextBox",
           "name": "guess)",
@@ -57923,7 +57859,7 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000093",
+          "nodeId": "-1000000092",
           "parentId": "188",
           "role": "StaticText",
           "name": "✕",
@@ -57931,15 +57867,15 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000094",
-          "parentId": "-1000000093",
+          "nodeId": "-1000000093",
+          "parentId": "-1000000092",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000095",
+          "nodeId": "-1000000094",
           "parentId": "189",
           "role": "InlineTextBox",
           "name": "Train on your data. Analysis is inference-only, per contract, at every tier",
@@ -57971,64 +57907,64 @@
           "properties": {}
         },
         {
-          "nodeId": "-1000000071",
-          "parentId": "-1000000070",
+          "nodeId": "-1000000070",
+          "parentId": "-1000000069",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000074",
-          "parentId": "-1000000073",
+          "nodeId": "-1000000073",
+          "parentId": "-1000000072",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000077",
-          "parentId": "-1000000076",
+          "nodeId": "-1000000076",
+          "parentId": "-1000000075",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000080",
-          "parentId": "-1000000079",
+          "nodeId": "-1000000079",
+          "parentId": "-1000000078",
           "role": "InlineTextBox",
           "name": "✓",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000084",
-          "parentId": "-1000000083",
+          "nodeId": "-1000000083",
+          "parentId": "-1000000082",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000087",
-          "parentId": "-1000000086",
+          "nodeId": "-1000000086",
+          "parentId": "-1000000085",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000090",
-          "parentId": "-1000000089",
+          "nodeId": "-1000000089",
+          "parentId": "-1000000088",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "-1000000094",
-          "parentId": "-1000000093",
+          "nodeId": "-1000000093",
+          "parentId": "-1000000092",
           "role": "InlineTextBox",
           "name": "✕",
           "ignored": false,
@@ -58036,14 +57972,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/desktop-1440-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/desktop-1440-dark-reduced.png"
     },
     {
       "scenario": "text-zoom-200",
       "document": {
         "scrollWidth": 640,
         "clientWidth": 640,
-        "scrollHeight": 3751,
+        "scrollHeight": 3743,
         "viewportHeight": 450
       },
       "overflow": [],
@@ -58166,19 +58102,19 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 2.900000002235174,
-        "load": 7.699999999254942,
+        "domContentLoaded": 10.30000000000291,
+        "load": 15,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/text-zoom-200.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/text-zoom-200.png"
     },
     {
       "scenario": "text-zoom-400",
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 5011,
+        "scrollHeight": 5003,
         "viewportHeight": 225
       },
       "overflow": [],
@@ -58296,12 +58232,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 3.099999997764826,
-        "load": 8,
+        "domContentLoaded": 9.69999999999709,
+        "load": 13.30000000000291,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/text-zoom-400.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/text-zoom-400.png"
     }
   ],
   "supplemental": {
@@ -58310,7 +58246,7 @@
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 5992,
+        "scrollHeight": 5984,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -58428,12 +58364,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 2.600000001490116,
-        "load": 7.100000001490116,
+        "domContentLoaded": 10.19999999999709,
+        "load": 14.19999999999709,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/text-spacing.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/text-spacing.png"
     },
     "forcedColors": {
       "scenario": "forced-colors",
@@ -58447,9 +58383,9 @@
             "rect": {
               "left": 16,
               "top": 16,
-              "right": 158,
+              "right": 157,
               "bottom": 63,
-              "width": 142,
+              "width": 141,
               "height": 47
             },
             "visibleIndicator": true,
@@ -58475,11 +58411,11 @@
             "selector": "body > header.site > div.wrap > div.site-cta > a.btn:nth-of-type(2)",
             "name": "Start free",
             "rect": {
-              "left": 252,
+              "left": 253,
               "top": 16,
               "right": 351,
               "bottom": 60,
-              "width": 99,
+              "width": 98,
               "height": 44
             },
             "visibleIndicator": true,
@@ -58520,9 +58456,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(1) > span.sources > a",
             "name": "4 sources",
             "rect": {
-              "left": 110,
+              "left": 108,
               "top": 384,
-              "right": 165,
+              "right": 164,
               "bottom": 428,
               "width": 56,
               "height": 44
@@ -58535,9 +58471,9 @@
             "selector": "div.output:nth-of-type(2) > ul > li:nth-of-type(2) > span.sources > a",
             "name": "2 sources",
             "rect": {
-              "left": 101,
+              "left": 102,
               "top": 384,
-              "right": 157,
+              "right": 158,
               "bottom": 428,
               "width": 56,
               "height": 44
@@ -58595,11 +58531,11 @@
             "selector": "body > main > section.block:nth-of-type(4) > p.integrate-note > a",
             "name": "Read the security model →",
             "rect": {
-              "left": 110,
+              "left": 107,
               "top": 384,
-              "right": 268,
+              "right": 264,
               "bottom": 428,
-              "width": 158,
+              "width": 157,
               "height": 44
             },
             "visibleIndicator": true,
@@ -58610,11 +58546,11 @@
             "selector": "html > body > main > section.final:nth-of-type(5) > a.btn",
             "name": "Start free",
             "rect": {
-              "left": 134,
+              "left": 135,
               "top": 474,
-              "right": 241,
+              "right": 240,
               "bottom": 518,
-              "width": 107,
+              "width": 106,
               "height": 44
             },
             "visibleIndicator": true,
@@ -58627,9 +58563,9 @@
             "rect": {
               "left": 24,
               "top": 736,
-              "right": 113,
+              "right": 111,
               "bottom": 780,
-              "width": 89,
+              "width": 87,
               "height": 44
             },
             "visibleIndicator": true,
@@ -58639,7 +58575,7 @@
         ],
         "complete": true
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/darwin/forced-colors.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/ai-copilot-landing/evidence/screenshots/linux/forced-colors.png"
     }
   },
   "taskFlows": [
@@ -58650,7 +58586,7 @@
         "height": 812
       },
       "passed": true,
-      "interactionLatencyMs": 40,
+      "interactionLatencyMs": 16,
       "steps": [
         {
           "action": "click",

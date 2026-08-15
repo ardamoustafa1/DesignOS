@@ -340,7 +340,7 @@
       "properties": {}
     },
     {
-      "nodeId": "4",
+      "nodeId": "66",
       "parentId": "33",
       "role": "region",
       "name": "Input → boundary → output. Every run, the same shape.",
@@ -542,16 +542,16 @@
       "properties": {}
     },
     {
-      "nodeId": "66",
-      "parentId": "4",
+      "nodeId": "67",
+      "parentId": "66",
       "role": "none",
       "name": null,
       "ignored": true,
       "properties": {}
     },
     {
-      "nodeId": "67",
-      "parentId": "66",
+      "nodeId": "4",
+      "parentId": "67",
       "role": "heading",
       "name": "Input → boundary → output. Every run, the same shape.",
       "ignored": false,
@@ -561,7 +561,7 @@
     },
     {
       "nodeId": "68",
-      "parentId": "66",
+      "parentId": "67",
       "role": "paragraph",
       "name": null,
       "ignored": false,
@@ -569,7 +569,7 @@
     },
     {
       "nodeId": "69",
-      "parentId": "4",
+      "parentId": "66",
       "role": "none",
       "name": null,
       "ignored": true,
@@ -758,7 +758,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000130",
+      "nodeId": "-1000000122",
       "parentId": "202",
       "role": "InlineTextBox",
       "name": "Relayer is a fictional brand built as a DesignOS golden example. No customer logos are shown because none exist.",
@@ -1013,7 +1013,7 @@
     },
     {
       "nodeId": "159",
-      "parentId": "67",
+      "parentId": "4",
       "role": "StaticText",
       "name": "Input → boundary → output. Every run, the same shape.",
       "ignored": false,
@@ -1192,7 +1192,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000106",
+      "nodeId": "-1000000098",
       "parentId": "192",
       "role": "InlineTextBox",
       "name": "terminal",
@@ -1272,7 +1272,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000131",
+      "nodeId": "-1000000123",
       "parentId": "203",
       "role": "InlineTextBox",
       "name": "Golden catalog",
@@ -1339,7 +1339,7 @@
       "nodeId": "-1000000014",
       "parentId": "134",
       "role": "InlineTextBox",
-      "name": "Relayer reads your CRM notes and billing events, drafts ",
+      "name": "Relayer reads your CRM notes and billing events, drafts the ",
       "ignored": false,
       "properties": {}
     },
@@ -1347,7 +1347,7 @@
       "nodeId": "-1000000015",
       "parentId": "134",
       "role": "InlineTextBox",
-      "name": "the renewal-risk analysis your team does by hand, and ",
+      "name": "renewal-risk analysis your team does by hand, and links ",
       "ignored": false,
       "properties": {}
     },
@@ -1355,7 +1355,7 @@
       "nodeId": "-1000000016",
       "parentId": "134",
       "role": "InlineTextBox",
-      "name": "links every claim to the record it came from. It never ",
+      "name": "every claim to the record it came from. It never contacts a ",
       "ignored": false,
       "properties": {}
     },
@@ -1363,7 +1363,7 @@
       "nodeId": "-1000000017",
       "parentId": "134",
       "role": "InlineTextBox",
-      "name": "contacts a customer on its own.",
+      "name": "customer on its own.",
       "ignored": false,
       "properties": {}
     },
@@ -1395,7 +1395,7 @@
       "nodeId": "-1000000021",
       "parentId": "138",
       "role": "InlineTextBox",
-      "name": "Example landing page for DesignOS evaluation. Brand fictional; the demo ",
+      "name": "Example landing page for DesignOS evaluation. Brand fictional; the demo below is a ",
       "ignored": false,
       "properties": {}
     },
@@ -1403,20 +1403,12 @@
       "nodeId": "-1000000022",
       "parentId": "138",
       "role": "InlineTextBox",
-      "name": "below is a designed illustration of the product mechanic, not a recorded live ",
+      "name": "designed illustration of the product mechanic, not a recorded live run.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000023",
-      "parentId": "138",
-      "role": "InlineTextBox",
-      "name": "run.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000024",
       "parentId": "139",
       "role": "InlineTextBox",
       "name": "Copilot run: renewal risks",
@@ -1424,7 +1416,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000025",
+      "nodeId": "-1000000024",
       "parentId": "140",
       "role": "InlineTextBox",
       "name": "completed in 9s",
@@ -1472,7 +1464,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000032",
+      "nodeId": "-1000000031",
       "parentId": "146",
       "role": "InlineTextBox",
       "name": "3 accounts need human review:",
@@ -1510,7 +1502,7 @@
       }
     },
     {
-      "nodeId": "-1000000045",
+      "nodeId": "-1000000044",
       "parentId": "159",
       "role": "InlineTextBox",
       "name": "Input → boundary → output. ",
@@ -1518,7 +1510,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000046",
+      "nodeId": "-1000000045",
       "parentId": "159",
       "role": "InlineTextBox",
       "name": "Every run, the same shape.",
@@ -1526,23 +1518,23 @@
       "properties": {}
     },
     {
+      "nodeId": "-1000000046",
+      "parentId": "160",
+      "role": "InlineTextBox",
+      "name": "No agent theater: you see what went in, what it was allowed to touch, and where every ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000047",
       "parentId": "160",
       "role": "InlineTextBox",
-      "name": "No agent theater: you see what went in, what it was allowed to touch, and ",
+      "name": "sentence came from.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000048",
-      "parentId": "160",
-      "role": "InlineTextBox",
-      "name": "where every sentence came from.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000049",
       "parentId": "161",
       "role": "InlineTextBox",
       "name": "01",
@@ -1566,7 +1558,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000055",
+      "nodeId": "-1000000054",
       "parentId": "164",
       "role": "InlineTextBox",
       "name": "02",
@@ -1590,7 +1582,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000061",
+      "nodeId": "-1000000059",
       "parentId": "167",
       "role": "InlineTextBox",
       "name": "03",
@@ -1614,7 +1606,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000067",
+      "nodeId": "-1000000064",
       "parentId": "170",
       "role": "InlineTextBox",
       "name": "Great at some things. ",
@@ -1622,7 +1614,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000068",
+      "nodeId": "-1000000065",
       "parentId": "170",
       "role": "InlineTextBox",
       "name": "Deliberately not built for others.",
@@ -1630,18 +1622,18 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000069",
+      "nodeId": "-1000000066",
       "parentId": "171",
       "role": "InlineTextBox",
-      "name": "Stated limits are the fastest way to earn trust in a sector that oversells. Here ",
+      "name": "Stated limits are the fastest way to earn trust in a sector that oversells. Here are ours, ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000070",
+      "nodeId": "-1000000067",
       "parentId": "171",
       "role": "InlineTextBox",
-      "name": "are ours, plainly.",
+      "name": "plainly.",
       "ignored": false,
       "properties": {}
     },
@@ -1742,39 +1734,31 @@
       }
     },
     {
-      "nodeId": "-1000000102",
+      "nodeId": "-1000000095",
       "parentId": "190",
       "role": "InlineTextBox",
-      "name": "In your stack before ",
+      "name": "In your stack before the meeting ends",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000103",
-      "parentId": "190",
-      "role": "InlineTextBox",
-      "name": "the meeting ends",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000104",
+      "nodeId": "-1000000096",
       "parentId": "191",
       "role": "InlineTextBox",
-      "name": "OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are ",
+      "name": "OAuth to your CRM, or the API if you'd rather own the pipes. Both paths are documented ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000105",
+      "nodeId": "-1000000097",
       "parentId": "191",
       "role": "InlineTextBox",
-      "name": "documented end to end.",
+      "name": "end to end.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000107",
+      "nodeId": "-1000000099",
       "parentId": "193",
       "role": "InlineTextBox",
       "name": "Copy",
@@ -1790,7 +1774,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000123",
+      "nodeId": "-1000000115",
       "parentId": "195",
       "role": "InlineTextBox",
       "name": "The ",
@@ -1806,7 +1790,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000125",
+      "nodeId": "-1000000117",
       "parentId": "197",
       "role": "InlineTextBox",
       "name": " default is enforced server-side, so an integrator cannot accidentally ship an auto-acting copilot. ",
@@ -1822,7 +1806,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000127",
+      "nodeId": "-1000000119",
       "parentId": "199",
       "role": "InlineTextBox",
       "name": "See your own accounts through it.",
@@ -1830,7 +1814,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000128",
+      "nodeId": "-1000000120",
       "parentId": "200",
       "role": "InlineTextBox",
       "name": "Start free",
@@ -1838,7 +1822,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000129",
+      "nodeId": "-1000000121",
       "parentId": "201",
       "role": "InlineTextBox",
       "name": "Connects read-only · Disconnect wipes our copy in 24h",
@@ -1870,7 +1854,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000026",
+      "nodeId": "-1000000025",
       "parentId": "141",
       "role": "InlineTextBox",
       "name": "YOUR INPUT",
@@ -1878,7 +1862,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000027",
+      "nodeId": "-1000000026",
       "parentId": "142",
       "role": "InlineTextBox",
       "name": "\"Summarize open renewal risks for enterprise accounts this quarter.\"",
@@ -1886,7 +1870,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000028",
+      "nodeId": "-1000000027",
       "parentId": "143",
       "role": "InlineTextBox",
       "name": "WHAT IT MAY TOUCH",
@@ -1894,23 +1878,23 @@
       "properties": {}
     },
     {
+      "nodeId": "-1000000028",
+      "parentId": "144",
+      "role": "InlineTextBox",
+      "name": "CRM notes + billing events, read-only. Sending email or editing records requires ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000029",
       "parentId": "144",
       "role": "InlineTextBox",
-      "name": "CRM notes + billing events, read-only. Sending email or editing records ",
+      "name": "your approval, every time.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000030",
-      "parentId": "144",
-      "role": "InlineTextBox",
-      "name": "requires your approval, every time.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000031",
       "parentId": "145",
       "role": "InlineTextBox",
       "name": "OUTPUT",
@@ -2014,7 +1998,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000050",
+      "nodeId": "-1000000049",
       "parentId": "162",
       "role": "InlineTextBox",
       "name": "Ask in your words",
@@ -2022,10 +2006,18 @@
       "properties": {}
     },
     {
+      "nodeId": "-1000000050",
+      "parentId": "163",
+      "role": "InlineTextBox",
+      "name": "Ask plain-language questions over the accounts ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000051",
       "parentId": "163",
       "role": "InlineTextBox",
-      "name": "Ask plain-language questions over the ",
+      "name": "you own. When the request is ambiguous, the ",
       "ignored": false,
       "properties": {}
     },
@@ -2033,7 +2025,7 @@
       "nodeId": "-1000000052",
       "parentId": "163",
       "role": "InlineTextBox",
-      "name": "accounts you own. When the request is ",
+      "name": "copilot asks a clarifying question instead of ",
       "ignored": false,
       "properties": {}
     },
@@ -2041,20 +2033,12 @@
       "nodeId": "-1000000053",
       "parentId": "163",
       "role": "InlineTextBox",
-      "name": "ambiguous, the copilot asks a clarifying ",
+      "name": "guessing.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000054",
-      "parentId": "163",
-      "role": "InlineTextBox",
-      "name": "question instead of guessing.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000056",
+      "nodeId": "-1000000055",
       "parentId": "165",
       "role": "InlineTextBox",
       "name": "It reads, it never acts",
@@ -2062,10 +2046,18 @@
       "properties": {}
     },
     {
+      "nodeId": "-1000000056",
+      "parentId": "166",
+      "role": "InlineTextBox",
+      "name": "Analysis runs read-only. Email drafts and CRM ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000057",
       "parentId": "166",
       "role": "InlineTextBox",
-      "name": "Analysis runs read-only. Email drafts and ",
+      "name": "field changes land in your review queue as ",
       "ignored": false,
       "properties": {}
     },
@@ -2073,28 +2065,12 @@
       "nodeId": "-1000000058",
       "parentId": "166",
       "role": "InlineTextBox",
-      "name": "CRM field changes land in your review ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000059",
-      "parentId": "166",
-      "role": "InlineTextBox",
-      "name": "queue as proposals with diffs, never as ",
+      "name": "proposals with diffs, never as completed actions.",
       "ignored": false,
       "properties": {}
     },
     {
       "nodeId": "-1000000060",
-      "parentId": "166",
-      "role": "InlineTextBox",
-      "name": "completed actions.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000062",
       "parentId": "168",
       "role": "InlineTextBox",
       "name": "Answers carry receipts",
@@ -2102,39 +2078,31 @@
       "properties": {}
     },
     {
+      "nodeId": "-1000000061",
+      "parentId": "169",
+      "role": "InlineTextBox",
+      "name": "Every claim links to the note, ticket, or invoice ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000062",
+      "parentId": "169",
+      "role": "InlineTextBox",
+      "name": "behind it. Low-confidence findings are labeled and ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
       "nodeId": "-1000000063",
       "parentId": "169",
       "role": "InlineTextBox",
-      "name": "Every claim links to the note, ticket, or ",
+      "name": "demoted to \"worth checking,\" not stated as fact.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000064",
-      "parentId": "169",
-      "role": "InlineTextBox",
-      "name": "invoice behind it. Low-confidence findings ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000065",
-      "parentId": "169",
-      "role": "InlineTextBox",
-      "name": "are labeled and demoted to \"worth ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000066",
-      "parentId": "169",
-      "role": "InlineTextBox",
-      "name": "checking,\" not stated as fact.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000071",
+      "nodeId": "-1000000068",
       "parentId": "172",
       "role": "InlineTextBox",
       "name": "What it does well",
@@ -2206,7 +2174,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000085",
+      "nodeId": "-1000000081",
       "parentId": "181",
       "role": "InlineTextBox",
       "name": "What it refuses to do",
@@ -2278,10 +2246,74 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000108",
+      "nodeId": "-1000000100",
       "parentId": "194",
       "role": "InlineTextBox",
       "name": "npm install @relayer/sdk",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000101",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000102",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000103",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "import { Relayer } from \"@relayer/sdk\";",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000104",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000105",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000106",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "const run = await new Relayer({ apiKey }).analyze({",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000107",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000108",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "  scope: \"renewals:q3-enterprise\",",
       "ignored": false,
       "properties": {}
     },
@@ -2297,7 +2329,7 @@
       "nodeId": "-1000000110",
       "parentId": "194",
       "role": "InlineTextBox",
-      "name": "\n",
+      "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
       "ignored": false,
       "properties": {}
     },
@@ -2305,7 +2337,7 @@
       "nodeId": "-1000000111",
       "parentId": "194",
       "role": "InlineTextBox",
-      "name": "import { Relayer } from \"@relayer/sdk\";",
+      "name": "\n",
       "ignored": false,
       "properties": {}
     },
@@ -2313,7 +2345,7 @@
       "nodeId": "-1000000112",
       "parentId": "194",
       "role": "InlineTextBox",
-      "name": "\n",
+      "name": "  actions: \"propose\"                          // never \"auto\"",
       "ignored": false,
       "properties": {}
     },
@@ -2329,76 +2361,12 @@
       "nodeId": "-1000000114",
       "parentId": "194",
       "role": "InlineTextBox",
-      "name": "const run = await new Relayer({ apiKey }).analyze({",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000115",
-      "parentId": "194",
-      "role": "InlineTextBox",
-      "name": "\n",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000116",
-      "parentId": "194",
-      "role": "InlineTextBox",
-      "name": "  scope: \"renewals:q3-enterprise\",",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000117",
-      "parentId": "194",
-      "role": "InlineTextBox",
-      "name": "\n",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000118",
-      "parentId": "194",
-      "role": "InlineTextBox",
-      "name": "  sources: [\"crm.notes\", \"billing.events\"],   // read-only scopes",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000119",
-      "parentId": "194",
-      "role": "InlineTextBox",
-      "name": "\n",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000120",
-      "parentId": "194",
-      "role": "InlineTextBox",
-      "name": "  actions: \"propose\"                          // never \"auto\"",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000121",
-      "parentId": "194",
-      "role": "InlineTextBox",
-      "name": "\n",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000122",
-      "parentId": "194",
-      "role": "InlineTextBox",
       "name": "});",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000124",
+      "nodeId": "-1000000116",
       "parentId": "196",
       "role": "InlineTextBox",
       "name": "actions: \"propose\"",
@@ -2406,7 +2374,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000126",
+      "nodeId": "-1000000118",
       "parentId": "198",
       "role": "InlineTextBox",
       "name": "Read the security model →",
@@ -2438,7 +2406,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000033",
+      "nodeId": "-1000000032",
       "parentId": "147",
       "role": "none",
       "name": null,
@@ -2446,7 +2414,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000034",
+      "nodeId": "-1000000033",
       "parentId": "148",
       "role": "InlineTextBox",
       "name": "Northwind: champion left in May; usage −38% ",
@@ -2454,7 +2422,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000035",
+      "nodeId": "-1000000034",
       "parentId": "149",
       "role": "InlineTextBox",
       "name": "· ",
@@ -2470,7 +2438,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000037",
+      "nodeId": "-1000000036",
       "parentId": "151",
       "role": "none",
       "name": null,
@@ -2478,7 +2446,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000038",
+      "nodeId": "-1000000037",
       "parentId": "152",
       "role": "InlineTextBox",
       "name": "Arclight: invoice disputed, renewal in 21 days ",
@@ -2486,7 +2454,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000039",
+      "nodeId": "-1000000038",
       "parentId": "153",
       "role": "InlineTextBox",
       "name": "· ",
@@ -2502,7 +2470,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000041",
+      "nodeId": "-1000000040",
       "parentId": "155",
       "role": "none",
       "name": null,
@@ -2510,7 +2478,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000042",
+      "nodeId": "-1000000041",
       "parentId": "156",
       "role": "InlineTextBox",
       "name": "Kestrel: seats capped 3 months straight ",
@@ -2518,7 +2486,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000043",
+      "nodeId": "-1000000042",
       "parentId": "157",
       "role": "InlineTextBox",
       "name": "· ",
@@ -2534,8 +2502,32 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000072",
+      "nodeId": "-1000000069",
       "parentId": "173",
+      "role": "StaticText",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000070",
+      "parentId": "-1000000069",
+      "role": "InlineTextBox",
+      "name": "✓",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000071",
+      "parentId": "174",
+      "role": "InlineTextBox",
+      "name": "Renewal-risk and account-health summaries across hundreds of accounts",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000072",
+      "parentId": "175",
       "role": "StaticText",
       "name": "✓",
       "ignored": false,
@@ -2551,38 +2543,6 @@
     },
     {
       "nodeId": "-1000000074",
-      "parentId": "174",
-      "role": "InlineTextBox",
-      "name": "Renewal-risk and account-health summaries across hundreds of ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000075",
-      "parentId": "174",
-      "role": "InlineTextBox",
-      "name": "accounts",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000076",
-      "parentId": "175",
-      "role": "StaticText",
-      "name": "✓",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000077",
-      "parentId": "-1000000076",
-      "role": "InlineTextBox",
-      "name": "✓",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000078",
       "parentId": "176",
       "role": "InlineTextBox",
       "name": "Draft follow-ups grounded in the actual conversation history",
@@ -2590,7 +2550,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000079",
+      "nodeId": "-1000000075",
       "parentId": "177",
       "role": "StaticText",
       "name": "✓",
@@ -2598,15 +2558,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000080",
-      "parentId": "-1000000079",
+      "nodeId": "-1000000076",
+      "parentId": "-1000000075",
       "role": "InlineTextBox",
       "name": "✓",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000081",
+      "nodeId": "-1000000077",
       "parentId": "178",
       "role": "InlineTextBox",
       "name": "\"What changed since I last looked\" digests per account list",
@@ -2614,7 +2574,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000082",
+      "nodeId": "-1000000078",
       "parentId": "179",
       "role": "StaticText",
       "name": "✓",
@@ -2622,15 +2582,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000083",
-      "parentId": "-1000000082",
+      "nodeId": "-1000000079",
+      "parentId": "-1000000078",
       "role": "InlineTextBox",
       "name": "✓",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000084",
+      "nodeId": "-1000000080",
       "parentId": "180",
       "role": "InlineTextBox",
       "name": "Flagging contradictions between notes and billing reality",
@@ -2638,7 +2598,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000086",
+      "nodeId": "-1000000082",
       "parentId": "182",
       "role": "StaticText",
       "name": "✕",
@@ -2646,31 +2606,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000087",
-      "parentId": "-1000000086",
+      "nodeId": "-1000000083",
+      "parentId": "-1000000082",
       "role": "InlineTextBox",
       "name": "✕",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000088",
+      "nodeId": "-1000000084",
       "parentId": "183",
       "role": "InlineTextBox",
-      "name": "Send anything externally without a named human approving that ",
+      "name": "Send anything externally without a named human approving that send",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000089",
-      "parentId": "183",
-      "role": "InlineTextBox",
-      "name": "send",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000090",
+      "nodeId": "-1000000085",
       "parentId": "184",
       "role": "StaticText",
       "name": "✕",
@@ -2678,31 +2630,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000091",
-      "parentId": "-1000000090",
+      "nodeId": "-1000000086",
+      "parentId": "-1000000085",
       "role": "InlineTextBox",
       "name": "✕",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000092",
+      "nodeId": "-1000000087",
       "parentId": "185",
       "role": "InlineTextBox",
-      "name": "Forecast revenue. That's your model's job; we surface inputs, not ",
+      "name": "Forecast revenue. That's your model's job; we surface inputs, not prophecy",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000093",
-      "parentId": "185",
-      "role": "InlineTextBox",
-      "name": "prophecy",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000094",
+      "nodeId": "-1000000088",
       "parentId": "186",
       "role": "StaticText",
       "name": "✕",
@@ -2710,31 +2654,31 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000095",
-      "parentId": "-1000000094",
+      "nodeId": "-1000000089",
+      "parentId": "-1000000088",
       "role": "InlineTextBox",
       "name": "✕",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000096",
+      "nodeId": "-1000000090",
       "parentId": "187",
       "role": "InlineTextBox",
-      "name": "Answer from data you haven't connected (it says \"not connected,\" ",
+      "name": "Answer from data you haven't connected (it says \"not connected,\" not a ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000097",
+      "nodeId": "-1000000091",
       "parentId": "187",
       "role": "InlineTextBox",
-      "name": "not a guess)",
+      "name": "guess)",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000098",
+      "nodeId": "-1000000092",
       "parentId": "188",
       "role": "StaticText",
       "name": "✕",
@@ -2742,31 +2686,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000099",
-      "parentId": "-1000000098",
+      "nodeId": "-1000000093",
+      "parentId": "-1000000092",
       "role": "InlineTextBox",
       "name": "✕",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000100",
+      "nodeId": "-1000000094",
       "parentId": "189",
       "role": "InlineTextBox",
-      "name": "Train on your data. Analysis is inference-only, per contract, at every ",
+      "name": "Train on your data. Analysis is inference-only, per contract, at every tier",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000101",
-      "parentId": "189",
-      "role": "InlineTextBox",
-      "name": "tier",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000036",
+      "nodeId": "-1000000035",
       "parentId": "150",
       "role": "InlineTextBox",
       "name": "4 sources",
@@ -2774,7 +2710,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000040",
+      "nodeId": "-1000000039",
       "parentId": "154",
       "role": "InlineTextBox",
       "name": "2 sources",
@@ -2782,10 +2718,18 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000044",
+      "nodeId": "-1000000043",
       "parentId": "158",
       "role": "InlineTextBox",
       "name": "3 sources",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000070",
+      "parentId": "-1000000069",
+      "role": "InlineTextBox",
+      "name": "✓",
       "ignored": false,
       "properties": {}
     },
@@ -2798,16 +2742,16 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000077",
-      "parentId": "-1000000076",
+      "nodeId": "-1000000076",
+      "parentId": "-1000000075",
       "role": "InlineTextBox",
       "name": "✓",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000080",
-      "parentId": "-1000000079",
+      "nodeId": "-1000000079",
+      "parentId": "-1000000078",
       "role": "InlineTextBox",
       "name": "✓",
       "ignored": false,
@@ -2817,37 +2761,29 @@
       "nodeId": "-1000000083",
       "parentId": "-1000000082",
       "role": "InlineTextBox",
-      "name": "✓",
+      "name": "✕",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000087",
-      "parentId": "-1000000086",
+      "nodeId": "-1000000086",
+      "parentId": "-1000000085",
       "role": "InlineTextBox",
       "name": "✕",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000091",
-      "parentId": "-1000000090",
+      "nodeId": "-1000000089",
+      "parentId": "-1000000088",
       "role": "InlineTextBox",
       "name": "✕",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000095",
-      "parentId": "-1000000094",
-      "role": "InlineTextBox",
-      "name": "✕",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000099",
-      "parentId": "-1000000098",
+      "nodeId": "-1000000093",
+      "parentId": "-1000000092",
       "role": "InlineTextBox",
       "name": "✕",
       "ignored": false,

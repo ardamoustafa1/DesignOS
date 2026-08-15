@@ -393,7 +393,7 @@
       "nodeId": "-1000000016",
       "parentId": "158",
       "role": "InlineTextBox",
-      "name": "Bank feeds synced 2 min ago · FX rates ",
+      "name": "Bank feeds synced 2 min ago · FX rates 09:00 ",
       "ignored": false,
       "properties": {}
     },
@@ -401,7 +401,7 @@
       "nodeId": "-1000000017",
       "parentId": "158",
       "role": "InlineTextBox",
-      "name": "09:00 UTC",
+      "name": "UTC",
       "ignored": false,
       "properties": {}
     },
@@ -1151,7 +1151,7 @@
       "nodeId": "-1000000033",
       "parentId": "174",
       "role": "InlineTextBox",
-      "name": "Rows are keyboard-reachable; Enter ",
+      "name": "Rows are keyboard-reachable; Enter opens the ",
       "ignored": false,
       "properties": {}
     },
@@ -1159,7 +1159,7 @@
       "nodeId": "-1000000034",
       "parentId": "174",
       "role": "InlineTextBox",
-      "name": "opens the account",
+      "name": "account",
       "ignored": false,
       "properties": {}
     },
@@ -1196,7 +1196,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000094",
+      "nodeId": "-1000000088",
       "parentId": "213",
       "role": "InlineTextBox",
       "name": "Every state change, attributed — the ",
@@ -1204,23 +1204,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000095",
+      "nodeId": "-1000000089",
       "parentId": "213",
       "role": "InlineTextBox",
-      "name": "compliance surface is a feature, not a ",
+      "name": "compliance surface is a feature, not a report",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000096",
-      "parentId": "213",
-      "role": "InlineTextBox",
-      "name": "report",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000097",
+      "nodeId": "-1000000090",
       "parentId": "214",
       "role": "InlineTextBox",
       "name": "M. Okafor",
@@ -1228,7 +1220,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000098",
+      "nodeId": "-1000000091",
       "parentId": "215",
       "role": "InlineTextBox",
       "name": "approved payment batch ",
@@ -1236,23 +1228,15 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000099",
+      "nodeId": "-1000000092",
       "parentId": "215",
       "role": "InlineTextBox",
-      "name": "#2214 ($64,200, 12 ",
+      "name": "#2214 ($64,200, 12 vendors)",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000100",
-      "parentId": "215",
-      "role": "InlineTextBox",
-      "name": "vendors)",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000101",
+      "nodeId": "-1000000093",
       "parentId": "216",
       "role": "InlineTextBox",
       "name": "09:41 UTC",
@@ -1260,7 +1244,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000102",
+      "nodeId": "-1000000094",
       "parentId": "217",
       "role": "InlineTextBox",
       "name": "System",
@@ -1268,7 +1252,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000103",
+      "nodeId": "-1000000095",
       "parentId": "218",
       "role": "InlineTextBox",
       "name": "flagged duplicate invoice ",
@@ -1276,23 +1260,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000104",
+      "nodeId": "-1000000096",
       "parentId": "218",
       "role": "InlineTextBox",
-      "name": "candidate on Payroll · EU ",
+      "name": "candidate on Payroll · EU (rule R-",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000105",
+      "nodeId": "-1000000097",
       "parentId": "218",
       "role": "InlineTextBox",
-      "name": "(rule R-114)",
+      "name": "114)",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000106",
+      "nodeId": "-1000000098",
       "parentId": "219",
       "role": "InlineTextBox",
       "name": "08:56 UTC",
@@ -1300,7 +1284,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000107",
+      "nodeId": "-1000000099",
       "parentId": "220",
       "role": "InlineTextBox",
       "name": "L. Vance",
@@ -1308,23 +1292,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000108",
+      "nodeId": "-1000000100",
       "parentId": "221",
       "role": "InlineTextBox",
-      "name": "edited matching rule R-",
+      "name": "edited matching rule R-114: ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000109",
+      "nodeId": "-1000000101",
       "parentId": "221",
       "role": "InlineTextBox",
-      "name": "114: tolerance $50 → $25",
+      "name": "tolerance $50 → $25",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000110",
+      "nodeId": "-1000000102",
       "parentId": "222",
       "role": "InlineTextBox",
       "name": "08:31 UTC",
@@ -1332,7 +1316,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000111",
+      "nodeId": "-1000000103",
       "parentId": "223",
       "role": "InlineTextBox",
       "name": "System",
@@ -1340,23 +1324,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000112",
+      "nodeId": "-1000000104",
       "parentId": "224",
       "role": "InlineTextBox",
-      "name": "imported 1,204 transactions ",
+      "name": "imported 1,204 transactions from ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000113",
+      "nodeId": "-1000000105",
       "parentId": "224",
       "role": "InlineTextBox",
-      "name": "from First Meridian feed",
+      "name": "First Meridian feed",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000114",
+      "nodeId": "-1000000106",
       "parentId": "225",
       "role": "InlineTextBox",
       "name": "08:00 UTC",
@@ -1424,42 +1408,34 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000128",
+      "nodeId": "-1000000117",
       "parentId": "233",
       "role": "InlineTextBox",
-      "name": "TreasuryOS is a fictional brand built as a ",
+      "name": "TreasuryOS is a fictional brand built as a DesignOS ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000129",
+      "nodeId": "-1000000118",
       "parentId": "233",
       "role": "InlineTextBox",
-      "name": "DesignOS golden example. No compliance ",
+      "name": "golden example. No compliance certifications are ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000130",
+      "nodeId": "-1000000119",
       "parentId": "233",
       "role": "InlineTextBox",
-      "name": "certifications are claimed anywhere on this ",
+      "name": "claimed anywhere on this screen — a real product ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000131",
+      "nodeId": "-1000000120",
       "parentId": "233",
       "role": "InlineTextBox",
-      "name": "screen — a real product would link real ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000132",
-      "parentId": "233",
-      "role": "InlineTextBox",
-      "name": "attestations here instead of badges.",
+      "name": "would link real attestations here instead of badges.",
       "ignored": false,
       "properties": {}
     },
@@ -1611,7 +1587,7 @@
       "nodeId": "-1000000036",
       "parentId": "176",
       "role": "InlineTextBox",
-      "name": "Partial data: Meridian Bank (EU) feed ",
+      "name": "Partial data: Meridian Bank (EU) feed is ",
       "ignored": false,
       "properties": {}
     },
@@ -1619,7 +1595,7 @@
       "nodeId": "-1000000037",
       "parentId": "176",
       "role": "InlineTextBox",
-      "name": "is delayed — EU balances shown are ",
+      "name": "delayed — EU balances shown are as of ",
       "ignored": false,
       "properties": {}
     },
@@ -1627,7 +1603,7 @@
       "nodeId": "-1000000038",
       "parentId": "176",
       "role": "InlineTextBox",
-      "name": "as of 06:40 UTC, not live.",
+      "name": "06:40 UTC, not live.",
       "ignored": false,
       "properties": {}
     },
@@ -1688,7 +1664,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000093",
+      "nodeId": "-1000000087",
       "parentId": "212",
       "role": "InlineTextBox",
       "name": "Audit trail",
@@ -1696,7 +1672,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000115",
+      "nodeId": "-1000000107",
       "parentId": "226",
       "role": "InlineTextBox",
       "name": "Connections",
@@ -2000,55 +1976,39 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000116",
+      "nodeId": "-1000000108",
       "parentId": "227",
       "role": "InlineTextBox",
-      "name": "Meridian Bank (EU) feed ",
+      "name": "Meridian Bank (EU) feed unreachable",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000117",
-      "parentId": "227",
-      "role": "InlineTextBox",
-      "name": "unreachable",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000118",
+      "nodeId": "-1000000109",
       "parentId": "228",
       "role": "InlineTextBox",
-      "name": "Last successful sync 06:40 UTC. ",
+      "name": "Last successful sync 06:40 UTC. Balances ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000119",
+      "nodeId": "-1000000110",
       "parentId": "228",
       "role": "InlineTextBox",
-      "name": "Balances from this bank are marked ",
+      "name": "from this bank are marked stale above — ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000120",
+      "nodeId": "-1000000111",
       "parentId": "228",
       "role": "InlineTextBox",
-      "name": "stale above — nothing is silently ",
+      "name": "nothing is silently current.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000121",
-      "parentId": "228",
-      "role": "InlineTextBox",
-      "name": "current.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000122",
+      "nodeId": "-1000000112",
       "parentId": "229",
       "role": "InlineTextBox",
       "name": "Retry connection",
@@ -2056,7 +2016,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000123",
+      "nodeId": "-1000000113",
       "parentId": "230",
       "role": "InlineTextBox",
       "name": "No FX hedges configured",
@@ -2064,31 +2024,23 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000124",
+      "nodeId": "-1000000114",
       "parentId": "231",
       "role": "InlineTextBox",
-      "name": "When you add a hedge, its exposure ",
+      "name": "When you add a hedge, its exposure and ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000125",
+      "nodeId": "-1000000115",
       "parentId": "231",
       "role": "InlineTextBox",
-      "name": "and maturity will appear here ",
+      "name": "maturity will appear here alongside cash.",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000126",
-      "parentId": "231",
-      "role": "InlineTextBox",
-      "name": "alongside cash.",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000127",
+      "nodeId": "-1000000116",
       "parentId": "232",
       "role": "InlineTextBox",
       "name": "Add first hedge",
@@ -2528,7 +2480,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000055",
+      "nodeId": "-1000000054",
       "parentId": "186",
       "role": "InlineTextBox",
       "name": "Matched",
@@ -2536,7 +2488,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000056",
+      "nodeId": "-1000000055",
       "parentId": "187",
       "role": "InlineTextBox",
       "name": "$1,204,882",
@@ -2544,7 +2496,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000057",
+      "nodeId": "-1000000056",
       "parentId": "188",
       "role": "InlineTextBox",
       "name": "0",
@@ -2552,7 +2504,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000058",
+      "nodeId": "-1000000057",
       "parentId": "189",
       "role": "InlineTextBox",
       "name": "Finance ",
@@ -2560,7 +2512,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000059",
+      "nodeId": "-1000000058",
       "parentId": "189",
       "role": "InlineTextBox",
       "name": "Ops",
@@ -2568,7 +2520,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000060",
+      "nodeId": "-1000000059",
       "parentId": "190",
       "role": "InlineTextBox",
       "name": "4 min ago",
@@ -2584,7 +2536,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000065",
+      "nodeId": "-1000000063",
       "parentId": "193",
       "role": "InlineTextBox",
       "name": "2 ",
@@ -2592,7 +2544,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000066",
+      "nodeId": "-1000000064",
       "parentId": "193",
       "role": "InlineTextBox",
       "name": "exceptions",
@@ -2600,7 +2552,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000067",
+      "nodeId": "-1000000065",
       "parentId": "194",
       "role": "InlineTextBox",
       "name": "$420,110",
@@ -2608,7 +2560,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000068",
+      "nodeId": "-1000000066",
       "parentId": "195",
       "role": "InlineTextBox",
       "name": "$18,220",
@@ -2616,7 +2568,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000069",
+      "nodeId": "-1000000067",
       "parentId": "196",
       "role": "InlineTextBox",
       "name": "Controller",
@@ -2624,7 +2576,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000070",
+      "nodeId": "-1000000068",
       "parentId": "197",
       "role": "InlineTextBox",
       "name": "delayed ",
@@ -2632,7 +2584,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000071",
+      "nodeId": "-1000000069",
       "parentId": "197",
       "role": "InlineTextBox",
       "name": "feed",
@@ -2648,7 +2600,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000075",
+      "nodeId": "-1000000072",
       "parentId": "200",
       "role": "InlineTextBox",
       "name": "1 ",
@@ -2656,7 +2608,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000076",
+      "nodeId": "-1000000073",
       "parentId": "200",
       "role": "InlineTextBox",
       "name": "exception",
@@ -2664,7 +2616,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000077",
+      "nodeId": "-1000000074",
       "parentId": "201",
       "role": "InlineTextBox",
       "name": "$96,450",
@@ -2672,7 +2624,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000078",
+      "nodeId": "-1000000075",
       "parentId": "202",
       "role": "InlineTextBox",
       "name": "$2,150",
@@ -2680,7 +2632,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000079",
+      "nodeId": "-1000000076",
       "parentId": "203",
       "role": "InlineTextBox",
       "name": "Finance ",
@@ -2688,7 +2640,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000080",
+      "nodeId": "-1000000077",
       "parentId": "203",
       "role": "InlineTextBox",
       "name": "Ops",
@@ -2696,18 +2648,10 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000081",
+      "nodeId": "-1000000078",
       "parentId": "204",
       "role": "InlineTextBox",
-      "name": "11 min ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000082",
-      "parentId": "204",
-      "role": "InlineTextBox",
-      "name": "ago",
+      "name": "11 min ago",
       "ignored": false,
       "properties": {}
     },
@@ -2720,7 +2664,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000087",
+      "nodeId": "-1000000082",
       "parentId": "207",
       "role": "InlineTextBox",
       "name": "Matched",
@@ -2728,7 +2672,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000088",
+      "nodeId": "-1000000083",
       "parentId": "208",
       "role": "InlineTextBox",
       "name": "$3,101,020",
@@ -2736,7 +2680,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000089",
+      "nodeId": "-1000000084",
       "parentId": "209",
       "role": "InlineTextBox",
       "name": "0",
@@ -2744,7 +2688,7 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000090",
+      "nodeId": "-1000000085",
       "parentId": "210",
       "role": "InlineTextBox",
       "name": "Treasury",
@@ -2752,18 +2696,10 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000091",
+      "nodeId": "-1000000086",
       "parentId": "211",
       "role": "InlineTextBox",
-      "name": "09:00 ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000092",
-      "parentId": "211",
-      "role": "InlineTextBox",
-      "name": "UTC",
+      "name": "09:00 UTC",
       "ignored": false,
       "properties": {}
     },
@@ -2827,7 +2763,7 @@
       "nodeId": "-1000000051",
       "parentId": "184",
       "role": "InlineTextBox",
-      "name": "Operating ",
+      "name": "Operating · ",
       "ignored": false,
       "properties": {}
     },
@@ -2835,7 +2771,7 @@
       "nodeId": "-1000000052",
       "parentId": "184",
       "role": "InlineTextBox",
-      "name": "· US · ",
+      "name": "US · First ",
       "ignored": false,
       "properties": {}
     },
@@ -2843,15 +2779,15 @@
       "nodeId": "-1000000053",
       "parentId": "184",
       "role": "InlineTextBox",
-      "name": "First ",
+      "name": "Meridian",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000054",
-      "parentId": "184",
+      "nodeId": "-1000000060",
+      "parentId": "191",
       "role": "InlineTextBox",
-      "name": "Meridian",
+      "name": "Payroll · EU · ",
       "ignored": false,
       "properties": {}
     },
@@ -2859,7 +2795,7 @@
       "nodeId": "-1000000061",
       "parentId": "191",
       "role": "InlineTextBox",
-      "name": "Payroll · ",
+      "name": "Meridian ",
       "ignored": false,
       "properties": {}
     },
@@ -2867,28 +2803,12 @@
       "nodeId": "-1000000062",
       "parentId": "191",
       "role": "InlineTextBox",
-      "name": "EU · ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000063",
-      "parentId": "191",
-      "role": "InlineTextBox",
-      "name": "Meridian ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000064",
-      "parentId": "191",
-      "role": "InlineTextBox",
       "name": "Bank",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000072",
+      "nodeId": "-1000000070",
       "parentId": "198",
       "role": "InlineTextBox",
       "name": "Vendor ",
@@ -2896,47 +2816,31 @@
       "properties": {}
     },
     {
-      "nodeId": "-1000000073",
+      "nodeId": "-1000000071",
       "parentId": "198",
       "role": "InlineTextBox",
-      "name": "payouts · ",
+      "name": "payouts · US",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000074",
-      "parentId": "198",
-      "role": "InlineTextBox",
-      "name": "US",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000083",
+      "nodeId": "-1000000079",
       "parentId": "205",
       "role": "InlineTextBox",
-      "name": "Reserve · ",
+      "name": "Reserve · US ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000084",
+      "nodeId": "-1000000080",
       "parentId": "205",
       "role": "InlineTextBox",
-      "name": "US · ",
+      "name": "· Treasury ",
       "ignored": false,
       "properties": {}
     },
     {
-      "nodeId": "-1000000085",
-      "parentId": "205",
-      "role": "InlineTextBox",
-      "name": "Treasury ",
-      "ignored": false,
-      "properties": {}
-    },
-    {
-      "nodeId": "-1000000086",
+      "nodeId": "-1000000081",
       "parentId": "205",
       "role": "InlineTextBox",
       "name": "MMF",

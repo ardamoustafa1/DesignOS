@@ -4,3 +4,9 @@ evals/runs/**
 fixtures/frameworks/dist/**
 .designos/**
 browser-evidence/**
+
+# Per-package demo fixtures for the 152-entry systems/ catalog — same role as golden
+# evidence (generated, not load-bearing). The contract an agent consumes is SYSTEM.md +
+# tokens.css + lint.json + manifest.json; example.html is proof, not payload, and is the
+# single largest contributor to systems/'s footprint. Still in the git repo and CI checks.
+systems/*/example.html

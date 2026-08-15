@@ -207,8 +207,13 @@ function resolveVars(value, depth = 2) {
   }
   return out;
 }
+/** Escape every regex metacharacter, not just hyphen — `token` is read from a package's
+ *  own lint.json, but building a RegExp from it without a full escape is the same shape
+ *  as a regex-injection bug even when the source is repo-controlled today. */
+const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&');
+
 /** Whole-token match — `--kiln-ember` must not match inside `--kiln-ember-lift`. */
-const usesToken = (value, token) => new RegExp(`${token.replace(/[-]/g, '\\-')}(?![\\w-])`).test(value);
+const usesToken = (value, token) => new RegExp(`${escapeRegExp(token)}(?![\\w-])`).test(value);
 
 const faces = Object.entries(lint.typefaces || {})
   .filter(([k]) => k !== 'reason')

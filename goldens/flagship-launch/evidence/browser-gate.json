@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "target": "file:///Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/index.html",
-  "generatedAt": "2026-08-14T14:10:10.614Z",
+  "target": "file:///home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/index.html",
+  "generatedAt": "2026-08-15T09:15:18.917Z",
   "viewports": [
     {
       "name": "reflow-320",
@@ -47,7 +47,7 @@
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 5763,
+        "scrollHeight": 5761,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -131,8 +131,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 26.5,
-        "load": 26.699999999254942,
+        "domContentLoaded": 40.10000000000582,
+        "load": 40.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -142,7 +142,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 320,
           "windowHeight": 800,
           "orientationAngle": 0,
@@ -976,7 +976,7 @@
       },
       "accessibilityTree": [
         {
-          "nodeId": "2",
+          "nodeId": "3",
           "role": "RootWebArea",
           "name": "Cadence — six release steps, one command",
           "ignored": false,
@@ -985,16 +985,8 @@
           }
         },
         {
-          "nodeId": "5",
-          "parentId": "2",
-          "role": "none",
-          "name": null,
-          "ignored": true,
-          "properties": {}
-        },
-        {
-          "nodeId": "14",
-          "parentId": "5",
+          "nodeId": "6",
+          "parentId": "3",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -1002,111 +994,119 @@
         },
         {
           "nodeId": "15",
-          "parentId": "14",
+          "parentId": "6",
+          "role": "none",
+          "name": null,
+          "ignored": true,
+          "properties": {}
+        },
+        {
+          "nodeId": "16",
+          "parentId": "15",
           "role": "link",
           "name": "Skip to content",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "16",
-          "parentId": "14",
+          "nodeId": "17",
+          "parentId": "15",
           "role": "banner",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "23",
-          "parentId": "14",
+          "nodeId": "24",
+          "parentId": "15",
           "role": "main",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "90",
-          "parentId": "14",
+          "nodeId": "91",
+          "parentId": "15",
           "role": "contentinfo",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "97",
-          "parentId": "15",
+          "nodeId": "98",
+          "parentId": "16",
           "role": "StaticText",
           "name": "Skip to content",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "17",
-          "parentId": "16",
+          "nodeId": "18",
+          "parentId": "17",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "18",
-          "parentId": "17",
+          "nodeId": "19",
+          "parentId": "18",
           "role": "generic",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "20",
-          "parentId": "17",
+          "nodeId": "21",
+          "parentId": "18",
           "role": "navigation",
           "name": "Primary",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "4",
-          "parentId": "23",
+          "nodeId": "5",
+          "parentId": "24",
           "role": "generic",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "34",
-          "parentId": "23",
+          "nodeId": "35",
+          "parentId": "24",
           "role": "generic",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "58",
-          "parentId": "23",
+          "nodeId": "59",
+          "parentId": "24",
           "role": "region",
           "name": "How six steps become one",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "73",
-          "parentId": "23",
+          "nodeId": "74",
+          "parentId": "24",
           "role": "generic",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "91",
-          "parentId": "90",
+          "nodeId": "92",
+          "parentId": "91",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "92",
-          "parentId": "91",
+          "nodeId": "93",
+          "parentId": "92",
           "role": "paragraph",
           "name": null,
           "ignored": false,
@@ -1114,47 +1114,47 @@
         },
         {
           "nodeId": "-1000000002",
-          "parentId": "97",
+          "parentId": "98",
           "role": "InlineTextBox",
           "name": "Skip to content",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "98",
-          "parentId": "18",
+          "nodeId": "99",
+          "parentId": "19",
           "role": "StaticText",
           "name": "Cadence",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "99",
-          "parentId": "18",
+          "nodeId": "100",
+          "parentId": "19",
           "role": "StaticText",
           "name": ".",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "21",
-          "parentId": "20",
+          "nodeId": "22",
+          "parentId": "21",
           "role": "link",
           "name": "How it works",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "22",
-          "parentId": "20",
+          "nodeId": "23",
+          "parentId": "21",
           "role": "link",
           "name": "Numbers",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "24",
-          "parentId": "4",
+          "nodeId": "25",
+          "parentId": "5",
           "role": "heading",
           "name": "Six release steps. One command.",
           "ignored": false,
@@ -1163,24 +1163,16 @@
           }
         },
         {
-          "nodeId": "3",
-          "parentId": "4",
+          "nodeId": "4",
+          "parentId": "5",
           "role": "paragraph",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "29",
-          "parentId": "4",
-          "role": "none",
-          "name": null,
-          "ignored": true,
-          "properties": {}
-        },
-        {
           "nodeId": "30",
-          "parentId": "29",
+          "parentId": "5",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -1189,46 +1181,54 @@
         {
           "nodeId": "31",
           "parentId": "30",
-          "role": "link",
-          "name": "Watch it collapse",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "32",
-          "parentId": "29",
-          "role": "link",
-          "name": "See the numbers",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "33",
-          "parentId": "4",
-          "role": "paragraph",
-          "name": null,
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "35",
-          "parentId": "34",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "108",
+          "nodeId": "32",
+          "parentId": "31",
+          "role": "link",
+          "name": "Watch it collapse",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "33",
+          "parentId": "30",
+          "role": "link",
+          "name": "See the numbers",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "34",
+          "parentId": "5",
+          "role": "paragraph",
+          "name": null,
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "36",
           "parentId": "35",
+          "role": "none",
+          "name": null,
+          "ignored": true,
+          "properties": {}
+        },
+        {
+          "nodeId": "109",
+          "parentId": "36",
           "role": "StaticText",
           "name": "THE PROBLEM",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "36",
-          "parentId": "34",
+          "nodeId": "37",
+          "parentId": "35",
           "role": "heading",
           "name": "Every release is the same six steps, done by hand, at the worst possible hour.",
           "ignored": false,
@@ -1237,24 +1237,16 @@
           }
         },
         {
-          "nodeId": "37",
-          "parentId": "34",
+          "nodeId": "38",
+          "parentId": "35",
           "role": "paragraph",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "38",
-          "parentId": "34",
-          "role": "none",
-          "name": null,
-          "ignored": true,
-          "properties": {}
-        },
-        {
           "nodeId": "39",
-          "parentId": "38",
+          "parentId": "35",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -1263,6 +1255,14 @@
         {
           "nodeId": "40",
           "parentId": "39",
+          "role": "none",
+          "name": null,
+          "ignored": true,
+          "properties": {}
+        },
+        {
+          "nodeId": "41",
+          "parentId": "40",
           "role": "heading",
           "name": "Before",
           "ignored": false,
@@ -1271,24 +1271,24 @@
           }
         },
         {
-          "nodeId": "41",
-          "parentId": "39",
+          "nodeId": "42",
+          "parentId": "40",
           "role": "list",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "48",
-          "parentId": "38",
+          "nodeId": "49",
+          "parentId": "39",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "49",
-          "parentId": "48",
+          "nodeId": "50",
+          "parentId": "49",
           "role": "heading",
           "name": "After",
           "ignored": false,
@@ -1297,16 +1297,16 @@
           }
         },
         {
-          "nodeId": "50",
-          "parentId": "48",
+          "nodeId": "51",
+          "parentId": "49",
           "role": "list",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "59",
-          "parentId": "58",
+          "nodeId": "60",
+          "parentId": "59",
           "role": "heading",
           "name": "How six steps become one",
           "ignored": false,
@@ -1315,40 +1315,40 @@
           }
         },
         {
-          "nodeId": "60",
-          "parentId": "58",
+          "nodeId": "61",
+          "parentId": "59",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "61",
-          "parentId": "60",
+          "nodeId": "62",
+          "parentId": "61",
           "role": "generic",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "74",
-          "parentId": "73",
+          "nodeId": "75",
+          "parentId": "74",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "146",
-          "parentId": "74",
+          "nodeId": "147",
+          "parentId": "75",
           "role": "StaticText",
           "name": "MEASURED",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "75",
-          "parentId": "73",
+          "nodeId": "76",
+          "parentId": "74",
           "role": "heading",
           "name": "What the collapse actually saved.",
           "ignored": false,
@@ -1357,40 +1357,40 @@
           }
         },
         {
-          "nodeId": "76",
-          "parentId": "73",
+          "nodeId": "77",
+          "parentId": "74",
           "role": "paragraph",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "77",
-          "parentId": "73",
+          "nodeId": "78",
+          "parentId": "74",
           "role": "DescriptionList",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "93",
-          "parentId": "92",
+          "nodeId": "94",
+          "parentId": "93",
           "role": "strong",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "159",
-          "parentId": "92",
+          "nodeId": "160",
+          "parentId": "93",
           "role": "StaticText",
           "name": ", built as a DesignOS golden example. No customers, logos, or compliance claims appear on this page, because none exist. Source and rationale: ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "94",
-          "parentId": "92",
+          "nodeId": "95",
+          "parentId": "93",
           "role": "link",
           "name": "flagship-launch.md",
           "ignored": false,
@@ -1398,7 +1398,7 @@
         },
         {
           "nodeId": "-1000000003",
-          "parentId": "98",
+          "parentId": "99",
           "role": "InlineTextBox",
           "name": "Cadence",
           "ignored": false,
@@ -1406,17 +1406,9 @@
         },
         {
           "nodeId": "-1000000004",
-          "parentId": "99",
+          "parentId": "100",
           "role": "InlineTextBox",
           "name": ".",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "100",
-          "parentId": "21",
-          "role": "StaticText",
-          "name": "How it works",
           "ignored": false,
           "properties": {}
         },
@@ -1424,55 +1416,55 @@
           "nodeId": "101",
           "parentId": "22",
           "role": "StaticText",
+          "name": "How it works",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "102",
+          "parentId": "23",
+          "role": "StaticText",
           "name": "Numbers",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "25",
-          "parentId": "24",
+          "nodeId": "26",
+          "parentId": "25",
           "role": "none",
           "name": null,
           "ignored": true,
-          "properties": {}
-        },
-        {
-          "nodeId": "26",
-          "parentId": "25",
-          "role": "generic",
-          "name": null,
-          "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "27",
-          "parentId": "24",
-          "role": "none",
-          "name": null,
-          "ignored": true,
-          "properties": {}
-        },
-        {
-          "nodeId": "28",
-          "parentId": "27",
+          "parentId": "26",
           "role": "generic",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "104",
-          "parentId": "3",
-          "role": "StaticText",
-          "name": "Cadence tags the version, writes the changelog, builds, signs, publishes, and announces. You run one line and watch it happen.",
+          "nodeId": "28",
+          "parentId": "25",
+          "role": "none",
+          "name": null,
+          "ignored": true,
+          "properties": {}
+        },
+        {
+          "nodeId": "29",
+          "parentId": "28",
+          "role": "generic",
+          "name": null,
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "105",
-          "parentId": "31",
+          "parentId": "4",
           "role": "StaticText",
-          "name": "Watch it collapse",
+          "name": "Cadence tags the version, writes the changelog, builds, signs, publishes, and announces. You run one line and watch it happen.",
           "ignored": false,
           "properties": {}
         },
@@ -1480,7 +1472,7 @@
           "nodeId": "106",
           "parentId": "32",
           "role": "StaticText",
-          "name": "See the numbers",
+          "name": "Watch it collapse",
           "ignored": false,
           "properties": {}
         },
@@ -1488,23 +1480,23 @@
           "nodeId": "107",
           "parentId": "33",
           "role": "StaticText",
+          "name": "See the numbers",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "108",
+          "parentId": "34",
+          "role": "StaticText",
           "name": "$ cadence ship --tag v2.4.0",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "-1000000017",
-          "parentId": "108",
+          "parentId": "109",
           "role": "InlineTextBox",
           "name": "THE PROBLEM",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "109",
-          "parentId": "36",
-          "role": "StaticText",
-          "name": "Every release is the same six steps, done by hand, at the worst possible hour.",
           "ignored": false,
           "properties": {}
         },
@@ -1512,31 +1504,29 @@
           "nodeId": "110",
           "parentId": "37",
           "role": "StaticText",
-          "name": "They are not hard steps. They are steps that must all happen, in order, without one being forgotten. That is a machine's job, and it has been a person's job for a decade.",
+          "name": "Every release is the same six steps, done by hand, at the worst possible hour.",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "111",
-          "parentId": "40",
+          "parentId": "38",
+          "role": "StaticText",
+          "name": "They are not hard steps. They are steps that must all happen, in order, without one being forgotten. That is a machine's job, and it has been a person's job for a decade.",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "112",
+          "parentId": "41",
           "role": "StaticText",
           "name": "Before",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "42",
-          "parentId": "41",
-          "role": "listitem",
-          "name": null,
-          "ignored": false,
-          "properties": {
-            "level": 1
-          }
-        },
-        {
           "nodeId": "43",
-          "parentId": "41",
+          "parentId": "42",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1546,7 +1536,7 @@
         },
         {
           "nodeId": "44",
-          "parentId": "41",
+          "parentId": "42",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1556,7 +1546,7 @@
         },
         {
           "nodeId": "45",
-          "parentId": "41",
+          "parentId": "42",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1566,7 +1556,7 @@
         },
         {
           "nodeId": "46",
-          "parentId": "41",
+          "parentId": "42",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1576,7 +1566,7 @@
         },
         {
           "nodeId": "47",
-          "parentId": "41",
+          "parentId": "42",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1585,26 +1575,26 @@
           }
         },
         {
-          "nodeId": "124",
-          "parentId": "49",
+          "nodeId": "48",
+          "parentId": "42",
+          "role": "listitem",
+          "name": null,
+          "ignored": false,
+          "properties": {
+            "level": 1
+          }
+        },
+        {
+          "nodeId": "125",
+          "parentId": "50",
           "role": "StaticText",
           "name": "After",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "51",
-          "parentId": "50",
-          "role": "listitem",
-          "name": null,
-          "ignored": false,
-          "properties": {
-            "level": 1
-          }
-        },
-        {
           "nodeId": "52",
-          "parentId": "50",
+          "parentId": "51",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1614,7 +1604,7 @@
         },
         {
           "nodeId": "53",
-          "parentId": "50",
+          "parentId": "51",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1624,7 +1614,7 @@
         },
         {
           "nodeId": "54",
-          "parentId": "50",
+          "parentId": "51",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1634,7 +1624,7 @@
         },
         {
           "nodeId": "55",
-          "parentId": "50",
+          "parentId": "51",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1644,7 +1634,7 @@
         },
         {
           "nodeId": "56",
-          "parentId": "50",
+          "parentId": "51",
           "role": "listitem",
           "name": null,
           "ignored": false,
@@ -1653,24 +1643,34 @@
           }
         },
         {
-          "nodeId": "137",
-          "parentId": "59",
+          "nodeId": "57",
+          "parentId": "51",
+          "role": "listitem",
+          "name": null,
+          "ignored": false,
+          "properties": {
+            "level": 1
+          }
+        },
+        {
+          "nodeId": "138",
+          "parentId": "60",
           "role": "StaticText",
           "name": "How six steps become one",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "62",
-          "parentId": "61",
+          "nodeId": "63",
+          "parentId": "62",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "64",
-          "parentId": "62",
+          "nodeId": "65",
+          "parentId": "63",
           "role": "paragraph",
           "name": null,
           "ignored": false,
@@ -1678,17 +1678,9 @@
         },
         {
           "nodeId": "-1000000060",
-          "parentId": "146",
+          "parentId": "147",
           "role": "InlineTextBox",
           "name": "MEASURED",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "147",
-          "parentId": "75",
-          "role": "StaticText",
-          "name": "What the collapse actually saved.",
           "ignored": false,
           "properties": {}
         },
@@ -1696,37 +1688,37 @@
           "nodeId": "148",
           "parentId": "76",
           "role": "StaticText",
+          "name": "What the collapse actually saved.",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "149",
+          "parentId": "77",
+          "role": "StaticText",
           "name": "Numbers from the Cadence team's own releases over one quarter. This is a fictional product built as a DesignOS golden, so these are illustrative, not audited.",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "78",
-          "parentId": "77",
+          "nodeId": "79",
+          "parentId": "78",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "79",
-          "parentId": "78",
+          "nodeId": "80",
+          "parentId": "79",
           "role": "term",
           "name": "MEDIAN RELEASE TIME",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "80",
-          "parentId": "78",
-          "role": "definition",
-          "name": null,
-          "ignored": false,
-          "properties": {}
-        },
-        {
           "nodeId": "81",
-          "parentId": "78",
+          "parentId": "79",
           "role": "definition",
           "name": null,
           "ignored": false,
@@ -1734,31 +1726,31 @@
         },
         {
           "nodeId": "82",
-          "parentId": "77",
-          "role": "none",
-          "name": null,
-          "ignored": true,
-          "properties": {}
-        },
-        {
-          "nodeId": "83",
-          "parentId": "82",
-          "role": "term",
-          "name": "STEPS A HUMAN PERFORMS",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "84",
-          "parentId": "82",
+          "parentId": "79",
           "role": "definition",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
+          "nodeId": "83",
+          "parentId": "78",
+          "role": "none",
+          "name": null,
+          "ignored": true,
+          "properties": {}
+        },
+        {
+          "nodeId": "84",
+          "parentId": "83",
+          "role": "term",
+          "name": "STEPS A HUMAN PERFORMS",
+          "ignored": false,
+          "properties": {}
+        },
+        {
           "nodeId": "85",
-          "parentId": "82",
+          "parentId": "83",
           "role": "definition",
           "name": null,
           "ignored": false,
@@ -1766,39 +1758,47 @@
         },
         {
           "nodeId": "86",
-          "parentId": "77",
+          "parentId": "83",
+          "role": "definition",
+          "name": null,
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "87",
+          "parentId": "78",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "87",
-          "parentId": "86",
+          "nodeId": "88",
+          "parentId": "87",
           "role": "term",
           "name": "RELEASES MISSING A CHANGELOG",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "88",
-          "parentId": "86",
-          "role": "definition",
-          "name": null,
-          "ignored": false,
-          "properties": {}
-        },
-        {
           "nodeId": "89",
-          "parentId": "86",
+          "parentId": "87",
           "role": "definition",
           "name": null,
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "158",
-          "parentId": "93",
+          "nodeId": "90",
+          "parentId": "87",
+          "role": "definition",
+          "name": null,
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "159",
+          "parentId": "94",
           "role": "StaticText",
           "name": "Cadence is a fictional product",
           "ignored": false,
@@ -1806,7 +1806,7 @@
         },
         {
           "nodeId": "-1000000082",
-          "parentId": "159",
+          "parentId": "160",
           "role": "InlineTextBox",
           "name": ", built as a ",
           "ignored": false,
@@ -1814,7 +1814,7 @@
         },
         {
           "nodeId": "-1000000083",
-          "parentId": "159",
+          "parentId": "160",
           "role": "InlineTextBox",
           "name": "DesignOS golden example. No customers, ",
           "ignored": false,
@@ -1822,7 +1822,7 @@
         },
         {
           "nodeId": "-1000000084",
-          "parentId": "159",
+          "parentId": "160",
           "role": "InlineTextBox",
           "name": "logos, or compliance claims appear on this ",
           "ignored": false,
@@ -1830,7 +1830,7 @@
         },
         {
           "nodeId": "-1000000085",
-          "parentId": "159",
+          "parentId": "160",
           "role": "InlineTextBox",
           "name": "page, because none exist. Source and ",
           "ignored": false,
@@ -1838,15 +1838,15 @@
         },
         {
           "nodeId": "-1000000086",
-          "parentId": "159",
+          "parentId": "160",
           "role": "InlineTextBox",
           "name": "rationale: ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "160",
-          "parentId": "94",
+          "nodeId": "161",
+          "parentId": "95",
           "role": "StaticText",
           "name": "flagship-launch.md",
           "ignored": false,
@@ -1854,7 +1854,7 @@
         },
         {
           "nodeId": "-1000000005",
-          "parentId": "100",
+          "parentId": "101",
           "role": "InlineTextBox",
           "name": "How it works",
           "ignored": false,
@@ -1862,23 +1862,23 @@
         },
         {
           "nodeId": "-1000000006",
-          "parentId": "101",
+          "parentId": "102",
           "role": "InlineTextBox",
           "name": "Numbers",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "102",
-          "parentId": "26",
+          "nodeId": "103",
+          "parentId": "27",
           "role": "StaticText",
           "name": "Six release steps.",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "103",
-          "parentId": "28",
+          "nodeId": "104",
+          "parentId": "29",
           "role": "StaticText",
           "name": "One command.",
           "ignored": false,
@@ -1886,7 +1886,7 @@
         },
         {
           "nodeId": "-1000000010",
-          "parentId": "104",
+          "parentId": "105",
           "role": "InlineTextBox",
           "name": "Cadence tags the version, writes ",
           "ignored": false,
@@ -1894,7 +1894,7 @@
         },
         {
           "nodeId": "-1000000011",
-          "parentId": "104",
+          "parentId": "105",
           "role": "InlineTextBox",
           "name": "the changelog, builds, signs, ",
           "ignored": false,
@@ -1902,7 +1902,7 @@
         },
         {
           "nodeId": "-1000000012",
-          "parentId": "104",
+          "parentId": "105",
           "role": "InlineTextBox",
           "name": "publishes, and announces. You ",
           "ignored": false,
@@ -1910,7 +1910,7 @@
         },
         {
           "nodeId": "-1000000013",
-          "parentId": "104",
+          "parentId": "105",
           "role": "InlineTextBox",
           "name": "run one line and watch it happen.",
           "ignored": false,
@@ -1918,7 +1918,7 @@
         },
         {
           "nodeId": "-1000000014",
-          "parentId": "105",
+          "parentId": "106",
           "role": "InlineTextBox",
           "name": "Watch it collapse",
           "ignored": false,
@@ -1926,7 +1926,7 @@
         },
         {
           "nodeId": "-1000000015",
-          "parentId": "106",
+          "parentId": "107",
           "role": "InlineTextBox",
           "name": "See the numbers",
           "ignored": false,
@@ -1934,7 +1934,7 @@
         },
         {
           "nodeId": "-1000000016",
-          "parentId": "107",
+          "parentId": "108",
           "role": "InlineTextBox",
           "name": "$ cadence ship --tag v2.4.0",
           "ignored": false,
@@ -1942,7 +1942,7 @@
         },
         {
           "nodeId": "-1000000018",
-          "parentId": "109",
+          "parentId": "110",
           "role": "InlineTextBox",
           "name": "Every release is ",
           "ignored": false,
@@ -1950,7 +1950,7 @@
         },
         {
           "nodeId": "-1000000019",
-          "parentId": "109",
+          "parentId": "110",
           "role": "InlineTextBox",
           "name": "the same six steps, ",
           "ignored": false,
@@ -1958,7 +1958,7 @@
         },
         {
           "nodeId": "-1000000020",
-          "parentId": "109",
+          "parentId": "110",
           "role": "InlineTextBox",
           "name": "done by hand, at the ",
           "ignored": false,
@@ -1966,7 +1966,7 @@
         },
         {
           "nodeId": "-1000000021",
-          "parentId": "109",
+          "parentId": "110",
           "role": "InlineTextBox",
           "name": "worst possible hour.",
           "ignored": false,
@@ -1974,7 +1974,7 @@
         },
         {
           "nodeId": "-1000000022",
-          "parentId": "110",
+          "parentId": "111",
           "role": "InlineTextBox",
           "name": "They are not hard steps. They are ",
           "ignored": false,
@@ -1982,7 +1982,7 @@
         },
         {
           "nodeId": "-1000000023",
-          "parentId": "110",
+          "parentId": "111",
           "role": "InlineTextBox",
           "name": "steps that must all happen, in order, ",
           "ignored": false,
@@ -1990,7 +1990,7 @@
         },
         {
           "nodeId": "-1000000024",
-          "parentId": "110",
+          "parentId": "111",
           "role": "InlineTextBox",
           "name": "without one being forgotten. That is a ",
           "ignored": false,
@@ -1998,7 +1998,7 @@
         },
         {
           "nodeId": "-1000000025",
-          "parentId": "110",
+          "parentId": "111",
           "role": "InlineTextBox",
           "name": "machine's job, and it has been a ",
           "ignored": false,
@@ -2006,7 +2006,7 @@
         },
         {
           "nodeId": "-1000000026",
-          "parentId": "110",
+          "parentId": "111",
           "role": "InlineTextBox",
           "name": "person's job for a decade.",
           "ignored": false,
@@ -2014,103 +2014,103 @@
         },
         {
           "nodeId": "-1000000027",
-          "parentId": "111",
+          "parentId": "112",
           "role": "InlineTextBox",
           "name": "Before",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "112",
-          "parentId": "42",
+          "nodeId": "113",
+          "parentId": "43",
           "role": "ListMarker",
           "name": "1. ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "113",
-          "parentId": "42",
+          "nodeId": "114",
+          "parentId": "43",
           "role": "StaticText",
           "name": "Tag the version",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "114",
-          "parentId": "43",
+          "nodeId": "115",
+          "parentId": "44",
           "role": "ListMarker",
           "name": "2. ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "115",
-          "parentId": "43",
+          "nodeId": "116",
+          "parentId": "44",
           "role": "StaticText",
           "name": "Write the changelog",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "116",
-          "parentId": "44",
+          "nodeId": "117",
+          "parentId": "45",
           "role": "ListMarker",
           "name": "3. ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "117",
-          "parentId": "44",
+          "nodeId": "118",
+          "parentId": "45",
           "role": "StaticText",
           "name": "Run the build",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "118",
-          "parentId": "45",
+          "nodeId": "119",
+          "parentId": "46",
           "role": "ListMarker",
           "name": "4. ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "119",
-          "parentId": "45",
+          "nodeId": "120",
+          "parentId": "46",
           "role": "StaticText",
           "name": "Sign the artifact",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "120",
-          "parentId": "46",
+          "nodeId": "121",
+          "parentId": "47",
           "role": "ListMarker",
           "name": "5. ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "121",
-          "parentId": "46",
+          "nodeId": "122",
+          "parentId": "47",
           "role": "StaticText",
           "name": "Publish to the registry",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "122",
-          "parentId": "47",
+          "nodeId": "123",
+          "parentId": "48",
           "role": "ListMarker",
           "name": "6. ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "123",
-          "parentId": "47",
+          "nodeId": "124",
+          "parentId": "48",
           "role": "StaticText",
           "name": "Announce in the channel",
           "ignored": false,
@@ -2118,103 +2118,103 @@
         },
         {
           "nodeId": "-1000000040",
-          "parentId": "124",
+          "parentId": "125",
           "role": "InlineTextBox",
           "name": "After",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "125",
-          "parentId": "51",
+          "nodeId": "126",
+          "parentId": "52",
           "role": "ListMarker",
           "name": "• ",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "126",
-          "parentId": "51",
-          "role": "StaticText",
-          "name": "Tag the version",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "127",
           "parentId": "52",
-          "role": "ListMarker",
-          "name": "• ",
+          "role": "StaticText",
+          "name": "Tag the version",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "128",
-          "parentId": "52",
-          "role": "StaticText",
-          "name": "Write the changelog",
+          "parentId": "53",
+          "role": "ListMarker",
+          "name": "• ",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "129",
           "parentId": "53",
-          "role": "ListMarker",
-          "name": "• ",
+          "role": "StaticText",
+          "name": "Write the changelog",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "130",
-          "parentId": "53",
-          "role": "StaticText",
-          "name": "Run the build",
+          "parentId": "54",
+          "role": "ListMarker",
+          "name": "• ",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "131",
           "parentId": "54",
-          "role": "ListMarker",
-          "name": "• ",
+          "role": "StaticText",
+          "name": "Run the build",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "132",
-          "parentId": "54",
-          "role": "StaticText",
-          "name": "Sign the artifact",
+          "parentId": "55",
+          "role": "ListMarker",
+          "name": "• ",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "133",
           "parentId": "55",
-          "role": "ListMarker",
-          "name": "• ",
+          "role": "StaticText",
+          "name": "Sign the artifact",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "134",
-          "parentId": "55",
-          "role": "StaticText",
-          "name": "Publish to the registry",
+          "parentId": "56",
+          "role": "ListMarker",
+          "name": "• ",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "135",
           "parentId": "56",
+          "role": "StaticText",
+          "name": "Publish to the registry",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "136",
+          "parentId": "57",
           "role": "ListMarker",
           "name": "• ",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "57",
-          "parentId": "56",
+          "nodeId": "58",
+          "parentId": "57",
           "role": "strong",
           "name": null,
           "ignored": false,
@@ -2222,7 +2222,7 @@
         },
         {
           "nodeId": "-1000000053",
-          "parentId": "137",
+          "parentId": "138",
           "role": "InlineTextBox",
           "name": "How ",
           "ignored": false,
@@ -2230,7 +2230,7 @@
         },
         {
           "nodeId": "-1000000054",
-          "parentId": "137",
+          "parentId": "138",
           "role": "InlineTextBox",
           "name": "six ",
           "ignored": false,
@@ -2238,7 +2238,7 @@
         },
         {
           "nodeId": "-1000000055",
-          "parentId": "137",
+          "parentId": "138",
           "role": "InlineTextBox",
           "name": "steps ",
           "ignored": false,
@@ -2246,7 +2246,7 @@
         },
         {
           "nodeId": "-1000000056",
-          "parentId": "137",
+          "parentId": "138",
           "role": "InlineTextBox",
           "name": "become ",
           "ignored": false,
@@ -2254,15 +2254,15 @@
         },
         {
           "nodeId": "-1000000057",
-          "parentId": "137",
+          "parentId": "138",
           "role": "InlineTextBox",
           "name": "one",
           "ignored": false,
           "properties": {}
         },
         {
-          "nodeId": "139",
-          "parentId": "64",
+          "nodeId": "140",
+          "parentId": "65",
           "role": "StaticText",
           "name": "manual steps, every single release.",
           "ignored": false,
@@ -2270,7 +2270,7 @@
         },
         {
           "nodeId": "-1000000061",
-          "parentId": "147",
+          "parentId": "148",
           "role": "InlineTextBox",
           "name": "What the collapse ",
           "ignored": false,
@@ -2278,7 +2278,7 @@
         },
         {
           "nodeId": "-1000000062",
-          "parentId": "147",
+          "parentId": "148",
           "role": "InlineTextBox",
           "name": "actually saved.",
           "ignored": false,
@@ -2286,7 +2286,7 @@
         },
         {
           "nodeId": "-1000000063",
-          "parentId": "148",
+          "parentId": "149",
           "role": "InlineTextBox",
           "name": "Numbers from the Cadence team's ",
           "ignored": false,
@@ -2294,7 +2294,7 @@
         },
         {
           "nodeId": "-1000000064",
-          "parentId": "148",
+          "parentId": "149",
           "role": "InlineTextBox",
           "name": "own releases over one quarter. This is ",
           "ignored": false,
@@ -2302,33 +2302,25 @@
         },
         {
           "nodeId": "-1000000065",
-          "parentId": "148",
+          "parentId": "149",
           "role": "InlineTextBox",
-          "name": "a fictional product built as a ",
+          "name": "a fictional product built as a DesignOS ",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "-1000000066",
-          "parentId": "148",
+          "parentId": "149",
           "role": "InlineTextBox",
-          "name": "DesignOS golden, so these are ",
+          "name": "golden, so these are illustrative, not ",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "-1000000067",
-          "parentId": "148",
+          "parentId": "149",
           "role": "InlineTextBox",
-          "name": "illustrative, not audited.",
-          "ignored": false,
-          "properties": {}
-        },
-        {
-          "nodeId": "149",
-          "parentId": "79",
-          "role": "StaticText",
-          "name": "MEDIAN RELEASE TIME",
+          "name": "audited.",
           "ignored": false,
           "properties": {}
         },
@@ -2336,7 +2328,7 @@
           "nodeId": "150",
           "parentId": "80",
           "role": "StaticText",
-          "name": "4m 12s",
+          "name": "MEDIAN RELEASE TIME",
           "ignored": false,
           "properties": {}
         },
@@ -2344,15 +2336,15 @@
           "nodeId": "151",
           "parentId": "81",
           "role": "StaticText",
-          "name": "Down from 38 minutes of hands-on work spread across an afternoon.",
+          "name": "4m 12s",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "152",
-          "parentId": "83",
+          "parentId": "82",
           "role": "StaticText",
-          "name": "STEPS A HUMAN PERFORMS",
+          "name": "Down from 38 minutes of hands-on work spread across an afternoon.",
           "ignored": false,
           "properties": {}
         },
@@ -2360,7 +2352,7 @@
           "nodeId": "153",
           "parentId": "84",
           "role": "StaticText",
-          "name": "1",
+          "name": "STEPS A HUMAN PERFORMS",
           "ignored": false,
           "properties": {}
         },
@@ -2368,15 +2360,15 @@
           "nodeId": "154",
           "parentId": "85",
           "role": "StaticText",
-          "name": "The command. Everything after it is the machine's responsibility.",
+          "name": "1",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "155",
-          "parentId": "87",
+          "parentId": "86",
           "role": "StaticText",
-          "name": "RELEASES MISSING A CHANGELOG",
+          "name": "The command. Everything after it is the machine's responsibility.",
           "ignored": false,
           "properties": {}
         },
@@ -2384,7 +2376,7 @@
           "nodeId": "156",
           "parentId": "88",
           "role": "StaticText",
-          "name": "0",
+          "name": "RELEASES MISSING A CHANGELOG",
           "ignored": false,
           "properties": {}
         },
@@ -2392,13 +2384,21 @@
           "nodeId": "157",
           "parentId": "89",
           "role": "StaticText",
+          "name": "0",
+          "ignored": false,
+          "properties": {}
+        },
+        {
+          "nodeId": "158",
+          "parentId": "90",
+          "role": "StaticText",
           "name": "It cannot be forgotten if it is not a separate step.",
           "ignored": false,
           "properties": {}
         },
         {
           "nodeId": "-1000000081",
-          "parentId": "158",
+          "parentId": "159",
           "role": "InlineTextBox",
           "name": "Cadence is a fictional product",
           "ignored": false,
@@ -2406,7 +2406,7 @@
         },
         {
           "nodeId": "-1000000087",
-          "parentId": "160",
+          "parentId": "161",
           "role": "InlineTextBox",
           "name": "flagship-launch.md",
           "ignored": false,
@@ -2414,7 +2414,7 @@
         },
         {
           "nodeId": "-1000000007",
-          "parentId": "102",
+          "parentId": "103",
           "role": "InlineTextBox",
           "name": "Six release ",
           "ignored": false,
@@ -2422,7 +2422,7 @@
         },
         {
           "nodeId": "-1000000008",
-          "parentId": "102",
+          "parentId": "103",
           "role": "InlineTextBox",
           "name": "steps.",
           "ignored": false,
@@ -2430,7 +2430,7 @@
         },
         {
           "nodeId": "-1000000009",
-          "parentId": "103",
+          "parentId": "104",
           "role": "InlineTextBox",
           "name": "One command.",
           "ignored": false,
@@ -2438,7 +2438,7 @@
         },
         {
           "nodeId": "-1000000028",
-          "parentId": "112",
+          "parentId": "113",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2446,7 +2446,7 @@
         },
         {
           "nodeId": "-1000000029",
-          "parentId": "113",
+          "parentId": "114",
           "role": "InlineTextBox",
           "name": "Tag the version",
           "ignored": false,
@@ -2454,7 +2454,7 @@
         },
         {
           "nodeId": "-1000000030",
-          "parentId": "114",
+          "parentId": "115",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2462,7 +2462,7 @@
         },
         {
           "nodeId": "-1000000031",
-          "parentId": "115",
+          "parentId": "116",
           "role": "InlineTextBox",
           "name": "Write the changelog",
           "ignored": false,
@@ -2470,7 +2470,7 @@
         },
         {
           "nodeId": "-1000000032",
-          "parentId": "116",
+          "parentId": "117",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2478,7 +2478,7 @@
         },
         {
           "nodeId": "-1000000033",
-          "parentId": "117",
+          "parentId": "118",
           "role": "InlineTextBox",
           "name": "Run the build",
           "ignored": false,
@@ -2486,7 +2486,7 @@
         },
         {
           "nodeId": "-1000000034",
-          "parentId": "118",
+          "parentId": "119",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2494,7 +2494,7 @@
         },
         {
           "nodeId": "-1000000035",
-          "parentId": "119",
+          "parentId": "120",
           "role": "InlineTextBox",
           "name": "Sign the artifact",
           "ignored": false,
@@ -2502,7 +2502,7 @@
         },
         {
           "nodeId": "-1000000036",
-          "parentId": "120",
+          "parentId": "121",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2510,7 +2510,7 @@
         },
         {
           "nodeId": "-1000000037",
-          "parentId": "121",
+          "parentId": "122",
           "role": "InlineTextBox",
           "name": "Publish to the registry",
           "ignored": false,
@@ -2518,7 +2518,7 @@
         },
         {
           "nodeId": "-1000000038",
-          "parentId": "122",
+          "parentId": "123",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2526,7 +2526,7 @@
         },
         {
           "nodeId": "-1000000039",
-          "parentId": "123",
+          "parentId": "124",
           "role": "InlineTextBox",
           "name": "Announce in the channel",
           "ignored": false,
@@ -2534,7 +2534,7 @@
         },
         {
           "nodeId": "-1000000041",
-          "parentId": "125",
+          "parentId": "126",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2542,7 +2542,7 @@
         },
         {
           "nodeId": "-1000000042",
-          "parentId": "126",
+          "parentId": "127",
           "role": "InlineTextBox",
           "name": "Tag the version",
           "ignored": false,
@@ -2550,7 +2550,7 @@
         },
         {
           "nodeId": "-1000000043",
-          "parentId": "127",
+          "parentId": "128",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2558,7 +2558,7 @@
         },
         {
           "nodeId": "-1000000044",
-          "parentId": "128",
+          "parentId": "129",
           "role": "InlineTextBox",
           "name": "Write the changelog",
           "ignored": false,
@@ -2566,7 +2566,7 @@
         },
         {
           "nodeId": "-1000000045",
-          "parentId": "129",
+          "parentId": "130",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2574,7 +2574,7 @@
         },
         {
           "nodeId": "-1000000046",
-          "parentId": "130",
+          "parentId": "131",
           "role": "InlineTextBox",
           "name": "Run the build",
           "ignored": false,
@@ -2582,7 +2582,7 @@
         },
         {
           "nodeId": "-1000000047",
-          "parentId": "131",
+          "parentId": "132",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2590,7 +2590,7 @@
         },
         {
           "nodeId": "-1000000048",
-          "parentId": "132",
+          "parentId": "133",
           "role": "InlineTextBox",
           "name": "Sign the artifact",
           "ignored": false,
@@ -2598,7 +2598,7 @@
         },
         {
           "nodeId": "-1000000049",
-          "parentId": "133",
+          "parentId": "134",
           "role": "none",
           "name": null,
           "ignored": true,
@@ -2606,7 +2606,7 @@
         },
         {
           "nodeId": "-1000000050",
-          "parentId": "134",
+          "parentId": "135",
           "role": "InlineTextBox",
           "name": "Publish to the registry",
           "ignored": false,
@@ -2614,15 +2614,15 @@
         },
         {
           "nodeId": "-1000000051",
-          "parentId": "135",
+          "parentId": "136",
           "role": "none",
           "name": null,
           "ignored": true,
           "properties": {}
         },
         {
-          "nodeId": "136",
-          "parentId": "57",
+          "nodeId": "137",
+          "parentId": "58",
           "role": "StaticText",
           "name": "cadence ship",
           "ignored": false,
@@ -2630,7 +2630,7 @@
         },
         {
           "nodeId": "-1000000058",
-          "parentId": "139",
+          "parentId": "140",
           "role": "InlineTextBox",
           "name": "manual steps, every single ",
           "ignored": false,
@@ -2638,7 +2638,7 @@
         },
         {
           "nodeId": "-1000000059",
-          "parentId": "139",
+          "parentId": "140",
           "role": "InlineTextBox",
           "name": "release.",
           "ignored": false,
@@ -2646,7 +2646,7 @@
         },
         {
           "nodeId": "-1000000068",
-          "parentId": "149",
+          "parentId": "150",
           "role": "InlineTextBox",
           "name": "MEDIAN RELEASE TIME",
           "ignored": false,
@@ -2654,7 +2654,7 @@
         },
         {
           "nodeId": "-1000000069",
-          "parentId": "150",
+          "parentId": "151",
           "role": "InlineTextBox",
           "name": "4m 12s",
           "ignored": false,
@@ -2662,7 +2662,7 @@
         },
         {
           "nodeId": "-1000000070",
-          "parentId": "151",
+          "parentId": "152",
           "role": "InlineTextBox",
           "name": "Down from 38 minutes of hands-on ",
           "ignored": false,
@@ -2670,7 +2670,7 @@
         },
         {
           "nodeId": "-1000000071",
-          "parentId": "151",
+          "parentId": "152",
           "role": "InlineTextBox",
           "name": "work spread across an afternoon.",
           "ignored": false,
@@ -2678,7 +2678,7 @@
         },
         {
           "nodeId": "-1000000072",
-          "parentId": "152",
+          "parentId": "153",
           "role": "InlineTextBox",
           "name": "STEPS A HUMAN PERFORMS",
           "ignored": false,
@@ -2686,7 +2686,7 @@
         },
         {
           "nodeId": "-1000000073",
-          "parentId": "153",
+          "parentId": "154",
           "role": "InlineTextBox",
           "name": "1",
           "ignored": false,
@@ -2694,7 +2694,7 @@
         },
         {
           "nodeId": "-1000000074",
-          "parentId": "154",
+          "parentId": "155",
           "role": "InlineTextBox",
           "name": "The command. Everything after it is ",
           "ignored": false,
@@ -2702,7 +2702,7 @@
         },
         {
           "nodeId": "-1000000075",
-          "parentId": "154",
+          "parentId": "155",
           "role": "InlineTextBox",
           "name": "the machine's responsibility.",
           "ignored": false,
@@ -2710,7 +2710,7 @@
         },
         {
           "nodeId": "-1000000076",
-          "parentId": "155",
+          "parentId": "156",
           "role": "InlineTextBox",
           "name": "RELEASES MISSING A ",
           "ignored": false,
@@ -2718,7 +2718,7 @@
         },
         {
           "nodeId": "-1000000077",
-          "parentId": "155",
+          "parentId": "156",
           "role": "InlineTextBox",
           "name": "CHANGELOG",
           "ignored": false,
@@ -2726,7 +2726,7 @@
         },
         {
           "nodeId": "-1000000078",
-          "parentId": "156",
+          "parentId": "157",
           "role": "InlineTextBox",
           "name": "0",
           "ignored": false,
@@ -2734,7 +2734,7 @@
         },
         {
           "nodeId": "-1000000079",
-          "parentId": "157",
+          "parentId": "158",
           "role": "InlineTextBox",
           "name": "It cannot be forgotten if it is not a ",
           "ignored": false,
@@ -2742,7 +2742,7 @@
         },
         {
           "nodeId": "-1000000080",
-          "parentId": "157",
+          "parentId": "158",
           "role": "InlineTextBox",
           "name": "separate step.",
           "ignored": false,
@@ -2750,7 +2750,7 @@
         },
         {
           "nodeId": "-1000000052",
-          "parentId": "136",
+          "parentId": "137",
           "role": "InlineTextBox",
           "name": "cadence ship",
           "ignored": false,
@@ -2779,11 +2779,11 @@
             "selector": "body > header.site > div.wrap > nav > a:nth-of-type(1)",
             "name": "How it works",
             "rect": {
-              "left": 123,
+              "left": 126,
               "top": 10,
               "right": 211,
               "bottom": 54,
-              "width": 87,
+              "width": 85,
               "height": 44
             },
             "visibleIndicator": true,
@@ -2841,9 +2841,9 @@
             "rect": {
               "left": 85,
               "top": 708,
-              "right": 206,
+              "right": 203,
               "bottom": 752,
-              "width": 120,
+              "width": 118,
               "height": 44
             },
             "visibleIndicator": true,
@@ -2854,14 +2854,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/reflow-320-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/reflow-320-light-full.png"
     },
     {
       "scenario": "reflow-320-light-reduced",
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 3589,
+        "scrollHeight": 3587,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -2945,8 +2945,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 15.600000001490116,
-        "load": 15.800000000745058,
+        "domContentLoaded": 28.400000000023283,
+        "load": 28.900000000023283,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -2956,7 +2956,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 320,
           "windowHeight": 800,
           "orientationAngle": 0,
@@ -5134,7 +5134,7 @@
           "nodeId": "-1000000065",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "a fictional product built as a ",
+          "name": "a fictional product built as a DesignOS ",
           "ignored": false,
           "properties": {}
         },
@@ -5142,7 +5142,7 @@
           "nodeId": "-1000000066",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "DesignOS golden, so these are ",
+          "name": "golden, so these are illustrative, not ",
           "ignored": false,
           "properties": {}
         },
@@ -5150,7 +5150,7 @@
           "nodeId": "-1000000067",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "illustrative, not audited.",
+          "name": "audited.",
           "ignored": false,
           "properties": {}
         },
@@ -5572,14 +5572,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/reflow-320-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/reflow-320-light-reduced.png"
     },
     {
       "scenario": "reflow-320-dark-full",
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 5763,
+        "scrollHeight": 5761,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -5663,8 +5663,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 14.900000002235174,
-        "load": 15.100000001490116,
+        "domContentLoaded": 27.300000000017462,
+        "load": 27.70000000001164,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -5674,7 +5674,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 320,
           "windowHeight": 800,
           "orientationAngle": 0,
@@ -7836,7 +7836,7 @@
           "nodeId": "-1000000065",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "a fictional product built as a ",
+          "name": "a fictional product built as a DesignOS ",
           "ignored": false,
           "properties": {}
         },
@@ -7844,7 +7844,7 @@
           "nodeId": "-1000000066",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "DesignOS golden, so these are ",
+          "name": "golden, so these are illustrative, not ",
           "ignored": false,
           "properties": {}
         },
@@ -7852,7 +7852,7 @@
           "nodeId": "-1000000067",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "illustrative, not audited.",
+          "name": "audited.",
           "ignored": false,
           "properties": {}
         },
@@ -8290,14 +8290,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/reflow-320-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/reflow-320-dark-full.png"
     },
     {
       "scenario": "reflow-320-dark-reduced",
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 3589,
+        "scrollHeight": 3587,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -8381,8 +8381,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 15.700000002980232,
-        "load": 15.800000000745058,
+        "domContentLoaded": 32.5,
+        "load": 33,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -8392,7 +8392,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 320,
           "windowHeight": 800,
           "orientationAngle": 0,
@@ -10570,7 +10570,7 @@
           "nodeId": "-1000000065",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "a fictional product built as a ",
+          "name": "a fictional product built as a DesignOS ",
           "ignored": false,
           "properties": {}
         },
@@ -10578,7 +10578,7 @@
           "nodeId": "-1000000066",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "DesignOS golden, so these are ",
+          "name": "golden, so these are illustrative, not ",
           "ignored": false,
           "properties": {}
         },
@@ -10586,7 +10586,7 @@
           "nodeId": "-1000000067",
           "parentId": "149",
           "role": "InlineTextBox",
-          "name": "illustrative, not audited.",
+          "name": "audited.",
           "ignored": false,
           "properties": {}
         },
@@ -11008,14 +11008,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/reflow-320-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/reflow-320-dark-reduced.png"
     },
     {
       "scenario": "mobile-375-light-full",
       "document": {
         "scrollWidth": 375,
         "clientWidth": 375,
-        "scrollHeight": 5686,
+        "scrollHeight": 5660,
         "viewportHeight": 812
       },
       "overflow": [],
@@ -11099,8 +11099,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 15,
-        "load": 15.099999997764826,
+        "domContentLoaded": 30.29999999998836,
+        "load": 30.79999999998836,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -11110,7 +11110,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 375,
           "windowHeight": 812,
           "orientationAngle": 0,
@@ -13699,11 +13699,11 @@
             "selector": "body > header.site > div.wrap > nav > a:nth-of-type(1)",
             "name": "How it works",
             "rect": {
-              "left": 178,
+              "left": 181,
               "top": 10,
               "right": 266,
               "bottom": 54,
-              "width": 87,
+              "width": 85,
               "height": 44
             },
             "visibleIndicator": true,
@@ -13759,11 +13759,11 @@
             "selector": "body > footer.site > div.wrap > p > a",
             "name": "flagship-launch.md",
             "rect": {
-              "left": 24,
+              "left": 233,
               "top": 720,
-              "right": 144,
+              "right": 350,
               "bottom": 764,
-              "width": 120,
+              "width": 118,
               "height": 44
             },
             "visibleIndicator": true,
@@ -13774,14 +13774,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/mobile-375-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/mobile-375-light-full.png"
     },
     {
       "scenario": "mobile-375-light-reduced",
       "document": {
         "scrollWidth": 375,
         "clientWidth": 375,
-        "scrollHeight": 3447,
+        "scrollHeight": 3422,
         "viewportHeight": 812
       },
       "overflow": [],
@@ -13865,8 +13865,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13.700000002980232,
-        "load": 13.900000002235174,
+        "domContentLoaded": 27.79999999998836,
+        "load": 28.29999999998836,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -13876,7 +13876,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 375,
           "windowHeight": 812,
           "orientationAngle": 0,
@@ -16444,14 +16444,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/mobile-375-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/mobile-375-light-reduced.png"
     },
     {
       "scenario": "mobile-375-dark-full",
       "document": {
         "scrollWidth": 375,
         "clientWidth": 375,
-        "scrollHeight": 5686,
+        "scrollHeight": 5660,
         "viewportHeight": 812
       },
       "overflow": [],
@@ -16535,8 +16535,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13.399999998509884,
-        "load": 13.599999997764826,
+        "domContentLoaded": 28.70000000001164,
+        "load": 29.10000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -16546,7 +16546,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 375,
           "windowHeight": 812,
           "orientationAngle": 0,
@@ -19114,14 +19114,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/mobile-375-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/mobile-375-dark-full.png"
     },
     {
       "scenario": "mobile-375-dark-reduced",
       "document": {
         "scrollWidth": 375,
         "clientWidth": 375,
-        "scrollHeight": 3447,
+        "scrollHeight": 3422,
         "viewportHeight": 812
       },
       "overflow": [],
@@ -19205,8 +19205,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.699999999254942,
-        "load": 12.900000002235174,
+        "domContentLoaded": 27,
+        "load": 27.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -19216,7 +19216,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 375,
           "windowHeight": 812,
           "orientationAngle": 0,
@@ -21784,14 +21784,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/mobile-375-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/mobile-375-dark-reduced.png"
     },
     {
       "scenario": "tablet-768-light-full",
       "document": {
         "scrollWidth": 768,
         "clientWidth": 768,
-        "scrollHeight": 5548,
+        "scrollHeight": 5546,
         "viewportHeight": 1024
       },
       "overflow": [],
@@ -21875,8 +21875,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13.599999997764826,
-        "load": 13.699999999254942,
+        "domContentLoaded": 31,
+        "load": 31.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -21886,7 +21886,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 768,
           "windowHeight": 1024,
           "orientationAngle": 0,
@@ -24459,11 +24459,11 @@
             "selector": "body > header.site > div.wrap > nav > a:nth-of-type(1)",
             "name": "How it works",
             "rect": {
-              "left": 571,
+              "left": 574,
               "top": 10,
               "right": 659,
               "bottom": 54,
-              "width": 87,
+              "width": 85,
               "height": 44
             },
             "visibleIndicator": true,
@@ -24506,7 +24506,7 @@
             "rect": {
               "left": 228,
               "top": 433,
-              "right": 416,
+              "right": 415,
               "bottom": 485,
               "width": 187,
               "height": 52
@@ -24519,11 +24519,11 @@
             "selector": "body > footer.site > div.wrap > p > a",
             "name": "flagship-launch.md",
             "rect": {
-              "left": 423,
+              "left": 421,
               "top": 932,
-              "right": 543,
+              "right": 538,
               "bottom": 976,
-              "width": 120,
+              "width": 118,
               "height": 44
             },
             "visibleIndicator": true,
@@ -24534,14 +24534,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/tablet-768-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/tablet-768-light-full.png"
     },
     {
       "scenario": "tablet-768-light-reduced",
       "document": {
         "scrollWidth": 768,
         "clientWidth": 768,
-        "scrollHeight": 2654,
+        "scrollHeight": 2652,
         "viewportHeight": 1024
       },
       "overflow": [],
@@ -24625,8 +24625,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13,
-        "load": 13.100000001490116,
+        "domContentLoaded": 26.39999999999418,
+        "load": 26.70000000001164,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -24636,7 +24636,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 768,
           "windowHeight": 1024,
           "orientationAngle": 0,
@@ -27188,14 +27188,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/tablet-768-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/tablet-768-light-reduced.png"
     },
     {
       "scenario": "tablet-768-dark-full",
       "document": {
         "scrollWidth": 768,
         "clientWidth": 768,
-        "scrollHeight": 5548,
+        "scrollHeight": 5546,
         "viewportHeight": 1024
       },
       "overflow": [],
@@ -27279,8 +27279,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 15.100000001490116,
-        "load": 15.199999999254942,
+        "domContentLoaded": 26.79999999998836,
+        "load": 27.29999999998836,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -27290,7 +27290,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 768,
           "windowHeight": 1024,
           "orientationAngle": 0,
@@ -29842,14 +29842,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/tablet-768-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/tablet-768-dark-full.png"
     },
     {
       "scenario": "tablet-768-dark-reduced",
       "document": {
         "scrollWidth": 768,
         "clientWidth": 768,
-        "scrollHeight": 2654,
+        "scrollHeight": 2652,
         "viewportHeight": 1024
       },
       "overflow": [],
@@ -29933,8 +29933,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 14.399999998509884,
-        "load": 14.399999998509884,
+        "domContentLoaded": 28.20000000001164,
+        "load": 28.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -29944,7 +29944,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 768,
           "windowHeight": 1024,
           "orientationAngle": 0,
@@ -32496,14 +32496,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/tablet-768-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/tablet-768-dark-reduced.png"
     },
     {
       "scenario": "laptop-1024-light-full",
       "document": {
         "scrollWidth": 1024,
         "clientWidth": 1024,
-        "scrollHeight": 5170,
+        "scrollHeight": 5168,
         "viewportHeight": 900
       },
       "overflow": [],
@@ -32587,8 +32587,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.899999998509884,
-        "load": 12.899999998509884,
+        "domContentLoaded": 30.20000000001164,
+        "load": 30.70000000001164,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -32598,7 +32598,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1024,
           "windowHeight": 900,
           "orientationAngle": 0,
@@ -35096,7 +35096,7 @@
           "nodeId": "-1000000070",
           "parentId": "158",
           "role": "InlineTextBox",
-          "name": "It cannot be forgotten if it is not a ",
+          "name": "It cannot be forgotten if it is not a separate ",
           "ignored": false,
           "properties": {}
         },
@@ -35104,7 +35104,7 @@
           "nodeId": "-1000000071",
           "parentId": "158",
           "role": "InlineTextBox",
-          "name": "separate step.",
+          "name": "step.",
           "ignored": false,
           "properties": {}
         },
@@ -35139,11 +35139,11 @@
             "selector": "body > header.site > div.wrap > nav > a:nth-of-type(1)",
             "name": "How it works",
             "rect": {
-              "left": 827,
+              "left": 830,
               "top": 10,
               "right": 915,
               "bottom": 54,
-              "width": 87,
+              "width": 85,
               "height": 44
             },
             "visibleIndicator": true,
@@ -35186,7 +35186,7 @@
             "rect": {
               "left": 228,
               "top": 424,
-              "right": 416,
+              "right": 415,
               "bottom": 476,
               "width": 187,
               "height": 52
@@ -35201,9 +35201,9 @@
             "rect": {
               "left": 161,
               "top": 808,
-              "right": 281,
+              "right": 279,
               "bottom": 852,
-              "width": 120,
+              "width": 118,
               "height": 44
             },
             "visibleIndicator": true,
@@ -35214,14 +35214,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/laptop-1024-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/laptop-1024-light-full.png"
     },
     {
       "scenario": "laptop-1024-light-reduced",
       "document": {
         "scrollWidth": 1024,
         "clientWidth": 1024,
-        "scrollHeight": 2719,
+        "scrollHeight": 2717,
         "viewportHeight": 900
       },
       "overflow": [],
@@ -35305,8 +35305,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.299999997019768,
-        "load": 12.599999997764826,
+        "domContentLoaded": 31.89999999999418,
+        "load": 32.39999999999418,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -35316,7 +35316,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1024,
           "windowHeight": 900,
           "orientationAngle": 0,
@@ -37814,7 +37814,7 @@
           "nodeId": "-1000000070",
           "parentId": "158",
           "role": "InlineTextBox",
-          "name": "It cannot be forgotten if it is not a ",
+          "name": "It cannot be forgotten if it is not a separate ",
           "ignored": false,
           "properties": {}
         },
@@ -37822,7 +37822,7 @@
           "nodeId": "-1000000071",
           "parentId": "158",
           "role": "InlineTextBox",
-          "name": "separate step.",
+          "name": "step.",
           "ignored": false,
           "properties": {}
         },
@@ -37836,14 +37836,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/laptop-1024-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/laptop-1024-light-reduced.png"
     },
     {
       "scenario": "laptop-1024-dark-full",
       "document": {
         "scrollWidth": 1024,
         "clientWidth": 1024,
-        "scrollHeight": 5170,
+        "scrollHeight": 5168,
         "viewportHeight": 900
       },
       "overflow": [],
@@ -37927,8 +37927,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13.300000000745058,
-        "load": 13.5,
+        "domContentLoaded": 33.10000000000582,
+        "load": 33.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -37938,7 +37938,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1024,
           "windowHeight": 900,
           "orientationAngle": 0,
@@ -40436,7 +40436,7 @@
           "nodeId": "-1000000070",
           "parentId": "158",
           "role": "InlineTextBox",
-          "name": "It cannot be forgotten if it is not a ",
+          "name": "It cannot be forgotten if it is not a separate ",
           "ignored": false,
           "properties": {}
         },
@@ -40444,7 +40444,7 @@
           "nodeId": "-1000000071",
           "parentId": "158",
           "role": "InlineTextBox",
-          "name": "separate step.",
+          "name": "step.",
           "ignored": false,
           "properties": {}
         },
@@ -40458,14 +40458,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/laptop-1024-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/laptop-1024-dark-full.png"
     },
     {
       "scenario": "laptop-1024-dark-reduced",
       "document": {
         "scrollWidth": 1024,
         "clientWidth": 1024,
-        "scrollHeight": 2719,
+        "scrollHeight": 2717,
         "viewportHeight": 900
       },
       "overflow": [],
@@ -40549,8 +40549,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.699999999254942,
-        "load": 12.800000000745058,
+        "domContentLoaded": 26,
+        "load": 26.5,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -40560,7 +40560,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1024,
           "windowHeight": 900,
           "orientationAngle": 0,
@@ -43058,7 +43058,7 @@
           "nodeId": "-1000000070",
           "parentId": "158",
           "role": "InlineTextBox",
-          "name": "It cannot be forgotten if it is not a ",
+          "name": "It cannot be forgotten if it is not a separate ",
           "ignored": false,
           "properties": {}
         },
@@ -43066,7 +43066,7 @@
           "nodeId": "-1000000071",
           "parentId": "158",
           "role": "InlineTextBox",
-          "name": "separate step.",
+          "name": "step.",
           "ignored": false,
           "properties": {}
         },
@@ -43080,14 +43080,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/laptop-1024-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/laptop-1024-dark-reduced.png"
     },
     {
       "scenario": "desktop-1440-light-full",
       "document": {
         "scrollWidth": 1440,
         "clientWidth": 1440,
-        "scrollHeight": 5502,
+        "scrollHeight": 5500,
         "viewportHeight": 1000
       },
       "overflow": [],
@@ -43171,8 +43171,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.399999998509884,
-        "load": 12.599999997764826,
+        "domContentLoaded": 28.5,
+        "load": 29,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -43182,7 +43182,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1440,
           "windowHeight": 1000,
           "orientationAngle": 0,
@@ -45723,11 +45723,11 @@
             "selector": "body > header.site > div.wrap > nav > a:nth-of-type(1)",
             "name": "How it works",
             "rect": {
-              "left": 1063,
+              "left": 1066,
               "top": 10,
               "right": 1151,
               "bottom": 54,
-              "width": 87,
+              "width": 85,
               "height": 44
             },
             "visibleIndicator": true,
@@ -45770,7 +45770,7 @@
             "rect": {
               "left": 408,
               "top": 474,
-              "right": 596,
+              "right": 595,
               "bottom": 526,
               "width": 187,
               "height": 52
@@ -45785,9 +45785,9 @@
             "rect": {
               "left": 293,
               "top": 908,
-              "right": 413,
+              "right": 410,
               "bottom": 952,
-              "width": 120,
+              "width": 118,
               "height": 44
             },
             "visibleIndicator": true,
@@ -45798,14 +45798,14 @@
         "complete": true
       },
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/desktop-1440-light-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/desktop-1440-light-full.png"
     },
     {
       "scenario": "desktop-1440-light-reduced",
       "document": {
         "scrollWidth": 1440,
         "clientWidth": 1440,
-        "scrollHeight": 2739,
+        "scrollHeight": 2737,
         "viewportHeight": 1000
       },
       "overflow": [],
@@ -45889,8 +45889,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.800000000745058,
-        "load": 12.900000002235174,
+        "domContentLoaded": 27.10000000000582,
+        "load": 27.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -45900,7 +45900,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1440,
           "windowHeight": 1000,
           "orientationAngle": 0,
@@ -48420,14 +48420,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/desktop-1440-light-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/desktop-1440-light-reduced.png"
     },
     {
       "scenario": "desktop-1440-dark-full",
       "document": {
         "scrollWidth": 1440,
         "clientWidth": 1440,
-        "scrollHeight": 5502,
+        "scrollHeight": 5500,
         "viewportHeight": 1000
       },
       "overflow": [],
@@ -48511,8 +48511,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 14.800000000745058,
-        "load": 14.900000002235174,
+        "domContentLoaded": 27.5,
+        "load": 27.900000000023283,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -48522,7 +48522,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1440,
           "windowHeight": 1000,
           "orientationAngle": 0,
@@ -51042,14 +51042,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/desktop-1440-dark-full.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/desktop-1440-dark-full.png"
     },
     {
       "scenario": "desktop-1440-dark-reduced",
       "document": {
         "scrollWidth": 1440,
         "clientWidth": 1440,
-        "scrollHeight": 2739,
+        "scrollHeight": 2737,
         "viewportHeight": 1000
       },
       "overflow": [],
@@ -51133,8 +51133,8 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.899999998509884,
-        "load": 13,
+        "domContentLoaded": 29,
+        "load": 29.60000000000582,
         "longTaskMs": 0,
         "layoutShift": 0
       },
@@ -51144,7 +51144,7 @@
           "version": "4.12.1"
         },
         "testEnvironment": {
-          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
           "windowWidth": 1440,
           "windowHeight": 1000,
           "orientationAngle": 0,
@@ -53664,14 +53664,14 @@
         }
       ],
       "runtime": [],
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/desktop-1440-dark-reduced.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/desktop-1440-dark-reduced.png"
     },
     {
       "scenario": "text-zoom-200",
       "document": {
         "scrollWidth": 640,
         "clientWidth": 640,
-        "scrollHeight": 2950,
+        "scrollHeight": 2948,
         "viewportHeight": 450
       },
       "overflow": [],
@@ -53755,19 +53755,19 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13,
-        "load": 13,
+        "domContentLoaded": 32.20000000001164,
+        "load": 32.20000000001164,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/text-zoom-200.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/text-zoom-200.png"
     },
     {
       "scenario": "text-zoom-400",
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 3589,
+        "scrollHeight": 3587,
         "viewportHeight": 225
       },
       "overflow": [],
@@ -53851,12 +53851,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 12.699999999254942,
-        "load": 12.800000000745058,
+        "domContentLoaded": 26,
+        "load": 26.39999999999418,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/text-zoom-400.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/text-zoom-400.png"
     }
   ],
   "supplemental": {
@@ -53865,7 +53865,7 @@
       "document": {
         "scrollWidth": 320,
         "clientWidth": 320,
-        "scrollHeight": 4231,
+        "scrollHeight": 4275,
         "viewportHeight": 800
       },
       "overflow": [],
@@ -53949,12 +53949,12 @@
       "performance": {
         "resources": 0,
         "transferBytes": 0,
-        "domContentLoaded": 13.300000000745058,
-        "load": 13.400000002235174,
+        "domContentLoaded": 28.29999999998836,
+        "load": 28.89999999999418,
         "longTaskMs": 0,
         "layoutShift": 0
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/text-spacing.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/text-spacing.png"
     },
     "forcedColors": {
       "scenario": "forced-colors",
@@ -53981,11 +53981,11 @@
             "selector": "body > header.site > div.wrap > nav > a:nth-of-type(1)",
             "name": "How it works",
             "rect": {
-              "left": 178,
+              "left": 181,
               "top": 10,
               "right": 266,
               "bottom": 54,
-              "width": 87,
+              "width": 85,
               "height": 44
             },
             "visibleIndicator": true,
@@ -54041,11 +54041,11 @@
             "selector": "body > footer.site > div.wrap > p > a",
             "name": "flagship-launch.md",
             "rect": {
-              "left": 24,
+              "left": 233,
               "top": 720,
-              "right": 144,
+              "right": 350,
               "bottom": 764,
-              "width": 120,
+              "width": 118,
               "height": 44
             },
             "visibleIndicator": true,
@@ -54055,7 +54055,7 @@
         ],
         "complete": true
       },
-      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/goldens/flagship-launch/evidence/screenshots/darwin/forced-colors.png"
+      "screenshot": "/home/runner/work/DesignOS/DesignOS/goldens/flagship-launch/evidence/screenshots/linux/forced-colors.png"
     }
   },
   "taskFlows": [
@@ -54066,7 +54066,7 @@
         "height": 812
       },
       "passed": true,
-      "interactionLatencyMs": 40,
+      "interactionLatencyMs": 24,
       "steps": [
         {
           "action": "click",
@@ -54095,7 +54095,7 @@
         "height": 812
       },
       "passed": true,
-      "interactionLatencyMs": 48,
+      "interactionLatencyMs": 24,
       "steps": [
         {
           "action": "click",

@@ -60,6 +60,7 @@
     "scoring",
     "skills",
     "systems",
+    "!systems/*/example.html",
     "starter",
     "recipes",
     "runtime",
