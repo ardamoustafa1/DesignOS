@@ -279,6 +279,58 @@ test('export all: targets sharing a real path (AGENTS.md) write it once, crediti
     || result.stdout.includes('OpenAI Codex CLI'), 'stdout should credit Codex on the shared AGENTS.md write');
 });
 
+function makeHooksFixture() {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-hooks-'));
+  spawnSync('git', ['init', '-q'], { cwd: tmp });
+  fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
+  for (const d of ['bin', 'validators']) {
+    fs.cpSync(path.resolve(__dirname, '..', d), path.join(tmp, 'DesignOS', d), { recursive: true });
+  }
+  fs.copyFileSync(path.resolve(__dirname, '..', 'CLAUDE.md'), path.join(tmp, 'DesignOS', 'CLAUDE.md'));
+  return tmp;
+}
+
+test('hooks install: writes every editor manifest and the git pre-commit hook', () => {
+  const tmp = makeHooksFixture();
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'hooks', 'install', '--git'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  for (const f of ['.claude/settings.local.json', '.codex/hooks.json', '.cursor/hooks.json', '.agent/hooks.json', '.github/hooks/designos.json', '.git/hooks/pre-commit']) {
+    assert.ok(fs.existsSync(path.join(tmp, f)), `hooks install --git must write ${f}`);
+  }
+  const cursorHook = JSON.parse(fs.readFileSync(path.join(tmp, '.cursor', 'hooks.json'), 'utf8'));
+  assert.ok(cursorHook.hooks.preToolUse, 'cursor manifest must use preToolUse — the event that can actually block, unlike afterFileEdit');
+});
+
+test('hooks install --git: the pre-commit hook actually blocks a commit with real findings and respects the bypass', () => {
+  const tmp = makeHooksFixture();
+  spawnSync('node', ['DesignOS/bin/designos.js', 'hooks', 'install', '--git'], { cwd: tmp, encoding: 'utf8' });
+  fs.writeFileSync(path.join(tmp, 'bad.html'),
+    '<!doctype html><html><body>\n<div onclick="alert(1)">click</div>\n</body></html>\n');
+  spawnSync('git', ['add', 'bad.html'], { cwd: tmp });
+
+  const blocked = spawnSync('git', ['-c', 'user.email=t@t.com', '-c', 'user.name=t', 'commit', '-m', 'bad'],
+    { cwd: tmp, encoding: 'utf8' });
+  assert.notStrictEqual(blocked.status, 0, 'a commit with a real onclick-div finding must be blocked');
+  const log1 = spawnSync('git', ['log', '--oneline'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(log1.stdout.trim(), '', 'no commit should exist after a blocked attempt');
+
+  const bypassed = spawnSync('git', ['-c', 'user.email=t@t.com', '-c', 'user.name=t', 'commit', '-m', 'bad, bypassed'],
+    { cwd: tmp, encoding: 'utf8', env: { ...process.env, DESIGNOS_SKIP_HOOK: '1' } });
+  assert.strictEqual(bypassed.status, 0, 'DESIGNOS_SKIP_HOOK=1 must let the commit through');
+});
+
+test('hooks install --git: does not clobber a pre-existing non-DesignOS pre-commit hook', () => {
+  const tmp = makeHooksFixture();
+  fs.mkdirSync(path.join(tmp, '.git', 'hooks'), { recursive: true });
+  const existing = '#!/bin/sh\necho "custom"\n';
+  fs.writeFileSync(path.join(tmp, '.git', 'hooks', 'pre-commit'), existing);
+  const result = spawnSync('node', ['DesignOS/bin/designos.js', 'hooks', 'install', '--git'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  assert.strictEqual(fs.readFileSync(path.join(tmp, '.git', 'hooks', 'pre-commit'), 'utf8'), existing,
+    'a pre-existing hook DesignOS did not generate must be left untouched');
+  assert.ok(/merge manually/.test(result.stdout), 'must warn instead of silently skipping');
+});
+
 test('bin/designos.js export targets include the AGENTS.md standard', () => {
   const binPath = path.resolve(__dirname, '..', 'bin', 'designos.js');
   const src = fs.readFileSync(binPath, 'utf8');
