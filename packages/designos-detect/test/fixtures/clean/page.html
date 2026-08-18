@@ -2,15 +2,23 @@
 <html lang="en">
 <head><meta charset="utf-8"><title>Clean fixture</title>
 <style>
-:root { --accent: #2f6fed; --text: #1a1a1a; --bg: #ffffff; }
+:root { --accent: #2f6fed; --text: #1a1a1a; --bg: #ffffff; --bg-soft: #fbfbfe; --code-bg: #0b0e12; --code-text: #dce6ef; }
+@media (prefers-reduced-motion: reduce) { main { animation: none; } }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+body { background: radial-gradient(circle at top, var(--bg-soft), var(--bg)); }
+main { animation: rise 400ms ease-out; }
 button { background: var(--accent); color: var(--bg); border: none; padding: 8px 16px; }
 button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+pre { background: var(--code-bg); color: var(--code-text); padding: 12px; border-radius: 8px; box-shadow: 0 1px 2px rgba(20,32,58,.16), 0 4px 10px rgba(20,32,58,.12), inset 0 1px 0 rgba(255,255,255,.06); }
 </style>
 </head>
 <body>
 <main>
   <h1>Clean fixture</h1>
   <button type="button">Continue</button>
+  <pre><code>$ designos-detect .
+Scanning 40 rules against the current directory...
+0 findings across 9 provider runs.</code></pre>
 </main>
 </body>
 </html>

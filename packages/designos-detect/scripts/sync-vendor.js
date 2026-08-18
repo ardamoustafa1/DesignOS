@@ -28,6 +28,7 @@ const VENDORED_FILES = [
   'check-motion.js',
   'check-aesthetic-slop.js',
   'check-registry.js',
+  'check-craft-ceiling.js',
   'check-signature-consistency.js',
   'check-motion-gaps.js',
   'check-originality.js',

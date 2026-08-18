@@ -459,6 +459,28 @@ function analyzeDesignFile(absFile, root) {
   const lower = raw.toLowerCase();
   const isUiSurface = /\.(html|jsx?|tsx?|vue|svelte|mdx)$/.test(absFile);
 
+  // check-craft-ceiling.js (CLAUDE.md §4.5, the Ceiling Contract) used to run nowhere in
+  // this file's own review path — a page could be flat/textureless/inert/forgettable and
+  // still report a clean review, because every check below is a *ban* (raw hex, missing
+  // alt, etc.) and none of them ask whether anything positive is actually present. Merge
+  // its findings in directly rather than reimplementing the same rules twice.
+  if (/\.(css|html|jsx?|tsx?|vue|svelte)$/.test(absFile)) {
+    const ceilingScript = path.join(__dirname, '..', 'validators', 'check-craft-ceiling.js');
+    const ceilingResult = spawnSync(process.execPath, [ceilingScript, absFile, '--json'], { encoding: 'utf8', maxBuffer: 1024 * 1024 * 8 });
+    try {
+      const parsed = JSON.parse(ceilingResult.stdout);
+      for (const f of parsed.findings || []) {
+        // check-craft-ceiling.js's own P2/P3 split governs whether ITS standalone exit
+        // code fails without --strict; that design choice is about false-positive risk
+        // for a mechanical presence check, not about whether an agent should see the
+        // finding. Every finding is surfaced here — CLAUDE.md §4.5's own stated ceiling
+        // ("misses §4.5 scores at most 89") is enforced below in summarizeReview via
+        // ceilingP3Codes, not by hiding the finding.
+        pushFinding(findings, rel, f.line || 1, 'UI Craft', f.severity, f.rule, f.message);
+      }
+    } catch { /* craft-ceiling found nothing to say, or the file isn't one it walks (e.g. a fragment) — not a review failure */ }
+  }
+
   for (const m of raw.matchAll(/<(img)\b(?![^>]*\balt=)[^>]*>/gi)) {
     pushFinding(findings, rel, lineOf(raw, m.index), 'Accessibility', 'P1', 'img-no-alt', 'Image is missing alt text.');
   }
@@ -573,14 +595,29 @@ function analyzeDesignFile(absFile, root) {
 function summarizeReview(findings, files) {
   const assessedDims = ['UI Craft', 'UX & Flow', 'Accessibility', 'Modernity', 'Conversion'];
   const staticRiskScores = Object.fromEntries(assessedDims.map(d => [d, 100]));
-  const weights = { P0: 25, P1: 12, P2: 5 };
+  // P3 exists because check-craft-ceiling.js's own findings arrive at this severity (see
+  // analyzeDesignFile) — 0 weight keeps a P3 from corrupting the subtraction (undefined -
+  // NaN) rather than silently double-penalizing what the ceilingCapCodes cap below already
+  // charges once, deliberately, per CLAUDE.md §4.5's own stated number.
+  const weights = { P0: 25, P1: 12, P2: 5, P3: 0 };
   const blockerCodes = new Set([
     'img-no-alt', 'empty-control', 'nonsemantic-click', 'focus-removed',
     'proof-risk', 'customer-proof-risk', 'quote-proof-risk', 'placeholder-copy',
   ]);
+  // CLAUDE.md §4.5 states this exact number: "A page that meets §4 and misses §4.5 scores
+  // at most 89 on UI Craft and Distinctiveness — clean but swappable." Any surviving
+  // check-craft-ceiling.js finding (texture/arrival/elevation/rhythm/memorable-moment —
+  // the Ceiling Contract's presence requirements, not its P2 bans) enforces that cap here,
+  // so it isn't only a claim in the kernel's prose with nothing behind it.
+  const ceilingCapCodes = new Set([
+    'ceiling-flat-elevation', 'ceiling-no-edge-highlight', 'ceiling-no-texture',
+    'ceiling-uniform-rhythm', 'ceiling-single-container', 'ceiling-no-arrival',
+    'ceiling-no-memorable-moment',
+  ]);
   for (const f of findings) {
     staticRiskScores[f.dimension] = Math.max(0, staticRiskScores[f.dimension] - weights[f.severity]);
     if (blockerCodes.has(f.code)) staticRiskScores[f.dimension] = Math.min(60, staticRiskScores[f.dimension]);
+    if (ceilingCapCodes.has(f.code)) staticRiskScores[f.dimension] = Math.min(89, staticRiskScores[f.dimension]);
   }
   const staticRiskFloor = Math.min(...Object.values(staticRiskScores));
   const unassessed = [
