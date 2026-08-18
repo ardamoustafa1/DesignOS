@@ -1,7 +1,18 @@
 name: DesignOS review
 
 on:
+  # Scoped to directories that hold shippable UI markup this repo actually produces.
+  # Without this filter, diff-only mode reviews *any* changed .js/.html/etc file in the
+  # PR — including this repo's own tooling and test code (validators/test-cli.js, bin/*),
+  # which are never meant to pass a "raw hex / proof claims / etc" UI review: a test
+  # fixture string containing "#fff" or "Acme Corp" is not a design defect.
   pull_request:
+    paths:
+      - "examples/**"
+      - "website/**"
+      - "goldens/**"
+      - "starter/**"
+      - "systems/**/example.html"
   workflow_dispatch:
 
 permissions:
