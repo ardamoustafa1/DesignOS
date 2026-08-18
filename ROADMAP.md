@@ -35,7 +35,7 @@ Propose additions via a module-proposal issue.
 
 | Public claim | Generated truth |
 |---|---:|
-| Version | 2.3.0 |
+| Version | 2.4.0 |
 | Rules / providers | 40 / 8 |
 | Motion recipes / stacks | 15 / 6 |
 | Adapter combinations / browser fixtures | 90 / 180 |
@@ -45,6 +45,20 @@ Propose additions via a module-proposal issue.
 | External eval | not verified |
 | Native evidence | source-conformance-only across all 4 platforms (react-native, swiftui, compose, flutter) — 0 CI device/simulator runs |
 <!-- DESIGNOS_PUBLIC_CLAIMS:END -->
+
+## Shipped (v2.4.0)
+- **Design-review GitHub Action v2** (`.github/actions/design-review`): a `diff-only`
+  mode that scopes the deterministic review to the files a PR actually changed instead of
+  a fixed `path`, wired into `.github/workflows/design-review.yml` for `pull_request`
+  events (`workflow_dispatch` keeps the full-tree pass). Also fixes a live bug in v1 where
+  the composite action read a `summary.overall` field that never existed, so `score` was
+  always the literal string `"undefined"` and any PR run would hard-fail the bash integer
+  comparison — it now reads `summary.staticRiskFloor`, the field the CLI actually emits.
+  An optional, explicitly advisory `model-review` pass (gated on an `ANTHROPIC_API_KEY`
+  repository secret) sends the changed files plus `scoring/rubric.md` to the Anthropic
+  Messages API and appends the result to the PR comment, clearly labeled as
+  non-deterministic and never wired into `fail-under-min` — see CLAUDE.md Prime
+  Directive #6.
 
 ## Shipped (v2.1 hardening)
 
@@ -134,8 +148,6 @@ Propose additions via a module-proposal issue.
 ## Planned
 - **Published eval results across major models** — the deltas as a living table in
   `evals/runs/`
-- **Design-review GitHub Action v2:** deterministic review action + optional
-  rubric-prompted model pass on PR diffs
 - **Module translations** under `i18n/` (TR first), beyond the README layer
 - **Industry expansion by demand:** open a module-proposal issue with your sector
 

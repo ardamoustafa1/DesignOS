@@ -4,6 +4,32 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+## [2.4.0] — 2026-08-18
+
+### Added — Design-review GitHub Action v2 (PR-diff scoping + advisory model pass)
+- `.github/actions/design-review` gains a `diff-only` input: instead of a fixed `path`,
+  it computes the merge-base against `base-ref` (or `GITHUB_BASE_REF` on `pull_request`),
+  stages only the changed reviewable files (`html/css/js/jsx/ts/tsx/vue/svelte/mdx`), and
+  reviews that. A diff with no reviewable files produces a clean "nothing to review"
+  report instead of failing.
+- `.github/workflows/design-review.yml` now runs `diff-only: true` on `pull_request`
+  events and keeps the full `examples/` pass on `workflow_dispatch`.
+- New optional `model-review` input (default off): when `true` and an
+  `ANTHROPIC_API_KEY` repository secret is present, `model-review.js` sends the changed
+  files plus `scoring/rubric.md` to the Anthropic Messages API and appends the response
+  to the sticky PR comment under a section explicitly labeled advisory and
+  non-deterministic — it is never read by `fail-under-min`. Absent a key, this step is
+  skipped with a log line, not a failure.
+
+### Fixed — v1's score output was always `"undefined"`
+- The composite action read `r.summary.overall`, a field the CLI's review report has
+  never emitted (it emits `summary.staticRiskFloor`). Every real run would set
+  `score="undefined"` and then hard-fail the `[ "$SCORE" -lt "$min-score" ]` bash integer
+  comparison with `integer expression expected` — the action could not have passed on a
+  real PR. Verified against a live clone: before the fix, `score` was the string
+  `undefined`; after, it reports the same `staticRiskFloor` the CLI prints
+  (`node bin/designos.js review <path> --json`).
+
 ## [2.3.0] — 2026-08-18
 
 ### Added — mandatory blind screenshot critique before SHIP language
