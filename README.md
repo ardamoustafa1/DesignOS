@@ -13,7 +13,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/ardamoustafa1/DesignOS?style=flat&color=10b981)](https://github.com/ardamoustafa1/DesignOS/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.6.0-blue.svg)](CHANGELOG.md)
 [![Live proof](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/proof.yml)
 [![Validate](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml/badge.svg)](https://github.com/ardamoustafa1/DesignOS/actions/workflows/validate.yml)
 [![WCAG 2.2 AA](https://img.shields.io/badge/A11y-WCAG%202.2%20AA-2ea44f.svg)](checklists/accessibility.md)
@@ -22,7 +22,7 @@
 [![Industry packs](https://img.shields.io/badge/industry_packs-24-8b5cf6.svg)](industries/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-10b981.svg)](CONTRIBUTING.md)
 
-<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.2.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
+<img src="press/demo.svg" alt="Animated demo: prompt enters → DesignOS boots kernel v2.6.0 → routes landing/hero/persuasion modules → loads project memory → runs design loop → catches contrast failure → auto-fixes to 6.28:1 contrast → re-scores UI 96 · UX 97 · A11y 96 · Perf 97 all ≥ 95 → ships with memory written." width="720">
 
 [**Get started**](#-quick-start) · [How it works](#-how-it-works) · [Live generator](website/suggest.html) · [Architecture](ARCHITECTURE.md) · [Enterprise guide](ENTERPRISE.md) · [Governance](GOVERNANCE.md) · [Before/After demo](website/before-after.html) · [Live showcase](examples/README.md) · [Measured results](evals/RESULTS.md) · [The Museum](museum/README.md)
 
@@ -77,7 +77,7 @@ evidence, and a dependency-declared Node.js CLI.
 
 | Public claim | Generated truth |
 |---|---:|
-| Version | 2.5.0 |
+| Version | 2.6.0 |
 | Rules / providers | 40 / 8 |
 | Motion recipes / stacks | 15 / 6 |
 | Adapter combinations / browser fixtures | 90 / 180 |
@@ -686,7 +686,13 @@ That package is unrelated. Review any changes it made, then reinstall with
 </details>
 
 <details>
-<summary><b>`npm test` fails with ENOENT from a Playwright/Chromium path</b></summary>
+<summary><b>`npm run test:browser` (or `test:all`) fails with ENOENT from a Playwright/Chromium path</b></summary>
+
+Plain `npm test` never launches a browser — it only runs suites that don't need one, so a
+fresh/offline/sandboxed checkout can always run it right after `npm ci`. The 3 suites that
+do launch real Chromium (`test-torture-simulator.js`, `test-image-to-code.js`,
+`test-ax-timeline.js`, via `bin/responsive-constraint.js`, `bin/image-to-code.js`,
+`bin/ax-timeline.js`) live in `npm run test:browser` instead.
 
 `npm install` runs a `postinstall` step that fetches Chromium automatically. If it was
 skipped (offline install, `--ignore-scripts`, or `DESIGNOS_SKIP_PLAYWRIGHT_INSTALL` set),
