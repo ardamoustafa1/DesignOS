@@ -19,11 +19,15 @@
  *      (background is not inherited), composites translucent layers, and only then judges.
  *
  * Honest scope (what a static tool still cannot see — final-gate.md still applies):
+ *   - Colors resolve for hex, rgb()/rgba(), and hsl()/hsla() — both as literal values and
+ *     as custom-property tokens (`--x: hsl(...)`, not just `--x: #hex`). oklch(), lab(),
+ *     lch(), hwb(), and color-mix() are NOT resolved — a rule using them is skipped, not
+ *     judged, same as gradients and currentColor below.
  *   - Pass 2 understands type, class, id, compound, and descendant selectors. Anything
  *     with a combinator (`>`, `+`, `~`), an attribute, or a pseudo-class/element is
  *     SKIPPED, not guessed — so state colors (:hover, :focus, [aria-current]) are out.
- *   - Gradients, images, currentColor, color-mix(), and system colors end the walk as
- *     "unknown" and the element is skipped rather than judged.
+ *   - Gradients, images, currentColor, color-mix(), oklch/lab/lch/hwb, and system colors
+ *     end the walk as "unknown" and the element is skipped rather than judged.
  *   - Media queries are flattened: a rule inside `@media (min-width: 768px)` is treated as
  *     if it applied, which is right for catching failures and wrong for narrow-only
  *     overrides. Verify the reported viewport by hand.
@@ -94,9 +98,34 @@ function parseColor(value) {
     }
     return { r: chan[0], g: chan[1], b: chan[2], a };
   }
+  // hsl()/hsla(), legacy comma form and modern space form with `/ alpha`
+  const hsl = v.match(/^hsla?\(([^)]*)\)/);
+  if (hsl) {
+    const body = hsl[1].replace(/\//g, ' / ');
+    const nums = body.split(/[\s,]+/).filter(Boolean);
+    const slash = nums.indexOf('/');
+    const parts = slash === -1 ? nums : nums.slice(0, slash);
+    const alphaRaw = slash === -1 ? nums[3] : nums[slash + 1];
+    if (parts.length < 3) return null;
+    const h = parseFloat(parts[0]) / 360;
+    const s = parseFloat(parts[1]) / 100;
+    const l = parseFloat(parts[2]) / 100;
+    if ([h, s, l].some(Number.isNaN)) return null;
+    const f = k => {
+      const a = s * Math.min(l, 1 - l);
+      const kk = (k + h * 12) % 12;
+      return l - a * Math.max(-1, Math.min(kk - 3, Math.min(9 - kk, 1)));
+    };
+    let a = 1;
+    if (alphaRaw !== undefined) {
+      a = alphaRaw.endsWith('%') ? parseFloat(alphaRaw) / 100 : parseFloat(alphaRaw);
+      if (Number.isNaN(a)) a = 1;
+    }
+    return { r: f(0), g: f(8), b: f(4), a };
+  }
   const NAMED = { white: '#ffffff', black: '#000000', red: '#ff0000', blue: '#0000ff', green: '#008000', gray: '#808080', grey: '#808080' };
   if (NAMED[v]) return parseColor(NAMED[v]);
-  return null; // gradients, currentColor, color-mix, system colors — skipped, not judged
+  return null; // gradients, currentColor, color-mix, oklch/lab/hwb, system colors — skipped, not judged
 }
 
 /** src over dst, both premultiplied out; dst is assumed opaque (the walk guarantees it) */
@@ -137,8 +166,12 @@ const stripComments = (s) => s.replace(/\/\*[\s\S]*?\*\//g, ' ');
 function collectTokens(text, tokens) {
   for (const m of text.matchAll(BLOCK)) {
     if (!/:root\s*$/.test(m[1].trim())) continue;
-    for (const d of m[2].matchAll(/--([\w-]+)\s*:\s*(#[0-9a-fA-F]{3,8})\b/g)) {
-      tokens.set(d[1], d[2]); // later definitions win, matching the cascade
+    // captures the whole declaration value, not just hex — a token holding rgb()/hsl()/a
+    // non-color value (spacing, etc.) is stored the same way; parseColor decides later
+    // whether it resolves to a judgeable color, so non-hex color tokens are no longer
+    // silently invisible to the contrast pass.
+    for (const d of m[2].matchAll(/--([\w-]+)\s*:\s*([^;}]+)/g)) {
+      tokens.set(d[1], d[2].trim()); // later definitions win, matching the cascade
     }
   }
 }
@@ -154,8 +187,8 @@ function resolveValue(value, tokens, depth = 0) {
   }
   const hexMatch = v.match(/^#[0-9a-fA-F]{3,8}\b/);
   if (hexMatch) return hexMatch[0];
-  if (/^(rgba?\(|transparent$|white$|black$|gray$|grey$)/i.test(v)) return v;
-  return null; // gradients, keywords — out of scope, skipped not judged
+  if (/^(rgba?\(|hsla?\(|transparent$|white$|black$|gray$|grey$)/i.test(v)) return v;
+  return null; // gradients, oklch/lab/hwb, keywords — out of scope, skipped not judged
 }
 
 function lastDecl(body, prop) {
@@ -277,7 +310,8 @@ for (const file of files) {
   const tokens = new Map(globalTokens);
   collectTokens(raw, tokens); // the file's own :root wins over shared tokens
   if (raw.includes('designos-contrast-ignore-file')) {
-    console.log(`skipped (ignore directive): ${rel}`);
+    // in --json mode this must not touch stdout — see check-aesthetic-slop.js for why
+    (asJson ? console.error : console.log)(`skipped (ignore directive): ${rel}`);
     continue;
   }
 
@@ -298,7 +332,10 @@ for (const file of files) {
     if (!fg || !bg || fg.a === 0 || bg.a < 1) continue; // pass 1 judges opaque pairs only
     const r = ratioOf(fg, bg);
     if (r === null) continue;
-    const line = raw.slice(0, m.index).split('\n').length;
+    // m.index is the selector's start — everything since the previous `}`, including any
+    // blank lines between rules — not the rule's own position; anchor on the real `{`.
+    const bracePos = m.index + m[0].indexOf('{');
+    const line = raw.slice(0, bracePos).split('\n').length;
     const loc = `${rel}:${line}`;
     const pair = `${colorRaw.trim()} on ${bgRaw.trim()} → ${fgVal} on ${bgVal} = ${Math.round(r * 100) / 100}:1`;
     if (r < 3) {
