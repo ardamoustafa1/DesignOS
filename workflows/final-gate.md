@@ -95,6 +95,43 @@ Resolve disagreement by evidence, not by majority: a single reviewer with a repr
 finding beats two without one. Record dissent in the delivery report — a suppressed
 minority verdict is the same trust failure as a hidden first score.
 
+### The blind screenshot critique (mandatory, before any SHIP language)
+
+Source-reading yourself and calling it "reviewed" is the single most common way this system
+fails silently — the eval history is one incident (Run 004/005) and one live example: a
+CV site that passed a self-check on code alone, and was still the generic AI-portfolio
+template underneath. `check-craft-ceiling.js` and a clean rubric self-score do not catch
+this; only looking at the rendered thing, with fresh eyes, does.
+
+This step is not optional and it is not satisfied by the RENDER/INSPECT stage's own author
+looking at their own screenshots — that is measurement, not judgment, and the same context
+that made the design decisions is the worst-positioned to see them as generic. Run it after
+RENDER/INSPECT and before REVIEW/SCORE close (`loops/design-loop.md` stages 5→6):
+
+1. Render the artifact and capture real screenshots — desktop and mobile at minimum,
+   any state that materially changes composition (hover/expanded/scrolled where relevant).
+2. Hand the screenshots to an **independent, blind** reviewer: a spawned subagent if
+   available, given the images and nothing else — no brief, no rationale, no "what I was
+   going for," no prior turns of this conversation. If subagents are unavailable, do the
+   pass yourself but only after setting the work aside — do not grade a screenshot you just
+   composed while still holding its justification in mind — and the DEGRADED banner below
+   is mandatory on the result.
+3. The reviewer's only brief: *"You have seen thousands of AI-generated sites this year.
+   Would this be mistaken for one of them? What's the first thing a jaded Awwwards judge
+   would kill? Rate 1–10 on 'would I feature this' and justify the number harshly."* Ask for
+   blunt, unhedged language — a critique softened to be encouraging is a critique that missed
+   its job.
+4. **Every finding gets actioned or explicitly rejected with a stated reason** before
+   delivery — "noted for later" is the same as not running the pass. A finding that reveals a
+   real bug (not just a taste call) — a stat that shows 0 before its animation fires, an
+   effect that never resolves, a state that never appears — is not a style opinion; fix it
+   the same turn.
+5. Re-render and re-screenshot after fixes. The critique does not close on a promise, it
+   closes on evidence the fix is visible in the artifact.
+
+A score, a SHIP claim, or "95+" language written without this pass having run is the same
+provenance failure as `visual pass NOT RUN` renarrated as `CLEAN` — see the renarration ban.
+
 ### The DEGRADED banner
 
 When subagents are unavailable, or the panel could not be run, the delivery report carries
@@ -149,6 +186,9 @@ Before running the gate, remove these common first-pass failures:
 - reduced-motion check; accessibility-tree/screen-reader check for complex interactions
 - Lighthouse/CWV measurement for deployable pages, otherwise explicitly NOT ASSESSED
 - human/model review for hierarchy, brand fit, distinctiveness, and task completion
+- **the blind screenshot critique** (above): reviewer identity (independent subagent or
+  DEGRADED self-pass), verdict quoted verbatim, and disposition of every finding
+  (fixed / rejected-with-reason) — missing this row blocks SHIP language same as any other
 
 ## Required final response
 
