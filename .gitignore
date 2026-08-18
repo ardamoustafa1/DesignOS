@@ -13,3 +13,12 @@ __pycache__/
 screenshots/
 !goldens/*/evidence/screenshots/
 !goldens/*/evidence/screenshots/**
+
+# generated locally by `designos visual/report/elevate` against website/index.html —
+# reproducible evidence, not source; committing it bloats the repo (~27MB) for no
+# reviewable diff value. Regenerate with: node bin/designos.js visual website/index.html
+designos-visual/
+designos-visual-report.json
+designos-visual-report.md
+designos-report.md
+designos-elevate-prompt.md
