@@ -1,5 +1,16 @@
 {
   "schema": 2,
   "description": "Commit-bound record of real native CI/device evidence, promoted here only by .github/workflows/promote-native-evidence.yml opening a reviewed PR after a passing native-smoke.yml run on main — never hand-authored. capabilities/native-evidence.js reads verified:true entries to compute a per-platform, per-tier claim (see NATIVE_EVIDENCE_TIERS there: source-conformance < simulator-smoke < platform-verified < real-device-verified). A run only advances the claim for the platform and tier it actually earned — one passing run never flips every platform to a single blanket status. Entry shape: { sha, platform (react-native|swiftui|compose|flutter), tier, verified, runId, runUrl, date, notes }.",
-  "runs": []
+  "runs": [
+    {
+      "sha": "2523ff412d9452d3ee9bd3f6bd495f2fa70a92d8",
+      "platform": "react-native",
+      "tier": "simulator-smoke",
+      "verified": true,
+      "runId": "32142639631",
+      "runUrl": "https://github.com/ardamoustafa1/DesignOS/actions/runs/32142639631",
+      "date": "2026-08-18T13:38:29.505Z",
+      "notes": "iOS Simulator + Android Emulator boot/install/launch/screenshot against starter/mobile-app. Does not assert frame pacing, haptics, Dynamic Type, or TalkBack/VoiceOver."
+    }
+  ]
 }
