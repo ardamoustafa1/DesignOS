@@ -4,6 +4,22 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+## [2.5.0] — 2026-08-18
+
+### Added — first `i18n/` module translation (Turkish kernel)
+- `i18n/tr/CLAUDE.md`: a Turkish translation of the root `CLAUDE.md` operating kernel —
+  the one file every agent reads before any other module (boot sequence §1). File paths,
+  module names, code fences, and CLI flags are left untranslated since they are literal
+  references other files and commands depend on; a header comment states the English
+  source is binding on any conflict.
+- `i18n/README.md`: documents the convention for adding further translations (mirror the
+  source's relative path, never translate literal references, update the coverage table)
+  and records honestly that this covers 1 of 98 knowledge modules — not translation
+  parity. `validators/check-modules.js`'s `MODULE_DIRS` intentionally excludes `i18n/`,
+  so translated copies are not held to the English originals' anatomy checks.
+- `ROADMAP.md`'s "Module translations under `i18n/`" Planned item is narrowed to reflect
+  what's actually left (97 remaining modules) rather than removed outright.
+
 ## [2.4.0] — 2026-08-18
 
 ### Added — Design-review GitHub Action v2 (PR-diff scoping + advisory model pass)

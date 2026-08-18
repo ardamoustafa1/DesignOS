@@ -1,6 +1,6 @@
 {
   "name": "designos",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "The Design Intelligence Operating System for AI coding agents — Claude, Cursor, Copilot, Windsurf, Cline, Aider.",
   "author": "Arda Moustafa (https://github.com/ardamoustafa1)",
   "repository": {
@@ -45,6 +45,7 @@
     "examples",
     "foundations",
     "goldens/*.md",
+    "i18n",
     "industries",
     "integrations",
     "loops",
