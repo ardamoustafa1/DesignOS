@@ -10,8 +10,15 @@
 const args = process.argv.slice(2);
 const minIdx = args.indexOf('--min');
 const min = minIdx > -1 ? parseFloat(args[minIdx + 1]) : 4.5;
+if (Number.isNaN(min)) {
+  console.error(`--min requires a numeric value (got: ${JSON.stringify(args[minIdx + 1])})`);
+  process.exit(2);
+}
 const positional = minIdx > -1 ? args.filter((a, i) => i !== minIdx && i !== minIdx + 1) : args;
-const hexes = positional.filter(a => /^#?[0-9a-fA-F]{3,8}$/.test(a));
+// 3 or 6 hex digits only, matching what parse() below actually accepts — a 4/5/7/8-digit
+// value used to pass this filter and then fail parse()'s own stricter check, which reads
+// like two disagreeing validators instead of one.
+const hexes = positional.filter(a => /^#?[0-9a-fA-F]{3}$|^#?[0-9a-fA-F]{6}$/.test(a));
 
 if (hexes.length !== 2) {
   console.error('usage: contrast.js <fg-hex> <bg-hex> [--min 4.5]');

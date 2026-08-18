@@ -16,6 +16,9 @@ on:
   # matrix, Lighthouse, golden-pixel, and Firefox/WebKit bar as a normal main push.
   workflow_call:
 
+permissions:
+  contents: read
+
 jobs:
   browser-gate:
     name: browser-gate-required
@@ -31,8 +34,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Registry-driven static floor
         run: npm run validate:strict
-      - name: Unit and product engines
-        run: npm test
+      - name: Unit and product engines (including browser-dependent suites — Chromium is installed above)
+        run: npm run test:all
       - name: Website browser geometry, Axe and accessibility tree
         run: node bin/browser-gate.js website/index.html --out browser-evidence/browser-gate.json --screenshots browser-evidence/screenshots
       - name: Lighthouse category and lab metric budgets

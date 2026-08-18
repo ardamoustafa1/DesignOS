@@ -29,12 +29,25 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npx playwright install --with-deps chromium
       - name: Dependency security gate
         run: npm audit --audit-level=high
       - name: Full validation suite
         run: npm run validate
-      - name: Unit and product-engine tests
-        run: npm test
+      - name: Unit and product-engine tests (including browser-dependent suites)
+        run: npm run test:all
+      # The npm `files` allowlist is a separate surface from what's on disk in this
+      # checkout — a script referenced by package.json's `bin`/`scripts` (postinstall,
+      # the CLI entrypoint) can exist in the repo and still be missing from the published
+      # tarball. That silently breaks every install until someone actually runs `npm
+      # install` from the packed artifact, which nothing else in this pipeline did.
+      - name: Install smoke test (tarball must be installable)
+        run: |
+          npm pack --pack-destination /tmp
+          tarball="$(ls /tmp/designos-*.tgz)"
+          mkdir /tmp/smoke && cd /tmp/smoke && npm init -y >/dev/null
+          DESIGNOS_SKIP_PLAYWRIGHT_INSTALL=1 npm install "$tarball"
+          node node_modules/designos/bin/designos.js doctor
       # This job's own npm-audit/validate/test steps are the *light* gate. The heavy one
       # — browser matrix, Lighthouse, golden-pixel regression, Firefox/WebKit smoke — runs
       # in a separate workflow (browser-gate.yml) only on push/PR to main, not on tag

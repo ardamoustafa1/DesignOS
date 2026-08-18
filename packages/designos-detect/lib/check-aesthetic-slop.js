@@ -152,7 +152,9 @@ for (const file of [...walk(path.resolve(target))]) {
   const raw = fs.readFileSync(file, 'utf8');
   const rel = path.relative(process.cwd(), file);
   if (raw.includes('designos-slop-ignore-file')) {
-    console.log(`skipped (ignore directive): ${rel}`);
+    // in --json mode this must not touch stdout — a consumer (run-registry.js) JSON.parses
+    // the whole stream, and one stray human-readable line silently drops every finding
+    (argv.includes('--json') ? console.error : console.log)(`skipped (ignore directive): ${rel}`);
     continue;
   }
   const clean = blankComments(raw);

@@ -21,6 +21,15 @@ async function serveTarget(target, cwd = process.cwd()) {
       response.statusCode = 404;
       return response.end('not found');
     }
+    // The lexical check above only catches `../` in the request path — a symlink sitting
+    // inside root that points outside it would still resolve lexically inside root and
+    // slip through. Confirm the real (symlink-resolved) path is still inside root too.
+    const realRoot = fs.realpathSync(root);
+    const realResolved = fs.realpathSync(resolved);
+    if (realResolved !== realRoot && !realResolved.startsWith(`${realRoot}${path.sep}`)) {
+      response.statusCode = 403;
+      return response.end('forbidden');
+    }
     const types = {
       '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css',
       '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png',

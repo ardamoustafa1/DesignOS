@@ -15,6 +15,16 @@ inputs:
     description: Base ref to diff against when diff-only is true. Defaults to GITHUB_BASE_REF.
     required: false
     default: ""
+  diff-paths:
+    description: >
+      Comma-separated path prefixes to restrict diff-only to (e.g. "examples/,website/").
+      Reviewable-extension files changed outside these prefixes are ignored. Use this in
+      any repo where not every .js/.html/etc file changed in a PR is shippable UI markup —
+      without it, diff-only reviews source/test/tooling files the same way it reviews
+      real UI, which produces meaningless findings (a hex color or a "trusted by" string
+      inside a test fixture is not a design defect). Empty (default) means no restriction.
+    required: false
+    default: ""
   min-score:
     description: Minimum acceptable static risk floor (0-100; see LIMITATIONS.md — this is a deterministic floor, not the six-dimension design score).
     required: false
@@ -73,17 +83,33 @@ runs:
     - id: review
       shell: bash
       env:
+        # every input flows through env so `${{ }}` never lands inside a run: script —
+        # `${{ }}` is substituted TEXTUALLY by the runner before bash ever parses the
+        # script, so an attacker-controlled input value (e.g. `path` on a workflow that
+        # feeds it from PR data) could otherwise break out of quoting and run arbitrary
+        # shell. env vars go through bash's normal variable expansion instead, which does
+        # not re-interpret their contents as shell syntax.
         GH_TOKEN: ${{ inputs.github-token }}
         ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
+        INPUT_PATH: ${{ inputs.path }}
+        INPUT_DIFF_ONLY: ${{ inputs.diff-only }}
+        INPUT_BASE_REF: ${{ inputs.base-ref }}
+        INPUT_DIFF_PATHS: ${{ inputs.diff-paths }}
+        INPUT_MIN_SCORE: ${{ inputs.min-score }}
+        INPUT_FAIL_UNDER_MIN: ${{ inputs.fail-under-min }}
+        INPUT_JSON: ${{ inputs.json }}
+        INPUT_COMMENT: ${{ inputs.comment }}
+        INPUT_MODEL_REVIEW: ${{ inputs.model-review }}
+        INPUT_MODEL: ${{ inputs.model }}
       run: |
         set -euo pipefail
         CLI="$GITHUB_ACTION_PATH/../../../bin/designos.js"
-        FLAGS=("--min" "${{ inputs.min-score }}" "--no-fail")
-        REVIEW_PATH="${{ inputs.path }}"
+        FLAGS=("--min" "$INPUT_MIN_SCORE" "--no-fail")
+        REVIEW_PATH="$INPUT_PATH"
         NOTHING_TO_REVIEW=0
 
-        if [ "${{ inputs.diff-only }}" = "true" ]; then
-          BASE="${{ inputs.base-ref }}"
+        if [ "$INPUT_DIFF_ONLY" = "true" ]; then
+          BASE="$INPUT_BASE_REF"
           if [ -z "$BASE" ]; then BASE="${GITHUB_BASE_REF:-}"; fi
           if [ -z "$BASE" ]; then
             echo "diff-only=true requires a base ref: set base-ref, or run on pull_request where GITHUB_BASE_REF is set." >&2
@@ -93,9 +119,17 @@ runs:
           MERGE_BASE="$(git merge-base "origin/$BASE" HEAD 2>/dev/null || echo "origin/$BASE")"
 
           STAGE_DIR="$(mktemp -d)"
+          IFS=',' read -ra DIFF_PATH_PREFIXES <<< "$INPUT_DIFF_PATHS"
           while IFS= read -r f; do
             [ -z "$f" ] && continue
             [ -f "$f" ] || continue
+            if [ -n "$INPUT_DIFF_PATHS" ]; then
+              in_scope=0
+              for prefix in "${DIFF_PATH_PREFIXES[@]}"; do
+                case "$f" in "$prefix"*) in_scope=1; break;; esac
+              done
+              [ "$in_scope" = "1" ] || continue
+            fi
             case "$f" in
               *.html|*.css|*.js|*.jsx|*.ts|*.tsx|*.vue|*.svelte|*.mdx)
                 mkdir -p "$STAGE_DIR/$(dirname "$f")"
@@ -127,7 +161,7 @@ runs:
         fi
         cat designos-review.md
 
-        if [ "${{ inputs.json }}" = "true" ]; then
+        if [ "$INPUT_JSON" = "true" ]; then
           echo "report-json=designos-review.json" >> "$GITHUB_OUTPUT"
         fi
         echo "report-markdown=designos-review.md" >> "$GITHUB_OUTPUT"
@@ -135,11 +169,11 @@ runs:
         echo "score=$SCORE" >> "$GITHUB_OUTPUT"
 
         MODEL_SECTION=""
-        if [ "${{ inputs.model-review }}" = "true" ] && [ "$NOTHING_TO_REVIEW" != "1" ]; then
+        if [ "$INPUT_MODEL_REVIEW" = "true" ] && [ "$NOTHING_TO_REVIEW" != "1" ]; then
           if [ -z "${ANTHROPIC_API_KEY:-}" ]; then
             echo "model-review=true but anthropic-api-key is empty — skipping the advisory pass." >&2
           else
-            node "$GITHUB_ACTION_PATH/model-review.js" "$REVIEW_PATH" "${{ inputs.model }}" > designos-model-review.md 2>designos-model-review.err || {
+            node "$GITHUB_ACTION_PATH/model-review.js" "$REVIEW_PATH" "$INPUT_MODEL" > designos-model-review.md 2>designos-model-review.err || {
               echo "Model rubric pass failed (advisory only, not gating):" >&2
               cat designos-model-review.err >&2 || true
             }
@@ -147,7 +181,7 @@ runs:
           fi
         fi
 
-        if [ "${{ inputs.comment }}" = "true" ] && [ -n "${GH_TOKEN:-}" ] && [ -n "${GITHUB_EVENT_PATH:-}" ]; then
+        if [ "$INPUT_COMMENT" = "true" ] && [ -n "${GH_TOKEN:-}" ] && [ -n "${GITHUB_EVENT_PATH:-}" ]; then
           MODEL_SECTION="$MODEL_SECTION" node <<'NODE'
         const fs = require('fs');
         const https = require('https');
@@ -163,10 +197,11 @@ runs:
         const report = fs.readFileSync('designos-review.md', 'utf8');
         const fix = fs.readFileSync('designos-fix-prompt.md', 'utf8');
         const modelSection = process.env.MODEL_SECTION || '';
+        const minScore = process.env.INPUT_MIN_SCORE || '95';
         const modelBlock = modelSection
           ? `\n\n### Model rubric pass (advisory, non-deterministic)\n\nDoes not affect the deterministic gate above — see CLAUDE.md Prime Directive #6.\n\n${modelSection}`
           : '';
-        const body = `${marker}\n${report}${modelBlock}\n\n<details><summary>Agent-ready fix prompt</summary>\n\n\`\`\`text\n${fix}\n\`\`\`\n\n</details>\n\n_Run locally with \`node DesignOS/bin/designos.js review <path> --min ${{ inputs.min-score }}\`._`;
+        const body = `${marker}\n${report}${modelBlock}\n\n<details><summary>Agent-ready fix prompt</summary>\n\n\`\`\`text\n${fix}\n\`\`\`\n\n</details>\n\n_Run locally with \`node DesignOS/bin/designos.js review <path> --min ${minScore}\`._`;
 
         function request(method, path, payload) {
           return new Promise((resolve, reject) => {
@@ -212,7 +247,7 @@ runs:
         NODE
         fi
 
-        if [ "${{ inputs.fail-under-min }}" = "true" ] && [ "$SCORE" -lt "${{ inputs.min-score }}" ]; then
-          echo "DesignOS review score $SCORE is below required minimum ${{ inputs.min-score }}."
+        if [ "$INPUT_FAIL_UNDER_MIN" = "true" ] && [ "$SCORE" -lt "$INPUT_MIN_SCORE" ]; then
+          echo "DesignOS review score $SCORE is below required minimum $INPUT_MIN_SCORE."
           exit 1
         fi

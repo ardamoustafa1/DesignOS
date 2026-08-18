@@ -44,7 +44,8 @@ for (const file of walk(path.resolve(target))) {
   const raw = fs.readFileSync(file, 'utf8');
   // opt-out directive for deliberate-violation files (e.g. anti-pattern demos)
   if (raw.includes('designos-drift-ignore-file')) {
-    console.log(`skipped (ignore directive): ${path.relative(process.cwd(), file)}`);
+    // in --json mode this must not touch stdout — see check-aesthetic-slop.js for why
+    (asJson ? console.error : console.log)(`skipped (ignore directive): ${path.relative(process.cwd(), file)}`);
     continue;
   }
   const lines = raw.split('\n');

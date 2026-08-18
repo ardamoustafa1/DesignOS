@@ -570,6 +570,34 @@ test('check-token-contrast: catches token-pair AA failures that drift cannot see
   assert.ok(!result.stdout.includes('.demo'), 'contrast-ok block escape must be honored');
 });
 
+test('check-token-contrast: hsl() literal colors and hsl()/rgb() tokens resolve (audit regression)', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-contrast-hsl-'));
+  const html = [
+    '<!doctype html><html><head><style>',
+    ':root { --fg-rgb: rgb(150,150,150); --bg-rgb: rgb(160,160,160); --fg-hsl: hsl(0,0%,60%); --bg-hsl: hsl(0,0%,66%); }',
+    '.literal { color: hsl(0,0%,60%); background: hsl(0,0%,66%); }',   // 1.2:1, literal hsl()
+    '.rgb-token { color: var(--fg-rgb); background: var(--bg-rgb); }', // 1.13:1, non-hex token
+    '.hsl-token { color: var(--fg-hsl); background: var(--bg-hsl); }', // 1.2:1, non-hex token
+    '.oklch { color: oklch(0.7 0 0); background: oklch(0.72 0 0); }',  // out of scope — must not crash, must not false-pass as clean
+    '</style></head><body><main><h1>x</h1></main></body></html>',
+  ].join('\n');
+  fs.writeFileSync(path.join(tmp, 'index.html'), html);
+  const r = spawnSync('node', [path.resolve(__dirname, 'check-token-contrast.js'), 'index.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(r.status, 1, 'hsl/rgb-token failures must fail the run');
+  assert.ok(r.stdout.includes('.literal'), 'a literal hsl() pair must be judged, not skipped');
+  assert.ok(r.stdout.includes('.rgb-token'), 'an rgb()-valued token must resolve');
+  assert.ok(r.stdout.includes('.hsl-token'), 'an hsl()-valued token must resolve');
+});
+
+test('check-token-contrast: line number anchors on the rule\'s own `{`, not the previous rule\'s `}` (audit regression)', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-contrast-line-'));
+  const css = '.first{color:#111;background:#fff}\n\n\n\n\n.bad{ color:#999999; background:#a0a0a0 }\n';
+  fs.writeFileSync(path.join(tmp, 's.css'), css);
+  const r = spawnSync('node', [path.resolve(__dirname, 'check-token-contrast.js'), 's.css'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(r.status, 1);
+  assert.ok(r.stdout.includes('s.css:6'), `violation on line 6 must be reported as line 6, got: ${r.stdout}`);
+});
+
 test('suggest: routes sector + surface, prints verified ratios and gate commands', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-suggest-'));
   fs.mkdirSync(path.join(tmp, 'DesignOS'), { recursive: true });
@@ -766,6 +794,22 @@ test('check-token-contrast: a comment above a rule does not break selector match
   const r = spawnSync('node', [path.resolve(__dirname, 'check-token-contrast.js'), 'index.html'], { cwd: tmp, encoding: 'utf8' });
   assert.ok(r.stdout.includes('#16161a'), 'the commented rule must still resolve as the painted ancestor');
   assert.ok(!r.stdout.includes('on #ffffff'), 'the body background must not leak past a painted ancestor');
+});
+
+test('contrast.js: --min with no value errors instead of silently forcing every ratio to fail (audit regression)', () => {
+  const cli = path.resolve(__dirname, 'contrast.js');
+  const bad = spawnSync('node', [cli, '#000000', '#ffffff', '--min'], { encoding: 'utf8' });
+  assert.strictEqual(bad.status, 2, '--min with no numeric value must be a usage error, not a silent NaN comparison');
+
+  const good = spawnSync('node', [cli, '#000000', '#ffffff', '--min', '4.5'], { encoding: 'utf8' });
+  assert.strictEqual(good.status, 0, 'a real 21:1 pair against --min 4.5 must pass');
+});
+
+test('contrast.js: a 5-digit hex is rejected as a usage error, not silently dropped then re-rejected (audit regression)', () => {
+  const cli = path.resolve(__dirname, 'contrast.js');
+  const r = spawnSync('node', [cli, '#12345', '#ffffff'], { encoding: 'utf8' });
+  assert.strictEqual(r.status, 2);
+  assert.ok(r.stderr.includes('usage:'), 'malformed hex length must fail the initial filter with the usage message');
 });
 
 test('find: BM25 retrieval returns the governing preset and its module', () => {

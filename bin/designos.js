@@ -75,7 +75,6 @@ const VALUE_FLAGS = new Set([
   '--cost',
   '--motion',
   '--material',
-  '--audience',
   '--belief',
   '--variance',
   '--density',

@@ -39,8 +39,16 @@ for (const provider of PROVIDERS) {
       cwd: ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 32,
     });
     let parsed = null;
+    let jsonParseError = null;
     if (supportsJson) {
-      try { parsed = JSON.parse(result.stdout); } catch (_) { parsed = null; }
+      try { parsed = JSON.parse(result.stdout); } catch (err) { parsed = null; jsonParseError = err.message; }
+    }
+    // A provider that claims --json support but doesn't emit valid JSON is a contract
+    // break, not a clean run with zero findings — surface it instead of silently dropping
+    // whatever that provider found (this is exactly how a real finding used to vanish from
+    // the ledger: a stray console.log before the JSON blob broke JSON.parse here).
+    if (jsonParseError) {
+      console.error(`registry-runner: ${provider.id} did not emit valid JSON on stdout — findings from this provider are NOT in the ledger (${jsonParseError})`);
     }
     // check-registry.js's finding() (rule-registry.js) names the field `id`; every other
     // validator's --json output names it `rule`. Normalize to `rule` here so a consumer
@@ -58,8 +66,9 @@ for (const provider of PROVIDERS) {
       capabilities: provider.capabilities,
       ruleIds: provider.ruleIds,
       status: result.status,
-      passed: result.status === 0,
+      passed: result.status === 0 && !jsonParseError,
       findingCount: providerFindings.length,
+      jsonParseError,
       output: parsed ? '' : `${result.stdout || ''}${result.stderr || ''}`.trim(),
     };
     ledger.providers.push(item);

@@ -4,7 +4,127 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
-## [2.5.0] — 2026-08-18
+## [2.6.0] — 2026-08-18
+
+### Fixed — P0: `npx github:.../DesignOS init` and every npm/git install were broken
+`scripts/postinstall-playwright.js` (referenced by the `postinstall` lifecycle script) was
+never in `package.json`'s `files` allowlist, so it shipped in the repo but not in the
+published tarball — verified with `npm pack --dry-run`, a real tarball install, and
+`npx github:ardamoustafa1/DesignOS init`, all three reproducing `Cannot find module
+'.../scripts/postinstall-playwright.js'`. This affected every install path, including the
+already-tagged `v2.2.0` release. Fixed by adding the file to `files`; `validators/check-
+package-boundary.js` now also derives a check from `package.json`'s own `bin`/lifecycle-
+`scripts` entries (not hand-maintained) so a future script in the same position fails CI
+instead of shipping broken — `.github/workflows/release.yml` also gained an install smoke
+test (pack → install into a scratch dir → `designos doctor`) so this class of bug can't
+reach a tag again.
+
+### Fixed — `check-token-contrast.js`: three independent bugs, one file
+- `hsl()`/`hsla()` colors (literal or in a `--token: hsl(...)` custom property) were
+  invisible to `parseColor`/`resolveValue` — a token stack built on `hsl()` (Tailwind's
+  default format, all of shadcn/ui) got zero contrast coverage. Added HSL→RGB resolution;
+  `oklch()`/`lab()`/`lch()`/`hwb()` remain explicitly out of scope (documented in the
+  file's "Honest scope" header, not silently dropped).
+- `collectTokens` only captured hex-valued `:root` custom properties — an `rgb()`- or
+  `hsl()`-valued token was invisible even after the parseColor fix, because it never
+  entered the token map at all. Now captures the full declaration value.
+- The same-rule pass's reported line number anchored on the selector's start (everything
+  since the previous rule's `}`, including blank lines between rules), not the rule's own
+  `{` — a violation could be reported dozens of lines from where it actually is. Fixed to
+  anchor on the rule's real `{` position.
+All three verified with reproduction fixtures before the fix and regression tests
+(`validators/test-cli.js`) after.
+
+### Fixed — a stray stdout line was silently dropping findings from the JSON ledger
+`check-aesthetic-slop.js`, `check-drift.js`, and `check-token-contrast.js` all printed a
+human-readable `skipped (ignore directive): <file>` line to stdout even when `--json` was
+passed. `validators/run-registry.js` `JSON.parse`s each provider's stdout whole — one
+polluting line breaks the parse, and the provider's real findings silently vanish from the
+ledger `designos detect --json` and CI consume, while the run still reports "clean". This
+existing on `check-aesthetic-slop.js` against this repo's own `website/` target — not just
+a synthetic reproduction. Fixed by routing that line to stderr when `--json` is set;
+`run-registry.js` also now reports (and fails on) a provider that emits invalid JSON,
+instead of silently treating it as zero findings.
+
+### Security — Live Director: CSRF/DNS-rebinding protection, XSS fix
+`bin/live-director.js`'s local API (`/api/annotations`, `/api/locks`, `/api/accept`,
+`/api/reject`, `/api/rollback`, `/api/merge`) had no Host/Origin validation and no auth —
+verified live: a foreign-Origin, `Content-Type: text/plain` POST (a "simple request", no
+CORS preflight, so any page on the internet could send it) successfully wrote to
+`/api/locks`. Fixed with a per-process random session token embedded in the served page,
+required on every state-changing request alongside a Host allowlist (defends DNS
+rebinding) and an Origin/`Content-Type: application/json` check. Also fixed unescaped
+`innerHTML` string-concatenation in `bin/live-director.js` (annotation notes, semantic
+diff values) and `bin/motion-lab.js` (recorded event log) — replaced with `textContent`-
+based DOM construction. `validators/test-live-studio.js`'s real-browser contract test
+still passes unmodified against the new token/Host/Origin gate.
+
+### Security — composite action `${{ inputs.* }}` no longer lands inside a `run:` script
+`.github/actions/design-review/action.yml` interpolated `${{ inputs.path }}`,
+`${{ inputs.min-score }}`, etc. directly into its bash `run:` block — `${{ }}` is
+substituted textually by the runner before bash parses anything, so a caller able to
+control an input (e.g. a workflow that feeds `path` from PR-supplied data) could break out
+of quoting and run arbitrary shell. Every input now flows through `env:` and is referenced
+as a normal shell variable instead.
+
+### Fixed — 4 workflows had no `permissions:` block
+`browser-gate.yml`, `native-smoke.yml`, `proof.yml`, and `validate.yml` inherited the
+repository's default `GITHUB_TOKEN` scope (which can be `write-all` depending on org
+settings) while running `npm ci` and third-party actions on every PR. All four now
+declare `permissions: contents: read` explicitly.
+
+### Fixed — `npm test` hard-crashed on any fresh/offline/sandboxed checkout
+The old `test` script was 31 scripts joined by `&&`; the first failure (commonly one of
+the 3 scripts that launch real Chromium via Playwright — `test-torture-simulator.js`,
+`test-image-to-code.js`, `test-ax-timeline.js`, verified by tracing which bin scripts each
+one actually spawns) silently skipped every script after it with no summary. Replaced with
+`scripts/run-tests.js`: `npm test` now runs only the 28 scripts that never need a browser
+(always runnable right after `npm ci`, even with `--omit=optional`/offline), `npm run
+test:browser` runs the 3 that do, `npm run test:all` runs both — every script always runs
+regardless of earlier failures, and the run ends with a `N/M passed` summary naming what
+failed. CI (`release.yml`, `browser-gate.yml`, both of which already install Chromium)
+switched to `npm run test:all` to keep full coverage.
+
+### Fixed — Chrome extension (`extension/`) could not load
+`manifest.json` referenced `assets/icon-{16,48,128}.png`, and the directory didn't exist —
+Chrome refuses to load an extension with a missing icon. Added real icons generated from
+`press/logo-3d.png`, and synced the manifest version (`1.0.0`) to the project version.
+
+### Fixed — assorted correctness/hygiene
+- `validators/contrast.js`: `--min` with no value silently became `parseFloat(undefined)`
+  = `NaN`, and `ratio >= NaN` is always `false` — a real 21:1 pair would report failure.
+  Now a usage error. The hex-length filter accepted 4/5/7/8-digit values that `parse()`
+  then rejected anyway; narrowed to the 3-or-6-digit lengths `parse()` actually handles.
+- `bin/designos.js`: `--audience` was listed twice in the `VALUE_FLAGS` set (no functional
+  effect — it's a `Set` — but a genuine copy-paste artifact).
+- `bin/motion/browser-target.js`, `bin/lighthouse-gate.js`, `bin/live-director.js`'s three
+  local static servers checked path traversal lexically (`path.resolve` + prefix check)
+  but never resolved symlinks — a symlink inside the served root pointing outside it could
+  still leak an arbitrary file. All three now also verify the `fs.realpathSync`-resolved
+  path stays inside the realpath-resolved root; verified with a live symlink-escape
+  reproduction against `bin/motion/browser-target.js` (200 + leaked content before, 403
+  after).
+- `bin/cli/commands/detect.js`'s docstring hardcoded "39-rule registry"; the registry has
+  40 rules (`validators/rule-registry.js`). Reworded to point at the source of truth
+  instead of restating a number that will go stale again.
+- Removed `designos-visual/` (22MB of generated screenshots/a11y JSON), `designos-visual-
+  report.json` (5.1MB), and three generated `.md` reports from git tracking — reproducible
+  `designos visual/report/elevate` output, not source; `.gitignore` updated. (Existing git
+  history is unchanged — that's a separate, deliberate `git filter-repo` operation with
+  its own blast radius, not bundled into this fix.)
+
+### Known gaps not closed in this pass
+A full technical audit (`DesignOS-Denetim-Raporu.md`, 13 Ağustos 2026) also named several
+larger, lower-severity items intentionally left open rather than rushed: no linter/
+formatter across 170 JS files, ~2,283 lines duplicated between `validators/` and
+`packages/designos-detect/lib/` (currently managed by `sync-vendor.js` + CI drift check,
+not eliminated), several oversized files/functions (`bin/designos.js` at 1,635 lines) and
+minified inline `<script>` blocks that are unreadable in diffs, stale non-English READMEs
+(`README.tr.md` etc. — separate from this release's `i18n/tr/CLAUDE.md` module
+translation), `validate.yml`'s live network dependency on `check:links` on every PR, and
+no test coverage measurement (no `node:test`/`c8`). Each needs either a scope decision
+(how much to invest in dev tooling for a project this size) or a genuine architectural
+change (splitting the CLI, a workspace restructure) rather than a same-session fix.
 
 ### Added — first `i18n/` module translation (Turkish kernel)
 - `i18n/tr/CLAUDE.md`: a Turkish translation of the root `CLAUDE.md` operating kernel —

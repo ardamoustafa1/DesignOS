@@ -63,6 +63,30 @@ const required = [
   'evals/isolated/registry-eval.json',
 ];
 const missing = required.filter((file) => !files.has(file));
+
+// Derived, not hand-maintained: every local script path package.json's own `bin`/`scripts`
+// entries reference must actually be in the tarball. This is the class of bug the P0
+// install failure was — postinstall pointed at scripts/postinstall-playwright.js, that
+// file existed on disk, and `required` above (hand-written, never touched at the time)
+// had no opinion on it, so npm install broke on every fresh checkout until someone
+// actually ran it. Deriving this from package.json itself means a future lifecycle/bin
+// script gets the same guarantee without a second hand-edit.
+const pkg = require(path.join(root, 'package.json'));
+// Only npm lifecycle scripts run automatically for a consumer who `npm install`s the
+// published package — everything else under `scripts` (validate, test, claims:update,
+// demo:*, ...) is a contributor-only `npm run` command that assumes a full repo checkout
+// and has no obligation to be in the packed tarball. Checking those too would false-flag
+// dev tooling as a P0-class install break, which it isn't.
+const LIFECYCLE_SCRIPTS = ['preinstall', 'install', 'postinstall', 'prepare', 'prepublishOnly'];
+const scriptPathPattern = /(?:^|\s)(?:node\s+)?((?:bin|scripts|validators|runtime|capabilities)\/[\w./-]+\.js)/g;
+const referenced = new Set([
+  ...Object.values(pkg.bin || {}),
+  ...LIFECYCLE_SCRIPTS
+    .map((name) => pkg.scripts && pkg.scripts[name])
+    .filter(Boolean)
+    .flatMap((cmd) => [...cmd.matchAll(scriptPathPattern)].map((m) => m[1])),
+]);
+const missingReferenced = [...referenced].filter((file) => !files.has(file));
 // 2MB was the ceiling before `systems/` existed. That directory is now 152 design-system
 // packages (SYSTEM.md + tokens.css + lint.json + manifest.json each — example.html demo
 // fixtures are excluded above, same role as golden evidence) and is a deliberate scope
@@ -71,9 +95,12 @@ const missing = required.filter((file) => !files.has(file));
 // catalog to grow without every addition requiring a budget PR.
 const packedLimit = 3 * 1024 * 1024;
 
-if (leaked.length || missing.length || report.size > packedLimit) {
+if (leaked.length || missing.length || missingReferenced.length || report.size > packedLimit) {
   if (leaked.length) console.error(`package-boundary: leaked evidence:\n${leaked.join('\n')}`);
   if (missing.length) console.error(`package-boundary: missing runtime files:\n${missing.join('\n')}`);
+  if (missingReferenced.length) {
+    console.error(`package-boundary: package.json bin/scripts reference files not in the tarball (npm install would break on these):\n${missingReferenced.join('\n')}`);
+  }
   if (report.size > packedLimit) {
     console.error(`package-boundary: ${report.size} packed bytes exceeds ${packedLimit}`);
   }
