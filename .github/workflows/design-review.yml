@@ -31,6 +31,7 @@ jobs:
       - uses: ./.github/actions/design-review
         with:
           diff-only: "true"
+          diff-paths: "examples/,website/,goldens/,starter/,systems/"
           min-score: "95"
           fail-under-min: "true"
           github-token: ${{ github.token }}

@@ -15,6 +15,16 @@ inputs:
     description: Base ref to diff against when diff-only is true. Defaults to GITHUB_BASE_REF.
     required: false
     default: ""
+  diff-paths:
+    description: >
+      Comma-separated path prefixes to restrict diff-only to (e.g. "examples/,website/").
+      Reviewable-extension files changed outside these prefixes are ignored. Use this in
+      any repo where not every .js/.html/etc file changed in a PR is shippable UI markup —
+      without it, diff-only reviews source/test/tooling files the same way it reviews
+      real UI, which produces meaningless findings (a hex color or a "trusted by" string
+      inside a test fixture is not a design defect). Empty (default) means no restriction.
+    required: false
+    default: ""
   min-score:
     description: Minimum acceptable static risk floor (0-100; see LIMITATIONS.md — this is a deterministic floor, not the six-dimension design score).
     required: false
@@ -84,6 +94,7 @@ runs:
         INPUT_PATH: ${{ inputs.path }}
         INPUT_DIFF_ONLY: ${{ inputs.diff-only }}
         INPUT_BASE_REF: ${{ inputs.base-ref }}
+        INPUT_DIFF_PATHS: ${{ inputs.diff-paths }}
         INPUT_MIN_SCORE: ${{ inputs.min-score }}
         INPUT_FAIL_UNDER_MIN: ${{ inputs.fail-under-min }}
         INPUT_JSON: ${{ inputs.json }}
@@ -108,9 +119,17 @@ runs:
           MERGE_BASE="$(git merge-base "origin/$BASE" HEAD 2>/dev/null || echo "origin/$BASE")"
 
           STAGE_DIR="$(mktemp -d)"
+          IFS=',' read -ra DIFF_PATH_PREFIXES <<< "$INPUT_DIFF_PATHS"
           while IFS= read -r f; do
             [ -z "$f" ] && continue
             [ -f "$f" ] || continue
+            if [ -n "$INPUT_DIFF_PATHS" ]; then
+              in_scope=0
+              for prefix in "${DIFF_PATH_PREFIXES[@]}"; do
+                case "$f" in "$prefix"*) in_scope=1; break;; esac
+              done
+              [ "$in_scope" = "1" ] || continue
+            fi
             case "$f" in
               *.html|*.css|*.js|*.jsx|*.ts|*.tsx|*.vue|*.svelte|*.mdx)
                 mkdir -p "$STAGE_DIR/$(dirname "$f")"
