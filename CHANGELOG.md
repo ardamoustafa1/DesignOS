@@ -4,6 +4,21 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+## [2.3.0] — 2026-08-18
+
+### Added — mandatory blind screenshot critique before SHIP language
+- `loops/design-loop.md` stage 6 (REVIEW) now gates on the blind screenshot critique
+  defined in `workflows/final-gate.md`: an independent, blind reviewer (or a
+  DEGRADED-flagged self-pass) judging real screenshots with zero framing, answering
+  "would this be mistaken for another AI-generated template?" A source-code read of your
+  own work no longer satisfies this stage.
+- `workflows/final-gate.md` documents the five-step protocol (render → hand to a blind
+  reviewer → harsh 1–10 verdict → action or reject every finding → re-render as evidence)
+  and adds it as a required row in the pre-gate checklist — missing it blocks SHIP
+  language the same as any other missing check. Closes the Run 004/005 failure mode where
+  a clean rubric self-score and a passing `check-craft-ceiling.js` run still let a
+  generic, self-reviewed page through.
+
 ### Added — §4.5 requirement 7: one memorable moment (material or motion, never both)
 
 `brain/wow-calibration.md` names four routes to memorable — composition, material, voice,

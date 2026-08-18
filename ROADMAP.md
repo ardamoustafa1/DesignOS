@@ -35,7 +35,7 @@ Propose additions via a module-proposal issue.
 
 | Public claim | Generated truth |
 |---|---:|
-| Version | 2.2.0 |
+| Version | 2.3.0 |
 | Rules / providers | 40 / 8 |
 | Motion recipes / stacks | 15 / 6 |
 | Adapter combinations / browser fixtures | 90 / 180 |
