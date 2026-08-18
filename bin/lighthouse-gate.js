@@ -60,6 +60,14 @@ async function localServer(target) {
       response.statusCode = 404;
       return response.end('Not found');
     }
+    // Lexical `../` check above; also resolve symlinks so a link inside root pointing
+    // outside it can't be used to read arbitrary files.
+    const realRoot = fs.realpathSync(root);
+    const realFile = fs.realpathSync(file);
+    if (realFile !== realRoot && !realFile.startsWith(`${realRoot}${path.sep}`)) {
+      response.statusCode = 403;
+      return response.end('Forbidden');
+    }
     response.setHeader('content-type', contentTypes[path.extname(file).toLowerCase()] || 'application/octet-stream');
     fs.createReadStream(file).pipe(response);
   });

@@ -5,7 +5,9 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 /**
- * `designos detect` — the productized front door to the 39-rule registry.
+ * `designos detect` — the productized front door to the rule registry
+ * (`validators/rule-registry.js`'s RULES.length is the source of truth; check there
+ * before trusting a number restated in prose like this one).
  *
  * `audit` already ran every provider and wrote a pass/fail ledger; this command is the
  * same mechanical floor exposed the way a CI pipeline or a pre-commit hook actually wants
