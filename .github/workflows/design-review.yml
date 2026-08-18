@@ -9,7 +9,28 @@ permissions:
   pull-requests: write
 
 jobs:
-  design-review:
+  # PRs: scoped to the files the PR actually changed, not the whole examples/ tree.
+  design-review-diff:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/design-review
+        with:
+          diff-only: "true"
+          min-score: "95"
+          fail-under-min: "true"
+          github-token: ${{ github.token }}
+          # Opt-in only: set the ANTHROPIC_API_KEY repository secret to turn this on.
+          # Advisory — never affects fail-under-min. See action.yml's model-review input.
+          model-review: ${{ secrets.ANTHROPIC_API_KEY != '' }}
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+
+  # Manual dispatch: the full examples/ tree, as before.
+  design-review-full:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7

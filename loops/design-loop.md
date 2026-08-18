@@ -48,9 +48,12 @@ dark and reduced-motion variants in scope. A source-code review does not satisfy
 back into UI before review.
 
 ### 6. REVIEW (owner: creative-director)
-Coherence, idea, brand-fit, courage-placement judgment. **Out:** SHIP / SHIP WITH FIXES /
-REWORK + protected-elements list. Fixes fold back into stage 3 before proceeding — never
-carried forward as "we'll fix it later."
+Coherence, idea, brand-fit, courage-placement judgment. **Gate:** the blind screenshot
+critique (`workflows/final-gate.md`) has run — an independent, blind reviewer (or a
+DEGRADED-flagged self-pass) judging real screenshots with zero framing, answering "would
+this be mistaken for another AI-generated template?" A source-code read of your own work is
+not this stage. **Out:** SHIP / SHIP WITH FIXES / REWORK + protected-elements list. Fixes
+fold back into stage 3 before proceeding — never carried forward as "we'll fix it later."
 
 ### 7. ACCESSIBILITY (owner: accessibility)
 The full audit protocol. **Out:** PASS or blockers. Blockers return to stage 3.

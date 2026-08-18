@@ -1,7 +1,7 @@
 {
   "name": "designos",
-  "description": "DesignOS 2.2.0: 40 deterministic rules, 15 motion recipes across 6 stacks, 180 browser fixtures, 2 required + 1 optional dependencies; external eval not yet verified, native evidence 0/4 platforms beyond source-conformance.",
-  "version": "2.2.0",
+  "description": "DesignOS 2.5.0: 40 deterministic rules, 15 motion recipes across 6 stacks, 180 browser fixtures, 2 required + 1 optional dependencies; external eval not yet verified, native evidence 0/4 platforms beyond source-conformance.",
+  "version": "2.5.0",
   "author": {
     "name": "Arda Moustafa",
     "url": "https://github.com/ardamoustafa1"

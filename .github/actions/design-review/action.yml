@@ -1,14 +1,22 @@
 name: DesignOS Review
-description: Deterministic UI/design-risk review for AI-generated interfaces.
+description: Deterministic UI/design-risk review for AI-generated interfaces, with optional PR-diff scoping and an advisory model rubric pass.
 author: Arda Moustafa
 
 inputs:
   path:
-    description: File or directory to review.
+    description: File or directory to review. Ignored when diff-only is true.
     required: false
     default: "."
+  diff-only:
+    description: Review only the reviewable files changed versus base-ref (auto-detected from GITHUB_BASE_REF on pull_request) instead of a fixed path.
+    required: false
+    default: "false"
+  base-ref:
+    description: Base ref to diff against when diff-only is true. Defaults to GITHUB_BASE_REF.
+    required: false
+    default: ""
   min-score:
-    description: Minimum acceptable six-dimension gate score.
+    description: Minimum acceptable static risk floor (0-100; see LIMITATIONS.md — this is a deterministic floor, not the six-dimension design score).
     required: false
     default: "95"
   fail-under-min:
@@ -27,6 +35,23 @@ inputs:
     description: GitHub token with pull-requests:write permission when comment=true.
     required: false
     default: ""
+  model-review:
+    description: >
+      Optional advisory pass — sends the reviewed files (or diff, when diff-only=true) plus
+      scoring/rubric.md to the Anthropic Messages API and appends its rubric-prompted read to
+      the PR comment. Never affects fail-under-min; it is explicitly non-deterministic and
+      is labeled as such in the comment (CLAUDE.md Prime Directive #6 — a model pass is not
+      the deterministic gate). Requires anthropic-api-key.
+    required: false
+    default: "false"
+  anthropic-api-key:
+    description: Anthropic API key for model-review. Pass via a repository secret — never hardcode.
+    required: false
+    default: ""
+  model:
+    description: Model id for model-review.
+    required: false
+    default: "claude-sonnet-5"
 
 outputs:
   report-json:
@@ -36,7 +61,7 @@ outputs:
     description: Path to the Markdown report.
     value: ${{ steps.review.outputs.report-markdown }}
   score:
-    description: Overall six-dimension gate score.
+    description: Static risk floor (see LIMITATIONS.md) — the deterministic gate, not the final design score.
     value: ${{ steps.review.outputs.score }}
   fix-prompt:
     description: Path to the agent-ready fix prompt.
@@ -49,14 +74,57 @@ runs:
       shell: bash
       env:
         GH_TOKEN: ${{ inputs.github-token }}
+        ANTHROPIC_API_KEY: ${{ inputs.anthropic-api-key }}
       run: |
         set -euo pipefail
         CLI="$GITHUB_ACTION_PATH/../../../bin/designos.js"
         FLAGS=("--min" "${{ inputs.min-score }}" "--no-fail")
+        REVIEW_PATH="${{ inputs.path }}"
+        NOTHING_TO_REVIEW=0
 
-        node "$CLI" review "${{ inputs.path }}" "${FLAGS[@]}" --json > designos-review.json
-        node "$CLI" review "${{ inputs.path }}" "${FLAGS[@]}" > designos-review.md
-        node "$CLI" review "${{ inputs.path }}" "${FLAGS[@]}" --fix-prompt > designos-fix-prompt.md
+        if [ "${{ inputs.diff-only }}" = "true" ]; then
+          BASE="${{ inputs.base-ref }}"
+          if [ -z "$BASE" ]; then BASE="${GITHUB_BASE_REF:-}"; fi
+          if [ -z "$BASE" ]; then
+            echo "diff-only=true requires a base ref: set base-ref, or run on pull_request where GITHUB_BASE_REF is set." >&2
+            exit 1
+          fi
+          git fetch --no-tags --depth=50 origin "$BASE" 2>/dev/null || true
+          MERGE_BASE="$(git merge-base "origin/$BASE" HEAD 2>/dev/null || echo "origin/$BASE")"
+
+          STAGE_DIR="$(mktemp -d)"
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            [ -f "$f" ] || continue
+            case "$f" in
+              *.html|*.css|*.js|*.jsx|*.ts|*.tsx|*.vue|*.svelte|*.mdx)
+                mkdir -p "$STAGE_DIR/$(dirname "$f")"
+                cp "$f" "$STAGE_DIR/$f"
+                ;;
+            esac
+          done < <(git diff --name-only --diff-filter=ACMR "$MERGE_BASE" HEAD)
+
+          if [ -z "$(find "$STAGE_DIR" -type f 2>/dev/null)" ]; then
+            NOTHING_TO_REVIEW=1
+          else
+            REVIEW_PATH="$STAGE_DIR"
+          fi
+        fi
+
+        if [ "$NOTHING_TO_REVIEW" = "1" ]; then
+          echo "# DesignOS Review" > designos-review.md
+          echo "" >> designos-review.md
+          echo "No reviewable files (html/css/js/jsx/ts/tsx/vue/svelte/mdx) changed in this diff." >> designos-review.md
+          NOW="$(node -e "console.log(new Date().toISOString())")"
+          node -e "console.log(JSON.stringify({target:'diff',generatedAt:'$NOW',summary:{filesReviewed:0,findingCount:0,status:'NO REVIEWABLE FILES CHANGED',finalScore:'NOT ASSESSED',staticRiskFloor:100,staticRiskScores:{}},findings:[]},null,2))" > designos-review.json
+          printf '' > designos-fix-prompt.md
+          SCORE=100
+        else
+          node "$CLI" review "$REVIEW_PATH" "${FLAGS[@]}" --json > designos-review.json
+          node "$CLI" review "$REVIEW_PATH" "${FLAGS[@]}" > designos-review.md
+          node "$CLI" review "$REVIEW_PATH" "${FLAGS[@]}" --fix-prompt > designos-fix-prompt.md
+          SCORE="$(node -e "const r=require('./designos-review.json'); console.log(r.summary.staticRiskFloor)")"
+        fi
         cat designos-review.md
 
         if [ "${{ inputs.json }}" = "true" ]; then
@@ -64,12 +132,23 @@ runs:
         fi
         echo "report-markdown=designos-review.md" >> "$GITHUB_OUTPUT"
         echo "fix-prompt=designos-fix-prompt.md" >> "$GITHUB_OUTPUT"
-
-        SCORE="$(node -e "const r=require('./designos-review.json'); console.log(r.summary.overall)")"
         echo "score=$SCORE" >> "$GITHUB_OUTPUT"
 
+        MODEL_SECTION=""
+        if [ "${{ inputs.model-review }}" = "true" ] && [ "$NOTHING_TO_REVIEW" != "1" ]; then
+          if [ -z "${ANTHROPIC_API_KEY:-}" ]; then
+            echo "model-review=true but anthropic-api-key is empty — skipping the advisory pass." >&2
+          else
+            node "$GITHUB_ACTION_PATH/model-review.js" "$REVIEW_PATH" "${{ inputs.model }}" > designos-model-review.md 2>designos-model-review.err || {
+              echo "Model rubric pass failed (advisory only, not gating):" >&2
+              cat designos-model-review.err >&2 || true
+            }
+            [ -s designos-model-review.md ] && MODEL_SECTION="$(cat designos-model-review.md)"
+          fi
+        fi
+
         if [ "${{ inputs.comment }}" = "true" ] && [ -n "${GH_TOKEN:-}" ] && [ -n "${GITHUB_EVENT_PATH:-}" ]; then
-          node <<'NODE'
+          MODEL_SECTION="$MODEL_SECTION" node <<'NODE'
         const fs = require('fs');
         const https = require('https');
 
@@ -83,7 +162,11 @@ runs:
         const marker = '<!-- designos-review-action -->';
         const report = fs.readFileSync('designos-review.md', 'utf8');
         const fix = fs.readFileSync('designos-fix-prompt.md', 'utf8');
-        const body = `${marker}\n${report}\n\n<details><summary>Agent-ready fix prompt</summary>\n\n\`\`\`text\n${fix}\n\`\`\`\n\n</details>\n\n_Run locally with \`node DesignOS/bin/designos.js review <path> --min ${{ inputs.min-score }}\`._`;
+        const modelSection = process.env.MODEL_SECTION || '';
+        const modelBlock = modelSection
+          ? `\n\n### Model rubric pass (advisory, non-deterministic)\n\nDoes not affect the deterministic gate above — see CLAUDE.md Prime Directive #6.\n\n${modelSection}`
+          : '';
+        const body = `${marker}\n${report}${modelBlock}\n\n<details><summary>Agent-ready fix prompt</summary>\n\n\`\`\`text\n${fix}\n\`\`\`\n\n</details>\n\n_Run locally with \`node DesignOS/bin/designos.js review <path> --min ${{ inputs.min-score }}\`._`;
 
         function request(method, path, payload) {
           return new Promise((resolve, reject) => {
