@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "package": {
     "name": "designos",
-    "version": "2.6.0",
+    "version": "2.7.0",
     "node": ">=18"
   },
   "dependencies": {
@@ -66,7 +66,7 @@
   },
   "capabilities": {
     "registryRules": 40,
-    "registryProviders": 8,
+    "registryProviders": 9,
     "knowledgeModules": 74,
     "industryPacks": 24,
     "motionRecipes": 15,

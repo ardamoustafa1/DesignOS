@@ -30,7 +30,7 @@ evidence, and release gates are executable.
 |---|---:|
 | Required dependencies | 2 (`@jridgewell/trace-mapping`, `axe-core`) |
 | Optional dependencies (browser/evidence features) | 1 (`playwright`) |
-| Registry rules / providers | 40 / 8 |
+| Registry rules / providers | 40 / 9 |
 | Validated knowledge modules | 74 |
 | Industry packs | 24 |
 | Motion recipes / framework stacks | 15 / 6 |
@@ -53,8 +53,8 @@ evidence, and release gates are executable.
 
 | Public claim | Generated truth |
 |---|---:|
-| Version | 2.6.0 |
-| Rules / providers | 40 / 8 |
+| Version | 2.7.0 |
+| Rules / providers | 40 / 9 |
 | Motion recipes / stacks | 15 / 6 |
 | Adapter combinations / browser fixtures | 90 / 180 |
 | Browser / source-map assertions | 3510 / 3 |
