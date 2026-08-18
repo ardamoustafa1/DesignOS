@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "package": {
     "name": "designos",
-    "version": "2.5.0",
+    "version": "2.6.0",
     "node": ">=18"
   },
   "dependencies": {
