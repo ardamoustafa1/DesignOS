@@ -777,7 +777,7 @@ function rollback(target, cwd = process.cwd()) {
   return transaction;
 }
 
-function directorHtml(target) {
+function directorHtml(target, token) {
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>DesignOS Live Director</title>
 <style>:root{color-scheme:dark;--bg:#0b0e12;--panel:#11161d;--line:#29313c;--muted:#aab4c0;--accent:#42d392;--warn:#ffcc66}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f5f7fa;font:14px/1.5 system-ui}header{display:flex;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);min-height:64px}.status{color:var(--accent);margin-left:auto}.locks{display:flex;gap:10px}.locks label{display:flex;align-items:center;gap:6px;margin:0}main{display:grid;grid-template-columns:minmax(0,1fr) 420px;height:calc(100vh - 64px)}.canvas{position:relative;background:#202630}iframe{width:100%;height:100%;border:0;background:white}aside{padding:16px;border-left:1px solid var(--line);overflow:auto;background:var(--panel)}button,select,input,textarea{min-height:44px;border:1px solid #384352;border-radius:8px;background:#171c23;color:inherit;padding:8px 12px;font:inherit}button{cursor:pointer}button:hover{border-color:#5a6a7e}button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}button[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}label{display:grid;gap:6px;margin:12px 0}.variants{display:flex;gap:8px;overflow:auto;scroll-snap-type:x mandatory}.variants button{min-width:185px;min-height:104px;text-align:left;scroll-snap-align:start}.actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;position:sticky;bottom:0;padding:12px 0;background:linear-gradient(transparent,var(--panel) 24%)}.actions .accept{border-color:var(--accent)}.actions .reject{border-color:#e57373}.meta{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{border:1px solid var(--line);border-radius:10px;padding:10px;background:#0d1218}.card strong{display:block;color:var(--warn)}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#080b0f;padding:10px;border-radius:8px;color:#dce6ef}.diff-grid{display:grid;gap:8px}.diff-row{display:grid;grid-template-columns:110px 1fr;gap:8px;border-bottom:1px solid var(--line);padding:7px 0}.diff-row span{color:var(--muted)}h2{font-size:16px;margin:20px 0 8px}small,p{color:var(--muted)}code{color:var(--warn)}textarea{width:100%;min-height:100px;resize:vertical}@media(max-width:900px){main{grid-template-columns:1fr;height:auto}.canvas,iframe{height:65vh}aside{border-left:0;border-top:1px solid var(--line)}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}</style></head><body>
 <header><strong>DesignOS Live Director Studio</strong><span>${path.basename(target)}</span><div class="locks"><label><input id="route-lock" type="checkbox" checked>Route lock</label><label><input id="component-lock" type="checkbox" checked>Component lock</label></div><span class="status" id="status" role="status">Hover, then select an element</span></header>
@@ -793,15 +793,16 @@ function directorHtml(target) {
 <div class="actions"><button class="accept" id="accept">Accept</button><button class="reject" id="reject">Reject</button><button id="undo">Undo</button></div>
 <h2>Annotations</h2><ol id="annotations"></ol>
 </aside></main><script>
+const SESSION_TOKEN=${JSON.stringify(token)};
 const frame=document.getElementById('preview');let selection=null;let activeVariant=null;
 const status=(text,error)=>{const el=document.getElementById('status');el.textContent=text;el.style.color=error?'#ff8a80':''};
-const request=async(url,options={})=>{const response=await fetch(url,{headers:{'content-type':'application/json'},...options});const text=await response.text();let data;try{data=JSON.parse(text)}catch{data={error:text}}if(!response.ok)throw new Error(data.error||text);return data};
+const request=async(url,options={})=>{const response=await fetch(url,{headers:{'content-type':'application/json','x-designos-token':SESSION_TOKEN},...options});const text=await response.text();let data;try{data=JSON.parse(text)}catch{data={error:text}}if(!response.ok)throw new Error(data.error||text);return data};
 const selectorFor=el=>{if(el.id)return '#'+CSS.escape(el.id);const test=el.getAttribute('data-testid');if(test)return '[data-testid="'+CSS.escape(test)+'"]';const cls=[...el.classList][0];return el.tagName.toLowerCase()+(cls?'.'+CSS.escape(cls):'')};
 const boundaryFor=el=>{const boundary=el.closest('[data-designos-component],[data-reactroot],[data-v-app],[data-svelte-h]')||el;return{tag:boundary.tagName.toLowerCase(),selector:selectorFor(boundary),path:[...(function*(){let node=el;while(node&&node!==frame.contentDocument.body){yield selectorFor(node);node=node.parentElement}})()].reverse()}};
 frame.addEventListener('load',()=>{const doc=frame.contentDocument;const style=doc.createElement('style');style.dataset.designosInspector='';style.textContent='[data-designos-hover]{outline:2px dashed #42d392!important;outline-offset:2px}[data-designos-selected]{outline:3px solid #ffcc66!important;outline-offset:3px}';doc.head.append(style);doc.addEventListener('mouseover',event=>{doc.querySelectorAll('[data-designos-hover]').forEach(el=>el.removeAttribute('data-designos-hover'));event.target.setAttribute('data-designos-hover','')},true);doc.addEventListener('mouseout',event=>event.target.removeAttribute('data-designos-hover'),true);doc.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();doc.querySelectorAll('[data-designos-selected]').forEach(el=>el.removeAttribute('data-designos-selected'));const el=event.target;el.setAttribute('data-designos-selected','');const r=el.getBoundingClientRect();selection={selector:selectorFor(el),sourceMarker:el.getAttribute('data-designos-source'),componentBoundary:boundaryFor(el),rect:{x:r.x,y:r.y,width:r.width,height:r.height}};document.getElementById('selection').textContent=JSON.stringify(selection.componentBoundary,null,2);status('Selected '+selection.selector)},true)});
-async function refresh(){const [items,session]=await Promise.all([request('/api/annotations'),request('/api/session')]);document.getElementById('annotations').innerHTML=items.map(x=>'<li><strong>'+x.classification+'</strong><br><code>'+x.selector+'</code><br>'+x.note+'</li>').join('');document.getElementById('route-lock').checked=session.locks?.route!==false;document.getElementById('component-lock').checked=session.locks?.component!==false;if(session.selectedSource){document.getElementById('framework').textContent=session.selectedSource.framework||'html';document.getElementById('source').textContent=(session.selectedSource.file||'').split('/').slice(-2).join('/')+':'+(session.selectedSource.line||'?')}}
+async function refresh(){const [items,session]=await Promise.all([request('/api/annotations'),request('/api/session')]);const list=document.getElementById('annotations');list.replaceChildren(...items.map(x=>{const li=document.createElement('li');const strong=document.createElement('strong');strong.textContent=x.classification;const code=document.createElement('code');code.textContent=x.selector;li.append(strong,document.createElement('br'),code,document.createElement('br'),document.createTextNode(x.note||''));return li}));document.getElementById('route-lock').checked=session.locks?.route!==false;document.getElementById('component-lock').checked=session.locks?.component!==false;if(session.selectedSource){document.getElementById('framework').textContent=session.selectedSource.framework||'html';document.getElementById('source').textContent=(session.selectedSource.file||'').split('/').slice(-2).join('/')+':'+(session.selectedSource.line||'?')}}
 document.getElementById('annotate').onclick=async()=>{if(!selection)return status('Select an element first',true);try{const item=await request('/api/annotations',{method:'POST',body:JSON.stringify({...selection,classification:document.getElementById('classification').value,note:document.getElementById('note').value})});document.getElementById('framework').textContent=item.source.framework;document.getElementById('source').textContent=item.source.file.split('/').slice(-2).join('/')+':'+(item.source.line||'?');status('Source resolved; choose a variant');await refresh()}catch(error){status(error.message,true)}};
-const renderDiff=data=>{const rows=Object.entries(data.diffs).map(([key,value])=>'<div class="diff-row"><span>'+key+'</span><code>'+JSON.stringify(value)+'</code></div>').join('');document.getElementById('diff').innerHTML=rows};
+const renderDiff=data=>{const container=document.getElementById('diff');container.replaceChildren(...Object.entries(data.diffs).map(([key,value])=>{const row=document.createElement('div');row.className='diff-row';const span=document.createElement('span');span.textContent=key;const code=document.createElement('code');code.textContent=JSON.stringify(value);row.append(span,code);return row})) };
 document.querySelectorAll('[data-variant]').forEach(button=>button.onclick=async()=>{activeVariant=button.dataset.variant;document.querySelectorAll('[data-variant]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));frame.src='/target?variant='+activeVariant;try{renderDiff(await request('/api/variants/'+activeVariant+'/diff'));status('Previewing '+activeVariant+'; acceptance will run four gates')}catch(error){status(error.message,true)}});
 const locks=async()=>request('/api/locks',{method:'POST',body:JSON.stringify({route:document.getElementById('route-lock').checked,component:document.getElementById('component-lock').checked})});
 document.getElementById('route-lock').onchange=locks;document.getElementById('component-lock').onchange=locks;
@@ -837,12 +838,39 @@ function sendJson(response, status, payload) {
 function serve(target, options = {}, cwd = process.cwd()) {
   const { files } = initSession(target, cwd);
   const port = Number(options.port) || 4179;
+  // A fresh token per server process, embedded in the served HTML and required on every
+  // state-changing request — closes the CSRF path where a page on any other origin could
+  // otherwise submit a `text/plain` (no-preflight) form straight at these endpoints.
+  const sessionToken = crypto.randomBytes(24).toString('hex');
+  const allowedHosts = new Set([`127.0.0.1:${port}`, `localhost:${port}`]);
+  const allowedOrigins = new Set([`http://127.0.0.1:${port}`, `http://localhost:${port}`]);
   const server = http.createServer(async (request, response) => {
+    // Host check defends against DNS rebinding (a remote page's script fetching against
+    // what the browser resolves as "localhost" but the attacker controls the DNS answer
+    // for); Origin/Content-Type/token together defend against CSRF from a same-network
+    // page. GET reads stay Host-checked only — no CORS headers are set, so a foreign
+    // origin can trigger a GET but never read its response, and requiring a token on
+    // reads too would break the director's own iframe-embedded preview.
+    if (!allowedHosts.has(request.headers.host)) {
+      response.statusCode = 403; return response.end('Forbidden');
+    }
+    if (request.method !== 'GET') {
+      const origin = request.headers.origin;
+      if (origin && !allowedOrigins.has(origin)) {
+        response.statusCode = 403; return response.end('Forbidden (origin)');
+      }
+      if (!/^application\/json/.test(request.headers['content-type'] || '')) {
+        response.statusCode = 415; return response.end('Unsupported Media Type — expected application/json');
+      }
+      if (request.headers['x-designos-token'] !== sessionToken) {
+        response.statusCode = 401; return response.end('Unauthorized');
+      }
+    }
     const url = new URL(request.url, `http://${request.headers.host}`);
     try {
       if (request.method === 'GET' && url.pathname === '/') {
         response.setHeader('content-type', 'text/html; charset=utf-8');
-        return response.end(directorHtml(files.source));
+        return response.end(directorHtml(files.source, sessionToken));
       }
       if (request.method === 'GET' && url.pathname === '/target') {
         let source = fs.readFileSync(files.source, 'utf8');
@@ -862,6 +890,13 @@ function serve(target, options = {}, cwd = process.cwd()) {
         }
         if (!fs.existsSync(asset) || !fs.statSync(asset).isFile()) {
           response.statusCode = 404; return response.end('Not found');
+        }
+        // Lexical `../` check above; also resolve symlinks so a link inside assetRoot
+        // pointing outside it can't be used to read arbitrary files.
+        const realAssetRoot = fs.realpathSync(assetRoot);
+        const realAsset = fs.realpathSync(asset);
+        if (realAsset !== realAssetRoot && !realAsset.startsWith(`${realAssetRoot}${path.sep}`)) {
+          response.statusCode = 403; return response.end('Forbidden');
         }
         const extension = path.extname(asset).toLowerCase();
         const contentTypes = {
