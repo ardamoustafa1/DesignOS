@@ -1,5 +1,11 @@
 # Notes
 
+## 2026-08-19 generation-trust CI record
+
+- The first PR run failed before project code executed because every GitHub-hosted job
+  received `Repository not found` from `actions/checkout`; local unit and strict suites
+  were already clean. A content-bearing retry commit was used to request fresh runners.
+
 ## 2026-08-19 keyless Studio planning record
 
 - Current `nexu-io/open-design` evidence describes 151 bundled design systems, 100+ functional skills, 277 official plugins plus 183 reference examples, HyperFrames, and 26 distinct local CLI executables. Counts are time-sensitive and must be cited from a pinned upstream commit at implementation time.
