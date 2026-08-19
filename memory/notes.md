@@ -1,5 +1,27 @@
 # Notes
 
+## 2026-08-19 keyless Studio planning record
+
+- Current `nexu-io/open-design` evidence describes 151 bundled design systems, 100+ functional skills, 277 official plugins plus 183 reference examples, HyperFrames, and 26 distinct local CLI executables. Counts are time-sensitive and must be cited from a pinned upstream commit at implementation time.
+- The competitor is no longer accurately described as BYOK-only: its current README announces an official zero-config Cloud model service, while its public-site FAQ still describes a BYOK-only/no-server model. Treat keyless access as table stakes and compete on governance, cost visibility, and output quality.
+- The competitor's Design Jury is a single CLI/model context role-playing five panelists, defaults to an 8.0/10 threshold, and can retain the best sub-threshold round. The proposed DesignOS gate must use isolated judging contexts plus deterministic browser/accessibility/performance evidence and must not reveal a sub-threshold artifact as passed.
+- Repository audit found 153 complete DesignOS system packages (`SYSTEM.md`, `tokens.css`, `manifest.json`, `lint.json`, `example.html`), including imported Open Design packages with pinned commit, Apache-2.0 provenance, NOTICE pointer, and recorded modifications.
+- Apache-2.0 redistribution requirements and the absence of a trademark grant make provenance retention, modified-file notices, and “inspired by / not affiliated” labeling mandatory product work, not documentation cleanup.
+- No product code was written in this planning pass. An accidental read-only-help attempt generated untracked agent export files; the exact generated files were removed immediately and the worktree was returned clean.
+
+## 2026-08-19 keyless Studio MVP implementation record
+
+- Owner approval was received and a Sites/vinext React Studio was implemented in `studio/` with a brief composer, Kiln system selection, sandboxed generated preview, mechanical gate evidence, and a mobile focus-preview mode.
+- The API boundary accepts only `brief`, `systemId`, and `variation`; client provider fields are rejected. Operator-only `DESIGNOS_PROVIDER_BASE_URL`, `DESIGNOS_PROVIDER_API_KEY`, and `DESIGNOS_PROVIDER_MODEL` variables drive the optional central provider path.
+- No provider secrets were available during verification. The live central-provider integration is therefore `NOT_ASSESSED`; the clearly labelled deterministic demo planner exercised the remaining orchestration, compiler, repair, gate, quota, and reveal path.
+- The compiler exposes three composition families and enforces four motion roles. The deterministic demo intentionally fails attempt one and passes after a fingerprinted repair, proving that the failed artifact remains withheld.
+- Only Kiln is exposed. The 153 packages are structurally complete, but the current integrity audit reports substantial prose-to-token color drift across most judged systems; catalog-wide production readiness is not claimed.
+- MVP quota is an in-memory, IP-derived limit of five accepted runs per hour. Authenticated durable quota/cost ledgers, provider failover, isolated render workers, and multi-region coordination remain production work.
+- Final browser gate: 22 scenarios, five keyboard paths, one declared task passed, zero P1/P2 findings. The initial failing browser report is preserved in `studio/evidence/browser-gate.initial.json`.
+- Final Lighthouse evidence before the closing typography-only adjustment: performance 100, accessibility 100, best practices 96, SEO 100; LCP about 150ms, CLS 0, TBT 0. Final rerun evidence must be copied, not inferred.
+- Deterministic source review previously returned zero findings and a static risk indicator of 100/100. The final seven-dimension design score remains `NOT_ASSESSED`.
+- Blind closing review confirmed the mobile task-surface blocker and overclaim were resolved. It retained a distinctiveness critique and requested stronger small-text readability; the latter was increased before final verification. Runtime screen-reader behavior remains `NOT_ASSESSED` without a physical listening pass.
+
 ## 2026-07-29 verification record
 
 - Static unit and structural suites cover CLI behavior, module integrity, motion math, 36 detector contracts, 90 adapters, graph nodes, Live Director primitives, and Motion Lab controls.
