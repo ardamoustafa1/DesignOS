@@ -19,6 +19,9 @@ This file is the kernel. It tells you **what to load, in what order, and what st
 6. **Never invent the score.** Self-scoring is a draft. Do not claim "95+", "100/100",
    "zero findings", or "SHIP" unless `designos review` actually ran or you clearly label
    the score as a self-review.
+7. **Never ship a starter.** Files under `starter/`, neutral tokens, prototype study copy,
+   and generated design-system contracts are scaffolding, never finished UI. A portfolio
+   must contain verified, inspectable work and pass `designos ship <target> --surface portfolio`.
 
 ---
 

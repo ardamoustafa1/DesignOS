@@ -116,7 +116,7 @@ const SECTORS = {
     avoid: ['four competing neons', 'unskippable intro animations'],
   },
   'portfolio-agency': {
-    keywords: ['portfolio', 'agency', 'designer', 'freelance', 'studio', 'creative', 'motion designer', 'photographer', 'work'],
+    keywords: ['portfolio', 'agency', 'designer', 'freelance', 'studio', 'creative', 'motion designer', 'photographer', 'work', 'cv', 'resume', 'résumé', 'curriculum vitae', 'personal résumé'],
     module: 'industries/portfolio-agency.md',
     theme: 'light',
     style: 'The work is the interface — near-monochrome chrome, oversized editorial type, one signature interaction that IS the personality. Distinctiveness is the whole brief.',
@@ -306,10 +306,10 @@ const SURFACES = {
     note: 'Code blocks with real syntax highlighting and copy buttons; dark theme is the default expectation here.',
   },
   portfolio: {
-    keywords: ['portfolio site', 'personal site', 'showcase', 'case studies page'],
-    modules: ['industries/portfolio-agency.md', 'brain/originality.md', 'components/cards.md'],
-    spine: 'Name + one-line positioning → selected work (6 max, big) → about (short, human) → contact',
-    note: 'Distinctiveness is the brief: pick ONE signature interaction and execute it perfectly. Read brain/originality.md before the first pixel.',
+    keywords: ['portfolio site', 'personal site', 'showcase', 'case studies page', 'cv', 'resume', 'résumé', 'curriculum vitae', 'personal portfolio'],
+    modules: ['industries/portfolio-agency.md', 'brain/originality.md', 'brain/wow-calibration.md', 'foundations/materiality.md', 'foundations/typography.md', 'motion/arrival.md'],
+    spine: 'Name + specific positioning → selected work/impact (3–6, inspectable) → experience narrative → capability evidence → short human note → frictionless contact',
+    note: 'A résumé prose column is a failed state. Real work and verified impact are the interface; use one derived signature interaction with a complete reduced-motion equivalent.',
   },
   checkout: {
     keywords: ['checkout', 'cart', 'payment flow', 'purchase flow', 'order flow'],

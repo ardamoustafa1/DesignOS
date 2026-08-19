@@ -20,7 +20,7 @@ Propose additions via a module-proposal issue.
 | Full + reduced-motion browser scenarios | 180 |
 | Knowledge graph nodes | 145 |
 | Golden projects | 5 |
-| Component AST directions / CLI command modules | 3 / 32 |
+| Component AST directions / CLI command modules | 3 / 33 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
 | Mission 4 leader features | 18 / 18 implemented |
 | Inspectable pattern atlas | 15 patterns |

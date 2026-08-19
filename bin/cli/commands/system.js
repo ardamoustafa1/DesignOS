@@ -252,6 +252,7 @@ function help(context) {
 
   Core:
     ${context.run} improve <target> --brief "<product/surface>" [--deep]
+    ${context.run} ship <target> [--surface portfolio]
     ${context.run} audit <target>
     ${context.run} review <target> [--fix-prompt]
     ${context.run} visual <target>

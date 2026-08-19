@@ -25,6 +25,7 @@ const suite = (process.argv.includes('--suite') && process.argv[process.argv.ind
 
 const UNIT = [
   'node validators/test-cli.js',
+  'node validators/test-generation-contract.js',
   'node validators/check-modules.js',
   'node runtime/motion/test-runtime.js',
   'node validators/test-motion-semantics.js',

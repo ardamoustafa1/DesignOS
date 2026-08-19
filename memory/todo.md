@@ -1,5 +1,13 @@
 # Open Work
 
+- Replace Studio's fixed string/score gate with standalone artifact browser, AX-tree,
+  reduced-motion parity, temporal motion, and 4× CPU evidence. `NOT_ASSESSED` must keep
+  the artifact withheld; parent-shell evidence must never be attributed to the iframe.
+- Build the shared `loadSystem → routeModules → design IR → render → registry gate →
+  finding-directed repair` core used by both Studio and CLI. Current `generate` still
+  creates a design-system contract rather than a finished artifact; do not market it as
+  an end-to-end generator.
+
 - ~~Await owner approval of the 2026-08-19 competitor analysis, central model-gateway architecture, hard quality gate, and MVP→v1→v2 roadmap before writing Studio MVP code.~~ Approved and implemented on 2026-08-19.
 - ~~MVP acceptance target: choose one original DesignOS system, enter a brief, generate a fully animated prototype, run deterministic and independent review gates, and reveal only a passing artifact.~~ Implemented for certified Kiln with a deterministic planner fallback; live operator-provider integration remains `NOT_ASSESSED` until secrets are provisioned.
 - Replace Studio's in-memory, IP-derived demo quota with authenticated durable per-user usage and cost ledgers before production traffic.

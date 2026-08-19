@@ -254,6 +254,21 @@ test('export antigravity: writes root AGENTS.md and the native .agent/rules/ pat
   assert.ok(fs.existsSync(path.join(tmp, '.agent', 'rules', 'designos.md')), 'export antigravity must write .agent/rules/designos.md');
 });
 
+test('export agentsmd: preserves framework instructions and installs one managed kernel block', () => {
+  const tmp = makeExportFixture();
+  const agentsPath = path.join(tmp, 'AGENTS.md');
+  fs.writeFileSync(agentsPath, '# Framework instructions\n\nKeep this block.\n');
+  let result = spawnSync('node', ['DesignOS/bin/designos.js', 'export', 'agentsmd'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  result = spawnSync('node', ['DesignOS/bin/designos.js', 'export', 'agentsmd'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const exported = fs.readFileSync(agentsPath, 'utf8');
+  assert.ok(exported.includes('Keep this block.'), 'existing framework instructions must survive');
+  assert.strictEqual(exported.match(/DESIGNOS:BEGIN/g)?.length, 1, 'managed kernel must not duplicate');
+  assert.strictEqual(exported.match(/DESIGNOS:END/g)?.length, 1, 'managed kernel end marker must not duplicate');
+  assert.ok(exported.includes('The Ceiling Contract'), 'full DesignOS kernel must be installed');
+});
+
 test('export cursor: writes both the legacy and current rules formats', () => {
   const tmp = makeExportFixture();
   const result = spawnSync('node', ['DesignOS/bin/designos.js', 'export', 'cursor'], { cwd: tmp, encoding: 'utf8' });
@@ -659,6 +674,18 @@ test('suggest: hybrid briefs route deterministically (routing-table tie-break pr
     assert.ok(r.stdout.includes(`SECTOR: ${sector}`), `"${brief}" → expected sector ${sector}`);
     assert.ok(r.stdout.includes(`SURFACE: ${surface}`), `"${brief}" → expected surface ${surface}`);
   }
+});
+
+test('generate: CV briefs route to portfolio with creative-sector dials and no SaaS fallback', () => {
+  const result = spawnSync('node', [path.resolve(__dirname, '..', 'bin', 'designos.js'), 'generate', '--brief', 'Personal CV and résumé portfolio for a software designer', '--json'], { encoding: 'utf8' });
+  assert.strictEqual(result.status, 0, result.stderr);
+  const output = JSON.parse(result.stdout.trim());
+  assert.strictEqual(output.sector, 'portfolio-agency');
+  assert.strictEqual(output.surface, 'portfolio');
+  assert.ok(output.dials.variance >= 8, 'portfolio variance must not inherit the generic 5 default');
+  assert.ok(output.dials.motionIntensity >= 7, 'portfolio motion must use the creative-sector range');
+  assert.ok(output.modules.includes('brain/wow-calibration.md'));
+  assert.ok(output.modules.includes('motion/arrival.md'));
 });
 
 test('suggest web mirror: website/suggest.html carries every sector, palette hex, and surface from the CLI data', () => {

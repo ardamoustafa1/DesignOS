@@ -116,3 +116,26 @@
 - Scroll recipes write a companion stylesheet rather than mutating user source. Native
   scroll timelines are progressive enhancement; the no-support and reduced-motion states
   keep content visible and complete.
+
+## 2026-08-19 — Generation trust repair
+
+- dials: variance 8 · motion 8 · density 4
+- why: creative/portfolio output must audition the system visibly; composition and motion
+  are licensed, while verified content and accessibility remain non-negotiable.
+- `init` now installs a managed DesignOS kernel block into an existing root `AGENTS.md`
+  instead of silently skipping framework-owned instructions. This closes the observed
+  failure where neutral starter tokens were present but the designing agent never loaded
+  the DesignOS kernel.
+- `prototype` now compares structural composition families rather than cosmetic minimal,
+  glass, and brutalist skins. Its motion language is arrival + scroll orientation +
+  pointer/keyboard interaction + View Transition, with content-visible fallback and a
+  complete reduced-motion path.
+- A new portfolio generation contract blocks fake identity/proof, prose-only portfolios,
+  one-column composition, starter typography/material, incomplete motion semantics, and
+  missing reduced-motion handling. `designos ship` withholds failures; a clean mechanical
+  result still does not claim a final design score.
+- Signature: oversized editorial type plus a proof-artifact stage. It expresses that
+  DesignOS designs from inspectable product truth, not from decorative cards.
+- Rejected: perpetual ambient loops, glassmorphism variants, system-font starter output,
+  opacity-hostaged scroll content, and motion-role counting as a substitute for browser
+  performance or accessibility evidence.
