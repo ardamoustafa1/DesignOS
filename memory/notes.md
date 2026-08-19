@@ -21,6 +21,7 @@
 - Final Lighthouse evidence before the closing typography-only adjustment: performance 100, accessibility 100, best practices 96, SEO 100; LCP about 150ms, CLS 0, TBT 0. Final rerun evidence must be copied, not inferred.
 - Deterministic source review previously returned zero findings and a static risk indicator of 100/100. The final seven-dimension design score remains `NOT_ASSESSED`.
 - Blind closing review confirmed the mobile task-surface blocker and overclaim were resolved. It retained a distinctiveness critique and requested stronger small-text readability; the latter was increased before final verification. Runtime screen-reader behavior remains `NOT_ASSESSED` without a physical listening pass.
+- Private Sites deployment succeeded at `https://designos-studio-mvp.oxynos9.chatgpt.site`. It runs the labelled deterministic demo planner until operator-owned provider secrets are provisioned; deployment success is not evidence of a live central-provider call.
 
 ## 2026-07-29 verification record
 
