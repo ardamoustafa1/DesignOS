@@ -20,8 +20,14 @@ const SECTORS = {
     module: 'industries/saas.md',
     theme: 'light',
     style: 'Confident minimalism: generous whitespace, one accent, real product UI as the hero visual. Trust comes from specificity, not decoration.',
-    palette: { accent: '#4F46E5', accentHover: '#4338CA', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F4F4F5', text: '#18181B', muted: '#52525B' },
-    type: { display: 'Inter / Geist / General Sans', body: 'same family', mood: 'neutral, technical, weight does the hierarchy' },
+    // Amber, not indigo/blue — this sector's own module (industries/saas.md) names
+    // "electric blue/indigo" as safe-crowded and explicitly suggests "a warm counter-move"
+    // instead. The old #4F46E5 contradicted that line in its own governing module.
+    palette: { accent: '#B45309', accentHover: '#92400E', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F4F4F5', text: '#18181B', muted: '#52525B' },
+    // Both routes named explicitly, safe listed second — foundations/typography.md
+    // "Type identity": pick for opinion first, and land on the neutral family only if this
+    // brand's own positioning calls for it, not by default.
+    type: { display: 'opinionated: Söhne / Aeonik / Cabinet Grotesk — or neutral (Inter / Geist) only if neutrality is this brand\'s actual positioning', body: 'same family', mood: 'a choice, not a default — see foundations/typography.md § Type identity' },
     effects: ['120-150ms ease-out state transitions', 'one staggered hero entrance ≤500ms', 'screenshot framed with subtle shadow'],
     avoid: ['purple-blue gradient mesh cliché', 'fake logo walls', 'feature-list copy ("Powerful. Fast. Secure.")'],
   },
@@ -60,7 +66,11 @@ const SECTORS = {
     module: 'industries/cybersecurity.md',
     theme: 'dark',
     style: 'Operator-grade dark UI: high signal density, severity semantics carried by more than color, evidence over fear copy.',
-    palette: { accent: '#22D3EE', accentHover: '#67E8F9', onAccent: '#061014', bg: '#090D11', surface: '#101821', text: '#EEF6FB', muted: '#9DB2C4' },
+    // Amber/orange alert tone, not ai-startup's cyan (this palette was byte-identical to
+    // ai-startup's before) — a SOC dashboard's accent reading as "alert-adjacent" fits an
+    // operator surface better than the cool "technical credibility" glow a model-output
+    // product wants; severity still must carry more than color per this module's own line.
+    palette: { accent: '#F97316', accentHover: '#FDBA74', onAccent: '#1A0D00', bg: '#090D11', surface: '#101821', text: '#EEF6FB', muted: '#9DB2C4' },
     type: { display: 'Inter', body: 'same + mono for IOCs/logs', mood: 'technical; caps-tracked eyebrow labels' },
     effects: ['live-feed rows animate once on insert', 'nothing pulses continuously'],
     avoid: ['hoodie-hacker imagery', 'fear-mongering countdowns', 'unsourced compliance badges'],
@@ -120,7 +130,10 @@ const SECTORS = {
     module: 'industries/crm-erp.md',
     theme: 'light',
     style: 'Density is the feature: compact-comfortable rhythm, tables that scan, bulk actions discoverable. Zero marketing softness.',
-    palette: { accent: '#1D4ED8', accentHover: '#1E40AF', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F4F4F5', text: '#18181B', muted: '#52525B' },
+    // Slate/graphite, not fintech's blue (this palette was byte-identical to fintech's
+    // before) — a utilitarian back-office tool reads "zero marketing softness" through a
+    // neutral, not through the same trust-blue a payments product needs.
+    palette: { accent: '#334155', accentHover: '#1E293B', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F4F4F5', text: '#18181B', muted: '#52525B' },
     type: { display: 'Inter 1.2 scale (dense)', body: '14px UI / 16px forms', mood: 'utilitarian, tabular-nums' },
     effects: ['instant state feedback', 'optimistic updates with undo'],
     avoid: ['marketing-page spacing inside the app', 'modal-inside-modal flows'],
@@ -160,7 +173,10 @@ const SECTORS = {
     module: 'industries/food-restaurant.md',
     theme: 'light',
     style: 'Appetite appeal through photography and warmth; the menu and hours findable in one glance on mobile — that is the whole job.',
-    palette: { accent: '#B91C1C', accentHover: '#991B1B', onAccent: '#FFFFFF', bg: '#FFFBF5', surface: '#FFFFFF', text: '#1C1917', muted: '#57534E' },
+    // Burnt terracotta, not media-news's editorial red (this palette was byte-identical to
+    // media-news's before) — "warm, appetizing" is a different job than journalism's
+    // serious authority red, even though both start from the same red family.
+    palette: { accent: '#9A3412', accentHover: '#7C2D12', onAccent: '#FFFFFF', bg: '#FFFBF5', surface: '#FFFFFF', text: '#1C1917', muted: '#57534E' },
     type: { display: 'character serif or script-adjacent display (used once)', body: 'Inter class', mood: 'warm, appetizing' },
     effects: ['minimal — food photos carry it'],
     avoid: ['PDF menus', 'auto-playing ambiance video with sound'],
@@ -200,7 +216,11 @@ const SECTORS = {
     module: 'industries/hr-recruiting.md',
     theme: 'light',
     style: 'Two audiences (candidates + HR buyers) — one warm human layer over a competent-software layer. Real team photos or none.',
-    palette: { accent: '#0369A1', accentHover: '#075985', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F0F9FF', text: '#0C4A6E', muted: '#52525B' },
+    // Warm rose, not healthcare's clinical blue (this palette was byte-identical to
+    // healthcare's before) — this module's own style line asks for "one warm human layer",
+    // which a clinical-blue accent (borrowed from a sector about calming stressed patients)
+    // doesn't carry.
+    palette: { accent: '#BE185D', accentHover: '#9D174D', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F0F9FF', text: '#0C4A6E', muted: '#52525B' },
     type: { display: 'Inter', body: 'same', mood: 'human, direct' },
     effects: ['form progress that never loses input'],
     avoid: ['stock diversity photos', '47-field application forms'],
@@ -210,7 +230,10 @@ const SECTORS = {
     module: 'industries/insurance.md',
     theme: 'light',
     style: 'Simplify without hiding: plain-language coverage, exclusions honestly surfaced near the decision, calculator-first flows.',
-    palette: { accent: '#1E40AF', accentHover: '#1E3A8A', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F8FAFC', text: '#0F172A', muted: '#475569' },
+    // Teal, not manufacturing-b2b's industrial blue (this palette was byte-identical to
+    // manufacturing-b2b's before) — "reassuring" and "industrial precision" are different
+    // registers even though both wanted a cool, trustworthy hue.
+    palette: { accent: '#0E7490', accentHover: '#155E75', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F8FAFC', text: '#0F172A', muted: '#475569' },
     type: { display: 'Inter / Helvetica-class', body: 'same, 17px for policy text', mood: 'reassuring, exact' },
     effects: ['quote-flow progress steps', 'no urgency animation'],
     avoid: ['fine-print burial', 'fear-based imagery'],

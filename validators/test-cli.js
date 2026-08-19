@@ -740,6 +740,21 @@ test('check-aesthetic-slop: P2 violations fail, P3 advisories do not', () => {
   assert.strictEqual(strict.status, 1, '--strict must promote advisories to failures');
 });
 
+test('check-aesthetic-slop: adjective-listing headline caught, ordinary short copy is not (audit finding)', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-slop-adj-'));
+  fs.writeFileSync(path.join(tmp, 'bad.html'),
+    '<!doctype html><html><body><main><h1>Powerful. Fast. Secure analytics for modern teams.</h1></main></body></html>');
+  const bad = spawnSync('node', [path.resolve(__dirname, 'check-aesthetic-slop.js'), 'bad.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.strictEqual(bad.status, 1, 'an adjective-listing headline must fail the run');
+  assert.ok(bad.stdout.includes('slop-adjective-headline'), 'the specific rule must fire');
+  assert.ok(bad.stdout.includes('Powerful. Fast.'), 'the finding must quote the offending fragment');
+
+  fs.writeFileSync(path.join(tmp, 'ok.html'),
+    "<!doctype html><html><body><main><h1>Welcome. Let's get started.</h1><p>San Francisco. New York. Both offices are hiring.</p></main></body></html>");
+  const ok = spawnSync('node', [path.resolve(__dirname, 'check-aesthetic-slop.js'), 'ok.html'], { cwd: tmp, encoding: 'utf8' });
+  assert.ok(!ok.stdout.includes('slop-adjective-headline'), 'a single opening beat, or a two-word city-name pair, must not be flagged');
+});
+
 test('check-aesthetic-slop: BEM card regions are not nested cards (false-positive regression)', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'designos-slop2-'));
   fs.writeFileSync(path.join(tmp, 'a.html'),

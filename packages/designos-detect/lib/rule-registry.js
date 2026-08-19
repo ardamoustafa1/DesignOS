@@ -59,6 +59,18 @@ const PROVIDERS = Object.freeze([
   { id: 'token-contrast', command: 'check-token-contrast.js', runtime: 'node', scope: 'target', capabilities: ['computed-token-contrast'], ruleIds: [] },
   { id: 'motion-source', command: 'check-motion.js', runtime: 'node', scope: 'target', capabilities: ['motion-budget', 'motion-performance'], ruleIds: RULES.filter(rule => rule.id.startsWith('motion-')).map(rule => rule.id) },
   { id: 'aesthetic-slop', command: 'check-aesthetic-slop.js', runtime: 'node', scope: 'target', capabilities: ['named-defaults', 'copy-tells'], ruleIds: ['source-named-default', 'source-fake-proof'] },
+  // Not --strict here deliberately: this repo's own examples/website/goldens carry
+  // pre-existing P3 ceiling gaps (texture/arrival/memorable-moment), and flipping this
+  // provider to fail the build would break `npm run validate` on content nobody has
+  // reworked yet, rather than on anything this PR touched. The findings are still
+  // surfaced in the ledger either way — `designos detect`/`designos audit` were blind to
+  // this rule set entirely before this registration, --strict or not. The CLI's own
+  // `designos review` (bin/designos.js analyzeDesignFile) enforces the §4.5 cap for NEW
+  // work regardless of this provider's exit code — see summarizeReview's ceilingCapCodes.
+  // ruleIds intentionally empty, matching token-contrast above: findings are computed
+  // per-file (not drawn from the fixed RULES catalog), so there is nothing static to list
+  // — test-product-engines.js asserts every declared ruleId resolves in RULES.
+  { id: 'craft-ceiling', command: 'check-craft-ceiling.js', runtime: 'node', scope: 'target', capabilities: ['ceiling-presence-requirements'], ruleIds: [] },
   { id: 'unified-source', command: 'check-registry.js', runtime: 'node', scope: 'target', capabilities: ['registry-static-contract'], ruleIds: RULES.filter(rule => rule.engines.includes('static')).map(rule => rule.id) },
   { id: 'signature-consistency', command: 'check-signature-consistency.js', runtime: 'node', scope: 'target', capabilities: ['brand-signature-lock'], ruleIds: ['signature-drift'] },
 ]);

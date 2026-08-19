@@ -137,6 +137,55 @@ const motionResult = runAbs(motionOnly);
 assert(!JSON.parse(motionResult.stdout).findings.some(f => f.rule === 'ceiling-no-memorable-moment'),
   'a page with only a pointer-follow signature must not need a table too');
 
+/* ---- ceiling-flat-elevation must fire on ZERO shadows, not just a wrong one ----
+   The rule used to require at least one resolvable box-shadow before it would judge
+   anything — a page with rounded/filled surfaces and no shadow anywhere (the flattest
+   possible page, and the actual shape of un-reviewed AI output) produced no finding at
+   all, while a page that tried and got one flat shadow did. Both must fire now. */
+const zeroShadow = path.join(tmp, 'zero-shadow.html');
+fs.writeFileSync(zeroShadow, [
+  '<html><head><style>.card{border-radius:12px;background:#fff;border:1px solid #eee}</style></head>',
+  '<body><main><h1>x</h1><div class="card">no shadow anywhere</div></main></body></html>',
+].join('\n'));
+const zeroShadowResult = runAbs(zeroShadow);
+assert(JSON.parse(zeroShadowResult.stdout).findings.some(f => f.rule === 'ceiling-flat-elevation'),
+  'rounded/filled surfaces with zero box-shadow anywhere must still trip ceiling-flat-elevation');
+
+const plainText = path.join(tmp, 'plain-text.html');
+fs.writeFileSync(plainText, '<html><head><style>p{color:#333}</style></head><body><main><h1>x</h1><p>Just a paragraph, no surfaces at all.</p></main></body></html>');
+const plainTextResult = runAbs(plainText);
+assert(!JSON.parse(plainTextResult.stdout).findings.some(f => f.rule === 'ceiling-flat-elevation'),
+  'a page with no card-shaped surfaces at all must not be told its (nonexistent) elevation is flat');
+
+/* ---- ceiling-uniform-rhythm must catch a repeated card grid even without <section> ----
+   The original rule only looked at >=4 <section> tags — a short hero + one features-grid
+   page (the most common shape, and never wrapped in 4 <section>s) carries the exact same
+   tell (N identical cards, each with its own heading) and used to be invisible to this
+   rule entirely. */
+const cardGrid = path.join(tmp, 'card-grid.html');
+fs.writeFileSync(cardGrid, [
+  '<html><head><style>.card{padding:8px}</style></head><body><main><h1>Everything you need</h1>',
+  '<div class="grid">',
+  '<div class="card"><h3>One</h3><p>a</p></div>',
+  '<div class="card"><h3>Two</h3><p>b</p></div>',
+  '<div class="card"><h3>Three</h3><p>c</p></div>',
+  '</div></main></body></html>',
+].join('\n'));
+const cardGridResult = runAbs(cardGrid);
+assert(JSON.parse(cardGridResult.stdout).findings.some(f => f.rule === 'ceiling-uniform-rhythm'),
+  '3 sibling divs sharing one class, each with its own heading, must trip ceiling-uniform-rhythm without needing <section> wrappers');
+
+const twoCards = path.join(tmp, 'two-cards.html');
+fs.writeFileSync(twoCards, [
+  '<html><head><style>.card{padding:8px}</style></head><body><main><h1>x</h1><div class="grid">',
+  '<div class="card"><h3>One</h3></div>',
+  '<div class="card"><h3>Two</h3></div>',
+  '</div></main></body></html>',
+].join('\n'));
+const twoCardsResult = runAbs(twoCards);
+assert(!JSON.parse(twoCardsResult.stdout).findings.some(f => f.rule === 'ceiling-uniform-rhythm'),
+  'only 2 repeated cards must not trip the rule — 3+ is the actual "grid" tell, not a legitimate 2-up layout');
+
 fs.rmSync(tmp, { recursive: true, force: true });
 
 /* ---- report ---- */

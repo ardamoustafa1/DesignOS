@@ -95,7 +95,7 @@ header.site { padding-block: var(--space-4); border-bottom: 1px solid var(--bord
 
 .result { max-width: 860px; margin: var(--space-12) auto 0; }
 .result[hidden] { display: none; }
-.card { background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-8); box-shadow: 0 1px 2px rgb(22 22 26 / 0.04), 0 16px 40px -16px rgb(22 22 26 / 0.10); }
+.card { background: var(--bg-surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: var(--space-8); box-shadow: 0 1px 2px rgb(22 22 26 / 0.04), 0 16px 40px -16px rgb(22 22 26 / 0.10), inset 0 1px 0 rgb(255 255 255 / 0.6); }
 .route-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; margin-bottom: var(--space-6); }
 .tag { display: inline-flex; align-items: center; gap: var(--space-2); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-text); background: var(--accent-subtle); border-radius: var(--radius-full); padding: 4px var(--space-3); }
 .tag .k { color: var(--text-muted); font-weight: 500; }
@@ -266,7 +266,7 @@ footer.site a { color: var(--text-secondary); }
 const SECTORS = {
   saas: { generic: true, keywords: ['saas','b2b','software','startup','subscription','productivity','tool','platform','workspace'], module: 'industries/saas.md', theme: 'light',
     style: 'Confident minimalism: generous whitespace, one accent, real product UI as the hero visual. Trust comes from specificity, not decoration.',
-    palette: { accent: '#4F46E5', accentHover: '#4338CA', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F4F4F5', text: '#18181B', muted: '#52525B' },
+    palette: { accent: '#B45309', accentHover: '#92400E', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F4F4F5', text: '#18181B', muted: '#52525B' },
     type: { display: 'Inter / Geist / General Sans', body: 'same family', mood: 'neutral, technical, weight does the hierarchy' },
     effects: ['120-150ms ease-out state transitions', 'one staggered hero entrance ≤500ms', 'screenshot framed with subtle shadow'],
     avoid: ['purple-blue gradient mesh cliché', 'fake logo walls', 'feature-list copy ("Powerful. Fast. Secure.")'] },
@@ -290,7 +290,7 @@ const SECTORS = {
     avoid: ['stock photos of smiling doctors', 'medical jargon in CTAs', 'urgency mechanics of any kind'] },
   cybersecurity: { keywords: ['security','cyber','threat','soc','vulnerability','pentest','siem','zero-trust','endpoint','firewall'], module: 'industries/cybersecurity.md', theme: 'dark',
     style: 'Operator-grade dark UI: high signal density, severity semantics carried by more than color, evidence over fear copy.',
-    palette: { accent: '#22D3EE', accentHover: '#67E8F9', onAccent: '#061014', bg: '#090D11', surface: '#101821', text: '#EEF6FB', muted: '#9DB2C4' },
+    palette: { accent: '#F97316', accentHover: '#FDBA74', onAccent: '#1A0D00', bg: '#090D11', surface: '#101821', text: '#EEF6FB', muted: '#9DB2C4' },
     type: { display: 'Inter', body: 'same + mono for IOCs/logs', mood: 'technical; caps-tracked eyebrow labels' },
     effects: ['live-feed rows animate once on insert', 'nothing pulses continuously'],
     avoid: ['hoodie-hacker imagery', 'fear-mongering countdowns', 'unsourced compliance badges'] },
@@ -326,7 +326,7 @@ const SECTORS = {
     avoid: ['template sameness — read brain/originality.md first', 'skill-percentage bars'] },
   'crm-erp': { keywords: ['crm','erp','sales pipeline','internal tool','admin','back office','operations','workflow'], module: 'industries/crm-erp.md', theme: 'light',
     style: 'Density is the feature: compact-comfortable rhythm, tables that scan, bulk actions discoverable. Zero marketing softness.',
-    palette: { accent: '#1D4ED8', accentHover: '#1E40AF', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F4F4F5', text: '#18181B', muted: '#52525B' },
+    palette: { accent: '#334155', accentHover: '#1E293B', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F4F4F5', text: '#18181B', muted: '#52525B' },
     type: { display: 'Inter 1.2 scale (dense)', body: '14px UI / 16px forms', mood: 'utilitarian, tabular-nums' },
     effects: ['instant state feedback', 'optimistic updates with undo'],
     avoid: ['marketing-page spacing inside the app', 'modal-inside-modal flows'] },
@@ -350,7 +350,7 @@ const SECTORS = {
     avoid: ['"only 1 room left!" without basis', 'resort-fee surprises at payment'] },
   'food-restaurant': { keywords: ['restaurant','food','menu','delivery','cafe','recipe','chef','dining','kitchen'], module: 'industries/food-restaurant.md', theme: 'light',
     style: 'Appetite appeal through photography and warmth; the menu and hours findable in one glance on mobile — that is the whole job.',
-    palette: { accent: '#B91C1C', accentHover: '#991B1B', onAccent: '#FFFFFF', bg: '#FFFBF5', surface: '#FFFFFF', text: '#1C1917', muted: '#57534E' },
+    palette: { accent: '#9A3412', accentHover: '#7C2D12', onAccent: '#FFFFFF', bg: '#FFFBF5', surface: '#FFFFFF', text: '#1C1917', muted: '#57534E' },
     type: { display: 'character serif or script-adjacent display (used once)', body: 'Inter class', mood: 'warm, appetizing' },
     effects: ['minimal — food photos carry it'],
     avoid: ['PDF menus', 'auto-playing ambiance video with sound'] },
@@ -374,13 +374,13 @@ const SECTORS = {
     avoid: ['poverty-porn imagery', 'dark-pattern recurring-donation defaults'] },
   'hr-recruiting': { keywords: ['hr','recruiting','hiring','jobs','talent','candidate','ats','careers','payroll','onboarding tool'], module: 'industries/hr-recruiting.md', theme: 'light',
     style: 'Two audiences (candidates + HR buyers) — one warm human layer over a competent-software layer. Real team photos or none.',
-    palette: { accent: '#0369A1', accentHover: '#075985', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F0F9FF', text: '#0C4A6E', muted: '#52525B' },
+    palette: { accent: '#BE185D', accentHover: '#9D174D', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F0F9FF', text: '#0C4A6E', muted: '#52525B' },
     type: { display: 'Inter', body: 'same', mood: 'human, direct' },
     effects: ['form progress that never loses input'],
     avoid: ['stock diversity photos', '47-field application forms'] },
   insurance: { keywords: ['insurance','policy','coverage','claims','premium','underwriting','broker'], module: 'industries/insurance.md', theme: 'light',
     style: 'Simplify without hiding: plain-language coverage, exclusions honestly surfaced near the decision, calculator-first flows.',
-    palette: { accent: '#1E40AF', accentHover: '#1E3A8A', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F8FAFC', text: '#0F172A', muted: '#475569' },
+    palette: { accent: '#0E7490', accentHover: '#155E75', onAccent: '#FFFFFF', bg: '#FFFFFF', surface: '#F8FAFC', text: '#0F172A', muted: '#475569' },
     type: { display: 'Inter / Helvetica-class', body: 'same, 17px for policy text', mood: 'reassuring, exact' },
     effects: ['quote-flow progress steps', 'no urgency animation'],
     avoid: ['fine-print burial', 'fear-based imagery'] },

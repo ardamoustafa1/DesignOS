@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "package": {
     "name": "designos",
-    "version": "2.6.0"
+    "version": "2.7.0"
   },
   "rules": {
     "count": 40,
-    "providers": 8,
+    "providers": 9,
     "source": "validators/rule-registry.js"
   },
   "motion": {

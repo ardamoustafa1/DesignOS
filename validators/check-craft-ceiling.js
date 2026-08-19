@@ -300,8 +300,20 @@ for (const file of files) {
   const resolvable = allShadows.filter(v => !/^\s*var\(/.test(v)).filter(isCastShadow);
   const multiLayer = resolvable.filter(v => layers(v).length > 1);
   const distinct = new Set(resolvable.map(v => v.replace(/\s+/g, ' ')));
+  // A card/panel-shaped surface (rounded corner + a fill or border) with ZERO shadow
+  // anywhere is the flattest possible page — more absent than the single-layer or
+  // reused-token cases below, which at least attempted elevation. Checking
+  // `resolvable.length` before this used to mean a page that never tried had nothing to
+  // compare against and produced no finding at all, while a page that tried and got it
+  // slightly wrong (one flat shadow) did — rewarding not trying. Gate on hasSurfaces
+  // (computed once here, reused by the edge-highlight check below) rather than firing on
+  // any shadow-free file, so plain-text content with no surfaces at all isn't flagged.
+  const hasSurfaces = /border-radius\s*:/.test(css) && /border\s*:|background(-color)?\s*:/.test(css);
   if (tokenOnly) { /* page-level depth rules do not apply to a token layer */ }
-  else if (resolvable.length && multiLayer.length === 0) {
+  else if (!resolvable.length && hasSurfaces) {
+    push(anchor('border-radius'), 'ceiling-flat-elevation',
+      'rounded, filled/bordered surfaces exist but no box-shadow (or --shadow-* token) appears anywhere — zero elevation is flatter than a wrong one. A raised surface is occlusion + key shadow + edge highlight + surface tint (foundations/materiality.md §2).');
+  } else if (resolvable.length && multiLayer.length === 0) {
     push(anchor(allShadows[0].slice(0, 40)), 'ceiling-flat-elevation',
       `every shadow in this file is single-layer (${distinct.size} distinct value(s)) — a raised surface is occlusion + key shadow + edge highlight + surface tint, not one blur (foundations/materiality.md §2).`);
   } else if (distinct.size === 1 && resolvable.length > 1) {
@@ -310,7 +322,6 @@ for (const file of files) {
   }
 
   /* ── P3 · lit edges ──────────────────────────────────────────────────────────────── */
-  const hasSurfaces = /border-radius\s*:/.test(css) && /border\s*:|background(-color)?\s*:/.test(css);
   if (!tokenOnly && hasSurfaces && resolvable.length && !/inset\b/i.test(css)) {
     push(anchor('box-shadow'), 'ceiling-no-edge-highlight',
       'surfaces cast shadows but no inset highlight exists anywhere — real material catches light on the edge opposite the shadow. `inset 0 1px 0 rgb(255 255 255 / .07)` (foundations/materiality.md §3).');
@@ -339,6 +350,31 @@ for (const file of files) {
         push(sections[1].index, 'ceiling-uniform-rhythm',
           `${sections.length} sections share one class signature ("${signature[0] || '(none)'}") — eyebrow → heading → equal cards → divider, repeated, is the uniform-rhythm tell. Vary at least two of width / structure / density / ground between neighbours (foundations/layout.md § Section rhythm).`);
       }
+    }
+    // The >=4 <section>-tag check above only sees pages built from top-level <section>
+    // wrappers. A short landing page (hero + one features grid + footer — the single most
+    // common "MVP" shape, and never >=4 <section>s) can still carry the exact tell the
+    // check above exists to catch: 3+ sibling cards sharing one class, each with its own
+    // heading — "eyebrow → h2 → equal cards", just not wrapped in <section>. Same finding,
+    // reached a different way, so a short page isn't exempt from the one thing this rule
+    // is named for.
+    const cardGroups = new Map();
+    for (const m of src.matchAll(/<(div|article|li)\s+class="([^"]+)"[^>]*>/gi)) {
+      const key = `${m[1].toLowerCase()}.${m[2].trim()}`;
+      const hasHeading = /<h[3-6]\b/i.test(src.slice(m.index, m.index + 400));
+      if (!hasHeading) continue;
+      if (!cardGroups.has(key)) cardGroups.set(key, []);
+      cardGroups.get(key).push(m.index);
+    }
+    for (const [key, positions] of cardGroups) {
+      if (positions.length < 3) continue;
+      // clustered = these are siblings in one grid, not the same class reused in
+      // unrelated parts of a long page
+      const span = positions[positions.length - 1] - positions[0];
+      if (span > 6000) continue;
+      push(positions[1], 'ceiling-uniform-rhythm',
+        `${positions.length} elements share the exact class "${key}", each with its own heading — icon → heading → one-liner, repeated N times in a grid, is the uniform-rhythm tell just as much as repeated <section>s (foundations/layout.md § Section rhythm).`);
+      break; // one finding per file for this path is enough signal
     }
 
     // `(?<![(])` keeps `@media (max-width: 720px)` out of this — a breakpoint is not a

@@ -32,9 +32,10 @@ for (const provider of PROVIDERS) {
   for (const target of providerTargets) {
     const command = path.join(__dirname, provider.command);
     const supportsJson = provider.runtime === 'node';
+    const extraArgs = provider.extraArgs || [];
     const invocation = provider.runtime === 'bash'
       ? { executable: 'bash', argv: [command] }
-      : { executable: process.execPath, argv: supportsJson ? [command, target, '--json'] : [command, target] };
+      : { executable: process.execPath, argv: supportsJson ? [command, target, '--json', ...extraArgs] : [command, target, ...extraArgs] };
     const result = spawnSync(invocation.executable, invocation.argv, {
       cwd: ROOT, encoding: 'utf8', maxBuffer: 1024 * 1024 * 32,
     });

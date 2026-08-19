@@ -107,6 +107,17 @@ const FILLER_COPY = new RegExp([
 
 const PLACEHOLDER_IDENTITY = /\b(acme(\s+(corp|inc|co))?|john doe|jane doe|jane smith|john smith|company name|your company|example@example\.com|user@example\.com|lorem ipsum|placeholder\.com|via\.placeholder)\b/gi;
 
+// FILLER_COPY above is a fixed vocabulary list ("revolutionize", "supercharge", ...) — it
+// catches the hype-startup register but has nothing for the equally common flat register:
+// short capitalized single-word sentence fragments in a row ("Powerful. Fast. Secure.").
+// industries/saas.md names this exact anti-pattern ("Feature-noun headlines... over
+// outcome claims") but nothing executable implemented it — this is structural (shape, not
+// vocabulary), so it generalizes instead of needing its own ever-growing word list. Two
+// single-word fragments is the threshold: "Welcome. Let's get started." only has one
+// (well-formed copy commonly opens with a short beat), while the adjective-listing tell
+// is never just one word.
+const ADJECTIVE_LISTING_HEADLINE = /\b((?:[A-Z][a-z]{2,14}\.\s+){2,})[A-Z]/g;
+
 /* ---------- HTML helpers ---------- */
 
 function visibleText(raw) {
@@ -220,6 +231,10 @@ for (const file of [...walk(path.resolve(target))]) {
     for (const m of vis.matchAll(FILLER_COPY)) {
       push(m.index, 'P2', 'slop-filler-copy',
         `"${m[0].trim()}" is category filler — it would be true of any competitor, so it says nothing about this product (psychology/persuasion.md, brain/originality.md)`);
+    }
+    for (const m of vis.matchAll(ADJECTIVE_LISTING_HEADLINE)) {
+      push(m.index, 'P2', 'slop-adjective-headline',
+        `"${m[1].trim()}" lists adjectives as sentence fragments ("Powerful. Fast. Secure.") — a feature-noun headline over an outcome claim (industries/saas.md, psychology/persuasion.md); say what changes for the reader, not what the product allegedly is`);
     }
     for (const m of vis.matchAll(PLACEHOLDER_IDENTITY)) {
       push(m.index, 'P2', 'slop-placeholder-identity',

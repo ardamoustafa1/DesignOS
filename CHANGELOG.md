@@ -4,6 +4,63 @@ All notable changes to DesignOS.
 
 ## [Unreleased]
 
+## [2.7.0] — 2026-08-18
+
+### Fixed — the Ceiling Contract (CLAUDE.md §4.5) was wired into nothing
+`validators/check-craft-ceiling.js` — the validator built to catch flat, generic, inert
+output — ran in zero places an agent or CI actually consults: not in `bin/designos.js`'s
+`review` command (what CLAUDE.md tells an agent to run before claiming SHIP), not in
+`rule-registry.js`'s PROVIDERS (`designos detect`/`designos audit` never saw it), not in
+`npm run validate`, not in any GitHub Action. Reproduced directly: a deliberately generic
+"2020 SaaS template" sample (indigo accent, Inter, three equal feature cards, zero
+elevation, zero texture, no arrival, "Powerful. Fast. Secure." headline) scored a clean
+100/0 findings through `designos review --min 95`.
+- `bin/designos.js`'s `analyzeDesignFile` now merges `check-craft-ceiling.js`'s findings
+  into the review report; `summarizeReview` caps UI Craft at 89 when any Ceiling-Contract
+  presence finding survives — the exact number CLAUDE.md §4.5 already states but nothing
+  previously enforced. The reproduction sample now scores 84/8 findings and fails
+  `--min 95`.
+- Registered as a `rule-registry.js` provider (deliberately non-strict — this repo's own
+  `examples/`/`website/`/`goldens/` carry pre-existing gaps this registration surfaces for
+  the first time; `designos detect`/`designos audit` now see them).
+- Fixed two vendoring gaps this exposed: `sync-vendor.js`'s file list never included
+  `check-craft-ceiling.js` (the standalone `packages/designos-detect` package threw
+  `MODULE_NOT_FOUND` at runtime), and `check-vendor-sync.js` had no way to catch that —
+  it only diffs files already present in `lib/`. It now derives the required file list
+  from the vendored `rule-registry.js` itself, the same pattern `check-package-boundary.js`
+  uses against `package.json`.
+
+### Fixed — two check-craft-ceiling.js rules missed the zero-effort case
+Both `ceiling-flat-elevation` and `ceiling-uniform-rhythm` existed to catch a page that
+never tried, and both only fired on a page that tried and got it slightly wrong — the
+inversion of what a positive requirement should mean. `ceiling-flat-elevation` required at
+least one resolvable shadow before judging anything, so a page with card surfaces and zero
+shadow anywhere — the flattest possible page — produced no finding. `ceiling-uniform-rhythm`
+only looked at `<section>`-tag pages with 4+ sections; a short hero + one features-grid
+page (the most common "MVP" shape) carrying 3+ identical cards was invisible to it
+entirely. Both fixed and verified against live reproductions, a false-positive check, and
+this repo's own showcase content.
+
+### Added — adjective-listing headlines ("Powerful. Fast. Secure.")
+`check-aesthetic-slop.js`'s filler-copy list caught the hype-startup register
+(revolutionize, supercharge, unlock the power) but had nothing for the equally common flat
+register — short capitalized single-word sentence fragments in a row. `industries/saas.md`
+names this exact anti-pattern by literal example but nothing executable implemented it.
+Added as a structural pattern (shape, not vocabulary) so it generalizes.
+
+### Fixed — `suggest`'s own palette contradicted its own sector modules
+`bin/suggest-data.js`'s SaaS palette recommended indigo (#4F46E5) — `industries/saas.md`
+explicitly names "electric blue/indigo" as safe-crowded and suggests a warm counter-move.
+Changed to amber, contrast-reverified. Separately, 5 pairs of unrelated sectors
+(fintech/crm-erp, ai-startup/cybersecurity, healthcare/hr-recruiting,
+food-restaurant/media-news, insurance/manufacturing-b2b) shared byte-identical accent
+colors; one member of each pair now gets a distinct, contrast-verified hue fitting that
+sector's own written style line. `website/suggest.html`'s hand-synced mirror updated to
+match. `foundations/typography.md`'s SaaS pairing-recipe row recommended Inter/Geist/
+General Sans as if that were the answer, undercutting its own "Type identity" section
+three lines later — added an opinionated-alternative column so the table nudges toward a
+deliberate choice for the single most common brief this system routes.
+
 ## [2.6.0] — 2026-08-18
 
 ### Fixed — P0: `npx github:.../DesignOS init` and every npm/git install were broken

@@ -35,13 +35,25 @@ scale steps on mobile; body never shrinks below 16px.
 - UI labels/buttons: 500. Body: 400. Never 300 below 20px (contrast casualty).
 
 ## Pairing recipes
-| Context | Display | Body | Character |
-|---|---|---|---|
-| SaaS / AI / dev tools | Inter, Geist, General Sans | same family | neutral, technical |
-| Editorial / portfolio | Fraunces, Newsreader, Canela-class serif | Inter/Söhne-class sans | distinctive, warm |
-| Fintech / enterprise | Neue Haas/Helvetica Now class | same | authoritative |
-| Friendly consumer | Rounded grotesque (Nunito Sans class) sparingly | neutral sans | approachable |
-| Data-heavy | any above + **tabular-nums mono for numbers** (JetBrains Mono, Geist Mono) | | precise |
+
+**Every row below is a shortlist of safe starting candidates, not a default to copy
+verbatim.** `Type identity` immediately after this table exists because the SaaS row is
+the one most often taken as a default — Inter/Geist/General Sans is what nearly every
+funded SaaS product has shipped since 2020, so treating it as *the* answer for the single
+most common brief this system routes (`patterns/landing-pages.md`, `industries/saas.md`)
+is exactly how output ends up looking like every other AI-generated SaaS page. Neutral is
+a valid answer only when neutrality *is* the positioning (`industries/saas.md` itself says
+electric blue/indigo and, by the same logic, an unexamined Inter default are
+"safe-crowded") — pick §"Type identity" below's opinionated alternative first, and land on
+the neutral family only after concluding this specific brand's positioning calls for it.
+
+| Context | Display (safe) | Display (opinionated alternative) | Body | Character |
+|---|---|---|---|---|
+| SaaS / AI / dev tools | Inter, Geist, General Sans | Söhne, Aeonik, Cabinet Grotesk, Founders Grotesk — a grotesque with real character, not a system-adjacent one | same family as display, or Inter if the display face is distinctive | neutral only when neutrality is the argument; technical |
+| Editorial / portfolio | Fraunces, Newsreader, Canela-class serif | — (this row already names distinctive faces) | Inter/Söhne-class sans | distinctive, warm |
+| Fintech / enterprise | Neue Haas/Helvetica Now class | GT America, Söhne, Suisse Int'l | same | authoritative |
+| Friendly consumer | Rounded grotesque (Nunito Sans class) sparingly | Gambetta, Reckless, National 2 Condensed for a friendlier display beat | neutral sans | approachable |
+| Data-heavy | any above + **tabular-nums mono for numbers** (JetBrains Mono, Geist Mono) | | | precise |
 
 ## Type identity (the choice that decides whether the page has a voice)
 
