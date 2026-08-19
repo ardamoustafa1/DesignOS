@@ -1,5 +1,15 @@
 # Open Work
 
+- ~~Await owner approval of the 2026-08-19 competitor analysis, central model-gateway architecture, hard quality gate, and MVP→v1→v2 roadmap before writing Studio MVP code.~~ Approved and implemented on 2026-08-19.
+- ~~MVP acceptance target: choose one original DesignOS system, enter a brief, generate a fully animated prototype, run deterministic and independent review gates, and reveal only a passing artifact.~~ Implemented for certified Kiln with a deterministic planner fallback; live operator-provider integration remains `NOT_ASSESSED` until secrets are provisioned.
+- Replace Studio's in-memory, IP-derived demo quota with authenticated durable per-user usage and cost ledgers before production traffic.
+- Provision and test the operator-owned central provider gateway, including timeout, failover, circuit-breaker, budget, and provider-cost evidence.
+- Resolve catalog prose-to-token drift and certify each system before expanding the Studio picker beyond Kiln.
+- Add isolated render/gate workers and durable attempt/audit storage; the MVP process-local implementation is not a distributed production control plane.
+- Close the blind-panel distinctiveness critique with a product-specific inspectable artifact/composition study; do not represent the current mechanical floor as a human design score.
+- Expand coding-agent delivery from the current 19 rules-file export targets to a tested 25+ MCP/runtime adapter matrix; rules-file presence alone does not count as runtime support.
+- Treat the existing 153 `systems/*` packages and their pinned upstream provenance as the compatibility baseline; add composition families and new original systems without deleting NOTICE, license, source-commit, or modification metadata.
+
 - No open Mission 4 implementation item recorded as of 2026-07-29.
 - Re-run `npm test`, `npm run validate:strict`, `npm run test:goldens`,
   `npm run test:lighthouse`, link checks, and the browser final gate after any rule,

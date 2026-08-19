@@ -1,0 +1,195 @@
+{
+  "schema": 2,
+  "generatedAt": "2026-08-19T08:08:03.542Z",
+  "providers": [
+    {
+      "provider": "token-drift",
+      "target": "studio/lib",
+      "command": "check-drift.js",
+      "capabilities": [
+        "tokens",
+        "spacing",
+        "focus-source"
+      ],
+      "ruleIds": [
+        "source-raw-color",
+        "source-missing-focus"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "jsonParseError": null,
+      "output": ""
+    },
+    {
+      "provider": "a11y-basics",
+      "target": "studio/lib",
+      "command": "check-a11y-basics.js",
+      "capabilities": [
+        "semantics",
+        "accessible-names"
+      ],
+      "ruleIds": [
+        "source-clickable-noncontrol",
+        "source-missing-focus"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "jsonParseError": null,
+      "output": ""
+    },
+    {
+      "provider": "token-contrast",
+      "target": "studio/lib",
+      "command": "check-token-contrast.js",
+      "capabilities": [
+        "computed-token-contrast"
+      ],
+      "ruleIds": [],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "jsonParseError": null,
+      "output": ""
+    },
+    {
+      "provider": "motion-source",
+      "target": "studio/lib",
+      "command": "check-motion.js",
+      "capabilities": [
+        "motion-budget",
+        "motion-performance"
+      ],
+      "ruleIds": [
+        "motion-transition-all",
+        "motion-scale-zero",
+        "motion-hover-without-pointer-query",
+        "motion-keyboard-latency",
+        "motion-unbounded-loop",
+        "motion-scroll-unthrottled",
+        "motion-drag-no-capture",
+        "motion-no-cancellation",
+        "motion-no-visibility-pause",
+        "motion-spring-no-reduction",
+        "motion-reduced-motion-missing",
+        "motion-stagger-budget",
+        "motion-interaction-blocked",
+        "motion-enter-exit-symmetry",
+        "motion-transform-origin",
+        "motion-uninterruptible-transition"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "jsonParseError": null,
+      "output": ""
+    },
+    {
+      "provider": "aesthetic-slop",
+      "target": "studio/lib",
+      "command": "check-aesthetic-slop.js",
+      "capabilities": [
+        "named-defaults",
+        "copy-tells"
+      ],
+      "ruleIds": [
+        "source-named-default",
+        "source-fake-proof"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 1,
+      "jsonParseError": null,
+      "output": ""
+    },
+    {
+      "provider": "craft-ceiling",
+      "target": "studio/lib",
+      "command": "check-craft-ceiling.js",
+      "capabilities": [
+        "ceiling-presence-requirements"
+      ],
+      "ruleIds": [],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "jsonParseError": null,
+      "output": ""
+    },
+    {
+      "provider": "unified-source",
+      "target": "studio/lib",
+      "command": "check-registry.js",
+      "capabilities": [
+        "registry-static-contract"
+      ],
+      "ruleIds": [
+        "source-raw-color",
+        "source-clickable-noncontrol",
+        "source-missing-focus",
+        "source-fake-proof",
+        "source-image-dimensions",
+        "source-named-default",
+        "motion-transition-all",
+        "motion-scale-zero",
+        "motion-hover-without-pointer-query",
+        "motion-keyboard-latency",
+        "motion-unbounded-loop",
+        "motion-scroll-unthrottled",
+        "motion-drag-no-capture",
+        "motion-no-cancellation",
+        "motion-no-visibility-pause",
+        "motion-spring-no-reduction",
+        "motion-reduced-motion-missing",
+        "motion-stagger-budget",
+        "motion-interaction-blocked",
+        "motion-enter-exit-symmetry",
+        "motion-transform-origin",
+        "motion-uninterruptible-transition",
+        "signature-drift"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "jsonParseError": null,
+      "output": ""
+    },
+    {
+      "provider": "signature-consistency",
+      "target": "studio/lib",
+      "command": "check-signature-consistency.js",
+      "capabilities": [
+        "brand-signature-lock"
+      ],
+      "ruleIds": [
+        "signature-drift"
+      ],
+      "status": 0,
+      "passed": true,
+      "findingCount": 0,
+      "jsonParseError": null,
+      "output": ""
+    }
+  ],
+  "findings": [
+    {
+      "file": "studio/lib/studio-pipeline.ts",
+      "line": 201,
+      "rule": "slop-eyebrow-inflation",
+      "severity": "P3",
+      "message": "4 eyebrow labels across 6 sections — when every section announces itself, the announcement stops meaning anything; roughly one per three sections earns its keep (foundations/typography.md)",
+      "provider": "aesthetic-slop"
+    }
+  ],
+  "passed": true,
+  "summary": {
+    "runs": 8,
+    "passed": 8,
+    "failed": 0,
+    "findingCount": 1,
+    "bySeverity": {
+      "P3": 1
+    }
+  }
+}
