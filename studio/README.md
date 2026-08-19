@@ -90,19 +90,19 @@ Production v1 must replace the in-memory, IP-derived quota map with authenticate
 
 ## Evidence
 
-- `evidence/browser-gate.json`: final 22-scenario browser gate, keyboard tasks, accessibility tree, Axe, forced colors, text spacing/zoom, and motion modes
-- `evidence/browser-gate.initial.json`: preserved first failing run; the repair history is not hidden
-- `evidence/lighthouse.json`: Lighthouse evidence
-- `evidence/generated-desktop.png` and `evidence/generated-mobile.png`: closing visual states
-- `evidence/scorecard.md`: claims, limitations, blind-review disposition, and final assessment status
+- `studio/evidence/browser-gate.json`: final 22-scenario browser gate, keyboard tasks, accessibility tree, Axe, forced colors, text spacing/zoom, and motion modes
+- `studio/evidence/browser-gate.initial.json`: preserved first failing run; the repair history is not hidden
+- `studio/evidence/lighthouse.json`: Lighthouse evidence
+- `studio/evidence/generated-desktop.png` and `studio/evidence/generated-mobile.png`: closing visual states
+- `studio/evidence/scorecard.md`: claims, limitations, blind-review disposition, and final assessment status
 
 ## Project map
 
-- `app/studio-shell.tsx`: Studio state machine and reveal UI
-- `app/api/generate/route.ts`: request boundary, rejection policy, quota, and cost metadata
-- `lib/studio-pipeline.ts`: planner, Kiln compiler, gate, repair loop, and artifact isolation
-- `tests/studio.test.mjs`: end-to-end contract tests
-- `.openai/hosting.json`: Sites deployment configuration
+- `studio/app/studio-shell.tsx`: Studio state machine and reveal UI
+- `studio/app/api/generate/route.ts`: request boundary, rejection policy, quota, and cost metadata
+- `studio/lib/studio-pipeline.ts`: planner, Kiln compiler, gate, repair loop, and artifact isolation
+- `studio/tests/studio.test.mjs`: end-to-end contract tests
+- `studio/.openai/hosting.json`: Sites deployment configuration
 
 ## Deferred scope
 
