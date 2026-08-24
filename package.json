@@ -1,7 +1,7 @@
 {
   "name": "designos",
   "version": "2.7.0",
-  "description": "The Design Intelligence Operating System for AI coding agents — Claude, Cursor, Copilot, Windsurf, Cline, Aider.",
+  "description": "A universal design-intelligence runtime for Claude, Codex, Cursor, Copilot, Kimi, Hermes and other coding agents.",
   "author": "Arda Moustafa (https://github.com/ardamoustafa1)",
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "playwright": "^1.59.1"
   },
   "devDependencies": {
+    "@rive-app/canvas": "^2.31.5",
     "chrome-launcher": "^1.2.1",
     "esbuild": "^0.25.8",
     "gsap": "^3.13.0",
@@ -30,6 +31,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "svelte": "^5.37.3",
+    "three": "^0.180.0",
     "vue": "^3.5.18"
   },
   "files": [
@@ -110,6 +112,10 @@
     "validate:strict": "npm run validate && node validators/check-aesthetic-slop.js examples/ --strict && node validators/check-aesthetic-slop.js website/ --strict && node validators/check-aesthetic-slop.js goldens/ --strict",
     "validate:contrast": "node validators/check-token-contrast.js examples/ && node validators/check-token-contrast.js website/ && node validators/check-token-contrast.js goldens/",
     "validate:motion": "node validators/check-motion.js examples/ && node validators/check-motion.js website/ && node validators/check-motion.js goldens/",
+    "validate:motion-scene": "node validators/check-motion-scene.js test-cv-site/index.html",
+    "test:motionos": "node validators/test-motionos.js && node validators/test-motionos-engines.js",
+    "test:motionos-matrix": "node validators/test-motionos-catalog-matrix.js",
+    "build:motionos-flagships": "node scripts/build-motionos-flagships.js",
     "validate:slop": "node validators/check-aesthetic-slop.js examples/ && node validators/check-aesthetic-slop.js website/ && node validators/check-aesthetic-slop.js goldens/",
     "validate:ceiling": "node validators/check-craft-ceiling.js systems/ && node validators/check-craft-ceiling.js examples/editorial-portfolio.html",
     "validate:registry": "node validators/check-registry.js examples/ && node validators/check-registry.js website/ && node validators/check-registry.js goldens/",
@@ -132,6 +138,7 @@
     "test:motion-evidence": "node validators/test-motion-evidence.js",
     "test:leader": "node validators/test-leader-features.js && node validators/test-category-leadership.js",
     "test:live-component": "node validators/test-live-component.js",
+    "test:component-ingestion": "node validators/test-component-ingestion.js",
     "test:live-studio": "node validators/test-live-studio.js",
     "test:isolated": "node bin/isolated-rule-eval.js",
     "test:independent": "npm run test:isolated",

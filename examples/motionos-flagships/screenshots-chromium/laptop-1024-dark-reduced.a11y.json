@@ -1,0 +1,319 @@
+{
+  "semantic": {
+    "lang": "en",
+    "title": "MotionOS Spatial Product Stage",
+    "landmarks": {
+      "header": 0,
+      "nav": 0,
+      "main": 1,
+      "aside": 0,
+      "footer": 0
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "Form follows intent."
+      }
+    ],
+    "controls": []
+  },
+  "axe": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.12.1"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "windowWidth": 1024,
+      "windowHeight": 900,
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"eyebrow\">Three.js / physical material</p>",
+            "target": [
+              ".eyebrow"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "69.1pt (92.16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h1>Form follows intent.</h1>",
+            "target": [
+              "h1"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>A real GPU product stage with bounded DPR, pointer response, reduced-motion stillness and disposal on exit.</p>",
+            "target": [
+              "p:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          }
+        ]
+      }
+    ],
+    "passes": 16
+  },
+  "accessibilityTree": [
+    {
+      "nodeId": "2",
+      "role": "RootWebArea",
+      "name": "MotionOS Spatial Product Stage",
+      "ignored": false,
+      "properties": {
+        "focused": true
+      }
+    },
+    {
+      "nodeId": "5",
+      "parentId": "2",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "12",
+      "parentId": "5",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "4",
+      "parentId": "12",
+      "role": "main",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "13",
+      "parentId": "4",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "14",
+      "parentId": "13",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "15",
+      "parentId": "13",
+      "role": "heading",
+      "name": "Form follows intent.",
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "16",
+      "parentId": "13",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "17",
+      "parentId": "4",
+      "role": "image",
+      "name": "Interactive procedural product model",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "19",
+      "parentId": "14",
+      "role": "StaticText",
+      "name": "THREE.JS / PHYSICAL MATERIAL",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "20",
+      "parentId": "15",
+      "role": "StaticText",
+      "name": "Form follows intent.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "21",
+      "parentId": "16",
+      "role": "StaticText",
+      "name": "A real GPU product stage with bounded DPR, pointer response, reduced-motion stillness and disposal on exit.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "3",
+      "parentId": "17",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000002",
+      "parentId": "19",
+      "role": "InlineTextBox",
+      "name": "THREE.JS / PHYSICAL MATERIAL",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000003",
+      "parentId": "20",
+      "role": "InlineTextBox",
+      "name": "Form ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000004",
+      "parentId": "20",
+      "role": "InlineTextBox",
+      "name": "follows ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000005",
+      "parentId": "20",
+      "role": "InlineTextBox",
+      "name": "intent.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000006",
+      "parentId": "21",
+      "role": "InlineTextBox",
+      "name": "A real GPU product stage with bounded DPR, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000007",
+      "parentId": "21",
+      "role": "InlineTextBox",
+      "name": "pointer response, reduced-motion stillness and ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000008",
+      "parentId": "21",
+      "role": "InlineTextBox",
+      "name": "disposal on exit.",
+      "ignored": false,
+      "properties": {}
+    }
+  ]
+}

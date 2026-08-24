@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "vector-automotive",
+  "tokenPrefix": "--vector-automotive-",
+  "requiredTokens": [
+    "--vector-automotive-display",
+    "--vector-automotive-text",
+    "--vector-automotive-mono",
+    "--vector-automotive-ground",
+    "--vector-automotive-surface",
+    "--vector-automotive-raised",
+    "--vector-automotive-ink",
+    "--vector-automotive-ink-2",
+    "--vector-automotive-accent",
+    "--vector-automotive-on-accent",
+    "--vector-automotive-ring",
+    "--vector-automotive-edge-lit",
+    "--vector-automotive-shadow-rgb",
+    "--vector-automotive-elev-1",
+    "--vector-automotive-elev-2",
+    "--vector-automotive-elev-3",
+    "--vector-automotive-grain",
+    "--vector-automotive-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Bodoni Moda",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--vector-automotive-elev-1",
+      "--vector-automotive-elev-2",
+      "--vector-automotive-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--vector-automotive-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--vector-automotive-grain",
+      "feTurbulence"
+    ]
+  }
+}

@@ -27,6 +27,9 @@
  *   node DesignOS/bin/designos.js eval <slug> [--agent cursor] [--brief B-001]
  *   node DesignOS/bin/designos.js case <slug> [--project "Acme"] [--url https://...]
  *   node DesignOS/bin/designos.js doctor
+ *   node DesignOS/bin/designos.js agent-runtime status all
+ *   node DesignOS/bin/designos.js agent-runtime config [--out designos-mcp.json]
+ *   node DesignOS/bin/designos.js agent-runtime serve
  *   node DesignOS/bin/designos.js help
  */
 const fs = require('fs');
@@ -242,6 +245,8 @@ const EXPORT_TARGETS = {
   // checks it, but it is not the thing to rely on.
   codex:       { label: 'OpenAI Codex CLI',                    files: ['AGENTS.md', '.codex/instructions.md'] },
   antigravity: { label: 'Google Antigravity',                  files: ['AGENTS.md', '.agent/rules/designos.md'] },
+  kimi:        { label: 'Kimi Code (portable kernel + runtime)', files: ['AGENTS.md'] },
+  hermes:      { label: 'Hermes Agent (portable kernel + runtime)', files: ['AGENTS.md'] },
   opencode:  { file: '.opencode/rules/designos.md',          label: 'OpenCode' },
   grok:      { file: '.grok/rules/designos.md',              label: 'Grok Build (xAI)' },
   pi:        { file: '.pi/context/designos.md',              label: 'Pi (Inflection AI)' },
@@ -250,6 +255,10 @@ const EXPORT_TARGETS = {
   vibe:      { file: '.vibe/rules/designos.md',              label: 'Vibe Coding' },
   amp:       { file: '.amp/designos.md',                     label: 'Amp (Sourcegraph)' },
   zed:       { file: '.zed/designos.md',                     label: 'Zed AI' },
+  roo:       { file: '.roo/rules/designos.md',               label: 'Roo Code' },
+  junie:     { file: '.junie/guidelines.md',                 label: 'JetBrains Junie' },
+  amazonq:   { file: '.amazonq/rules/designos.md',           label: 'Amazon Q Developer' },
+  continue:  { file: '.continue/rules/designos.md',          label: 'Continue' },
 };
 
 /** Normalize a target to `{ label, files: Array<{ path, frontmatter? }> }` regardless of
@@ -1708,9 +1717,14 @@ switch (cmd) {
   case 'state-visualize': require('./cli/commands/state-visualize').execute(rest, commandContext()); break;
   case 'consistency-hook': require('./cli/commands/consistency-hook').execute(rest, commandContext()); break;
   case 'motion-playground': require('./cli/commands/motion-playground').execute(rest, commandContext()); break;
+  case 'motion-scene': require('./cli/commands/motion-scene').execute(rest, commandContext()); break;
+  case 'motion-assets': require('./cli/commands/motion-assets').execute(rest, commandContext()); break;
   case 'container-tokens': require('./cli/commands/container-tokens').execute(rest, commandContext()); break;
   case 'contrast-apca': require('./cli/commands/contrast-apca').execute(rest, commandContext()); break;
   case 'orchestrate': require('./cli/commands/orchestrate').execute(rest, commandContext()); break;
+  case 'agent-runtime': require('./cli/commands/agent-runtime').execute(rest, commandContext()); break;
+  case 'agent': require('./cli/commands/agent-install').execute(rest, commandContext()); break;
+  case 'system-certify': require('./cli/commands/system-certify').execute(rest, commandContext()); break;
   case 'ai-review': require('./cli/commands/ai-review').execute(rest, commandContext()); break;
   case 'tools': listTools(rest); break;
   case 'help':
@@ -1729,7 +1743,7 @@ function listTools(args) {
   console.log('\n  DesignOS supports these AI tools (use with `export <name>`):\n');
   const groups = [
     ['Core', ['cursor', 'copilot', 'windsurf', 'cline', 'aider', 'agentsmd', 'gemini', 'kiro', 'trae']],
-    ['Extended', ['codex', 'antigravity', 'opencode', 'grok', 'pi', 'qoder', 'rovodev', 'vibe', 'amp', 'zed']],
+    ['Extended', ['codex', 'antigravity', 'kimi', 'hermes', 'opencode', 'grok', 'pi', 'qoder', 'rovodev', 'vibe', 'amp', 'zed', 'roo', 'junie', 'amazonq', 'continue']],
   ];
   for (const [group, keys] of groups) {
     console.log(`  \x1b[2m── ${group} ──\x1b[0m`);

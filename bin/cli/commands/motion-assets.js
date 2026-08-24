@@ -1,0 +1,4 @@
+'use strict';
+const fs=require('fs'),path=require('path');const {buildAssetManifest}=require('../../../runtime/motion/asset-pipeline');
+function execute(args,ctx){const directory=ctx.positionals(args)[0];if(!directory)ctx.fail(`Usage: ${ctx.run} motion-assets <directory> [--max-bytes 4000000] [--out manifest.json]`);const root=path.resolve(ctx.cwd,directory);const report=buildAssetManifest(root,{maxBytes:Number(ctx.argValue(args,'--max-bytes','4000000'))});const out=ctx.argValue(args,'--out','');if(out){const file=path.resolve(ctx.cwd,out);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,JSON.stringify(report,null,2)+'\n');ctx.ok(`Motion asset manifest: ${path.relative(ctx.cwd,file)}`)}else process.stdout.write(JSON.stringify(report,null,2)+'\n');if(report.summary.overBudget||report.summary.unpairedDepth)process.exitCode=1}
+module.exports={execute};

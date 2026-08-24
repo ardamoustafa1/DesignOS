@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "oriel-museum",
+  "tokenPrefix": "--oriel-museum-",
+  "requiredTokens": [
+    "--oriel-museum-display",
+    "--oriel-museum-text",
+    "--oriel-museum-mono",
+    "--oriel-museum-ground",
+    "--oriel-museum-surface",
+    "--oriel-museum-raised",
+    "--oriel-museum-ink",
+    "--oriel-museum-ink-2",
+    "--oriel-museum-accent",
+    "--oriel-museum-on-accent",
+    "--oriel-museum-ring",
+    "--oriel-museum-edge-lit",
+    "--oriel-museum-shadow-rgb",
+    "--oriel-museum-elev-1",
+    "--oriel-museum-elev-2",
+    "--oriel-museum-elev-3",
+    "--oriel-museum-grain",
+    "--oriel-museum-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Cormorant Garamond",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--oriel-museum-elev-1",
+      "--oriel-museum-elev-2",
+      "--oriel-museum-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--oriel-museum-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--oriel-museum-grain",
+      "feTurbulence"
+    ]
+  }
+}

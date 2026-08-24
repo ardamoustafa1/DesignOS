@@ -13,14 +13,14 @@ Propose additions via a module-proposal issue.
 | Required dependencies | 2 (`@jridgewell/trace-mapping`, `axe-core`) |
 | Optional dependencies (browser/evidence features) | 1 (`playwright`) |
 | Registry rules / providers | 40 / 9 |
-| Validated knowledge modules | 74 |
+| Validated knowledge modules | 75 |
 | Industry packs | 24 |
 | Motion recipes / framework stacks | 15 / 6 |
 | Executable adapter combinations | 90 |
 | Full + reduced-motion browser scenarios | 180 |
-| Knowledge graph nodes | 145 |
+| Knowledge graph nodes | 146 |
 | Golden projects | 5 |
-| Component AST directions / CLI command modules | 3 / 33 |
+| Component AST directions / CLI command modules | 3 / 36 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
 | Mission 4 leader features | 18 / 18 implemented |
 | Inspectable pattern atlas | 15 patterns |
@@ -152,6 +152,15 @@ Propose additions via a module-proposal issue.
 - A recorded live-session GIF/video to sit alongside `press/demo.svg` on launch channels
 - External third-party eval runs submitted with organization, blind protocol, immutable
   evidence, and rule-level results under `evals/external/`
+
+## Shipped (MotionOS 2.0 foundation)
+
+- 120 recipe contracts, 12 composed scenes, and 720 compile-verified generated adapters.
+- WebGL2, bundled Three.js, injected Rive, SVG morph, cross-document View Transition,
+  and asset-manifest engines with explicit fallback contracts.
+- Studio scene-graph mounting for editorial, cinematic, and technical compositions with
+  browser-tested reduced-motion suppression.
+- Forced context-loss, route continuity, mount/cleanup, temporal, and 4× CPU evidence.
 
 ## Planned
 - **Published eval results across major models** — the deltas as a living table in

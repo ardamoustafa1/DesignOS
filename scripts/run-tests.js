@@ -25,9 +25,16 @@ const suite = (process.argv.includes('--suite') && process.argv[process.argv.ind
 
 const UNIT = [
   'node validators/test-cli.js',
+  'node validators/test-agent-runtime.js',
+  'node validators/test-agent-install.js',
+  'node validators/test-generation-core.js',
+  'node validators/test-artifact-worker-protocol.js',
+  'node validators/test-system-certification.js',
   'node validators/test-generation-contract.js',
   'node validators/check-modules.js',
   'node runtime/motion/test-runtime.js',
+  'node validators/test-motionos.js',
+  'node validators/test-motionos-engines.js',
   'node validators/test-motion-semantics.js',
   'node validators/test-craft-ceiling.js',
   'node validators/test-system-conformance.js',
@@ -59,6 +66,10 @@ const UNIT = [
 // constraint.js, bin/image-to-code.js, bin/ax-timeline.js) — verified by grepping the
 // chain for those bin scripts, not a guess.
 const BROWSER = [
+  'node validators/test-motionos-context-loss.js',
+  'node validators/test-motionos-route-transition.js',
+  'node validators/test-motionos-catalog-matrix.js',
+  'npm --prefix studio run test:motion-browser',
   'node validators/test-torture-simulator.js',
   'node validators/test-image-to-code.js',
   'node validators/test-ax-timeline.js',

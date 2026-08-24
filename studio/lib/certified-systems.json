@@ -1,0 +1,810 @@
+{
+  "schema": "designos.system-certification/v1",
+  "generatedAt": "2026-08-24T16:55:08.513Z",
+  "systems": [
+    {
+      "id": "agentic",
+      "manifestDigest": "3e1e2b6d0538f5ebe512624f2f27dd9a99891c7616538d0b49f18060e27d5151"
+    },
+    {
+      "id": "airbnb",
+      "manifestDigest": "cf99b8cd92101460c9624ad042064d2b038ab2cbfb21f145531f534c189e2a54"
+    },
+    {
+      "id": "airtable",
+      "manifestDigest": "830001f64e85f8daa5de11d7038d562a3377c4753d461d7f5d44668b9a165d63"
+    },
+    {
+      "id": "ant",
+      "manifestDigest": "164bfccb9592d1e70631f46fadc7a8c20eb5fe39115f13ee10945a22ca9a2882"
+    },
+    {
+      "id": "apple",
+      "manifestDigest": "94c6bb3fbac334462d084ef06b0a1b047762c2ecfe869444415b25bf77522570"
+    },
+    {
+      "id": "application",
+      "manifestDigest": "26806263d9b28b7bbf36f2e48022d712f869029bf546bfe882ea7b8b41df33ec"
+    },
+    {
+      "id": "arc",
+      "manifestDigest": "a9d1b2bf2a3b9d35b358f1f3d181672d6187ad24501e40083ef259ef5d12340a"
+    },
+    {
+      "id": "artistic",
+      "manifestDigest": "8fb690e9d65c5cd50ce3b2388fbb922d0e626f463c9141f5ce605bee65fd3835"
+    },
+    {
+      "id": "aster-ledger",
+      "manifestDigest": "45c8819021efc18f290c9d52321d395a1169c246c7c11ab18d39de8e2f54e488"
+    },
+    {
+      "id": "atelier-zero",
+      "manifestDigest": "f240bd00e9f5d6a8387976b64f62e815aade06e25dd1a56e8294ccc88eaef846"
+    },
+    {
+      "id": "atlas-editorial",
+      "manifestDigest": "61068c82eb7f0b5eeabebc396fb2878844c05902309377dae0f88954050ebfe0"
+    },
+    {
+      "id": "beacon-ops",
+      "manifestDigest": "17d8cdb8c87d8eb2631e535db0be2e5568d95969123d08deed3751e609497cb1"
+    },
+    {
+      "id": "bento",
+      "manifestDigest": "cd9b0db6b46d0816fb1bda38e2c037cdccf2482fd6c16072ac51d655fa3342b2"
+    },
+    {
+      "id": "binance",
+      "manifestDigest": "1826ca3da1b14d6a163652166e9f91427861535faef5dc52be78dcbce82e3e51"
+    },
+    {
+      "id": "bmw",
+      "manifestDigest": "0c731c6fc05591253d80bb5ef489cf248557e60811b7cced81e43af876d180c4"
+    },
+    {
+      "id": "bmw-m",
+      "manifestDigest": "8d02185fe6507461505086d712a65dabef51836ab0c5bb8a0e797fffe359879a"
+    },
+    {
+      "id": "bold",
+      "manifestDigest": "b516061921b8b72de2c5df2b6af3bdb6ea8f678a91a1148550517f4a31f2dade"
+    },
+    {
+      "id": "boreal-health",
+      "manifestDigest": "a54b0e1133930c0590f4c0154a53917639dce717d6d6ec09b0635355867189d5"
+    },
+    {
+      "id": "brutalism",
+      "manifestDigest": "6ddaa68afa679bb7ff448877d5c1abfd90aad16541f268245f081329a68698ee"
+    },
+    {
+      "id": "bugatti",
+      "manifestDigest": "eefaecb69094e393802b13f9734615c825be41ceefeba66680db19c7c5611e7b"
+    },
+    {
+      "id": "cafe",
+      "manifestDigest": "6fa4825674cd7b149a84bc098b77494593fa564731fe89d35fa178a1597e2917"
+    },
+    {
+      "id": "cal",
+      "manifestDigest": "defb8bbd012f9e9c4b08d2d5c3e3c14e730779a720d0a7cca4a601820fcaa49b"
+    },
+    {
+      "id": "canva",
+      "manifestDigest": "cae568af9fa58f6963feb36f442b93f67c2caa9d4e9d376a413180819b91016a"
+    },
+    {
+      "id": "cinder-commerce",
+      "manifestDigest": "8557c55723fccf312549e639aff43a36e43c9b9f4765066c609736fcbda12391"
+    },
+    {
+      "id": "circuit-developer",
+      "manifestDigest": "31e0a74219a038146fba1811fc31e10af968cacd73129d9674aeef5536a3e86d"
+    },
+    {
+      "id": "cisco",
+      "manifestDigest": "1ffed3072a47334c8ac4324343bb637c3ab3ffec8e84427269b1b8ff9f57e6a0"
+    },
+    {
+      "id": "claude",
+      "manifestDigest": "8a34ea1a515ec54449bd2340b563719e1a9fa6ad7d44db9e6c0576ed8d622d9c"
+    },
+    {
+      "id": "clay",
+      "manifestDigest": "724980fe10c9f9bdef9a2943d0e174ef86c8f7dd4187a7a1a8f199962ebf2a1c"
+    },
+    {
+      "id": "claymorphism",
+      "manifestDigest": "fb459988988631288fe6881b27bc1353fce8c5069232580b28e65102ebf56291"
+    },
+    {
+      "id": "clean",
+      "manifestDigest": "c83335557c680f818c26946ad14745f4d0bbda60ca6d8d587ed6183d06e4b162"
+    },
+    {
+      "id": "clickhouse",
+      "manifestDigest": "e2d7a6bbd7e929bfc4c05e436ece3c0a99f59bacb879aa32838d3d90e2df8bfa"
+    },
+    {
+      "id": "cloudflare-kumo",
+      "manifestDigest": "54d736a75f15dddc9030df8bf3aea12f901bae8dbfeff2bfb687b69ba2ca9e31"
+    },
+    {
+      "id": "cohere",
+      "manifestDigest": "7f5a3781cc2fa26330c279b05e630492668b57e911299d4c73e00e1c1b5154c2"
+    },
+    {
+      "id": "coinbase",
+      "manifestDigest": "6849b4214ddebb2111f9b44663e3a671c026311deb7241a5e7eb61b31892a47a"
+    },
+    {
+      "id": "colorful",
+      "manifestDigest": "d0999f55bb153f18edb5d43027abb48bede2e2e646f68547f4bfc5fd968e7d15"
+    },
+    {
+      "id": "composio",
+      "manifestDigest": "fb32064b5f6c111934b3b34509038a6d2ffc298e49c4a8f194e4c7199dd2176b"
+    },
+    {
+      "id": "contemporary",
+      "manifestDigest": "4acf692c8354471c8de3653b316204feb001c7f8d599aee50e2c588f6334b020"
+    },
+    {
+      "id": "copper-studio",
+      "manifestDigest": "12a1b974cf6bc0d708828a3d0b94838c192ded82d8757f378c85980566d84b6c"
+    },
+    {
+      "id": "corporate",
+      "manifestDigest": "92f0b3539a83d0a5ba8eab732ad26389392a9799444fb937f134d155a83dfd9c"
+    },
+    {
+      "id": "cosmic",
+      "manifestDigest": "4fb03e8436595b226fe97f15564de9661226f1977858824855806811188303e7"
+    },
+    {
+      "id": "creative",
+      "manifestDigest": "d614ca6abaa197f1747a78c8b1469d654042e7d1e0c93014165f815ea8eebf13"
+    },
+    {
+      "id": "cursor",
+      "manifestDigest": "1e00e31131e47c6094fe268fdf78bcbfed88d426092d5d4688ce5ed6bca8dfcf"
+    },
+    {
+      "id": "dashboard",
+      "manifestDigest": "d64a330461eb0d314c751c46d6aa53aef142f0c3f764ed7399407e9e0e96ce04"
+    },
+    {
+      "id": "default",
+      "manifestDigest": "c949a5c65fa0c16d90e62cf05973ce48c76256458447e207f920ffdfaf2d7ad1"
+    },
+    {
+      "id": "delta-civic",
+      "manifestDigest": "3d856460292935c086479dacbb3255e34f8ee6f6b44db267b6a01d5f4dda7134"
+    },
+    {
+      "id": "discord",
+      "manifestDigest": "f5cf490790361a4869ab44bcff8ac64a71ac50c2761a082e891aacf02db96d6b"
+    },
+    {
+      "id": "dithered",
+      "manifestDigest": "c431f321b62f1e20f6250700351bb6335ab65232ab76a6a060f4aeeef6185ab9"
+    },
+    {
+      "id": "doodle",
+      "manifestDigest": "822a39b10b87aee072ea0206b44b282ed827c74112e0b451f1b93367dadde694"
+    },
+    {
+      "id": "dramatic",
+      "manifestDigest": "bc1585bca1a52b63db92af99f2777175dbb0d339de6abde77b91c258398d4ed6"
+    },
+    {
+      "id": "dune-luxury",
+      "manifestDigest": "c6a2b2fd501b8f8f1f5ba22644bb5fb713fb4ad70d9aeff6fd880b0fcd2f23c3"
+    },
+    {
+      "id": "duolingo",
+      "manifestDigest": "88008d1814f1a227ce054feb254a08184ed12cc92f9ebce5c5385fd75bf92708"
+    },
+    {
+      "id": "echo-research",
+      "manifestDigest": "660c7e541680b170dfdb73f42103175560c23538f93ce6b9c26b505222dc630a"
+    },
+    {
+      "id": "editorial",
+      "manifestDigest": "e035b96e6d16d6016504e5f7e4d18664b2ee134752c9c7e7833408eeec9ea577"
+    },
+    {
+      "id": "elegant",
+      "manifestDigest": "33fed6eaf12e7f1954358d1de7be0106e5112febf15f78528494dd39a9248671"
+    },
+    {
+      "id": "elevenlabs",
+      "manifestDigest": "a04f4ee18c400a514eefba7d29567336a7344613699c64d9e3c90e200607574d"
+    },
+    {
+      "id": "ember-culture",
+      "manifestDigest": "f7b792d3d8faf728efbe0fed7127ca552600e040a78e3096f469929a60f94ba5"
+    },
+    {
+      "id": "energetic",
+      "manifestDigest": "91de1d1b0c1016f2e6d3d72c6aa19ecc97a25ebc85b15cf6081e871ecb501061"
+    },
+    {
+      "id": "enterprise",
+      "manifestDigest": "43f63010953c1a5bba2e6f7b5e49e5d140abdad6406afa0e71b574fb82af2447"
+    },
+    {
+      "id": "expo",
+      "manifestDigest": "8e57d2c819c0295815fc0f6c4ea094d26a3e4d6848b7a08b07c6618da506c71d"
+    },
+    {
+      "id": "expressive",
+      "manifestDigest": "f34ea3945a547d4e25a375a34261032ae6e1a3901738ea0ff7fd9a68ea3dd458"
+    },
+    {
+      "id": "fantasy",
+      "manifestDigest": "2cc190c749bf9656fde1cb052f15f3781fd402b827ba0d585f67caf733a3eeb2"
+    },
+    {
+      "id": "ferrari",
+      "manifestDigest": "9c2dba2d2cd8ca2d1fa641ec152605564e3a339b5c8a78be0f295ae338afd693"
+    },
+    {
+      "id": "field-notes",
+      "manifestDigest": "b34f15fcc7f691b494d0a0236cbe45f5afaf9cc612777d4ce994ccb21a349b43"
+    },
+    {
+      "id": "figma",
+      "manifestDigest": "768fe073e1e63a989f7d8149b94856d78105d898773988eb74d80dbf013522a4"
+    },
+    {
+      "id": "fjord-travel",
+      "manifestDigest": "0814f7e0d83733ea53323c3344edcb786eb384041cb50354dca1d5e7fd6ae94f"
+    },
+    {
+      "id": "flat",
+      "manifestDigest": "f2cca7313a9e1332c0b7d8b531699b1d404d5ee6236fa3aff9568d34175de50a"
+    },
+    {
+      "id": "framer",
+      "manifestDigest": "25dadd21f31e210422d9496b9e44cf0a8adf673afa77509fdd73f21f53e6ef3d"
+    },
+    {
+      "id": "friendly",
+      "manifestDigest": "d3b53878b90d38f69c4405e9d586ec6874769f2da572b722246982ca6a77bedb"
+    },
+    {
+      "id": "futuristic",
+      "manifestDigest": "20c6223ef222b7127293ef3147165eec6304e1ba89776f365122326e0da4c8e6"
+    },
+    {
+      "id": "github",
+      "manifestDigest": "afd412f6bdec6c3834bce133c855088b325afc1c19fe07ebf42f31eabebeb6f3"
+    },
+    {
+      "id": "glacier-data",
+      "manifestDigest": "383f0b76ec0ab0d40024a71a138c9a3a4aa8d7522bb2c14d5c62c30cc4843b83"
+    },
+    {
+      "id": "glassmorphism",
+      "manifestDigest": "873f12450bf022cfaed509770eabeb19a839bef4d099f22841439db4af1034c4"
+    },
+    {
+      "id": "gradient",
+      "manifestDigest": "30b1094b5cc50cc292b13719a914fa808ae3a7bea595b9fef92018fb318890a0"
+    },
+    {
+      "id": "grove-learning",
+      "manifestDigest": "08f2d33482222774fb40f00b5ab054e0354a50fcf52e93436a8ef32e78d03e8f"
+    },
+    {
+      "id": "harbor-legal",
+      "manifestDigest": "5b2d1d39417b7279d642479d1e09d14a4e0c9cd21a337d0b05c4eb7561030db0"
+    },
+    {
+      "id": "hashicorp",
+      "manifestDigest": "db251ecc29c2b5b5d2e7bf8a33bef0589e2391f8c427ac898392bcbe55efd44e"
+    },
+    {
+      "id": "hearth-hospitality",
+      "manifestDigest": "5e611e1939865f2fa71d26bbeed49031f427965a5da3ad725ace94b1620e5d35"
+    },
+    {
+      "id": "hud",
+      "manifestDigest": "8fca051ec8e0d9d95097009a9257945f461448106f66b666c1d0f1162d9ca887"
+    },
+    {
+      "id": "huggingface",
+      "manifestDigest": "18de77e0f679a7aeaac9e64e72f5e3abe5adaf4b390d8e682a5548369e95f9a2"
+    },
+    {
+      "id": "ibm",
+      "manifestDigest": "98b6c725d9c04699e577a54777c0694b116ce00a101a833d9058e1ba05bb8bbd"
+    },
+    {
+      "id": "inkstone-publishing",
+      "manifestDigest": "22433f0facc69ead04935370fac06ff84d22cad8510a9858d2e96f1e259215d3"
+    },
+    {
+      "id": "intercom",
+      "manifestDigest": "b3ebf16246be2b6dbb2052cd63135507b059c0c3dd18ea07b8948431f37ffdb7"
+    },
+    {
+      "id": "ion-analytics",
+      "manifestDigest": "e54ec33612c0dc6d21693735dee2b9807ea2b12ab3b69fef43f97375f7a85c98"
+    },
+    {
+      "id": "juniper-climate",
+      "manifestDigest": "02a8bb49576ffc66de14bb7425e3d18f6726b380ded51519f8af1e1b172d9549"
+    },
+    {
+      "id": "kami",
+      "manifestDigest": "9c8fe5fd4f2ed960d4069f11bcdfd0f561848742d73366b3d246835f158bd894"
+    },
+    {
+      "id": "kestrel-security",
+      "manifestDigest": "273be440ea926df8b14bc351c34424e418582dd5c7e49e9baa854f6c9d163192"
+    },
+    {
+      "id": "kiln",
+      "manifestDigest": "2da3b366f00f14ae28c689bb332d7237a6b81a084549b7a3ceda3243e7a83136"
+    },
+    {
+      "id": "kraken",
+      "manifestDigest": "0178cac71da7f4c05605a66a2a9b0d3d80692746ba89ad6ba886688777105557"
+    },
+    {
+      "id": "lamborghini",
+      "manifestDigest": "47cb64ef3c4dec0281a0cd8cace32427498c5c672ff45a8c541c4f188455f2b0"
+    },
+    {
+      "id": "lattice-ai",
+      "manifestDigest": "aad1a2831bd5e8e1db650b90ed9bb4077cbb85ae8b19c6e7bc318a9ca972f1a1"
+    },
+    {
+      "id": "levels",
+      "manifestDigest": "9a8d38448e33fd4a0b944df54c3dfef68ddd213abdf2f432b30309023734fac1"
+    },
+    {
+      "id": "linear-app",
+      "manifestDigest": "b5f38f34ea9783a4f03bfdfccfd2676f24c87db3caacdd66cb6b8480dbc56c7d"
+    },
+    {
+      "id": "lingo",
+      "manifestDigest": "50243ee132fe09a8eea577b3c250e3287629546e66407dfc96187971334782ba"
+    },
+    {
+      "id": "loom",
+      "manifestDigest": "6d7c41bc917088c78e07f891585b1eb723ab51d2ba55296431774063f0fa978e"
+    },
+    {
+      "id": "loom-creator",
+      "manifestDigest": "a45b1db5cdedbc98c9803910644e2d9a778fcc415662d387a594dc0c00613765"
+    },
+    {
+      "id": "lovable",
+      "manifestDigest": "dd83701a8d1336c22581ca7c76ab586d86362ba8ff7343838e8a7c5eddfacdb9"
+    },
+    {
+      "id": "luxury",
+      "manifestDigest": "f09ac8c3647648cbbe344b11e12c36c10a06aceba0983ae3d2acf8f3e484504d"
+    },
+    {
+      "id": "mastercard",
+      "manifestDigest": "5c9a013e82f4fe8be5fa8e998a63b9e732fc37513f63e0eca8ecc7f152d24fbe"
+    },
+    {
+      "id": "material",
+      "manifestDigest": "056e603e7b1511737f2dd43e99080a4fc8960133cfc192b578b64eab103ef3d2"
+    },
+    {
+      "id": "meridian-finance",
+      "manifestDigest": "479974333d82c2ec70110fedcd1cc2d70d82480efc3c0b91ae6495cd33187716"
+    },
+    {
+      "id": "meta",
+      "manifestDigest": "9b55733c3e84158c36c73c8e6c3515f1e7c572c24011b1ec9a21a1c9baea9218"
+    },
+    {
+      "id": "minimal",
+      "manifestDigest": "9131ed10e5dda21ee6058a3607f311e410548c2d810a9c30036f0e2fa0e2804e"
+    },
+    {
+      "id": "minimax",
+      "manifestDigest": "e6155d25f632e4bd03e60d472c6c0825be84fb4a0587eec38c26b4307db18f62"
+    },
+    {
+      "id": "mintlify",
+      "manifestDigest": "da2625be7d01f9efd895525e0c7696f88a4ca0b023df7f77a68bb3ebb843f6f4"
+    },
+    {
+      "id": "miro",
+      "manifestDigest": "ea52a1055d07025779284ab3c40391932dc80367fe703b1df83992a8081f1055"
+    },
+    {
+      "id": "mission-control",
+      "manifestDigest": "eb78e4de5b24abb69073f3cc089fd77b96c9db80ad2e1de3178f4b6141dc052d"
+    },
+    {
+      "id": "mistral-ai",
+      "manifestDigest": "8e487ff049a51d2d64e63ed6eb52620e6587bd202f7316ea0963b97a6fbe4ee5"
+    },
+    {
+      "id": "modern",
+      "manifestDigest": "41575f9744c46674ac41eeaf02050b4482d28097c7d32fbba585b0651448f3e9"
+    },
+    {
+      "id": "mongodb",
+      "manifestDigest": "c56240d5009580e08f267a4389ebb4ca31e42d3c827d2ace71875837c29e55ab"
+    },
+    {
+      "id": "mono",
+      "manifestDigest": "b8b071cd65a7fc82cbd0f4aa87dcecfaf991c508b313940387dbe6c3e8b6ea17"
+    },
+    {
+      "id": "monolith-architecture",
+      "manifestDigest": "c3be42948260f1b1fb48f7fbed5b05f31808a305b95e07546ab111d799121a74"
+    },
+    {
+      "id": "neobrutalism",
+      "manifestDigest": "1c916b3bd429b6229c681e461655d999855dc08f7711c381a38be47122a267f5"
+    },
+    {
+      "id": "neon",
+      "manifestDigest": "8dafc9a2454b46d5e1fb3491e69442ca4216d987fc231608b6873369c97968ce"
+    },
+    {
+      "id": "neumorphism",
+      "manifestDigest": "274e99a163f5789308389c00510d1478df0b90871ce8ca7179c4cf1ee56208ff"
+    },
+    {
+      "id": "nightjar-audio",
+      "manifestDigest": "85e3caba00cc4013941dde930ece3bcf685a5601e9c63d7035087f96735f896d"
+    },
+    {
+      "id": "nike",
+      "manifestDigest": "03a913ea9d27bcd5a9f287bb27162d735a81e4edd16f9ceb56dc616b7dd296c3"
+    },
+    {
+      "id": "nimbus-cloud",
+      "manifestDigest": "aaac2225fb48b2c9d8f2e5726bcdf8d47398246aff899697c18d50a66ef8a701"
+    },
+    {
+      "id": "notion",
+      "manifestDigest": "dfe2b00ea052070d536fa810a8d32b2107d9dded8a600b189eb76e192f67836f"
+    },
+    {
+      "id": "nova-science",
+      "manifestDigest": "78d7396a0424b47babab2112a000ca8afd12731b560f7f25dc98bf23d582e66b"
+    },
+    {
+      "id": "nvidia",
+      "manifestDigest": "f6a202a0f5a7b1b81405a0b798baf71a34f023ee2918839a090fc791825465a2"
+    },
+    {
+      "id": "ollama",
+      "manifestDigest": "be46c31218be3825efcb0bdab972e5c4a19bfaafa7e391d4fdd41494872c79a1"
+    },
+    {
+      "id": "openai",
+      "manifestDigest": "cac0a5bd2e7ef118bab64ba4abda592807325cb02278dda99a55a6e59617ab03"
+    },
+    {
+      "id": "opencode-ai",
+      "manifestDigest": "fd9c2590b56aed4e9472ae3b9f593b450801c98d8989c2ec9664075333b3f34f"
+    },
+    {
+      "id": "orchard-food",
+      "manifestDigest": "03cd031cbbe0ef0d92cb41f601202ea489486add4e66a9e08d10a9eaefeb9ff2"
+    },
+    {
+      "id": "oriel-museum",
+      "manifestDigest": "a70278e993d3dfa7b4d326e44d759e7e4ffbdf2740f9b7642b94dcc59cce1ae1"
+    },
+    {
+      "id": "pacman",
+      "manifestDigest": "62efcd8902836a47aa1a39455100e8f540e5cfe1e8cb8f602358dee401e13703"
+    },
+    {
+      "id": "paper",
+      "manifestDigest": "41d89b93edfb3fd51c4c333e4c7cb454cd4c3d73c86bc77335d8a096be4784d2"
+    },
+    {
+      "id": "perplexity",
+      "manifestDigest": "6ea72bc60db55ffee96b329a120df8efd7846348920a1a2520eb01cdf890a187"
+    },
+    {
+      "id": "perspective",
+      "manifestDigest": "02c2c748251ec6aefcda9c5a6fee191b7bf8ae0f7dc6aab1a54269f45a03bdde"
+    },
+    {
+      "id": "pinterest",
+      "manifestDigest": "ae4ef8d1919baebffbc01e762b387ffae0f368c245223afd3bd3fe145cd0371a"
+    },
+    {
+      "id": "playstation",
+      "manifestDigest": "dd27c46bcf2701a278cca9ee80a5daa7289237fda91a5c94d188bbaa4f51736d"
+    },
+    {
+      "id": "posthog",
+      "manifestDigest": "f091bb517bf3b00fc4264f09378d94d2692fd2b20cbabee0618f121a634e8785"
+    },
+    {
+      "id": "premium",
+      "manifestDigest": "185b77b1a12640ef327b042bca1db4dace527dd6d2c138de9b6a5d715068861b"
+    },
+    {
+      "id": "prism-media",
+      "manifestDigest": "d158f3e336e046f0063fabcb99f70c1d5df521e6a85a7cda0b7add3470d652f6"
+    },
+    {
+      "id": "professional",
+      "manifestDigest": "cce2b4e26c3507aeec362538e55a94e727e83061217deb5a5453ae0fee199fe8"
+    },
+    {
+      "id": "publication",
+      "manifestDigest": "13aaa71e1285253dfb6cdb66dcb48dfcb25b7f89ffd8b2fd87426e4742915211"
+    },
+    {
+      "id": "pulse-sports",
+      "manifestDigest": "4f75e39e2d40c3194ed4ea8334e3adf6d175b99b0b523c15fe8d41ecdc339131"
+    },
+    {
+      "id": "quartz-industrial",
+      "manifestDigest": "19ac28c49da2f9eb48ee53ceeb9ad82f980acfd12b18672930ee37c2d131384e"
+    },
+    {
+      "id": "raycast",
+      "manifestDigest": "4143e49033bbf2b179ab5ec688556eb6d5bc5245b6eed6635572f54d315d5678"
+    },
+    {
+      "id": "refined",
+      "manifestDigest": "029a9e73400a51361ae888e41a91155e7b382577b62b8043a47fb8eea1b7c6b0"
+    },
+    {
+      "id": "relay-mobility",
+      "manifestDigest": "9ad261748dd8009ec18dc661e38c9be992099d37e86b8d7efefcc72884770f9c"
+    },
+    {
+      "id": "renault",
+      "manifestDigest": "9193de6849dbffa1d1fd97f6d4547812ab203cacd4807cd7c1cad60ded3b579e"
+    },
+    {
+      "id": "replicate",
+      "manifestDigest": "e824ee11b6430480f25d69b58a7578f954b66ae20869bfee208b975a3019fa41"
+    },
+    {
+      "id": "resend",
+      "manifestDigest": "6a26eba8a079eac16bcd1868be36c8c3897b5ea1640b01b5a01f1a072892aaa0"
+    },
+    {
+      "id": "retro",
+      "manifestDigest": "0a9601c14466d5f98bc91dbd9d2f75a4db7ada63d7063fed9990e24eb77ade15"
+    },
+    {
+      "id": "revolut",
+      "manifestDigest": "0063c9035617416dc6cc191f9ce6a8341067c9c079dae8ccfae4b616b63aa2a4"
+    },
+    {
+      "id": "rook-gaming",
+      "manifestDigest": "c396220edfdc73639f18ff880011e88a60327ffefa8758afb546eeeb08b4c564"
+    },
+    {
+      "id": "runwayml",
+      "manifestDigest": "de7f9890f57ed59171e932d60e217a70ac31d100c10a1db52fca2d90b739e5c8"
+    },
+    {
+      "id": "saffron-retail",
+      "manifestDigest": "77c1860006b3f3db2d1202eadbdaea7a44619e494d9ef76a2eff9c1fd9f93d58"
+    },
+    {
+      "id": "sanity",
+      "manifestDigest": "976d0eba56ddb8edca32ebf5e59ba2234f6f809bd00829a43a133fac1c0e143b"
+    },
+    {
+      "id": "sentry",
+      "manifestDigest": "38a08821ee3fd689ca09a8db85904bd573a1071515858badfc91536c767d7885"
+    },
+    {
+      "id": "shadcn",
+      "manifestDigest": "34acc684742720e3c71055df59bd50f24d3947eec6e5426b259b912d383cc877"
+    },
+    {
+      "id": "shopify",
+      "manifestDigest": "5e38642503227b6dc8052949bbf4264e628a98222fb70493da212c0b7f9ee504"
+    },
+    {
+      "id": "simple",
+      "manifestDigest": "a4443a6dc3831c56b1a00d6c50c48b22ce55a8c1a6bc71e44ad177c42da92b5b"
+    },
+    {
+      "id": "skeumorphism",
+      "manifestDigest": "17307e7c900d948ac119a3b11714629deb26c90e2286df78a520f26cf25ef4d1"
+    },
+    {
+      "id": "slack",
+      "manifestDigest": "0a0a9524960253b4098bd9db24cd742a249010cea7680d63131409edae8eb72e"
+    },
+    {
+      "id": "sleek",
+      "manifestDigest": "0be3dd8b3a54a7920b654e3b97f4e1c728848e16f4529a99f170a0f444a6a4ca"
+    },
+    {
+      "id": "solace-wellness",
+      "manifestDigest": "9aed1b2958168a499b9f58f9ebc09c9c256d299182c57f0e5bc62c51c997c60d"
+    },
+    {
+      "id": "spacex",
+      "manifestDigest": "4201f4287b5a380dff4e359fcc7fb1c8407c1ea7e025a9c0233ab315197d0cfe"
+    },
+    {
+      "id": "spacious",
+      "manifestDigest": "2cfecb4b6b34752b5b288a14310806493440f8d4726c926839629b7a374b9d66"
+    },
+    {
+      "id": "spotify",
+      "manifestDigest": "66aa49b1c4fbb430a0f6175d52b301cdb664a907e4243026c72cfb7acb0538f8"
+    },
+    {
+      "id": "starbucks",
+      "manifestDigest": "ad192f915202e82b02829cf473f3c15276cb788875b576156374e3fce23342bb"
+    },
+    {
+      "id": "storytelling",
+      "manifestDigest": "adb10ee1ae8196d3873e38a5ecf7848e07f7edeb2b030d02ec79aeec362f6ac6"
+    },
+    {
+      "id": "stripe",
+      "manifestDigest": "e839801d006ed31bd6c170235e4edde683df82cbda9988ba17e27e09aec93d38"
+    },
+    {
+      "id": "supabase",
+      "manifestDigest": "28f49d32c14d0241a90f0f09212fc6580e945ca6c5df44f6bf9543ce6d1f06bc"
+    },
+    {
+      "id": "superhuman",
+      "manifestDigest": "3e68b22686c5baa4760c836c10e66e97f04df23f03f666efe68725796e6af98a"
+    },
+    {
+      "id": "terrain-outdoors",
+      "manifestDigest": "ee7772834efaf14fedde5628a18e27ce118943c7be11a8b0ae7a2b546a8e7858"
+    },
+    {
+      "id": "tesla",
+      "manifestDigest": "878b46afd504a32d4201ea978c1615f08a9f9d4c8d04a1b6ad45ca3f781015a4"
+    },
+    {
+      "id": "tetris",
+      "manifestDigest": "11edc5d41acee4fda1b3abcd2746ced42bf1b22d2c78e1f611cb68fdef8923b3"
+    },
+    {
+      "id": "theverge",
+      "manifestDigest": "018857480101a4fa798c75fa4a08640c1d49084254b8e81a3994d779429af5f1"
+    },
+    {
+      "id": "tidal-logistics",
+      "manifestDigest": "afe8d0928cdfba194cd38d99e0f485d425e8b3f9f9e537bd80f601daf3c97902"
+    },
+    {
+      "id": "together-ai",
+      "manifestDigest": "d5d4ae7e8a2088ca42d9ba7c2955dc9a886aa0e15cfa27376fa9bcb77c1002af"
+    },
+    {
+      "id": "tom-modern",
+      "manifestDigest": "47f71f0246a4401fa753fbb26f3400f3309481bd680c951cda39fda4a6c7192f"
+    },
+    {
+      "id": "totality-festival",
+      "manifestDigest": "e28a255e19fe01c8e2a296bd597eefb6751faf4ad93fd4e1590b1cda16046284"
+    },
+    {
+      "id": "trading-terminal",
+      "manifestDigest": "8b0c6a13975d576a7bed2d0a9597f75bf7a2ebfd2fb95ec382732c190d240a2f"
+    },
+    {
+      "id": "uber",
+      "manifestDigest": "ec778b9cfeacf891dd84e25ce208ade516b2a24d07fbad52448cf27db9dd5eed"
+    },
+    {
+      "id": "umber-real-estate",
+      "manifestDigest": "e49ddecbceee86e82e7cd34d6a1bedbb26552335fe1d4cc4418370db709e90d1"
+    },
+    {
+      "id": "urdu",
+      "manifestDigest": "246a4fe02553c61a58fce87e4482116893e96053bc4e5724105b5d354e825f1d"
+    },
+    {
+      "id": "vector-automotive",
+      "manifestDigest": "44d2c0c07371f7e0245fc26795bc135b6d9ff177a055d49dcfdb7b6471ad061f"
+    },
+    {
+      "id": "vercel",
+      "manifestDigest": "b0c1a8dafe2384b84be9825a02108ea3df830b666f917876f256ed5fc497c05c"
+    },
+    {
+      "id": "verity-insurance",
+      "manifestDigest": "c0fd254c10d898b0ed457796ba21d0b5c595b66ea7bdbef48abfc0724d91d1ce"
+    },
+    {
+      "id": "vibrant",
+      "manifestDigest": "e2375933de56569d991cc5944c42d7d9b2b9f6b1256c81fce1acbbeb50d8b204"
+    },
+    {
+      "id": "vintage",
+      "manifestDigest": "909eeff1a5be482ad1c776a086ef1794a3ddbd5d748a37a1dc9a7be6b1a8cd4e"
+    },
+    {
+      "id": "vodafone",
+      "manifestDigest": "3116dfc8adb099dc306dd6a02e4a06ce1de5bb51bc734109ea2d80c9ac62982a"
+    },
+    {
+      "id": "voltagent",
+      "manifestDigest": "b60fce59f5b05b37a9fb44281a302ba5b03d6b26b15bcf8fdc2fc41f207af378"
+    },
+    {
+      "id": "warden-defense",
+      "manifestDigest": "0bb1c338372474046640dcfb9e0b6741ace1fe70bae08875ec1317a82c4f268c"
+    },
+    {
+      "id": "warm-editorial",
+      "manifestDigest": "c88cf3165b188ec65a92616f35170d4cdf2e83c33b1faa7ff1d35b90c0803dfd"
+    },
+    {
+      "id": "warp",
+      "manifestDigest": "53b948f6174f56607cec48bc148908ea2f2d5a52943bdeec5f38ab95ba0f5989"
+    },
+    {
+      "id": "webex",
+      "manifestDigest": "19c6a34102646875dc11ab7b0800e29e2c6ee9e73198bebb636395dee95aa238"
+    },
+    {
+      "id": "webflow",
+      "manifestDigest": "fd0de9fd19ee94a992de66657860b96645ddfb84018971eb11177ec786cd9eb2"
+    },
+    {
+      "id": "wechat",
+      "manifestDigest": "119056f04afaa4a2efbcf0dc0c9128326c3f122b3d6a0a44b19146ee3afe6756"
+    },
+    {
+      "id": "willow-nonprofit",
+      "manifestDigest": "64d8567cffa009eba2218ba2b199834f925ce75f1d479a444d4c8dae8855591e"
+    },
+    {
+      "id": "wired",
+      "manifestDigest": "7bd2de0eec1dcf5524c4c067d2f84fc6363a493f92e2d351320fb0e7e2c58c93"
+    },
+    {
+      "id": "wise",
+      "manifestDigest": "4634b23e2bffa473d9877feac58169d16104ff4c378ccef426d3b0b8e70da3c4"
+    },
+    {
+      "id": "x-ai",
+      "manifestDigest": "145e49c530a123ebd05de6f9b4de8ca394fd0ebc447e1b90ea9efbc9883b6dfb"
+    },
+    {
+      "id": "xenon-web3",
+      "manifestDigest": "e4fbd083630ac03d72f05dacfba273cf91d6f13c0a79d69fc66786ddf3294d31"
+    },
+    {
+      "id": "xiaohongshu",
+      "manifestDigest": "cc026166980d4325b1e89a6a929d4bf3cb9bd218530e5bbb0586f6b59d866c60"
+    },
+    {
+      "id": "yarrow-hr",
+      "manifestDigest": "9b3c723f794a71d682a9a2ab6141d7964a8e1c5bdbe5fe2192ce638c2303a927"
+    },
+    {
+      "id": "zapier",
+      "manifestDigest": "bac08e391ffe756dec15ea7ef8276a110595e3953de42da7540e2ce604b53b2c"
+    },
+    {
+      "id": "zenith-events",
+      "manifestDigest": "693f8a6a8d36fecbaea3f9fa4a172e95b3cc716ee1a3031d0acebf9993612cdf"
+    },
+    {
+      "id": "zephyr-social",
+      "manifestDigest": "82a49f4fe6153172380729d06f9b65a072ba08a9862c7c5275ff15946e9a4080"
+    }
+  ]
+}

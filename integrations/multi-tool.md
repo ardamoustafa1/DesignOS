@@ -1,11 +1,9 @@
 # Extended Multi-Tool Integration Guide
 
-DesignOS supports **19 AI coding tools**. Content parity across all of them was never
-the issue — every target has always received the byte-identical kernel Claude Code reads
-natively. The issue was file-path staleness: several entries pointed at a location the
-real tool doesn't actually auto-load, so the export produced a file nobody read while
-looking like it worked. The table below is the corrected, source-verified set (2026-08);
-where a tool now gets two files, both are written and both carry the same kernel.
+DesignOS ships **21 export adapters** plus the built-in Claude path. Rules-file parity is
+backed by a Universal Agent Runtime for deterministic routing, memory and review gates.
+That is outcome parity; it is not a claim that every host exposes Claude's native UI,
+slash commands or subagent process model.
 
 ---
 
@@ -31,6 +29,8 @@ where a tool now gets two files, both are written and both carry the same kernel
 |---|---|---|
 | **OpenAI Codex CLI** | `export codex` | `AGENTS.md` (confirmed auto-load path) + `.codex/instructions.md` (defensive extra) |
 | **Google Antigravity** | `export antigravity` | `AGENTS.md` (confirmed auto-load path) + `.agent/rules/designos.md` (native format) |
+| **Kimi Code** | `export kimi` | `AGENTS.md` portable kernel; runtime supplies deterministic capabilities |
+| **Hermes Agent** | `export hermes` | `AGENTS.md` portable kernel; runtime supplies deterministic capabilities |
 | **OpenCode** | `export opencode` | `.opencode/rules/designos.md` |
 | **Grok Build (xAI)** | `export grok` | `.grok/rules/designos.md` |
 | **Pi (Inflection AI)** | `export pi` | `.pi/context/designos.md` |
@@ -49,6 +49,8 @@ where a tool now gets two files, both are written and both carry the same kernel
 node DesignOS/bin/designos.js export codex
 node DesignOS/bin/designos.js export grok
 node DesignOS/bin/designos.js export vibe
+node DesignOS/bin/designos.js agent-runtime status all
+node DesignOS/bin/designos.js agent-runtime config
 ```
 
 ### Export all supported tools at once

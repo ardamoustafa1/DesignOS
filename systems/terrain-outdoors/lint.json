@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "terrain-outdoors",
+  "tokenPrefix": "--terrain-outdoors-",
+  "requiredTokens": [
+    "--terrain-outdoors-display",
+    "--terrain-outdoors-text",
+    "--terrain-outdoors-mono",
+    "--terrain-outdoors-ground",
+    "--terrain-outdoors-surface",
+    "--terrain-outdoors-raised",
+    "--terrain-outdoors-ink",
+    "--terrain-outdoors-ink-2",
+    "--terrain-outdoors-accent",
+    "--terrain-outdoors-on-accent",
+    "--terrain-outdoors-ring",
+    "--terrain-outdoors-edge-lit",
+    "--terrain-outdoors-shadow-rgb",
+    "--terrain-outdoors-elev-1",
+    "--terrain-outdoors-elev-2",
+    "--terrain-outdoors-elev-3",
+    "--terrain-outdoors-grain",
+    "--terrain-outdoors-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Instrument Serif",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--terrain-outdoors-elev-1",
+      "--terrain-outdoors-elev-2",
+      "--terrain-outdoors-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--terrain-outdoors-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--terrain-outdoors-grain",
+      "feTurbulence"
+    ]
+  }
+}

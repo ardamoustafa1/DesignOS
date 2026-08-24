@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "designos-system/v1",
+  "id": "prism-media",
+  "name": "Prism Media",
+  "category": "Original · Media",
+  "description": "An original DesignOS system for media products, with an inspectable material hierarchy and a restrained signal accent.",
+  "suits": [
+    "Media product surfaces",
+    "evidence-led marketing",
+    "responsive editorial applications"
+  ],
+  "avoid": [
+    "unstructured rainbow palettes",
+    "flat starter UI",
+    "unverified decorative proof"
+  ],
+  "files": {
+    "design": "SYSTEM.md",
+    "tokens": "tokens.css",
+    "lint": "lint.json",
+    "example": "example.html"
+  },
+  "compositionFamilies": [
+    "editorial-ledger",
+    "split-proof",
+    "rail-story"
+  ],
+  "dials": {
+    "variance": 7,
+    "motion": 6,
+    "density": 5
+  },
+  "source": {
+    "type": "original",
+    "origin": "Authored for DesignOS P2 on 2026-08-24; Prism Media is an original archetype and is not affiliated with a shipping brand."
+  },
+  "conformance": "node validators/check-system-conformance.js <target> --system prism-media"
+}

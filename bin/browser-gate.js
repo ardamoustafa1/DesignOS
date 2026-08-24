@@ -582,6 +582,9 @@ async function run() {
             // bypass that classification. Match by URL when the message embeds one
             // (Firefox/WebKit); fall back to Chromium's known no-URL phrasing otherwise.
             const urls = text.match(/https?:\/\/[^\s")]+/g) || [];
+            // Screenshot capture calls readPixels and Chromium may surface a GPU stall
+            // diagnostic. It is instrumentation noise, not a page exception.
+            if (/GL Driver Message .*GPU stall due to ReadPixels/i.test(text)) return;
             if (urls.some(url => THIRD_PARTY_NETWORK_HOSTS.has(hostnameOf(url)))) return;
             if (!urls.length && /^Failed to load resource: the server responded with a status of \d+/.test(text)) return;
             if (['error', 'warning'].includes(message.type())) runtime.push({ type: message.type(), text });

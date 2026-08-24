@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "delta-civic",
+  "tokenPrefix": "--delta-civic-",
+  "requiredTokens": [
+    "--delta-civic-display",
+    "--delta-civic-text",
+    "--delta-civic-mono",
+    "--delta-civic-ground",
+    "--delta-civic-surface",
+    "--delta-civic-raised",
+    "--delta-civic-ink",
+    "--delta-civic-ink-2",
+    "--delta-civic-accent",
+    "--delta-civic-on-accent",
+    "--delta-civic-ring",
+    "--delta-civic-edge-lit",
+    "--delta-civic-shadow-rgb",
+    "--delta-civic-elev-1",
+    "--delta-civic-elev-2",
+    "--delta-civic-elev-3",
+    "--delta-civic-grain",
+    "--delta-civic-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Source Serif 4",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--delta-civic-elev-1",
+      "--delta-civic-elev-2",
+      "--delta-civic-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--delta-civic-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--delta-civic-grain",
+      "feTurbulence"
+    ]
+  }
+}

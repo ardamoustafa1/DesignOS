@@ -80,7 +80,7 @@ system's strictest rule.
 Dark themes raise with light; light themes raise with shadow. The light palette therefore
 changes the elevation strategy, not just the values: `--kiln-edge-lit` becomes a near-white
 70% highlight, the shadow hue shifts to `74 52 32`, and opacities drop by roughly two
-thirds. The ember also **darkens to `#B33F14`** — `#E8703A` on paper measures 2.65:1 and
+thirds. The ember also **darkens to `#A73510`** — `#E8703A` on paper measures 2.65:1 and
 fails AA, so it cannot survive the swap unchanged.
 
 Grain drops from 3.5% to 2.2%, because the same noise reads twice as loud on a light field.

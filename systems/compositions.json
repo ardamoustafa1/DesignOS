@@ -1,0 +1,1614 @@
+{
+  "schema": "designos.system-compositions/v1",
+  "generatedAt": "2026-08-24T16:54:59.484Z",
+  "systems": {
+    "agentic": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "6242feca4d3c4049b840b1b29dc6b0271ab7fe47d5f2ec466f3b1b3e6a575124"
+    },
+    "airbnb": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "905ceb4d498dddd3efa3858c848bd7fbb8620bb4f9d594528a06d55b5bb41296"
+    },
+    "airtable": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "121c46092e0122cba786bab331ce3f6c73c62acfcd10d5767c655bda336a455e"
+    },
+    "ant": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "39c9e8402aef4fd904e4f0808619f1de0e5c6345458b7c99b67300a944ff37d9"
+    },
+    "apple": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "783b3faabbea62546ce78e36340a234b921a1b81c87af2f2d96bb7474ca9d744"
+    },
+    "application": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "fa6c71ec2e61675e4fe4b1cfb457faabcb8e042354cf1aef40acdc862e799356"
+    },
+    "arc": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "de12065c1db1d172121f711fc5ea55baff0bb3aabfadb5dd8aeca85a9f7450e3"
+    },
+    "artistic": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "b0fd2713bc79dc0cb385a4d6839e31a17dc8a1589972422ec8be0e66f2e1facb"
+    },
+    "aster-ledger": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "df389e1cc535ae07cbc55a923578a429de674430ded60bd33cb11a0cab38335a"
+    },
+    "atelier-zero": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "fcd5fbeadf1b91dd50522629774ddf5a08afbc293b08072a57d48f251040d26c"
+    },
+    "atlas-editorial": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "15cc988fb91e85cf81de694371058bed507af0857ede7fdf75dd0519c3f8c89e"
+    },
+    "beacon-ops": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "4ce2d816f19eacc729e06ec5719765a11b59e80eeb16d0f577ac8cb4a4ac7411"
+    },
+    "bento": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "8a7525d13c8bb2c4c998e3a45c40e265e91d74a76a6c7bd565141c35078df92f"
+    },
+    "binance": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "317c636fe180fb7a4a202cbce71f0dbda5a2e2dc4d478c3bdd2d27bf5af69242"
+    },
+    "bmw": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "003835bf6bad1e0e0422d3fee8b59ad3557f348dcc469ea83e5b1ad7cfa7ddff"
+    },
+    "bmw-m": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "2d797d8038408374461dc20442e3b130c47340a6ddb813df06c9e653d092c067"
+    },
+    "bold": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "f605d5c511043dd26e4069e97d029f2d6c0b8acf8308a0aff96177456f104e98"
+    },
+    "boreal-health": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "277fb47e310aeb3ab3d731fc124b060fec6edb0dabfd44a535eda5bf193d3acb"
+    },
+    "brutalism": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "b3eb5ee7f9a33bd3b9553da73d8b39727fee0bf53934b5b1052ee967634cb751"
+    },
+    "bugatti": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "68da09dfbc01c6083a9711c165f056ccd5ef591fc21b9c8891702c2034ddfa8d"
+    },
+    "cafe": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "3b945e4f9836fc8028a01be1c0ba1eb7c3601a1b66daef7a3de77b60e011f5a7"
+    },
+    "cal": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "a2313b6590e4be2cb710201f3d2dd2063941b28a5fa15631575412907630ffe8"
+    },
+    "canva": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "63bf5a606bf9eabaf7ec9dbacaa76bc36fcba4ae917b104a1598eb1e679dafc9"
+    },
+    "cinder-commerce": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "f6ade35964ab922aa9a25fd8a57a6a2a592d3d61789c446b1409ee976a258c06"
+    },
+    "circuit-developer": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "3fa3a9e63ef91628dffd2c32af64972424d60b42ce667157a7702c28371e2438"
+    },
+    "cisco": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "1d9184ff8378a282e0524df074d3e0003ab62b49586c2de196e09acf9902de19"
+    },
+    "claude": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "2e87c3960b812020be8ecdb5e50ddeff4b71546ba480985d5a2db07412f29b73"
+    },
+    "clay": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "d87cea763f9a0c02e043b2f10649b4b5ef4871b2b6e267412fbde3c60a017ce0"
+    },
+    "claymorphism": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "8b424b3be14f56d6437f2360d4b2e52d01d4e70d6d5c4768a4e6fa3dd4b11467"
+    },
+    "clean": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "abd64ba80b7b5ef594c256d41e9abe1a0352ed360e137da08acd23a93360901b"
+    },
+    "clickhouse": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "0f73f9429a2bba3912177e8d6c836ba0c9a32fd322c94d84fad869d3e6679a34"
+    },
+    "cloudflare-kumo": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "4828b62bb898ad8411e702d97685474c06fba9102f9938d9bcd1055e75dd7a97"
+    },
+    "cohere": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "42e46b188f8db28bc673c46642f8611782c2a3c01046663864db095953e2f76e"
+    },
+    "coinbase": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "c353fb486b02e9589d2b241b06cb3b6ae0c35c934f1088d339bec0f6288018fa"
+    },
+    "colorful": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "c45fbd8357e62024442d2db881fec22a592b03d490807558ceb215fa592e55fd"
+    },
+    "composio": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "1b31a302d135ff4d529cc29cc5e07aef418f76eff2476f933c145ee0650ff47d"
+    },
+    "contemporary": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "88ae9ee96131a2e3c02951dcb45d46446e2a45f90869fb1b170e3e8ef0c039fb"
+    },
+    "copper-studio": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "d5ab93eec0983bfe17941493e2938e2338c2c69fa562c21968ecc9cd408287e7"
+    },
+    "corporate": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "26c8916ab7c129904bbd104595946400be1086efef9bab6b702f74e6fc3ce8c4"
+    },
+    "cosmic": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "b6df6ffcc01b9fb9117aba6b7cd76e283188d334769d73eaa55c7774b8233cb7"
+    },
+    "creative": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "d8e55c02abcc7cf37428a21a0eeb9b56fa67e2b903bd809395f0d2bb45f07103"
+    },
+    "cursor": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "a9dfab760e1cd5b85beb3e9475fe40b995203914cc2a337af55c41a26c5419c9"
+    },
+    "dashboard": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "c213a31799bd4b9b1bbf2a3e7759a2b3ebe842d72b4dda5231c7009d39bd0d59"
+    },
+    "default": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "27d805dc29166609cfead753a506fdba8fc09219a2243a5874f1e6bb52a96ffa"
+    },
+    "delta-civic": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "61fdac0f4cee607f6df2139cba1925ffd0ba768c46f4c62ba4a0c9fb9f95c364"
+    },
+    "discord": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "fed25bc9c2fa611480b373a6f9d2c2b96214b4e973ee0a23de5bc022676c312e"
+    },
+    "dithered": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "09060e456964af37d4cd443554820469292813ff11aa2c0a448f82bb0fbe08a1"
+    },
+    "doodle": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "f608944c78613978280e088f0804ee913ef5407a40f8a3feae7f9f83f75df7c3"
+    },
+    "dramatic": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "418834fcf2c9e196b260f1c89b0b80f7766be966e96523065927a739868137d1"
+    },
+    "dune-luxury": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "c84cf728266e58088bc169563b0acdd29c4ddf02dd216d41fc8b3d222d6f8981"
+    },
+    "duolingo": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "b21efaae62be03e1296a74ec1dc72c7e85740ec1befe2206d09d297627f942cf"
+    },
+    "echo-research": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "7e21c5d712472a4819decfe562316566004b6fac7d983df2c1d93928b9f76209"
+    },
+    "editorial": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "6fc422ca496b297e68979d813b3120d8120c7719523a377081b0ff0fab019b7b"
+    },
+    "elegant": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "883c45dbc94255911606a0a8a26f630f002c97fe6827a9719304da7a5c4f1032"
+    },
+    "elevenlabs": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "a6cfd025c37e54f63731344102880b73bbdf780519db38b7ed7bca1fe4b54aef"
+    },
+    "ember-culture": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "b4cf6d6b34ebf7b305d92b886836c3835b7735128effebb6049ba7556f5ea077"
+    },
+    "energetic": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "3650d3e4977d56ef5ceda0a0a8e23fa929f138d82ae59b6d9be366a53c42f753"
+    },
+    "enterprise": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "e8e312cd0ccd9a148f077398fe95962ef31837469ea690d23f109d6ef1e619d7"
+    },
+    "expo": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "55ad7f530bc93bd48d8ddca5c5cb94b6ed5ace76821d7a58358fa00015536fae"
+    },
+    "expressive": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "38e42a0542e15befa0ff3b1d7a941d480440be280508aa4ec3eba81192aa684c"
+    },
+    "fantasy": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "5e99a32b8cae0394c1a49054ef2c03ed39c558070a6f287682c6bc32d9b89ebf"
+    },
+    "ferrari": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "237f591f4f9506fa1c44821534019240dfd3055c2f43d257221c95aab5e042ad"
+    },
+    "field-notes": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "14d28b37fd25aedc9ed2658f350cf8c6baa9f3a20ebce3204bde9954acfa8766"
+    },
+    "figma": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "2844c532be0f9ea8e8e09a03ba70ada7cb752c6f4106a04ec477afd2bc5651da"
+    },
+    "fjord-travel": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "c3b056b594e50d8c886483d98e36bda60a5c3a80275fb1c3caf72009aaa73656"
+    },
+    "flat": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "b786ccd83a57fe8d6f0a81d9e7022dcfdb39085e3fbd8b837895c872f5c67535"
+    },
+    "framer": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "302171e0f9891ce3aa37873ace4d49b3ed056b5e6ea030becfb3c7981731fff2"
+    },
+    "friendly": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "bb23c882c095722361eee64c945bad218619f5b8aec7de5debf24b03a3a3d951"
+    },
+    "futuristic": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "df7b124a539f5d57cf387f0b9a97287b0f107c7c0a569a916ee96b76941842a5"
+    },
+    "github": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "5373d2c76ea9a556bb344fa64a8bc2dbd6b955a14a74f6d012f78710e53d260d"
+    },
+    "glacier-data": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "5efabf0f8119fb26e5d5b0f8d83f87c33efb9824ec64edc05fadc2f8fd55492a"
+    },
+    "glassmorphism": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "cf0dff4e13e1f90dc3df19d94f5081625326e68b4cc7c4028c25e7b7fa85d417"
+    },
+    "gradient": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "ae383137d3165f4cdbf744b2bf2f40f7ef584e3c12b93b674235ef5679141ea0"
+    },
+    "grove-learning": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "274ebddd6377612c5f3dc15c337c8b193ad98a9b1460c1298be65aed3e088a13"
+    },
+    "harbor-legal": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "f07824845beef436ea77a94eea71d9085ff8bdd1ec615cbb40d4207908bed4a7"
+    },
+    "hashicorp": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "756428fac166c972ec4421aada64dee072ce6ae90fde75806fc54f6df24c49da"
+    },
+    "hearth-hospitality": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "d3f5c8b1f3d51f3e0aaca05fe300b994bc538afe70483c22405bdb4e4a577eb3"
+    },
+    "hud": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "210ec679846d336348fa19bb69c29160d51dfa7ffd38b4a9b364f3e49430756c"
+    },
+    "huggingface": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "df3a29b40823e98ec8d64b265134d258e76b7218120923f4798e522fb3852bdd"
+    },
+    "ibm": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "a67665421087a4f34f9c120e339259a4fe77355fb642b2d8105ddb22d5e0b16f"
+    },
+    "inkstone-publishing": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "33c21b6e59f0649fd08e8edb1d3edb49fb385b81c850672cab9c95287d7de04e"
+    },
+    "intercom": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "29774b6a1d044c6c78943fee1b9315f656907fd17cbb4a41f12f9acec0c08aa3"
+    },
+    "ion-analytics": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "59c416272b8303f7f3470c447e558edf7320ab50e25f42f69543054f2e6e0d32"
+    },
+    "juniper-climate": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "3265a7343e8d6966ee48e407ea25c108df751d7f592f8e9b254715c9de67157d"
+    },
+    "kami": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "275a29205126931703b48e3ae3490a58a66382db962b23885821f445d83f8165"
+    },
+    "kestrel-security": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "ff1104eb155f86514ea720ac270f94deabd72f53a7de043e009b0b86711ad3a7"
+    },
+    "kiln": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "030c644f4a9a54c1cf191fd1a07f913210241829f78473740b5ae60b93c0676d"
+    },
+    "kraken": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "e2635fb06a2dcccffbc5897225516ef456283cfa1bc5cd4ff0714a9db646f5a9"
+    },
+    "lamborghini": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "ec5d9a100151f2486ef9921e8183e7abee3d74c570efef64c4cbd44f6460f5e7"
+    },
+    "lattice-ai": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "25e278ae3ec15dcf93129f4c0c2df71510d2e23d1d9f9593e0a821bafe466390"
+    },
+    "levels": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "fc4b919fa0ca6513d75ba090781da37997dab2123b660d3efc2787f0582eb198"
+    },
+    "linear-app": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "4299b73127ae6895e2d60b86c7b0796c184d40e517c642e9f874ec3a7aa9eb1b"
+    },
+    "lingo": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "4d76c9dbecf9e555b786fce15ccd54479dd4dbc9eaa2b6c556e4f337d4fd6bf6"
+    },
+    "loom": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "5e8b86d59bfab79838e4b5c9ffd9c44f59ee49244957f91549def2eeb4c82a15"
+    },
+    "loom-creator": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "932d27c519e8db1f9c9ebac4a08082745b6ff07bd1e1e613e529f598647fadf9"
+    },
+    "lovable": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "47c4cce2df89ea8c7517e1299d5f900ea318bb397f2c220342933f5a12498ddc"
+    },
+    "luxury": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "977fcdf2cf7c22e0c915a8553432867720d3c493986e3421d5280f7d703ca3af"
+    },
+    "mastercard": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "6ddd53705cae8f47ae65d9126ff42c9819159dee14da7ebdddac5773e1308eff"
+    },
+    "material": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "1807844495429848b9d86850bd39339c718eb6dc7246d2abb6a59bae643a9e03"
+    },
+    "meridian-finance": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "277d2856f4b912751e40e93857fb28b7c5a8bc397a50addad21b038f52ccbe2a"
+    },
+    "meta": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "02313d295519b130e4b334db4de5873481469ca62d4a584a1bb1bc3c6d5e4177"
+    },
+    "minimal": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "70f53026db6c9191a28227a6422defe7c30ca8e28d53909195b0dff51e59f561"
+    },
+    "minimax": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "4e6f7d84d1e27146ba8c53b926ff21f79e9cbc91953bea4ad509a20e45444b7f"
+    },
+    "mintlify": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "e1590a11de721d620215f4454cd9d7d56e987fc50f0f0849a0d380260e95bf0a"
+    },
+    "miro": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "7bf5f9953f4fb03709267d1d548a830ab43cf36cc3f45324e8a0516a7c37574d"
+    },
+    "mission-control": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "393b5250ab646b06d8733ecb8c2938453a390a708a490c9b44209116e82d05d2"
+    },
+    "mistral-ai": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "9f314b0ee5560582230cc63c4030db7d55805ec7c2ccc4303dc5cb07bc056795"
+    },
+    "modern": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "e56dbe9545305285ef780c727ebb69d803afb393c2a97aad9f054decd22d61df"
+    },
+    "mongodb": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "f4ba582187880bb59c8949dd57049b5894b5c2427249386eeca523383daf37c2"
+    },
+    "mono": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "21ab0b65c9ed19c561cc0b61c8df7795a20baad55825575245f4589ba8fb7488"
+    },
+    "monolith-architecture": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "4a75d8eca222c120c2a1ab0f50ebfbb24d3f05f735ce398de5212a8656e93c89"
+    },
+    "neobrutalism": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "8adbe41342d93f014cf173698225f88ca07776457fd581837d1e9c790071bf9a"
+    },
+    "neon": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "c4f9abad1eac040ae48d664e0112f9d64ce79c7e30f1748213e4e8b83b922408"
+    },
+    "neumorphism": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "e04d284cafa36880db140d3d40b3f9ce9b600ed555d3e09152cc182ad5fa5f08"
+    },
+    "nightjar-audio": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "913cac71cd3f64f97692b037dc3892b6d76921f0c4ebd87e5b4f85023f9ca19f"
+    },
+    "nike": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "974bb174824aabadc00ba608bd4c6c806b7068f7599a3ed20860f63ce07e28b8"
+    },
+    "nimbus-cloud": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "fad30db6a68b1e86e04d7feb68ba8dc8bb707eb519a44d1f39636f798733d832"
+    },
+    "notion": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "4df91636d937633f20facba766b21b67736848a300de391a35c27547d2889ceb"
+    },
+    "nova-science": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "a8acd48de2e86fc27ab95cbd475b14d3c1996450a667568af4bf9f69b985450e"
+    },
+    "nvidia": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "fcdfd80590a66f47efa2d048cd39f2c4253fb1e59468c2ad20be37c00a196ffd"
+    },
+    "ollama": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "a964c6dad21d65433957cad205975b07f67a2beefc17022738826f76061aec95"
+    },
+    "openai": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "040800effe1384dfbfa5ace5f5d272b7f9a09c8f09023859fd5c4946b255bd94"
+    },
+    "opencode-ai": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "436696cbe631cc93e41073c6a382c8b12e2820aa8a66b53ff4b9beb19a414fa8"
+    },
+    "orchard-food": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "e24db94346fcb378a100aa7a45ab884a622c2286dc266745168f89da39887971"
+    },
+    "oriel-museum": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "9b52ec9f705439c5a2697fadd02482bd487bfe2cd9825a0e1070448447feb166"
+    },
+    "pacman": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "01d67172c9267ab0f6e52d49d325b34a3ec41497b90402b740f6d8eac45b2c67"
+    },
+    "paper": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "093c0ae548bfe01f3368d1f6dfa7ca786680c92d81ea52909e39f82b6a4612f8"
+    },
+    "perplexity": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "94616a2b769c7dcf3ca75613a8f5ad4b22ff80aca9dcbbde725bd0fa0f7159fa"
+    },
+    "perspective": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "668e0a82142b30321837fc7f636052e722f7c0cec182cb0f9887cf49310fc5ee"
+    },
+    "pinterest": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "4a42710ad86b362b329738d8c87d32f46a4d8a213867f4f88a1a461fff227b61"
+    },
+    "playstation": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "83205a1547a8d148dd6f8058c3c9b1af1278c50a54f8d4351cef0e49838af8dd"
+    },
+    "posthog": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "e1df46e31d5f5d6d3c178f2fe5fabc092c3331ede84c81d8d1bd246a1571a49a"
+    },
+    "premium": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "4922697e985f8bd0a69455be09b8434e8870dc09a18e79f0c27a4e12bb9a95f9"
+    },
+    "prism-media": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "c202024462d2e4c5181398bf01a38392b2af0f1c54a3159f01cfe5eb12b026bd"
+    },
+    "professional": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "7210d19f7f12b2ab458ad735ed352147444ea103632896cee0a6a0287c13b26a"
+    },
+    "publication": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "9934efff65b8ca0de5c7cbd6ac77296817fd79be7dc2fb2b7634ca5dbbda0527"
+    },
+    "pulse-sports": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "ddb8ef68b4bdf346cac6c39574acd99c9b6520b566040ac0d7712d2dc4ccd6df"
+    },
+    "quartz-industrial": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "edda5ac3bb8807ee89c655dc5060f29a9be82f352724f94a52798598a7e1af84"
+    },
+    "raycast": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "c9be50d9634ce54d12ed7937f642e650966238c8c2e04a9f0ae224965f9a3a4c"
+    },
+    "refined": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "8a231c2adafdd24f1812d7bf399f039e9a9704b46eecffac0d1b963280b6d0bf"
+    },
+    "relay-mobility": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "ade8926b107d9f7d77dbc585ac28b5610e241bb4ef2ef4791b1fdf141b54179b"
+    },
+    "renault": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "0741934deff633f76a97ac7db48e31d89bb0ca833e47b2816cca2c9a3d0ce83a"
+    },
+    "replicate": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "0d7ed9c92dcea45ea7b73055c0e40d1b39a0b6e6795580f03dd485b0a115178b"
+    },
+    "resend": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "7a0954f6a724727b9bdd015e8405ffe0ddc2eac541618055827ce3ac2711ad3a"
+    },
+    "retro": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "368185d372a0f01d7bd8228d0f155e1a8398cda6ef74042bbab5f5db7f0c506c"
+    },
+    "revolut": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "f3aae9f9d0f4db21880d11c01f905b912e9e23e7af5e3645bf89beba84921384"
+    },
+    "rook-gaming": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "be2881f0d2a8ad1b8c88e9e8fc618fd0ee856f58d0e18cf28b4b45410c2044a0"
+    },
+    "runwayml": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "b2e90e29503cb97f2551f9174f7edd6e95426b4dc08ece16605509cd03a1986a"
+    },
+    "saffron-retail": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "681b10cfe845f754561daaff1747af6cf57f5cc386578458853b77b78059245f"
+    },
+    "sanity": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "63338285922e54a6ec93496ba5d5c63e7482e4a897ab78ef7ba4af5b4be78d96"
+    },
+    "sentry": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "c7c7076ab258c592c5bf0b322519099799c110ef3b78ea6c0309871ed51a0741"
+    },
+    "shadcn": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "467a4ec5a3f6a36e58f9850c0872ab2c9bb3bda70f21a98d71c7307f51b7cb20"
+    },
+    "shopify": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "2ecf4d163593806d889600cc2bfd7b328f4000ff5614976f3c5bce07e9e66ac6"
+    },
+    "simple": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "9607e14e2afdd081d370ef6db621902904ed67448da9fde7350a61d20a027b58"
+    },
+    "skeumorphism": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "855e165d9353b7db53f0295b15dd33dee6f5091e75be7ad8711b45ec12dd289a"
+    },
+    "slack": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "bdcaeb6cd74fa7bc9a38033e14a6ad156e3947f324801d5ef30a5690d7c1e666"
+    },
+    "sleek": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "c2e829580ca28d1c2981a4ff40946d42d42fdc23b5e7bcd3d8963651c6e97c19"
+    },
+    "solace-wellness": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "f20bea9e720706d2cbd09d9167ca319cac7bed372f95e2f2bdfd84e4507f41bb"
+    },
+    "spacex": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "b9db3825e04eb96c20f23325ee6fe1e107b492934caf9765cdd26804c88e050d"
+    },
+    "spacious": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "20b06aeb2c8d2e235d77049813051c4963ed7f483d9f47efa1f9ba0fac48061a"
+    },
+    "spotify": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "3ca6453597e979ea8972d3c2879dc8197ca6ad359dd4195e3e00cf14ef01d8d6"
+    },
+    "starbucks": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "1843c9cad011404f0e0c361357f65a153937d3e6464e1c15650aac36204cebfa"
+    },
+    "storytelling": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "c28fd0825eaa360bac0f788a9c87c573f7000d4d6359e666446295e23d277b1f"
+    },
+    "stripe": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "a2adbe47666b95aac91cbcc960e6251b5c8a6f8a2f2bf21b9b19a379e1a31c7c"
+    },
+    "supabase": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "7b605adb017e13db72da8b02ec20f1fa8f91358c9ee6dce1c18f843eb873c39d"
+    },
+    "superhuman": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "a637fb90f6c1f013495651f4268aea008a0b79a96152a26ce82db684701b6aa5"
+    },
+    "terrain-outdoors": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "271185f3958e85c31bd59e5ee0179de9c3b88751cb3a361b1fe83225698c903c"
+    },
+    "tesla": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "9b520fe458a91e6f1744a7cb4da5dea61478c94cf5836808cabfe517c7f6a134"
+    },
+    "tetris": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "a18cbe2a906532021b967d9aed48f17a061c5d95ffc250be1e6e7e01e50b782b"
+    },
+    "theverge": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "9512263a86851aa4bea7d9d973a2d96a16cd1a3afb1ed79277efb9a39e866821"
+    },
+    "tidal-logistics": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "2565d5d41b4dc61f5c873d6b5d13158063bb87b5011cece69611da32349af5e4"
+    },
+    "together-ai": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "5a75f45edffff8869c63f1771fa120e5f8c56f567d7ae5959c216200d266ae04"
+    },
+    "tom-modern": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "d257db74a1a92ac662d43421f7ae972a3860c00c4422d2ed9025cce6bfa54e0a"
+    },
+    "totality-festival": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "68b54e18c60d07355a2dd65833adb4f2b4feb69fb0fc2c90acb36b16893cedab"
+    },
+    "trading-terminal": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "26acad18d3c792880c50662ce96e45b0cb55848ed9da8921809321a9e4be1a4b"
+    },
+    "uber": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "3bff326d4739ebdeefeecf0725dc99b413ded76c10200e4873e9e718b57e456f"
+    },
+    "umber-real-estate": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "7eb768208515ee4435769e0cbad384d0e0e8fac07224517e9465781bb095caa0"
+    },
+    "urdu": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "fb8e7cc877958bb4e7e0452620f0f4a2454a0eab1467513f1124db908ef1b1bb"
+    },
+    "vector-automotive": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "60a994c5b2d5e40ff0c8d23641bf29c8f0b02b2531f96d233890647dd4f98894"
+    },
+    "vercel": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "8f691b15e3145d9e2a2fc06a46fd4ef12d8ade90d1dda6ce80fb7f26f0941cd1"
+    },
+    "verity-insurance": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "d26df8ab2fa1e7edcc9fd7272dd5d75d9b4f2386adc2bba3250642006b65b84f"
+    },
+    "vibrant": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "1ab282e44d84ea3872916e731aab7701163e76961063cab15c4530bc9641e4cc"
+    },
+    "vintage": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "98168d79c5e1fa6a7af9e962e6645799c57e5d0c60aa20ec6b7ed1c9fdd24421"
+    },
+    "vodafone": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "84f1821e124d09efb47fbc635cfdfc5acaea8bf647664b8a3f7fd612f5b27876"
+    },
+    "voltagent": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "f9bbc1b226a0445aeb7033628491e303db884d5d4d44715a3783c009a684e3cb"
+    },
+    "warden-defense": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "a419870497225ba6f1f29d89669e8f59d6e422508c914a273f22d61036812a0e"
+    },
+    "warm-editorial": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "ce7b8f1eff37047c796168f5da7bbb3eb79bc25f57dacf7ece288ea167ece280"
+    },
+    "warp": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "c32f53c8743fa07c1ccd48c0cdaa57157e317470fa39c080539c431e9e25091e"
+    },
+    "webex": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "34b135a9af2d396fc907b1255f40de8e158a02d4d49533cb524c050a69f03525"
+    },
+    "webflow": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "6f87c1c0dc1860d8e090f4a48b2bf999de4b25a44f395b6b48a96a9b235b0773"
+    },
+    "wechat": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "db9168e65c83010a8607cebfe813c66f0f186c6a7601f77b1a23c48b486a2cbd"
+    },
+    "willow-nonprofit": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "9c9d351c43469eda40e0130281d87af3aa421737f7d13c77a45b05dbc91b836e"
+    },
+    "wired": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "8a8f3fdaa82f03e9cbf8ea12ab39f1af2311fcda7d91104a2717c00810ca6513"
+    },
+    "wise": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "5c86da0634779b8f31dcb177d50979c796ecc012d9d753cde607d8a83baa8e3a"
+    },
+    "x-ai": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "12887eb90793424480927095976de3a0330573a1a5307d128a768f4b91d3449f"
+    },
+    "xenon-web3": {
+      "families": [
+        "rail-story",
+        "editorial-ledger",
+        "split-proof"
+      ],
+      "digest": "2cc05d6c97fa4f71ff4dcb5612c57a266de7d6aa7e198126e3dc6ad047d6a6c4"
+    },
+    "xiaohongshu": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "cd2a8637a7137673a005713ad8d8f2a1d82fa5420a4bf1022b7ed8267c8e6136"
+    },
+    "yarrow-hr": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "93d79fb28cbbf787a10ee48fc81231e665692f0e858839676a71f40c1d20bf6b"
+    },
+    "zapier": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "d923199c88861560af18592c2b09d3b1f8ddba31d75631e187dc9ec0ca80cd1d"
+    },
+    "zenith-events": {
+      "families": [
+        "split-proof",
+        "rail-story",
+        "editorial-ledger"
+      ],
+      "digest": "e09761906a7f313c1eaacad4f8a6cab9a02dbf6a42923c269457ecf5505647f6"
+    },
+    "zephyr-social": {
+      "families": [
+        "editorial-ledger",
+        "split-proof",
+        "rail-story"
+      ],
+      "digest": "420e7a209456fc7a63162ec3f6942ebbab61d51da98fb55927af015bbd55d0c3"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "fjord-travel",
+  "tokenPrefix": "--fjord-travel-",
+  "requiredTokens": [
+    "--fjord-travel-display",
+    "--fjord-travel-text",
+    "--fjord-travel-mono",
+    "--fjord-travel-ground",
+    "--fjord-travel-surface",
+    "--fjord-travel-raised",
+    "--fjord-travel-ink",
+    "--fjord-travel-ink-2",
+    "--fjord-travel-accent",
+    "--fjord-travel-on-accent",
+    "--fjord-travel-ring",
+    "--fjord-travel-edge-lit",
+    "--fjord-travel-shadow-rgb",
+    "--fjord-travel-elev-1",
+    "--fjord-travel-elev-2",
+    "--fjord-travel-elev-3",
+    "--fjord-travel-grain",
+    "--fjord-travel-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Bodoni Moda",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--fjord-travel-elev-1",
+      "--fjord-travel-elev-2",
+      "--fjord-travel-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--fjord-travel-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--fjord-travel-grain",
+      "feTurbulence"
+    ]
+  }
+}

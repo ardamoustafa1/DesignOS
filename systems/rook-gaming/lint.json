@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "rook-gaming",
+  "tokenPrefix": "--rook-gaming-",
+  "requiredTokens": [
+    "--rook-gaming-display",
+    "--rook-gaming-text",
+    "--rook-gaming-mono",
+    "--rook-gaming-ground",
+    "--rook-gaming-surface",
+    "--rook-gaming-raised",
+    "--rook-gaming-ink",
+    "--rook-gaming-ink-2",
+    "--rook-gaming-accent",
+    "--rook-gaming-on-accent",
+    "--rook-gaming-ring",
+    "--rook-gaming-edge-lit",
+    "--rook-gaming-shadow-rgb",
+    "--rook-gaming-elev-1",
+    "--rook-gaming-elev-2",
+    "--rook-gaming-elev-3",
+    "--rook-gaming-grain",
+    "--rook-gaming-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Fraunces",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--rook-gaming-elev-1",
+      "--rook-gaming-elev-2",
+      "--rook-gaming-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--rook-gaming-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--rook-gaming-grain",
+      "feTurbulence"
+    ]
+  }
+}

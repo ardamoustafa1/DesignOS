@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "target": "http://127.0.0.1:4180/examples/motionos-flagships/spatial-stage.html",
+  "generatedAt": "2026-08-19T12:30:33.510Z",
+  "viewports": [
+    {
+      "name": "fixture-375",
+      "width": 375,
+      "height": 812
+    }
+  ],
+  "themes": [
+    "light"
+  ],
+  "motions": [
+    "full"
+  ],
+  "zooms": [],
+  "results": [
+    {
+      "scenario": "fixture-375-light-full",
+      "document": {
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "scrollHeight": 812,
+        "viewportHeight": 812
+      },
+      "overflow": [],
+      "smallTargets": [],
+      "smallText": [],
+      "clipped": [],
+      "headerCollision": null,
+      "fixedOverlaps": [],
+      "semantic": {
+        "lang": "en",
+        "title": "MotionOS Spatial Product Stage",
+        "landmarks": {
+          "header": 0,
+          "nav": 0,
+          "main": 1,
+          "aside": 0,
+          "footer": 0
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Form follows intent."
+          }
+        ],
+        "controls": []
+      },
+      "fonts": {
+        "status": "loaded"
+      },
+      "performance": {
+        "resources": 2,
+        "transferBytes": 493877,
+        "domContentLoaded": 173,
+        "load": 173,
+        "longTaskMs": 0,
+        "layoutShift": 0
+      },
+      "axe": {
+        "testEngine": {
+          "name": "axe-core",
+          "version": "4.12.1"
+        },
+        "testEnvironment": {
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
+          "windowWidth": 375,
+          "windowHeight": 812,
+          "orientationAngle": 0,
+          "orientationType": "landscape-primary"
+        },
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ],
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+            "nodes": [
+              {
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "9.0pt (12px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    },
+                    "relatedNodes": [
+                      {
+                        "html": "<body>",
+                        "target": [
+                          "body"
+                        ]
+                      }
+                    ],
+                    "impact": "serious",
+                    "message": "Element's background color could not be determined due to a background gradient"
+                  }
+                ],
+                "all": [],
+                "none": [],
+                "impact": "serious",
+                "html": "<p class=\"eyebrow\">Three.js / physical material</p>",
+                "target": [
+                  ".eyebrow"
+                ],
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "48.0pt (64px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "3:1"
+                    },
+                    "relatedNodes": [
+                      {
+                        "html": "<body>",
+                        "target": [
+                          "body"
+                        ]
+                      }
+                    ],
+                    "impact": "serious",
+                    "message": "Element's background color could not be determined due to a background gradient"
+                  }
+                ],
+                "all": [],
+                "none": [],
+                "impact": "serious",
+                "html": "<h1>Form follows intent.</h1>",
+                "target": [
+                  "h1"
+                ],
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              },
+              {
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    },
+                    "relatedNodes": [
+                      {
+                        "html": "<body>",
+                        "target": [
+                          "body"
+                        ]
+                      }
+                    ],
+                    "impact": "serious",
+                    "message": "Element's background color could not be determined due to a background gradient"
+                  }
+                ],
+                "all": [],
+                "none": [],
+                "impact": "serious",
+                "html": "<p>A real GPU product stage with bounded DPR, pointer response, reduced-motion stillness and disposal on exit.</p>",
+                "target": [
+                  "p:nth-child(3)"
+                ],
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+              }
+            ]
+          }
+        ],
+        "passes": 16
+      },
+      "accessibilityTree": null,
+      "keyboard": {
+        "scenario": "fixture-375-light-full",
+        "stops": [],
+        "complete": false
+      },
+      "runtime": [],
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/examples/motionos-flagships/screenshots-firefox/fixture-375-light-full.png"
+    }
+  ],
+  "supplemental": {
+    "textSpacing": {
+      "scenario": "text-spacing",
+      "document": {
+        "scrollWidth": 320,
+        "clientWidth": 320,
+        "scrollHeight": 993,
+        "viewportHeight": 800
+      },
+      "overflow": [],
+      "smallTargets": [],
+      "smallText": [],
+      "clipped": [],
+      "headerCollision": null,
+      "fixedOverlaps": [],
+      "semantic": {
+        "lang": "en",
+        "title": "MotionOS Spatial Product Stage",
+        "landmarks": {
+          "header": 0,
+          "nav": 0,
+          "main": 1,
+          "aside": 0,
+          "footer": 0
+        },
+        "headings": [
+          {
+            "level": 1,
+            "text": "Form follows intent."
+          }
+        ],
+        "controls": []
+      },
+      "fonts": {
+        "status": "loaded"
+      },
+      "performance": {
+        "resources": 2,
+        "transferBytes": 493877,
+        "domContentLoaded": 56,
+        "load": 56,
+        "longTaskMs": 0,
+        "layoutShift": 0
+      },
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/examples/motionos-flagships/screenshots-firefox/text-spacing.png"
+    },
+    "forcedColors": {
+      "scenario": "forced-colors",
+      "failures": [],
+      "keyboard": {
+        "scenario": "forced-colors",
+        "stops": [],
+        "complete": false
+      },
+      "screenshot": "/Users/ardamoustafa/Downloads/DesignOS/examples/motionos-flagships/screenshots-firefox/forced-colors.png"
+    }
+  },
+  "taskFlows": [],
+  "diffs": [],
+  "findings": [],
+  "summary": {
+    "scenarios": 1,
+    "screenshots": 1,
+    "keyboardPaths": 0,
+    "tasksDeclared": 0,
+    "tasksPassed": 0,
+    "p1": 0,
+    "p2": 0,
+    "passed": true
+  },
+  "maxDiff": null,
+  "baselineDir": null
+}

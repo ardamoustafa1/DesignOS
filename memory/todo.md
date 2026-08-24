@@ -1,21 +1,21 @@
 # Open Work
 
-- Replace Studio's fixed string/score gate with standalone artifact browser, AX-tree,
-  reduced-motion parity, temporal motion, and 4× CPU evidence. `NOT_ASSESSED` must keep
-  the artifact withheld; parent-shell evidence must never be attributed to the iframe.
-- Build the shared `loadSystem → routeModules → design IR → render → registry gate →
-  finding-directed repair` core used by both Studio and CLI. Current `generate` still
-  creates a design-system contract rather than a finished artifact; do not market it as
-  an end-to-end generator.
+- ~~Replace Studio's fixed string/score gate with standalone artifact browser, AX-tree,
+  reduced-motion parity, temporal motion, and 4× CPU evidence.~~ Completed in P1 with the signed isolated artifact worker; required missing evidence withholds release.
+- ~~Build the shared `loadSystem → routeModules → design IR → render → registry gate →
+  finding-directed repair` core used by both Studio and CLI.~~ Completed as `designos.design-ir/v1` plus the shared immutable generation kernel.
 
 - ~~Await owner approval of the 2026-08-19 competitor analysis, central model-gateway architecture, hard quality gate, and MVP→v1→v2 roadmap before writing Studio MVP code.~~ Approved and implemented on 2026-08-19.
 - ~~MVP acceptance target: choose one original DesignOS system, enter a brief, generate a fully animated prototype, run deterministic and independent review gates, and reveal only a passing artifact.~~ Implemented for certified Kiln with a deterministic planner fallback; live operator-provider integration remains `NOT_ASSESSED` until secrets are provisioned.
-- Replace Studio's in-memory, IP-derived demo quota with authenticated durable per-user usage and cost ledgers before production traffic.
-- Provision and test the operator-owned central provider gateway, including timeout, failover, circuit-breaker, budget, and provider-cost evidence.
+- ~~Replace Studio's in-memory, IP-derived demo quota with authenticated durable per-user usage and cost ledgers before production traffic.~~ Implemented with Sites identity + D1; in-memory remains local/test fallback.
+- Provision live operator provider secrets and record real provider-cost evidence. Multi-provider timeout, failover, circuit breaker and cost accounting are implemented but cannot be represented as live-tested until secrets are provisioned.
 - Resolve catalog prose-to-token drift and certify each system before expanding the Studio picker beyond Kiln.
-- Add isolated render/gate workers and durable attempt/audit storage; the MVP process-local implementation is not a distributed production control plane.
+- ~~Add isolated render/gate workers and durable attempt/audit storage.~~ P1 adds the process/browser worker protocol plus D1 attempt/evidence tables; production provisioning remains operational evidence.
+- ~~Expand the production catalog beyond 200 systems and connect it to Studio.~~ P2 certifies 201 systems, assigns three composition families to each, and carries selection through projects, Design IR, compilation and evidence.
+- Production deployment, live provider billing evidence, physical mid-range device runs and exhaustive 603-combination browser coverage remain operational/scale validation work, not completed implementation claims.
+- Run the six Studio renderer families on at least one physical mid-range Android device and record thermal/frame traces before making a physical-device performance claim; current 4× CPU Chromium evidence is lab evidence only.
 - Close the blind-panel distinctiveness critique with a product-specific inspectable artifact/composition study; do not represent the current mechanical floor as a human design score.
-- Expand coding-agent delivery from the current 19 rules-file export targets to a tested 25+ MCP/runtime adapter matrix; rules-file presence alone does not count as runtime support.
+- ~~Expand coding-agent delivery to a tested 25+ MCP/runtime adapter matrix.~~ 25 agents now pass rules + config + MCP handshake + safe uninstall.
 - Treat the existing 153 `systems/*` packages and their pinned upstream provenance as the compatibility baseline; add composition families and new original systems without deleting NOTICE, license, source-commit, or modification metadata.
 
 - No open Mission 4 implementation item recorded as of 2026-07-29.

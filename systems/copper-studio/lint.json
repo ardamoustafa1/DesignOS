@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "copper-studio",
+  "tokenPrefix": "--copper-studio-",
+  "requiredTokens": [
+    "--copper-studio-display",
+    "--copper-studio-text",
+    "--copper-studio-mono",
+    "--copper-studio-ground",
+    "--copper-studio-surface",
+    "--copper-studio-raised",
+    "--copper-studio-ink",
+    "--copper-studio-ink-2",
+    "--copper-studio-accent",
+    "--copper-studio-on-accent",
+    "--copper-studio-ring",
+    "--copper-studio-edge-lit",
+    "--copper-studio-shadow-rgb",
+    "--copper-studio-elev-1",
+    "--copper-studio-elev-2",
+    "--copper-studio-elev-3",
+    "--copper-studio-grain",
+    "--copper-studio-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Cormorant Garamond",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--copper-studio-elev-1",
+      "--copper-studio-elev-2",
+      "--copper-studio-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--copper-studio-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--copper-studio-grain",
+      "feTurbulence"
+    ]
+  }
+}

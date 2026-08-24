@@ -1,0 +1,122 @@
+{
+  "schema": 2,
+  "target": "http://127.0.0.1:4180/examples/motionos-flagships/spatial-stage.html",
+  "selector": "#stage",
+  "reducedMotion": false,
+  "durationMs": 1800,
+  "cpuRate": 4,
+  "generatedAt": "2026-08-19T12:30:22.786Z",
+  "metrics": {
+    "averageFps": 59.97204310772421,
+    "worstFrameMs": 17.699999999999818,
+    "droppedFrameRatio": 0,
+    "frameTimeMs": {
+      "count": 133,
+      "p50": 16.699999999999818,
+      "p95": 17.59999999999991,
+      "p99": 17.600000000000364,
+      "max": 17.699999999999818,
+      "histogram": {
+        "under16_7": 74,
+        "from16_7To33_3": 59,
+        "from33_3To50": 0,
+        "over50": 0
+      }
+    },
+    "droppedFrames": 0,
+    "longAnimationFrames": {
+      "count": 0,
+      "totalBlockingDurationMs": 0
+    },
+    "mainThread": {
+      "taskCount": 3795,
+      "blockingTaskCount": 0,
+      "blockingTimeMs": 0,
+      "p95TaskMs": 7.404
+    },
+    "rendering": {
+      "styleRecalculationCount": 125,
+      "styleRecalculationMs": 13.499999999999998,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "paintCount": 249,
+      "paintMs": 20.550999999999988,
+      "compositeCount": 0,
+      "compositeMs": 0,
+      "maxCompositeLayers": 2,
+      "compositeOnly": false
+    },
+    "interaction": {
+      "inputToMotionLatencyMs": null,
+      "settleTimeMs": null,
+      "overshoot": 0,
+      "cancelResponseTimeMs": null
+    },
+    "cleanup": {
+      "listenerDelta": 0,
+      "heapDeltaBytes": 0,
+      "heapBudgetBytes": 1048576,
+      "heapGrowthWithinBudget": true,
+      "unhandledRejections": 0,
+      "leakFree": true
+    },
+    "reducedMotion": "full-motion-observed",
+    "animationAttribution": {
+      "targets": [],
+      "traceEvents": [
+        {
+          "name": "AnimationFrame",
+          "count": 492
+        },
+        {
+          "name": "LocalFrameView::ScheduleAnimation",
+          "count": 379
+        },
+        {
+          "name": "AnimationHost::TickAnimations",
+          "count": 373
+        },
+        {
+          "name": "RequestAnimationFrame",
+          "count": 254
+        },
+        {
+          "name": "FireAnimationFrame",
+          "count": 253
+        },
+        {
+          "name": "AnimationFrame::Render",
+          "count": 250
+        },
+        {
+          "name": "AnimationFrame::StyleAndLayout",
+          "count": 250
+        },
+        {
+          "name": "LayerTreeHost::AnimationHost::PushProperties",
+          "count": 124
+        },
+        {
+          "name": "NeedsTickAnimations",
+          "count": 124
+        },
+        {
+          "name": "ImageAnimationController::AnimateImagesForSyncTree",
+          "count": 124
+        },
+        {
+          "name": "ImageAnimationController::WillActivate",
+          "count": 124
+        },
+        {
+          "name": "AnimationFrame::Presentation",
+          "count": 121
+        }
+      ]
+    }
+  },
+  "trace": {
+    "eventCount": 28446,
+    "categories": "devtools.timeline,cc,animation"
+  }
+}

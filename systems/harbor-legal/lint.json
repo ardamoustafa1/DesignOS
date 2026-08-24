@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "harbor-legal",
+  "tokenPrefix": "--harbor-legal-",
+  "requiredTokens": [
+    "--harbor-legal-display",
+    "--harbor-legal-text",
+    "--harbor-legal-mono",
+    "--harbor-legal-ground",
+    "--harbor-legal-surface",
+    "--harbor-legal-raised",
+    "--harbor-legal-ink",
+    "--harbor-legal-ink-2",
+    "--harbor-legal-accent",
+    "--harbor-legal-on-accent",
+    "--harbor-legal-ring",
+    "--harbor-legal-edge-lit",
+    "--harbor-legal-shadow-rgb",
+    "--harbor-legal-elev-1",
+    "--harbor-legal-elev-2",
+    "--harbor-legal-elev-3",
+    "--harbor-legal-grain",
+    "--harbor-legal-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Playfair Display",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--harbor-legal-elev-1",
+      "--harbor-legal-elev-2",
+      "--harbor-legal-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--harbor-legal-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--harbor-legal-grain",
+      "feTurbulence"
+    ]
+  }
+}

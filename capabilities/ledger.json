@@ -24,8 +24,12 @@
         "range": "^1.59.1"
       }
     ],
-    "developmentCount": 9,
+    "developmentCount": 11,
     "development": [
+      {
+        "name": "@rive-app/canvas",
+        "range": "^2.31.5"
+      },
       {
         "name": "chrome-launcher",
         "range": "^1.2.1"
@@ -59,6 +63,10 @@
         "range": "^5.37.3"
       },
       {
+        "name": "three",
+        "range": "^0.180.0"
+      },
+      {
         "name": "vue",
         "range": "^3.5.18"
       }
@@ -67,7 +75,7 @@
   "capabilities": {
     "registryRules": 40,
     "registryProviders": 9,
-    "knowledgeModules": 74,
+    "knowledgeModules": 75,
     "industryPacks": 24,
     "motionRecipes": 15,
     "frameworkStacks": 6,
@@ -75,9 +83,9 @@
     "reducedMotionBrowserScenarios": 90,
     "browserFixtureScenarios": 180,
     "browserAssertions": 3510,
-    "knowledgeGraphNodes": 145,
+    "knowledgeGraphNodes": 146,
     "goldenProjects": 5,
-    "cliCommandModules": 33,
+    "cliCommandModules": 36,
     "componentAstTransforms": 3,
     "motionEvidenceEngines": 2,
     "leaderProductFeatures": 18,

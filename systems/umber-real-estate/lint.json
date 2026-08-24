@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "umber-real-estate",
+  "tokenPrefix": "--umber-real-estate-",
+  "requiredTokens": [
+    "--umber-real-estate-display",
+    "--umber-real-estate-text",
+    "--umber-real-estate-mono",
+    "--umber-real-estate-ground",
+    "--umber-real-estate-surface",
+    "--umber-real-estate-raised",
+    "--umber-real-estate-ink",
+    "--umber-real-estate-ink-2",
+    "--umber-real-estate-accent",
+    "--umber-real-estate-on-accent",
+    "--umber-real-estate-ring",
+    "--umber-real-estate-edge-lit",
+    "--umber-real-estate-shadow-rgb",
+    "--umber-real-estate-elev-1",
+    "--umber-real-estate-elev-2",
+    "--umber-real-estate-elev-3",
+    "--umber-real-estate-grain",
+    "--umber-real-estate-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "DM Serif Display",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--umber-real-estate-elev-1",
+      "--umber-real-estate-elev-2",
+      "--umber-real-estate-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--umber-real-estate-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--umber-real-estate-grain",
+      "feTurbulence"
+    ]
+  }
+}

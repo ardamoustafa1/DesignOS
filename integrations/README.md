@@ -1,8 +1,8 @@
 # Integrations — One System, Every Agent
 
-DesignOS is markdown + conventions, so it runs anywhere an agent reads rules. The
-difference per tool is only *how the kernel gets loaded*. One command generates the
-right rules file for each:
+DesignOS has two layers. The portable rules layer loads the same kernel in every agent;
+the Universal Agent Runtime supplies deterministic routing, memory and executable gates
+over MCP/stdio so those outcomes do not depend on a model remembering a long prompt.
 
 ```bash
 node DesignOS/bin/designos.js export all      # or: cursor · copilot · windsurf · cline · aider · agentsmd
@@ -27,6 +27,8 @@ from there for every command after the first install.
 | **Aider** | `CONVENTIONS.md` | same | persona-adopted | — |
 | **OpenAI Codex CLI** | `AGENTS.md` (`export codex` — confirmed auto-load path, not the old `.codex/` guess) | same | persona-adopted | — |
 | **Google Antigravity** | `AGENTS.md` + `.agent/rules/designos.md` (`export antigravity`) | same | persona-adopted | — |
+| **Kimi Code** | `AGENTS.md` (`export kimi`) | runtime-routed | runtime panel contract | runtime tools |
+| **Hermes Agent** | `AGENTS.md` (`export hermes`) | runtime-routed | runtime panel contract | runtime tools |
 | **AGENTS.md standard** (Gemini CLI, Amp, Zed, Jules, …) | `AGENTS.md` (`export agentsmd`) | same | persona-adopted | — |
 | **Any other** | paste `DesignOS/CLAUDE.md` into its rules slot | same | persona-adopted | — |
 
@@ -47,12 +49,28 @@ workspace files.
 Re-run after upgrading DesignOS or editing the kernel. The rules files are build
 artifacts: edit `DesignOS/CLAUDE.md`, not them (the header says so too).
 
+## Universal Agent Runtime
+
+```bash
+node DesignOS/bin/designos.js agent-runtime status all
+node DesignOS/bin/designos.js agent-runtime config --out designos-mcp.json
+node DesignOS/bin/designos.js agent-runtime serve
+```
+
+`config` emits a standard `mcpServers.designos` entry. Put that entry in the host's MCP
+configuration using the host's documented location. The runtime exposes six tools:
+kernel boot, brief routing, capability evidence, panel contracts, deterministic review,
+and allow-listed project-memory append. It never receives or proxies model API keys.
+
 ## Capability degradation, honestly
-- **Full experience (Claude Code):** lazy module routing, a genuinely independent
-  `reviewer` subagent, slash commands, memory persistence via CLAUDE.md conventions.
-- **Rules-file agents:** the kernel + modules work; the *adversarial* review runs as a
-  persona in the same context — grading its own homework somewhat. Compensate by
-  running `/design-score`'s prompt (`skills/design-score.md`) as a fresh conversation.
+- **Outcome parity through the runtime:** every listed adapter receives the same kernel
+  digest, deterministic router, memory protocol and executable review gate.
+- **Native UX is not identical:** slash-command surfaces, model behavior, permission UI
+  and true parallel subagents remain host capabilities. `designos_panel` returns binding
+  independent-review contracts; if a host cannot isolate contexts, the result must carry
+  the `DEGRADED` label instead of pretending independence.
+- **Rules-only fallback:** without MCP, the kernel + modules still work, but execution
+  depends on the host model following the rules. Run the deterministic CLI gate directly.
 - **Context-limited agents:** if the tool chokes on the kernel size, trim the routing
   table to your project's surface types — the kernel degrades gracefully; the modules
   don't need to be loaded until routed.

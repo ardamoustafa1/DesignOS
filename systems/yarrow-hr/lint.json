@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "yarrow-hr",
+  "tokenPrefix": "--yarrow-hr-",
+  "requiredTokens": [
+    "--yarrow-hr-display",
+    "--yarrow-hr-text",
+    "--yarrow-hr-mono",
+    "--yarrow-hr-ground",
+    "--yarrow-hr-surface",
+    "--yarrow-hr-raised",
+    "--yarrow-hr-ink",
+    "--yarrow-hr-ink-2",
+    "--yarrow-hr-accent",
+    "--yarrow-hr-on-accent",
+    "--yarrow-hr-ring",
+    "--yarrow-hr-edge-lit",
+    "--yarrow-hr-shadow-rgb",
+    "--yarrow-hr-elev-1",
+    "--yarrow-hr-elev-2",
+    "--yarrow-hr-elev-3",
+    "--yarrow-hr-grain",
+    "--yarrow-hr-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Newsreader",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--yarrow-hr-elev-1",
+      "--yarrow-hr-elev-2",
+      "--yarrow-hr-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--yarrow-hr-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--yarrow-hr-grain",
+      "feTurbulence"
+    ]
+  }
+}

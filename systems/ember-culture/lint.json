@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "ember-culture",
+  "tokenPrefix": "--ember-culture-",
+  "requiredTokens": [
+    "--ember-culture-display",
+    "--ember-culture-text",
+    "--ember-culture-mono",
+    "--ember-culture-ground",
+    "--ember-culture-surface",
+    "--ember-culture-raised",
+    "--ember-culture-ink",
+    "--ember-culture-ink-2",
+    "--ember-culture-accent",
+    "--ember-culture-on-accent",
+    "--ember-culture-ring",
+    "--ember-culture-edge-lit",
+    "--ember-culture-shadow-rgb",
+    "--ember-culture-elev-1",
+    "--ember-culture-elev-2",
+    "--ember-culture-elev-3",
+    "--ember-culture-grain",
+    "--ember-culture-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Cormorant Garamond",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--ember-culture-elev-1",
+      "--ember-culture-elev-2",
+      "--ember-culture-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--ember-culture-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--ember-culture-grain",
+      "feTurbulence"
+    ]
+  }
+}
