@@ -31,14 +31,14 @@ evidence, and release gates are executable.
 | Required dependencies | 2 (`@jridgewell/trace-mapping`, `axe-core`) |
 | Optional dependencies (browser/evidence features) | 1 (`playwright`) |
 | Registry rules / providers | 40 / 9 |
-| Validated knowledge modules | 74 |
+| Validated knowledge modules | 75 |
 | Industry packs | 24 |
 | Motion recipes / framework stacks | 15 / 6 |
 | Executable adapter combinations | 90 |
 | Full + reduced-motion browser scenarios | 180 |
-| Knowledge graph nodes | 145 |
+| Knowledge graph nodes | 146 |
 | Golden projects | 5 |
-| Component AST directions / CLI command modules | 3 / 32 |
+| Component AST directions / CLI command modules | 3 / 36 |
 | Motion evidence engines | 2 (CDP profile + temporal regression) |
 | Mission 4 leader features | 18 / 18 implemented |
 | Inspectable pattern atlas | 15 patterns |
@@ -275,3 +275,23 @@ evidence. The generated ledger records both sets directly from `package.json`.
 - **House style:** record project overrides in `memory/brand.md` and
   `memory/design.md`; project memory outranks generic modules when the conflict is
   explicit and documented.
+## Universal Agent Runtime
+
+The portable kernel and the executable runtime are separate on purpose:
+
+```text
+Host agent (Claude / Codex / Cursor / Kimi / Hermes / …)
+  ├─ rules adapter → byte-identical DesignOS kernel
+  └─ MCP stdio → runtime/agent/server.js
+                 ├─ deterministic module router
+                 ├─ capability evidence + kernel digest
+                 ├─ UI/accessibility/reviewer panel contracts
+                 ├─ allow-listed project memory
+                 └─ async deterministic review subprocess
+```
+
+The server is model-provider neutral and holds no API keys. Its workspace boundary rejects
+review targets outside the active project, and memory writes are restricted to the seven
+files defined by the DesignOS memory protocol. The runtime guarantees shared DesignOS
+mechanics; model quality and host-native interaction surfaces remain explicitly outside
+the parity claim.

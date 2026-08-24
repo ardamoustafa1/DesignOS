@@ -252,6 +252,7 @@ function help(context) {
 
   Core:
     ${context.run} improve <target> --brief "<product/surface>" [--deep]
+    ${context.run} ship <target> [--surface portfolio]
     ${context.run} audit <target>
     ${context.run} review <target> [--fix-prompt]
     ${context.run} visual <target>
@@ -277,7 +278,15 @@ function help(context) {
     ${context.run} eval <slug>
     ${context.run} case <slug>
     npm run pack:evidence
+  Universal agents:
+    ${context.run} agent install <agent>
+    ${context.run} agent uninstall <agent>
+    ${context.run} agent doctor <agent> [--json]
+    ${context.run} agent-runtime status [agent|all] [--json]
+    ${context.run} agent-runtime config [--out designos-mcp.json]
+    ${context.run} agent-runtime serve
   System: agents · skills · export · hooks · doctor · help
+  Catalog: system-certify [--json] [--write]
 
   Run ${context.run} <command> with the documented flags in README.md.
   ⚠ Bare "npx designos" refers to an unrelated registry package; use the local CLI path.

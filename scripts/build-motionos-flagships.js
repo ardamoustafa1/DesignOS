@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+'use strict';
+const path=require('path'),fs=require('fs'),esbuild=require('esbuild');const root=path.resolve(__dirname,'..'),source=path.join(root,'examples/motionos-flagships'),out=path.join(source,'dist');fs.mkdirSync(out,{recursive:true});const entries=['spatial-stage.js','shader-field.js','svg-morph-stage.js'].map(file=>path.join(source,file));esbuild.buildSync({entryPoints:entries,bundle:true,minify:true,format:'esm',target:['es2022'],outdir:out,legalComments:'none'});const sizes=entries.map(file=>{const name=path.basename(file);return `${name}:${fs.statSync(path.join(out,name)).size}`});console.log(`motionos-flagships: ${sizes.join(', ')}`);

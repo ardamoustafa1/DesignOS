@@ -1,0 +1,308 @@
+{
+  "semantic": {
+    "lang": "en",
+    "title": "MotionOS Shader Field",
+    "landmarks": {
+      "header": 0,
+      "nav": 0,
+      "main": 1,
+      "aside": 0,
+      "footer": 0
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "Signal becomes atmosphere."
+      }
+    ],
+    "controls": []
+  },
+  "axe": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.12.1"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "windowWidth": 375,
+      "windowHeight": 812,
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<main class=\"stage\" data-motion-role=\"arrival\">",
+                    "target": [
+                      "main"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>Raw WebGL2 / procedural depth</p>",
+            "target": [
+              "p:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "38.4pt (51.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<main class=\"stage\" data-motion-role=\"arrival\">",
+                    "target": [
+                      "main"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h1>Signal becomes atmosphere.</h1>",
+            "target": [
+              "h1"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<main class=\"stage\" data-motion-role=\"arrival\">",
+                    "target": [
+                      "main"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>A fullscreen-quad shader with viewport suspension, context-loss fallback, bounded DPR and a static reduced-motion composition.</p>",
+            "target": [
+              "p:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ],
+    "passes": 6
+  },
+  "accessibilityTree": [
+    {
+      "nodeId": "2",
+      "role": "RootWebArea",
+      "name": "MotionOS Shader Field",
+      "ignored": false,
+      "properties": {
+        "focused": true
+      }
+    },
+    {
+      "nodeId": "5",
+      "parentId": "2",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "12",
+      "parentId": "5",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "13",
+      "parentId": "12",
+      "role": "main",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "14",
+      "parentId": "13",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "15",
+      "parentId": "14",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "3",
+      "parentId": "14",
+      "role": "heading",
+      "name": "Signal becomes atmosphere.",
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "16",
+      "parentId": "14",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "18",
+      "parentId": "15",
+      "role": "StaticText",
+      "name": "Raw WebGL2 / procedural depth",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "19",
+      "parentId": "3",
+      "role": "StaticText",
+      "name": "Signal becomes atmosphere.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "20",
+      "parentId": "16",
+      "role": "StaticText",
+      "name": "A fullscreen-quad shader with viewport suspension, context-loss fallback, bounded DPR and a static reduced-motion composition.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000002",
+      "parentId": "18",
+      "role": "InlineTextBox",
+      "name": "Raw WebGL2 / procedural depth",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000003",
+      "parentId": "19",
+      "role": "InlineTextBox",
+      "name": "Signal ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000004",
+      "parentId": "19",
+      "role": "InlineTextBox",
+      "name": "becomes ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000005",
+      "parentId": "19",
+      "role": "InlineTextBox",
+      "name": "atmosphere.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000006",
+      "parentId": "20",
+      "role": "InlineTextBox",
+      "name": "A fullscreen-quad shader with viewport ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000007",
+      "parentId": "20",
+      "role": "InlineTextBox",
+      "name": "suspension, context-loss fallback, bounded ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000008",
+      "parentId": "20",
+      "role": "InlineTextBox",
+      "name": "DPR and a static reduced-motion ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000009",
+      "parentId": "20",
+      "role": "InlineTextBox",
+      "name": "composition.",
+      "ignored": false,
+      "properties": {}
+    }
+  ]
+}

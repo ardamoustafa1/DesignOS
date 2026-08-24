@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "nimbus-cloud",
+  "tokenPrefix": "--nimbus-cloud-",
+  "requiredTokens": [
+    "--nimbus-cloud-display",
+    "--nimbus-cloud-text",
+    "--nimbus-cloud-mono",
+    "--nimbus-cloud-ground",
+    "--nimbus-cloud-surface",
+    "--nimbus-cloud-raised",
+    "--nimbus-cloud-ink",
+    "--nimbus-cloud-ink-2",
+    "--nimbus-cloud-accent",
+    "--nimbus-cloud-on-accent",
+    "--nimbus-cloud-ring",
+    "--nimbus-cloud-edge-lit",
+    "--nimbus-cloud-shadow-rgb",
+    "--nimbus-cloud-elev-1",
+    "--nimbus-cloud-elev-2",
+    "--nimbus-cloud-elev-3",
+    "--nimbus-cloud-grain",
+    "--nimbus-cloud-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Bodoni Moda",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--nimbus-cloud-elev-1",
+      "--nimbus-cloud-elev-2",
+      "--nimbus-cloud-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--nimbus-cloud-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--nimbus-cloud-grain",
+      "feTurbulence"
+    ]
+  }
+}

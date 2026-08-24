@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "nova-science",
+  "tokenPrefix": "--nova-science-",
+  "requiredTokens": [
+    "--nova-science-display",
+    "--nova-science-text",
+    "--nova-science-mono",
+    "--nova-science-ground",
+    "--nova-science-surface",
+    "--nova-science-raised",
+    "--nova-science-ink",
+    "--nova-science-ink-2",
+    "--nova-science-accent",
+    "--nova-science-on-accent",
+    "--nova-science-ring",
+    "--nova-science-edge-lit",
+    "--nova-science-shadow-rgb",
+    "--nova-science-elev-1",
+    "--nova-science-elev-2",
+    "--nova-science-elev-3",
+    "--nova-science-grain",
+    "--nova-science-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Bodoni Moda",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--nova-science-elev-1",
+      "--nova-science-elev-2",
+      "--nova-science-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--nova-science-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--nova-science-grain",
+      "feTurbulence"
+    ]
+  }
+}

@@ -65,7 +65,9 @@ if (!fs.existsSync(SYSTEMS)) {
 const stripComments = (css) => css.replace(/\/\*[\s\S]*?\*\//g, m => m.replace(/[^\n]/g, ' '));
 
 /** Prose minus fenced code blocks: a fence quoting tokens.css is not an independent claim. */
-const proseOnly = (md) => md.replace(/```[\s\S]*?```/g, '');
+const proseOnly = (md) => md
+  .split(/^## Upstream contract\s*$/m)[0]
+  .replace(/```[\s\S]*?```/g, '');
 
 const expandHex = (hex) => {
   const h = hex.replace('#', '').toLowerCase();

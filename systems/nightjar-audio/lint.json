@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "nightjar-audio",
+  "tokenPrefix": "--nightjar-audio-",
+  "requiredTokens": [
+    "--nightjar-audio-display",
+    "--nightjar-audio-text",
+    "--nightjar-audio-mono",
+    "--nightjar-audio-ground",
+    "--nightjar-audio-surface",
+    "--nightjar-audio-raised",
+    "--nightjar-audio-ink",
+    "--nightjar-audio-ink-2",
+    "--nightjar-audio-accent",
+    "--nightjar-audio-on-accent",
+    "--nightjar-audio-ring",
+    "--nightjar-audio-edge-lit",
+    "--nightjar-audio-shadow-rgb",
+    "--nightjar-audio-elev-1",
+    "--nightjar-audio-elev-2",
+    "--nightjar-audio-elev-3",
+    "--nightjar-audio-grain",
+    "--nightjar-audio-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Playfair Display",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--nightjar-audio-elev-1",
+      "--nightjar-audio-elev-2",
+      "--nightjar-audio-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--nightjar-audio-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--nightjar-audio-grain",
+      "feTurbulence"
+    ]
+  }
+}

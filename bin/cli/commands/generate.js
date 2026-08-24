@@ -181,10 +181,13 @@ function generate(brief, options, ctx) {
   const styleResult   = runStylePass(brief);
   const typoResult    = runTypographyPass(sectorResult.key);
   const dials         = options.useDials ? (readDialConfig(cwd) || {}) : {};
-  const motionInt     = dials.MOTION_INTENSITY || (brief.toLowerCase().includes('dark') || brief.toLowerCase().includes('cinematic') ? 7 : 5);
+  const inferred = surfaceResult.key === 'portfolio'
+    ? { motion: 8, variance: 9, density: 3 }
+    : { motion: (brief.toLowerCase().includes('dark') || brief.toLowerCase().includes('cinematic') ? 7 : 5), variance: 5, density: 4 };
+  const motionInt     = dials.MOTION_INTENSITY || inferred.motion;
   const motionResult  = motionBudgetFromDial(motionInt);
-  const varianceInt   = dials.DESIGN_VARIANCE  || 5;
-  const densityInt    = dials.VISUAL_DENSITY   || 4;
+  const varianceInt   = dials.DESIGN_VARIANCE  || inferred.variance;
+  const densityInt    = dials.VISUAL_DENSITY   || inferred.density;
 
   const S  = sectorResult.v;
   const P  = S.palette;

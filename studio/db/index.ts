@@ -11,3 +11,7 @@ export function getDb() {
 
   return drizzle(env.DB, { schema });
 }
+
+export function getD1Binding() {
+  return env.DB ?? null;
+}

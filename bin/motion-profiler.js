@@ -169,23 +169,31 @@ async function profileMotion(options) {
     } catch {}
   });
   const client = await context.newCDPSession(page);
+  const cpuRate = Math.max(1, Number(options.cpuRate) || 1);
+  await client.send('Emulation.setCPUThrottlingRate', { rate: cpuRate });
   let maxLayers = 0;
   client.on('LayerTree.layerTreeDidChange', event => {
     maxLayers = Math.max(maxLayers, event.layers?.length || 0);
   });
   await client.send('LayerTree.enable');
-  const tracingComplete = new Promise(resolve => client.once('Tracing.tracingComplete', resolve));
-  await client.send('Tracing.start', {
-    transferMode: 'ReturnAsStream',
-    categories: [
-      'devtools.timeline', 'blink.user_timing', 'cc', 'animation',
-      'disabled-by-default-devtools.timeline', 'disabled-by-default-devtools.timeline.frame',
-    ].join(','),
-  });
   try {
     await page.goto(served.url, { waitUntil: 'networkidle' });
+    await page.waitForTimeout(options.warmupMs ?? 250);
+    const tracingComplete = new Promise(resolve => client.once('Tracing.tracingComplete', resolve));
+    await client.send('Tracing.start', {
+      transferMode: 'ReturnAsStream',
+      categories: [
+        'devtools.timeline', 'blink.user_timing', 'cc', 'animation',
+        'disabled-by-default-devtools.timeline', 'disabled-by-default-devtools.timeline.frame',
+      ].join(','),
+    });
     const before = await page.evaluate(selector => {
       const profile = window.__designosProfile;
+      profile.timestamps = [];
+      profile.longAnimationFrames = [];
+      profile.inputs = [];
+      profile.changes = [];
+      profile.positions = [];
       profile.target = selector ? document.querySelector(selector) : document.body;
       if (!profile.target) throw new Error(`Profiler selector not found: ${selector}`);
       const style = getComputedStyle(profile.target);
@@ -243,6 +251,7 @@ async function profileMotion(options) {
       selector: options.selector || null,
       reducedMotion: Boolean(options.reducedMotion),
       durationMs: options.durationMs || 1000,
+      cpuRate,
       generatedAt: new Date().toISOString(),
       metrics: summarizeTrace(events, runtime, maxLayers),
       trace: { eventCount: events.length, categories: 'devtools.timeline,cc,animation' },
@@ -256,7 +265,7 @@ async function profileMotion(options) {
 async function main() {
   const args = process.argv.slice(2);
   const target = args.find(arg => !arg.startsWith('--'));
-  if (!target) throw new Error('Usage: motion-profiler <html-or-url> [--selector <css>] [--duration 1000] [--out report.json]');
+  if (!target) throw new Error('Usage: motion-profiler <html-or-url> [--selector <css>] [--duration 1000] [--cpu-rate 4] [--out report.json]');
   const value = (name, fallback = '') => {
     const index = args.indexOf(name);
     return index >= 0 ? args[index + 1] : fallback;
@@ -266,6 +275,7 @@ async function main() {
     selector: value('--selector'),
     durationMs: Number(value('--duration', '1000')),
     reducedMotion: args.includes('--reduced'),
+    cpuRate: Number(value('--cpu-rate', '1')),
     cwd: process.cwd(),
   });
   const output = path.resolve(value('--out', '.designos/motion-profile.json'));

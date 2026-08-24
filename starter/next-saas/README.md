@@ -2,6 +2,10 @@
 
 Use this for App Router SaaS products, waitlists, dashboards, pricing, and docs.
 
+> **Scaffold only:** the included page and neutral tokens are an installation check, not
+> a design and never a shippable first pass. Replace the page with verified product
+> material, a derived composition, complete states, and measured browser evidence.
+
 ## Install
 
 ```bash

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "boreal-health",
+  "tokenPrefix": "--boreal-health-",
+  "requiredTokens": [
+    "--boreal-health-display",
+    "--boreal-health-text",
+    "--boreal-health-mono",
+    "--boreal-health-ground",
+    "--boreal-health-surface",
+    "--boreal-health-raised",
+    "--boreal-health-ink",
+    "--boreal-health-ink-2",
+    "--boreal-health-accent",
+    "--boreal-health-on-accent",
+    "--boreal-health-ring",
+    "--boreal-health-edge-lit",
+    "--boreal-health-shadow-rgb",
+    "--boreal-health-elev-1",
+    "--boreal-health-elev-2",
+    "--boreal-health-elev-3",
+    "--boreal-health-grain",
+    "--boreal-health-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Fraunces",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--boreal-health-elev-1",
+      "--boreal-health-elev-2",
+      "--boreal-health-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--boreal-health-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--boreal-health-grain",
+      "feTurbulence"
+    ]
+  }
+}

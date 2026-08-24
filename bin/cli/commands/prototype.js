@@ -1,146 +1,46 @@
-/**
- * designos prototype — A/B UI Denemesi
- *
- * emilkowalski's prototype skill inspired tool.
- * Generates an HTML skeleton with a built-in switcher to view 3-5 different visual variants
- * of the same UI component or section.
- *
- * Usage:
- *   designos prototype "pricing card" --variants 4
- */
-
+/** designos prototype — composition-led, motion-complete prototype theatre. */
 'use strict';
 const fs = require('fs');
 const path = require('path');
 
-function execute(args, ctx) {
-  const { cwd, ok, log, fail, argValue } = ctx;
-  const targetName = args.filter(a => !a.startsWith('--')).join(' ').trim();
-  const variants = parseInt(argValue(args, '--variants', '3'), 10);
-
-  if (!targetName) {
-    fail('Usage: designos prototype "<component name>" [--variants 3]');
-  }
-
-  const safeName = targetName.replace(/[^a-z0-9]/gi, '-').toLowerCase();
-  const outPath = path.resolve(cwd, `prototype-${safeName}.html`);
-
-  const variantStyles = [
-    `/* Variant 1: Minimal & Clean */
-[data-variant="1"] .prototype-target {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  box-shadow: none;
-  border-radius: var(--radius-sm);
-}`,
-    `/* Variant 2: Elevated & Soft */
-[data-variant="2"] .prototype-target {
-  background: var(--bg-surface-raised);
-  border: 1px solid transparent;
-  box-shadow: 0 12px 32px rgb(0 0 0 / 0.08);
-  border-radius: var(--radius-lg);
-}`,
-    `/* Variant 3: High Contrast / Bold */
-[data-variant="3"] .prototype-target {
-  background: var(--text-primary);
-  color: var(--bg-page);
-  border: 2px solid var(--accent);
-  box-shadow: 8px 8px 0 var(--accent);
-  border-radius: 0;
-}`,
-    `/* Variant 4: Glassmorphism */
-[data-variant="4"] .prototype-target {
-  background: rgb(255 255 255 / 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgb(255 255 255 / 0.2);
-  box-shadow: 0 8px 32px rgb(0 0 0 / 0.1);
-  border-radius: var(--radius-xl);
-}`,
-    `/* Variant 5: Brutalist */
-[data-variant="5"] .prototype-target {
-  background: var(--bg-page);
-  border: 3px solid #000;
-  box-shadow: 4px 4px 0 #000;
-  border-radius: 0;
-  text-transform: uppercase;
-}`
-  ].slice(0, variants).join('\n\n');
-
-  const variantButtons = Array.from({ length: variants }, (_, i) =>
-    `<button class="switcher-btn" data-set="${i + 1}">Variant ${i + 1}</button>`
-  ).join('');
-
-  const htmlContent = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prototype: ${targetName}</title>
-<style>
-  :root {
-    --bg-page: #ffffff; --bg-surface: #f8fafc; --bg-surface-raised: #ffffff;
-    --text-primary: #09090b; --text-secondary: #3f3f46; --border-default: #e4e4e7;
-    --accent: #10b981; --radius-sm: 6px; --radius-lg: 12px; --radius-xl: 20px;
-    font-family: system-ui, sans-serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg-page: #09090b; --bg-surface: #18181b; --bg-surface-raised: #27272a;
-      --text-primary: #fafafa; --text-secondary: #a1a1aa; --border-default: #3f3f46;
-    }
-  }
-  body { background: var(--bg-page); color: var(--text-secondary); margin: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: background 0.3s; }
-  
-  /* Switcher UI */
-  .switcher { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--bg-surface-raised); border: 1px solid var(--border-default); padding: 8px; border-radius: 99px; display: flex; gap: 8px; box-shadow: 0 12px 24px rgb(0 0 0 / 0.1); z-index: 100; }
-  .switcher-btn { appearance: none; border: none; background: transparent; color: var(--text-secondary); padding: 8px 16px; border-radius: 99px; cursor: pointer; font-weight: 500; font-size: 14px; transition: 0.2s; }
-  .switcher-btn:hover { background: var(--bg-surface); color: var(--text-primary); }
-  .switcher-btn.active { background: var(--text-primary); color: var(--bg-page); }
-
-  /* Base Target Styles */
-  .prototype-target {
-    padding: 32px;
-    width: 320px;
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .prototype-target h2 { color: inherit; margin: 0 0 8px; }
-  
-  ${variantStyles}
-</style>
-</head>
-<body data-variant="1">
-
-  <!-- THE TARGET COMPONENT -->
-  <div class="prototype-target">
-    <h2>${targetName}</h2>
-    <p>This is a placeholder for the component you are prototyping. Apply your HTML structure here.</p>
-  </div>
-
-  <!-- SWITCHER CONTROL -->
-  <div class="switcher">
-    ${variantButtons}
-  </div>
-
-<script>
-  const body = document.body;
-  const btns = document.querySelectorAll('.switcher-btn');
-  btns[0].classList.add('active');
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      body.setAttribute('data-variant', btn.getAttribute('data-set'));
-    });
-  });
-</script>
-</body>
-</html>`;
-
-  fs.writeFileSync(outPath, htmlContent);
-  ok(`Prototype environment created: ${path.relative(cwd, outPath)}`);
-  log(`Open the file in a browser and add your HTML structure inside .prototype-target.`);
-  log(`The file contains ${variants} CSS variant blocks ready for your design exploration.`);
+function escapeHtml(value) {
+  return value.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 }
 
+function execute(args, ctx) {
+  const { cwd, ok, log, fail, argValue } = ctx;
+  const targetName = ctx.positionals(args).join(' ').trim();
+  const variants = Math.max(3, Math.min(5, parseInt(argValue(args, '--variants', '3'), 10) || 3));
+  if (!targetName) fail('Usage: designos prototype "<product truth or component>" [--variants 3]');
+  const safeName = targetName.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+  const outPath = path.resolve(cwd, `prototype-${safeName}.html`);
+  const title = escapeHtml(targetName);
+  const labels = ['Editorial tension', 'Artifact stage', 'Kinetic index', 'Split narrative', 'Proof rail'].slice(0, variants);
+  const buttons = labels.map((label, index) => `<button class="switcher__button" data-set="${index + 1}" aria-pressed="${index === 0}"><span>0${index + 1}</span>${label}</button>`).join('');
+
+  const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${title} — DesignOS composition prototype</title>
+<style>
+:root{color-scheme:dark;--ink:oklch(96% .012 80);--muted:oklch(72% .018 75);--ground:oklch(13% .015 250);--surface:oklch(18% .02 245);--edge:oklch(100% 0 0/.11);--ember:oklch(76% .16 55);--ember-hot:oklch(84% .13 70);--font-display:"Avenir Next","Helvetica Neue",sans-serif;--font-body:"IBM Plex Sans","Helvetica Neue",sans-serif;--shadow-1:0 1px 2px oklch(3% .02 245/.32),0 8px 20px -12px oklch(3% .02 245/.7),inset 0 1px 0 oklch(100% 0 0/.07);--shadow-2:0 2px 4px oklch(3% .02 245/.38),0 22px 54px -24px oklch(3% .02 245/.86),inset 0 1px 0 oklch(100% 0 0/.1);--shadow-3:0 3px 8px oklch(3% .02 245/.44),0 38px 90px -32px oklch(3% .02 245/.95),inset 0 1px 0 oklch(100% 0 0/.13);--ease:cubic-bezier(.16,1,.3,1);--fast:140ms;--slow:720ms;--ambient:12000ms}
+*{box-sizing:border-box}html{background:var(--ground);scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:var(--font-body);background:radial-gradient(80rem 48rem at 74% -15%,oklch(40% .08 55/.24),transparent 62%),var(--ground)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E")}.shell{width:min(100% - 32px,1280px);margin:auto}
+button{font:inherit}button:focus-visible{outline:2px solid var(--ember-hot);outline-offset:4px}.mast{min-height:92vh;display:grid;align-items:center;padding:88px 0 120px;position:relative;isolation:isolate}.mast::after{content:"";position:absolute;width:min(44vw,620px);aspect-ratio:1;right:2%;top:12%;border:1px solid var(--edge);border-radius:50%;background:radial-gradient(circle at 34% 28%,oklch(78% .14 58/.18),transparent 44%);box-shadow:var(--shadow-3);z-index:-1;animation:orbit var(--ambient) var(--ease) both}
+.kicker{display:flex;gap:12px;align-items:center;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--ember-hot)}.kicker::before{content:"";width:38px;height:1px;background:currentColor}h1{font-family:var(--font-display);font-size:clamp(3.8rem,10vw,9.5rem);line-height:.82;letter-spacing:-.072em;max-width:9ch;margin:24px 0 28px;font-weight:700}.lead{max-width:42rem;font-size:clamp(1.05rem,1.6vw,1.4rem);line-height:1.55;color:var(--muted)}
+.prototype-target{position:relative;display:grid;gap:24px;margin-top:48px;max-width:940px;transition:transform var(--slow) var(--ease),grid-template-columns var(--slow) var(--ease)}.artifact{min-height:220px;padding:32px;border:1px solid var(--edge);border-radius:24px;background:linear-gradient(145deg,oklch(24% .025 245/.94),oklch(16% .018 250/.9));box-shadow:var(--shadow-2);overflow:hidden;transform:translateZ(0);position:relative}.artifact::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(360px circle at var(--mx,70%) var(--my,20%),oklch(78% .16 55/.19),transparent 70%);opacity:.5}.artifact__number{font-family:var(--font-display);font-size:clamp(3rem,7vw,7rem);letter-spacing:-.06em}.artifact p{max-width:38ch;color:var(--muted)}
+[data-variant="1"] .prototype-target{grid-template-columns:minmax(0,1.45fr) minmax(240px,.55fr)}[data-variant="1"] .artifact:first-child{grid-row:span 2}[data-variant="2"] .prototype-target{grid-template-columns:repeat(12,1fr)}[data-variant="2"] .artifact:first-child{grid-column:1/9}[data-variant="2"] .artifact:nth-child(2){grid-column:8/13;margin-top:72px}[data-variant="2"] .artifact:nth-child(3){grid-column:2/7}[data-variant="3"] .prototype-target{grid-template-columns:repeat(3,1fr)}[data-variant="3"] .artifact:nth-child(2){transform:translateY(40px)}[data-variant="4"] .prototype-target{grid-template-columns:1fr 1fr}[data-variant="4"] .artifact:first-child{grid-column:1/-1}[data-variant="5"] .prototype-target{grid-template-columns:2fr 1fr}[data-variant="5"] .artifact:last-child{grid-column:1/-1;margin-left:18%}
+.proof{min-height:72vh;padding:120px 0;display:grid;grid-template-columns:.7fr 1.3fr;gap:10vw;align-items:start}.proof h2{position:sticky;top:48px;font:700 clamp(2.5rem,6vw,6rem)/.9 var(--font-display);letter-spacing:-.06em;margin:0}.proof__rail{display:grid;gap:16px}.proof__item{padding:28px 0;border-top:1px solid var(--edge);opacity:1;transform:translateY(28px);transition:transform var(--slow) var(--ease)}.proof__item.is-visible{transform:none}
+.switcher{position:fixed;z-index:10;right:20px;bottom:20px;display:flex;gap:8px;padding:8px;border:1px solid var(--edge);border-radius:20px;background:oklch(17% .02 245/.92);box-shadow:var(--shadow-2)}.switcher__button{min-height:48px;border:0;border-radius:12px;padding:8px 12px;background:transparent;color:var(--muted);cursor:pointer;transition:transform var(--fast) var(--ease),background var(--fast),color var(--fast)}.switcher__button span{display:block;font:600 .65rem/1 var(--font-display);color:var(--ember)}.switcher__button:hover{transform:translateY(-2px);color:var(--ink)}.switcher__button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-1)}.switcher__button:disabled{cursor:progress;opacity:.72}
+@keyframes arrive{from{opacity:0;transform:translateY(32px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}@keyframes orbit{to{transform:translate3d(-4%,7%,0) rotate(7deg)}}.mast>*{animation:arrive var(--slow) var(--ease) both}.mast>*:nth-child(2){animation-delay:80ms}.mast>*:nth-child(3){animation-delay:150ms}.mast>*:nth-child(4){animation-delay:220ms}::view-transition-old(root){animation:var(--fast) var(--ease) both fade-out}::view-transition-new(root){animation:var(--slow) var(--ease) both arrive}@keyframes fade-out{to{opacity:0;transform:scale(.985)}}
+@media(max-width:760px){.mast{padding-top:64px}.prototype-target,[data-variant] .prototype-target,.proof{grid-template-columns:1fr}.artifact,[data-variant] .artifact{grid-column:auto!important;grid-row:auto!important;margin:0!important}.proof h2{position:static}.switcher{left:12px;right:12px;overflow:auto}.switcher__button{min-width:120px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mast>*,.mast::after,.proof__item{animation:none;transition:none;opacity:1;transform:none}::view-transition-old(root),::view-transition-new(root){animation:none}}
+</style></head><body data-variant="1"><main>
+<section class="mast shell"><p class="kicker">DesignOS composition study</p><h1>${title}</h1><p class="lead">Structural answers to one product truth. Compare hierarchy, proof placement, rhythm, and motion—not cosmetic skins.</p><div class="prototype-target" data-motion-role="arrival"><article class="artifact" data-motion-role="interaction"><span class="artifact__number">01</span><p>Primary product material. Replace this explicitly labelled study copy with a real artifact before shipping.</p></article><article class="artifact"><span class="artifact__number">02</span><p>Proof and mechanism occupy different depths.</p></article><article class="artifact"><span class="artifact__number">03</span><p>The composition changes; the identity remains coherent.</p></article></div></section>
+<section class="proof shell" data-motion-role="scroll"><h2>Motion with a job.</h2><div class="proof__rail"><article class="proof__item proof__item--arrival"><h3>Arrival</h3><p>Index-driven and LCP-safe.</p></article><article class="proof__item proof__item--scroll"><h3>Scroll orientation</h3><p>Content is complete before observation.</p></article><article class="proof__item proof__item--interaction"><h3>Interaction</h3><p>Pointer light and keyboard emphasis share intent.</p></article><article class="proof__item proof__item--transition"><h3>Transition</h3><p>Variant changes preserve spatial continuity.</p></article></div></section></main><nav class="switcher" aria-label="Composition variants" data-motion-role="transition">${buttons}</nav>
+<script>const reduce=matchMedia('(prefers-reduced-motion: reduce)');const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');reveal.unobserve(entry.target)}}),{threshold:.22});document.querySelectorAll('.proof__item').forEach(item=>reveal.observe(item));const target=document.querySelector('.prototype-target');if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduce.matches){target.addEventListener('pointermove',event=>{const card=event.target.closest('.artifact');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',event.clientX-rect.left+'px');card.style.setProperty('--my',event.clientY-rect.top+'px')},{passive:true})}const controls=[...document.querySelectorAll('.switcher__button')];controls.forEach(button=>button.addEventListener('click',()=>{const update=()=>{document.body.dataset.variant=button.dataset.set;controls.forEach(item=>item.setAttribute('aria-pressed',String(item===button)))};controls.forEach(item=>item.disabled=true);if(document.startViewTransition&&!reduce.matches)document.startViewTransition(update).finished.finally(()=>controls.forEach(item=>item.disabled=false));else{update();controls.forEach(item=>item.disabled=false)}}));</script></body></html>`;
+  fs.writeFileSync(outPath, html);
+  ok(`Composition prototype created: ${path.relative(cwd, outPath)}`);
+  log(`${variants} structural directions · 4 motion roles · reduced-motion complete.`);
+  log('Study copy is labelled and must be replaced with verified product material before ship.');
+}
 module.exports = { execute };

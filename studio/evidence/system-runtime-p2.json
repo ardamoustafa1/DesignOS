@@ -1,0 +1,52 @@
+{
+  "schema": "designos.p2-runtime-evidence/v1",
+  "generatedAt": "2026-08-24T16:56:20+03:00",
+  "catalog": {
+    "certifiedSystems": 201,
+    "compositionFamiliesPerSystem": 3,
+    "matrix": "PASS"
+  },
+  "representativeArtifacts": [
+    {
+      "systemId": "kiln",
+      "sourceClass": "original-canonical",
+      "family": "rail-story",
+      "releaseDecision": "REVEALED",
+      "evidenceMode": "isolated-worker",
+      "attempts": 2,
+      "artifactBytes": 31461,
+      "browser": "22 scenarios; 1/1 task; P1 0; P2 0",
+      "accessibility": "20 AX trees; 20 Axe runs",
+      "temporalParity": "PASS",
+      "performance": "4x CPU p95 17.5ms; dropped 0; cleanup clean"
+    },
+    {
+      "systemId": "stripe",
+      "sourceClass": "imported-provenance-preserved",
+      "family": "rail-story",
+      "releaseDecision": "REVEALED",
+      "evidenceMode": "isolated-worker",
+      "attempts": 2,
+      "artifactBytes": 39824,
+      "browser": "22 scenarios; 1/1 task; P1 0; P2 0",
+      "accessibility": "20 AX trees; 20 Axe runs",
+      "temporalParity": "PASS",
+      "performance": "4x CPU p95 18.5ms; dropped 0; cleanup clean"
+    },
+    {
+      "systemId": "aster-ledger",
+      "sourceClass": "p2-original",
+      "family": "rail-story",
+      "releaseDecision": "REVEALED",
+      "evidenceMode": "isolated-worker",
+      "attempts": 2,
+      "artifactBytes": 24726,
+      "browser": "22 scenarios; 1/1 task; P1 0; P2 0",
+      "accessibility": "20 AX trees; 20 Axe runs",
+      "temporalParity": "PASS",
+      "performance": "4x CPU p95 17.5ms; dropped 0; cleanup clean"
+    }
+  ],
+  "repairAudit": "The first post-integration Kiln worker run found ten light-mode CTA contrast P1 findings (4.44:1). The light ember token changed from #B33F14 to #A73510 (5.12:1 against the observed text), certification reran, and the final isolated worker run passed with zero P1/P2 findings.",
+  "claimBoundary": "All 201 packages passed structural certification and runtime matrix validation. Browser evidence is representative across three source classes, not 603 exhaustive browser runs. Final subjective design score remains NOT ASSESSED."
+}

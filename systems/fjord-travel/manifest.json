@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "designos-system/v1",
+  "id": "fjord-travel",
+  "name": "Fjord Travel",
+  "category": "Original · Travel",
+  "description": "An original DesignOS system for travel products, with an inspectable material hierarchy and a restrained signal accent.",
+  "suits": [
+    "Travel product surfaces",
+    "evidence-led marketing",
+    "responsive editorial applications"
+  ],
+  "avoid": [
+    "unstructured rainbow palettes",
+    "flat starter UI",
+    "unverified decorative proof"
+  ],
+  "files": {
+    "design": "SYSTEM.md",
+    "tokens": "tokens.css",
+    "lint": "lint.json",
+    "example": "example.html"
+  },
+  "compositionFamilies": [
+    "rail-story",
+    "editorial-ledger",
+    "split-proof"
+  ],
+  "dials": {
+    "variance": 7,
+    "motion": 6,
+    "density": 5
+  },
+  "source": {
+    "type": "original",
+    "origin": "Authored for DesignOS P2 on 2026-08-24; Fjord Travel is an original archetype and is not affiliated with a shipping brand."
+  },
+  "conformance": "node validators/check-system-conformance.js <target> --system fjord-travel"
+}

@@ -160,3 +160,6 @@ the wrong product in the nearest available skin (`brain/decision-framework.md`,
 Conformance is necessary and not sufficient. A page can satisfy every rule in a system's
 `lint.json` and still be badly composed; `scoring/rubric.md`, the Ceiling Contract
 (`CLAUDE.md` §4.5), and `workflows/final-gate.md` all still apply.
+# Normative contract boundary
+
+Imported packages preserve their Apache-2.0 source prose below `## Upstream contract` as a provenance archive. Generation and certification load only the DesignOS supplement above that marker together with `tokens.css`; the archived prose is not a second executable token authority. This preserves the upstream record without letting stale literal colors override the package's machine contract.

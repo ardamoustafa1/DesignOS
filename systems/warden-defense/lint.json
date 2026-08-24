@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "warden-defense",
+  "tokenPrefix": "--warden-defense-",
+  "requiredTokens": [
+    "--warden-defense-display",
+    "--warden-defense-text",
+    "--warden-defense-mono",
+    "--warden-defense-ground",
+    "--warden-defense-surface",
+    "--warden-defense-raised",
+    "--warden-defense-ink",
+    "--warden-defense-ink-2",
+    "--warden-defense-accent",
+    "--warden-defense-on-accent",
+    "--warden-defense-ring",
+    "--warden-defense-edge-lit",
+    "--warden-defense-shadow-rgb",
+    "--warden-defense-elev-1",
+    "--warden-defense-elev-2",
+    "--warden-defense-elev-3",
+    "--warden-defense-grain",
+    "--warden-defense-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "DM Serif Display",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--warden-defense-elev-1",
+      "--warden-defense-elev-2",
+      "--warden-defense-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--warden-defense-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--warden-defense-grain",
+      "feTurbulence"
+    ]
+  }
+}

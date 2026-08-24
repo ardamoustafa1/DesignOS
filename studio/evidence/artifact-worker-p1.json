@@ -1,0 +1,192 @@
+{
+  "schema": "designos.p1-worker-integration/v1",
+  "generatedAt": "2026-08-24T16:33:27.137Z",
+  "httpStatus": 200,
+  "releaseDecision": "REVEALED",
+  "mechanicalGate": "PASS",
+  "evidenceMode": "isolated-worker",
+  "attempts": 2,
+  "checks": [
+    {
+      "id": "animation-richness",
+      "label": "Animation richness",
+      "status": "PASS",
+      "score": 97,
+      "evidence": "4/4 roles; 4/4 scene recipes; scene graph present; reduced-motion present"
+    },
+    {
+      "id": "typography-hierarchy",
+      "label": "Typography hierarchy",
+      "status": "PASS",
+      "score": 96,
+      "evidence": "Named display/text/mono stack, one H1, optical display settings"
+    },
+    {
+      "id": "spacing-rhythm",
+      "label": "Spacing & rhythm",
+      "status": "PASS",
+      "score": 96,
+      "evidence": "5 section compositions across wide and narrow containers"
+    },
+    {
+      "id": "brand-consistency",
+      "label": "Kiln consistency",
+      "status": "PASS",
+      "score": 98,
+      "evidence": "Ember, ink, ring, texture and three-level elevation contract"
+    },
+    {
+      "id": "first-three-seconds",
+      "label": "First-view structure",
+      "status": "PASS",
+      "score": 96,
+      "evidence": "Single dominant claim, visible action, semantic interactive proof"
+    },
+    {
+      "id": "artifact-browser",
+      "label": "Artifact browser matrix",
+      "status": "PASS",
+      "score": 100,
+      "evidence": "22 scenarios; 1/1 tasks; P1 0; P2 0"
+    },
+    {
+      "id": "artifact-accessibility",
+      "label": "Artifact accessibility evidence",
+      "status": "PASS",
+      "score": 100,
+      "evidence": "20 AX trees; 20 Axe runs; zoom-only scenarios use geometry evidence"
+    },
+    {
+      "id": "artifact-motion-parity",
+      "label": "Full/reduced temporal parity",
+      "status": "PASS",
+      "score": 100,
+      "evidence": "Temporal full/reduced evidence passed"
+    },
+    {
+      "id": "artifact-performance",
+      "label": "4× CPU motion performance",
+      "status": "PASS",
+      "score": 100,
+      "evidence": "p95 17.5ms; dropped 0; cleanup clean"
+    }
+  ],
+  "attemptLog": [
+    {
+      "attempt": 1,
+      "result": "FAIL",
+      "fingerprint": "386c6cec",
+      "repair": "Finding-directed repair: animation-richness; restored the complete scene recipe contract",
+      "evidence": [
+        {
+          "id": "animation-richness",
+          "label": "Animation richness",
+          "status": "FAIL",
+          "score": 72,
+          "evidence": "3/4 roles; 3/4 scene recipes; scene graph present; reduced-motion present"
+        },
+        {
+          "id": "typography-hierarchy",
+          "label": "Typography hierarchy",
+          "status": "PASS",
+          "score": 96,
+          "evidence": "Named display/text/mono stack, one H1, optical display settings"
+        },
+        {
+          "id": "spacing-rhythm",
+          "label": "Spacing & rhythm",
+          "status": "PASS",
+          "score": 96,
+          "evidence": "5 section compositions across wide and narrow containers"
+        },
+        {
+          "id": "brand-consistency",
+          "label": "Kiln consistency",
+          "status": "PASS",
+          "score": 98,
+          "evidence": "Ember, ink, ring, texture and three-level elevation contract"
+        },
+        {
+          "id": "first-three-seconds",
+          "label": "First-view structure",
+          "status": "PASS",
+          "score": 96,
+          "evidence": "Single dominant claim, visible action, semantic interactive proof"
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "result": "PASS",
+      "fingerprint": "ec4f52a7",
+      "repair": "No further repair required",
+      "evidence": [
+        {
+          "id": "animation-richness",
+          "label": "Animation richness",
+          "status": "PASS",
+          "score": 97,
+          "evidence": "4/4 roles; 4/4 scene recipes; scene graph present; reduced-motion present"
+        },
+        {
+          "id": "typography-hierarchy",
+          "label": "Typography hierarchy",
+          "status": "PASS",
+          "score": 96,
+          "evidence": "Named display/text/mono stack, one H1, optical display settings"
+        },
+        {
+          "id": "spacing-rhythm",
+          "label": "Spacing & rhythm",
+          "status": "PASS",
+          "score": 96,
+          "evidence": "5 section compositions across wide and narrow containers"
+        },
+        {
+          "id": "brand-consistency",
+          "label": "Kiln consistency",
+          "status": "PASS",
+          "score": 98,
+          "evidence": "Ember, ink, ring, texture and three-level elevation contract"
+        },
+        {
+          "id": "first-three-seconds",
+          "label": "First-view structure",
+          "status": "PASS",
+          "score": 96,
+          "evidence": "Single dominant claim, visible action, semantic interactive proof"
+        },
+        {
+          "id": "artifact-browser",
+          "label": "Artifact browser matrix",
+          "status": "PASS",
+          "score": 100,
+          "evidence": "22 scenarios; 1/1 tasks; P1 0; P2 0"
+        },
+        {
+          "id": "artifact-accessibility",
+          "label": "Artifact accessibility evidence",
+          "status": "PASS",
+          "score": 100,
+          "evidence": "20 AX trees; 20 Axe runs; zoom-only scenarios use geometry evidence"
+        },
+        {
+          "id": "artifact-motion-parity",
+          "label": "Full/reduced temporal parity",
+          "status": "PASS",
+          "score": 100,
+          "evidence": "Temporal full/reduced evidence passed"
+        },
+        {
+          "id": "artifact-performance",
+          "label": "4× CPU motion performance",
+          "status": "PASS",
+          "score": 100,
+          "evidence": "p95 17.5ms; dropped 0; cleanup clean"
+        }
+      ]
+    }
+  ],
+  "artifactBytes": 25096,
+  "finalDesignScore": "NOT_ASSESSED"
+}

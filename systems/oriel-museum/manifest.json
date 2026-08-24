@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "designos-system/v1",
+  "id": "oriel-museum",
+  "name": "Oriel Museum",
+  "category": "Original · Museum",
+  "description": "An original DesignOS system for museum products, with an inspectable material hierarchy and a restrained signal accent.",
+  "suits": [
+    "Museum product surfaces",
+    "evidence-led marketing",
+    "responsive editorial applications"
+  ],
+  "avoid": [
+    "unstructured rainbow palettes",
+    "flat starter UI",
+    "unverified decorative proof"
+  ],
+  "files": {
+    "design": "SYSTEM.md",
+    "tokens": "tokens.css",
+    "lint": "lint.json",
+    "example": "example.html"
+  },
+  "compositionFamilies": [
+    "rail-story",
+    "editorial-ledger",
+    "split-proof"
+  ],
+  "dials": {
+    "variance": 7,
+    "motion": 6,
+    "density": 5
+  },
+  "source": {
+    "type": "original",
+    "origin": "Authored for DesignOS P2 on 2026-08-24; Oriel Museum is an original archetype and is not affiliated with a shipping brand."
+  },
+  "conformance": "node validators/check-system-conformance.js <target> --system oriel-museum"
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "cinder-commerce",
+  "tokenPrefix": "--cinder-commerce-",
+  "requiredTokens": [
+    "--cinder-commerce-display",
+    "--cinder-commerce-text",
+    "--cinder-commerce-mono",
+    "--cinder-commerce-ground",
+    "--cinder-commerce-surface",
+    "--cinder-commerce-raised",
+    "--cinder-commerce-ink",
+    "--cinder-commerce-ink-2",
+    "--cinder-commerce-accent",
+    "--cinder-commerce-on-accent",
+    "--cinder-commerce-ring",
+    "--cinder-commerce-edge-lit",
+    "--cinder-commerce-shadow-rgb",
+    "--cinder-commerce-elev-1",
+    "--cinder-commerce-elev-2",
+    "--cinder-commerce-elev-3",
+    "--cinder-commerce-grain",
+    "--cinder-commerce-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Instrument Serif",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--cinder-commerce-elev-1",
+      "--cinder-commerce-elev-2",
+      "--cinder-commerce-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--cinder-commerce-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--cinder-commerce-grain",
+      "feTurbulence"
+    ]
+  }
+}

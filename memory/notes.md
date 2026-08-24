@@ -1,5 +1,11 @@
 # Notes
 
+## 2026-08-19 generation-trust CI record
+
+- The first PR run failed before project code executed because every GitHub-hosted job
+  received `Repository not found` from `actions/checkout`; local unit and strict suites
+  were already clean. A content-bearing retry commit was used to request fresh runners.
+
 ## 2026-08-19 keyless Studio planning record
 
 - Current `nexu-io/open-design` evidence describes 151 bundled design systems, 100+ functional skills, 277 official plugins plus 183 reference examples, HyperFrames, and 26 distinct local CLI executables. Counts are time-sensitive and must be cited from a pinned upstream commit at implementation time.
@@ -94,3 +100,32 @@
 - Deterministic source review: zero findings, static risk floor 100/100. Final
   seven-dimension design score remains NOT ASSESSED; human hierarchy/brand/conversion
   and screen-reader listening were not performed.
+# 2026-08-19 — MotionOS implementation note
+
+- Penta was used only as a choreography/art-direction reference. No Penta code, assets or unverified stack claims were copied.
+- The production gap was executable breadth rather than missing prose. MotionOS adds a separate 120-contract scene catalogue without changing the compatibility-sensitive 15 low-level controller recipes and 90 framework adapters.
+- Atlas previews the shared grammar. Rive, WebGL and bespoke asset recipes deliberately declare fallbacks; they are not represented as asset-complete without supplied artwork/models.
+- `three@0.180.0` and `@rive-app/canvas@2.31.5` are development dependencies for
+  flagship bundling and Rive runtime integration. No third-party `.riv` artwork was
+  copied; a real Rive artboard remains dependent on an authored/licensed asset.
+- Forced WebGL context loss, cross-document shared-element navigation, 720 adapter
+  compilations, 240 browser mount/cleanup cycles, and the three Studio scene families now
+  have executable regression tests. Physical mid-range device profiling and an authored
+  `.riv` artboard remain explicitly `NOT_ASSESSED`, not inferred from desktop automation.
+- 2026-08-19 — Universal Agent Runtime added for cross-agent outcome parity: common kernel digest, deterministic routing, executable review, panel contracts and allow-listed memory over MCP/stdio. Native host UI/subagent parity remains an explicit non-claim.
+# 2026-08-19 — Studio P0 evidence
+
+- Final design score: `NOT ASSESSED`; no subjective 95+ claim was made.
+- Static DesignOS review on `studio/app`: zero findings, static risk floor 100.
+- Browser gate: 22 scenarios, 22 screenshots, five keyboard paths, one declared task passed, zero P1/P2.
+- Lighthouse: performance 100, accessibility 100, best practices 96, SEO 100; LCP 151.94ms, CLS 0.0070, TBT 0ms.
+- Unit/build evidence: Studio 8/8, repository unit suite 33/33, production build clean.
+
+# 2026-08-24 — Studio P3 evidence
+
+- Studio unit/build: 10/10; lint clean.
+- Renderer browser matrix: six authored engines mounted without page errors; reduced-motion fallback clean.
+- MotionOS matrix: 120 recipes × six stacks = 720 compiled adapters; 240 Chromium full/reduced mount-cleanup runs.
+- Isolated artifact gate first run: FAIL, browser P1 10 caused by decorative scene overflow at narrow viewports. Overflow was contained inside the hero and the artifact was recompiled.
+- Isolated artifact gate final run: PASS; 22 scenarios, 1/1 task, P1 0, P2 0; 20 AX trees and 20 Axe runs; temporal parity passed; 4× CPU p95 17.6ms, dropped ratio 0, cleanup clean.
+- Final seven-dimension design score remains NOT ASSESSED. No independent blind visual panel or physical mid-range Android run was performed.

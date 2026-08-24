@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "willow-nonprofit",
+  "tokenPrefix": "--willow-nonprofit-",
+  "requiredTokens": [
+    "--willow-nonprofit-display",
+    "--willow-nonprofit-text",
+    "--willow-nonprofit-mono",
+    "--willow-nonprofit-ground",
+    "--willow-nonprofit-surface",
+    "--willow-nonprofit-raised",
+    "--willow-nonprofit-ink",
+    "--willow-nonprofit-ink-2",
+    "--willow-nonprofit-accent",
+    "--willow-nonprofit-on-accent",
+    "--willow-nonprofit-ring",
+    "--willow-nonprofit-edge-lit",
+    "--willow-nonprofit-shadow-rgb",
+    "--willow-nonprofit-elev-1",
+    "--willow-nonprofit-elev-2",
+    "--willow-nonprofit-elev-3",
+    "--willow-nonprofit-grain",
+    "--willow-nonprofit-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "Cormorant Garamond",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--willow-nonprofit-elev-1",
+      "--willow-nonprofit-elev-2",
+      "--willow-nonprofit-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--willow-nonprofit-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--willow-nonprofit-grain",
+      "feTurbulence"
+    ]
+  }
+}

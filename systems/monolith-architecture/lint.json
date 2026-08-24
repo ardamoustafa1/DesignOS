@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "designos-system-lint/v1",
+  "id": "monolith-architecture",
+  "tokenPrefix": "--monolith-architecture-",
+  "requiredTokens": [
+    "--monolith-architecture-display",
+    "--monolith-architecture-text",
+    "--monolith-architecture-mono",
+    "--monolith-architecture-ground",
+    "--monolith-architecture-surface",
+    "--monolith-architecture-raised",
+    "--monolith-architecture-ink",
+    "--monolith-architecture-ink-2",
+    "--monolith-architecture-accent",
+    "--monolith-architecture-on-accent",
+    "--monolith-architecture-ring",
+    "--monolith-architecture-edge-lit",
+    "--monolith-architecture-shadow-rgb",
+    "--monolith-architecture-elev-1",
+    "--monolith-architecture-elev-2",
+    "--monolith-architecture-elev-3",
+    "--monolith-architecture-grain",
+    "--monolith-architecture-ease"
+  ],
+  "forbiddenColors": {
+    "values": [
+      "#000",
+      "#000000",
+      "#fff",
+      "#ffffff"
+    ],
+    "reason": "The chromatic ground and ink cast are binding."
+  },
+  "typefaces": {
+    "display": "DM Serif Display",
+    "text": "Inter Tight",
+    "mono": "JetBrains Mono"
+  },
+  "radiusScale": [
+    "6px",
+    "12px",
+    "20px"
+  ],
+  "spacingBase": 4,
+  "containerWidths": [
+    "680px",
+    "1120px",
+    "1360px"
+  ],
+  "minDistinctContainers": 2,
+  "easings": [
+    "cubic-bezier(.16,1,.3,1)",
+    "linear"
+  ],
+  "elevation": {
+    "tokens": [
+      "--monolith-architecture-elev-1",
+      "--monolith-architecture-elev-2",
+      "--monolith-architecture-elev-3"
+    ],
+    "allowAdHoc": false
+  },
+  "accent": {
+    "token": "--monolith-architecture-accent",
+    "maxSolidFills": 3
+  },
+  "texture": {
+    "required": true,
+    "signals": [
+      "--monolith-architecture-grain",
+      "feTurbulence"
+    ]
+  }
+}

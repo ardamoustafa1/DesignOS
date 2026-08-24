@@ -1,0 +1,3774 @@
+{
+  "semantic": {
+    "lang": "en",
+    "title": "DesignOS Studio — Brief to gated prototype",
+    "landmarks": {
+      "header": 1,
+      "nav": 0,
+      "main": 1,
+      "aside": 1,
+      "footer": 1
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "Describe the result.Not the style."
+      },
+      {
+        "level": 2,
+        "text": "Projects"
+      },
+      {
+        "level": 2,
+        "text": "Gated canvas"
+      },
+      {
+        "level": 3,
+        "text": "The canvas stays quiet until the evidence speaks."
+      },
+      {
+        "level": 2,
+        "text": "Gate armed"
+      }
+    ],
+    "controls": [
+      {
+        "selector": "html > body.__variable_fraunces_1nms2pn > div.studio-shell > header.topbar > a.wordmark",
+        "role": "a",
+        "name": "DesignOS Studio home"
+      },
+      {
+        "selector": "#system",
+        "role": "select",
+        "name": "Kiln — MVP package"
+      },
+      {
+        "selector": "#brief",
+        "role": "textarea",
+        "name": "A launch page for an API that turns raw climate data into decision-ready carbon "
+      },
+      {
+        "selector": "section.composer:nth-of-type(1) > form.brief-form > fieldset.direction-fieldset > div.direction-grid > button:nth-of-type(1)",
+        "role": "button",
+        "name": "01Material ledgerEvidence object leads; asymmetric editorial hierarchy."
+      },
+      {
+        "selector": "section.composer:nth-of-type(1) > form.brief-form > fieldset.direction-fieldset > div.direction-grid > button:nth-of-type(2)",
+        "role": "button",
+        "name": "02Split proofClaim and inspectable proof share the first view."
+      },
+      {
+        "selector": "section.composer:nth-of-type(1) > form.brief-form > fieldset.direction-fieldset > div.direction-grid > button:nth-of-type(3)",
+        "role": "button",
+        "name": "03Narrative railA wide statement opens into a three-stage story."
+      },
+      {
+        "selector": "div.studio-shell > main.studio-grid > section.composer:nth-of-type(1) > form.brief-form > button.generate-button",
+        "role": "button",
+        "name": "Generate gated prototype↗"
+      },
+      {
+        "selector": "section.preview-column:nth-of-type(2) > div.preview-toolbar:nth-of-type(1) > div.preview-actions:nth-of-type(2) > div.viewport-toggle > button:nth-of-type(1)",
+        "role": "button",
+        "name": "Desktop"
+      },
+      {
+        "selector": "section.preview-column:nth-of-type(2) > div.preview-toolbar:nth-of-type(1) > div.preview-actions:nth-of-type(2) > div.viewport-toggle > button:nth-of-type(2)",
+        "role": "button",
+        "name": "Mobile"
+      }
+    ]
+  },
+  "axe": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.12.1"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "windowWidth": 768,
+      "windowHeight": 1024,
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "impact": "serious",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412",
+          "EN-301-549",
+          "EN-9.4.1.2",
+          "RGAAv4",
+          "RGAA-7.1.1"
+        ],
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "help": "Elements must only use permitted ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-prohibited-attr?application=axeAPI",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-prohibited-attr",
+                "data": {
+                  "role": null,
+                  "nodeName": "div",
+                  "messageKey": "noRoleSingular",
+                  "prohibited": [
+                    "aria-label"
+                  ]
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-label attribute is not well supported on a div with no valid role attribute."
+              }
+            ],
+            "impact": "serious",
+            "html": "<div class=\"topbar-status\" aria-label=\"Workspace status\"><span><i class=\"status-dot\"></i> Central gateway</span><span class=\"budget\">Budget&nbsp; <!-- -->20<!-- --> / <!-- -->20</span></div>",
+            "target": [
+              ".topbar-status"
+            ],
+            "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute."
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-prohibited-attr",
+                "data": {
+                  "role": null,
+                  "nodeName": "div",
+                  "messageKey": "noRoleSingular",
+                  "prohibited": [
+                    "aria-label"
+                  ]
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-label attribute is not well supported on a div with no valid role attribute."
+              }
+            ],
+            "impact": "serious",
+            "html": "<div class=\"viewport-toggle\" aria-label=\"Preview viewport\"><button type=\"button\" aria-pressed=\"true\">Desktop</button><button type=\"button\" aria-pressed=\"false\">Mobile</button></div>",
+            "target": [
+              ".viewport-toggle"
+            ],
+            "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on a div with no valid role attribute."
+          }
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<header class=\"topbar\">",
+                    "target": [
+                      "header"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>DesignOS</span>",
+            "target": [
+              "a > span:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<header class=\"topbar\">",
+                    "target": [
+                      "header"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"wordmark-index\">/ Studio 01</span>",
+            "target": [
+              ".wordmark-index"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<header class=\"topbar\">",
+                    "target": [
+                      "header"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span><i class=\"status-dot\"></i> Central gateway</span>",
+            "target": [
+              ".topbar-status > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"eyebrow\"><span>01</span> Compose</p>",
+            "target": [
+              "#composer > .eyebrow"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>01</span>",
+            "target": [
+              "#composer > .eyebrow > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "33.0pt (44px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"composer\" id=\"composer\" aria-labelledby=\"studio-title\">",
+                    "target": [
+                      "#composer"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h1 id=\"studio-title\">Describe the result.<br>Not the style.</h1>",
+            "target": [
+              "#studio-title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"composer\" id=\"composer\" aria-labelledby=\"studio-title\">",
+                    "target": [
+                      "#composer"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"composer-lede\">The model plans. Kiln composes. Nothing reaches the preview before every required mechanical check passes.</p>",
+            "target": [
+              ".composer-lede"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"composer\" id=\"composer\" aria-labelledby=\"studio-title\">",
+                    "target": [
+                      "#composer"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<label for=\"system\">Design system</label>",
+            "target": [
+              "label[for=\"system\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span aria-hidden=\"true\">↓</span>",
+            "target": [
+              ".select-wrap > span[aria-hidden=\"true\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"composer\" id=\"composer\" aria-labelledby=\"studio-title\">",
+                    "target": [
+                      "#composer"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<label for=\"brief\">Product brief</label>",
+            "target": [
+              "label[for=\"brief\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"composer\" id=\"composer\" aria-labelledby=\"studio-title\">",
+                    "target": [
+                      "#composer"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>Product, audience, desired outcome</span>",
+            "target": [
+              "#brief-help > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"composer\" id=\"composer\" aria-labelledby=\"studio-title\">",
+                    "target": [
+                      "#composer"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>109<!-- --> / 640</span>",
+            "target": [
+              "#brief-help > span:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"composer\" id=\"composer\" aria-labelledby=\"studio-title\">",
+                    "target": [
+                      "#composer"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<legend>Art direction</legend>",
+            "target": [
+              "legend"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button type=\"button\" aria-pressed=\"true\"><span>0<!-- -->1</span><strong>Material ledger</strong><small>Evidence object leads; asymmetric editorial hierarchy.</small></button>",
+                    "target": [
+                      ".direction-grid > button[type=\"button\"]:nth-child(1)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>0<!-- -->1</span>",
+            "target": [
+              "button[type=\"button\"]:nth-child(1) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button type=\"button\" aria-pressed=\"true\"><span>0<!-- -->1</span><strong>Material ledger</strong><small>Evidence object leads; asymmetric editorial hierarchy.</small></button>",
+                    "target": [
+                      ".direction-grid > button[type=\"button\"]:nth-child(1)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<strong>Material ledger</strong>",
+            "target": [
+              "button[type=\"button\"]:nth-child(1) > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button type=\"button\" aria-pressed=\"true\"><span>0<!-- -->1</span><strong>Material ledger</strong><small>Evidence object leads; asymmetric editorial hierarchy.</small></button>",
+                    "target": [
+                      ".direction-grid > button[type=\"button\"]:nth-child(1)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Evidence object leads; asymmetric editorial hierarchy.</small>",
+            "target": [
+              "button[type=\"button\"]:nth-child(1) > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"composer\" id=\"composer\" aria-labelledby=\"studio-title\">",
+                    "target": [
+                      "#composer"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"form-note\">No provider key accepted. Failed drafts stay hidden.</p>",
+            "target": [
+              ".form-note"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"eyebrow\"><span>02</span> Preview</p>",
+            "target": [
+              "div:nth-child(1) > .eyebrow"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>02</span>",
+            "target": [
+              "div:nth-child(1) > .eyebrow > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "21.0pt (28px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"preview-column\" aria-labelledby=\"preview-title\">",
+                    "target": [
+                      ".preview-column"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h2 id=\"preview-title\">Gated canvas</h2>",
+            "target": [
+              "#preview-title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"preview-empty\" role=\"status\" aria-live=\"polite\">",
+                    "target": [
+                      ".preview-empty"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"preview-state\">Ready for a brief</p>",
+            "target": [
+              ".preview-state"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "21.0pt (28px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"preview-empty\" role=\"status\" aria-live=\"polite\">",
+                    "target": [
+                      ".preview-empty"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h3>The canvas stays quiet until the evidence speaks.</h3>",
+            "target": [
+              "h3"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"preview-empty\" role=\"status\" aria-live=\"polite\">",
+                    "target": [
+                      ".preview-empty"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>Your first passing composition will appear here.</p>",
+            "target": [
+              "p:nth-child(4)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "16.5pt (22px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h2 id=\"evidence-title\">Gate armed</h2>",
+            "target": [
+              "#evidence-title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>Minimum 95 per dimension</p>",
+            "target": [
+              ".score-lockup > div > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>01</span>",
+            "target": [
+              "li:nth-child(1) > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<strong>Kiln contract</strong>",
+            "target": [
+              "li:nth-child(1) > span:nth-child(2) > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Conformance fixture loaded</small>",
+            "target": [
+              "li:nth-child(1) > span:nth-child(2) > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"gate-status status-pass\">PASS</span>",
+            "target": [
+              "li:nth-child(1) > .status-pass.gate-status"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>02</span>",
+            "target": [
+              "li:nth-child(2) > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<strong>Four motion roles</strong>",
+            "target": [
+              "li:nth-child(2) > span:nth-child(2) > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Waiting for artifact</small>",
+            "target": [
+              "li:nth-child(2) > span:nth-child(2) > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"gate-status status-not_assessed\">PENDING</span>",
+            "target": [
+              "li:nth-child(2) > .status-not_assessed.gate-status"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>03</span>",
+            "target": [
+              "li:nth-child(3) > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<strong>Responsive contract</strong>",
+            "target": [
+              "li:nth-child(3) > span:nth-child(2) > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>320–1440 coverage queued</small>",
+            "target": [
+              "li:nth-child(3) > span:nth-child(2) > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"gate-status status-not_assessed\">PENDING</span>",
+            "target": [
+              "li:nth-child(3) > .status-not_assessed.gate-status"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>04</span>",
+            "target": [
+              "li:nth-child(4) > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<strong>Sandbox isolation</strong>",
+            "target": [
+              "li:nth-child(4) > span:nth-child(2) > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Network and forms disabled</small>",
+            "target": [
+              "li:nth-child(4) > span:nth-child(2) > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"gate-status status-pass\">PASS</span>",
+            "target": [
+              "li:nth-child(4) > .status-pass.gate-status"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>Final design score</span>",
+            "target": [
+              ".assessment-card > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<strong>NOT ASSESSED</strong>",
+            "target": [
+              ".assessment-card > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>DesignOS Studio</span>",
+            "target": [
+              "footer > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside class=\"evidence-rail\" aria-labelledby=\"evidence-title\">",
+                    "target": [
+                      "aside"
+                    ]
+                  },
+                  {
+                    "html": "<body class=\"__variable_fraunces_1nms2pn __variable_inter_tight_0uk5lwg __variable_jetbrains_mono_1f8a1xn\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>Evidence, not theatre.</span>",
+            "target": [
+              "footer > span:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          }
+        ]
+      }
+    ],
+    "passes": 26
+  },
+  "accessibilityTree": [
+    {
+      "nodeId": "3",
+      "role": "RootWebArea",
+      "name": "DesignOS Studio — Brief to gated prototype",
+      "ignored": false,
+      "properties": {
+        "focused": true
+      }
+    },
+    {
+      "nodeId": "7",
+      "parentId": "3",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "28",
+      "parentId": "7",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "29",
+      "parentId": "28",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "31",
+      "parentId": "29",
+      "role": "banner",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "43",
+      "parentId": "29",
+      "role": "main",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "32",
+      "parentId": "31",
+      "role": "link",
+      "name": "DesignOS Studio home",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "39",
+      "parentId": "31",
+      "role": "generic",
+      "name": "Workspace status",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "44",
+      "parentId": "43",
+      "role": "region",
+      "name": "Describe the result. Not the style.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "93",
+      "parentId": "43",
+      "role": "region",
+      "name": "Gated canvas",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "129",
+      "parentId": "43",
+      "role": "complementary",
+      "name": "Gate armed",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "37",
+      "parentId": "32",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "183",
+      "parentId": "37",
+      "role": "StaticText",
+      "name": "DESIGNOS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "38",
+      "parentId": "32",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "184",
+      "parentId": "38",
+      "role": "StaticText",
+      "name": "/ STUDIO 01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "40",
+      "parentId": "39",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "41",
+      "parentId": "40",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "185",
+      "parentId": "40",
+      "role": "StaticText",
+      "name": "CENTRAL GATEWAY",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "45",
+      "parentId": "44",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "46",
+      "parentId": "45",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "190",
+      "parentId": "46",
+      "role": "StaticText",
+      "name": "01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "191",
+      "parentId": "45",
+      "role": "StaticText",
+      "name": "COMPOSE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "47",
+      "parentId": "44",
+      "role": "heading",
+      "name": "Describe the result. Not the style.",
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "49",
+      "parentId": "44",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "50",
+      "parentId": "44",
+      "role": "region",
+      "name": "PROJECTS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "55",
+      "parentId": "44",
+      "role": "form",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "94",
+      "parentId": "93",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "95",
+      "parentId": "94",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "96",
+      "parentId": "95",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "97",
+      "parentId": "96",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "221",
+      "parentId": "97",
+      "role": "StaticText",
+      "name": "02",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "222",
+      "parentId": "96",
+      "role": "StaticText",
+      "name": "PREVIEW",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "98",
+      "parentId": "95",
+      "role": "heading",
+      "name": "Gated canvas",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "99",
+      "parentId": "94",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "100",
+      "parentId": "99",
+      "role": "generic",
+      "name": "Preview viewport",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "103",
+      "parentId": "93",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "130",
+      "parentId": "129",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "131",
+      "parentId": "130",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "230",
+      "parentId": "131",
+      "role": "StaticText",
+      "name": "—",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "132",
+      "parentId": "130",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "133",
+      "parentId": "132",
+      "role": "heading",
+      "name": "Gate armed",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "134",
+      "parentId": "132",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "135",
+      "parentId": "129",
+      "role": "list",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "160",
+      "parentId": "129",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "161",
+      "parentId": "160",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "162",
+      "parentId": "160",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "163",
+      "parentId": "129",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "164",
+      "parentId": "163",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "251",
+      "parentId": "164",
+      "role": "StaticText",
+      "name": "FINAL DESIGN SCORE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "165",
+      "parentId": "163",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "166",
+      "parentId": "129",
+      "role": "sectionfooter",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000002",
+      "parentId": "183",
+      "role": "InlineTextBox",
+      "name": "DESIGNOS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000003",
+      "parentId": "184",
+      "role": "InlineTextBox",
+      "name": "/ STUDIO 01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000004",
+      "parentId": "185",
+      "role": "InlineTextBox",
+      "name": "CENTRAL GATEWAY",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000005",
+      "parentId": "190",
+      "role": "InlineTextBox",
+      "name": "01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000006",
+      "parentId": "191",
+      "role": "InlineTextBox",
+      "name": "COMPOSE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "192",
+      "parentId": "47",
+      "role": "StaticText",
+      "name": "Describe the result.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "48",
+      "parentId": "47",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "193",
+      "parentId": "47",
+      "role": "StaticText",
+      "name": "Not the style.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "194",
+      "parentId": "49",
+      "role": "StaticText",
+      "name": "The model plans. Kiln composes. Nothing reaches the preview before every required mechanical check passes.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "51",
+      "parentId": "50",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "52",
+      "parentId": "51",
+      "role": "heading",
+      "name": "PROJECTS",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "53",
+      "parentId": "51",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "196",
+      "parentId": "53",
+      "role": "StaticText",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "54",
+      "parentId": "50",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "56",
+      "parentId": "55",
+      "role": "LabelText",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "57",
+      "parentId": "55",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "68",
+      "parentId": "55",
+      "role": "LabelText",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "69",
+      "parentId": "55",
+      "role": "textbox",
+      "name": "Product brief",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "71",
+      "parentId": "55",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "74",
+      "parentId": "55",
+      "role": "group",
+      "name": "Art direction",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "88",
+      "parentId": "55",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "89",
+      "parentId": "55",
+      "role": "button",
+      "name": "Generate gated prototype",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "92",
+      "parentId": "55",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000038",
+      "parentId": "221",
+      "role": "InlineTextBox",
+      "name": "02",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000039",
+      "parentId": "222",
+      "role": "InlineTextBox",
+      "name": "PREVIEW",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "223",
+      "parentId": "98",
+      "role": "StaticText",
+      "name": "Gated canvas",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "101",
+      "parentId": "100",
+      "role": "button",
+      "name": "DESKTOP",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "102",
+      "parentId": "100",
+      "role": "button",
+      "name": "MOBILE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "104",
+      "parentId": "103",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000047",
+      "parentId": "230",
+      "role": "InlineTextBox",
+      "name": "—",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "231",
+      "parentId": "133",
+      "role": "StaticText",
+      "name": "Gate armed",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "232",
+      "parentId": "134",
+      "role": "StaticText",
+      "name": "Minimum 95 per dimension",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "136",
+      "parentId": "135",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "142",
+      "parentId": "135",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "148",
+      "parentId": "135",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "154",
+      "parentId": "135",
+      "role": "listitem",
+      "name": null,
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "249",
+      "parentId": "161",
+      "role": "StaticText",
+      "name": "REVEAL POLICY",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "250",
+      "parentId": "162",
+      "role": "StaticText",
+      "name": "All required checks PASS · every measured dimension ≥95",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000068",
+      "parentId": "251",
+      "role": "InlineTextBox",
+      "name": "FINAL DESIGN SCORE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "252",
+      "parentId": "165",
+      "role": "StaticText",
+      "name": "NOT ASSESSED",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "167",
+      "parentId": "166",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "253",
+      "parentId": "167",
+      "role": "StaticText",
+      "name": "DESIGNOS STUDIO",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "168",
+      "parentId": "166",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "254",
+      "parentId": "168",
+      "role": "StaticText",
+      "name": "EVIDENCE, NOT THEATRE.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000007",
+      "parentId": "192",
+      "role": "InlineTextBox",
+      "name": "Describe the result.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000008",
+      "parentId": "48",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000009",
+      "parentId": "193",
+      "role": "InlineTextBox",
+      "name": "Not the style.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000010",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "The model plans. Kiln composes. Nothing reaches the ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000011",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "preview before every required mechanical check passes.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "195",
+      "parentId": "52",
+      "role": "StaticText",
+      "name": "PROJECTS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000013",
+      "parentId": "196",
+      "role": "InlineTextBox",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "197",
+      "parentId": "54",
+      "role": "StaticText",
+      "name": "Your first accepted run becomes a resumable project.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "198",
+      "parentId": "56",
+      "role": "StaticText",
+      "name": "Design system",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "4",
+      "parentId": "57",
+      "role": "combobox",
+      "name": "Design system",
+      "ignored": false,
+      "properties": {
+        "expanded": false
+      }
+    },
+    {
+      "nodeId": "200",
+      "parentId": "68",
+      "role": "StaticText",
+      "name": "Product brief",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "70",
+      "parentId": "69",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "72",
+      "parentId": "71",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "202",
+      "parentId": "72",
+      "role": "StaticText",
+      "name": "Product, audience, desired outcome",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "73",
+      "parentId": "71",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "203",
+      "parentId": "73",
+      "role": "StaticText",
+      "name": "109",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "204",
+      "parentId": "73",
+      "role": "StaticText",
+      "name": " / 640",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "75",
+      "parentId": "74",
+      "role": "Legend",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "76",
+      "parentId": "74",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "77",
+      "parentId": "76",
+      "role": "button",
+      "name": "01 Material ledger Evidence object leads; asymmetric editorial hierarchy.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "80",
+      "parentId": "76",
+      "role": "button",
+      "name": "02 Split proof Claim and inspectable proof share the first view.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "84",
+      "parentId": "76",
+      "role": "button",
+      "name": "03 Narrative rail A wide statement opens into a three-stage story.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "90",
+      "parentId": "89",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "218",
+      "parentId": "90",
+      "role": "StaticText",
+      "name": "Generate gated prototype",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "220",
+      "parentId": "92",
+      "role": "StaticText",
+      "name": "No provider key accepted. Failed drafts stay hidden.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000040",
+      "parentId": "223",
+      "role": "InlineTextBox",
+      "name": "Gated canvas",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "224",
+      "parentId": "101",
+      "role": "StaticText",
+      "name": "DESKTOP",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "225",
+      "parentId": "102",
+      "role": "StaticText",
+      "name": "MOBILE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "110",
+      "parentId": "104",
+      "role": "status",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000048",
+      "parentId": "231",
+      "role": "InlineTextBox",
+      "name": "Gate armed",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000049",
+      "parentId": "232",
+      "role": "InlineTextBox",
+      "name": "Minimum 95 per dimension",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "137",
+      "parentId": "136",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "233",
+      "parentId": "137",
+      "role": "StaticText",
+      "name": "01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "138",
+      "parentId": "136",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "139",
+      "parentId": "138",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "140",
+      "parentId": "138",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "141",
+      "parentId": "136",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "236",
+      "parentId": "141",
+      "role": "StaticText",
+      "name": "PASS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "143",
+      "parentId": "142",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "237",
+      "parentId": "143",
+      "role": "StaticText",
+      "name": "02",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "144",
+      "parentId": "142",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "145",
+      "parentId": "144",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "146",
+      "parentId": "144",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "147",
+      "parentId": "142",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "240",
+      "parentId": "147",
+      "role": "StaticText",
+      "name": "PENDING",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "149",
+      "parentId": "148",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "241",
+      "parentId": "149",
+      "role": "StaticText",
+      "name": "03",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "150",
+      "parentId": "148",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "151",
+      "parentId": "150",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "152",
+      "parentId": "150",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "153",
+      "parentId": "148",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "244",
+      "parentId": "153",
+      "role": "StaticText",
+      "name": "PENDING",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "155",
+      "parentId": "154",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "245",
+      "parentId": "155",
+      "role": "StaticText",
+      "name": "04",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "156",
+      "parentId": "154",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "157",
+      "parentId": "156",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "158",
+      "parentId": "156",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "159",
+      "parentId": "154",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "248",
+      "parentId": "159",
+      "role": "StaticText",
+      "name": "PASS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000066",
+      "parentId": "249",
+      "role": "InlineTextBox",
+      "name": "REVEAL POLICY",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000067",
+      "parentId": "250",
+      "role": "InlineTextBox",
+      "name": "All required checks PASS · every measured dimension ≥95",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000069",
+      "parentId": "252",
+      "role": "InlineTextBox",
+      "name": "NOT ASSESSED",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000070",
+      "parentId": "253",
+      "role": "InlineTextBox",
+      "name": "DESIGNOS STUDIO",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000071",
+      "parentId": "254",
+      "role": "InlineTextBox",
+      "name": "EVIDENCE, NOT THEATRE.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000012",
+      "parentId": "195",
+      "role": "InlineTextBox",
+      "name": "PROJECTS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000014",
+      "parentId": "197",
+      "role": "InlineTextBox",
+      "name": "Your first accepted run becomes a resumable project.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000015",
+      "parentId": "198",
+      "role": "InlineTextBox",
+      "name": "Design system",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "60",
+      "parentId": "4",
+      "role": "MenuListPopup",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000016",
+      "parentId": "200",
+      "role": "InlineTextBox",
+      "name": "Product brief",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "201",
+      "parentId": "70",
+      "role": "StaticText",
+      "name": "A launch page for an API that turns raw climate data into decision-ready carbon reports for operations teams.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000020",
+      "parentId": "202",
+      "role": "InlineTextBox",
+      "name": "Product, audience, desired outcome",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000021",
+      "parentId": "203",
+      "role": "InlineTextBox",
+      "name": "109",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000022",
+      "parentId": "204",
+      "role": "InlineTextBox",
+      "name": " / 640",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "205",
+      "parentId": "75",
+      "role": "StaticText",
+      "name": "Art direction",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "78",
+      "parentId": "77",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "206",
+      "parentId": "78",
+      "role": "StaticText",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "207",
+      "parentId": "78",
+      "role": "StaticText",
+      "name": "1",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "5",
+      "parentId": "77",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "79",
+      "parentId": "77",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "81",
+      "parentId": "80",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "210",
+      "parentId": "81",
+      "role": "StaticText",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "211",
+      "parentId": "81",
+      "role": "StaticText",
+      "name": "2",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "82",
+      "parentId": "80",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "83",
+      "parentId": "80",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "85",
+      "parentId": "84",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "214",
+      "parentId": "85",
+      "role": "StaticText",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "215",
+      "parentId": "85",
+      "role": "StaticText",
+      "name": "3",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "86",
+      "parentId": "84",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "87",
+      "parentId": "84",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000036",
+      "parentId": "218",
+      "role": "InlineTextBox",
+      "name": "Generate gated prototype",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000037",
+      "parentId": "220",
+      "role": "InlineTextBox",
+      "name": "No provider key accepted. Failed drafts stay hidden.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000041",
+      "parentId": "224",
+      "role": "InlineTextBox",
+      "name": "DESKTOP",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000042",
+      "parentId": "225",
+      "role": "InlineTextBox",
+      "name": "MOBILE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "120",
+      "parentId": "110",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "121",
+      "parentId": "110",
+      "role": "heading",
+      "name": "The canvas stays quiet until the evidence speaks.",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "122",
+      "parentId": "110",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000050",
+      "parentId": "233",
+      "role": "InlineTextBox",
+      "name": "01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "234",
+      "parentId": "139",
+      "role": "StaticText",
+      "name": "Kiln contract",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "235",
+      "parentId": "140",
+      "role": "StaticText",
+      "name": "Conformance fixture loaded",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000053",
+      "parentId": "236",
+      "role": "InlineTextBox",
+      "name": "PASS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000054",
+      "parentId": "237",
+      "role": "InlineTextBox",
+      "name": "02",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "238",
+      "parentId": "145",
+      "role": "StaticText",
+      "name": "Four motion roles",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "239",
+      "parentId": "146",
+      "role": "StaticText",
+      "name": "Waiting for artifact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000057",
+      "parentId": "240",
+      "role": "InlineTextBox",
+      "name": "PENDING",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000058",
+      "parentId": "241",
+      "role": "InlineTextBox",
+      "name": "03",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "242",
+      "parentId": "151",
+      "role": "StaticText",
+      "name": "Responsive contract",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "243",
+      "parentId": "152",
+      "role": "StaticText",
+      "name": "320–1440 coverage queued",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000061",
+      "parentId": "244",
+      "role": "InlineTextBox",
+      "name": "PENDING",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000062",
+      "parentId": "245",
+      "role": "InlineTextBox",
+      "name": "04",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "246",
+      "parentId": "157",
+      "role": "StaticText",
+      "name": "Sandbox isolation",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "247",
+      "parentId": "158",
+      "role": "StaticText",
+      "name": "Network and forms disabled",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000065",
+      "parentId": "248",
+      "role": "InlineTextBox",
+      "name": "PASS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "64",
+      "parentId": "60",
+      "role": "option",
+      "name": "Kiln — MVP package",
+      "ignored": false,
+      "properties": {
+        "selected": true
+      }
+    },
+    {
+      "nodeId": "-1000000017",
+      "parentId": "201",
+      "role": "InlineTextBox",
+      "name": "A launch page for an API that turns raw climate data into decision-ready carbon reports for operations",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000018",
+      "parentId": "201",
+      "role": "InlineTextBox",
+      "name": " ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000019",
+      "parentId": "201",
+      "role": "InlineTextBox",
+      "name": "teams.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000023",
+      "parentId": "205",
+      "role": "InlineTextBox",
+      "name": "Art direction",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000024",
+      "parentId": "206",
+      "role": "InlineTextBox",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000025",
+      "parentId": "207",
+      "role": "InlineTextBox",
+      "name": "1",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "208",
+      "parentId": "5",
+      "role": "StaticText",
+      "name": "Material ledger",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "209",
+      "parentId": "79",
+      "role": "StaticText",
+      "name": "Evidence object leads; asymmetric editorial hierarchy.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000028",
+      "parentId": "210",
+      "role": "InlineTextBox",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000029",
+      "parentId": "211",
+      "role": "InlineTextBox",
+      "name": "2",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "212",
+      "parentId": "82",
+      "role": "StaticText",
+      "name": "Split proof",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "213",
+      "parentId": "83",
+      "role": "StaticText",
+      "name": "Claim and inspectable proof share the first view.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000032",
+      "parentId": "214",
+      "role": "InlineTextBox",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000033",
+      "parentId": "215",
+      "role": "InlineTextBox",
+      "name": "3",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "216",
+      "parentId": "86",
+      "role": "StaticText",
+      "name": "Narrative rail",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "217",
+      "parentId": "87",
+      "role": "StaticText",
+      "name": "A wide statement opens into a three-stage story.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "227",
+      "parentId": "120",
+      "role": "StaticText",
+      "name": "READY FOR A BRIEF",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "228",
+      "parentId": "121",
+      "role": "StaticText",
+      "name": "The canvas stays quiet until the evidence speaks.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "229",
+      "parentId": "122",
+      "role": "StaticText",
+      "name": "Your first passing composition will appear here.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000051",
+      "parentId": "234",
+      "role": "InlineTextBox",
+      "name": "Kiln contract",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000052",
+      "parentId": "235",
+      "role": "InlineTextBox",
+      "name": "Conformance fixture loaded",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000055",
+      "parentId": "238",
+      "role": "InlineTextBox",
+      "name": "Four motion roles",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000056",
+      "parentId": "239",
+      "role": "InlineTextBox",
+      "name": "Waiting for artifact",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000059",
+      "parentId": "242",
+      "role": "InlineTextBox",
+      "name": "Responsive contract",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000060",
+      "parentId": "243",
+      "role": "InlineTextBox",
+      "name": "320–1440 coverage queued",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000063",
+      "parentId": "246",
+      "role": "InlineTextBox",
+      "name": "Sandbox isolation",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000064",
+      "parentId": "247",
+      "role": "InlineTextBox",
+      "name": "Network and forms disabled",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000026",
+      "parentId": "208",
+      "role": "InlineTextBox",
+      "name": "Material ledger",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000027",
+      "parentId": "209",
+      "role": "InlineTextBox",
+      "name": "Evidence object leads; asymmetric editorial hierarchy.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000030",
+      "parentId": "212",
+      "role": "InlineTextBox",
+      "name": "Split proof",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000031",
+      "parentId": "213",
+      "role": "InlineTextBox",
+      "name": "Claim and inspectable proof share the first view.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000034",
+      "parentId": "216",
+      "role": "InlineTextBox",
+      "name": "Narrative rail",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000035",
+      "parentId": "217",
+      "role": "InlineTextBox",
+      "name": "A wide statement opens into a three-stage story.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000043",
+      "parentId": "227",
+      "role": "InlineTextBox",
+      "name": "READY FOR A BRIEF",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000044",
+      "parentId": "228",
+      "role": "InlineTextBox",
+      "name": "The canvas stays quiet until the evidence speaks.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000045",
+      "parentId": "229",
+      "role": "InlineTextBox",
+      "name": "Your first passing composition will appear ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000046",
+      "parentId": "229",
+      "role": "InlineTextBox",
+      "name": "here.",
+      "ignored": false,
+      "properties": {}
+    }
+  ]
+}
