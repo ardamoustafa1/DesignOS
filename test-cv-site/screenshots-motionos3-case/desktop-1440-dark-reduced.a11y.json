@@ -1,0 +1,1977 @@
+{
+  "semantic": {
+    "lang": "tr",
+    "title": "DesignOS — Vaka Çalışması",
+    "landmarks": {
+      "header": 1,
+      "nav": 0,
+      "main": 1,
+      "aside": 0,
+      "footer": 1
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "Karar vermeyen araçlardan,karar sistemine."
+      },
+      {
+        "level": 2,
+        "text": "Brief'ten kanıta dönüşüm"
+      },
+      {
+        "level": 3,
+        "text": "Önce belirsizliği görünür yap."
+      },
+      {
+        "level": 3,
+        "text": "Her kararın bir kaynağı olsun."
+      },
+      {
+        "level": 3,
+        "text": "Çıktı değil, kanıtlanmış sonuç."
+      },
+      {
+        "level": 2,
+        "text": "Bu sayfanın iddiası,bu sayfada sınanıyor."
+      },
+      {
+        "level": 2,
+        "text": "Bir arayüz üretme.Bir karar sistemi kur."
+      }
+    ],
+    "controls": [
+      {
+        "selector": "html > body > a.skip",
+        "role": "a",
+        "name": "Vaka çalışmasına geç"
+      },
+      {
+        "selector": "html > body > header.case-nav > a.back",
+        "role": "a",
+        "name": "Portfolyoya dön"
+      },
+      {
+        "selector": "html > body > main > section.case-next:nth-of-type(3) > a",
+        "role": "a",
+        "name": "İletişime geçmeden önce portfolyoya dön ↗"
+      }
+    ]
+  },
+  "axe": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.12.1"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "windowWidth": 1440,
+      "windowHeight": 1000,
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<article class=\"case-hero\" aria-labelledby=\"case-title\">",
+                    "target": [
+                      ".case-hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"eyebrow\">Design intelligence / open source</p>",
+            "target": [
+              ".case-hero > .eyebrow"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "103.7pt (138.24px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<article class=\"case-hero\" aria-labelledby=\"case-title\">",
+                    "target": [
+                      ".case-hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h1 id=\"case-title\">Karar vermeyen araçlardan,<br><em>karar sistemine.</em></h1>",
+            "target": [
+              "#case-title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "103.7pt (138.24px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<article class=\"case-hero\" aria-labelledby=\"case-title\">",
+                    "target": [
+                      ".case-hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<em>karar sistemine.</em>",
+            "target": [
+              "#case-title > em"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<article class=\"case-hero\" aria-labelledby=\"case-title\">",
+                    "target": [
+                      ".case-hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>DesignOS, tasarım bilgisini yalnız öneri olarak bırakmaz; brief, sistem, üretim ve kanıt arasında çalıştırılabilir bir zincir kurar.</p>",
+            "target": [
+              ".case-intro > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<article class=\"case-hero\" aria-labelledby=\"case-title\">",
+                    "target": [
+                      ".case-hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<dt>Rol</dt>",
+            "target": [
+              "div:nth-child(1) > dt"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<article class=\"case-hero\" aria-labelledby=\"case-title\">",
+                    "target": [
+                      ".case-hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<dd>Direction · System · Build</dd>",
+            "target": [
+              "div:nth-child(1) > dd"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<article class=\"case-hero\" aria-labelledby=\"case-title\">",
+                    "target": [
+                      ".case-hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<dt>Durum</dt>",
+            "target": [
+              "div:nth-child(2) > dt"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<article class=\"case-hero\" aria-labelledby=\"case-title\">",
+                    "target": [
+                      ".case-hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<dd>Yerel ürün çalışması</dd>",
+            "target": [
+              "div:nth-child(2) > dd"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>DESIGNOS / COMPILER</span>",
+            "target": [
+              ".compiler-top > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"compiler-state\">INPUT</span>",
+            "target": [
+              ".compiler-state"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "imgNode",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<canvas class=\"story-canvas\"></canvas>",
+                    "target": [
+                      "canvas"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because element contains an image node"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"token token-a\">BRIEF</span>",
+            "target": [
+              ".token-a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "imgNode",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<canvas class=\"story-canvas\"></canvas>",
+                    "target": [
+                      "canvas"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because element contains an image node"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"token token-b\">AUDIENCE</span>",
+            "target": [
+              ".token-b"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "imgNode",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<canvas class=\"story-canvas\"></canvas>",
+                    "target": [
+                      "canvas"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because element contains an image node"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"token token-c\">PROOF</span>",
+            "target": [
+              ".token-c"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "imgNode",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<canvas class=\"story-canvas\"></canvas>",
+                    "target": [
+                      "canvas"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because element contains an image node"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"token token-d\">TYPE</span>",
+            "target": [
+              ".token-d"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "imgNode",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<canvas class=\"story-canvas\"></canvas>",
+                    "target": [
+                      "canvas"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because element contains an image node"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"token token-e\">GRID</span>",
+            "target": [
+              ".token-e"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "imgNode",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<canvas class=\"story-canvas\"></canvas>",
+                    "target": [
+                      "canvas"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because element contains an image node"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"token token-f\">MOTION</span>",
+            "target": [
+              ".token-f"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "43.2pt (57.6px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<strong>DECISION<br>SURFACE</strong>",
+            "target": [
+              ".interface-preview > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>GATE / PASS</small>",
+            "target": [
+              "small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#ff5c35",
+                  "bgColor": "#ff5c35",
+                  "contrastRatio": 1,
+                  "fontSize": "86.4pt (115.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "equalRatio",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"case-next\">\n        <p>Sonraki hareket</p>\n        <h2>Bir arayüz üretme.<br><em>Bir karar sistemi kur.</em></h2>\n        <a href=\"index.html#contact\">İletişime geçmeden önce portfolyoya dön <span aria-hidden=\"true\">↗</span></a>\n      </section>",
+                    "target": [
+                      ".case-next"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has a 1:1 contrast ratio with the background"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<em>Bir karar sistemi kur.</em>",
+            "target": [
+              "h2 > em"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has a 1:1 contrast ratio with the background"
+          }
+        ]
+      }
+    ],
+    "passes": 18
+  },
+  "accessibilityTree": [
+    {
+      "nodeId": "2",
+      "role": "RootWebArea",
+      "name": "DesignOS — Vaka Çalışması",
+      "ignored": false,
+      "properties": {
+        "focused": true
+      }
+    },
+    {
+      "nodeId": "6",
+      "parentId": "2",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "15",
+      "parentId": "6",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "16",
+      "parentId": "15",
+      "role": "link",
+      "name": "Vaka çalışmasına geç",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "19",
+      "parentId": "15",
+      "role": "banner",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "23",
+      "parentId": "15",
+      "role": "main",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "91",
+      "parentId": "15",
+      "role": "contentinfo",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "94",
+      "parentId": "16",
+      "role": "StaticText",
+      "name": "Vaka çalışmasına geç",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "20",
+      "parentId": "19",
+      "role": "link",
+      "name": "Portfolyoya dön",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "21",
+      "parentId": "19",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "22",
+      "parentId": "19",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "24",
+      "parentId": "23",
+      "role": "article",
+      "name": "Karar vermeyen araçlardan, karar sistemine.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "36",
+      "parentId": "23",
+      "role": "region",
+      "name": "Brief'ten kanıta dönüşüm",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "69",
+      "parentId": "23",
+      "role": "region",
+      "name": "Bu sayfanın iddiası, bu sayfada sınanıyor.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "84",
+      "parentId": "23",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "92",
+      "parentId": "91",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "142",
+      "parentId": "92",
+      "role": "StaticText",
+      "name": "Arda Moustafa / DesignOS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "93",
+      "parentId": "91",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "143",
+      "parentId": "93",
+      "role": "StaticText",
+      "name": "Local case study · 2026",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000002",
+      "parentId": "94",
+      "role": "InlineTextBox",
+      "name": "Vaka çalışmasına geç",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "95",
+      "parentId": "20",
+      "role": "StaticText",
+      "name": "← AM / 26",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "96",
+      "parentId": "21",
+      "role": "StaticText",
+      "name": "DESİGNOS · CASE 01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "97",
+      "parentId": "22",
+      "role": "StaticText",
+      "name": "01 / BRİEF",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "25",
+      "parentId": "24",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "4",
+      "parentId": "24",
+      "role": "heading",
+      "name": "Karar vermeyen araçlardan, karar sistemine.",
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "28",
+      "parentId": "24",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "5",
+      "parentId": "28",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "29",
+      "parentId": "28",
+      "role": "DescriptionList",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "37",
+      "parentId": "36",
+      "role": "heading",
+      "name": "Brief'ten kanıta dönüşüm",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "56",
+      "parentId": "36",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "70",
+      "parentId": "69",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "71",
+      "parentId": "69",
+      "role": "heading",
+      "name": "Bu sayfanın iddiası, bu sayfada sınanıyor.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "73",
+      "parentId": "69",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "74",
+      "parentId": "73",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "77",
+      "parentId": "73",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "80",
+      "parentId": "73",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "83",
+      "parentId": "69",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "85",
+      "parentId": "84",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "86",
+      "parentId": "84",
+      "role": "heading",
+      "name": "Bir arayüz üretme. Bir karar sistemi kur.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "89",
+      "parentId": "84",
+      "role": "link",
+      "name": "İletişime geçmeden önce portfolyoya dön",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000060",
+      "parentId": "142",
+      "role": "InlineTextBox",
+      "name": "Arda Moustafa / DesignOS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000061",
+      "parentId": "143",
+      "role": "InlineTextBox",
+      "name": "Local case study · 2026",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000003",
+      "parentId": "95",
+      "role": "InlineTextBox",
+      "name": "← AM / 26",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000004",
+      "parentId": "96",
+      "role": "InlineTextBox",
+      "name": "DESİGNOS · CASE 01",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000005",
+      "parentId": "97",
+      "role": "InlineTextBox",
+      "name": "01 / BRİEF",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "98",
+      "parentId": "25",
+      "role": "StaticText",
+      "name": "DESİGN İNTELLİGENCE / OPEN SOURCE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "99",
+      "parentId": "4",
+      "role": "StaticText",
+      "name": "Karar vermeyen araçlardan,",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "26",
+      "parentId": "4",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "27",
+      "parentId": "4",
+      "role": "emphasis",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "101",
+      "parentId": "5",
+      "role": "StaticText",
+      "name": "DesignOS, tasarım bilgisini yalnız öneri olarak bırakmaz; brief, sistem, üretim ve kanıt arasında çalıştırılabilir bir zincir kurar.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "30",
+      "parentId": "29",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "31",
+      "parentId": "30",
+      "role": "term",
+      "name": "ROL",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "32",
+      "parentId": "30",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "33",
+      "parentId": "29",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "34",
+      "parentId": "33",
+      "role": "term",
+      "name": "DURUM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "35",
+      "parentId": "33",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "106",
+      "parentId": "37",
+      "role": "StaticText",
+      "name": "Brief'ten kanıta dönüşüm",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "57",
+      "parentId": "56",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "61",
+      "parentId": "56",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "65",
+      "parentId": "56",
+      "role": "generic",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "127",
+      "parentId": "70",
+      "role": "StaticText",
+      "name": "MEASURED LOCALLY",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "128",
+      "parentId": "71",
+      "role": "StaticText",
+      "name": "Bu sayfanın iddiası,",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "72",
+      "parentId": "71",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "129",
+      "parentId": "71",
+      "role": "StaticText",
+      "name": "bu sayfada sınanıyor.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "75",
+      "parentId": "74",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "76",
+      "parentId": "74",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "78",
+      "parentId": "77",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "79",
+      "parentId": "77",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "81",
+      "parentId": "80",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "82",
+      "parentId": "80",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "136",
+      "parentId": "83",
+      "role": "StaticText",
+      "name": "Değerler lokal otomasyon kanıtıdır; insan tasarım skoru değildir.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "137",
+      "parentId": "85",
+      "role": "StaticText",
+      "name": "SONRAKİ HAREKET",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "138",
+      "parentId": "86",
+      "role": "StaticText",
+      "name": "Bir arayüz üretme.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "87",
+      "parentId": "86",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "88",
+      "parentId": "86",
+      "role": "emphasis",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "140",
+      "parentId": "89",
+      "role": "StaticText",
+      "name": "İletişime geçmeden önce portfolyoya dön",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000006",
+      "parentId": "98",
+      "role": "InlineTextBox",
+      "name": "DESİGN İNTELLİGENCE / OPEN SOURCE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000007",
+      "parentId": "99",
+      "role": "InlineTextBox",
+      "name": "Karar vermeyen ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000008",
+      "parentId": "99",
+      "role": "InlineTextBox",
+      "name": "araçlardan,",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000009",
+      "parentId": "26",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "100",
+      "parentId": "27",
+      "role": "StaticText",
+      "name": "karar sistemine.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000011",
+      "parentId": "101",
+      "role": "InlineTextBox",
+      "name": "DesignOS, tasarım bilgisini yalnız öneri ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000012",
+      "parentId": "101",
+      "role": "InlineTextBox",
+      "name": "olarak bırakmaz; brief, sistem, üretim ve ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000013",
+      "parentId": "101",
+      "role": "InlineTextBox",
+      "name": "kanıt arasında çalıştırılabilir bir zincir kurar.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "102",
+      "parentId": "31",
+      "role": "StaticText",
+      "name": "ROL",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "103",
+      "parentId": "32",
+      "role": "StaticText",
+      "name": "Direction · System · Build",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "104",
+      "parentId": "34",
+      "role": "StaticText",
+      "name": "DURUM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "105",
+      "parentId": "35",
+      "role": "StaticText",
+      "name": "Yerel ürün çalışması",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000019",
+      "parentId": "106",
+      "role": "InlineTextBox",
+      "name": "Brief'ten kanıta dönüşüm",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "58",
+      "parentId": "57",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "59",
+      "parentId": "57",
+      "role": "heading",
+      "name": "Önce belirsizliği görünür yap.",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "60",
+      "parentId": "57",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "62",
+      "parentId": "61",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "63",
+      "parentId": "61",
+      "role": "heading",
+      "name": "Her kararın bir kaynağı olsun.",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "64",
+      "parentId": "61",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "66",
+      "parentId": "65",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "67",
+      "parentId": "65",
+      "role": "heading",
+      "name": "Çıktı değil, kanıtlanmış sonuç.",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "68",
+      "parentId": "65",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000040",
+      "parentId": "127",
+      "role": "InlineTextBox",
+      "name": "MEASURED LOCALLY",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000041",
+      "parentId": "128",
+      "role": "InlineTextBox",
+      "name": "Bu sayfanın ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000042",
+      "parentId": "128",
+      "role": "InlineTextBox",
+      "name": "iddiası,",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000043",
+      "parentId": "72",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000044",
+      "parentId": "129",
+      "role": "InlineTextBox",
+      "name": "bu sayfada ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000045",
+      "parentId": "129",
+      "role": "InlineTextBox",
+      "name": "sınanıyor.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "130",
+      "parentId": "75",
+      "role": "StaticText",
+      "name": "22 / 22",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "131",
+      "parentId": "76",
+      "role": "StaticText",
+      "name": "Browser senaryosu",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "132",
+      "parentId": "78",
+      "role": "StaticText",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "133",
+      "parentId": "79",
+      "role": "StaticText",
+      "name": "P1 / P2 bulgu",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "134",
+      "parentId": "81",
+      "role": "StaticText",
+      "name": "4×",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "135",
+      "parentId": "82",
+      "role": "StaticText",
+      "name": "CPU motion profili",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000052",
+      "parentId": "136",
+      "role": "InlineTextBox",
+      "name": "Değerler lokal otomasyon kanıtıdır; insan tasarım skoru değildir.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000053",
+      "parentId": "137",
+      "role": "InlineTextBox",
+      "name": "SONRAKİ HAREKET",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000054",
+      "parentId": "138",
+      "role": "InlineTextBox",
+      "name": "Bir arayüz ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000055",
+      "parentId": "138",
+      "role": "InlineTextBox",
+      "name": "üretme.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000056",
+      "parentId": "87",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "139",
+      "parentId": "88",
+      "role": "StaticText",
+      "name": "Bir karar sistemi kur.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000059",
+      "parentId": "140",
+      "role": "InlineTextBox",
+      "name": "İletişime geçmeden önce portfolyoya dön",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000010",
+      "parentId": "100",
+      "role": "InlineTextBox",
+      "name": "karar sistemine.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000014",
+      "parentId": "102",
+      "role": "InlineTextBox",
+      "name": "ROL",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000015",
+      "parentId": "103",
+      "role": "InlineTextBox",
+      "name": "Direction · System · ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000016",
+      "parentId": "103",
+      "role": "InlineTextBox",
+      "name": "Build",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000017",
+      "parentId": "104",
+      "role": "InlineTextBox",
+      "name": "DURUM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000018",
+      "parentId": "105",
+      "role": "InlineTextBox",
+      "name": "Yerel ürün çalışması",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "118",
+      "parentId": "58",
+      "role": "StaticText",
+      "name": "01 / BRİEF",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "119",
+      "parentId": "59",
+      "role": "StaticText",
+      "name": "Önce belirsizliği görünür yap.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "120",
+      "parentId": "60",
+      "role": "StaticText",
+      "name": "Okuyucu, amaç, kanıt ve kısıtlar tek bir test edilebilir kontrata dönüşür. Görsel karar henüz verilmez.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "121",
+      "parentId": "62",
+      "role": "StaticText",
+      "name": "02 / SYSTEM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "122",
+      "parentId": "63",
+      "role": "StaticText",
+      "name": "Her kararın bir kaynağı olsun.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "123",
+      "parentId": "64",
+      "role": "StaticText",
+      "name": "Tipografi, kompozisyon, materyal ve hareket aynı ürün gerçeğinden türetilir; birbirinden bağımsız efektler olarak seçilmez.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "124",
+      "parentId": "66",
+      "role": "StaticText",
+      "name": "03 / EVİDENCE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "125",
+      "parentId": "67",
+      "role": "StaticText",
+      "name": "Çıktı değil, kanıtlanmış sonuç.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "126",
+      "parentId": "68",
+      "role": "StaticText",
+      "name": "Tarayıcı, erişilebilirlik, temporal motion ve performans kontrolleri tamamlanmadan yüzey kullanıcıya hazır kabul edilmez.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000046",
+      "parentId": "130",
+      "role": "InlineTextBox",
+      "name": "22 / 22",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000047",
+      "parentId": "131",
+      "role": "InlineTextBox",
+      "name": "Browser senaryosu",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000048",
+      "parentId": "132",
+      "role": "InlineTextBox",
+      "name": "0",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000049",
+      "parentId": "133",
+      "role": "InlineTextBox",
+      "name": "P1 / P2 bulgu",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000050",
+      "parentId": "134",
+      "role": "InlineTextBox",
+      "name": "4×",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000051",
+      "parentId": "135",
+      "role": "InlineTextBox",
+      "name": "CPU motion profili",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000057",
+      "parentId": "139",
+      "role": "InlineTextBox",
+      "name": "Bir karar sistemi ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000058",
+      "parentId": "139",
+      "role": "InlineTextBox",
+      "name": "kur.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000020",
+      "parentId": "118",
+      "role": "InlineTextBox",
+      "name": "01 / BRİEF",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000021",
+      "parentId": "119",
+      "role": "InlineTextBox",
+      "name": "Önce ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000022",
+      "parentId": "119",
+      "role": "InlineTextBox",
+      "name": "belirsizliği ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000023",
+      "parentId": "119",
+      "role": "InlineTextBox",
+      "name": "görünür yap.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000024",
+      "parentId": "120",
+      "role": "InlineTextBox",
+      "name": "Okuyucu, amaç, kanıt ve kısıtlar tek bir test edilebilir ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000025",
+      "parentId": "120",
+      "role": "InlineTextBox",
+      "name": "kontrata dönüşür. Görsel karar henüz verilmez.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000026",
+      "parentId": "121",
+      "role": "InlineTextBox",
+      "name": "02 / SYSTEM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000027",
+      "parentId": "122",
+      "role": "InlineTextBox",
+      "name": "Her kararın ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000028",
+      "parentId": "122",
+      "role": "InlineTextBox",
+      "name": "bir kaynağı ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000029",
+      "parentId": "122",
+      "role": "InlineTextBox",
+      "name": "olsun.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000030",
+      "parentId": "123",
+      "role": "InlineTextBox",
+      "name": "Tipografi, kompozisyon, materyal ve hareket aynı ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000031",
+      "parentId": "123",
+      "role": "InlineTextBox",
+      "name": "ürün gerçeğinden türetilir; birbirinden bağımsız ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000032",
+      "parentId": "123",
+      "role": "InlineTextBox",
+      "name": "efektler olarak seçilmez.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000033",
+      "parentId": "124",
+      "role": "InlineTextBox",
+      "name": "03 / EVİDENCE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000034",
+      "parentId": "125",
+      "role": "InlineTextBox",
+      "name": "Çıktı değil, ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000035",
+      "parentId": "125",
+      "role": "InlineTextBox",
+      "name": "kanıtlanmış ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000036",
+      "parentId": "125",
+      "role": "InlineTextBox",
+      "name": "sonuç.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000037",
+      "parentId": "126",
+      "role": "InlineTextBox",
+      "name": "Tarayıcı, erişilebilirlik, temporal motion ve performans ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000038",
+      "parentId": "126",
+      "role": "InlineTextBox",
+      "name": "kontrolleri tamamlanmadan yüzey kullanıcıya hazır ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000039",
+      "parentId": "126",
+      "role": "InlineTextBox",
+      "name": "kabul edilmez.",
+      "ignored": false,
+      "properties": {}
+    }
+  ]
+}

@@ -4,6 +4,8 @@ type DesignPlan = {
   headline: string;
   summary: string;
   proof: [string, string, string];
+  material: [string, string, string];
+  visualThesis: string;
   family: "editorial-ledger" | "split-proof" | "rail-story";
 };
 
@@ -110,7 +112,7 @@ export async function requestDesignPlan(brief: string): Promise<GatewayResult | 
           max_tokens: 900,
           response_format: { type: "json_object" },
           messages: [
-            { role: "system", content: "You are the private DesignOS planning layer. Return only JSON with productName, eyebrow, headline, summary, proof (three short strings), and family (editorial-ledger, split-proof, or rail-story). Never return HTML, CSS, scripts, URLs, or markdown." },
+            { role: "system", content: "You are the private DesignOS planning layer. Return only JSON with productName, eyebrow, headline, summary, proof (three short strings), material (three concrete strings describing input, transformation, and output), visualThesis (one sentence naming the visual idea derived from the product), and family (editorial-ledger, split-proof, or rail-story). Be specific to the brief; never return HTML, CSS, scripts, URLs, markdown, fabricated metrics, customers, or compliance claims." },
             { role: "user", content: brief },
           ],
         }),

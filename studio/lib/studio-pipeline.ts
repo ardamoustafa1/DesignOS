@@ -1,6 +1,8 @@
 import {
   motionDirectorCss,
   motionDirectorRuntime,
+  motionStageCss,
+  motionStageRuntime,
   sceneAttributes,
   sceneLayer,
   type MotionScene,
@@ -33,6 +35,8 @@ export type DesignPlan = {
   headline: string;
   summary: string;
   proof: [string, string, string];
+  material: [string, string, string];
+  visualThesis: string;
   family: CompositionFamily;
   sceneId: string;
   motionEngine: MotionScene["engine"];
@@ -125,6 +129,13 @@ function deriveDemoPlan(brief: string, variation: number): DesignPlan {
         "Board-ready exports",
         "Live variance alerts",
       ],
+      material: [
+        "Raw operating data",
+        "Traceable variance model",
+        "Decision-ready carbon report",
+      ],
+      visualThesis:
+        "A living evidence trace turns scattered operating data into one defensible record.",
       family,
     };
   }
@@ -136,6 +147,13 @@ function deriveDemoPlan(brief: string, variation: number): DesignPlan {
       headline: "Turn scattered signals into one defensible answer.",
       summary: sentenceCase(brief),
       proof: ["Evidence lineage", "Risk deltas", "Decision-grade reports"],
+      material: [
+        "Scattered security signals",
+        "Attributed risk decisions",
+        "One defensible answer",
+      ],
+      visualThesis:
+        "Signals converge into a single inspectable decision surface.",
       family,
     };
   }
@@ -146,6 +164,13 @@ function deriveDemoPlan(brief: string, variation: number): DesignPlan {
     headline: "Make the invisible work legible.",
     summary: sentenceCase(brief),
     proof: ["Trusted inputs", "Visible decisions", "Shareable outcomes"],
+    material: [
+      "Unstructured source material",
+      "Visible decision logic",
+      "A shareable final artifact",
+    ],
+    visualThesis:
+      "The interface performs the move from ambiguity to a legible outcome.",
     family,
   };
 }
@@ -168,6 +193,12 @@ function normalizePlan(
           .slice(0, 3)
           .map((item, index) => safe(item, fallback.proof[index], 52))
       : fallback.proof;
+  const material =
+    Array.isArray(raw.material) && raw.material.length >= 3
+      ? raw.material
+          .slice(0, 3)
+          .map((item, index) => safe(item, fallback.material[index], 64))
+      : fallback.material;
 
   return {
     productName: safe(raw.productName, fallback.productName, 36),
@@ -175,6 +206,8 @@ function normalizePlan(
     headline: safe(raw.headline, fallback.headline, 92),
     summary: safe(raw.summary, fallback.summary, 240),
     proof: proof as [string, string, string],
+    material: material as [string, string, string],
+    visualThesis: safe(raw.visualThesis, fallback.visualThesis, 180),
     family,
   };
 }
@@ -228,6 +261,34 @@ function applySystemTheme(artifact: string, system: RuntimeSystem) {
     );
 }
 
+function compileMotionStage(
+  plan: DesignPlan,
+  motionScene: MotionScene,
+  traceId: string,
+) {
+  const productName = escapeHtml(plan.productName);
+  const summary = escapeHtml(plan.summary);
+  const headline = escapeHtml(plan.headline);
+  const thesis = escapeHtml(plan.visualThesis);
+  const material = plan.material.map(escapeHtml);
+  const proof = plan.proof.map(escapeHtml);
+  const engineLabel = escapeHtml(motionScene.engine.replaceAll("-", " "));
+  return `<figure class="motion-stage" data-motion-stage data-stage-state="playing" data-engine="${escapeHtml(motionScene.engine)}" data-motion-duration="6400" data-motion-playback="single-pass-replayable" data-motion-poster="resolved-outcome" data-motion-media="procedural-self-contained" aria-label="${productName} cinematic proof film">
+    <div class="stage-bar">
+      <span class="stage-brand"><i aria-hidden="true"></i>${productName}</span>
+      <span class="stage-controls"><span class="stage-engine">${engineLabel}</span><button class="stage-toggle" type="button" data-stage-toggle aria-pressed="false">Pause motion</button></span>
+    </div>
+    <div class="stage-viewport">
+      ${sceneLayer(motionScene)}
+      <article class="motion-shot shot-source" data-frame="01 / INPUT"><strong>${material[0]}</strong><p>${summary}</p></article>
+      <article class="motion-shot shot-resolve" data-frame="02 / TRANSFORM"><strong>${material[1]}</strong><div class="shot-nodes">${proof.map((item) => `<span><i aria-hidden="true"></i>${item}</span>`).join("")}</div></article>
+      <article class="motion-shot shot-output" data-frame="03 / OUTCOME"><strong>${material[2]}</strong><p>${headline}</p><span class="output-mark"><i aria-hidden="true"></i>${productName} · resolved artifact · ${traceId}</span></article>
+      <p class="stage-thesis">${thesis}</p>
+    </div>
+    <div class="stage-timeline" aria-hidden="true"><span>Motion proof / 06.4s</span><span class="stage-track"><i></i></span><span class="stage-frame-count">01 → 03</span></div>
+  </figure>`;
+}
+
 function compileArtifact(
   plan: DesignPlan,
   completeMotionContract: boolean,
@@ -241,6 +302,7 @@ function compileArtifact(
   const summary = escapeHtml(plan.summary);
   const proof = plan.proof.map(escapeHtml);
   const traceId = hash(plan.productName).slice(0, 6).toUpperCase();
+  const motionStage = compileMotionStage(plan, motionScene, traceId);
   const transitionRole = completeMotionContract
     ? ' data-motion-role="state-transition"'
     : "";
@@ -256,17 +318,19 @@ function compileArtifact(
 body[data-family="split-proof"] .hero-grid{grid-template-columns:.82fr 1.18fr}body[data-family="split-proof"] h1{font-size:clamp(56px,7vw,110px)}body[data-family="split-proof"] .hero-copy{order:-1}body[data-family="rail-story"] .hero-grid{display:block}body[data-family="rail-story"] h1{max-width:1120px}body[data-family="rail-story"] .hero-copy{margin:48px 0 0 auto}body[data-family="rail-story"] .ledger-card:nth-child(1){grid-column:1/span 4}body[data-family="rail-story"] .ledger-card:nth-child(2){grid-column:5/span 4}body[data-family="rail-story"] .ledger-card:nth-child(3){grid-column:9/span 4;min-height:250px}
 .scene-canvas{position:absolute;inset:4% 0 auto auto;width:min(48vw,680px);height:72%;pointer-events:none;opacity:.62;mix-blend-mode:screen;mask-image:linear-gradient(90deg,transparent,var(--ground-lo) 24%)}.scene-progress{position:fixed;inset:0 auto auto 0;z-index:40;width:100%;height:2px;transform:scaleX(var(--scene-progress,0));transform-origin:left;background:var(--ember);pointer-events:none}.scene-cursor{position:fixed;z-index:19;width:240px;height:240px;border-radius:50%;pointer-events:none;transform:translate3d(calc(var(--scene-x,-300px) - 50%),calc(var(--scene-y,-300px) - 50%),0);background:radial-gradient(circle,var(--wash),transparent 68%);mix-blend-mode:screen;opacity:.72}.hero-grid,.ledger-card{transform:perspective(1200px) rotateX(var(--scene-rx,0deg)) rotateY(var(--scene-ry,0deg));transition:transform var(--fast) var(--ease)}
 ${motionDirectorCss()}
-@media(max-width:760px){.wrap,.narrow{width:min(100% - 28px,1120px)}.nav-links{display:none}.hero{padding:76px 0}.hero-grid,.story-head,.console-grid{grid-template-columns:1fr}.hero-copy{margin-top:36px}.proof-grid{grid-template-columns:1fr}.proof{border-right:0;border-bottom:1px solid var(--ring)}.story{padding:92px 0}.story-head{gap:20px;margin-bottom:40px}.ledger{display:block}.ledger-card{margin-bottom:16px;min-height:212px}.console{padding:88px 0}.console-grid{gap:40px}.closing{padding:100px 0}.footer-row{display:block}.footer-row span{display:block;margin:8px 0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}[data-motion-role="arrival"] .mask>span,[data-motion-role="arrival"] .kicker,[data-motion-role="arrival"] .hero-copy,[data-motion-role="arrival"] .cta-row,.route-wipe.is-active{animation:none}.button,.artifact-row,[data-reveal],.hero-grid,.ledger-card{transition:none;transform:none}[data-reveal]{opacity:1;transform:none}.scene-canvas,.scene-cursor,.scene-progress{display:none}}
+${motionStageCss()}
+.hero{padding:clamp(64px,7vw,112px) 0 80px}.hero-grid{grid-template-columns:minmax(0,.88fr) minmax(480px,1.12fr);gap:clamp(40px,5vw,80px);align-items:center}.hero-statement{position:relative;z-index:3;min-width:0}.hero-statement h1{max-width:720px;font-size:clamp(52px,6.3vw,96px);line-height:.9}.hero-summary{max-width:44ch;margin:28px 0 0;color:var(--ink-2);font-size:clamp(16px,1.35vw,19px);line-height:1.58}.mask{overflow:clip;padding-bottom:.12em}[data-motion-role="arrival"] .hero-summary{animation:fadeUp 480ms var(--ease) both;animation-delay:calc(180ms + var(--i)*80ms)}body[data-family="editorial-ledger"] .motion-stage{margin-top:56px}body[data-family="split-proof"] .hero-grid{grid-template-columns:minmax(0,.72fr) minmax(520px,1.28fr)}body[data-family="split-proof"] .hero-statement h1{font-size:clamp(48px,5.6vw,84px)}body[data-family="rail-story"] .hero-grid{display:block}body[data-family="rail-story"] .hero-statement{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:48px;align-items:end}body[data-family="rail-story"] .hero-statement h1{max-width:920px}body[data-family="rail-story"] .hero-summary{margin:0 0 8px}body[data-family="rail-story"] .hero-statement .cta-row{grid-column:2;margin-top:24px}body[data-family="rail-story"] .motion-stage{width:100%;margin-top:56px}
+@media(max-width:760px){.wrap,.narrow{width:min(100% - 28px,1120px)}.nav-links{display:none}.hero{padding:56px 0}.hero-grid,body[data-family] .hero-grid,body[data-family="rail-story"] .hero-statement,.story-head,.console-grid{display:grid;grid-template-columns:1fr}.hero-summary{margin-top:20px}.proof-grid{grid-template-columns:1fr}.proof{border-right:0;border-bottom:1px solid var(--ring)}.story{padding:92px 0}.story-head{gap:20px;margin-bottom:40px}.ledger{display:block}.ledger-card{margin-bottom:16px;min-height:212px}.console{padding:88px 0}.console-grid{gap:40px}.closing{padding:100px 0}.footer-row{display:block}.footer-row span{display:block;margin:8px 0}body[data-family] .motion-stage{margin-top:40px}body[data-family="rail-story"] .hero-statement .cta-row{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}[data-motion-role="arrival"] .mask>span,[data-motion-role="arrival"] .kicker,[data-motion-role="arrival"] .hero-summary,[data-motion-role="arrival"] .cta-row,.route-wipe.is-active{animation:none}.button,.artifact-row,[data-reveal],.hero-grid,.ledger-card{transition:none;transform:none}[data-reveal]{opacity:1;transform:none}.scene-canvas,.scene-cursor,.scene-progress{display:none}}
 .hero{overflow:clip}.hero .scene-engine{right:0;max-width:100%;overflow:hidden}@media(max-width:760px){.hero .scene-engine{inset:8% 0 auto 0;width:100%}}
 /* P1 artifact-browser corrections: controls remain tappable, evidence labels keep the 12px floor, and mobile family overrides cannot outrank reflow. */
-:root{--on-ember:var(--ground-lo)}.brand{min-height:44px}.trace-top,.section-label,.card-index{font-size:12px}.mask{overflow:visible}@keyframes fadeUp{from{transform:translateY(16px)}to{transform:none}}@media(max-width:760px){body[data-family] .hero-grid{display:grid;grid-template-columns:1fr}body[data-family] .hero-copy{order:initial;margin-top:36px}.trace-flow{grid-template-columns:1fr}.trace-step{min-height:44px}.index{position:static;display:block;margin-top:32px}}
+:root{--on-ember:var(--ground-lo)}.brand{min-height:44px}.trace-top,.section-label,.card-index{font-size:12px}@keyframes fadeUp{from{transform:translateY(16px)}to{transform:none}}@media(max-width:760px){body[data-family] .hero-grid{display:grid;grid-template-columns:1fr}.trace-flow{grid-template-columns:1fr}.trace-step{min-height:44px}.index{position:static;display:block;margin-top:32px}}
 .nav a{min-height:44px;display:inline-flex;align-items:center}.trace-step,.trace-step strong{font-size:12px;white-space:normal;overflow:visible;text-overflow:clip}.trace-plate,.ledger-card{overflow:visible}.trace-plate:after{right:12px;top:12px;width:72px;height:72px}.ledger-card:after{inset:auto 0 0 30%;height:120px}.ledger-card h3{margin-top:56px}@media(max-width:760px){.trace-plate,.ledger-card{min-width:0}.ledger-card{min-height:auto;padding-bottom:40px}.trace-flow{gap:16px}}
 .nav-links a{min-width:44px;justify-content:center}.hero-grid,.hero-grid>*{min-width:0}h1,.kicker,.hero-copy{overflow-wrap:anywhere}.button{white-space:normal;text-align:center;min-width:0}@media(max-width:760px){.wrap,.narrow{width:min(calc(100% - 28px),1120px)}.cta-row .button{width:100%}}
 </style></head>
-<body data-family="${plan.family}" ${motionAttributes}><div class="route-wipe" aria-hidden="true"></div>
+<body data-family="${plan.family}" data-composition-family="${plan.family}" ${motionAttributes}><div class="route-wipe" aria-hidden="true"></div>
 <header><nav class="nav wrap" aria-label="Primary"><a class="brand" href="#top">${productName}</a><div class="nav-links"><a href="#proof">Proof</a><a href="#workflow">Workflow</a><a href="#decision">Decision view</a></div></nav></header>
-<main id="top"><section class="hero" data-motion-role="arrival">${sceneLayer(motionScene)}<div class="wrap hero-grid"><div><p class="kicker" style="--i:0">${eyebrow}</p><h1><span class="mask"><span style="--i:1">${headline}</span></span></h1><div class="cta-row" style="--i:3"><a class="button primary" href="#workflow" data-route>Explore the evidence <span aria-hidden="true">↓</span></a><a class="button" href="#decision">See decision view</a></div></div><aside class="hero-copy trace-plate" style="--i:2" aria-label="Decision trace preview"><div class="trace-top"><span>Live provenance</span><span class="trace-id">Trace ${traceId}</span></div><p class="trace-summary">${summary}</p><div class="trace-flow">${proof.map((item, index) => `<span class="trace-step">0${index + 1}<strong>${item}</strong></span>`).join("")}</div></aside></div><span class="index wrap">KILN / 01 — gated prototype</span></section>
+<main id="top"><section class="hero" data-motion-role="arrival"><div class="wrap hero-grid"><div class="hero-statement"><p class="kicker" style="--i:0">${eyebrow}</p><h1><span class="mask"><span style="--i:1">${headline}</span></span></h1><p class="hero-summary" style="--i:2">${summary}</p><div class="cta-row" style="--i:3"><a class="button primary" href="#workflow" data-route>Explore the evidence <span aria-hidden="true">↓</span></a><a class="button" href="#decision">See decision view</a></div></div>${motionStage}</div><span class="index wrap">KILN / 01 — gated prototype</span></section>
 <section class="proof-band" id="proof" aria-label="Product proof"><div class="wrap proof-grid">${proof.map((item, index) => `<div class="proof"><strong>0${index + 1}</strong><span>${item}</span></div>`).join("")}</div></section>
 <section class="story" id="workflow" data-motion-role="scroll-reveal"><div class="wrap"><div class="story-head" data-reveal style="--i:0"><p class="section-label">02 / Trace the chain</p><div><h2>From raw signal to a record you can defend.</h2><p class="story-intro">Each stage keeps its source, owner, and decision attached—so the final report is an explanation, not a black box.</p></div></div><div class="ledger"><article class="ledger-card ledger-source" data-reveal style="--i:0"><span class="card-index">A / INGEST</span><h3>Inputs arrive with lineage intact.</h3><div class="signal" aria-hidden="true">${[42, 65, 38, 88, 56, 72, 94].map((height) => `<i style="--h:${height}%"></i>`).join("")}</div></article><article class="ledger-card ledger-variance" data-reveal style="--i:1"><span class="card-index">B / RESOLVE</span><h3>Variance becomes a visible decision.</h3></article><article class="ledger-card ledger-publish" data-reveal style="--i:2"><span class="card-index">C / PUBLISH</span><h3>One decision trail. Every audience.</h3></article></div></div></section>
 <section class="console" id="decision"><div class="narrow console-grid"><div class="console-copy" data-reveal><p class="section-label">03 / Test the model</p><h2>Make the trade-off tangible.</h2><p>Switch the evidence view to see how one changed assumption propagates through the record.</p></div><div class="artifact" data-mode="baseline"${transitionRole} data-reveal><div class="artifact-top"><span>Scenario / Q3 operations</span><span class="live">● demo state</span></div><div class="artifact-body"><div class="artifact-row"><span>Primary evidence coverage</span><span>94.8%</span></div><div class="artifact-row"><span>Unresolved variance</span><span>3.1%</span></div><div class="artifact-row"><span>Confidence band</span><span>±1.6%</span></div></div><button class="button mode-switch" type="button" data-motion-role="interaction" aria-pressed="false">Compare scenario <span aria-hidden="true">↔</span></button></div></div></section>
@@ -274,9 +338,14 @@ ${motionDirectorCss()}
 <footer><div class="wrap footer-row"><span>${productName} / prototype</span><span>Built with DesignOS · Kiln system</span></div></footer>
 <script type="application/json" data-designos-tasks>[{"id":"compare-decision-scenario","steps":[{"action":"click","selector":".mode-switch"},{"assert":"attribute","selector":".mode-switch","name":"aria-pressed","equals":"true"}]}]</script>
 <script>(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const disposers=[];const reveal=()=>document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('is-visible'));if(reduce||!('IntersectionObserver'in window)){reveal()}else{const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target)}}),{threshold:.14});document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));disposers.push(()=>io.disconnect())}const artifact=document.querySelector('.artifact');const toggle=document.querySelector('.mode-switch');toggle?.addEventListener('click',()=>{const active=artifact.dataset.mode==='scenario';artifact.dataset.mode=active?'baseline':'scenario';toggle.setAttribute('aria-pressed',String(!active));toggle.firstChild.textContent=active?'Compare scenario ':'Return to baseline '});document.querySelectorAll('[data-route]').forEach(link=>link.addEventListener('click',event=>{if(reduce)return;event.preventDefault();const target=document.querySelector(link.getAttribute('href'));const wipe=document.querySelector('.route-wipe');wipe.classList.remove('is-active');requestAnimationFrame(()=>wipe.classList.add('is-active'));setTimeout(()=>target?.scrollIntoView(),180)}));const mountScene=()=>{const root=document.body,character=root.dataset.motionCharacter;if(reduce){root.dataset.motionRuntimeState='reduced';return}const progress=document.createElement('i');progress.className='scene-progress';progress.setAttribute('aria-hidden','true');root.append(progress);let raf=0;const update=()=>{raf=0;const max=document.documentElement.scrollHeight-innerHeight;root.style.setProperty('--scene-progress',String(max?scrollY/max:0))};const request=()=>{if(!raf)raf=requestAnimationFrame(update)};addEventListener('scroll',request,{passive:true});update();disposers.push(()=>{removeEventListener('scroll',request);cancelAnimationFrame(raf)});if(character==='cinematic'){const canvas=document.createElement('canvas');canvas.className='scene-canvas';canvas.setAttribute('aria-hidden','true');document.querySelector('.hero')?.append(canvas);const context=canvas.getContext('2d');let frame=0;const draw=time=>{const rect=canvas.getBoundingClientRect(),ratio=Math.min(devicePixelRatio,2),width=Math.max(1,Math.round(rect.width*ratio)),height=Math.max(1,Math.round(rect.height*ratio));if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height}context.clearRect(0,0,width,height);for(let index=0;index<28;index++){const phase=time*.00025+index*.67,x=(.5+.46*Math.sin(phase*1.2+index))*width,y=(.5+.42*Math.cos(phase+index*.41))*height,r=(2+(index%5))*ratio;context.fillStyle='rgba(232,112,58,'+(0.1+(index%4)*.06)+')';context.beginPath();context.arc(x,y,r,0,Math.PI*2);context.fill()}frame=requestAnimationFrame(draw)};frame=requestAnimationFrame(draw);disposers.push(()=>cancelAnimationFrame(frame))}if(character==='technical'){const cursor=document.createElement('i');cursor.className='scene-cursor';cursor.setAttribute('aria-hidden','true');root.append(cursor);const move=event=>{root.style.setProperty('--scene-x',event.clientX+'px');root.style.setProperty('--scene-y',event.clientY+'px')};addEventListener('pointermove',move,{passive:true});disposers.push(()=>removeEventListener('pointermove',move))}if(character==='editorial'){const stage=document.querySelector('.hero-grid');const move=event=>{const rect=stage.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width-.5,y=(event.clientY-rect.top)/rect.height-.5;stage.style.setProperty('--scene-rx',(-y*2.6).toFixed(2)+'deg');stage.style.setProperty('--scene-ry',(x*3.2).toFixed(2)+'deg')};stage?.addEventListener('pointermove',move,{passive:true});disposers.push(()=>stage?.removeEventListener('pointermove',move))}root.dataset.motionRuntimeState='mounted'};mountScene();addEventListener('pagehide',()=>disposers.splice(0).forEach(dispose=>dispose()),{once:true})})();</script>
-<script>(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const disposers=[];${motionDirectorRuntime(motionScene)}mountScene();addEventListener('pagehide',()=>disposers.splice(0).forEach(dispose=>dispose()),{once:true})})();</script>
+<script>(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const disposers=[];${motionDirectorRuntime(motionScene)}${motionStageRuntime()}mountScene();mountMotionStage();addEventListener('pagehide',()=>disposers.splice(0).forEach(dispose=>dispose()),{once:true})})();</script>
 </body></html>`;
-  return applySystemTheme(artifact, system);
+  const commonRuntime = `<script>(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,disposers=[];const reveal=()=>document.querySelectorAll('[data-reveal]').forEach(element=>element.classList.add('is-visible'));if(reduce||!('IntersectionObserver'in window))reveal();else{const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.14});document.querySelectorAll('[data-reveal]').forEach(element=>observer.observe(element));disposers.push(()=>observer.disconnect())}const artifact=document.querySelector('.artifact'),modeToggle=document.querySelector('.mode-switch');const onMode=()=>{const active=artifact.dataset.mode==='scenario';artifact.dataset.mode=active?'baseline':'scenario';modeToggle.setAttribute('aria-pressed',String(!active));modeToggle.firstChild.textContent=active?'Compare scenario ':'Return to baseline '};modeToggle?.addEventListener('click',onMode);disposers.push(()=>modeToggle?.removeEventListener('click',onMode));document.querySelectorAll('[data-route]').forEach(link=>{const onRoute=event=>{if(reduce)return;event.preventDefault();const target=document.querySelector(link.getAttribute('href')),wipe=document.querySelector('.route-wipe');wipe.classList.remove('is-active');requestAnimationFrame(()=>wipe.classList.add('is-active'));setTimeout(()=>target?.scrollIntoView(),180)};link.addEventListener('click',onRoute);disposers.push(()=>link.removeEventListener('click',onRoute))});addEventListener('pagehide',()=>disposers.splice(0).forEach(dispose=>dispose()),{once:true})})();</script>`;
+  const cleanedArtifact = artifact.replace(
+    /(<script type="application\/json" data-designos-tasks>[\s\S]*?<\/script>\n)<script>[\s\S]*?<\/script>/,
+    `$1${commonRuntime}`,
+  );
+  return applySystemTheme(cleanedArtifact, system);
 }
 
 function evaluateArtifact(html: string, system: RuntimeSystem): GateCheck[] {
@@ -294,6 +363,18 @@ function evaluateArtifact(html: string, system: RuntimeSystem): GateCheck[] {
     /data-motion-character="[^"]+"/.test(html) &&
     /data-motion-runtime="scene-graph"/.test(html) &&
     /const mountScene=/.test(html);
+  const sceneRuntimeCount = (html.match(/const mountScene=/g) ?? []).length;
+  const hasMotionFilm =
+    /data-motion-stage/.test(html) &&
+    /data-motion-duration="6400"/.test(html) &&
+    /data-motion-playback="single-pass-replayable"/.test(html) &&
+    /data-motion-poster="resolved-outcome"/.test(html) &&
+    (html.match(/class="motion-shot/g) ?? []).length === 3;
+  const hasMotionFilmRuntime =
+    /const mountMotionStage=/.test(html) &&
+    /IntersectionObserver/.test(html) &&
+    /visibilitychange/.test(html) &&
+    /data-stage-toggle/.test(html);
   const engine = html.match(/data-motion-engine="([^"]+)"/)?.[1] ?? "missing";
   const engineNodes: Record<string, RegExp> = {
     "webgl-field": /<canvas[^>]+data-scene-canvas/,
@@ -336,14 +417,41 @@ function evaluateArtifact(html: string, system: RuntimeSystem): GateCheck[] {
       id: "animation-richness",
       label: "Animation richness",
       status:
-        roleCount >= 4 && recipeCount >= 4 && hasSceneGraph && hasReducedMotion
+        roleCount >= 4 &&
+        recipeCount >= 4 &&
+        hasSceneGraph &&
+        hasMotionFilm &&
+        hasMotionFilmRuntime &&
+        hasReducedMotion
           ? "PASS"
           : "FAIL",
       score:
-        roleCount >= 4 && recipeCount >= 4 && hasSceneGraph && hasReducedMotion
+        roleCount >= 4 &&
+        recipeCount >= 4 &&
+        hasSceneGraph &&
+        hasMotionFilm &&
+        hasMotionFilmRuntime &&
+        hasReducedMotion
           ? 97
           : 72,
-      evidence: `${roleCount}/4 roles; ${recipeCount}/4 scene recipes; scene graph ${hasSceneGraph ? "present" : "missing"}; reduced-motion ${hasReducedMotion ? "present" : "missing"}`,
+      evidence: `${roleCount}/4 roles; ${recipeCount}/4 scene recipes; 6.4s proof film ${hasMotionFilm ? "present" : "missing"}; pausable runtime ${hasMotionFilmRuntime ? "present" : "missing"}; reduced-motion ${hasReducedMotion ? "present" : "missing"}`,
+    },
+    {
+      id: "motion-runtime-integrity",
+      label: "Motion runtime integrity",
+      status:
+        sceneRuntimeCount === 1 && hasMotionFilmRuntime ? "PASS" : "FAIL",
+      score: sceneRuntimeCount === 1 && hasMotionFilmRuntime ? 97 : 67,
+      evidence: `${sceneRuntimeCount} scene runtime; single-pass replay, pause, off-screen and hidden-tab controls ${hasMotionFilmRuntime ? "present" : "missing"}`,
+    },
+    {
+      id: "product-material-story",
+      label: "Inspectable product material",
+      status: hasMotionFilm ? "PASS" : "FAIL",
+      score: hasMotionFilm ? 96 : 70,
+      evidence: hasMotionFilm
+        ? "Three readable input → transformation → outcome frames with a resolved poster"
+        : "Foreground product-material story is incomplete",
     },
     {
       id: "authored-motion-renderer",

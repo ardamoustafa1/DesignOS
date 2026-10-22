@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-08-19T13:28:33.830Z",
+  "target": "http://127.0.0.1:43195/test-cv-site/index.html",
+  "lighthouseVersion": "13.4.1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+  "categories": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+  },
+  "metrics": {
+    "lcpMs": 498.817,
+    "cls": 0,
+    "tbtMs": 0
+  },
+  "budgets": {
+    "categoryScore": 95,
+    "lcpMs": 2000,
+    "cls": 0.1,
+    "tbtMs": 200
+  },
+  "throttlingMethod": "provided",
+  "findings": [],
+  "passed": true
+}

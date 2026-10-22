@@ -1,0 +1,4605 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-08-19T13:28:16.015Z",
+  "target": "http://127.0.0.1:43195/test-cv-site/case-designos.html",
+  "selector": ".story-stage",
+  "sequence": {
+    "interval": "requestAnimationFrame",
+    "fullFrames": 27,
+    "reducedFrames": 28
+  },
+  "full": {
+    "enter": {
+      "samples": [
+        {
+          "t": 535.3999999985099,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 544.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 560.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 577.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 593,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 611,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 627.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 644.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 660.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 677.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 693.4,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 710.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 727.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 744.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 760,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 777.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 794.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 810.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 827.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 844.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 860.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 877.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 894.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 910.1,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 927.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 944.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 960.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 425.5000000014901,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.600000000000023,
+          "p95": 17.600000000000023,
+          "p99": 18
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "exit": {
+      "samples": [
+        {
+          "t": 970.2999999970198,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 977.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 994.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1010.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1027.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1043.7,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1060.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1076.4,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1094.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1110.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1127.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1144.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1161,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1177.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1194.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1210.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1227.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1243.4,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1260.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1277.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1293.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1310.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1327.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1344.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1360.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1377.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1393.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 423.30000000298014,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999818,
+          "p95": 17.600000000000136,
+          "p99": 17.799999999999955
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "interruption": {
+      "samples": [
+        {
+          "t": 1407.199999999255,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1410.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1427.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1444.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1461,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1477.4,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1493.4,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1509.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1527.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1544.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1560.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1577.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1594.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1610.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1625.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1644.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1661,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1676.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1694.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1710.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1727.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1744.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1760.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1777.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1794.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1810.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1826.8,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1844.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 800
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 400px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 437.100000000745,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999818,
+          "p95": 18,
+          "p99": 18.299999999999955
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    }
+  },
+  "reduced": {
+    "enter": {
+      "samples": [
+        {
+          "t": 535.9000000022352,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 533.1,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 552,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 567.7,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 585.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 601.8,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 618.1,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 635.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 651.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 668.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 683.8,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 701.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 718.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 735.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 751.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 768.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 785.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 801.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 818.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 835.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 851.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 868.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 885.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 901.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 918.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 935.3,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 950.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 968.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 432.69999999776485,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999932,
+          "p95": 18.399999999999977,
+          "p99": 18.899999999999977
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "exit": {
+      "samples": [
+        {
+          "t": 981,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 985.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1001.8,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1018.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1035.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1051.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1068.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1085.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1101.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1118.1,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1135.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1151.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1167.7,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1185.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1200.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1217,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1235.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1251.8,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1268.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1285.1,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1301.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1318.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1335.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1351.8,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1368.1,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1385.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1399.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1418.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 437.5999999999999,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999818,
+          "p95": 18.200000000000045,
+          "p99": 18.699999999999818
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "interruption": {
+      "samples": [
+        {
+          "t": 1430.800000000745,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1435.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1451.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1468.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1485.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1501.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1518.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1535.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1551.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1568.4,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1585.1,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1601.8,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1618.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1635.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1651.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1666.8,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1684.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1701.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1718.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1735.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1751.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1768.6,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1784.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1801.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1818.5,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1835.2,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        },
+        {
+          "t": 1851.9,
+          "rect": {
+            "x": 0,
+            "y": 800,
+            "width": 742.390625,
+            "height": 560
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "371.195px 280px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DESIGNOS / COMPILERINPUT\n            \n              BRIEFAUDIENCEPROOF\n              TYPEGRIDMOTION\n              DECISIONSURFACEGATE / PASS"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 421.09999999925503,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.700000000000045,
+          "p95": 17.40000000000009,
+          "p99": 17.700000000000045
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    }
+  },
+  "comparison": {
+    "easingCurveRmse": {
+      "enter": null,
+      "exit": null
+    },
+    "enterExitDurationRatio": 0,
+    "transformOriginMatch": true,
+    "maxOvershoot": 0,
+    "interruptionContinuityRatio": 0,
+    "interruptionContinuous": true,
+    "reducedMotionSemanticEquivalent": true,
+    "reducedMotionSpatialDistance": 0,
+    "reducedMotionSpatialSuppressed": true
+  },
+  "passed": true
+}

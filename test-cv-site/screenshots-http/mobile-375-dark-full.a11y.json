@@ -1,0 +1,2236 @@
+{
+  "semantic": {
+    "lang": "tr",
+    "title": "Arda Moustafa — Creative Technologist",
+    "landmarks": {
+      "header": 1,
+      "nav": 1,
+      "main": 1,
+      "aside": 0,
+      "footer": 1
+    },
+    "headings": [
+      {
+        "level": 1,
+        "text": "Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum."
+      },
+      {
+        "level": 2,
+        "text": "İş, kanıtın kendisi."
+      },
+      {
+        "level": 3,
+        "text": "DesignOS"
+      },
+      {
+        "level": 3,
+        "text": "QuestWay"
+      },
+      {
+        "level": 3,
+        "text": "Motion Lab"
+      },
+      {
+        "level": 2,
+        "text": "Kodun sınırlarını bilen,tasarımın ihtimallerinizorlayan biri."
+      },
+      {
+        "level": 2,
+        "text": "Sıradaki zor fikribirlikte çalıştıralım."
+      }
+    ],
+    "controls": [
+      {
+        "selector": "html > body > a.skip-link",
+        "role": "a",
+        "name": "İçeriğe geç"
+      },
+      {
+        "selector": "html > body > header.site-header > a.identity",
+        "role": "a",
+        "name": "Arda Moustafa, ana sayfa"
+      },
+      {
+        "selector": "html > body > header.site-header > nav > a:nth-of-type(1)",
+        "role": "a",
+        "name": "İşler"
+      },
+      {
+        "selector": "html > body > header.site-header > nav > a:nth-of-type(3)",
+        "role": "a",
+        "name": "İletişim"
+      },
+      {
+        "selector": "body > main > section.hero:nth-of-type(1) > div.hero-foot:nth-of-type(1) > a.round-link",
+        "role": "a",
+        "name": "Seçili işleriincele↘"
+      },
+      {
+        "selector": "html > body > footer > a",
+        "role": "a",
+        "name": "Yukarı ↑"
+      }
+    ]
+  },
+  "axe": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "4.12.1"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "windowWidth": 375,
+      "windowHeight": 812,
+      "orientationAngle": 0,
+      "orientationType": "landscape-primary"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "15.0pt (20px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a class=\"identity\" href=\"#top\" aria-label=\"Arda Moustafa, ana sayfa\">AM<span>26</span></a>",
+            "target": [
+              ".identity"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>26</span>",
+            "target": [
+              ".identity > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a href=\"#work\">İşler</a>",
+            "target": [
+              "nav > a[href$=\"#work\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a href=\"#contact\">İletişim</a>",
+            "target": [
+              "a[href$=\"#contact\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"hero-index reveal is-visible\">Portfolio / 2026</p>",
+            "target": [
+              ".hero-index"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "36.0pt (48px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>Fikirleri çalışan</span>",
+            "target": [
+              ".line.is-visible.reveal:nth-child(1) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "36.0pt (48px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<em>dijital sistemlere</em>",
+            "target": [
+              ".line.is-visible.reveal:nth-child(2) > em"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "36.0pt (48px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>dönüştürüyorum.</span>",
+            "target": [
+              ".line.is-visible.reveal:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>\n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          </p>",
+            "target": [
+              ".hero-foot > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "bold",
+                  "messageKey": "bgOverlap",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it is overlapped by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>Seçili işleri<br>incele</span>",
+            "target": [
+              ".round-link > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>Arda Moustafa © 2026</p>",
+            "target": [
+              "footer > p:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "9.0pt (12px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body>",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a background gradient"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a href=\"#top\">Yukarı ↑</a>",
+            "target": [
+              "footer > a[href$=\"#top\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+          }
+        ]
+      }
+    ],
+    "passes": 18
+  },
+  "accessibilityTree": [
+    {
+      "nodeId": "2",
+      "role": "RootWebArea",
+      "name": "Arda Moustafa — Creative Technologist",
+      "ignored": false,
+      "properties": {
+        "focused": true
+      }
+    },
+    {
+      "nodeId": "7",
+      "parentId": "2",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "16",
+      "parentId": "7",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "17",
+      "parentId": "16",
+      "role": "link",
+      "name": "İçeriğe geç",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "21",
+      "parentId": "16",
+      "role": "banner",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "30",
+      "parentId": "16",
+      "role": "main",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "132",
+      "parentId": "16",
+      "role": "contentinfo",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "136",
+      "parentId": "17",
+      "role": "StaticText",
+      "name": "İçeriğe geç",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "22",
+      "parentId": "21",
+      "role": "link",
+      "name": "Arda Moustafa, ana sayfa",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "24",
+      "parentId": "21",
+      "role": "navigation",
+      "name": "Ana navigasyon",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "31",
+      "parentId": "30",
+      "role": "region",
+      "name": "Fikirleri çalışan dijital sistemlere dönüştürüyorum.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "46",
+      "parentId": "30",
+      "role": "region",
+      "name": "Yaklaşım",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "50",
+      "parentId": "30",
+      "role": "region",
+      "name": "İş, kanıtın kendisi.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "103",
+      "parentId": "30",
+      "role": "region",
+      "name": "Kodun sınırlarını bilen, tasarımın ihtimallerini zorlayan biri.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "124",
+      "parentId": "30",
+      "role": "region",
+      "name": "Sıradaki zor fikri birlikte çalıştıralım.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "133",
+      "parentId": "132",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "135",
+      "parentId": "132",
+      "role": "link",
+      "name": "Yukarı ↑",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000002",
+      "parentId": "136",
+      "role": "InlineTextBox",
+      "name": "İçeriğe geç",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "137",
+      "parentId": "22",
+      "role": "StaticText",
+      "name": "AM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "23",
+      "parentId": "22",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "138",
+      "parentId": "23",
+      "role": "StaticText",
+      "name": "26",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "25",
+      "parentId": "24",
+      "role": "link",
+      "name": "İşler",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "27",
+      "parentId": "24",
+      "role": "link",
+      "name": "İletişim",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "32",
+      "parentId": "31",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "33",
+      "parentId": "31",
+      "role": "heading",
+      "name": "Fikirleri çalışan dijital sistemlere dönüştürüyorum.",
+      "ignored": false,
+      "properties": {
+        "level": 1
+      }
+    },
+    {
+      "nodeId": "39",
+      "parentId": "31",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "5",
+      "parentId": "39",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "40",
+      "parentId": "39",
+      "role": "link",
+      "name": "Seçili işleri incele",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "47",
+      "parentId": "46",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "48",
+      "parentId": "46",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "51",
+      "parentId": "50",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "52",
+      "parentId": "51",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "53",
+      "parentId": "51",
+      "role": "heading",
+      "name": "İş, kanıtın kendisi.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "54",
+      "parentId": "51",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "55",
+      "parentId": "50",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "70",
+      "parentId": "50",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "86",
+      "parentId": "50",
+      "role": "article",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "104",
+      "parentId": "103",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "105",
+      "parentId": "103",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "106",
+      "parentId": "105",
+      "role": "heading",
+      "name": "Kodun sınırlarını bilen, tasarımın ihtimallerini zorlayan biri.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "110",
+      "parentId": "105",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "111",
+      "parentId": "110",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "112",
+      "parentId": "110",
+      "role": "DescriptionList",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "125",
+      "parentId": "124",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "126",
+      "parentId": "124",
+      "role": "heading",
+      "name": "Sıradaki zor fikri birlikte çalıştıralım.",
+      "ignored": false,
+      "properties": {
+        "level": 2
+      }
+    },
+    {
+      "nodeId": "129",
+      "parentId": "124",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "131",
+      "parentId": "124",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "209",
+      "parentId": "133",
+      "role": "StaticText",
+      "name": "Arda Moustafa © 2026",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "211",
+      "parentId": "135",
+      "role": "StaticText",
+      "name": "Yukarı ↑",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000003",
+      "parentId": "137",
+      "role": "InlineTextBox",
+      "name": "AM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000004",
+      "parentId": "138",
+      "role": "InlineTextBox",
+      "name": "26",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "139",
+      "parentId": "25",
+      "role": "StaticText",
+      "name": "İşler",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "141",
+      "parentId": "27",
+      "role": "StaticText",
+      "name": "İletişim",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "6",
+      "parentId": "32",
+      "role": "StaticText",
+      "name": "PORTFOLİO / 2026",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "34",
+      "parentId": "33",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "4",
+      "parentId": "34",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "143",
+      "parentId": "4",
+      "role": "StaticText",
+      "name": "Fikirleri çalışan",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "35",
+      "parentId": "33",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "36",
+      "parentId": "35",
+      "role": "emphasis",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "37",
+      "parentId": "33",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "38",
+      "parentId": "37",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "145",
+      "parentId": "38",
+      "role": "StaticText",
+      "name": "dönüştürüyorum.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "146",
+      "parentId": "5",
+      "role": "StaticText",
+      "name": "Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim pratiğinde buluşturan creative technologist.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "41",
+      "parentId": "40",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "147",
+      "parentId": "41",
+      "role": "StaticText",
+      "name": "Seçili işleri",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "42",
+      "parentId": "41",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "148",
+      "parentId": "41",
+      "role": "StaticText",
+      "name": "incele",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "151",
+      "parentId": "47",
+      "role": "StaticText",
+      "name": "01 / YAKLAŞIM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "152",
+      "parentId": "48",
+      "role": "StaticText",
+      "name": "Arayüzü süslemiyorum. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "49",
+      "parentId": "48",
+      "role": "strong",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "154",
+      "parentId": "48",
+      "role": "StaticText",
+      "name": " bir sisteme çeviriyorum.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "155",
+      "parentId": "52",
+      "role": "StaticText",
+      "name": "02 / SEÇİLİ İŞLER",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "156",
+      "parentId": "53",
+      "role": "StaticText",
+      "name": "İş, kanıtın kendisi.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "157",
+      "parentId": "54",
+      "role": "StaticText",
+      "name": "Bu yerel testte yalnızca mevcut proje bağlamı kullanıldı; doğrulanmamış sonuç rakamları eklenmedi.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "56",
+      "parentId": "55",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "57",
+      "parentId": "56",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "158",
+      "parentId": "57",
+      "role": "StaticText",
+      "name": "DESİGN İNTELLİGENCE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "58",
+      "parentId": "56",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "159",
+      "parentId": "58",
+      "role": "StaticText",
+      "name": "2026",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "64",
+      "parentId": "55",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "66",
+      "parentId": "64",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "67",
+      "parentId": "66",
+      "role": "heading",
+      "name": "DesignOS",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "68",
+      "parentId": "66",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "71",
+      "parentId": "70",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "72",
+      "parentId": "71",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "167",
+      "parentId": "72",
+      "role": "StaticText",
+      "name": "TRAVEL İNTELLİGENCE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "73",
+      "parentId": "71",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "168",
+      "parentId": "73",
+      "role": "StaticText",
+      "name": "CONCEPT",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "80",
+      "parentId": "70",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "82",
+      "parentId": "80",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "83",
+      "parentId": "82",
+      "role": "heading",
+      "name": "QuestWay",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "84",
+      "parentId": "82",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "87",
+      "parentId": "86",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "88",
+      "parentId": "87",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "177",
+      "parentId": "88",
+      "role": "StaticText",
+      "name": "EXPERİMENTAL İNTERFACE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "89",
+      "parentId": "87",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "178",
+      "parentId": "89",
+      "role": "StaticText",
+      "name": "ONGOİNG",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "97",
+      "parentId": "86",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "99",
+      "parentId": "97",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "100",
+      "parentId": "99",
+      "role": "heading",
+      "name": "Motion Lab",
+      "ignored": false,
+      "properties": {
+        "level": 3
+      }
+    },
+    {
+      "nodeId": "101",
+      "parentId": "99",
+      "role": "paragraph",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "189",
+      "parentId": "104",
+      "role": "StaticText",
+      "name": "03 / PROFİL",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "190",
+      "parentId": "106",
+      "role": "StaticText",
+      "name": "Kodun sınırlarını bilen,",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "107",
+      "parentId": "106",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "108",
+      "parentId": "106",
+      "role": "emphasis",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "109",
+      "parentId": "106",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "192",
+      "parentId": "106",
+      "role": "StaticText",
+      "name": "zorlayan biri.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "193",
+      "parentId": "111",
+      "role": "StaticText",
+      "name": "Stratejiden prototipe, prototipten çalışan ürüne kadar tek bir düşünce çizgisini koruyorum.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "113",
+      "parentId": "112",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "114",
+      "parentId": "113",
+      "role": "term",
+      "name": "ODAK",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "115",
+      "parentId": "113",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "118",
+      "parentId": "112",
+      "role": "none",
+      "name": null,
+      "ignored": true,
+      "properties": {}
+    },
+    {
+      "nodeId": "119",
+      "parentId": "118",
+      "role": "term",
+      "name": "ÇALIŞMA BİÇİMİ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "120",
+      "parentId": "118",
+      "role": "definition",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "203",
+      "parentId": "125",
+      "role": "StaticText",
+      "name": "04 / SONRAKİ İŞ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "204",
+      "parentId": "126",
+      "role": "StaticText",
+      "name": "Sıradaki zor fikri",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "127",
+      "parentId": "126",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "128",
+      "parentId": "126",
+      "role": "emphasis",
+      "name": null,
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "206",
+      "parentId": "129",
+      "role": "StaticText",
+      "name": "İletişim bilgisi ekle",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "208",
+      "parentId": "131",
+      "role": "StaticText",
+      "name": "Demo içeriği: Gerçek e-posta paylaşılmadığı için bağlantı gönderim yapmaz.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000083",
+      "parentId": "209",
+      "role": "InlineTextBox",
+      "name": "Arda Moustafa © 2026",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000084",
+      "parentId": "211",
+      "role": "InlineTextBox",
+      "name": "Yukarı ↑",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000005",
+      "parentId": "139",
+      "role": "InlineTextBox",
+      "name": "İşler",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000006",
+      "parentId": "141",
+      "role": "InlineTextBox",
+      "name": "İletişim",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000085",
+      "parentId": "6",
+      "role": "InlineTextBox",
+      "name": "PORTFOLİO / 2026",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000008",
+      "parentId": "143",
+      "role": "InlineTextBox",
+      "name": "Fikirleri çalışan",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "144",
+      "parentId": "36",
+      "role": "StaticText",
+      "name": "dijital sistemlere",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000010",
+      "parentId": "145",
+      "role": "InlineTextBox",
+      "name": "dönüştürüyorum.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000011",
+      "parentId": "146",
+      "role": "InlineTextBox",
+      "name": "Ürün düşüncesi, tasarım ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000012",
+      "parentId": "146",
+      "role": "InlineTextBox",
+      "name": "mühendisliği ve hareketi tek ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000013",
+      "parentId": "146",
+      "role": "InlineTextBox",
+      "name": "bir üretim pratiğinde ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000014",
+      "parentId": "146",
+      "role": "InlineTextBox",
+      "name": "buluşturan creative ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000015",
+      "parentId": "146",
+      "role": "InlineTextBox",
+      "name": "technologist.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000016",
+      "parentId": "147",
+      "role": "InlineTextBox",
+      "name": "Seçili işleri",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000017",
+      "parentId": "42",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000018",
+      "parentId": "148",
+      "role": "InlineTextBox",
+      "name": "incele",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000019",
+      "parentId": "151",
+      "role": "InlineTextBox",
+      "name": "01 / YAKLAŞIM",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000020",
+      "parentId": "152",
+      "role": "InlineTextBox",
+      "name": "Arayüzü ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000021",
+      "parentId": "152",
+      "role": "InlineTextBox",
+      "name": "süslemiyorum. ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "153",
+      "parentId": "49",
+      "role": "StaticText",
+      "name": "Ürünün fikrini görünür, hissedilir ve kullanılabilir",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000025",
+      "parentId": "154",
+      "role": "InlineTextBox",
+      "name": " bir ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000026",
+      "parentId": "154",
+      "role": "InlineTextBox",
+      "name": "sisteme ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000027",
+      "parentId": "154",
+      "role": "InlineTextBox",
+      "name": "çeviriyorum.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000028",
+      "parentId": "155",
+      "role": "InlineTextBox",
+      "name": "02 / SEÇİLİ İŞLER",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000029",
+      "parentId": "156",
+      "role": "InlineTextBox",
+      "name": "İş, kanıtın kendisi.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000030",
+      "parentId": "157",
+      "role": "InlineTextBox",
+      "name": "Bu yerel testte yalnızca mevcut proje bağlamı ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000031",
+      "parentId": "157",
+      "role": "InlineTextBox",
+      "name": "kullanıldı; doğrulanmamış sonuç rakamları ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000032",
+      "parentId": "157",
+      "role": "InlineTextBox",
+      "name": "eklenmedi.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000033",
+      "parentId": "158",
+      "role": "InlineTextBox",
+      "name": "DESİGN İNTELLİGENCE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000034",
+      "parentId": "159",
+      "role": "InlineTextBox",
+      "name": "2026",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "164",
+      "parentId": "67",
+      "role": "StaticText",
+      "name": "DesignOS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "165",
+      "parentId": "68",
+      "role": "StaticText",
+      "name": "Tasarım kararlarını ölçülebilir bir üretim ve kalite sistemine dönüştüren açık kaynak çalışma.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000039",
+      "parentId": "167",
+      "role": "InlineTextBox",
+      "name": "TRAVEL İNTELLİGENCE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000040",
+      "parentId": "168",
+      "role": "InlineTextBox",
+      "name": "CONCEPT",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "174",
+      "parentId": "83",
+      "role": "StaticText",
+      "name": "QuestWay",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "175",
+      "parentId": "84",
+      "role": "StaticText",
+      "name": "Kararsız gezginler için araştırmayı rotaya çeviren seyahat zekâsı ürün yönü.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000045",
+      "parentId": "177",
+      "role": "InlineTextBox",
+      "name": "EXPERİMENTAL İNTERFACE",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000046",
+      "parentId": "178",
+      "role": "InlineTextBox",
+      "name": "ONGOİNG",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "186",
+      "parentId": "100",
+      "role": "StaticText",
+      "name": "Motion Lab",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "187",
+      "parentId": "101",
+      "role": "StaticText",
+      "name": "Hareketin dekor değil, hiyerarşi ve geri bildirim olarak çalıştığı etkileşim deneyleri.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000051",
+      "parentId": "189",
+      "role": "InlineTextBox",
+      "name": "03 / PROFİL",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000052",
+      "parentId": "190",
+      "role": "InlineTextBox",
+      "name": "Kodun sınırlarını ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000053",
+      "parentId": "190",
+      "role": "InlineTextBox",
+      "name": "bilen,",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000054",
+      "parentId": "107",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "191",
+      "parentId": "108",
+      "role": "StaticText",
+      "name": "tasarımın ihtimallerini",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000057",
+      "parentId": "109",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000058",
+      "parentId": "192",
+      "role": "InlineTextBox",
+      "name": "zorlayan biri.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000059",
+      "parentId": "193",
+      "role": "InlineTextBox",
+      "name": "Stratejiden prototipe, prototipten ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000060",
+      "parentId": "193",
+      "role": "InlineTextBox",
+      "name": "çalışan ürüne kadar tek bir düşünce ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000061",
+      "parentId": "193",
+      "role": "InlineTextBox",
+      "name": "çizgisini koruyorum.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "194",
+      "parentId": "114",
+      "role": "StaticText",
+      "name": "ODAK",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "195",
+      "parentId": "115",
+      "role": "StaticText",
+      "name": "Product design",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "116",
+      "parentId": "115",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "196",
+      "parentId": "115",
+      "role": "StaticText",
+      "name": "Creative development",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "117",
+      "parentId": "115",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "197",
+      "parentId": "115",
+      "role": "StaticText",
+      "name": "Motion systems",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "198",
+      "parentId": "119",
+      "role": "StaticText",
+      "name": "ÇALIŞMA BİÇİMİ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "199",
+      "parentId": "120",
+      "role": "StaticText",
+      "name": "Research",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "121",
+      "parentId": "120",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "200",
+      "parentId": "120",
+      "role": "StaticText",
+      "name": "Direction",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "122",
+      "parentId": "120",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "201",
+      "parentId": "120",
+      "role": "StaticText",
+      "name": "Build",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "123",
+      "parentId": "120",
+      "role": "LineBreak",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "202",
+      "parentId": "120",
+      "role": "StaticText",
+      "name": "Review",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000076",
+      "parentId": "203",
+      "role": "InlineTextBox",
+      "name": "04 / SONRAKİ İŞ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000077",
+      "parentId": "204",
+      "role": "InlineTextBox",
+      "name": "Sıradaki zor fikri",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000078",
+      "parentId": "127",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "205",
+      "parentId": "128",
+      "role": "StaticText",
+      "name": "birlikte çalıştıralım.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000080",
+      "parentId": "206",
+      "role": "InlineTextBox",
+      "name": "İletişim bilgisi ekle",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000081",
+      "parentId": "208",
+      "role": "InlineTextBox",
+      "name": "Demo içeriği: Gerçek e-posta paylaşılmadığı için bağlantı ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000082",
+      "parentId": "208",
+      "role": "InlineTextBox",
+      "name": "gönderim yapmaz.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000009",
+      "parentId": "144",
+      "role": "InlineTextBox",
+      "name": "dijital sistemlere",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000022",
+      "parentId": "153",
+      "role": "InlineTextBox",
+      "name": "Ürünün fikrini ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000023",
+      "parentId": "153",
+      "role": "InlineTextBox",
+      "name": "görünür, hissedilir ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000024",
+      "parentId": "153",
+      "role": "InlineTextBox",
+      "name": "ve kullanılabilir",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000035",
+      "parentId": "164",
+      "role": "InlineTextBox",
+      "name": "DesignOS",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000036",
+      "parentId": "165",
+      "role": "InlineTextBox",
+      "name": "Tasarım kararlarını ölçülebilir bir ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000037",
+      "parentId": "165",
+      "role": "InlineTextBox",
+      "name": "üretim ve kalite sistemine ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000038",
+      "parentId": "165",
+      "role": "InlineTextBox",
+      "name": "dönüştüren açık kaynak çalışma.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000041",
+      "parentId": "174",
+      "role": "InlineTextBox",
+      "name": "QuestWay",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000042",
+      "parentId": "175",
+      "role": "InlineTextBox",
+      "name": "Kararsız gezginler için araştırmayı ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000043",
+      "parentId": "175",
+      "role": "InlineTextBox",
+      "name": "rotaya çeviren seyahat zekâsı ürün ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000044",
+      "parentId": "175",
+      "role": "InlineTextBox",
+      "name": "yönü.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000047",
+      "parentId": "186",
+      "role": "InlineTextBox",
+      "name": "Motion Lab",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000048",
+      "parentId": "187",
+      "role": "InlineTextBox",
+      "name": "Hareketin dekor değil, hiyerarşi ve ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000049",
+      "parentId": "187",
+      "role": "InlineTextBox",
+      "name": "geri bildirim olarak çalıştığı etkileşim ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000050",
+      "parentId": "187",
+      "role": "InlineTextBox",
+      "name": "deneyleri.",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000055",
+      "parentId": "191",
+      "role": "InlineTextBox",
+      "name": "tasarımın ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000056",
+      "parentId": "191",
+      "role": "InlineTextBox",
+      "name": "ihtimallerini",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000062",
+      "parentId": "194",
+      "role": "InlineTextBox",
+      "name": "ODAK",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000063",
+      "parentId": "195",
+      "role": "InlineTextBox",
+      "name": "Product design",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000064",
+      "parentId": "116",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000065",
+      "parentId": "196",
+      "role": "InlineTextBox",
+      "name": "Creative development",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000066",
+      "parentId": "117",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000067",
+      "parentId": "197",
+      "role": "InlineTextBox",
+      "name": "Motion systems",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000068",
+      "parentId": "198",
+      "role": "InlineTextBox",
+      "name": "ÇALIŞMA BİÇİMİ",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000069",
+      "parentId": "199",
+      "role": "InlineTextBox",
+      "name": "Research",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000070",
+      "parentId": "121",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000071",
+      "parentId": "200",
+      "role": "InlineTextBox",
+      "name": "Direction",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000072",
+      "parentId": "122",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000073",
+      "parentId": "201",
+      "role": "InlineTextBox",
+      "name": "Build",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000074",
+      "parentId": "123",
+      "role": "InlineTextBox",
+      "name": "\n",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000075",
+      "parentId": "202",
+      "role": "InlineTextBox",
+      "name": "Review",
+      "ignored": false,
+      "properties": {}
+    },
+    {
+      "nodeId": "-1000000079",
+      "parentId": "205",
+      "role": "InlineTextBox",
+      "name": "birlikte çalıştıralım.",
+      "ignored": false,
+      "properties": {}
+    }
+  ]
+}
