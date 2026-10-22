@@ -1,0 +1,4551 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-08-19T13:10:57.933Z",
+  "target": "http://127.0.0.1:43195/test-cv-site/index.html",
+  "selector": ".hero",
+  "sequence": {
+    "interval": "requestAnimationFrame",
+    "fullFrames": 28,
+    "reducedFrames": 27
+  },
+  "full": {
+    "enter": {
+      "samples": [
+        {
+          "t": 563.6000000014901,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 563.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 581,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 597,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 614.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 631,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 647.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 664.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 680.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 697.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 714.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 730.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 747.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 764.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 781,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 797.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 813.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 830,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 847.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 864.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 880.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 897.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 914.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 930.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 947.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 964.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 980.7,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 997.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 433.9999999985099,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999932,
+          "p95": 17.600000000000023,
+          "p99": 17.700000000000045
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "exit": {
+      "samples": [
+        {
+          "t": 1008.6999999992549,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1013.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1030.7,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1046.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1063.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1079.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1096.7,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1113.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1130.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1147.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1164.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1181,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1197.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1214,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1230,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1247.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1264.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1280.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1297.5,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1314.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1330.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1347.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1363.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1380.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1397.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1414.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1431,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 422.30000000074506,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.600000000000136,
+          "p95": 17.600000000000136,
+          "p99": 17.700000000000045
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "interruption": {
+      "samples": [
+        {
+          "t": 1442.1000000014901,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1447.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1463.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1480.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1496.7,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1514.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1530.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1547.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1564.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1580.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1597.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1614,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1630.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1647.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1664.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1681,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1697.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1714.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1731,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1747.4,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1764.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1780.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1797.7,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1814.1,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1830.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1847.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1864.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 422.19999999850984,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999818,
+          "p95": 17,
+          "p99": 17.59999999999991
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    }
+  },
+  "reduced": {
+    "enter": {
+      "samples": [
+        {
+          "t": 533.8000000007451,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 523.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 556.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 573.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 590.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 606.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 623.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 640.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 656.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 673.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 690.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 706.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 723.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 740.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 756.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 773.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 789.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 805.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 823.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 840.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 856.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 873.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 890.1,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 906.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 923.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 940.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 956.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 423.0999999992549,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999932,
+          "p95": 17.700000000000045,
+          "p99": 32.60000000000002
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "exit": {
+      "samples": [
+        {
+          "t": 968.6000000014901,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 973.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 989.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1007,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1022.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1040.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1056.4,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1073.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1090.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1106.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1123.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1140.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1156.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1173.5,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1190.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1206.7,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1223.5,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1240.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1256,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1273.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1290.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1306.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1323.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1340.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1356.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1373.7,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1390.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 421.69999999850984,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.600000000000136,
+          "p95": 17.59999999999991,
+          "p99": 17.700000000000045
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "interruption": {
+      "samples": [
+        {
+          "t": 1400.800000000745,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1406.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1423.5,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1440.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1456.4,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1473.5,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1490.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1506,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1523.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1540.3,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1556.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1572.7,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1590,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1606.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1622.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1640.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1656.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1673.5,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1689.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1705.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1723.5,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1740.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1756.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1773.5,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1790.2,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1806.9,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        },
+        {
+          "t": 1823.6,
+          "rect": {
+            "x": 0,
+            "y": 88,
+            "width": 1280,
+            "height": 905.15625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "640px 452.578px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "DECIDE / COMPOSE / BUILD / VERIFY\n        Portfolio / 2026\n        \n          Fikirleri çalışan\n          dijital sistemlere\n          dönüştürüyorum.\n        \n        \n          \n            Ürün düşüncesi, tasarım mühendisliği ve hareketi tek bir üretim\n            pratiğinde buluşturan creative technologist.\n          \n          Seçili işleriincele↘\n        \n        \n          DESIGN × CODE × MOTION ×"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 422.79999999925485,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.700000000000045,
+          "p95": 17.59999999999991,
+          "p99": 17.600000000000136
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    }
+  },
+  "comparison": {
+    "easingCurveRmse": {
+      "enter": null,
+      "exit": null
+    },
+    "enterExitDurationRatio": 0,
+    "transformOriginMatch": true,
+    "maxOvershoot": 0,
+    "interruptionContinuityRatio": 0,
+    "interruptionContinuous": true,
+    "reducedMotionSemanticEquivalent": true,
+    "reducedMotionSpatialDistance": 0,
+    "reducedMotionSpatialSuppressed": true
+  },
+  "passed": true
+}

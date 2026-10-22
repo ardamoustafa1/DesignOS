@@ -1,0 +1,122 @@
+{
+  "schema": 2,
+  "target": "http://127.0.0.1:4178/",
+  "selector": ".project-dark",
+  "reducedMotion": false,
+  "durationMs": 2200,
+  "cpuRate": 4,
+  "generatedAt": "2026-08-19T12:23:00.881Z",
+  "metrics": {
+    "averageFps": 59.228047859442704,
+    "worstFrameMs": 50.69999999999993,
+    "droppedFrameRatio": 0.013245033112582781,
+    "frameTimeMs": {
+      "count": 149,
+      "p50": 16.699999999999818,
+      "p95": 17.5,
+      "p99": 17.600000000000364,
+      "max": 50.69999999999993,
+      "histogram": {
+        "under16_7": 84,
+        "from16_7To33_3": 64,
+        "from33_3To50": 0,
+        "over50": 1
+      }
+    },
+    "droppedFrames": 2,
+    "longAnimationFrames": {
+      "count": 1,
+      "totalBlockingDurationMs": 0
+    },
+    "mainThread": {
+      "taskCount": 2054,
+      "blockingTaskCount": 0,
+      "blockingTimeMs": 0,
+      "p95TaskMs": 0.147
+    },
+    "rendering": {
+      "styleRecalculationCount": 23,
+      "styleRecalculationMs": 5.877,
+      "layoutCount": 2,
+      "layoutMs": 0.6659999999999999,
+      "paintCount": 17,
+      "paintMs": 2.7289999999999988,
+      "compositeCount": 0,
+      "compositeMs": 0,
+      "maxCompositeLayers": 7,
+      "compositeOnly": false
+    },
+    "interaction": {
+      "inputToMotionLatencyMs": 46.90000000149007,
+      "settleTimeMs": 133.29999999999995,
+      "overshoot": 0,
+      "cancelResponseTimeMs": 12.100000001490116
+    },
+    "cleanup": {
+      "listenerDelta": 0,
+      "heapDeltaBytes": 0,
+      "heapBudgetBytes": 1048576,
+      "heapGrowthWithinBudget": true,
+      "unhandledRejections": 0,
+      "leakFree": true
+    },
+    "reducedMotion": "full-motion-observed",
+    "animationAttribution": {
+      "targets": [],
+      "traceEvents": [
+        {
+          "name": "AnimationFrame",
+          "count": 580
+        },
+        {
+          "name": "LocalFrameView::ScheduleAnimation",
+          "count": 322
+        },
+        {
+          "name": "AnimationHost::TickAnimations",
+          "count": 299
+        },
+        {
+          "name": "AnimationFrame::Render",
+          "count": 290
+        },
+        {
+          "name": "AnimationFrame::StyleAndLayout",
+          "count": 290
+        },
+        {
+          "name": "FireAnimationFrame",
+          "count": 152
+        },
+        {
+          "name": "RequestAnimationFrame",
+          "count": 152
+        },
+        {
+          "name": "AnimationFrame::Presentation",
+          "count": 145
+        },
+        {
+          "name": "NeedsTickAnimations",
+          "count": 44
+        },
+        {
+          "name": "AnimationHost::UpdateAnimationState",
+          "count": 37
+        },
+        {
+          "name": "ImageAnimationController::UpdateState",
+          "count": 20
+        },
+        {
+          "name": "ElementAnimations::SetRunState",
+          "count": 19
+        }
+      ]
+    }
+  },
+  "trace": {
+    "eventCount": 15136,
+    "categories": "devtools.timeline,cc,animation"
+  }
+}

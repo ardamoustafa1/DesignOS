@@ -1,0 +1,7305 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-08-19T12:12:05.912Z",
+  "target": "http://127.0.0.1:4178/",
+  "selector": ".hero-title .line:nth-child(1)",
+  "sequence": {
+    "interval": "requestAnimationFrame",
+    "fullFrames": 44,
+    "reducedFrames": 44
+  },
+  "full": {
+    "enter": {
+      "samples": [
+        {
+          "t": 513.0999999996275,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 517.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 533.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 549.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 566.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 583.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 599.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 617.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 633.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 650.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 667.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 683.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 700.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 717.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 733.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 750.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 766.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 783.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 799.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 817.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 832.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 850.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 867.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 883.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 900.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 917.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 933.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 949.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 967.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 983.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1000.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1017.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1033.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1050.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1067.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1082.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1100.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1116.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1133.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1150.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1167.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1183.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1199.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1217.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 704.1000000003726,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999932,
+          "p95": 17.699999999999932,
+          "p99": 17.699999999999932
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "exit": {
+      "samples": [
+        {
+          "t": 1238.0999999996275,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1233.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1250.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1267.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1283.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1299.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1317.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1333.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1350.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1366.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1383.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1399.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1417.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1432.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1450.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1467.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1483.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1500.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1517.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1532.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1549.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1567.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1582.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1599.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1617.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1632.8,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1650.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1667.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1683.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1700.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1717.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1733.8,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1749.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1767.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1783.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1800.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1817.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1834,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1850.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1867.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1883.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1900.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1917.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1933.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1950.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 712.5000000003724,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999818,
+          "p95": 17.700000000000045,
+          "p99": 17.700000000000045
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "interruption": {
+      "samples": [
+        {
+          "t": 1963.199999999255,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1967.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1983.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1999.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2017.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2033.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2050.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2067.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2083.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2100.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2116.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2133.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2149.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2167.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2184,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2200.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2216.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2233.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2250.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2267.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2283.8,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2300.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2317.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2333.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2350.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2367.1,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2383.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2400.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2417.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2433.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2450.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2467.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2483.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2500.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2517.1,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2534,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2550.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2566.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2583.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2600.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2617.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2633.9,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2650.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2666.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 703.1000000007452,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999818,
+          "p95": 17.700000000000273,
+          "p99": 17.800000000000182
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    }
+  },
+  "reduced": {
+    "enter": {
+      "samples": [
+        {
+          "t": 549.5999999996275,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 541.212,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 573.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 590,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 605.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 622.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 640,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 656.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 673.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 690,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 706.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 723.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 739.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 756.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 773.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 790,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 806.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 822.8,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 840,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 855.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 873.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 889,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 906.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 922.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 940,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 956.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 973.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 990,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1006.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1023.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1039.5,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1056.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1073.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1090,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1106.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1123.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1140,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1156.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1173.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1190,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1206.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1223.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1240,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1256.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 706.7000000003725,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.700000000000045,
+          "p95": 17.700000000000045,
+          "p99": 32.087999999999965
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "exit": {
+      "samples": [
+        {
+          "t": 1272.2000000011176,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1273.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1290,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1305.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1322.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1340,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1356.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1373,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1390,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1406.1,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1423.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1440.1,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1456.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1473.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1489.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1506.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1523.1,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1539.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1556.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1572.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1589.2,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1606.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1622.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1640,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1655.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1673.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1690,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1705.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1723.1,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1740,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1756.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1773.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1790,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1806.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1823.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1840,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1856.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1873.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1890,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1906.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1923.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1940,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1956.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1973.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 701.0999999988824,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.700000000000045,
+          "p95": 17.399999999999864,
+          "p99": 17.700000000000045
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    },
+    "interruption": {
+      "samples": [
+        {
+          "t": 1983.9000000003725,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 1989,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2006.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2023.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2040,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2056.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2072.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2090.1,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2106.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2123.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2140,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2156,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2173.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2190,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2206.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2223.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2240,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2256.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2273.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2290.1,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2306.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2323.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2340,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2356.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2373.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2390,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2406.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2422.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2440,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2456.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2473.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2490,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2506.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2523.3,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2540,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2556.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2573.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2590,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2606.7,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2623.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2639.6,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2655.8,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2672.4,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        },
+        {
+          "t": 2690,
+          "rect": {
+            "x": 32,
+            "y": 255.609375,
+            "width": 869.90625,
+            "height": 98.65625
+          },
+          "matrix": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "opacity": "1",
+          "transformOrigin": "434.953px 49.3281px",
+          "easing": "ease",
+          "semantic": {
+            "state": null,
+            "pressed": null,
+            "expanded": null,
+            "value": null,
+            "text": "Fikirleri çalışan"
+          }
+        }
+      ],
+      "metrics": {
+        "durationMs": 706.0999999996275,
+        "settleTimeMs": 0,
+        "overshoot": 0,
+        "easing": "ease",
+        "easingRmse": null,
+        "frameTimes": {
+          "p50": 16.699999999999818,
+          "p95": 17.699999999999818,
+          "p99": 17.700000000000045
+        },
+        "maxFrameJump": 0,
+        "medianFrameJump": 0,
+        "p95FrameJump": 0
+      },
+      "screenshots": []
+    }
+  },
+  "comparison": {
+    "easingCurveRmse": {
+      "enter": null,
+      "exit": null
+    },
+    "enterExitDurationRatio": 0,
+    "transformOriginMatch": true,
+    "maxOvershoot": 0,
+    "interruptionContinuityRatio": 0,
+    "interruptionContinuous": true,
+    "reducedMotionSemanticEquivalent": true,
+    "reducedMotionSpatialDistance": 0,
+    "reducedMotionSpatialSuppressed": true
+  },
+  "passed": true
+}
